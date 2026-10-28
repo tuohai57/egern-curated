@@ -1,0 +1,177 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# ad-exclude.txt —— 生成 ad-full 时要剔除的域名清单
+# ═══════════════════════════════════════════════════════════════════════════
+# 为什么需要它：DNS 层的 ad-full -> reject 是全局的，**不受 rules 顺序影响**。
+# 配置里排在广告规则之前的白名单，在 DNS 层救不回来——所以必须在生成广告表时
+# 就把这些域名（含子域）剔掉。清单里的每一条都对应配置里一条显式 DIRECT 规则。
+#
+# ⚠️ 注意 6 个「品牌二级根域」是有意做分层放行的：
+#     weibo.com / weibo.cn / qq.com / baidu.com / 163.com / 126.net
+#   这几个在 DNS 层整家放行（否则 App 主功能会挂），具体广告端点交给模块层拦：
+#     · 微博广告 → loonlab-plugin-ae197c04（模块里 REJECT 具体 ad 子域）
+#     · 腾讯/QQ 广告 → 配置里手写的 gdt.qq.com / otheve.beacon.qq.com 等精准 REJECT
+#     · 百度广告 → fmz200 各模块 + 手写 mobads.baidu.com 等
+#     · 网易广告 → fmz200/kelee 各模块
+#   所以「这几个品牌在 DNS 层拦不住」是设计，不是漏。改之前先想清楚。
+# ═══════════════════════════════════════════════════════════════════════════
+
+10.0.0.0/8
+100.64.0.0/10
+12306.cn
+126.net
+127.0.0.0/8
+163.com
+1688.com
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+3322.net
+3322.org
+360buyimg.com
+alibaba.com
+alipay.com
+alipay.com.cn
+alipay.com.hk
+alipaydns.com
+alipayhk.com
+alipayobjects.com
+aliyun.com
+amap.com
+amdc-sibling.alipay.com.cn
+amdc.alipay.com
+amemv.com
+appleid.apple.com
+appleid.apple.com.cn
+autonavi.com
+baidu.com
+bdimg.com
+bilibili.com
+bytecdn.cn
+byteimg.com
+coolapk.com
+ctrip.com
+ddnsfree.com
+dewu.com
+dianping.com
+didiglobal.com
+dig.bdurl.net
+dns.alidns.com
+doh.pub
+douban.com
+doubanio.com
+doubao.com
+douyin.com
+douyinact.com
+douyinact.net
+douyincdn.com
+douyinclips.com
+douyinliving.com
+douyinmusicclips.com
+douyinmusicvideo.com
+douyinpic.com
+douyinshortvideo.com
+douyinstatic.com
+douyinvideo.net
+douyinvod.com
+dtdns.com
+dtdns.net
+duckdns.org
+dyn.com
+dyndns.org
+dynu.com
+dynu.net
+ele.me
+elemecdn.com
+freeddns.org
+gateway.icloud.com
+geo2.adobe.com
+gifshow.com
+goofish.com
+gspe1-ssl.ls.apple.com
+gtimg.cn
+guzzoni.apple.com
+hdslb.com
+httpdns.bdurl.net
+httpdns.volcengine.com
+httpdns.volcengineapi.com
+icloud.com
+icloud.com.cn
+idmsa.apple.com
+idmsa.apple.com.cn
+idouyinpic.com
+idouyinstatic.com
+idouyinvod.com
+iesdouyin.com
+iesdouyin.net
+iqiyi.com
+isnssdk.com
+ixigua.com
+ixiguavideo.com
+jd.com
+kuaishou.com
+localhost.ptlogin2.qq.com
+ly.com
+meituan.com
+meituan.net
+mgtv.com
+mssdk-bu.bytedance.com
+mssdk.bytedance.com
+myddns.rocks
+myqcloud.com
+myqnapcloud.com
+nat123.com
+netease.com
+pddpic.com
+pinduoduo.com
+plex.direct
+pstatp.com
+qiyipic.com
+qpic.cn
+qq.com
+quark.cn
+quickconnect.cn
+quickconnect.to
+qunar.com
+setup.icloud.com
+sinaimg.cn
+slyip.com
+slyip.net
+smzdm.com
+snssdk.com
+synology.cn
+synology.com
+taobao.com
+tencent.com
+tmall.com
+tpddns.cn
+uc.cn
+uve.weibo.com
+wechat.com
+weibo.cn
+weibo.com
+weixin.qq.com
+wps.cn
+xhscdn.com
+xiaohongshu.com
+xiaojukeji.com
+ximalaya.com
+yangkeduo.com
+youku.com
+zhihu.com
+zhimg.com
+zjcdn.com
+# ── 2026-10-24 追加（审计发现，见 curated/对比-v9.9与新配置.md 第十节）──
+# 七鱼客服 SDK 的实际接口域（override 模块里放行的是 qiyukf.com 主域，不够）
+nim.qiyukf.com
+# Apple 系统统计（override 模块的目标域，必须在 DNS 层就排除，否则模块压不住）
+app-analytics-services.com
+# 数美风控 SDK，被广告表收录会可能影响登录风控
+fengkongcloud.com
+# 携程企业域
+ctripcorp.com
+# 快手政企通道
+kuaishouzt.com
+# 已在 bypass_tunnel_proxy 里，但 DNS 会先拒
+id6.me
+# Azure 流量管理（被 domain_keyword "traffic" 误伤，下面同时删掉这个关键词）
+trafficmanager.cn
