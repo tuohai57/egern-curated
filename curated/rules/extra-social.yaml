@@ -1,23 +1,3 @@
-# 社交补充
-# 由 curated/tools/build.py 生成，勿手改。
-# 来源：
-#   - shunt-rules/loon/Reddit.lsr
-#   - shunt-rules/loon/Pinterest.lsr
-#   - shunt-rules/loon/Tumblr.lsr
-#   - shunt-rules/loon/Slack.lsr
-#   - shunt-rules/loon/Notion.lsr
-#   - shunt-rules/loon/Discord.lsr
-#   - shunt-rules/loon/Telegram.lsr
-#   - shunt-rules/loon/Twitter.lsr
-#   - shunt-rules/loon/LinkedIn.lsr
-#   - shunt-rules/loon/Facebook.lsr
-#   - shunt-rules/loon/Instagram.lsr
-#   - shunt-rules/loon/Whatsapp.lsr
-#   - shunt-rules/loon/Line.lsr
-#
-# quixoticheart 的 socialmedia.yaml 已有 Telegram/Twitter/Discord/Line/WhatsApp/FB/IG/LinkedIn，但缺 Reddit / Pinterest / Tumblr / Slack / Notion；这里补上并把前几个的完整域名并进来。
-#
-# 条目：domain_set 7 / domain_suffix_set 689 / domain_keyword_set 6 / domain_wildcard_set 0 / domain_regex_set 0 / ip_cidr_set 65
 no_resolve: true
 domain_set:
 - api.imem.app
@@ -764,9 +744,6 @@ ip_cidr_set:
 - 196.55.216.167/32
 - 199.59.148.0/22
 - 199.96.56.0/21
-- 2001:67c:4e8::/48
-- 2001:b28:f23c::/47
-- 2001:b28:f23f::/48
 - 202.160.128.0/22
 - 203.104.103.0/24
 - 203.104.128.0/19
@@ -774,7 +751,6 @@ ip_cidr_set:
 - 203.174.77.0/24
 - 208.43.122.128/27
 - 209.237.192.0/19
-- 2a0a:f280::/29
 - 3.123.36.126/32
 - 31.13.64.0/18
 - 34.224.0.0/12
@@ -790,3 +766,8 @@ ip_cidr_set:
 - 54.93.124.31/32
 - 69.195.160.0/19
 - 91.108.0.0/16
+ip_cidr6_set:
+- 2001:67c:4e8::/48
+- 2001:b28:f23c::/47
+- 2001:b28:f23f::/48
+- 2a0a:f280::/29

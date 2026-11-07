@@ -1,32 +1,3 @@
-# 流媒体补充
-# 由 curated/tools/build.py 生成，勿手改。
-# 来源：
-#   - shunt-rules/loon/ParamountPlus.lsr
-#   - shunt-rules/loon/Peacock.lsr
-#   - shunt-rules/loon/DiscoveryPlus.lsr
-#   - shunt-rules/loon/ViuTV.lsr
-#   - shunt-rules/loon/LineTV.lsr
-#   - shunt-rules/loon/HBOAsia.lsr
-#   - shunt-rules/loon/HuluJP.lsr
-#   - shunt-rules/loon/HuluUSA.lsr
-#   - shunt-rules/loon/SoundCloud.lsr
-#   - shunt-rules/loon/Deezer.lsr
-#   - shunt-rules/loon/TIDAL.lsr
-#   - shunt-rules/loon/YouTubeMusic.lsr
-#   - shunt-rules/loon/AppleMusic.lsr
-#   - shunt-rules/loon/AppleTV.lsr
-#   - shunt-rules/loon/Netflix.lsr
-#   - shunt-rules/loon/Disney.lsr
-#   - shunt-rules/loon/HBO.lsr
-#   - shunt-rules/loon/Hulu.lsr
-#   - shunt-rules/loon/PrimeVideo.lsr
-#   - shunt-rules/loon/Spotify.lsr
-#   - shunt-rules/loon/YouTube.lsr
-#   - shunt-rules/loon/Twitch.lsr
-#
-# quixoticheart 的 netflix/disney/hbo/hulu/primevideo/youtube/spotify/twitch 只有基础域名；这里补上它没有的 Paramount+ / Peacock / Discovery+ / ViuTV / LineTV / HBO Asia / Hulu 日美 / SoundCloud / Deezer / TIDAL / YouTube Music，并把这些服务的完整域名并进来。
-#
-# 条目：domain_set 61 / domain_suffix_set 560 / domain_keyword_set 10 / domain_wildcard_set 0 / domain_regex_set 0 / ip_cidr_set 1136
 no_resolve: true
 domain_set:
 - 44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
@@ -1176,12 +1147,6 @@ ip_cidr_set:
 - 23.23.189.144/28
 - 23.246.0.0/18
 - 23.78.0.0/16
-- 2402:2a80::/32
-- 2607:fb10::/32
-- 2620:10c:7000::/44
-- 2620:120:e000::/40
-- 2a00:86c0::/32
-- 2a03:5640::/32
 - 3.0.5.224/27
 - 3.0.5.32/29
 - 3.10.127.32/27
@@ -1799,3 +1764,10 @@ ip_cidr_set:
 - 99.80.34.48/28
 - 99.80.34.64/26
 - 99.80.88.0/25
+ip_cidr6_set:
+- 2402:2a80::/32
+- 2607:fb10::/32
+- 2620:10c:7000::/44
+- 2620:120:e000::/40
+- 2a00:86c0::/32
+- 2a03:5640::/32
