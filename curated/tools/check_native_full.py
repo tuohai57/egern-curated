@@ -99,10 +99,10 @@ check(not exact_duplicates,'Exact active processing duplicates remain')
 service_exact=set();service_suffix=set();module_keywords=set()
 def gather(entry):
     kind,f=next(iter(entry.items()))
-    if kind in {'and','or'}:
-        for child in f['match']:gather(child)
-    elif kind=='not':gather(f['match'])
-    elif kind=='domain':service_exact.add(f['match'])
+    # Only actual unconditional rejects count as existing blocking. Routing a
+    # domain through an App policy is not an ad-blocking implementation.
+    if f.get('disabled') or f.get('policy') not in {'REJECT','去广告'}:return
+    if kind=='domain':service_exact.add(f['match'])
     elif kind=='domain_suffix':service_suffix.add(f['match'])
     elif kind=='domain_keyword':module_keywords.add(f['match'])
 for mod,obj in objects:
@@ -112,6 +112,7 @@ for entry in guard['rules']:gather(entry)
 managed=json.loads((ROOT/'curated/managed-rules.json').read_text(encoding='utf-8'))
 for spec in managed['sets']:
     for entry in spec['rules']:
+        if entry['policy'] not in {'REJECT','去广告'}:continue
         if entry['kind']=='domain':service_exact.add(entry['value'])
         elif entry['kind']=='domain_suffix':service_suffix.add(entry['value'])
 ancestors=set()
@@ -119,15 +120,29 @@ for host in service_exact|service_suffix:
     parts=host.split('.')
     ancestors.update('.'.join(parts[i:]) for i in range(len(parts)))
 delta_count=0
+supplement_audit=json.loads((ROOT/'curated/native-full/repository-supplement-audit.json').read_text(encoding='utf-8'))
+protected_exact=set(supplement_audit['protected_exact']);protected_suffix=set(supplement_audit['protected_suffix'])
+protected_ancestors=set()
+for host in protected_exact|protected_suffix:
+    parts=host.split('.')
+    protected_ancestors.update('.'.join(parts[i:]) for i in range(1,len(parts)))
 for spec in M.get('extra_rule_sets',[]):
     delta=yaml.safe_load(path_for(spec).read_text(encoding='utf-8'))
-    check(set(delta)<={'domain_set','domain_suffix_set'},'Supplement contains broad or IP selectors')
+    check(set(delta)<={'domain_set','domain_suffix_set','domain_regex_set'},'Supplement contains undocumented or IP selectors')
     check({k:len(v) for k,v in delta.items()}==spec['counts'],'Supplement count mismatch')
     seen_suffix=set();seen_exact=set()
     for kind,host in sorted(((k,h) for k,values in delta.items() for h in values),key=lambda pair:(pair[1].count('.'),pair[1])):
         delta_count+=1;parts=host.split('.')
+        if kind=='domain_regex_set':
+            pattern(host)
+            expression=re.compile(host)
+            check(all(not expression.fullmatch(h) for h in service_exact|service_suffix|protected_exact|protected_suffix),'Residual shadows owned domain '+host)
+            check(all(not expression.fullmatch('probe.'+h) for h in service_suffix|protected_suffix),'Residual shadows owned suffix '+host)
+            continue
         check(host not in service_exact and not any('.'.join(parts[i:]) in service_suffix for i in range(len(parts))),'Supplement overlaps existing rule '+host)
-        check(kind!='domain_suffix_set' or host not in ancestors,'Supplement covers existing service '+host)
+        check(kind!='domain_suffix_set' or host not in ancestors,'Supplement covers existing reject '+host)
+        check(host not in protected_exact and not any('.'.join(parts[i:]) in protected_suffix for i in range(len(parts))),'Supplement blocks business/processing endpoint '+host)
+        check(kind!='domain_suffix_set' or host not in protected_ancestors,'Supplement parent covers business endpoint '+host)
         check(not any(v and v in host for v in module_keywords),'Supplement shadowed by module keyword '+host)
         check(host not in seen_exact and not any('.'.join(parts[i:]) in seen_suffix for i in range(len(parts))),'Supplement internal duplicate/shadow '+host)
         (seen_suffix if kind=='domain_suffix_set' else seen_exact).add(host)

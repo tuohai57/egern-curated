@@ -12,6 +12,8 @@ on:
       - 'curated/native-full/**'
       - 'curated/tools/check_native_full.py'
       - 'curated/tools/test_native_full.cjs'
+      - 'curated/tools/adblock_model.py'
+      - 'curated/tools/test_adblock_coverage.py'
       - '.github/workflows/check-managed.yml'
   pull_request:
     paths:
@@ -36,3 +38,4 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y jq
       - run: python curated/tools/check_native_full.py
       - run: node curated/tools/test_native_full.cjs
+      - run: python curated/tools/test_adblock_coverage.py

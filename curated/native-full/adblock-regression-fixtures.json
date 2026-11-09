@@ -1,0 +1,27 @@
+{
+  "scope": "Offline domain policy tests. These hosts are not the benchmark catalogue and do not measure App rendering or real response processing.",
+  "block": [
+    "adform.net", "doubleverify.com", "moatads.com", "rubiconproject.com", "adswizz.com", "smartclip.net",
+    "cdn.inspectlet.com", "script.crazyegg.com", "clicktale.net", "t.contentsquare.net",
+    "events.appsflyer.com", "tracking.intl.miui.com", "ad.tencentmusic.com", "pangle.io",
+    "coinimp.net", "jscoinminer.com", "telemetry.appex.bing.net", "office.events.data.microsoft.com",
+    "mobile.pipe.aria.microsoft.com", "metrics.apple.com", "securemetrics.apple.com",
+    "ads5-normal-lf.zijieapi.com", "ads5-normal-lq.zijieapi.com", "open.e.kuaishou.com",
+    "browser-intake-datadoghq.com", "logx.optimizely.com", "events.launchdarkly.com", "events.split.io"
+  ],
+  "allow": [
+    "accounts.google.com", "oauth2.googleapis.com", "firebaseinstallations.googleapis.com",
+    "fcm.googleapis.com", "mtalk.google.com", "api.revenuecat.com", "buy.itunes.apple.com",
+    "chatgpt.com", "auth.openai.com", "api.openai.com", "api.anthropic.com",
+    "ab.chatgpt.com", "api.bilibili.com", "wmapi.meituan.com", "img.meituan.net",
+    "api.mcd.cn", "api-mifit-cn.huami.com", "github.com", "raw.githubusercontent.com",
+    "cdn.jsdelivr.net", "s3.amazonaws.com", "cloudfront.net", "login.microsoftonline.com",
+    "outlook.office365.com", "api.stripe.com", "api.alipay.com", "open.weixin.qq.com", "settings-win.data.microsoft.com"
+  ],
+  "synthetic_residual_checks": [
+    {"host":"new-check.nr-data.net","reject":true},
+    {"host":"bam.nr-data.net","reject":true},
+    {"host":"business-example.amazonaws.com","reject":false},
+    {"host":"login-example.auth0.com","reject":false}
+  ]
+}

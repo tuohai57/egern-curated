@@ -1,5 +1,5 @@
 name: 仓库补充广告规则
-description: QuixoticHeart 原生规则中未与现有规则/金融/必要服务/解密主机交叉的广告域增量。
+description: HaGeZi Multi PRO 完整分类库与 QuixoticHeart 增量；排除金融、必要业务、原模块净化接口及已有拒绝范围。
 rules:
 - rule_set:
     name: 仓库广告域补充
