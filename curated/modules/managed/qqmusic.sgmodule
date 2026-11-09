@@ -1,0 +1,17 @@
+#!name=QQ音乐 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[URL Rewrite]
+^https?:\/\/us\.l\.qq\.com\/exapp - reject
+^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/ - reject
+^https:\/\/music\.y\.qq\.com\/maproxy\/getPbCompressAd - reject
+
+[Map Local]
+^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg data-type=tiny-gif status-code=200
+^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads data-type=tiny-gif status-code=200
+
+[MITM]
+hostname = %APPEND% music.y.qq.com, us.l.qq.com, y.gtimg.cn

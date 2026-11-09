@@ -1,0 +1,50 @@
+#!name=知乎 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partZ/Zhihu.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[URL Rewrite]
+^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card - reject
+^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
+^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) http://$1 302
+^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation - reject
+^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\? - reject
+^https:\/\/www\.zhihu\.com\/api\/v4/(?:answers|questions)\/\d+/related-readings - reject
+^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner - reject
+^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation - reject
+^https:\/\/zhstatic\.zhihu\.com\/brand-ad - reject
+
+[Body Rewrite]
+http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recommend_queries":\{.+\} "recommend_queries":{}
+
+[Map Local]
+^https:\/\/api\.zhihu\.com\/commercial_api\/(?:answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/root\/window data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/me\/guides data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(?:article|answer)\/\d+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/ad-style-service\/request data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+zhihu_1 = type=http-response, pattern=^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_2 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)))https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_3 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)))https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_4 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)))https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_5 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))))https:\/\/api\.zhihu\.com\/root\/tab, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_6 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)))https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_7 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)|(?:^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?)))https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_8 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)|(?:^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?)|(?:^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?)))https:\/\/api\.zhihu\.com\/next-(?:bff|data|render), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_9 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)|(?:^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?)|(?:^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?)|(?:^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render))))https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+zhihu_10 = type=http-response, pattern=^(?!(?:(?:^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)|(?:^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?)|(?:^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?)|(?:^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render))|(?:^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=))))https:\/\/www\.zhihu\.com\/api\/v4\/(?:articles|answers)\/\d+\/recommendations?\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% api.zhihu.com, appcloud2.zhihu.com, page-info.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com

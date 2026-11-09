@@ -1,0 +1,11 @@
+#!name=铁路12306 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://ad\.12306\.cn/ad/ser/getAdList(?:\?.*)?$ '(if type == "object" then del(.materialsList, .advertParam) else . end)'
+
+[MITM]
+hostname = %APPEND% ad.12306.cn

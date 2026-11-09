@@ -1,0 +1,12 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_set:
+- slife.xy-asia.com
+domain_suffix_set:
+- iot-tencent.com
+- servicewechat.com
+- wechat.com
+- wechatlegal.net
+- wechatos.net
+- weixin.com
+- weixinbridge.com
+- weixinsxy.com

@@ -1,0 +1,16 @@
+#!name=美团 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://raw.githubusercontent.com/fmz200/wool_scripts/32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partM/Meituan-MeituanWaimai.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Map Local]
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=tiny-gif status-code=200
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=tiny-gif status-code=200
+^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp data-type=tiny-gif status-code=200
+^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?://wmapi\.meituan\.com/api/v7/(openscreen|startpicture)(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, wmapi.meituan.com

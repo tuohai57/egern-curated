@@ -1,0 +1,6 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- pvp.net
+- riotcdn.net
+- riotgames.com
+- rstatic.net

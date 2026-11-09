@@ -1,0 +1,14 @@
+#!name=京东 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partJ/JD.com.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[URL Rewrite]
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
+
+[Script]
+jd_1 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)(?=&|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6b0a58b8bdbc9213fea6780d.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% api.m.jd.com, dns.jd.com

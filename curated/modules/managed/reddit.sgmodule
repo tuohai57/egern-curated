@@ -1,0 +1,11 @@
+#!name=Reddit · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://gql-fed\.reddit\.com/(?:\?[^#]*)?$ '(def ad: if type=="object" and (.node|type)=="object" then ((.node.__typename=="AdPost") or (.node.adPayload!=null and .node.adPayload!=false) or (if (.node.cells|type)=="array" then any(.node.cells[]; if type=="object" then .__typename=="AdMetadataCell" else false end) else false end)) else false end; if type=="object" and (.data|type)=="object" then .data |= with_entries(.value |= (if type=="object" and (.elements|type)=="object" and (.elements.edges|type)=="array" then .elements.edges |= map(select(ad|not)) else . end)) else . end)'
+
+[MITM]
+hostname = %APPEND% gql-fed.reddit.com

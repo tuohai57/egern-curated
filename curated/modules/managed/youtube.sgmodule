@@ -1,0 +1,13 @@
+#!name=YouTube · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/Maasea/sgmodule@65075cdb388fc5e3094afd7e7314c67b243f3525/YouTube.Enhance.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Script]
+youtube_1 = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/121241f32be213e6384563c1.js,argument="{"captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":false,"debug":false}"
+youtube_2 = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js,argument="{"captionLang":"off"}"
+youtube_3 = type=http-request,pattern=^(?!(?:(?:^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*)))https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com

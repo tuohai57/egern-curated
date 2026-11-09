@@ -1,0 +1,15 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_set:
+- lf3-static.bytednsdoc.com
+- v5-dy-o-abtest.zjcdn.com
+domain_suffix_set:
+- amemv.com
+- douyin.com
+- douyincdn.com
+- douyinpic.com
+- douyinstatic.com
+- douyinvod.com
+- idouyinvod.com
+- iesdouyin.com
+- ixigua.com
+- ixiguavideo.com

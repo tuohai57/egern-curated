@@ -1,0 +1,11 @@
+#!name=麦当劳 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partM/McDonalds.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[URL Rewrite]
+^https://api\.mcd\.cn/bff/portal/home/splash(?:\?[^#]*)?$ - reject
+
+[MITM]
+hostname = %APPEND% api.mcd.cn

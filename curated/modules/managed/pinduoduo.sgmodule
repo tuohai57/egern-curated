@@ -1,0 +1,18 @@
+#!name=拼多多 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partP/Pinduoduo.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[URL Rewrite]
+^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+
+[Body Rewrite]
+http-response ^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ "list":\[.+\] "list":[]
+http-response-jq ^https://api\.pinduoduo\.com/api/alexa/homepage/hub(?:\?.*)?$ '(if type == "object" and (.result | type) == "object" then (if (.result.dy_module | type) == "object" then del(.result.dy_module.irregular_banner_dy) else . end) | (if (.result.module_order | type) == "array" then .result.module_order |= map(select(if type == "object" then .module_name != "ad_module" else true end)) else . end) else . end)'
+
+[Map Local]
+^https?:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% api.pinduoduo.com, api.yangkeduo.com, mobile.yangkeduo.com

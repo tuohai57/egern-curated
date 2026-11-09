@@ -1,0 +1,14 @@
+#!name=美颜相机 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://api\.meiyan\.com/operation/get_config\.json(?:\?[^#]*)?$ '(if type=="object" and (.response|type)=="object" then del(.response.bubble,.response.time_limit) else . end)'
+
+[Map Local]
+^https://api\.meiyan\.com/operation/home_banner\.json(?:\?[^#]*)?$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% api.meiyan.com

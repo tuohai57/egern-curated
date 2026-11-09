@@ -1,0 +1,18 @@
+#!name=快手 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Kuaishou.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? '(delpaths([["reskinConfig"]])) | (delpaths([["sidebarExSquareStyle","moreList"]])) | (delpaths([["sidebarExSquareStyle","topList"]])) | (.sidebarExSquareStyle.commonlyUsedList |= map(select(.title == "设置" or .title == "历史记录" or .title == "草稿箱" or .title == "我的钱包" or .title == "小程序" or .title == "未成年人模式" or .title == "官方客服" or .title == "内容偏好" or .title == "离线模式" or .title == "稍后再看" or .title == "举报中心" or .title == "挂件")))'
+http-response-jq ^https:\/\/az2-live\.ksapisrv\.com\/rest\/n\/live\/feed\/square\/refresh\? '(delpaths([["data","banners"]]))'
+http-response-jq ^https:\/\/az4-api(-idc)?\.ksapisrv\.com\/rest\/n\/feed\/selectionFast\? '(if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end)'
+http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2\? '(delpaths([["postRecommends"]]))'
+
+[Map Local]
+^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% apissl.gifshow.com, apissl.ksapisrv.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com

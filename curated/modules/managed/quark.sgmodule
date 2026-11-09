@@ -1,0 +1,11 @@
+#!name=夸克 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Quark.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Script]
+quark_1 = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6173f4667526702361844fba.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% open-cms-api.quark.cn, open-cms-api.uc.cn

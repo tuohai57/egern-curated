@@ -1,0 +1,9 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- bytedance.com
+- byteimg.cn
+- byteimg.com
+- pstatp.com
+- toutiao.com
+- toutiaoimg.com
+- volcengine.com

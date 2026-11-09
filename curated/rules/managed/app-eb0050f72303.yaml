@@ -1,0 +1,11 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- redd.it
+- reddit.com
+- redditinc.com
+- redditmail.com
+- redditmedia.com
+- redditstatic.com
+- reddituploads.com
+- reddituploads.com.cdn-cf.behance.net
+- reddituploads.com.cdn-cf.dropbox.com

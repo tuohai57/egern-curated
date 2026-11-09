@@ -1,0 +1,12 @@
+#!name=X · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://x\.com/i/api/graphql/[^/?#]+/(?:HomeTimeline|HomeLatestTimeline)(?:\?[^#]*)?$ '(def ad($fragment): if type=="object" then ((if (.entryId|type)=="string" then .entryId|contains($fragment) else false end) or (try (.content.itemContent.promotedMetadata != null and .content.itemContent.promotedMetadata != false) catch false)) else false end; if type=="object" and (.data|type)=="object" and (.data.home|type)=="object" and (.data.home.home_timeline_urt|type)=="object" and (.data.home.home_timeline_urt.instructions|type)=="array" then .data.home.home_timeline_urt.instructions |= map(if type=="object" and (.entries|type)=="array" then .entries |= map(select(ad("promoted-tweet")|not)) else . end) else . end)'
+http-response-jq ^https://x\.com/i/api/graphql/[^/?#]+/TweetDetail(?:\?[^#]*)?$ '(def ad($fragment): if type=="object" then ((if (.entryId|type)=="string" then .entryId|contains($fragment) else false end) or (try (.content.itemContent.promotedMetadata != null and .content.itemContent.promotedMetadata != false) catch false)) else false end; def itemad: if type=="object" then ((if (.entryId|type)=="string" then .entryId|contains("promoted") else false end) or (try ((.item.itemContent.promotedMetadata // .itemContent.promotedMetadata) != null and (.item.itemContent.promotedMetadata // .itemContent.promotedMetadata) != false) catch false)) else false end; if type=="object" and (.data|type)=="object" and (.data.threaded_conversation_with_injections_v2|type)=="object" and (.data.threaded_conversation_with_injections_v2.instructions|type)=="array" then .data.threaded_conversation_with_injections_v2.instructions |= map(if type=="object" and (.entries|type)=="array" then .entries |= map(select(ad("promoted")|not) | if type=="object" and (.content|type)=="object" and (.content.items|type)=="array" then (.content.items|length) as $old | .content.items |= map(select(itemad|not)) | select($old==0 or (.content.items|length)>0) else . end) else . end) else . end)'
+
+[MITM]
+hostname = %APPEND% x.com

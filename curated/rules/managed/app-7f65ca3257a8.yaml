@@ -1,0 +1,20 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- algolia.net
+- auth0.com
+- bintray.com
+- browser-intake-datadoghq.com
+- cloudflareinsights.com
+- datadoghq.com
+- featuregates.org
+- identrust.com
+- intercom.io
+- intercomcdn.com
+- launchdarkly.com
+- observeit.net
+- segment.io
+- sentry-cdn.com
+- sentry.io
+- statsig.com
+- statsigapi.net
+- usefathom.com

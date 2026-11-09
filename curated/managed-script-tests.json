@@ -1,0 +1,857 @@
+{
+  "scope": "Offline JavaScript syntax, synthetic JSON and error preservation; binary runtime and Egern device acceptance unverified",
+  "manifest_sha256": "a65037750293c2678daf5707e473399ec6aa150b6d549c9400f5c6afd3d95b1d",
+  "cases": 212,
+  "passed": 212,
+  "failed": 0,
+  "results": [
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "passed": true
+    },
+    {
+      "name": "hash https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "Coolapk inserted sponsor removed; ordinary post/cursor preserved",
+      "passed": true
+    },
+    {
+      "name": "XHS homefeed sponsored card removed; ordinary note preserved",
+      "passed": true
+    },
+    {
+      "name": "Zhihu hot feed ad removed; normal item and paging preserved",
+      "passed": true
+    },
+    {
+      "name": "Goofish local inserted ad removed; normal listing preserved",
+      "passed": true
+    },
+    {
+      "name": "JD splash display count reset; ordinary data preserved",
+      "passed": true
+    },
+    {
+      "name": "Bilibili splash duration reset; ordinary per-item fields preserved",
+      "passed": true
+    },
+    {
+      "name": "Weibo nonstandard JSON+OK splash response remains valid and ads removed",
+      "passed": true
+    }
+  ]
+}

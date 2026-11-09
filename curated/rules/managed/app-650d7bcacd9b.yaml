@@ -1,0 +1,5 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- tmall.com
+- tmall.hk
+- tmall.ru

@@ -1,0 +1,5 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- apple-cloudkit.com
+- apple-dns.net
+- cdn-apple.com

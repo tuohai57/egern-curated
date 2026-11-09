@@ -1,0 +1,1307 @@
+{
+  "repository": "tuohai57/egern-curated",
+  "branch": "main",
+  "built_on": "2026-11-10",
+  "modules": [
+    {
+      "name": "滴滴净化-维护版",
+      "app": "滴滴",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/didi.sgmodule",
+      "repository_path": "curated/modules/managed/didi.sgmodule",
+      "sha256": "4d50ee9d2d81fdbd5b4ba7e0735ce08a48b38521e478ab32dbc547d51390456b",
+      "hosts": [
+        "common.diditaxi.com.cn",
+        "conf.diditaxi.com.cn",
+        "ct.xiaojukeji.com",
+        "daijia.kuaidadi.com",
+        "freight.xiaojukeji.com",
+        "hd.xiaojukeji.com",
+        "res.xiaojukeji.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https?:\\/\\/hd\\.xiaojukeji\\.com\\/d data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "didi_1 = type=http-response, pattern=^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)))https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)))https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_4 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)))https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_5 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)))https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_6 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)))https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_7 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)))https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_8 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)))https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_9 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)))https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_10 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway)))https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v5, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_11 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v5)))https://(conf|common)\\.diditaxi\\.com\\.cn/other/pGetSceneList(?:\\?|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_12 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v5)|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/other/pGetSceneList(?:\\?|$))))https://(conf|common)\\.diditaxi\\.com\\.cn/homepage/v1/core(?:\\?|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_13 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v5)|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/other/pGetSceneList(?:\\?|$))|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/homepage/v1/core(?:\\?|$))))https://(conf|common)\\.diditaxi\\.com\\.cn/ota/na/yuantu/infoList(?:\\?|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60",
+          "didi_14 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/ct\\.xiaojukeji\\.com\\/agent\\/v3\\/feeds)|(?:^https?:\\/\\/freight\\.xiaojukeji\\.com\\/gateway)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/xpget)|(?:^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/mget)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/homepage\\/v\\d\\/other\\/fast)|(?:^https?:\\/\\/conf\\.diditaxi\\.com\\.cn\\/dynamic\\/conf)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v\\d\\/usercenter\\/me)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway)|(?:^https?:\\/\\/daijia\\.kuaidadi\\.com:443\\/gateway)|(?:^https?:\\/\\/common\\.diditaxi\\.com\\.cn\\/common\\/v5)|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/other/pGetSceneList(?:\\?|$))|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/homepage/v1/core(?:\\?|$))|(?:^https://(conf|common)\\.diditaxi\\.com\\.cn/ota/na/yuantu/infoList(?:\\?|$))))https://(conf|common)\\.diditaxi\\.com\\.cn/gulfstream/passenger\\-center/v2/other/pInTripLayout(?:\\?|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partD/DiDiChuxing.sgmodule",
+      "upstream_sha256": "5d0a483fa1f1d480713da81eb476609cbdfd7c51480edbace7a61024d7d92e40",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "补齐源脚本已实现但原模块遗漏的接口；保留安全中心"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "菜鸟净化-维护版",
+      "app": "菜鸟",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/cainiao.sgmodule",
+      "repository_path": "curated/modules/managed/cainiao.sgmodule",
+      "sha256": "4c47647e84d8c2a35b866a6ab647e1d2e163a2f93c3bd2c1866d89a4ef34044c",
+      "hosts": [
+        "cn-acs.m.cainiao.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads - reject"
+        ],
+        "Map Local": [
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.adkeyword\\.get\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.cncommunity\\.my\\.station\\.query\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads\\.(batch\\.show\\.v2|index)\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbopen\\.miniapp\\.recommend\\.cpc\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbmensa\\.research\\.researchservice\\.(acquire|event|close)\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.(homepage\\.merge|tabbar\\.marketing)\\.get\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.com\\.cainiao\\.cnactivitycenter data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.com\\.cainiao\\.cncreditmarket\\.hit\\.getactivityhit\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.com\\.cainiao\\.longquan\\.place\\.getpageresourcecontent\\.cn data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "cainiao_1 = type=http-response, pattern=^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads\\.m?show\\.cn, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9354f33a4b0fe2c1a0a26b0e.js, requires-body=true, timeout=60",
+          "cainiao_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads\\.m?show\\.cn)))https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.(pickup\\.empty\\.page|protocol\\.homepage)\\.get\\.cn, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9354f33a4b0fe2c1a0a26b0e.js, requires-body=true, timeout=60",
+          "cainiao_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads\\.m?show\\.cn)|(?:^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.(pickup\\.empty\\.page|protocol\\.homepage)\\.get\\.cn)))https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.nbfriend\\.message\\.conversation\\.list\\.cn, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9354f33a4b0fe2c1a0a26b0e.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partC/CaiNiaoGuoGuo.sgmodule",
+      "upstream_sha256": "0af44dbeb0e2b4f7019f5c5df98b886995b81033607cbb6235eff3c890923cf2",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "移除与广告内容无关的共享调度响应处理"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "夸克净化-维护版",
+      "app": "夸克",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/quark.sgmodule",
+      "repository_path": "curated/modules/managed/quark.sgmodule",
+      "sha256": "f7328f05cd1e09a1f4b68205ca1eef41ae69c9ef58a668421c91ed6bd4ef1898",
+      "hosts": [
+        "open-cms-api.quark.cn",
+        "open-cms-api.uc.cn"
+      ],
+      "sections": {
+        "Script": [
+          "quark_1 = type=http-response, pattern=^https?:\\/\\/open-cms-api\\.(uc|quark)\\.cn\\/open-cms, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6173f4667526702361844fba.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Quark.sgmodule",
+      "upstream_sha256": "981f84f68217c94605ba66b16b939ac4718dec0f776a84eb367cee223a30fad2",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "补齐原模块缺失的两个 HTTPS 解密主机"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "TiebaPure净化-维护版",
+      "app": "TiebaPure",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/tieba.sgmodule",
+      "repository_path": "curated/modules/managed/tieba.sgmodule",
+      "sha256": "76a147646606fe02f43640ba1a0f2312c32f8d076912aa3cd70a7b777b8b4c4b",
+      "hosts": [
+        "tiebac.baidu.com"
+      ],
+      "sections": {
+        "Script": [
+          "tieba_1 = type=http-response, pattern=^http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/(c\\/(s\\/sync|f\\/(ad\\/getSplashAd|frs\\/(page|threadlist|generalTabList)|pb\\/(pic)?page|excellent\\/personalized))$|tiebaads\\/commonbatch\\?), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/442d97a9c007066282705070.js, requires-body=true, timeout=10",
+          "tieba_2 = type=http-response, pattern=^(?!(?:(?:^http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/(c\\/(s\\/sync|f\\/(ad\\/getSplashAd|frs\\/(page|threadlist|generalTabList)|pb\\/(pic)?page|excellent\\/personalized))$|tiebaads\\/commonbatch\\?))))http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/c\\/(b\\/ad\\/adBid|f\\/(frs\\/(page|threadlist|generalTabList)|ad\\/getFeedAd|pb\\/page|excellent\\/personalized))\\?cmd, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/acb75416a2dac13fbd25f396.js, requires-body=true, binary-body-mode=true, timeout=10, argument=[\"0\"]"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partB/BaiduTieba.sgmodule",
+      "upstream_sha256": "1eea85e8565df7be750e20ecc3a59f5d96cb5d4abc0a2213e5522eb34155179b",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "酷安净化-维护版",
+      "app": "酷安",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/coolapk.sgmodule",
+      "repository_path": "curated/modules/managed/coolapk.sgmodule",
+      "sha256": "ce7b872810b95fa9271c69167f6a7fbad8aef384191a348491a0dacd69a8f4f9",
+      "hosts": [
+        "api.coolapk.com",
+        "www.coolapk.com"
+      ],
+      "sections": {
+        "Script": [
+          "coolapk_1 = type=http-response, pattern=^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/(detail|replyList)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/df37fc59b4f5f0fa8b138290.js, requires-body=true, timeout=60",
+          "coolapk_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/(detail|replyList)\\?)))https?:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/(dataList|indexV8|init), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/df37fc59b4f5f0fa8b138290.js, requires-body=true, timeout=60",
+          "coolapk_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/(detail|replyList)\\?)|(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/(dataList|indexV8|init))))https?:\\/\\/api\\.coolapk\\.com\\/v6\\/page\\/dataList\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/df37fc59b4f5f0fa8b138290.js, requires-body=true, timeout=60",
+          "coolapk_4 = type=http-request, pattern=^https:\\/\\/www\\.coolapk\\.com\\/link.*, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/66f2bec19c437dd6b6c0fba7.js, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Coolapk.sgmodule",
+      "upstream_sha256": "ea180fdd3495a456612896aecc10b0051023daf4a34396b3f9159cb41a71c2d3",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "QQ音乐净化-维护版",
+      "app": "QQ音乐",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/qqmusic.sgmodule",
+      "repository_path": "curated/modules/managed/qqmusic.sgmodule",
+      "sha256": "1585f74d0a8feb69210d0bcdfd7226b1f74a3ca48c4f89b56121816ef6044af6",
+      "hosts": [
+        "music.y.qq.com",
+        "us.l.qq.com",
+        "y.gtimg.cn"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/us\\.l\\.qq\\.com\\/exapp - reject",
+          "^https?:\\/\\/y\\.gtimg\\.cn\\/music\\/common\\/upload\\/t_splash_info\\/ - reject",
+          "^https:\\/\\/music\\.y\\.qq\\.com\\/maproxy\\/getPbCompressAd - reject"
+        ],
+        "Map Local": [
+          "^https?:\\/\\/y\\.gtimg\\.cn\\/music\\/common\\/\\/upload\\/kg_ad/.*?\\d{4}\\.jpg data-type=tiny-gif status-code=200",
+          "^https?:\\/\\/y\\.gtimg\\.cn\\/music\\/common\\/upload\\/targeted_ads data-type=tiny-gif status-code=200"
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule",
+      "upstream_sha256": "22d9ae859892ace66b99b3f5e5f5f214db60f9657adc5158e1a15dbaf7297d3f",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "删除任意主机通配，保留明确 QQ 音乐广告路径"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "拼多多净化-维护版",
+      "app": "拼多多",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/pinduoduo.sgmodule",
+      "repository_path": "curated/modules/managed/pinduoduo.sgmodule",
+      "sha256": "2dde73afcd8368a7ebc18596408073126db08f8b0d808a73a160636f5938d41a",
+      "hosts": [
+        "api.pinduoduo.com",
+        "api.yangkeduo.com",
+        "mobile.yangkeduo.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/api\\.(pinduoduo|yangkeduo)\\.com\\/api\\/cappuccino\\/splash - reject"
+        ],
+        "Body Rewrite": [
+          "http-response ^https?:\\/\\/mobile\\.yangkeduo\\.com\\/proxy\\/api\\/api\\/express\\/post\\/waybill\\/red_packet\\/goods_list$ \"list\":\\[.+\\] \"list\":[]",
+          "http-response-jq ^https://api\\.pinduoduo\\.com/api/alexa/homepage/hub(?:\\?.*)?$ '(if type == \"object\" and (.result | type) == \"object\" then (if (.result.dy_module | type) == \"object\" then del(.result.dy_module.irregular_banner_dy) else . end) | (if (.result.module_order | type) == \"array\" then .result.module_order |= map(select(if type == \"object\" then .module_name != \"ad_module\" else true end)) else . end) else . end)'"
+        ],
+        "Map Local": [
+          "^https?:\\/\\/api\\.pinduoduo\\.com\\/api\\/aquarius\\/hungary\\/global\\/homepage\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partP/Pinduoduo.sgmodule",
+      "upstream_sha256": "3042090a0b36ab0d248a765e0e6f1737a8d993ecaa6eab16d24145c6447795dc",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "快手净化-维护版",
+      "app": "快手",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/kuaishou.sgmodule",
+      "repository_path": "curated/modules/managed/kuaishou.sgmodule",
+      "sha256": "b77940ee2c95c4f43850b1fae73635cbe3708de694c0d2b94580e80ae381e445",
+      "hosts": [
+        "apissl.gifshow.com",
+        "apissl.ksapisrv.com",
+        "az2-api-idc.ksapisrv.com",
+        "az2-api-js.gifshow.com",
+        "az2-api.ksapisrv.com",
+        "az2-live.ksapisrv.com",
+        "az4-api-idc.ksapisrv.com",
+        "az4-api.ksapisrv.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https:\\/\\/(apissl|az2-api(-js|-idc)?)\\.(gifshow|ksapisrv)\\.com\\/rest\\/system\\/startup\\? '(delpaths([[\"reskinConfig\"]])) | (delpaths([[\"sidebarExSquareStyle\",\"moreList\"]])) | (delpaths([[\"sidebarExSquareStyle\",\"topList\"]])) | (.sidebarExSquareStyle.commonlyUsedList |= map(select(.title == \"设置\" or .title == \"历史记录\" or .title == \"草稿箱\" or .title == \"我的钱包\" or .title == \"小程序\" or .title == \"未成年人模式\" or .title == \"官方客服\" or .title == \"内容偏好\" or .title == \"离线模式\" or .title == \"稍后再看\" or .title == \"举报中心\" or .title == \"挂件\")))'",
+          "http-response-jq ^https:\\/\\/az2-live\\.ksapisrv\\.com\\/rest\\/n\\/live\\/feed\\/square\\/refresh\\? '(delpaths([[\"data\",\"banners\"]]))'",
+          "http-response-jq ^https:\\/\\/az4-api(-idc)?\\.ksapisrv\\.com\\/rest\\/n\\/feed\\/selectionFast\\? '(if (.feeds | type) == \"array\" then .feeds |= map(select(.ad | not)) else . end)'",
+          "http-response-jq ^https:\\/\\/az2-api-js\\.gifshow\\.com\\/rest\\/n\\/user\\/profile\\/v2\\? '(delpaths([[\"postRecommends\"]]))'"
+        ],
+        "Map Local": [
+          "^https:\\/\\/az2-api\\.ksapisrv\\.com\\/rest\\/n\\/taskCenter\\/task\\/report\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/az2-api\\.ksapisrv\\.com\\/rest\\/n\\/ad\\/ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Kuaishou.sgmodule",
+      "upstream_sha256": "a161a725b388c09baeeeeb14c900b20c13bd8d44eb2de3a5c24d2286429c6630",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "京东净化-维护版",
+      "app": "京东",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/jd.sgmodule",
+      "repository_path": "curated/modules/managed/jd.sgmodule",
+      "sha256": "bda6942154ef4046a0659461eb3f195f78f38a76215f0d2a44e8422dd3324cfb",
+      "hosts": [
+        "api.m.jd.com",
+        "dns.jd.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=getWidgetV1052 - reject"
+        ],
+        "Script": [
+          "jd_1 = type=http-response, pattern=^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)(?=&|$), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6b0a58b8bdbc9213fea6780d.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partJ/JD.com.sgmodule",
+      "upstream_sha256": "fa55604eb4a7202fb75b41b6ca6bbfab19f5f2d8cf5f4e830242897778c95222",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "淘宝净化-维护版",
+      "app": "淘宝",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/taobao.sgmodule",
+      "repository_path": "curated/modules/managed/taobao.sgmodule",
+      "sha256": "aba814384a220af98f484a90bb52d6823605e64a0a9956a376e27bfeeab4e598",
+      "hosts": [
+        "acs.m.taobao.com",
+        "guide-acs.m.taobao.com",
+        "poplayer.template.alibaba.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimama\\.etao\\.config\\.query\\/.+?etao_advertise data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimusic\\.common\\.mobileservice\\.startinit data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.etao\\.noah\\.query\\/.+tao_splash data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.film\\.mtopadvertiseapi\\.queryadvertise data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.o2o\\.ad\\.gateway\\.get data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.idle\\.home\\.welcome data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.trip\\.activity\\.querytmsresources data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(volvo\\.secondfloor\\.getconfig|wireless\\.home\\.newface\\.awesome\\.get) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "taobao_1 = type=http-response, pattern=^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/1e913a76b0a0d4d0e247d225.js, requires-body=true, timeout=60",
+          "taobao_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))))https?:\\/\\/poplayer\\.template\\.alibaba\\.com\\/\\w+\\.json, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/1e913a76b0a0d4d0e247d225.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule",
+      "upstream_sha256": "15f461ce0737004a181669637dfa50711960373c70669d9ba1dd74ad7367993c",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "网易云音乐净化-维护版",
+      "app": "网易云音乐",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/neteasemusic.sgmodule",
+      "repository_path": "curated/modules/managed/neteasemusic.sgmodule",
+      "sha256": "26f3cfc5241917601abd6f21332201012df117e4b8ad13b03ba1af13e745e184",
+      "hosts": [
+        "interface*.music.163.com",
+        "interface.music.163.com",
+        "interface3.music.163.com",
+        "interface9.music.163.com",
+        "ipv4.music.163.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/w?e?api\\/(side-bar\\/mini-program\\/music-service\\/account|delivery\\/(batch-deliver|deliver)|moment\\/tab\\/info\\/get|yunbei\\/account\\/entrance\\/get) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/(resource\\/comments?\\/musiciansaid|community\\/friends\\/fans-group\\/artist\\/group\\/get|user\\/sub\\/artist|music\\/songshare\\/text\\/recommend\\/get|mine\\/applet\\/redpoint|resniche\\/position\\/play\\/new\\/get) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/eapi\\/(mlivestream\\/entrance\\/playpage|link\\/(position\\/show\\/strategy|scene\\/show)|ios\\/version|v\\d\\/content\\/exposure\\/comment\\/banner) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "neteasemusic_1 = type=http-response, pattern=^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20",
+          "neteasemusic_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get))))https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20, argument=\"[true,false,true]\"",
+          "neteasemusic_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab)))https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(homepage\\/block\\/page|link\\/page\\/rcmd\\/(resource\\/show|block\\/resource\\/multi\\/refresh)), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20",
+          "neteasemusic_4 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab)|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(homepage\\/block\\/page|link\\/page\\/rcmd\\/(resource\\/show|block\\/resource\\/multi\\/refresh)))))https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/page\\/discovery\\/resource\\/show, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20",
+          "neteasemusic_5 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab)|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(homepage\\/block\\/page|link\\/page\\/rcmd\\/(resource\\/show|block\\/resource\\/multi\\/refresh)))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/page\\/discovery\\/resource\\/show)))https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/position\\/show\\/resource, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20",
+          "neteasemusic_6 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab)|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(homepage\\/block\\/page|link\\/page\\/rcmd\\/(resource\\/show|block\\/resource\\/multi\\/refresh)))|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/page\\/discovery\\/resource\\/show)|(?:^https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/position\\/show\\/resource)))https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/user\\/follow\\/users\\/mixed\\/get, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js, requires-body=true, binary-body-mode=true, timeout=20"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partW/NetEaseCloudMusic.sgmodule",
+      "upstream_sha256": "e6eb44b1db27d67877b6de247f6227cb02240c83117ac9108a4029203405906d",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "去除未定义 PRGG 等参数；保留脚本默认广告处理"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "WPS Office净化-维护版",
+      "app": "WPS Office",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/wps.sgmodule",
+      "repository_path": "curated/modules/managed/wps.sgmodule",
+      "sha256": "d88d1954ff1b6a4843e92b45ef3e5f834ec1260faf348586bf0a8123f9e910e2",
+      "hosts": [
+        "ios.wps.cn",
+        "mobile-pic.cache.iciba.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/ios\\.wps\\.cn\\/ad-statistics-service - reject"
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partW/WPS.sgmodule",
+      "upstream_sha256": "881ef7488ed4ab5e2a08e90f78610092c1bdb9f5f7cb9f7215658553c473c738",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "闲鱼净化-维护版",
+      "app": "闲鱼",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/goofish.sgmodule",
+      "repository_path": "curated/modules/managed/goofish.sgmodule",
+      "sha256": "9c1b50c1e1ec79e13c874c5cee720af8cb8bd07d04c4703df5948876f7d29552",
+      "hosts": [
+        "acs.m.goofish.com",
+        "g-acs.m.goofish.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.playboy\\.recommend\\/1\\.0 - reject"
+        ],
+        "Body Rewrite": [
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\.shade\\/ '(del(.data))'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.user\\.strategy\\.list\\/ '(del(.data))'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.group\\.myself\\.banner\\/ '(.data.bannerList = [])'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.playboy\\.recommend\\/2\\.0 '(.data.recommends = [] | .data.items = [] | .data.next = false)'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.item\\.recommend\\.list\\/ '(.data.cardList = [])'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.fun\\.follow\\.often\\.visit '(.data.sections = [])'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.circle\\.myself\\.banner\\/1\\.0 '(.data.bannerList = [])'",
+          "http-response-jq ^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.circle\\.visited\\/1\\.0 '(.data.visitedCircleList = [])'"
+        ],
+        "Map Local": [
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.item\\.search\\.activate\\/2\\.0 data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\.discover\\/1\\.0 data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.item\\.resell\\.recommendorhotcate\\/1\\.0 data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.idle\\.coin\\.nextfresh\\/1\\.0 data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.item\\.buy\\.feeds data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlecommerce\\.splash\\.ads data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "goofish_1 = type=http-response, pattern=^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_2 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)))https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_3 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)|(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/)))https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.idle\\.user\\.page\\.my\\.adapter\\/, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_4 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)|(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.idle\\.user\\.page\\.my\\.adapter\\/)))https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.circle\\.list\\/1\\.0, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_5 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)|(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.idle\\.user\\.page\\.my\\.adapter\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.circle\\.list\\/1\\.0)))https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.nearby\\.itemdetail\\.enter\\/1\\.0, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_6 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)|(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.idle\\.user\\.page\\.my\\.adapter\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.circle\\.list\\/1\\.0)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.nearby\\.itemdetail\\.enter\\/1\\.0)))https:\\/\\/g-acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\/, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true",
+          "goofish_7 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)|(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.home\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.idle\\.user\\.page\\.my\\.adapter\\/)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.circle\\.list\\/1\\.0)|(?:^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.nearby\\.itemdetail\\.enter\\/1\\.0)|(?:^https:\\/\\/g-acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\/)))https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.local\\.flow\\.plat\\.section, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js, requires-body=true"
+        ]
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/XianYu.sgmodule",
+      "upstream_sha256": "40fb852def1a961a3c48b2ed0eb4f798a52f90a05a905c1b4f51435a8c20e0cf",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "知乎净化-维护版",
+      "app": "知乎",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/zhihu.sgmodule",
+      "repository_path": "curated/modules/managed/zhihu.sgmodule",
+      "sha256": "4314ece7f81d7da6cfd952dd535e6311ab185a4fe1aaa80c49cdca00448040d4",
+      "hosts": [
+        "api.zhihu.com",
+        "appcloud2.zhihu.com",
+        "page-info.zhihu.com",
+        "www.zhihu.com",
+        "zhuanlan.zhihu.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https:\\/\\/api\\.zhihu\\.com\\/unlimited\\/go\\/my_card - reject",
+          "^https:\\/\\/api\\.zhihu\\.com\\/ab\\/api\\/v1\\/products\\/zhihu\\/platforms\\/ios\\/config - reject",
+          "^https:\\/\\/link\\.zhihu\\.com\\/\\?target=(?:https?)?(?:%3A|:)?(?:\\/\\/|%2F%2F)?(.*) http://$1 302",
+          "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/hot_recommendation - reject",
+          "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/mcn\\/v2\\/linkcards\\? - reject",
+          "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4/(?:answers|questions)\\/\\d+/related-readings - reject",
+          "^https:\\/\\/www\\.zhihu\\.com\\/commercial_api\\/banners_v3\\/mobile_banner - reject",
+          "^https:\\/\\/zhuanlan\\.zhihu\\.com\\/api\\/articles\\/\\d+\\/recommendation - reject",
+          "^https:\\/\\/zhstatic\\.zhihu\\.com\\/brand-ad - reject"
+        ],
+        "Body Rewrite": [
+          "http-response ^https:\\/\\/api\\.zhihu\\.com\\/search\\/recommend_query\\/v2\\? \"recommend_queries\":\\{.+\\} \"recommend_queries\":{}"
+        ],
+        "Map Local": [
+          "^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/(?:answer\\/\\d+\\/bottom-v2|article\\/\\d+\\/bottom-v2|banners_v3\\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/content-distribution-core\\/bubble\\/common\\/settings data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/(?:moments\\/lastread|drama\\/hot-drama-list) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/root\\/window data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/(?:bazaar\\/float_window|market\\/popovers_v2) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/me\\/guides data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/search\\/(hot_search|preset_words) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/search\\/related_queries\\/(?:article|answer)\\/\\d+ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/comment_v5\\/(?:articles|answers)\\/\\d+\\/list-headers data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/prague\\/related_suggestion_native\\/feed\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/v5\\.1\\/topics\\/answer\\/\\d+\\/relation data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/ad-style-service\\/request data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/appcloud2\\.zhihu\\.com\\/v3\\/resource\\?group_name=mp data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/api\\.zhihu\\.com\\/distribute\\/rhea\\/qa_ad_card\\/h5\\/recommendation\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "zhihu_1 = type=http-response, pattern=^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_2 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)))https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_3 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)))https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_4 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)))https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_5 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))))https:\\/\\/api\\.zhihu\\.com\\/root\\/tab, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_6 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))|(?:^https:\\/\\/api\\.zhihu\\.com\\/root\\/tab)))https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_7 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))|(?:^https:\\/\\/api\\.zhihu\\.com\\/root\\/tab)|(?:^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?)))https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_8 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))|(?:^https:\\/\\/api\\.zhihu\\.com\\/root\\/tab)|(?:^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\?)))https:\\/\\/api\\.zhihu\\.com\\/next-(?:bff|data|render), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_9 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))|(?:^https:\\/\\/api\\.zhihu\\.com\\/root\\/tab)|(?:^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/next-(?:bff|data|render))))https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true",
+          "zhihu_10 = type=http-response, pattern=^(?!(?:(?:^https:\\/\\/(?:api|page-info)\\.zhihu\\.com\\/(?:answers|articles)\\/v2\\/\\d+)|(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/app_float_layer)|(?:^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))|(?:^https:\\/\\/api\\.zhihu\\.com\\/root\\/tab)|(?:^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\?)|(?:^https:\\/\\/api\\.zhihu\\.com\\/next-(?:bff|data|render))|(?:^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=))))https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/(?:articles|answers)\\/\\d+\\/recommendations?\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js, requires-body=true"
+        ]
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partZ/Zhihu.sgmodule",
+      "upstream_sha256": "4f064915d1efc056df784f24a2f50baaa94f59be4d698597f561fef818b77964",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "保留 MQTT 与服务器推送；补齐 page-info 解密主机"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "小红书净化-维护版",
+      "app": "小红书",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/xiaohongshu.sgmodule",
+      "repository_path": "curated/modules/managed/xiaohongshu.sgmodule",
+      "sha256": "f7cd01d2cd85f16ce6900c820910f12bb6d8489737d423e05b38e1b4b3c7b6b6",
+      "hosts": [
+        "ci.rnote.com",
+        "ci.xiaohongshu.com",
+        "edith.rnote.com",
+        "edith.xiaohongshu.com",
+        "rec.rnote.com",
+        "rec.xiaohongshu.com",
+        "so.rnote.com",
+        "so.xiaohongshu.com",
+        "www.rnote.com",
+        "www.xiaohongshu.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v1\\/surprisebox\\/(?:get_style|open|submit_action) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/www\\.(xiaohongshu|rnote)\\.com\\/api\\/marketing\\/box\\/trigger\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/guide\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/detailfeed\\/preload\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/guide\\/user_banner data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/www\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v\\d+\\/ads\\/resource|v\\d+\\/hey\\/\\w+\\/hey_gallery) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/ci\\.(xiaohongshu|rnote)\\.com\\/system_config\\/watermark data-type=tiny-gif status-code=200"
+        ],
+        "Script": [
+          "xiaohongshu_1 = type=http-response, pattern=^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)))https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)))https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_4 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)))https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_5 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)))https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_6 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)))https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_7 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)))https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_8 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save))))https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_9 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save))|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)))https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_10 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save))|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\?)))https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_11 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save))|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\?)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\?)))https:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v5\\/note\\/comment\\/list|v3\\/note\\/comment\\/sub_comments)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60",
+          "xiaohongshu_12 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner|hot)_list)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\?)|(?:^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)|(?:^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save))|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\?)|(?:^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\?)|(?:^https:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v5\\/note\\/comment\\/list|v3\\/note\\/comment\\/sub_comments)\\?)))https:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v1\\/interaction\\/comment\\/video\\/download\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js, requires-body=true, timeout=60"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/Xiaohongshu.sgmodule",
+      "upstream_sha256": "dbf403bbd1261a6474d8a0b8df4ea89adbaa8611a6dd775a01df5de6848540f8",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "YouTube净化-维护版",
+      "app": "YouTube",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/youtube.sgmodule",
+      "repository_path": "curated/modules/managed/youtube.sgmodule",
+      "sha256": "df286172263e7de6ff44a2cd738274f1dd29ab023e84440214b7884e1130617f",
+      "hosts": [
+        "*.googlevideo.com",
+        "youtubei.googleapis.com"
+      ],
+      "sections": {
+        "Script": [
+          "youtube_1 = type=http-response,pattern=^https:\\/\\/youtubei\\.googleapis\\.com\\/(youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch|log_event|config))(\\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/121241f32be213e6384563c1.js,argument=\"{\"captionLang\":\"off\",\"blockUpload\":true,\"blockImmersive\":true,\"blockShorts\":false,\"debug\":false}\"",
+          "youtube_2 = type=http-request,pattern=^https?:\\/\\/[\\w-]+\\.googlevideo\\.com\\/initplayback.+&ack.*,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js,argument=\"{\"captionLang\":\"off\"}\"",
+          "youtube_3 = type=http-request,pattern=^(?!(?:(?:^https?:\\/\\/[\\w-]+\\.googlevideo\\.com\\/initplayback.+&ack.*)))https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/log_event,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/Maasea/sgmodule@65075cdb388fc5e3094afd7e7314c67b243f3525/YouTube.Enhance.sgmodule",
+      "upstream_sha256": "9c7464733c54417da36aff09482d1287cee5ecd531ad856842912704b5b3f64d",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "哔哩哔哩净化-维护版",
+      "app": "哔哩哔哩",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/bilibili.sgmodule",
+      "repository_path": "curated/modules/managed/bilibili.sgmodule",
+      "sha256": "f6b07650bbaa1f4d0fdf6a87813c0867b9f474567b9727ba65cbbee35a1e25d5",
+      "hosts": [
+        "app.bilibili.com",
+        "grpc.biliapi.net"
+      ],
+      "sections": {
+        "Header Rewrite": [
+          "http-request ^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index) header-del x-tf-isp",
+          "http-request ^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index) header-add x-tf-isp cm",
+          "http-request ^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.show\\.v1 header-replace x-bili-network-bin CAIQBBoGbW9iaWxl",
+          "http-request ^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(view|viewunite)\\.v1\\.View\\/(View|ViewProgress)$ header-replace x-bili-network-bin CAIQBBoGbW9iaWxl",
+          "http-request ^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.playurl\\.v1\\.PlayURL\\/PlayView header-replace x-bili-network-bin CAIQBBoGbW9iaWxl",
+          "http-request ^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.polymer\\.app\\.search\\.v1\\.Search\\/SearchAll$ header-replace x-bili-network-bin CAIQBBoGbW9iaWxl",
+          "http-request ^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.pgc\\.gateway\\.player\\.v2\\.PlayURL\\/PlayView header-replace x-bili-network-bin CAIQBBoGbW9iaWxl"
+        ],
+        "Script": [
+          "bilibili_1 = type=http-response,pattern=^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index),requires-body=1,max-size=-1,binary-body-mode=0,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/af839a87c830afff9100a73f.js",
+          "bilibili_2 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+          "bilibili_3 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView)))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+          "bilibili_4 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus)))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(view|viewunite)\\.v1\\.View\\/(View|ViewProgress)$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+          "bilibili_5 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(view|viewunite)\\.v1\\.View\\/(View|ViewProgress)$)))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.main\\.community\\.reply\\.v1\\.Reply\\/MainList,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+          "bilibili_6 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(view|viewunite)\\.v1\\.View\\/(View|ViewProgress)$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.main\\.community\\.reply\\.v1\\.Reply\\/MainList)))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.polymer\\.app\\.search\\.v1\\.Search\\/SearchAll$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+          "bilibili_7 = type=http-response,pattern=^(?!(?:(?:^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/(splash|search\\?|feed\\/index))|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.community\\.service\\.dm\\.v1\\.DM\\/DmView)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(view|viewunite)\\.v1\\.View\\/(View|ViewProgress)$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.main\\.community\\.reply\\.v1\\.Reply\\/MainList)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.polymer\\.app\\.search\\.v1\\.Search\\/SearchAll$)))https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.dynamic\\.v2\\.Dynamic\\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/Maasea/sgmodule@65075cdb388fc5e3094afd7e7314c67b243f3525/Bilibili.Helper.sgmodule",
+      "upstream_sha256": "b36c490e8363b56924601007ba4a3381c1415148edca080e6ac863ba64637983",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "微博净化-维护版",
+      "app": "微博",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/weibo.sgmodule",
+      "repository_path": "curated/modules/managed/weibo.sgmodule",
+      "sha256": "5c7e4fa748d2bb46d8e1b86bb8089a2e5e87c78a204ed93173968ae8650fa265",
+      "hosts": [
+        "api.weibo.cn",
+        "api.weibo.com",
+        "bootpreload.uve.weibo.com",
+        "bootrealtime.uve.weibo.com",
+        "card.weibo.com",
+        "mapi.weibo.cn",
+        "mapi.weibo.com",
+        "sdkapp.uve.weibo.com",
+        "wbapp.uve.weibo.com",
+        "weibo.com",
+        "weibointl.api.weibo.cn",
+        "weibointl.api.weibo.com"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https?:\\/\\/sdkapp\\.uve\\.weibo\\.com\\/interface\\/sdk\\/(get-lbs-cell-info\\.php|sdkconfig\\.php) - reject",
+          "^https:\\/\\/api\\.weibo\\.cn\\/2\\/logservice\\/service\\? - reject"
+        ],
+        "Body Rewrite": [
+          "http-response-jq ^https?:\\/\\/weibointl\\.api\\.weibo\\.cn\\/portal\\.php\\?a=trends& '(del(.data.banner))'"
+        ],
+        "Map Local": [
+          "^https?:\\/\\/api\\.weibo\\.c(n|om)\\/\\d\\/ad\\/weibointl\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/weibointl\\.api\\.weibo\\.c(n|om)\\/portal\\.php\\?a=hot_search_users data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/weibointl\\.api\\.weibo\\.c(n|om)\\/portal\\.php\\?a=get_searching_info data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/weibointl\\.api\\.weibo\\.c(n|om)\\/portal\\.php\\?a=treehole&auth= data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/!\\/huati\\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/bootrealtime\\.uve\\.weibo\\.com\\/v\\d\\/ad\\/realtime data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/bootpreload\\.uve\\.weibo\\.com\\/v\\d\\/ad\\/preload data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/card\\.weibo\\.com\\/article\\/m\\/aj\\/(reward|uvead)\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/weibo\\.com\\/ttarticle\\/x\\/m\\/aj\\/(reward|uvead)\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/!\\/huati\\/discovery_home_bottom_channels data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/!\\/chaohua\\/discovery\\/home_bottom\\/switch data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/!\\/was\\/finder\\/searchbarchange\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [
+          "weibo_1 = type=http-response, pattern=^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_2 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_3 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_4 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_5 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_6 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_7 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_8 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_9 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_10 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/(container_detail_comment|container_detail_mix)\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_11 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/(container_detail_comment|container_detail_mix)\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail_forward\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js, requires-body=true, timeout=60",
+          "weibo_12 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/(container_detail_comment|container_detail_mix)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail_forward\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/repost_timeline\\?, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/652a5dcfe9f17cf15e4a77c6.js, requires-body=true, timeout=60",
+          "weibo_13 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/(container_detail_comment|container_detail_mix)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail_forward\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/repost_timeline\\?)))https?:\\/\\/m?api\\.weibo\\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|(\\!/)?live/media_homelist|comments/build_comments|container/get_item), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/652a5dcfe9f17cf15e4a77c6.js, requires-body=true, timeout=60",
+          "weibo_14 = type=http-response, pattern=^(?!(?:(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/search\\/(finder|container_timeline|container_discover)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/(page|flowpage)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/searchall\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topicpage\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_timeline_topic\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/extend\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/groups\\/allgroups\\/v2)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/comments\\/mix_comments\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/(container_detail_comment|container_detail_mix)\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/container_detail_forward\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)\\/2\\/statuses\\/repost_timeline\\?)|(?:^https?:\\/\\/m?api\\.weibo\\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|(\\!/)?live/media_homelist|comments/build_comments|container/get_item))))https?:\\/\\/(sdk|wb)app\\.uve\\.weibo\\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/4445221301ccf3ee019f3929.js, requires-body=true, timeout=60"
+        ]
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/weibo.module",
+      "upstream_sha256": "cbb427d9bbf7fbe1c3b7a383693f2291eeb97cdf3107e13f9e902f7ca5a266fd",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "保留信息流/评论/热搜脚本；修正重复脚本名；移除失效的图标会员依赖；保留普通推送"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "美团净化-维护版",
+      "app": "美团",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/meituan.sgmodule",
+      "repository_path": "curated/modules/managed/meituan.sgmodule",
+      "sha256": "f82d0aecb6886e075c58dc2d32fb31b6f99db7955e92171773be00c1b4fd8198",
+      "hosts": [
+        "flowplus.meituan.net",
+        "img.meituan.net",
+        "s3plus.meituan.net",
+        "wmapi.meituan.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4) data-type=tiny-gif status-code=200",
+          "^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg data-type=tiny-gif status-code=200",
+          "^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp data-type=tiny-gif status-code=200",
+          "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?:\\/\\/s3plus\\.meituan\\.net\\/v1\\/mss_\\w+\\/(brandcpt-vedio|waimai-alita)\\/\\w+\\.zip$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https?://wmapi\\.meituan\\.com/api/v7/(openscreen|startpicture)(?:\\?|$) data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partM/Meituan-MeituanWaimai.sgmodule",
+      "upstream_sha256": "dafef6d577651c2e9639cdf2f863bada9572b41a0bd30f0b892c26c84fa20857",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "补齐外卖 API 解密主机；保留正常 loadInfo 初始化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "铁路12306净化-维护版",
+      "app": "铁路12306",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/12306.sgmodule",
+      "repository_path": "curated/modules/managed/12306.sgmodule",
+      "sha256": "95089ec714b34de888f527bc825560956a6b647440eaf57f48b64eb31b322faf",
+      "hosts": [
+        "ad.12306.cn"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://ad\\.12306\\.cn/ad/ser/getAdList(?:\\?.*)?$ '(if type == \"object\" then del(.materialsList, .advertParam) else . end)'"
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "网易邮箱大师净化-维护版",
+      "app": "网易邮箱大师",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mailmaster.sgmodule",
+      "repository_path": "curated/modules/managed/mailmaster.sgmodule",
+      "sha256": "e26a816b40b79fabf420c0594eae41b5c590707bdf51df2b39492a0ff674f324",
+      "hosts": [
+        "appconf.mail.163.com",
+        "g1.163.com",
+        "nex.163.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://appconf\\.mail\\.163\\.com/mailmaster/api/page/v2/conf\\.do(?:\\?.*)?$ '(if type == \"object\" and (.data | type) == \"object\" then del(.data.activityTabInfoList) else . end)'",
+          "http-response-jq ^https://appconf\\.mail\\.163\\.com/mailmaster/api/config/function\\.do(?:\\?.*)?$ '(if type == \"object\" and (.data | type) == \"object\" and (.data.config | type) == \"array\" then .data.config |= map(select(if type == \"object\" then .functionName != \"Function-AD\" else true end)) else . end)'"
+        ],
+        "URL Rewrite": [
+          "^https?://nex\\.163\\.com/q(?:\\?|$) - reject",
+          "^https?://g1\\.163\\.com/madfeedback(?:\\?|$) - reject"
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "保留邮箱配置净化；移除原邮箱模块混入的音乐封面/课程/音乐接口，避免跨模块冲突"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "小黑盒净化-维护版",
+      "app": "小黑盒",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/heybox.sgmodule",
+      "repository_path": "curated/modules/managed/heybox.sgmodule",
+      "sha256": "f564bc878c4707b361247290f6aa261bfaf5246f7c0e86270781a480a02efb44",
+      "hosts": [
+        "api.xiaoheihe.cn"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://api\\.xiaoheihe\\.cn/bbs/app/feeds/news(?:\\?.*)?$ '(if type == \"object\" and (.result | type) == \"object\" and (.result.links | type) == \"array\" then .result.links |= map(select(if type == \"object\" then .content_type != 27 else true end)) else . end)'"
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "美颜相机净化-维护版",
+      "app": "美颜相机",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/meiyan.sgmodule",
+      "repository_path": "curated/modules/managed/meiyan.sgmodule",
+      "sha256": "eb13f1013b29de353869cfe442233387097b4de492de3cbe805f391f8569234e",
+      "hosts": [
+        "api.meiyan.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://api\\.meiyan\\.com/operation/get_config\\.json(?:\\?[^#]*)?$ '(if type==\"object\" and (.response|type)==\"object\" then del(.response.bubble,.response.time_limit) else . end)'"
+        ],
+        "Map Local": [
+          "^https://api\\.meiyan\\.com/operation/home_banner\\.json(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "大麦净化-维护版",
+      "app": "大麦",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/damai.sgmodule",
+      "repository_path": "curated/modules/managed/damai.sgmodule",
+      "sha256": "8b05d1765a8155182ea1245cae08993d7fbac52c9e322cf622fbbe80b3fa036c",
+      "hosts": [
+        "acs.m.taobao.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.wireless\\.user\\.my\\.content\\.get(?:/[^?#]*)?(?:\\?[^#]*)?$ '(if type==\"object\" and (.data|type)==\"object\" then del(.data.banner) else . end)'"
+        ],
+        "Map Local": [
+          "^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.wireless\\.home\\.welcome(?:/[^?#]*)?(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.mec\\.popup\\.get(?:/[^?#]*)?(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "X净化-维护版",
+      "app": "X",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/x.sgmodule",
+      "repository_path": "curated/modules/managed/x.sgmodule",
+      "sha256": "cdc9cd760c5c61c4f70f6e68c11f6bf9e9a79897c95d0650779cefd5fbc88ffc",
+      "hosts": [
+        "x.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://x\\.com/i/api/graphql/[^/?#]+/(?:HomeTimeline|HomeLatestTimeline)(?:\\?[^#]*)?$ '(def ad($fragment): if type==\"object\" then ((if (.entryId|type)==\"string\" then .entryId|contains($fragment) else false end) or (try (.content.itemContent.promotedMetadata != null and .content.itemContent.promotedMetadata != false) catch false)) else false end; if type==\"object\" and (.data|type)==\"object\" and (.data.home|type)==\"object\" and (.data.home.home_timeline_urt|type)==\"object\" and (.data.home.home_timeline_urt.instructions|type)==\"array\" then .data.home.home_timeline_urt.instructions |= map(if type==\"object\" and (.entries|type)==\"array\" then .entries |= map(select(ad(\"promoted-tweet\")|not)) else . end) else . end)'",
+          "http-response-jq ^https://x\\.com/i/api/graphql/[^/?#]+/TweetDetail(?:\\?[^#]*)?$ '(def ad($fragment): if type==\"object\" then ((if (.entryId|type)==\"string\" then .entryId|contains($fragment) else false end) or (try (.content.itemContent.promotedMetadata != null and .content.itemContent.promotedMetadata != false) catch false)) else false end; def itemad: if type==\"object\" then ((if (.entryId|type)==\"string\" then .entryId|contains(\"promoted\") else false end) or (try ((.item.itemContent.promotedMetadata // .itemContent.promotedMetadata) != null and (.item.itemContent.promotedMetadata // .itemContent.promotedMetadata) != false) catch false)) else false end; if type==\"object\" and (.data|type)==\"object\" and (.data.threaded_conversation_with_injections_v2|type)==\"object\" and (.data.threaded_conversation_with_injections_v2.instructions|type)==\"array\" then .data.threaded_conversation_with_injections_v2.instructions |= map(if type==\"object\" and (.entries|type)==\"array\" then .entries |= map(select(ad(\"promoted\")|not) | if type==\"object\" and (.content|type)==\"object\" and (.content.items|type)==\"array\" then (.content.items|length) as $old | .content.items |= map(select(itemad|not)) | select($old==0 or (.content.items|length)>0) else . end) else . end) else . end)'"
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "Reddit净化-维护版",
+      "app": "Reddit",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/reddit.sgmodule",
+      "repository_path": "curated/modules/managed/reddit.sgmodule",
+      "sha256": "e25e434f2a96572fe8a4129b45d814039ee2df93fa291b57e31e3813407c98ac",
+      "hosts": [
+        "gql-fed.reddit.com"
+      ],
+      "sections": {
+        "Body Rewrite": [
+          "http-response-jq ^https://gql-fed\\.reddit\\.com/(?:\\?[^#]*)?$ '(def ad: if type==\"object\" and (.node|type)==\"object\" then ((.node.__typename==\"AdPost\") or (.node.adPayload!=null and .node.adPayload!=false) or (if (.node.cells|type)==\"array\" then any(.node.cells[]; if type==\"object\" then .__typename==\"AdMetadataCell\" else false end) else false end)) else false end; if type==\"object\" and (.data|type)==\"object\" then .data |= with_entries(.value |= (if type==\"object\" and (.elements|type)==\"object\" and (.elements.edges|type)==\"array\" then .elements.edges |= map(select(ad|not)) else . end)) else . end)'"
+        ],
+        "Script": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "微信净化-维护版",
+      "app": "微信",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/app-81b430b69643.sgmodule",
+      "repository_path": "curated/modules/managed/app-81b430b69643.sgmodule",
+      "sha256": "195d28a728388163c46cce5906291d3a86c7a379bfe25dee45fe9e4e75abe5a2",
+      "hosts": [
+        "mp.weixin.qq.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https://mp\\.weixin\\.qq\\.com/mp/getappmsgad(?:\\?.*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "汽车之家净化-维护版",
+      "app": "汽车之家",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/app-44c4621de395.sgmodule",
+      "repository_path": "curated/modules/managed/app-44c4621de395.sgmodule",
+      "sha256": "8f243c4b21e55ce4830ece5e0065c27aeb7f76601e44b41ba3326ee76fc2bd21",
+      "hosts": [
+        "adproxy.autohome.com.cn",
+        "pcmx.autohome.com.cn"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https://adproxy\\.autohome\\.com\\.cn/AdvertiseService/AppHandler\\.ashx(?:\\?.*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https://pcmx\\.autohome\\.com\\.cn/queryCreativeList(?:\\?.*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "米家净化-维护版",
+      "app": "米家",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mijia.sgmodule",
+      "repository_path": "curated/modules/managed/mijia.sgmodule",
+      "sha256": "996c5e03754651ec0396f21622450f6f53b64cb93c50d107a5f06e79532d7ae0",
+      "hosts": [
+        "home.mi.com"
+      ],
+      "sections": {
+        "Map Local": [
+          "^https://home\\.mi\\.com/cgi-op/api/v1/recommendation/(?:banner|carousel/banners|openingBanner)(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+          "^https://home\\.mi\\.com/cgi-op/api/v1/resource/realtime/openingBanner(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": null,
+      "upstream_sha256": null,
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    },
+    {
+      "name": "麦当劳净化-维护版",
+      "app": "麦当劳",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mcdonalds.sgmodule",
+      "repository_path": "curated/modules/managed/mcdonalds.sgmodule",
+      "sha256": "55ff4f8a8dcdb9beaea14c8afe131bca5fdf6a50932a966548108ba2a08d98ac",
+      "hosts": [
+        "api.mcd.cn"
+      ],
+      "sections": {
+        "URL Rewrite": [
+          "^https://api\\.mcd\\.cn/bff/portal/home/splash(?:\\?[^#]*)?$ - reject"
+        ],
+        "Script": [],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partM/McDonalds.sgmodule",
+      "upstream_sha256": "2615e123bb16a83fa01c6eff2e786c5da5288813c3666717ab57645d5c63582a",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+      ],
+      "device_verified": false
+    }
+  ],
+  "dependencies": [
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js",
+      "repository_path": "curated/scripts/managed/dc3b4afcbd70554786cf220a.js",
+      "sha256": "dc3b4afcbd70554786cf220af20762253be7f8889dc6a4b78597f133f46dc191",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "upstream_sha256": "c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9354f33a4b0fe2c1a0a26b0e.js",
+      "repository_path": "curated/scripts/managed/9354f33a4b0fe2c1a0a26b0e.js",
+      "sha256": "9354f33a4b0fe2c1a0a26b0eeb0ea7bb73e94ee911c1e14c4fc348f6a367c220",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "upstream_sha256": "76fe899db1e045aaff2d71d6ff3c58cb665bac52a5996ff20e56079a02a6451c",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6173f4667526702361844fba.js",
+      "repository_path": "curated/scripts/managed/6173f4667526702361844fba.js",
+      "sha256": "6173f4667526702361844fbab54aee5173c0470e6a882e37fe0e2d227671e30a",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "upstream_sha256": "a80632f4308d8971f2ee1b42cb1b2c3b72c90ec5619ed33849fcc0fcbf0f1bcc",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/442d97a9c007066282705070.js",
+      "repository_path": "curated/scripts/managed/442d97a9c007066282705070.js",
+      "sha256": "442d97a9c007066282705070ce6496f4d0c02a3ca8e85098506f6fc5b3b4eb6a",
+      "upstream_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "upstream_sha256": "91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/acb75416a2dac13fbd25f396.js",
+      "repository_path": "curated/scripts/managed/acb75416a2dac13fbd25f396.js",
+      "sha256": "acb75416a2dac13fbd25f396d96f5856bb86bd40e083416af97818b4f0047518",
+      "upstream_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "upstream_sha256": "6015d737870b6d89c38a0181479ed715e07d11b5a2c3746f96f95e25835e8610",
+      "binary": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/df37fc59b4f5f0fa8b138290.js",
+      "repository_path": "curated/scripts/managed/df37fc59b4f5f0fa8b138290.js",
+      "sha256": "df37fc59b4f5f0fa8b138290242db1545578a117888936b3b422f9e9edb30677",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "upstream_sha256": "58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/66f2bec19c437dd6b6c0fba7.js",
+      "repository_path": "curated/scripts/managed/66f2bec19c437dd6b6c0fba7.js",
+      "sha256": "66f2bec19c437dd6b6c0fba7cdb973333058a68729837450ce261db648d50e20",
+      "upstream_url": "https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js",
+      "upstream_sha256": "b4932011870422c8bc7b2d895ee3f6be44a87cbfd37b0ed2c60d8ba551523cae",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/6b0a58b8bdbc9213fea6780d.js",
+      "repository_path": "curated/scripts/managed/6b0a58b8bdbc9213fea6780d.js",
+      "sha256": "6b0a58b8bdbc9213fea6780de511cb2aa976452aaa2138745328a5668b3bc496",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "upstream_sha256": "3e7cc975f8985a4d2dbdbdefc405d0e3e6c9c07bf3c5361da1ecae206b6c04a1",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/1e913a76b0a0d4d0e247d225.js",
+      "repository_path": "curated/scripts/managed/1e913a76b0a0d4d0e247d225.js",
+      "sha256": "1e913a76b0a0d4d0e247d2250a7a4fbad3ee8f4c1b1c8addd86641a3be6b77e0",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "upstream_sha256": "4cf62100424886068a5470daecec319e93ccd034c647d79a9daaa72bbbc341bb",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/e5727384c65df2a56e04fa91.js",
+      "repository_path": "curated/scripts/managed/e5727384c65df2a56e04fa91.js",
+      "sha256": "e5727384c65df2a56e04fa9191cb1b4e7d7e3e7412fa3f9ab0dec2c8bd243888",
+      "upstream_url": "https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "upstream_sha256": "b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393",
+      "binary": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/2905d481349e60c3fcd9140f.js",
+      "repository_path": "curated/scripts/managed/2905d481349e60c3fcd9140f.js",
+      "sha256": "2905d481349e60c3fcd9140f6526321a7706dbd66a69574c6ed1dc50f00e7ded",
+      "upstream_url": "https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "upstream_sha256": "d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/bd9885047a94764e52488a5c.js",
+      "repository_path": "curated/scripts/managed/bd9885047a94764e52488a5c.js",
+      "sha256": "bd9885047a94764e52488a5c0f452cfa50b7a395a598987eb992d7328757ca97",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "upstream_sha256": "544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js",
+      "repository_path": "curated/scripts/managed/7ce1ca6ddc4cfe3221aa2dbf.js",
+      "sha256": "7ce1ca6ddc4cfe3221aa2dbf360263d3d6bfbde8282350360eeeee89dda8d421",
+      "upstream_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "upstream_sha256": "318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/121241f32be213e6384563c1.js",
+      "repository_path": "curated/scripts/managed/121241f32be213e6384563c1.js",
+      "sha256": "121241f32be213e6384563c1dcc0e595eaf582d4e2ab392bc05e1d7e49b17ca4",
+      "upstream_url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js",
+      "upstream_sha256": "f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12",
+      "binary": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js",
+      "repository_path": "curated/scripts/managed/9053b5acef0a4cf0b47f7d46.js",
+      "sha256": "9053b5acef0a4cf0b47f7d4649061fa40bd0dff7cadb76035e124002ea5e0b8b",
+      "upstream_url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js",
+      "upstream_sha256": "3ecca15e06e76a31720092c581180f648ef2c45e494644941ba985c878efbb26",
+      "binary": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/af839a87c830afff9100a73f.js",
+      "repository_path": "curated/scripts/managed/af839a87c830afff9100a73f.js",
+      "sha256": "af839a87c830afff9100a73fd742299007cda046c5a952c5912eff0fbfc11f3e",
+      "upstream_url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js",
+      "upstream_sha256": "3793d69427a221762e955c7fae44c8dfe1c3f0a93a50d2dd5b63d546060ea90f",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+      "repository_path": "curated/scripts/managed/91ab498e5c752b7b605bb9a6.js",
+      "sha256": "91ab498e5c752b7b605bb9a6cee12e8dabb92130ba1a83039ef438aca211eb3b",
+      "upstream_url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.js",
+      "upstream_sha256": "593098fdeb6c8bdb32f5773bfd574e5de57c765875438c9dbf1ac4fbd202d9cf",
+      "binary": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/c701a411ee6be8e2e15082c2.js",
+      "repository_path": "curated/scripts/managed/c701a411ee6be8e2e15082c2.js",
+      "sha256": "c701a411ee6be8e2e15082c2026da6d8e1e1df240bcd79a0dd7cb46020c791df",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js",
+      "upstream_sha256": "0f1f3eba5b2c96f4f089525ad033b578b6a18a2fd99eb95409e5b0816f4a4b34",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/652a5dcfe9f17cf15e4a77c6.js",
+      "repository_path": "curated/scripts/managed/652a5dcfe9f17cf15e4a77c6.js",
+      "sha256": "652a5dcfe9f17cf15e4a77c6d02a0b8f067eafb5d6f592332b04b619b4334b56",
+      "upstream_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js",
+      "upstream_sha256": "b5e6312938588ccdc6fe50a77fd9db75c002a027dbfcebb4337d7353000a3b52",
+      "binary": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/4445221301ccf3ee019f3929.js",
+      "repository_path": "curated/scripts/managed/4445221301ccf3ee019f3929.js",
+      "sha256": "4445221301ccf3ee019f39291847cfa49b828d755ee2d7c0b059fdf02c7ad3fc",
+      "upstream_url": "https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "upstream_sha256": "1ebea73aa974503abf72371cd32bdda86975dbad9beaf4c6f648db6debb75fa6",
+      "binary": false
+    }
+  ],
+  "extra_ad_rules": [
+    {
+      "kind": "domain",
+      "value": "adstats.tencentmusic.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "ad.tencentmusic.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "tmeadcomm.y.qq.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "ad.tencentmusic.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "adstats.tencentmusic.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "tmead.y.qq.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "gdt.qq.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "v.gdt.qq.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "xs.gdt.qq.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partQ/QQMusic.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "cm.ad.gifshow.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partK/Kuaishou.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "jzt.jd.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partJ/JD.com.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "ad.3.cn",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partJ/JD.com.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "h-adashx.ut.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "adashbc.ut.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "adash-c.ut.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "adashxgc.ut.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "m-adash.m.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "adashbc.m.taobao.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partT/Taobao.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "ads-img-qc.xhscdn.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/Xiaohongshu.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "ads-video-al.xhscdn.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/Xiaohongshu.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "ads-video-qc.xhscdn.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/Xiaohongshu.sgmodule"
+    },
+    {
+      "kind": "domain",
+      "value": "t-ads.xiaohongshu.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partX/Xiaohongshu.sgmodule"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "ads.viber.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/weibo.module"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "ads-d.viber.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/weibo.module"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "ads.aws.viber.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/weibo.module"
+    },
+    {
+      "kind": "domain_suffix",
+      "value": "ad.weibo.com",
+      "source_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/weibo.module"
+    }
+  ],
+  "update_interval": 86400,
+  "phone_verified": false,
+  "scope": "Public resources only; no nodes, subscriptions, CA or personal configuration."
+}

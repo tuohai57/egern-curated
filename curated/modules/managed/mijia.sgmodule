@@ -1,0 +1,12 @@
+#!name=米家 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Map Local]
+^https://home\.mi\.com/cgi-op/api/v1/recommendation/(?:banner|carousel/banners|openingBanner)(?:\?[^#]*)?$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https://home\.mi\.com/cgi-op/api/v1/resource/realtime/openingBanner(?:\?[^#]*)?$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% home.mi.com

@@ -1,0 +1,11 @@
+#!name=小黑盒 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://api\.xiaoheihe\.cn/bbs/app/feeds/news(?:\?.*)?$ '(if type == "object" and (.result | type) == "object" and (.result.links | type) == "array" then .result.links |= map(select(if type == "object" then .content_type != 27 else true end)) else . end)'
+
+[MITM]
+hostname = %APPEND% api.xiaoheihe.cn

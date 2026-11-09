@@ -1,0 +1,26 @@
+#!name=哔哩哔哩 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: https://cdn.jsdelivr.net/gh/Maasea/sgmodule@65075cdb388fc5e3094afd7e7314c67b243f3525/Bilibili.Helper.sgmodule
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Header Rewrite]
+http-request ^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index) header-del x-tf-isp
+http-request ^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index) header-add x-tf-isp cm
+http-request ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.show\.v1 header-replace x-bili-network-bin CAIQBBoGbW9iaWxl
+http-request ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ header-replace x-bili-network-bin CAIQBBoGbW9iaWxl
+http-request ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView header-replace x-bili-network-bin CAIQBBoGbW9iaWxl
+http-request ^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ header-replace x-bili-network-bin CAIQBBoGbW9iaWxl
+http-request ^https:\/\/grpc\.biliapi\.net\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView header-replace x-bili-network-bin CAIQBBoGbW9iaWxl
+
+[Script]
+bilibili_1 = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index),requires-body=1,max-size=-1,binary-body-mode=0,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/af839a87c830afff9100a73f.js
+bilibili_2 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))))https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+bilibili_3 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView)))https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+bilibili_4 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus)))https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+bilibili_5 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$)))https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+bilibili_6 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList)))https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+bilibili_7 = type=http-response,pattern=^(?!(?:(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index))|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$)))https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/91ab498e5c752b7b605bb9a6.js
+
+[MITM]
+hostname = %APPEND% app.bilibili.com, grpc.biliapi.net

@@ -1,0 +1,30 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_set:
+- lf16-effectcdn.byteeffecttos-g.com
+- lf16-pkgcdn.pitaya-clientai.com
+- p16-tiktokcdn-com.akamaized.net
+- trae-api-sg.mchost.guru
+domain_suffix_set:
+- bytedapm.com
+- bytegecko-i18n.com
+- byteintlapi.com
+- capcut.com
+- capcutapi.com
+- capcutapi.us
+- capcutstatic.com
+- ipstatp.com
+- marscode.com
+- muscdn.com
+- musical.ly
+- sgpstatp.com
+- tik-tokapi.com
+- tiktok.com
+- tiktokcdn-us.com
+- tiktokcdn.com
+- tiktokd.net
+- tiktokd.org
+- tiktokmusic.app
+- tiktokv.com
+- tiktokv.us
+- trae.ai
+- ttwebview.com

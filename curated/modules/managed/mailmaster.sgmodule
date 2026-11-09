@@ -1,0 +1,16 @@
+#!name=网易邮箱大师 · 维护版
+#!desc=保留来源净化功能；修复记录见 managed-manifest.json；需 Egern CA 完全信任
+#!author=原作者见来源；tuohai57 维护
+# Source: audited local jq expressions
+# Device acceptance pending; installation alone does not establish effectiveness.
+
+[Body Rewrite]
+http-response-jq ^https://appconf\.mail\.163\.com/mailmaster/api/page/v2/conf\.do(?:\?.*)?$ '(if type == "object" and (.data | type) == "object" then del(.data.activityTabInfoList) else . end)'
+http-response-jq ^https://appconf\.mail\.163\.com/mailmaster/api/config/function\.do(?:\?.*)?$ '(if type == "object" and (.data | type) == "object" and (.data.config | type) == "array" then .data.config |= map(select(if type == "object" then .functionName != "Function-AD" else true end)) else . end)'
+
+[URL Rewrite]
+^https?://nex\.163\.com/q(?:\?|$) - reject
+^https?://g1\.163\.com/madfeedback(?:\?|$) - reject
+
+[MITM]
+hostname = %APPEND% appconf.mail.163.com, g1.163.com, nex.163.com
