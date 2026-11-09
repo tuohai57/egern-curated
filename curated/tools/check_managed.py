@@ -21,6 +21,7 @@ for item in M['modules']+M['dependencies']+R['sets']:
     check(path.is_relative_to(ROOT),'Asset path escapes repository')
     check(hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'],'Asset hash mismatch '+item['repository_path'])
 for mod in M['modules']:
+    check(not re.search(r'kelee\.one|luestr/ProxyResource',mod.get('upstream_url') or '',re.I),'Excluded Kelee module source '+mod['app'])
     check('Rule' not in mod['sections'],'Content module contains domain-wide rules '+mod['app'])
     names=[]
     for line in mod['sections'].get('Script',[]):
@@ -32,6 +33,10 @@ for mod in M['modules']:
     for h in mod['hosts']:
         for root in P['finance_roots']:
             check(not within(h.removeprefix('*.'),root) and not (h.startswith('*.') and within(root,h[2:])), 'Financial MITM '+h)
+for dep in M['dependencies']:
+    check(not re.search(r'kelee\.one|luestr/ProxyResource|\.lpx(?:$|\?)',dep.get('upstream_url') or '',re.I),'Excluded encrypted/platform source')
+    if dep.get('source_kind')=='independent-reimplementation':
+        check(hashlib.sha256((ROOT/dep['source_repository_path']).read_bytes()).hexdigest()==dep['upstream_sha256'],'Independent source hash mismatch')
 for spec in R['sets']:
     obj=yaml.safe_load((ROOT/spec['repository_path']).read_text(encoding='utf-8'))
     check(set(obj)<={'domain_set','domain_suffix_set','ip_cidr_set','no_resolve'},'Unsupported ruleset keys')

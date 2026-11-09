@@ -4,11 +4,174 @@
   "built_on": "2026-11-10",
   "modules": [
     {
+      "name": "铁路12306净化-维护版",
+      "app": "铁路12306",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/12306.sgmodule",
+      "repository_path": "curated/modules/managed/12306.sgmodule",
+      "sha256": "0fb7785b247d67a5038f5d1f8747b57a353eed41219e5894b31e9e2be972a705",
+      "hosts": [
+        "ad.12306.cn"
+      ],
+      "sections": {
+        "Script": [
+          "12306_1 = type=http-response, pattern=^https://ad\\.12306\\.cn/ad/ser/getAdList(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "已知广告素材字段和已存在计时字段；保留车票/登录/支付接口",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
+      "name": "网易邮箱大师净化-维护版",
+      "app": "网易邮箱大师",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mailmaster.sgmodule",
+      "repository_path": "curated/modules/managed/mailmaster.sgmodule",
+      "sha256": "4cdb3858f1a5e3e288529c3997e495e984496ebac469ae3d9d456d4c8ac9cb59",
+      "hosts": [
+        "appconf.mail.163.com",
+        "g1.163.com",
+        "nex.163.com"
+      ],
+      "sections": {
+        "Script": [
+          "mailmaster_1 = type=http-response, pattern=^https://appconf\\.mail\\.163\\.com/mailmaster/api/(?:page/v2/conf|config/function)\\.do(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "URL Rewrite": [
+          "^https?://nex\\.163\\.com/q(?:\\?|$) - reject",
+          "^https?://g1\\.163\\.com/madfeedback(?:\\?|$) - reject"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "保留邮箱配置净化；移除原邮箱模块混入的音乐封面/课程/音乐接口，避免跨模块冲突",
+        "移除 Function-AD 与活动入口；保留普通工具和邮箱功能",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
+      "name": "小黑盒净化-维护版",
+      "app": "小黑盒",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/heybox.sgmodule",
+      "repository_path": "curated/modules/managed/heybox.sgmodule",
+      "sha256": "2c038d548efda1de4ce0ad2a8283da996a78168d49f178fe17de6b5063c4052a",
+      "hosts": [
+        "api.xiaoheihe.cn"
+      ],
+      "sections": {
+        "Script": [
+          "heybox_1 = type=http-response, pattern=^https://api\\.xiaoheihe\\.cn/(?:bbs/app/feeds/news|account/get_ads_info_v2)(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "移除 content_type=27 插入广告与已识别开屏字段；保留普通帖子",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
+      "name": "美颜相机净化-维护版",
+      "app": "美颜相机",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/meiyan.sgmodule",
+      "repository_path": "curated/modules/managed/meiyan.sgmodule",
+      "sha256": "b0fa0dccdf243e01fb1d9ac9bb2d784eb12d946c9944da8bf4730f9dd61f3722",
+      "hosts": [
+        "api.meiyan.com"
+      ],
+      "sections": {
+        "Script": [
+          "meiyan_1 = type=http-response, pattern=^https://api\\.meiyan\\.com/operation/(?:get_config|home_banner|home)\\.json(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "处理已知弹窗/横幅/明确广告标记，保留相机、编辑与普通功能入口",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
+      "name": "大麦净化-维护版",
+      "app": "大麦",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/damai.sgmodule",
+      "repository_path": "curated/modules/managed/damai.sgmodule",
+      "sha256": "ac20a87385d77f2325ae8d22871fb53d33c67453f6ec63ff658050fa75bf2f2c",
+      "hosts": [
+        "acs.m.taobao.com"
+      ],
+      "sections": {
+        "Script": [
+          "damai_1 = type=http-response, pattern=^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.(?:wireless\\.(?:user\\.my\\.content\\.get|mypage\\.feed|home\\.welcome)|mec\\.(?:popup\\.get|aristotle\\.get))(?:/[^?#]*)?(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "已知横幅、明确广告卡片和开屏/弹窗字段；保留订单、票夹、优惠券和业务返回结构",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
+      "name": "微信净化-维护版",
+      "app": "微信",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/app-81b430b69643.sgmodule",
+      "repository_path": "curated/modules/managed/app-81b430b69643.sgmodule",
+      "sha256": "d9a79acdcd627f0bb4309110dd920738cc1e4bdd1939d42a0227eda1d5494b64",
+      "hosts": [
+        "mp.weixin.qq.com"
+      ],
+      "sections": {
+        "Script": [
+          "app-81b430b69643_1 = type=http-response, pattern=^https://mp\\.weixin\\.qq\\.com/mp/(?:getappmsgad|cps_product_info)(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ],
+        "Body Rewrite": []
+      },
+      "enabled": true,
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "fixes": [
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "仅公众号广告响应；不解密微信支付，不处理消息/通话/小程序业务",
+        "自主重写可检查的接口行为，不加载原可莉插件；未声称复刻加密插件全部功能"
+      ],
+      "device_verified": false,
+      "source_kind": "independent-reimplementation"
+    },
+    {
       "name": "滴滴净化-维护版",
       "app": "滴滴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/didi.sgmodule",
       "repository_path": "curated/modules/managed/didi.sgmodule",
-      "sha256": "4d50ee9d2d81fdbd5b4ba7e0735ce08a48b38521e478ab32dbc547d51390456b",
+      "sha256": "5ecd8c101e508c6c431d3a0bf945a64c9e0d4b0fa5e5278369958f77c307f4c0",
       "hosts": [
         "common.diditaxi.com.cn",
         "conf.diditaxi.com.cn",
@@ -54,7 +217,7 @@
       "app": "菜鸟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/cainiao.sgmodule",
       "repository_path": "curated/modules/managed/cainiao.sgmodule",
-      "sha256": "4c47647e84d8c2a35b866a6ab647e1d2e163a2f93c3bd2c1866d89a4ef34044c",
+      "sha256": "2513dca2304b47d6e1f58bb2283e187064efc2e4c4570d4d175d02cf5bf47229",
       "hosts": [
         "cn-acs.m.cainiao.com"
       ],
@@ -94,7 +257,7 @@
       "app": "夸克",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/quark.sgmodule",
       "repository_path": "curated/modules/managed/quark.sgmodule",
-      "sha256": "f7328f05cd1e09a1f4b68205ca1eef41ae69c9ef58a668421c91ed6bd4ef1898",
+      "sha256": "1b41b24b46c7f8605f86532f44d3d7517893810495fe1c26a58e2c30525c5e02",
       "hosts": [
         "open-cms-api.quark.cn",
         "open-cms-api.uc.cn"
@@ -119,7 +282,7 @@
       "app": "TiebaPure",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/tieba.sgmodule",
       "repository_path": "curated/modules/managed/tieba.sgmodule",
-      "sha256": "76a147646606fe02f43640ba1a0f2312c32f8d076912aa3cd70a7b777b8b4c4b",
+      "sha256": "c84c8289880a44850d9f2e19e3449e6172c476b629a3bf2030ffaefc2c97aff8",
       "hosts": [
         "tiebac.baidu.com"
       ],
@@ -143,7 +306,7 @@
       "app": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/coolapk.sgmodule",
       "repository_path": "curated/modules/managed/coolapk.sgmodule",
-      "sha256": "ce7b872810b95fa9271c69167f6a7fbad8aef384191a348491a0dacd69a8f4f9",
+      "sha256": "ed60720759827e76d303fcf019b375f1a84e3e98c0bbc87e02161db8d5d163f1",
       "hosts": [
         "api.coolapk.com",
         "www.coolapk.com"
@@ -170,7 +333,7 @@
       "app": "QQ音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/qqmusic.sgmodule",
       "repository_path": "curated/modules/managed/qqmusic.sgmodule",
-      "sha256": "1585f74d0a8feb69210d0bcdfd7226b1f74a3ca48c4f89b56121816ef6044af6",
+      "sha256": "6b9f01003e2081fd2eb0bd2482b21721f80d40f0776516d746c145c16513b21e",
       "hosts": [
         "music.y.qq.com",
         "us.l.qq.com",
@@ -203,7 +366,7 @@
       "app": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/pinduoduo.sgmodule",
       "repository_path": "curated/modules/managed/pinduoduo.sgmodule",
-      "sha256": "2dde73afcd8368a7ebc18596408073126db08f8b0d808a73a160636f5938d41a",
+      "sha256": "508ef323e457e280cebbdc48330fc614b72307f0c61dc3c9649687ccde4b5749",
       "hosts": [
         "api.pinduoduo.com",
         "api.yangkeduo.com",
@@ -214,19 +377,21 @@
           "^https?:\\/\\/api\\.(pinduoduo|yangkeduo)\\.com\\/api\\/cappuccino\\/splash - reject"
         ],
         "Body Rewrite": [
-          "http-response ^https?:\\/\\/mobile\\.yangkeduo\\.com\\/proxy\\/api\\/api\\/express\\/post\\/waybill\\/red_packet\\/goods_list$ \"list\":\\[.+\\] \"list\":[]",
-          "http-response-jq ^https://api\\.pinduoduo\\.com/api/alexa/homepage/hub(?:\\?.*)?$ '(if type == \"object\" and (.result | type) == \"object\" then (if (.result.dy_module | type) == \"object\" then del(.result.dy_module.irregular_banner_dy) else . end) | (if (.result.module_order | type) == \"array\" then .result.module_order |= map(select(if type == \"object\" then .module_name != \"ad_module\" else true end)) else . end) else . end)'"
+          "http-response ^https?:\\/\\/mobile\\.yangkeduo\\.com\\/proxy\\/api\\/api\\/express\\/post\\/waybill\\/red_packet\\/goods_list$ \"list\":\\[.+\\] \"list\":[]"
         ],
         "Map Local": [
           "^https?:\\/\\/api\\.pinduoduo\\.com\\/api\\/aquarius\\/hungary\\/global\\/homepage\\? data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
         ],
-        "Script": []
+        "Script": [
+          "pinduoduo_1 = type=http-response, pattern=^https://api\\.pinduoduo\\.com/api/alexa/homepage/hub(?:\\?[^#]*)?$, script-path=https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js, requires-body=true, timeout=10"
+        ]
       },
       "enabled": true,
       "upstream_url": "https://cdn.jsdelivr.net/gh/fmz200/wool_scripts@32d808f22bbd0c60ddce168a2319b44c4af57bbd/Surge/module/split/partP/Pinduoduo.sgmodule",
       "upstream_sha256": "3042090a0b36ab0d248a765e0e6f1737a8d993ecaa6eab16d24145c6447795dc",
       "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
+        "域名/IP 规则集中去重；模块只负责路径和内容净化",
+        "首页净化改用自主维护明文脚本；无可莉或加密脚本依赖"
       ],
       "device_verified": false
     },
@@ -235,7 +400,7 @@
       "app": "快手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/kuaishou.sgmodule",
       "repository_path": "curated/modules/managed/kuaishou.sgmodule",
-      "sha256": "b77940ee2c95c4f43850b1fae73635cbe3708de694c0d2b94580e80ae381e445",
+      "sha256": "ed885a03ed5ef86f02b6e22385feb09c2d3a1bcdc5a19f11e12e335fa9e7ddd7",
       "hosts": [
         "apissl.gifshow.com",
         "apissl.ksapisrv.com",
@@ -272,7 +437,7 @@
       "app": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/jd.sgmodule",
       "repository_path": "curated/modules/managed/jd.sgmodule",
-      "sha256": "bda6942154ef4046a0659461eb3f195f78f38a76215f0d2a44e8422dd3324cfb",
+      "sha256": "cb58f8a8ac3410cbe5617d822fc6615773c85ef3408ccce887266856930accf9",
       "hosts": [
         "api.m.jd.com",
         "dns.jd.com"
@@ -299,7 +464,7 @@
       "app": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/taobao.sgmodule",
       "repository_path": "curated/modules/managed/taobao.sgmodule",
-      "sha256": "aba814384a220af98f484a90bb52d6823605e64a0a9956a376e27bfeeab4e598",
+      "sha256": "c5fbb78659a363c02aaa94127bd752dcbe9ca7be6f4a9db193c42db5422e2542",
       "hosts": [
         "acs.m.taobao.com",
         "guide-acs.m.taobao.com",
@@ -336,7 +501,7 @@
       "app": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/neteasemusic.sgmodule",
       "repository_path": "curated/modules/managed/neteasemusic.sgmodule",
-      "sha256": "26f3cfc5241917601abd6f21332201012df117e4b8ad13b03ba1af13e745e184",
+      "sha256": "03f19899d10c8a6090b25a68e5d4fd0c529ffbbc3d2788696caa207829a7c9c9",
       "hosts": [
         "interface*.music.163.com",
         "interface.music.163.com",
@@ -376,7 +541,7 @@
       "app": "WPS Office",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/wps.sgmodule",
       "repository_path": "curated/modules/managed/wps.sgmodule",
-      "sha256": "d88d1954ff1b6a4843e92b45ef3e5f834ec1260faf348586bf0a8123f9e910e2",
+      "sha256": "97515363850089d0c19c32b27d15630b46bd15277881c6ffb20f8686cfd60b75",
       "hosts": [
         "ios.wps.cn",
         "mobile-pic.cache.iciba.com"
@@ -401,7 +566,7 @@
       "app": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/goofish.sgmodule",
       "repository_path": "curated/modules/managed/goofish.sgmodule",
-      "sha256": "9c1b50c1e1ec79e13c874c5cee720af8cb8bd07d04c4703df5948876f7d29552",
+      "sha256": "3ccf5cc52d5c9b1a5f2b4631c9dc565b1f7d91c4dc4602e70c30021241687018",
       "hosts": [
         "acs.m.goofish.com",
         "g-acs.m.goofish.com"
@@ -451,7 +616,7 @@
       "app": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/zhihu.sgmodule",
       "repository_path": "curated/modules/managed/zhihu.sgmodule",
-      "sha256": "4314ece7f81d7da6cfd952dd535e6311ab185a4fe1aaa80c49cdca00448040d4",
+      "sha256": "06eb407643e2abd2d55426707e07982a123e4153743cf84647f636f1d66e7572",
       "hosts": [
         "api.zhihu.com",
         "appcloud2.zhihu.com",
@@ -517,7 +682,7 @@
       "app": "小红书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/xiaohongshu.sgmodule",
       "repository_path": "curated/modules/managed/xiaohongshu.sgmodule",
-      "sha256": "f7cd01d2cd85f16ce6900c820910f12bb6d8489737d423e05b38e1b4b3c7b6b6",
+      "sha256": "969996456a64b68f0d914f7e04c446949d82c6cc63bf74df386c4889de87bf79",
       "hosts": [
         "ci.rnote.com",
         "ci.xiaohongshu.com",
@@ -569,7 +734,7 @@
       "app": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/youtube.sgmodule",
       "repository_path": "curated/modules/managed/youtube.sgmodule",
-      "sha256": "df286172263e7de6ff44a2cd738274f1dd29ab023e84440214b7884e1130617f",
+      "sha256": "e7e842a1640da4f969c1abe2983b75ab72a0186bb8504c73a18975bd2386f603",
       "hosts": [
         "*.googlevideo.com",
         "youtubei.googleapis.com"
@@ -595,7 +760,7 @@
       "app": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/bilibili.sgmodule",
       "repository_path": "curated/modules/managed/bilibili.sgmodule",
-      "sha256": "f6b07650bbaa1f4d0fdf6a87813c0867b9f474567b9727ba65cbbee35a1e25d5",
+      "sha256": "d7cca3865f3731a86097bf9f6265d508de07213c91c3dfe0cee0c153b4785104",
       "hosts": [
         "app.bilibili.com",
         "grpc.biliapi.net"
@@ -634,7 +799,7 @@
       "app": "微博",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/weibo.sgmodule",
       "repository_path": "curated/modules/managed/weibo.sgmodule",
-      "sha256": "5c7e4fa748d2bb46d8e1b86bb8089a2e5e87c78a204ed93173968ae8650fa265",
+      "sha256": "224852264e2e6fd6d8ca38f64b5b7877c981ab0cf57c33011f1e21fa3e4ec789",
       "hosts": [
         "api.weibo.cn",
         "api.weibo.com",
@@ -702,7 +867,7 @@
       "app": "美团",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/meituan.sgmodule",
       "repository_path": "curated/modules/managed/meituan.sgmodule",
-      "sha256": "f82d0aecb6886e075c58dc2d32fb31b6f99db7955e92171773be00c1b4fd8198",
+      "sha256": "6c514a001df761688d34917614d816b9a4bf32e664ef41d5b3e438c5db53b527",
       "hosts": [
         "flowplus.meituan.net",
         "img.meituan.net",
@@ -731,141 +896,11 @@
       "device_verified": false
     },
     {
-      "name": "铁路12306净化-维护版",
-      "app": "铁路12306",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/12306.sgmodule",
-      "repository_path": "curated/modules/managed/12306.sgmodule",
-      "sha256": "95089ec714b34de888f527bc825560956a6b647440eaf57f48b64eb31b322faf",
-      "hosts": [
-        "ad.12306.cn"
-      ],
-      "sections": {
-        "Body Rewrite": [
-          "http-response-jq ^https://ad\\.12306\\.cn/ad/ser/getAdList(?:\\?.*)?$ '(if type == \"object\" then del(.materialsList, .advertParam) else . end)'"
-        ],
-        "Script": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
-      ],
-      "device_verified": false
-    },
-    {
-      "name": "网易邮箱大师净化-维护版",
-      "app": "网易邮箱大师",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mailmaster.sgmodule",
-      "repository_path": "curated/modules/managed/mailmaster.sgmodule",
-      "sha256": "e26a816b40b79fabf420c0594eae41b5c590707bdf51df2b39492a0ff674f324",
-      "hosts": [
-        "appconf.mail.163.com",
-        "g1.163.com",
-        "nex.163.com"
-      ],
-      "sections": {
-        "Body Rewrite": [
-          "http-response-jq ^https://appconf\\.mail\\.163\\.com/mailmaster/api/page/v2/conf\\.do(?:\\?.*)?$ '(if type == \"object\" and (.data | type) == \"object\" then del(.data.activityTabInfoList) else . end)'",
-          "http-response-jq ^https://appconf\\.mail\\.163\\.com/mailmaster/api/config/function\\.do(?:\\?.*)?$ '(if type == \"object\" and (.data | type) == \"object\" and (.data.config | type) == \"array\" then .data.config |= map(select(if type == \"object\" then .functionName != \"Function-AD\" else true end)) else . end)'"
-        ],
-        "URL Rewrite": [
-          "^https?://nex\\.163\\.com/q(?:\\?|$) - reject",
-          "^https?://g1\\.163\\.com/madfeedback(?:\\?|$) - reject"
-        ],
-        "Script": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化",
-        "保留邮箱配置净化；移除原邮箱模块混入的音乐封面/课程/音乐接口，避免跨模块冲突"
-      ],
-      "device_verified": false
-    },
-    {
-      "name": "小黑盒净化-维护版",
-      "app": "小黑盒",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/heybox.sgmodule",
-      "repository_path": "curated/modules/managed/heybox.sgmodule",
-      "sha256": "f564bc878c4707b361247290f6aa261bfaf5246f7c0e86270781a480a02efb44",
-      "hosts": [
-        "api.xiaoheihe.cn"
-      ],
-      "sections": {
-        "Body Rewrite": [
-          "http-response-jq ^https://api\\.xiaoheihe\\.cn/bbs/app/feeds/news(?:\\?.*)?$ '(if type == \"object\" and (.result | type) == \"object\" and (.result.links | type) == \"array\" then .result.links |= map(select(if type == \"object\" then .content_type != 27 else true end)) else . end)'"
-        ],
-        "Script": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
-      ],
-      "device_verified": false
-    },
-    {
-      "name": "美颜相机净化-维护版",
-      "app": "美颜相机",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/meiyan.sgmodule",
-      "repository_path": "curated/modules/managed/meiyan.sgmodule",
-      "sha256": "eb13f1013b29de353869cfe442233387097b4de492de3cbe805f391f8569234e",
-      "hosts": [
-        "api.meiyan.com"
-      ],
-      "sections": {
-        "Body Rewrite": [
-          "http-response-jq ^https://api\\.meiyan\\.com/operation/get_config\\.json(?:\\?[^#]*)?$ '(if type==\"object\" and (.response|type)==\"object\" then del(.response.bubble,.response.time_limit) else . end)'"
-        ],
-        "Map Local": [
-          "^https://api\\.meiyan\\.com/operation/home_banner\\.json(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
-        ],
-        "Script": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
-      ],
-      "device_verified": false
-    },
-    {
-      "name": "大麦净化-维护版",
-      "app": "大麦",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/damai.sgmodule",
-      "repository_path": "curated/modules/managed/damai.sgmodule",
-      "sha256": "8b05d1765a8155182ea1245cae08993d7fbac52c9e322cf622fbbe80b3fa036c",
-      "hosts": [
-        "acs.m.taobao.com"
-      ],
-      "sections": {
-        "Body Rewrite": [
-          "http-response-jq ^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.wireless\\.user\\.my\\.content\\.get(?:/[^?#]*)?(?:\\?[^#]*)?$ '(if type==\"object\" and (.data|type)==\"object\" then del(.data.banner) else . end)'"
-        ],
-        "Map Local": [
-          "^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.wireless\\.home\\.welcome(?:/[^?#]*)?(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
-          "^https://acs\\.m\\.taobao\\.com/gw/mtop\\.damai\\.mec\\.popup\\.get(?:/[^?#]*)?(?:\\?[^#]*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
-        ],
-        "Script": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
-      ],
-      "device_verified": false
-    },
-    {
       "name": "X净化-维护版",
       "app": "X",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/x.sgmodule",
       "repository_path": "curated/modules/managed/x.sgmodule",
-      "sha256": "cdc9cd760c5c61c4f70f6e68c11f6bf9e9a79897c95d0650779cefd5fbc88ffc",
+      "sha256": "739e14f4c9a7c5aa918fc0958c12cfb418927292a639c9cfe143e19f3b06ed15",
       "hosts": [
         "x.com"
       ],
@@ -889,7 +924,7 @@
       "app": "Reddit",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/reddit.sgmodule",
       "repository_path": "curated/modules/managed/reddit.sgmodule",
-      "sha256": "e25e434f2a96572fe8a4129b45d814039ee2df93fa291b57e31e3813407c98ac",
+      "sha256": "2366a06ac0dbdbf0c47b7ae0ec7a2392ea172d5ddc1e79806a915cf9bdbd1e1a",
       "hosts": [
         "gql-fed.reddit.com"
       ],
@@ -908,35 +943,11 @@
       "device_verified": false
     },
     {
-      "name": "微信净化-维护版",
-      "app": "微信",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/app-81b430b69643.sgmodule",
-      "repository_path": "curated/modules/managed/app-81b430b69643.sgmodule",
-      "sha256": "195d28a728388163c46cce5906291d3a86c7a379bfe25dee45fe9e4e75abe5a2",
-      "hosts": [
-        "mp.weixin.qq.com"
-      ],
-      "sections": {
-        "Map Local": [
-          "^https://mp\\.weixin\\.qq\\.com/mp/getappmsgad(?:\\?.*)?$ data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\""
-        ],
-        "Script": [],
-        "Body Rewrite": []
-      },
-      "enabled": true,
-      "upstream_url": null,
-      "upstream_sha256": null,
-      "fixes": [
-        "域名/IP 规则集中去重；模块只负责路径和内容净化"
-      ],
-      "device_verified": false
-    },
-    {
       "name": "汽车之家净化-维护版",
       "app": "汽车之家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/app-44c4621de395.sgmodule",
       "repository_path": "curated/modules/managed/app-44c4621de395.sgmodule",
-      "sha256": "8f243c4b21e55ce4830ece5e0065c27aeb7f76601e44b41ba3326ee76fc2bd21",
+      "sha256": "27d38b57d88f145e7b27c0fe6bad7f0249eaa6115ea1bbb1d8a112bd9d7c1f49",
       "hosts": [
         "adproxy.autohome.com.cn",
         "pcmx.autohome.com.cn"
@@ -962,7 +973,7 @@
       "app": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mijia.sgmodule",
       "repository_path": "curated/modules/managed/mijia.sgmodule",
-      "sha256": "996c5e03754651ec0396f21622450f6f53b64cb93c50d107a5f06e79532d7ae0",
+      "sha256": "40beedd028c90066ed7db94e7027fbad4248b9e51c0f172a0abe99ffd0ab17d8",
       "hosts": [
         "home.mi.com"
       ],
@@ -987,7 +998,7 @@
       "app": "麦当劳",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/modules/managed/mcdonalds.sgmodule",
       "repository_path": "curated/modules/managed/mcdonalds.sgmodule",
-      "sha256": "55ff4f8a8dcdb9beaea14c8afe131bca5fdf6a50932a966548108ba2a08d98ac",
+      "sha256": "9233a8a5aad18561ace63d653491211f7bc2fc4255fc13441d0d3fdcfd11f80e",
       "hosts": [
         "api.mcd.cn"
       ],
@@ -1008,6 +1019,16 @@
     }
   ],
   "dependencies": [
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/828064cfc7c2d7dd910aad27.js",
+      "repository_path": "curated/scripts/managed/828064cfc7c2d7dd910aad27.js",
+      "sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "upstream_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "upstream_sha256": "828064cfc7c2d7dd910aad27232d6231205dfcf592f41643ab0a7ee07332cdd6",
+      "binary": false,
+      "source_kind": "independent-reimplementation",
+      "source_repository_path": "curated/scripts/source/rewritten-apps.js"
+    },
     {
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/managed/dc3b4afcbd70554786cf220a.js",
       "repository_path": "curated/scripts/managed/dc3b4afcbd70554786cf220a.js",
@@ -1303,5 +1324,6 @@
   ],
   "update_interval": 86400,
   "phone_verified": false,
-  "scope": "Public resources only; no nodes, subscriptions, CA or personal configuration."
+  "scope": "Public resources only; no nodes, subscriptions, CA or personal configuration.",
+  "source_policy": "No active Kelee plugin or encrypted Loon dependency; six Apps independently reimplemented; other owners use reviewed FMZ/Maasea or tested local filters."
 }

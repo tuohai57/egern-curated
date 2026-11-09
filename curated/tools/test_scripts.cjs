@@ -32,6 +32,55 @@ function fixture(tail,url,input,expected,name){
  try{const actual=JSON.parse(execute(dep,url,JSON.stringify(input)));check(name,JSON.stringify(actual)===JSON.stringify(expected));}
  catch(e){check(name,false);}
 }
+const rewritten='/curated/scripts/source/rewritten-apps.js';
+fixture(rewritten,'https://ad.12306.cn/ad/ser/getAdList?test=1',
+ {materialsList:[{id:'ad'}],advertParam:{id:2},countdown:5,duration:'5',normal:'preserve'},
+ {countdown:0,duration:'0',normal:'preserve'},'Independent 12306 ad material and known countdown removed; envelope preserved');
+fixture(rewritten,'https://appconf.mail.163.com/mailmaster/api/config/function.do',
+ {data:{config:[{functionName:'Function-AD'},{functionName:'Mail',result:{tools:[{name:'ordinary'}]}}]},success:true},
+ {data:{config:[{functionName:'Mail',result:{tools:[{name:'ordinary'}]}}]},success:true},'Independent MailMaster ad function removed; ordinary mail/tools preserved');
+fixture(rewritten,'https://api.xiaoheihe.cn/bbs/app/feeds/news?test=1',
+ {result:{links:[{content_type:27,id:'ad'},{content_type:1,id:'news'},null]},cursor:'keep'},
+ {result:{links:[{content_type:1,id:'news'},null]},cursor:'keep'},'Independent Heybox inserted ad removed; news/null/cursor preserved');
+fixture(rewritten,'https://api.xiaoheihe.cn/account/get_ads_info_v2',
+ {result:{ads:[{id:1}],countdown:6,account:'preserve'},status:'ok'},
+ {result:{ads:[],countdown:0,account:'preserve'},status:'ok'},'Independent Heybox known splash payload and countdown cleared');
+fixture(rewritten,'https://api.meiyan.com/operation/get_config.json',
+ {response:{bubble:{id:1},time_limit:{id:2},camera:{mode:'normal'},person_center:{settings:true},function_pop:{meiyan_style:{is_pop:true,other:'keep'}}}},
+ {response:{camera:{mode:'normal'},person_center:{settings:true},function_pop:{meiyan_style:{is_pop:false,other:'keep'}}}},'Independent Meiyan promotions removed; camera/settings preserved');
+fixture(rewritten,'https://api.meiyan.com/operation/home.json',
+ {response:{items:[{is_ad:true,id:'ad'},{id:'camera',type:'camera'}],normal:5}},
+ {response:{items:[{id:'camera',type:'camera'}],normal:5}},'Independent Meiyan explicit ad item removed; camera item preserved');
+fixture(rewritten,'https://acs.m.taobao.com/gw/mtop.damai.wireless.user.my.content.get/1.0/',
+ {data:{banner:[{id:1}],orders:[{id:2}],performFilmVip:{userProfitList:[1]},tickets:[3]},ret:['SUCCESS::ok']},
+ {data:{orders:[{id:2}],performFilmVip:{userProfitList:[1]},tickets:[3]},ret:['SUCCESS::ok']},'Independent Damai banner removed; tickets/orders/benefits retained');
+fixture(rewritten,'https://acs.m.taobao.com/gw/mtop.damai.wireless.mypage.feed/1.0/',
+ {data:{feedCard:[{is_ad:true,id:'ad'},{id:'event',type:'event'}]},ret:['SUCCESS::ok']},
+ {data:{feedCard:[{id:'event',type:'event'}]},ret:['SUCCESS::ok']},'Independent Damai filters explicit ads and keeps ordinary event card');
+fixture(rewritten,'https://acs.m.taobao.com/gw/mtop.damai.wireless.home.welcome/1.0/',
+ {data:{splashList:[{id:1}],duration:5,other:'keep'},ret:['SUCCESS::ok']},
+ {data:{splashList:[],duration:0,other:'keep'},ret:['SUCCESS::ok']},'Independent Damai known splash list/duration cleared without fabricated response');
+fixture(rewritten,'https://mp.weixin.qq.com/mp/getappmsgad?test=1',
+ {advertisement_num:1,advertisement_info:[{id:1}],base_resp:{ret:0},article:{id:2}},
+ {advertisement_num:0,advertisement_info:[],base_resp:{ret:0},article:{id:2}},'Independent WeChat article ads removed; business envelope retained');
+fixture(rewritten,'https://api.pinduoduo.com/api/alexa/homepage/hub?test=1',
+ {result:{dy_module:{irregular_banner_dy:{id:1},normal:{id:2}},module_order:[{module_name:'ad_module'},{module_name:'goods'}]},success:true},
+ {result:{dy_module:{normal:{id:2}},module_order:[{module_name:'goods'}]},success:true},'Independent PDD inserted home ad removed; goods/normal modules preserved');
+{
+ const dep=manifest.dependencies.find(d=>d.upstream_url.endsWith(rewritten));
+ const unknown='{ "newSchema": {"camera":1}, "data":null }';
+ const paths=['https://api.xiaoheihe.cn/bbs/app/feeds/newsExtra','https://api.meiyan.com/operation/home_extra.json',
+  'https://acs.m.taobao.com/gw/mtop.damai.wireless.user.my.content.getExtra/1.0/',
+  'https://mp.weixin.qq.com/pay/getappmsgad','https://ad.12306.cn/ad/ser/getAdListExtra'];
+ for(const url of paths){
+  try{check('Independent negative path '+url,execute(dep,url,'{"advertisement_num":1,"materialsList":[1]}')==='{"advertisement_num":1,"materialsList":[1]}');}catch(e){check('Independent negative path '+url,false);}
+ }
+ for(const url of ['https://api.meiyan.com/operation/home.json','https://acs.m.taobao.com/gw/mtop.damai.wireless.home.welcome/1.0/']){
+  try{check('Independent unknown schema unchanged '+url,execute(dep,url,unknown)===unknown);}catch(e){check('Independent unknown schema unchanged '+url,false);}
+ }
+ const failedLogin='{"data":{"banner":[1],"splashList":[1]},"ret":["FAIL_SYS_SESSION_EXPIRED::login"]}';
+ try{check('Independent Damai login error preserved',execute(dep,'https://acs.m.taobao.com/gw/mtop.damai.wireless.home.welcome/1.0/',failedLogin)===failedLogin);}catch(e){check('Independent Damai login error preserved',false);}
+}
 fixture('/coolapk.js','https://api.coolapk.com/v6/main/dataList?test=1',
  {data:[{id:1,entityTemplate:'sponsorCard'},{id:2,entityTemplate:'feed',title:'正常帖子'}],cursor:'unchanged'},
  {data:[{id:2,entityTemplate:'feed',title:'正常帖子'}],cursor:'unchanged'},'Coolapk inserted sponsor removed; ordinary post/cursor preserved');

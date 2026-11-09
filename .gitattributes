@@ -1,0 +1,8 @@
+curated/modules/managed/** text eol=lf
+curated/scripts/managed/** text eol=lf
+curated/rules/managed/** text eol=lf
+curated/managed-*.json text eol=lf
+curated/tools/check_managed.py text eol=lf
+curated/tools/test_scripts.cjs text eol=lf
+.github/workflows/check-managed.yml text eol=lf
+curated/scripts/source/*.js text eol=lf

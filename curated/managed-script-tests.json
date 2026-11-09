@@ -1,10 +1,62 @@
 {
   "scope": "Offline JavaScript syntax, synthetic JSON and error preservation; binary runtime and Egern device acceptance unverified",
-  "manifest_sha256": "a65037750293c2678daf5707e473399ec6aa150b6d549c9400f5c6afd3d95b1d",
-  "cases": 212,
-  "passed": 212,
+  "manifest_sha256": "80d262b6d80320e1d79dcd5f77a368d118107d9dafc8ccb88b915477cfad8bfd",
+  "cases": 244,
+  "passed": 244,
   "failed": 0,
   "results": [
+    {
+      "name": "hash https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
+    {
+      "name": "syntax https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js ",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js not-json",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js <html>error</html>",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js null",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js 42",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js {\"code\":-503,\"message\":\"unavailable\"}",
+      "passed": true
+    },
+    {
+      "name": "error preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js {\"error\":{\"message\":\"unauthorized\"}}",
+      "passed": true
+    },
+    {
+      "name": "HTTP 401 preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 403 preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 429 preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP 500 preservation https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/scripts/source/rewritten-apps.js",
+      "passed": true
+    },
     {
       "name": "hash https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
       "passed": true
@@ -823,6 +875,82 @@
     },
     {
       "name": "HTTP 500 preservation https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js",
+      "passed": true
+    },
+    {
+      "name": "Independent 12306 ad material and known countdown removed; envelope preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent MailMaster ad function removed; ordinary mail/tools preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent Heybox inserted ad removed; news/null/cursor preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent Heybox known splash payload and countdown cleared",
+      "passed": true
+    },
+    {
+      "name": "Independent Meiyan promotions removed; camera/settings preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent Meiyan explicit ad item removed; camera item preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent Damai banner removed; tickets/orders/benefits retained",
+      "passed": true
+    },
+    {
+      "name": "Independent Damai filters explicit ads and keeps ordinary event card",
+      "passed": true
+    },
+    {
+      "name": "Independent Damai known splash list/duration cleared without fabricated response",
+      "passed": true
+    },
+    {
+      "name": "Independent WeChat article ads removed; business envelope retained",
+      "passed": true
+    },
+    {
+      "name": "Independent PDD inserted home ad removed; goods/normal modules preserved",
+      "passed": true
+    },
+    {
+      "name": "Independent negative path https://api.xiaoheihe.cn/bbs/app/feeds/newsExtra",
+      "passed": true
+    },
+    {
+      "name": "Independent negative path https://api.meiyan.com/operation/home_extra.json",
+      "passed": true
+    },
+    {
+      "name": "Independent negative path https://acs.m.taobao.com/gw/mtop.damai.wireless.user.my.content.getExtra/1.0/",
+      "passed": true
+    },
+    {
+      "name": "Independent negative path https://mp.weixin.qq.com/pay/getappmsgad",
+      "passed": true
+    },
+    {
+      "name": "Independent negative path https://ad.12306.cn/ad/ser/getAdListExtra",
+      "passed": true
+    },
+    {
+      "name": "Independent unknown schema unchanged https://api.meiyan.com/operation/home.json",
+      "passed": true
+    },
+    {
+      "name": "Independent unknown schema unchanged https://acs.m.taobao.com/gw/mtop.damai.wireless.home.welcome/1.0/",
+      "passed": true
+    },
+    {
+      "name": "Independent Damai login error preserved",
       "passed": true
     },
     {

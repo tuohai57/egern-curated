@@ -4,6 +4,7 @@ on:
     paths:
       - 'curated/modules/managed/**'
       - 'curated/scripts/managed/**'
+      - 'curated/scripts/source/**'
       - 'curated/rules/managed/**'
       - 'curated/managed-*.json'
       - 'curated/tools/check_managed.py'
