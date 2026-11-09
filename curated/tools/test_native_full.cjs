@@ -42,14 +42,21 @@ async function run(source,url,input){
  }
  for(const helper of manifest.helpers||[]){
   const source=fs.readFileSync(path.join(root,helper.repository_path),'utf8');
-  for(const frame of helper.frames){
-   const url=frame.match.includes('Teenagers')?'https://grpc.biliapi.net/bilibili.app.interface.v1.Teenagers/ModeStatus':frame.match.includes('DefaultWords')?'https://grpc.biliapi.net/bilibili.app.interface.v1.Search/DefaultWords':'https://grpc.biliapi.net/bilibili.app.viewunite.v1.View/ViewEndPage';
+  for(const [frameIndex,frame] of helper.frames.entries()){
+   const url=helper.kind==='tiny-gif'?[
+     'https://flowplus.meituan.net/v1/abc/linglong/ad.jpg',
+     'https://img.meituan.net/bizad/bizad_brandCpt_123.jpg',
+     'https://img.meituan.net/goodsawardpic/aabb.png.webp'][frameIndex]:
+     frame.match.includes('Teenagers')?'https://grpc.biliapi.net/bilibili.app.interface.v1.Teenagers/ModeStatus':frame.match.includes('DefaultWords')?'https://grpc.biliapi.net/bilibili.app.interface.v1.Search/DefaultWords':'https://grpc.biliapi.net/bilibili.app.viewunite.v1.View/ViewEndPage';
    try{
     const output=await run(source,url,{});assert.equal(output.response.status,200);
     assert.deepEqual(Array.from(output.response.body),frame.bytes);
     assert.equal(Number(output.response.headers['content-length']),frame.bytes.length);
-    const bytes=Buffer.from(frame.bytes);assert.equal(bytes.readUInt32BE(1),bytes.length-5);
-    tests.push('B站原始gRPC响应字节 '+url);
+    const bytes=Buffer.from(frame.bytes);
+    if(helper.kind==='tiny-gif'){
+      assert.equal(bytes.subarray(0,6).toString(),'GIF89a');assert.equal(bytes.readUInt16LE(6),1);assert.equal(bytes.readUInt16LE(8),1);
+      assert.equal(output.response.headers['content-type'],'image/gif');tests.push('美团原始tiny-gif响应格式 '+url);
+    }else{assert.equal(bytes.readUInt32BE(1),bytes.length-5);tests.push('B站原始gRPC响应字节 '+url);}
    }catch(error){failures.push({name:url,error:error.message});}
   }
  }

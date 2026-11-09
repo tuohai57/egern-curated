@@ -7193,7 +7193,7 @@ map_locals:
   headers:
     Content-Type: text/plain
   body: AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA
-- match: ^(?!https?://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords(?:[?#]|$))(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$)
+- match: ^(?!(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(?:view\.v1\.View\/TFInfo|viewunite\.v1\.View\/(?:PlayPause|ViewEndPage))$))(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$)
   headers:
     Content-Type: text/plain
   body: '"AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+'
@@ -8263,15 +8263,6 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
-  status_code: 200
-  body: ''
 - match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
   status_code: 200
   headers:
@@ -10032,6 +10023,11 @@ map_locals:
   body: ' '
 scriptings:
 - http_request:
+    name: 美团原始tiny-gif格式兼容
+    match: (?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/static-meituan-gif.js
+    body_required: false
+- http_request:
     name: '12306'
     match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/bed12b445b1c04f9.js
@@ -10176,7 +10172,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 小红书开屏广告
-    match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v2/system_service/splash_config(?:[?#]|$))(?:^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config)
+    match: ^(?!^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)(?:^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/6d50baad22df9b29.js
     body_required: true
 - http_response:
@@ -10191,7 +10187,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 小红书图片视频水印
-    match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v6/homefeed(?:[?#]|$))(?:^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)
+    match: ^(?!^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)(?:^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/6d50baad22df9b29.js
     body_required: true
 - http_response:

@@ -1,0 +1,35 @@
+{
+  "source_url": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/5eaaa84056bd2164c88ab06fddd2b1ca4472a1af/egern/adrules.yaml",
+  "source_sha256": "c15bbe95a68f639f95fe941b13b1cb1e5c4d2b2fad77b1456380d7da744e707a",
+  "source_bytes": 4858360,
+  "source_counts": {
+    "domain_set": 139,
+    "domain_suffix_set": 210661,
+    "domain_keyword_set": 32,
+    "domain_wildcard_set": 373,
+    "domain_regex_set": 4,
+    "ip_cidr_set": 40,
+    "ip_cidr6_set": 4
+  },
+  "retained": 52,
+  "excluded": {
+    "ip_address": 1,
+    "existing_rule_covers": 1705,
+    "no_explicit_ad_label": 208810,
+    "module_keyword_covers": 220,
+    "ambiguous_business_name_not_added": 2,
+    "invalid_domain": 10,
+    "non_literal_or_ip": 453
+  },
+  "rule_set": {
+    "repository_path": "curated/native-full/repository-ad-delta.yaml",
+    "sha256": "8687df4612a87fd92c582a0c07c92f9456495a6d4690c1f817bf1ce057d74bab",
+    "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml",
+    "counts": {
+      "domain_suffix_set": 52
+    },
+    "source_url": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/5eaaa84056bd2164c88ab06fddd2b1ca4472a1af/egern/adrules.yaml",
+    "source_sha256": "c15bbe95a68f639f95fe941b13b1cb1e5c4d2b2fad77b1456380d7da744e707a"
+  },
+  "scope": "Literal ad-label delta with known rule/MITM intersections subtracted, not whole-App ad removal."
+}

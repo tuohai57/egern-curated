@@ -418,7 +418,7 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json
   location: http://reject/
-- match: (?i)^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf
+- match: (?i)^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf)
   location: http://reject/
 - match: (?i)^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
   location: http://reject-img/
@@ -906,7 +906,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interaction\/appInfo\/appNewestVersion
   location: http://reject-200/
-- match: (?i)^(?!https?://api\.mcd\.cn/bff/portal/home/splash(?:[?#]|$))(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
+- match: (?i)^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
   location: http://reject-200/
 - match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
   location: http://reject-dict/
@@ -934,15 +934,15 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/mea\.meitudata\.com\/kaiping
   location: http://reject/
-- match: (?i)^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?
+- match: (?i)^(?!^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)(?:^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)
   location: http://reject-dict/
-- match: (?i)^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
+- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
   location: http://reject-img/
-- match: (?i)^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
+- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)
   location: http://reject-img/
 - match: (?i)^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
   location: http://reject-img/
-- match: (?i)^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
+- match: (?i)^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)
   location: http://reject-dict/
 - match: (?i)^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
   location: http://reject-dict/
@@ -950,7 +950,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: (?i)^https?:\/\/capi\.mwee\.cn\/app-api\/V\d{2}\/app\/(ad|getstartad)
   location: http://reject/
-- match: (?i)^(?!https?://home\.mi\.com/cgi\-op/api/v1/recommendation/openingBanner(?:[?#]|$))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
+- match: (?i)^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
   location: http://reject-dict/
 - match: (?i)^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
   location: http://reject-dict/
@@ -2021,7 +2021,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 广告拦截合集-响应
-    match: (?i)^(?!https?://guide\-acs\.m\.taobao\.com/gw/mtop\.taobao\.wireless\.home\.splash\.awesome\.get/1\.0/(?:[?#]|$))(?:^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))
+    match: (?i)^(?!^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))(?:^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/d564496d0d24d93c.js
     body_required: true
 - http_response:

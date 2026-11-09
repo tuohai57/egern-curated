@@ -535,7 +535,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?:\/\/api\.rr\.tv\/.*?Version
   location: http://reject/
-- match: ^(?!https?://api\.mcd\.cn/bff/portal/home/splash(?:[?#]|$))(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop))
+- match: ^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop))
   location: http://reject/
 - match: ^https?:\/\/api\.internetofcity\.cn\/api\/resource\/anon\/popups\/(getSplashList|getList)
   location: http://reject/
@@ -602,7 +602,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110
   location: http://reject/
-- match: ^(?!https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/splash_screen_rt(?:[?#]|$))(?:^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt)
+- match: (?i)^(?!^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt)(?:^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt)
   location: http://reject/
 - match: ^https?:\/\/als\.baidu\.com\/clog\/clog
   location: http://reject/
@@ -1742,7 +1742,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/www.icourse163.org\/.*?(Advertisement)
   location: http://reject-img/
-- match: ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?
+- match: ^(?!^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)(?:^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)
   location: http://reject-dict/
 - match: ^https?:\/\/wemallh5\.usmile\.com\/api\/sp-portal\/store\/usmile\/activity\/dayCheck\?pop
   location: http://reject-dict/
@@ -1924,7 +1924,7 @@ url_rewrites:
   location: http://reject-img/
 - match: ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
   location: http://reject-dict/
-- match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
+- match: ^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)
   location: http://reject-dict/
 - match: ^https?:\/\/s1\.api\.tv\.itc\.cn\/v4\/mobile\/control\/switch\.json
   location: http://reject-200/
@@ -2382,9 +2382,9 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
   location: http://reject-img/
-- match: ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
+- match: ^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)
   location: http://reject-img/
-- match: ^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg)
+- match: ^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg))
   location: http://reject-200/
 - match: ^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$
   location: http://reject-200/
@@ -2468,11 +2468,11 @@ url_rewrites:
   location: http://reject-img/
 - match: ^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad
   location: http://reject-dict/
-- match: ^(?!https?://home\.mi\.com/cgi\-op/api/v1/recommendation/openingBanner(?:[?#]|$))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation)
+- match: ^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation)
   location: http://reject-200/
 - match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
   location: http://reject-dict/
-- match: ^(?!https?://home\.mi\.com/cgi\-op/api/v1/recommendation/openingBanner(?:[?#]|$))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
+- match: ^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
   location: http://reject-dict/
 - match: ^https?:\/\/hoapp\.juneyaoair\.com\/data\/index\/getLoadPic
   location: http://reject-200/
@@ -2520,7 +2520,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/gw-app-gateway\.gwmapp-w\.com\/app-api.*Type=APPSECONDAD
   location: http://reject-200/
-- match: ^(?!https?://guide\-acs\.m\.taobao\.com/gw/mtop\.taobao\.wireless\.home\.splash\.awesome\.get/1\.0/(?:[?#]|$))(?:^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get)
+- match: ^(?!^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))(?:^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get)
   location: http://reject-200/
 - match: ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)
   location: http://reject-dict/
@@ -3124,9 +3124,9 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/api\.medlive\.cn\/promotion-api/adlist
   location: http://reject-200/
-- match: ^(?!https?://api\.mcd\.cn/bff/portal/home/splash(?:[?#]|$))(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
+- match: ^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
   location: http://reject-200/
-- match: ^(?!https?://api\.mcd\.cn/bff/portal/home/splash(?:[?#]|$))(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
+- match: ^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
   location: http://reject-200/
 - match: ^https?:\/\/api\.m\.mi\.com\/v1\/app\/start
   location: http://reject-200/
@@ -3412,7 +3412,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/user\/teenager\/status
   location: http://reject-200/
-- match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v2/system_service/splash_config(?:[?#]|$))(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash)
+- match: ^(?!^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash)
   location: http://reject-200/
 - match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\/recommend_info\?
   location: http://reject-200/
@@ -3546,7 +3546,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information
   location: http://reject-200/
-- match: ^(?!https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/splash_screen_rt(?:[?#]|$))(?:^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen)
+- match: (?i)^(?!^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt)(?:^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen)
   location: http://reject-200/
 - match: ^https?:\/\/.*\.amap\.com\/v\d\/ai_rec\/
   location: http://reject-dict/
@@ -3558,9 +3558,9 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/(syh|www)\.zybang\.com\/adx\/
   location: http://reject-200/
-- match: ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
+- match: ^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
   location: http://reject-img/
-- match: ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
+- match: ^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
   location: http://reject-200/
 - match: ^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/[a-z-]+\/recommend
   location: http://reject-dict/
@@ -3604,7 +3604,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?://live-ads\.huya\.com/live/getAllEntrance.*$
   location: http://reject-dict/
-- match: ^(?!https?://home\.mi\.com/cgi\-op/api/v1/recommendation/openingBanner(?:[?#]|$))(?:^https?://home\.mi\.com/cgi-op/api/v\d/recommendation/(banner|myTab|openingBanner))
+- match: ^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?://home\.mi\.com/cgi-op/api/v\d/recommendation/(banner|myTab|openingBanner))
   location: http://reject-dict/
 - match: ^https?://gw\.kaola\.com/gw/dgmobile/newOpenAd
   location: http://reject-200/
@@ -3616,7 +3616,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?://esdk\.tymcdn\.com/dbGold/m/v2/mobileLiveReveal\.do\?
   location: http://reject-dict/
-- match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v2/system_service/splash_config(?:[?#]|$))(?:^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/splash_config)
+- match: ^(?!^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)(?:^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/splash_config)
   location: http://reject-200/
 - match: ^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/config\?
   location: http://reject-200/
@@ -3628,7 +3628,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?://api3\.cls\.cn/v1/boot/ad\?
   location: http://reject-dict/
-- match: ^(?!https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/splash_screen_rt(?:[?#]|$))(?:^https?://amap-aos-info-nogw\.amap\.com/ws/aos/alimama/)
+- match: (?i)^(?!^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt)(?:^https?://amap-aos-info-nogw\.amap\.com/ws/aos/alimama/)
   location: http://reject-200/
 - match: ^https?://advertise\.bczeducation\.cn\/rpc\/advertise
   location: http://reject-200/
@@ -4893,7 +4893,7 @@ scriptings:
     body_required: true
 - http_response:
     name: jd_json
-    match: ^(?!https?://api\.m\.jd\.com/client\.action(?:[?#]|$))(?:^https?:\/\/api\.m\.jd\.com\/client\.action\?)
+    match: ^(?!^https:\/\/api\.m\.jd\.com\/client\.action\?)(?:^https?:\/\/api\.m\.jd\.com\/client\.action\?)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7c64a71023246641.js
     body_required: true
 - http_response:
@@ -5058,7 +5058,7 @@ scriptings:
     body_required: true
 - http_response:
     name: redbook.ads
-    match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v2/system_service/splash_config(?:[?#]|$))(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config)
+    match: ^(?!^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7ad1aaf35b5a4f92.js
     body_required: true
 - http_response:
@@ -5128,7 +5128,7 @@ scriptings:
     body_required: true
 - http_response:
     name: redbook.ads15
-    match: ^(?!https?://edith\.xiaohongshu\.com/api/sns/v6/homefeed(?:[?#]|$))(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\?)
+    match: ^(?!^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\?)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7ad1aaf35b5a4f92.js
     body_required: true
 - http_response:
@@ -5148,7 +5148,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cainiao_json3
-    match: ^(?!https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$))(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)
+    match: (?i)^(?!^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/25ffcb62e01df093.js
     body_required: true
 - http_response:
@@ -5278,7 +5278,7 @@ scriptings:
     body_required: true
 - http_response:
     name: tieba-proto
-    match: ^(?!https?://tiebac\.baidu\.com/c/f/frs/page(?:[?#]|$))(?:^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd)
+    match: (?i)^(?!^https?:\/\/tieba(?:c)?\.baidu\.com\/c\/(f\/excellent\/personalized|f\/frs\/page|b\/ad\/adBid|f\/ad\/getFeedAd|f\/pb\/page|f\/frs\/generalTabList)\?cmd=\d+&format=protobuf)(?:^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7e5d5ec2ce819c85.js
     body_required: true
     binary_body: true
@@ -5572,7 +5572,7 @@ scriptings:
     body_required: true
 - http_response:
     name: goofish6
-    match: ^(?!https?://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.nextfresh/1\.0/(?:[?#]|$))(?:^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/)
+    match: (?i)^(?!^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/)(?:^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/90fb2b9141abff55.js
     body_required: true
 - http_response:
@@ -5602,7 +5602,7 @@ scriptings:
     body_required: true
 - http_response:
     name: umetrip_ads
-    match: ^(?!https?://home\.umetrip\.com/gateway/api/umetrip/native(?:[?#]|$))(?:^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$)
+    match: (?i)^(?!^https?://(?:114\.115\.217\.129|home\.umetrip\.com)/gateway/api/umetrip/native(?:\?[^#]*)?$)(?:^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/0fe2d4e13ff1edf8.js
     body_required: true
 - http_response:
@@ -5617,7 +5617,7 @@ scriptings:
     body_required: true
 - http_response:
     name: tieba-proto2
-    match: ^(?!https?://tiebac\.baidu\.com/c/f/frs/page(?:[?#]|$))(?:^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd)
+    match: (?i)^(?!^https?:\/\/tieba(?:c)?\.baidu\.com\/c\/(f\/excellent\/personalized|f\/frs\/page|b\/ad\/adBid|f\/ad\/getFeedAd|f\/pb\/page|f\/frs\/generalTabList)\?cmd=\d+&format=protobuf)(?:^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7e5d5ec2ce819c85.js
     body_required: true
     binary_body: true

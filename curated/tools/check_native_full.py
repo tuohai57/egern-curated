@@ -50,14 +50,17 @@ def rule(entry):
     if kind=='not':rule(fields['match'])
 deps={row['url']:row for row in M['dependencies']}
 helpers={row['repository_path']:row for row in M.get('helpers',[])}
+module_rows=M['modules']+M.get('extra_modules',[])
 seen={};exact_duplicates=[]
-for row in M['modules']+M['dependencies']+list(helpers.values())+[M['priority_guard']]:
+for row in module_rows+M['dependencies']+list(helpers.values())+[M['priority_guard']]+M.get('extra_rule_sets',[])+M.get('source_evidence',[]):
     data=path_for(row).read_bytes()
     check(hashlib.sha256(data).hexdigest()==row['sha256'],'Hash mismatch '+row['repository_path'])
     check(not data.lstrip().lower().startswith((b'<html',b'<!doctype')),'HTML asset '+row['repository_path'])
-for mod in M['modules']:
-    original=ROOT/mod['original_repository_path']
-    check(hashlib.sha256(original.read_bytes()).hexdigest()==mod['source_sha256'],'Original module bytes changed '+mod['name'])
+for mod in module_rows:
+    if 'original_repository_path' in mod:
+        original=ROOT/mod['original_repository_path']
+        check(hashlib.sha256(original.read_bytes()).hexdigest()==mod['source_sha256'],'Original module bytes changed '+mod['name'])
+    else:check(mod.get('source_kind')=='reviewed-repository-delta','Missing original module evidence '+mod['name'])
     obj=load_defaults(path_for(mod).read_text(encoding='utf-8'));objects.append((mod,obj))
     for entry in obj.get('rules',[]):rule(entry)
     actual={section:len(obj.get(section,[])) for section in mod['counts']}
@@ -93,15 +96,50 @@ guard=yaml.safe_load(path_for(M['priority_guard']).read_text(encoding='utf-8'))
 for entry in guard['rules']:rule(entry)
 check(len(guard['rules'])==M['priority_guard']['rules'],'Priority guard count')
 check(not exact_duplicates,'Exact active processing duplicates remain')
+service_exact=set();service_suffix=set();module_keywords=set()
+def gather(entry):
+    kind,f=next(iter(entry.items()))
+    if kind in {'and','or'}:
+        for child in f['match']:gather(child)
+    elif kind=='not':gather(f['match'])
+    elif kind=='domain':service_exact.add(f['match'])
+    elif kind=='domain_suffix':service_suffix.add(f['match'])
+    elif kind=='domain_keyword':module_keywords.add(f['match'])
+for mod,obj in objects:
+    if mod['enabled']:
+        for entry in obj.get('rules',[]):gather(entry)
+for entry in guard['rules']:gather(entry)
+managed=json.loads((ROOT/'curated/managed-rules.json').read_text(encoding='utf-8'))
+for spec in managed['sets']:
+    for entry in spec['rules']:
+        if entry['kind']=='domain':service_exact.add(entry['value'])
+        elif entry['kind']=='domain_suffix':service_suffix.add(entry['value'])
+ancestors=set()
+for host in service_exact|service_suffix:
+    parts=host.split('.')
+    ancestors.update('.'.join(parts[i:]) for i in range(len(parts)))
+delta_count=0
+for spec in M.get('extra_rule_sets',[]):
+    delta=yaml.safe_load(path_for(spec).read_text(encoding='utf-8'))
+    check(set(delta)<={'domain_set','domain_suffix_set'},'Supplement contains broad or IP selectors')
+    check({k:len(v) for k,v in delta.items()}==spec['counts'],'Supplement count mismatch')
+    seen_suffix=set();seen_exact=set()
+    for kind,host in sorted(((k,h) for k,values in delta.items() for h in values),key=lambda pair:(pair[1].count('.'),pair[1])):
+        delta_count+=1;parts=host.split('.')
+        check(host not in service_exact and not any('.'.join(parts[i:]) in service_suffix for i in range(len(parts))),'Supplement overlaps existing rule '+host)
+        check(kind!='domain_suffix_set' or host not in ancestors,'Supplement covers existing service '+host)
+        check(not any(v and v in host for v in module_keywords),'Supplement shadowed by module keyword '+host)
+        check(host not in seen_exact and not any('.'.join(parts[i:]) in seen_suffix for i in range(len(parts))),'Supplement internal duplicate/shadow '+host)
+        (seen_suffix if kind=='domain_suffix_set' else seen_exact).add(host)
 jq=shutil.which('jq') or str(ROOT.parent/'tools/jq.exe')
 for expr in filters:
     result=subprocess.run([jq,'-n',expr],capture_output=True)
     # Runtime null-input errors are different from jq compile errors.
     check(result.returncode not in {2,3},'jq compile failed '+expr)
-result={'passed':not errors,'errors':errors,'modules':len(M['modules'])+1,
- 'enabled':sum(m['enabled'] for m in M['modules'])+1,'disabled':sum(not m['enabled'] for m in M['modules']),
+result={'passed':not errors,'errors':errors,'modules':len(module_rows)+1,
+ 'enabled':sum(m['enabled'] for m in module_rows)+1,'disabled':sum(not m['enabled'] for m in module_rows),
  'original_scripts':len(deps),'original_script_bytes_unchanged':True,
- 'compatibility_helpers':len(helpers),'counts':counts,'unique_regexes_parsed':len(regexes),
+ 'compatibility_helpers':len(helpers),'supplemental_domains':delta_count,'counts':counts,'unique_regexes_parsed':len(regexes),
  'unique_jq_compiled':len(filters),'exact_active_processing_duplicates':len(exact_duplicates),
  'unavailable_jq_not_enabled':len(M['invalid_jq_not_enabled']),
  'scope':'Repository integrity and execution prerequisites only; original runtime and App behavior require device logs.'}

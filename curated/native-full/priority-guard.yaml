@@ -671,6 +671,9 @@ rules:
     match: api.m.mi.com
     policy: 小米共享
 - domain:
+    match: api.mcd.cn
+    policy: 国内长尾
+- domain:
     match: api.pinduoduo.com
     policy: 拼多多
 - domain:
@@ -887,6 +890,9 @@ rules:
     match: edith.xiaohongshu.com
     policy: 小红书
 - domain:
+    match: flowplus.meituan.net
+    policy: 美团
+- domain:
     match: freight.xiaojukeji.com
     policy: 滴滴
 - domain:
@@ -931,6 +937,9 @@ rules:
 - domain:
     match: hera-webapp.fenbi.com
     policy: 漏网域名
+- domain:
+    match: home.mi.com
+    policy: 米家
 - domain:
     match: home.umetrip.com
     policy: 航旅纵横
@@ -1169,6 +1178,9 @@ rules:
     match: s3.zdmimg.com
     policy: 漏网域名
 - domain:
+    match: s3plus.meituan.net
+    policy: 美团
+- domain:
     match: saas-ad.cloudpnr.com
     policy: 漏网域名
 - domain:
@@ -1258,6 +1270,9 @@ rules:
 - domain:
     match: weibointl.api.weibo.cn
     policy: 微博
+- domain:
+    match: wmapi.meituan.com
+    policy: 美团
 - domain:
     match: wrapper.cyapi.cn
     policy: 国内长尾

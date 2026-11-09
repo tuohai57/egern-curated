@@ -400,13 +400,13 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$
   location: http://reject-200/
-- match: (?i)^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
+- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
   location: http://reject-200/
 - match: (?i)^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg
   location: http://reject-200/
 - match: (?i)^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp
   location: http://reject-200/
-- match: (?i)^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg)
+- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg))
   location: http://reject-200/
 - match: (?i)^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture)
   location: http://reject-200/
@@ -456,7 +456,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/comicapi\.manhuashe\.com\/v\d\/(ads\/adstrategys|public\/startupactivity)
   location: http://reject-200/
-- match: (?i)^(?!https?://api\.mcd\.cn/bff/portal/home/splash(?:[?#]|$))(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
+- match: (?i)^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
   location: http://reject-200/
 - match: (?i)^https?:\/\/api\.merach\.com\/app\/AppAdvertisingController\/getAdvert
   location: http://reject-200/
@@ -470,7 +470,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/aikanvod\.miguvideo\.com\/video\/p\/i_adverseInterface\.jsp
   location: http://reject-200/
-- match: (?i)^(?!https?://home\.mi\.com/cgi\-op/api/v1/recommendation/openingBanner(?:[?#]|$))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation)
+- match: (?i)^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation)
   location: http://reject-200/
 - match: (?i)^https?:\/\/api\.bevol\.com\/appmain\/app\/home\/launch
   location: http://reject-200/
@@ -630,7 +630,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/td\.cgmcare\.cn\/api\/ad
   location: http://reject-200/
-- match: (?i)^(?!https?://guide\-acs\.m\.taobao\.com/gw/mtop\.taobao\.wireless\.home\.splash\.awesome\.get/1\.0/(?:[?#]|$))(?:^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get)
+- match: (?i)^(?!^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))(?:^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get)
   location: http://reject-200/
 - match: (?i)^https?:\/\/www\.zjyilin\.com\/hykweb\/\/index\/openImg
   location: http://reject-200/

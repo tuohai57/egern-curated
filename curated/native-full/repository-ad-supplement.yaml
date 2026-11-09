@@ -1,0 +1,8 @@
+name: 仓库补充广告规则
+description: QuixoticHeart 原生规则中未与现有规则/金融/必要服务/解密主机交叉的广告域增量。
+rules:
+- rule_set:
+    name: 仓库广告域补充
+    match: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml
+    policy: REJECT
+    update_interval: 86400
