@@ -1,0 +1,32 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 米游社去广告
+description: 移除开屏广告、搜索栏热搜及资讯、青少年模式弹窗。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/miHoYoBBS.png
+open_url: https://apps.apple.com/app/id1470182559
+tag: 去广告
+url_rewrites:
+- match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/bbs-api-static\.miyoushe\.com\/search\/api\/search\/pre_keyword\?
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppStartupData$
+    filter: del(.data.resp_map["/teenager/api/info"], .data.resp_map["/apihub/api/getAppConfig"].data.get_app_config_response.config.is_show_teenager_mode_btn,
+      .data.resp_map["/apihub/api/getAppConfig"].data.get_app_config_response.config.teenager_popup_freq_type)
+- response_jq:
+    match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppConfig$
+    filter: .data.config.teenager_popup_freq_type = 0 | .data.config.is_show_teenager_mode_btn
+      = 0
+- response_jq:
+    match: (?i)^https:\/\/bbs-api-ab\.miyoushe\.com\/teenager\/api\/info$
+    filter: .data.is_enabled = false | .data.is_teenager = false | .data.is_force
+      = false
+mitm:
+  hostnames:
+  - bbs-api.miyoushe.com
+  - bbs-api-ab.miyoushe.com

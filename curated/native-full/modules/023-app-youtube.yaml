@@ -1,0 +1,129 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: YouTube
+description: 移除YouTube应用广告、启用后台播放，并翻译现有字幕轨道（目标语言为zh-CN或en-US；没有字幕的视频无法翻译）。默认仅记录媒体响应头；完整采样可能增加延迟。\n该插件基于devchristian1337的YouTube插件汉化。
+author: devchristian1337[https://github.com/devchristian1337]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
+open_url: https://apps.apple.com/app/id544007664
+tag: 去广告, 功能增强
+compat_arguments:
+  background_playback: 'true'
+  playback_region: original
+  translation_enabled: 'true'
+  translation_target: zh-CN
+  hide_home_shorts: 'true'
+  blocked_channels: ''
+  blocked_channels_url: ''
+  log_enabled: 'false'
+  quality_research: 'false'
+  media_capture_mode: headers
+  log_level: info
+  capture_budget: '32'
+compat_arguments_desc: 'background_playback: 后台播放
+
+  playback_region: 可选 original/CN/HK/TW/US/JP/KR/SG/GB/DE/RU
+
+  translation_enabled: 字幕翻译
+
+  translation_target: 可选 zh-CN/en-US
+
+  hide_home_shorts: 隐藏首页 Shorts
+
+  blocked_channels: 屏蔽频道
+
+  blocked_channels_url: 远程屏蔽频道列表
+
+  log_enabled: 日志工具
+
+  quality_research: 画质研究采样
+
+  media_capture_mode: 可选 headers/full
+
+  log_level: 可选 info/debug/warn/error
+
+  capture_budget: 可选 32/16/64'
+rules:
+- and:
+    match:
+    - domain:
+        match: youtubei.googleapis.com
+    - protocol:
+        match: UDP
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei-att.googleapis.com
+    - protocol:
+        match: UDP
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: QUIC
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: UDP
+    - dest_port:
+        match: '443'
+    policy: REJECT
+scriptings:
+- http_request:
+    name: YouTube-请求
+    match: (?i)^https:\/\/(?:www\.|m\.)?youtube\.com\/api\/timedtext\?[^#]+$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/97e035d3d5cf5032.js
+    body_required: true
+- http_request:
+    name: YouTube-请求
+    match: (?i)^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/97e035d3d5cf5032.js
+    body_required: true
+- http_request:
+    name: YouTube-请求
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/97e035d3d5cf5032.js
+    body_required: true
+- http_response:
+    name: YouTube-响应
+    match: (?i)^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/(?:videoplayback|initplayback)(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/88f5c6e25aa2b3a7.js
+    body_required: true
+- http_response:
+    name: YouTube-响应
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:config|log_event)(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/88f5c6e25aa2b3a7.js
+    body_required: true
+- http_request:
+    name: YouTube-请求
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:player|get_watch)(?:\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/player\/ad_break(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/97e035d3d5cf5032.js
+    body_required: true
+- http_response:
+    name: YouTube-响应
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(browse|next|search)(\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/88f5c6e25aa2b3a7.js
+    body_required: true
+- http_response:
+    name: YouTube-响应
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(player|get_watch)(\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/reel\/reel_watch_sequence(?:\?[^#]*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/88f5c6e25aa2b3a7.js
+    body_required: true
+mitm:
+  hostnames:
+  - youtubei.googleapis.com
+  - youtubei-att.googleapis.com
+  - youtube.com
+  - www.youtube.com
+  - m.youtube.com
+  - music.youtube.com
+  - '*.googlevideo.com'

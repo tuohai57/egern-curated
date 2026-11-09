@@ -1,0 +1,24 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: Twitter
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: ads-twitter.com
+    policy: REJECT
+- domain_suffix:
+    match: p.twitter.com
+    policy: REJECT
+- domain_suffix:
+    match: scribe.twitter.com
+    policy: REJECT
+- domain_suffix:
+    match: syndication.twitter.com
+    policy: REJECT
+- domain_suffix:
+    match: syndication-o.twitter.com
+    policy: REJECT
+- domain_suffix:
+    match: urls.api.twitter.com
+    policy: REJECT

@@ -1,0 +1,69 @@
+name: 京东
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: jzt.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: img-x.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: du.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: c-nfa.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: cm.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: jddebug.com
+    policy: REJECT
+- domain_suffix:
+    match: policy.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: kepler.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: bdsp.x.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: keplerapi.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: mapi.m.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.3.cn
+    policy: REJECT
+- domain_suffix:
+    match: jd.c-ptsp.com.cn
+    policy: REJECT
+- domain:
+    match: dns.jd.com
+    policy: REJECT
+- ip_cidr:
+    match: 101.124.19.122/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:db40:5100:1011::5/128
+    policy: REJECT
+    no_resolve: true
+url_rewrites:
+- match: ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052
+  location: '-'
+  status_code: 307
+scriptings:
+- http_response:
+    name: 京东
+    match: ^https:\/\/api\.m\.jd\.com\/client\.action\?
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/26cf9a417687365a.js
+    body_required: true
+mitm:
+  hostnames:
+  - api.m.jd.com
+  - dns.jd.com

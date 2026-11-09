@@ -1,0 +1,14 @@
+name: Facebook
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: facebookma.cn
+    policy: REJECT
+- domain_suffix:
+    match: atdmt.com
+    policy: REJECT
+- domain_suffix:
+    match: staticxx.facebook.com
+    policy: REJECT

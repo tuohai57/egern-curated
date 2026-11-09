@@ -1,0 +1,47 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 虎牙直播
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: pp-cdnfile2pcdn.msstatic.com
+    policy: REJECT
+- domain:
+    match: livewebbs2pcdn.msstatic.com
+    policy: REJECT
+- domain:
+    match: huyafile.msstatic.com
+    policy: REJECT
+- domain:
+    match: livewebbs2.msstatic.com
+    policy: REJECT
+- domain:
+    match: business.msstatic.com
+    policy: REJECT
+- domain_suffix:
+    match: v1d.szbdyd.com
+    policy: REJECT
+- domain_suffix:
+    match: 3dm.huya.com
+    policy: REJECT
+url_rewrites:
+- match: ^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$
+  location: http://reject/
+- match: ^https?:\/\/business\.msstatic\.com\/advertiser\/material
+  location: http://reject/
+map_locals:
+- match: ^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/
+  status_code: 200
+  body: ''
+- match: ^https?://live-ads\.huya\.com/live/getAllEntrance.*$
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+mitm:
+  hostnames:
+  - cdn.wup.huya.com
+  - business.msstatic.com
+  - cdnfile1.msstatic.com
+  - live-ads.huya.com

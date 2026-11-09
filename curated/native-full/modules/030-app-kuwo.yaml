@@ -1,0 +1,97 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 酷我音乐
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: mobilead.kuwo.cn
+    policy: REJECT
+- domain:
+    match: rich.kuwo.cn
+    policy: REJECT
+- domain_keyword:
+    match: rich.kuwo.cn
+    policy: REJECT
+- domain_keyword:
+    match: mobilead.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: c.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: deliver.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: game.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: kuwoyy.com
+    policy: REJECT
+- domain_suffix:
+    match: kwmsg.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: msclick2.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: msphoneclick.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: updatepage.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: wa.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: webstat.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: mobilead.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: rich.kuwo.cn
+    policy: REJECT
+- domain_suffix:
+    match: ad.kuwo.cn
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+scriptings:
+- http_response:
+    name: 酷我音乐
+    match: ^https?:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/baa68fb537c15aa6.js
+    body_required: true
+- http_response:
+    name: 酷我音乐
+    match: ^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/baa68fb537c15aa6.js
+    body_required: true
+- http_response:
+    name: 酷我音乐
+    match: ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/baa68fb537c15aa6.js
+    body_required: true
+- http_response:
+    name: 酷我音乐
+    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/baa68fb537c15aa6.js
+    body_required: true
+- http_response:
+    name: 酷我音乐
+    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/baa68fb537c15aa6.js
+    body_required: true
+mitm:
+  hostnames:
+  - audiobookpay.kuwo.cn
+  - mgxhtj.kuwo.cn
+  - nmobi.kuwo.cn
+  - searchrecterm.kuwo.cn
+  - musicpay.kuwo.cn
+  - vip1.kuwo.cn

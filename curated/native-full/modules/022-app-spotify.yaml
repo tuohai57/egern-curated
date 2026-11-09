@@ -1,0 +1,80 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: Spotify
+description: 移除Spotify广告并解锁部分高级功能。音质无法设置为“极高（Very High）”。设置中Protobuf脚本只能启用其中一个，不能同时启用。启用插件后，请重新登录以应用完整配置。
+author: devchristian1337[https://github.com/devchristian1337]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png
+open_url: https://apps.apple.com/app/id324684580
+tag: 去广告, 会员解锁
+compat_arguments:
+  spot-ev3-enable: 'true'
+  spot-ev1-enable: 'false'
+compat_arguments_desc: 'spot-ev3-enable: Protobuf本地配置修改
+
+  spot-ev1-enable: Protobuf远程配置修改'
+rules:
+- and:
+    match:
+    - domain_suffix:
+        match: spotify.com
+    - protocol:
+        match: QUIC
+    policy: REJECT
+- domain:
+    match: aet.spotify.com
+    policy: REJECT
+url_rewrites:
+- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/pendragon
+  location: http://reject-dict/
+- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/watch-feed-entrypoints\/v.\/discovery-from-seed
+  location: http://reject-dict/
+- match: (?i)^https:\/\/.*-spclient\.spotify\.com(:443)?\/pam-view-service\/
+  location: http://reject-dict/
+- match: (?i)37i9dQZF1EYkqdzj48dyYq
+  location: http://reject-dict/
+scriptings:
+- http_request:
+    name: Spotify-请求
+    match: (?i)^https:\/\/(.*-spclient\.spotify\.com(:443)?|spclient\.wg\.spotify\.com)\/gabo-receiver-service
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/066a2fcd96f012f2.js
+    body_required: true
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/browsita\/v.\/browse
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/5844cd9ba39abd06.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/casita\/v.\/home\/
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/b1bdb819c24783a0.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/scrollsita\/v.\/scroll\/spotify
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/45ddfbef5f2892f1.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)(\?.*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/35ff31b1ab98f8f5.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)(\?.*)?$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/418b98d544023785.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+    disabled: true
+mitm:
+  hostnames:
+  - spclient.wg.spotify.com
+  - '*spclient.spotify.com'

@@ -1,0 +1,26 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: '📺 BiliBili: 👘 Modified'
+description: 哔哩哔哩：👘 皮肤
+author: MartinsKing
+icon: https://raw.githubusercontent.com/ClydeTime/BiliBili/main/database/icon_Avatar.png
+open_url: http://boxjs.com/#/app/BiliBili.clydetime.sub
+scriptings:
+- http_response:
+    name: 📺 BiliBili.Modified.x.resource.show.skin
+    match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/0fb547b48b7561d0.js
+    body_required: true
+- http_response:
+    name: 📺 BiliBili.Modified.x.v2
+    match: ^https:\/\/app\.bilibili\.com\/x\/v2\/(account\/(myinfo|mine)|space)([\/?]|$)
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/0fb547b48b7561d0.js
+    body_required: true
+- http_response:
+    name: 📺 BiliBili.Modified.x.vip
+    match: ^https:\/\/api\.bilibili\.com\/x\/vip\/(web\/vip_center\/combine|price\/panel\/lexi|top_panel_info)
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/0fb547b48b7561d0.js
+    body_required: true
+mitm:
+  hostnames:
+  - app.bilibili.com
+  - api.bilibili.com

@@ -1,0 +1,72 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 腾讯视频
+description: 不负好时光 [不负好广告]
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/TencentVideo.png
+open_url: https://apps.apple.com/app/id458318329
+tag: 去广告
+rules:
+- domain:
+    match: ad.tencentvideo.com
+    policy: REJECT
+- domain:
+    match: adstats.tencentvideo.com
+    policy: REJECT
+- domain:
+    match: ugchsy.gtimg.com
+    policy: REJECT
+- domain:
+    match: activity.video.qq.com
+    policy: REJECT
+- domain:
+    match: iacc.qq.com
+    policy: REJECT
+- domain:
+    match: tux.qq.com
+    policy: REJECT
+- domain:
+    match: aegis.qq.com
+    policy: REJECT
+- domain:
+    match: rdelivery.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: static-res.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: video.mpush.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: api.poll.video.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: tpns.tencent.com
+    policy: REJECT
+- domain_suffix:
+    match: omgmta.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: omgmta1.qq.com
+    policy: REJECT
+- domain_keyword:
+    match: track.qq.com
+    policy: REJECT
+- domain_keyword:
+    match: pgdt.gtimg.c
+    policy: REJECT
+- domain_keyword:
+    match: 1258344696.file.myqcloud.com
+    policy: REJECT
+- ip_cidr:
+    match: 183.201.213.194/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 120.222.144.64/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 111.6.166.107/32
+    policy: REJECT
+    no_resolve: true

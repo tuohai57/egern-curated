@@ -1,0 +1,16 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: X(Twitter)网页版去广告
+description: 移除网页版 X (Twitter) 广告。
+author: 奶思[https://github.com/fmz200]
+homepage: https://github.com/fmz200/wool_scripts
+icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/X.png
+tag: 去广告, X, 奶思
+scriptings:
+- http_response:
+    name: X网页版去广告
+    match: ^https?:\/\/x\.com\/i\/api\/graphql\/[^\/]+\/(HomeTimeline|HomeLatestTimeline|TweetDetail)
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/765bc421243f2d26.js
+    body_required: true
+mitm:
+  hostnames:
+  - x.com

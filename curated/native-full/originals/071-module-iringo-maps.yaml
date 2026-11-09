@@ -1,0 +1,89 @@
+name: ' iRingo: 🗺️ Maps'
+description: '自定义 Maps app
+
+  添加国际版功能
+
+  自定义服务版本'
+compat_arguments:
+  GeoManifest.Dynamic.Config.CountryCode: CN
+  UrlInfoSet.Dispatcher: AutoNavi
+  UrlInfoSet.Directions: AutoNavi
+  UrlInfoSet.RAP: Apple
+  UrlInfoSet.LocationShift: AUTO
+  TileSet.Earth: AUTO
+  TileSet.Roads: AUTO
+  TileSet.Satellite: AUTO
+  Storage: Argument
+  LogLevel: WARN
+compat_arguments_desc: "GeoManifest.Dynamic.Config.CountryCode: [动态配置] 资源清单的国家或地区代码\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（跟随用户当前所在地区）\n    ├ CN: \U0001F1E8\U0001F1F3中国大陆\n    ├ HK: \U0001F1ED\U0001F1F0中国香港\n    ├ TW: \U0001F1F9\U0001F1FC中国台湾\n    ├ SG: \U0001F1F8\U0001F1EC新加坡\n    ├ US: \U0001F1FA\U0001F1F8美国\n    ├ JP: \U0001F1EF\U0001F1F5日本\n    ├ AU: \U0001F1E6\U0001F1FA澳大利亚\n    ├ GB: \U0001F1EC\U0001F1E7英国\n    ├ KR: \U0001F1F0\U0001F1F7韩国\n    ├ CA: \U0001F1E8\U0001F1E6加拿大\n    └ IE: \U0001F1EE\U0001F1EA爱尔兰\n此选项影响“地图”整体配置内容，包括以下的地图功能与服务。\n\nUrlInfoSet.Dispatcher: [URL信息集] 调度器\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ AutoNavi: \U0001F9ED高德（\U0001F1E8\U0001F1F3:互动百科/大众点评/携程 | \U0001F1FA\U0001F1F3:维基百科/Yelp/Booking）\n    └ Apple: Apple（维基百科/Yelp/Booking）\n地点数据接口，此选项影响公共指南，兴趣点(POI)与位置信息等功能。\n\nUrlInfoSet.Directions: [URL信息集] 导航与ETA\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ AutoNavi: \U0001F9ED高德（\U0001F1E8\U0001F1F3:高德地图 | \U0001F1FA\U0001F1F3:TomTom）\n    └ Apple: Apple（\U0001F1E8\U0001F1F3:\U0001F21A️ | \U0001F1FA\U0001F1F3:TomTom）\n导航与ETA服务接口，此选项影响导航与ETA(到达时间)等功能。\n\nUrlInfoSet.RAP: [URL信息集] 评分和照片\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ AutoNavi: \U0001F9ED高德（\U0001F1E8\U0001F1F3:\U0001F236️但未开放 | \U0001F1FA\U0001F1F3:\U0001F21A️）\n    └ Apple: Apple（\U0001F1E8\U0001F1F3:\U0001F21A️ | \U0001F1FA\U0001F1F3:\U0001F236️）\n评分和照片服务接口，此选项影响评分和照片服务以及照片使用。\n\nUrlInfoSet.LocationShift: [URL信息集] 定位漂移\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ AutoNavi: \U0001F9ED高德（\U0001F21A️坐标，使用\U0001F1E8\U0001F1F3GCJ-02坐标）\n    └ Apple: Apple（\U0001F236️坐标，使用\U0001F1FA\U0001F1F3WGS-84坐标）\n定位漂移修正服务接口，控制定位漂移和\U0001F9ED指南针与\U0001F4CD坐标的经纬度。\n\nTileSet.Earth: [瓦片数据集] 地球图像\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ AutoNavi: \U0001F9ED高德版（主要显示国家与国界）\n    └ Apple: Apple（主要显示城市与地貌）\n此选项影响地球视图下行政区划、地貌等信息的显示。\n\nTileSet.Roads: [瓦片数据集] 道路图像与四处看看\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ CN: \U0001F1E8\U0001F1F3中国（\U0001F1E8\U0001F1F3:卫星视图道路正确 | \U0001F1FA\U0001F1F3:无四处看看）\n    └ XX: Apple（\U0001F1E8\U0001F1F3:卫星视图道路偏移 | \U0001F1FA\U0001F1F3:有四处看看）\n此选项影响卫星视图下的道路图像与四处看看可用路段。\n\nTileSet.Satellite: [瓦片数据集] 卫星图像\n    ├ AUTO: \U0001F1FA\U0001F1F3自动（随[动态配置]版本自动选择）\n    ├ CN: \U0001F1E8\U0001F1F3中国四维（仅\U0001F1E8\U0001F1F3）\n    └ XX: \U0001F1FA\U0001F1F3DigitalGlobe（全球，但\U0001F1E8\U0001F1F3较旧）\n此选项影响 2D 卫星图像的版本。\n\nStorage: [储存] 配置类型\n    ├ Argument: 优先使用插件选项与模块参数等，由 $argument 传入的配置，$argument 不包含的设置项由 PersistentStore (BoxJs) 提供\n    ├ PersistentStore: 只使用来自 BoxJs 等，由 $persistentStore 提供的配置\n    └ database: 只使用由作者的 database.mjs 文件提供的默认配置，其他任何自定义配置不再起作用\n选择要使用的配置类型。未设置此选项或不通过此选项的旧版本的配置顺序依旧是 $persistentStore (BoxJs) > $argument > database。\n\nLogLevel: [调试] 日志等级\n    ├ OFF: 关闭\n    ├ ERROR: ❌ 错误\n    ├ WARN: ⚠️ 警告\n    ├ INFO: ℹ️ 信息\n    ├ DEBUG: \U0001F171️ 调试\n    └ ALL: 全部\n选择脚本日志的输出等级，低于所选等级的日志将全部输出。\n"
+open_url: http://boxjs.com/#/app/iRingo.Maps
+author: VirgilClyne[https://github.com/VirgilClyne]
+homepage: https://NSRingo.github.io/guide/GeoServices/maps
+icon: https://developer.apple.com/assets/elements/icons/maps/maps-128x128.png
+dns: {}
+rules:
+- domain_suffix:
+    match: is.autonavi.com
+    policy: DIRECT
+- domain:
+    match: gspe11-2-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe12-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe19-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe19-2-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe79-cn-ssl.ls.apple.com
+    policy: DIRECT
+scriptings:
+- http_request:
+    name: 🗺️ Maps.config.defaults.request
+    match: ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/4c931566d1c02cfc.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+- http_response:
+    name: 🗺️ Maps.config.defaults.response
+    match: ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/8ce6376ba24ff53a.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+    body_required: true
+- http_request:
+    name: 🗺️ Maps.config.announcements.request
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/4c931566d1c02cfc.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+- http_response:
+    name: 🗺️ Maps.config.announcements.response
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/8ce6376ba24ff53a.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+    body_required: true
+    binary_body: true
+- http_request:
+    name: 🗺️ Maps.geo_manifest.dynamic.config.request
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/4c931566d1c02cfc.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+- http_response:
+    name: 🗺️ Maps.geo_manifest.dynamic.config.response
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/8ce6376ba24ff53a.js
+    env:
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="{{{GeoManifest.Dynamic.Config.CountryCode}}}"&UrlInfoSet.Dispatcher="{{{UrlInfoSet.Dispatcher}}}"&UrlInfoSet.Directions="{{{UrlInfoSet.Directions}}}"&UrlInfoSet.RAP="{{{UrlInfoSet.RAP}}}"&UrlInfoSet.LocationShift="{{{UrlInfoSet.LocationShift}}}"&TileSet.Earth="{{{TileSet.Earth}}}"&TileSet.Roads="{{{TileSet.Roads}}}"&TileSet.Satellite="{{{TileSet.Satellite}}}"&Storage="{{{Storage}}}"&LogLevel="{{{LogLevel}}}"
+    body_required: true
+    binary_body: true
+mitm:
+  hostnames:
+    includes:
+    - configuration.ls.apple.com
+    - gspe35-ssl.ls.apple.com

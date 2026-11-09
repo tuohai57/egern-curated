@@ -1,0 +1,95 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 字节跳动
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: ad.zijieapi.com
+    policy: REJECT
+- domain:
+    match: applog.zijieapi.com
+    policy: REJECT
+- domain_suffix:
+    match: -normal-lq.zijieapi.com
+    policy: REJECT
+- domain_suffix:
+    match: dm.bytedance.com
+    policy: REJECT
+- domain_suffix:
+    match: xlog-va.byteoversea.com
+    policy: REJECT
+- domain_suffix:
+    match: tosv.byted.org
+    policy: REJECT
+- domain_suffix:
+    match: tosv.boe.byted.org
+    policy: REJECT
+- domain_suffix:
+    match: extlog.snssdk.com
+    policy: REJECT
+- domain_suffix:
+    match: sdfp.snssdk.com
+    policy: REJECT
+- domain_suffix:
+    match: temai.snssdk.com
+    policy: REJECT
+- domain_suffix:
+    match: xlog.snssdk.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: dm.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: dsp.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: nativeapp.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: partner.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: track.toutiao.com
+    policy: REJECT
+- domain_suffix:
+    match: dm.pstatp.com
+    policy: REJECT
+- domain_suffix:
+    match: pb3.pstatp.com
+    policy: REJECT
+- domain_suffix:
+    match: s3a.pstatp.com
+    policy: REJECT
+url_rewrites:
+- match: ^https?:\/\/[A-Za-z0-9_-]+\.amemv\.com\/aweme\/v\d\/ad\/
+  location: http://reject/
+- match: ^https?:\/\/[A-Za-z0-9_-]+\.snssdk\.com\/.+_ad\/
+  location: http://reject/
+map_locals:
+- match: ^https?:\/\/.+\.(amemv|musical|snssdk|tiktokv)\.com\/(api|motor)\/ad\/
+  status_code: 200
+  body: ' '
+- match: ^https?:\/\/.+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
+  status_code: 200
+  body: ' '
+- match: ^https?:\/\/.+\.amemv\.com\/.+app_log
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/.+\.amemv\.com\/.+report
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/.+\.amemv\.com\/.+stats
+  status_code: 200
+  body: ''
+mitm:
+  hostnames:
+  - '*.pstatp.com'
+  - amemv.com
+  - musical.com
+  - snssdk.com
+  - tiktokv.com
+  - dsp.toutiao.com

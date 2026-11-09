@@ -6,3 +6,11 @@ curated/tools/check_managed.py text eol=lf
 curated/tools/test_scripts.cjs text eol=lf
 .github/workflows/check-managed.yml text eol=lf
 curated/scripts/source/*.js text eol=lf
+curated/native-full/scripts/** -text
+curated/native-full/originals/** -text
+curated/native-full/modules/** text eol=lf
+curated/native-full/*.yaml text eol=lf
+curated/native-full/*.json text eol=lf
+curated/native-full/*.md text eol=lf
+curated/tools/check_native_full.py text eol=lf
+curated/tools/test_native_full.cjs text eol=lf

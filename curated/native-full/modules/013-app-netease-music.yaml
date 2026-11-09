@@ -1,0 +1,112 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 网易云音乐
+description: 网易云音乐全面净化，可自定义界面样式。
+author: RuCu6[https://github.com/RuCu6], Keywos[https://github.com/Keywos], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png
+open_url: https://apps.apple.com/app/id590338362
+tag: 去广告, 解锁会员
+compat_arguments:
+  FX: 'false'
+  MY: 'false'
+  DT: 'false'
+  GZ: 'false'
+  PRGG: 'false'
+  PRRK: 'false'
+  PRDRD: 'false'
+  PRSCVPT: 'false'
+  PRST: 'false'
+  PRRR: 'false'
+  HMPR: 'false'
+  PRMST: 'false'
+  PRCN: 'false'
+  Music163_VIP_Shared: 'false'
+  Cookie: ''
+  MConfigInfo: ''
+  UserAgent: ''
+compat_arguments_desc: 'FX: 隐藏[底部-发现]
+
+  MY: 隐藏[底部-漫游]
+
+  DT: 隐藏[底部-笔记]
+
+  GZ: 隐藏[底部-关注]
+
+  PRGG: 隐藏[首页-问候语]
+
+  PRRK: 隐藏[首页-排行榜]
+
+  PRDRD: 隐藏[首页-每日推荐]
+
+  PRSCVPT: 隐藏[首页-推荐歌单]
+
+  PRST: 隐藏[首页-最近常听]
+
+  PRRR: 隐藏[首页-雷达歌单]
+
+  HMPR: 隐藏[首页-音乐合伙人]
+
+  PRMST: 隐藏[首页-推荐专属歌单]
+
+  PRCN: 隐藏[首页-你的专属歌单]
+
+  Music163_VIP_Shared: 启用[共享会员]
+
+  Cookie: Cookie
+
+  MConfigInfo: MConfigInfo
+
+  UserAgent: UserAgent'
+rules:
+- domain:
+    match: iadmat.nosdn.127.net
+    policy: REJECT
+- domain:
+    match: iadmatapk.nosdn.127.net
+    policy: REJECT
+- domain:
+    match: iadmusicmat.music.126.net
+    policy: REJECT
+- domain:
+    match: iadmusicmatvideo.music.126.net
+    policy: REJECT
+- domain:
+    match: ipv4.music.163.com
+    policy: REJECT
+- domain:
+    match: ipv6.music.163.com
+    policy: REJECT
+- domain:
+    match: iad.service.163.org
+    policy: REJECT
+- domain:
+    match: bdlog.tanx.com
+    policy: REJECT
+url_rewrites:
+- match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad
+  location: http://reject-dict/
+- match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/sp\/flow\/popup
+  location: http://reject-dict/
+- match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/delivery\/(batch-deliver|deliver)
+  location: http://reject-dict/
+- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/)
+  location: http://reject-dict/
+- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist)
+  location: http://reject-dict/
+- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/)
+  location: http://reject-dict/
+- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/))
+  location: http://reject-dict/
+- match: (?i)^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
+    filter: . = {}
+- response_jq:
+    match: (?i)^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
+    filter: . = {}
+mitm:
+  hostnames:
+  - interface*.music.163.com
+  - ipv4.music.163.com

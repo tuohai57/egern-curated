@@ -1,0 +1,13 @@
+name: 123云盘去广告
+description: 移除开屏广告、应用内横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/123NetWorkDisk.png
+open_url: https://apps.apple.com/app/id1597682672
+tag: 去广告
+url_rewrites:
+- match: (?i)^https:\/\/www\.123pan\.com\/api\/config\/get
+  location: http://reject-dict/
+mitm:
+  hostnames:
+  - www.123pan.com

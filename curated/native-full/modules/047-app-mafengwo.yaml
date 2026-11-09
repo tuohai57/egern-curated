@@ -1,0 +1,25 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 马蜂窝去广告
+description: 移除首页信息流广告、商城横幅推广、我的页面弹窗。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaFengWo.png
+open_url: https://apps.apple.com/app/id406596432
+tag: 去广告
+rules:
+- domain:
+    match: advert.mafengwo.cn
+    policy: REJECT
+url_rewrites:
+- match: (?i)^https:\/\/mapi\.mafengwo\.cn\/user\/growth\/get_growth_tip\/v1\?
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/mapi\.mafengwo\.cn\/discovery\/get_index\/v7\?
+    filter: .data.list |= map(select(.data.business_type != "gdcpm"))
+- response_jq:
+    match: (?i)^https:\/\/mapi\.mafengwo\.cn\/sales\/home\/get_header\/v3\?
+    filter: .data.list[] |= ( .data |= del(.banners) )
+mitm:
+  hostnames:
+  - mapi.mafengwo.cn

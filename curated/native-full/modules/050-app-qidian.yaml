@@ -1,0 +1,50 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 起点读书去广告
+description: 移除起点读书开屏广告、每日导读、各类弹窗、文末广告、搜索填充词，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png
+open_url: https://apps.apple.com/app/id534174796
+tag: 去广告
+url_rewrites:
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v4\/client\/getsplashscreen\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\/
+  location: http://reject-dict/
+- match: (?i)^https:\/\/ywab\.reader\.qq\.com\/user\/experiments\/v2\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/checkin\/simpleinfo\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/push\/getdialog\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/message\/getpushedmessagelist$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/maintain\/playstrip$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/dailyrecommend\/recommendBook\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/freshman\/bookshelfbtn$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation$
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/booksearch\/hotWords\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe\/showChapterEndModule\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/young\/getconf$
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$
+    filter: (.Data.WolfEye = 0 | .Data.CloudSetting.TeenShowFreq = 0) | (del(.Data.ActivityPageBackPushNoticeFrequency,
+      .Data.ActivityIcon, .Data.ActivityPopup, .Data.LuckBag))
+- response_jq:
+    match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/dailyrecommend\/getdailyrecommend\?
+    filter: .Data.Items = "[]"
+- response_jq:
+    match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v3\/user\/getaccountpage\?
+    filter: del(.Data.BenefitButtonList)
+mitm:
+  hostnames:
+  - magev6.if.qidian.com
+  - ywab.reader.qq.com

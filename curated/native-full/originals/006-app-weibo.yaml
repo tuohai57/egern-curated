@@ -1,0 +1,178 @@
+name: 微博
+description: 微博全面净化
+author: RuCu6[https://github.com/RuCu6], fmz200[https://github.com/fmz200], zmqcherish[https://github.com/zmqcherish], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png
+open_url: https://apps.apple.com/app/id350962117
+tag: 去广告
+compat_arguments:
+  MainTabFilter: 'true'
+compat_arguments_desc: 'MainTabFilter: 顶部 Tab 过滤'
+rules:
+- url_regex:
+    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(push\/active|client\/addlog_batch|ad\/preload)
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/api-cloudim\.api\.weibo\.com\/v1\/log\/
+    policy: REJECT
+- domain_suffix:
+    match: alitui.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: beacon.sina.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: biz.weibo.com
+    policy: REJECT
+- domain:
+    match: dns.weibo.cn
+    policy: REJECT
+- domain:
+    match: huodong.weibo.cn
+    policy: REJECT
+- domain:
+    match: sax.sina.com.cn
+    policy: REJECT
+- domain:
+    match: saxn.sina.com.cn
+    policy: REJECT
+- domain:
+    match: saxs.sina.com.cn
+    policy: REJECT
+- domain:
+    match: u1.img.mobile.sina.cn
+    policy: REJECT
+- domain:
+    match: bootpreload.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: fastimage.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: adimg.vue.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: zymo.mps.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: weibomingzi.com
+    policy: REJECT
+- domain_suffix:
+    match: sdkapp.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: promote.biz.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: gw5.push.mcp.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: gw6.push.mcp.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: game.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: adimg.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: game.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: ads.viber.com
+    policy: REJECT
+- domain_suffix:
+    match: ads-d.viber.com
+    policy: REJECT
+- domain_suffix:
+    match: ads.aws.viber.com
+    policy: REJECT
+- domain_suffix:
+    match: dp.im.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: click.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: wax.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: wbapp.uve.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: widget.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: dsp.edm.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: alitui.weibo.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: tui.weibo.com
+    policy: REJECT
+- domain_suffix:
+    match: wax.weibo.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: ad.weibo.com
+    policy: REJECT
+- domain:
+    match: datacollection.uve.weibo.com
+    policy: REJECT
+- domain:
+    match: adpinpai.video.weibocdn.com
+    policy: REJECT
+url_rewrites:
+- match: (?i)^https?:\/\/m?api\.weibo\.c(n|om)\/2\/logservice\/service\?
+  location: http://reject/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/(?:ug\/checkin\/list|push\/daily|push\/info)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/!\/live\/media_homelist\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/comments\/bullet_screens\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/photo\/info\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/(?:container_positive|push_info)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/vote\/get_vote_detail\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/!\/chaohua\/discovery\/home_bottom\/switch\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/!\/huati\/(?:discovery_home_bottom_channels|discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(?:container_discover|finder_nav_polling)\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/hot\/hours_spotlight\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/video\/redpacket\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/!\/(?:search\/finder_nav_polling|sug\/list\/finderchange|was\/finder\/searchbarchange)\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/video\/tiny_video_info_show\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/(?:bootrealtime|bootpreload)\.uve\.weibo\.com\/v\d\/ad\/(?:realtime|preload)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead)
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/cardlist\?
+    filter: del(.items[] | select(.category == \"group\"))
+scriptings:
+- http_response:
+    name: 微博-响应
+    match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/groups\/allgroups\/v2\?
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/2ee8f5b6aa5d0d70.js
+mitm:
+  hostnames:
+  - '*.weibo.cn'
+  - '*.weibo.com'
+  - weibo.com

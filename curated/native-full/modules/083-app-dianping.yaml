@@ -1,0 +1,75 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 大众点评
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+url_rewrites:
+- match: ^https?:\/\/103\.37\.155\.60\/fetch
+  location: http://reject/
+- match: ^https?:\/\/catdot\.dianping\.com\/broker-service\/hijack
+  location: http://reject/
+- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig)
+  location: http://reject/
+- match: ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction
+  location: http://reject/
+- match: ^https?:\/\/mapi\.dianping\.com\/adshopping
+  location: http://reject/
+- match: ^https?:\/\/p\.meituan\.com\/api\/privacy\/config
+  location: http://reject/
+- match: ^https?:\/\/www\.dpfile\.com\/app\/fecommonservice-lottie\/ugc-write-done\/media
+  location: http://reject/
+- match: ^https?:\/\/www\.dpfile\.com\/picasso\/picasso-qa\/src\/AnswerList\/AnswerList-bundle
+  location: http://reject/
+- match: ^https?:\/\/www\.dpfile\.com\/sc\/indexpromotion
+  location: http://reject/
+- match: ^https?:\/\/catfront\.dianping\.com\/api\/metric\?v=\d&p=rn_gcbu_mrn-joy-poidetail
+  location: http://reject/
+- match: ^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json
+  location: http://reject/
+- match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf
+  location: http://reject/
+- match: ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/(?>ehc|titansx|ddblue|edfu)\/
+  location: http://reject/
+map_locals:
+- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/\w+\.gif
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: 大众点评
+    match: ^https?:\/\/img\.meituan\.net\/(?>dpmobile|goodsawardpic)\/
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/c5cc1448fc7dca55.js
+    body_required: true
+- http_response:
+    name: 大众点评
+    match: ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/c5cc1448fc7dca55.js
+    body_required: true
+mitm:
+  hostnames:
+  - 103.37.155.60
+  - '*.dianping.com'
+  - img.meituan.net
+  - p.meituan.com
+  - rms.meituan.com
+  - www.dpfile.com
+  - awp-assets.meituan.net
+  - s3plus.meituan.net
+  - p*.meituan.net
+  - ddplus.meituan.net

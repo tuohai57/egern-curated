@@ -1,0 +1,51 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 斗鱼直播
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: wan.douyu.com
+    policy: REJECT
+- domain_suffix:
+    match: g.wan.douyu.com
+    policy: REJECT
+- domain_suffix:
+    match: dotcounter.douyutv.com
+    policy: REJECT
+url_rewrites:
+- match: ^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd
+  location: http://reject/
+- match: ^https?:\/\/staticlive\.douyucdn\.cn\/upload\/signs\/
+  location: http://reject/
+- match: ^https?:\/\/staticlive\.douyucdn\.cn\/.+\/getStartSend
+  location: http://reject/
+- match: ^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios
+  location: http://reject/
+- match: ^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo
+  location: http://reject/
+map_locals:
+- match: ^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo
+  status_code: 200
+  body: ''
+mitm:
+  hostnames:
+  - daoyu.sdo.com
+  - rtbapi.douyucdn.cn
+  - staticlive.douyucdn.cn
+  - capi.douyucdn.cn
+  - douyucdn.cn

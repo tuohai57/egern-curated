@@ -1,0 +1,42 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 百度文库去广告
+description: 移除开屏广告、横幅广告、弹窗广告、信息流推广、搜索发现、热门搜索、资料库搜索推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduWenku.png
+open_url: https://apps.apple.com/app/id426340811
+tag: 去广告
+url_rewrites:
+- match: (?i)^https:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/search\/hot\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/search\/wkhotwords\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/task\/viptasklist\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/activity\/interface\/wkapppopup\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/abg\/index\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/recommenddoc\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/vipdoccard\?
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/index\/home\?
+    filter: del(.data.bannerInfo, .data.bannerList, .data.bannerListV2)
+- response_jq:
+    match: (?i)^https:\/\/(appwk|tanbi)\.baidu\.com\/gsula\/sula\/syncmrecall$
+    filter: del(.data.items)
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/index\/tab\?
+    filter: del(.data)
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/forum\/feed\?reqMode=wenkuapp_main_feed
+    filter: del(.data)
+mitm:
+  hostnames:
+  - appwk.baidu.com
+  - tanbi.baidu.com

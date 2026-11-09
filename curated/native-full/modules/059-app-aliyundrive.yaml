@@ -1,0 +1,34 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 阿里云盘去广告
+description: 移除首页广告横幅、弹窗和顶部奖励。
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AliYunDrive.png
+open_url: https://apps.apple.com/app/id1494661473
+tag: 去广告
+rules:
+- ip_cidr:
+    match: 203.107.1.1/24
+    policy: REJECT
+    no_resolve: true
+url_rewrites:
+- match: (?i)^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle
+  location: http://reject-dict/
+- match: (?i)^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders
+  location: http://reject-dict/
+scriptings:
+- http_response:
+    name: 阿里云盘去广告-响应
+    match: (?i)^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets)
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/fc4aa26e205b02ea.js
+    body_required: true
+- http_response:
+    name: 阿里云盘去广告-响应
+    match: (?i)^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/fc4aa26e205b02ea.js
+    body_required: true
+mitm:
+  hostnames:
+  - api.alipan.com
+  - member.alipan.com
+  - bizapi.alipan.com

@@ -1,0 +1,47 @@
+{
+  "scope": "Synthetic source-code regression fixtures; these are not device captures.",
+  "cases": [
+    {
+      "name": "小红书首页插入广告删除，普通笔记和游标保留",
+      "source_suffix": "6d50baad22df9b29.js",
+      "url": "https://edith.xiaohongshu.com/api/sns/v6/homefeed?test=1",
+      "input": {"data": [{"id": "ad", "ads_info": {}}, {"id": "note", "title": "正常笔记"}], "cursor": "keep"},
+      "expected": {"data": [{"id": "note", "title": "正常笔记"}], "cursor": "keep"}
+    },
+    {
+      "name": "小红书无广告首页保持普通笔记",
+      "source_suffix": "6d50baad22df9b29.js",
+      "url": "https://edith.xiaohongshu.com/api/sns/v6/homefeed?test=2",
+      "input": {"data": [{"id": "note", "title": "正常笔记"}], "cursor": "keep"},
+      "expected": {"data": [{"id": "note", "title": "正常笔记"}], "cursor": "keep"}
+    },
+    {
+      "name": "小红书开屏广告时间失效，广告外的配置保留",
+      "source_suffix": "6d50baad22df9b29.js",
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/system_service/splash_config?test=1",
+      "input": {"data": {"ads_groups": [{"start_time": 1, "end_time": 2, "ads": [{"start_time": 3, "end_time": 4}]}], "normal": "keep"}},
+      "expected": {"data": {"ads_groups": [{"start_time": 3818332800, "end_time": 3818419199, "ads": [{"start_time": 3818332800, "end_time": 3818419199}]}], "normal": "keep"}}
+    },
+    {
+      "name": "微博超话插入广告删除，普通帖子保留",
+      "source_suffix": "2ee8f5b6aa5d0d70.js",
+      "url": "https://api.weibo.cn/2/statuses/container_timeline_topicpage?test=1",
+      "input": {"items": [{"data": {"mblogtypename": "广告", "id": "ad"}}, {"data": {"id": "post"}}], "cursor": "keep"},
+      "expected": {"items": [{"data": {"id": "post"}}], "cursor": "keep"}
+    },
+    {
+      "name": "微博热搜推广删除，普通热搜保留",
+      "source_suffix": "2ee8f5b6aa5d0d70.js",
+      "url": "https://api.weibo.cn/2/page?test=1",
+      "input": {"cards": [{"card_group": [{"id": "ad", "promotion": {}}, {"id": "organic"}]}], "cursor": "keep"},
+      "expected": {"cards": [{"card_group": [{"id": "organic"}]}], "cursor": "keep"}
+    },
+    {
+      "name": "微博无广告超话保持帖子和游标",
+      "source_suffix": "2ee8f5b6aa5d0d70.js",
+      "url": "https://api.weibo.cn/2/statuses/container_timeline_topicpage?test=2",
+      "input": {"items": [{"data": {"id": "post"}}], "cursor": "keep"},
+      "expected": {"items": [{"data": {"id": "post"}}], "cursor": "keep"}
+    }
+  ]
+}

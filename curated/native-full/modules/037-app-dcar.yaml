@@ -1,0 +1,12 @@
+# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+name: 懂车帝
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_keyword:
+    match: p3-pack.byteimg.com
+    policy: REJECT
+- domain_keyword:
+    match: p6-pack.byteimg.com
+    policy: REJECT
