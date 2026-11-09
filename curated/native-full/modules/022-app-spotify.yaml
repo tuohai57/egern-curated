@@ -18,7 +18,7 @@ rules:
     - domain_suffix:
         match: spotify.com
     - protocol:
-        match: QUIC
+        match: quic
     policy: REJECT
 - domain:
     match: aet.spotify.com

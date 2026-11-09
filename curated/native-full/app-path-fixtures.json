@@ -1,0 +1,1059 @@
+{
+  "scope": "Author-declared synthetic App paths; no scoring-site inputs. review-normal paths are synthetic unrelated-path negatives, not claims of actual App endpoints.",
+  "paths": [
+    {
+      "app": "小红书",
+      "scene": "首页信息流",
+      "url": "https://edith.xiaohongshu.com/api/sns/v6/homefeed?test=1",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "小红书",
+      "scene": "开屏配置",
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/system_service/splash_config?test=1",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "微博",
+      "scene": "超话插入广告",
+      "url": "https://api.weibo.cn/2/statuses/container_timeline_topicpage?test=1",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "微博",
+      "scene": "热搜推广",
+      "url": "https://api.weibo.cn/2/page?test=1",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "哔哩哔哩",
+      "scene": "首页",
+      "url": "https://app.bilibili.com/x/v2/feed/index?test=1",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "哔哩哔哩",
+      "scene": "搜索默认词二进制",
+      "url": "https://grpc.biliapi.net/bilibili.app.interface.v1.Search/DefaultWords",
+      "expected": "request",
+      "synthetic": true
+    },
+    {
+      "app": "闲鱼",
+      "scene": "首页",
+      "url": "https://acs.m.goofish.com/gw/mtop.taobao.idlehome.home.nextfresh/1.0/",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "拼多多",
+      "scene": "首页",
+      "url": "https://api.pinduoduo.com/api/alexa/homepage/hub?test=1",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "京东",
+      "scene": "首页",
+      "url": "https://api.m.jd.com/client.action?functionId=welcomeHome",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "淘宝",
+      "scene": "开屏",
+      "url": "https://guide-acs.m.taobao.com/gw/mtop.taobao.wireless.home.splash.awesome.get/1.0/",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "微信",
+      "scene": "公众号广告",
+      "url": "https://mp.weixin.qq.com/mp/getappmsgad?test=1",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "高德地图",
+      "scene": "开屏",
+      "url": "https://amap-aos-info-nogw.amap.com/ws/aos/alimama/splash_screen_rt",
+      "expected": "terminal",
+      "synthetic": true
+    },
+    {
+      "app": "滴滴",
+      "scene": "首页",
+      "url": "https://conf.diditaxi.com.cn/homepage/v1/core?test=1",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "米家",
+      "scene": "开屏横幅",
+      "url": "https://home.mi.com/cgi-op/api/v1/recommendation/openingBanner",
+      "expected": "terminal",
+      "synthetic": true
+    },
+    {
+      "app": "麦当劳",
+      "scene": "开屏",
+      "url": "https://api.mcd.cn/bff/portal/home/splash",
+      "expected": "terminal",
+      "synthetic": true
+    },
+    {
+      "app": "网易邮箱大师",
+      "scene": "配置",
+      "url": "https://appconf.mail.163.com/mailmaster/api/config/function.do",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "菜鸟",
+      "scene": "首页",
+      "url": "https://e2e-mtop.cainiao.com/gw/mtop.cainiao.app.e2e.engine.page.fetch.cn/1.0/",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "航旅纵横",
+      "scene": "首页",
+      "url": "https://home.umetrip.com/gateway/api/umetrip/native",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "TiebaPure",
+      "scene": "贴吧protobuf",
+      "url": "https://tiebac.baidu.com/c/f/frs/page?cmd=1&format=protobuf",
+      "expected": "response_script",
+      "synthetic": true
+    },
+    {
+      "app": "抖音",
+      "scene": "界面精简",
+      "url": "https://aweme.snssdk.com/aweme/homepage/render/?test=1",
+      "expected": "response_body",
+      "synthetic": true
+    },
+    {
+      "app": "抖音",
+      "scene": "信息流待验",
+      "url": "https://aweme.snssdk.com/aweme/v1/feed/?test=1",
+      "expected": "gap",
+      "synthetic": true
+    },
+    {
+      "app": "美团",
+      "scene": "外卖开屏配置",
+      "url": "https://wmapi.meituan.com/api/v7/openscreen?test=1",
+      "expected": "terminal",
+      "synthetic": true
+    },
+    {
+      "app": "美团",
+      "scene": "开屏素材",
+      "url": "https://flowplus.meituan.net/v1/abc/linglong/ad.jpg",
+      "expected": "request",
+      "synthetic": true
+    },
+    {
+      "app": "美团",
+      "scene": "品牌横幅",
+      "url": "https://img.meituan.net/bizad/bizad_brandCpt_123.jpg",
+      "expected": "request",
+      "synthetic": true
+    },
+    {
+      "app": "美团",
+      "scene": "活动配置",
+      "url": "https://s3plus.meituan.net/ocean-blk-index/index/blk_conf_73.json",
+      "expected": "terminal",
+      "synthetic": true
+    },
+    {
+      "app": "知乎",
+      "scene": "首页信息流",
+      "url": "https://api.zhihu.com/topstory/recommend?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "知乎",
+      "scene": "回答夹带广告",
+      "url": "https://api.zhihu.com/questions/123/feeds?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=)"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "知乎",
+      "scene": "悬浮横幅",
+      "url": "https://api.zhihu.com/commercial_api/banners_v3/app_float_corner?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?"
+          },
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "酷安",
+      "scene": "首页插入卡片",
+      "url": "https://api.coolapk.com/v6/main/dataList?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "酷安",
+        "original_repository_path": "curated/native-full/originals/019-app-coolapk.yaml",
+        "source_sha256": "1f39082febd95dd44be15d3469b6776c3d1297bc46f385f254b6198d67e738de",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/dataList"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "酷安",
+      "scene": "详情赞助卡",
+      "url": "https://api.coolapk.com/v6/feed/detail?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "酷安",
+        "original_repository_path": "curated/native-full/originals/019-app-coolapk.yaml",
+        "source_sha256": "1f39082febd95dd44be15d3469b6776c3d1297bc46f385f254b6198d67e738de",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "小黑盒",
+      "scene": "信息流推广",
+      "url": "https://api.xiaoheihe.cn/bbs/app/feeds/news?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "小黑盒",
+        "original_repository_path": "curated/native-full/originals/046-app-xiaoheihe.yaml",
+        "source_sha256": "dc50eeb5a48ddd300d11cc77aa9d801994084bedf1e996509d9399a91bb55e26",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/bbs\\/app\\/feeds\\/news"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "小黑盒",
+      "scene": "开屏配置",
+      "url": "https://api.xiaoheihe.cn/account/get_ads_info_v2?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "小黑盒",
+        "original_repository_path": "curated/native-full/originals/046-app-xiaoheihe.yaml",
+        "source_sha256": "dc50eeb5a48ddd300d11cc77aa9d801994084bedf1e996509d9399a91bb55e26",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "网易云音乐",
+      "scene": "广告配置",
+      "url": "https://interface.music.163.com/eapi/ad/get",
+      "synthetic": true,
+      "evidence": {
+        "module": "网易云音乐",
+        "original_repository_path": "curated/native-full/originals/013-app-netease-music.yaml",
+        "source_sha256": "096f3562558a59599d6dfed388f00101e323381fb8ece85034d417a57526c1d8",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/x?e?api\\/ad"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "网易云音乐",
+      "scene": "搜索默认推广",
+      "url": "https://interface.music.163.com/eapi/search/default?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "网易云音乐",
+        "original_repository_path": "curated/native-full/originals/013-app-netease-music.yaml",
+        "source_sha256": "096f3562558a59599d6dfed388f00101e323381fb8ece85034d417a57526c1d8",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "得物",
+      "scene": "广告接口",
+      "url": "https://app.dewu.com/api/v1/app/advertisement/config?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "得物",
+        "original_repository_path": "curated/native-full/originals/043-app-dewu.yaml",
+        "source_sha256": "6a7749de14db9669148bdf7711b4dd8102c638a63dac527e7d4b580621461f0b",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "得物",
+      "scene": "个人页精简",
+      "url": "https://app.dewu.com/api/v1/app/biz-aggregate/me/user-index?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "得物",
+        "original_repository_path": "curated/native-full/originals/043-app-dewu.yaml",
+        "source_sha256": "6a7749de14db9669148bdf7711b4dd8102c638a63dac527e7d4b580621461f0b",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/biz-aggregate\\/me\\/user-index\\?"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "铁路12306",
+      "scene": "广告配置",
+      "url": "https://ad.12306.cn/ad/ser/getAdList",
+      "synthetic": true,
+      "evidence": {
+        "module": "12306",
+        "original_repository_path": "curated/native-full/originals/056-app-12306.yaml",
+        "source_sha256": "9e35a4d581527ff285fa08379e50ba26395a3d95828930a027497d58b199de49",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "铁路12306",
+      "scene": "请求净化",
+      "url": "https://mobile.12306.cn/otsmobile/app/mgs/mgw.htm",
+      "synthetic": true,
+      "evidence": {
+        "module": "12306",
+        "original_repository_path": "curated/native-full/originals/056-app-12306.yaml",
+        "source_sha256": "9e35a4d581527ff285fa08379e50ba26395a3d95828930a027497d58b199de49",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/mobile\\.12306\\.cn\\/otsmobile\\/app\\/mgs\\/mgw\\.htm$"
+          }
+        ]
+      },
+      "expected": "request"
+    },
+    {
+      "app": "携程旅行",
+      "scene": "广告接口",
+      "url": "https://m.ctrip.com/restapi/soa2/13916/json/tripAds",
+      "synthetic": true,
+      "evidence": {
+        "module": "携程",
+        "original_repository_path": "curated/native-full/originals/082-app-ctrip.yaml",
+        "source_sha256": "0b3f04b62534613a47d4d3efa378317f7eda8a61b4a16891645fd1e346dd157b",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "携程旅行",
+      "scene": "广告追踪",
+      "url": "https://ma-adx.ctrip.com/_ma.gif?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "携程",
+        "original_repository_path": "curated/native-full/originals/082-app-ctrip.yaml",
+        "source_sha256": "0b3f04b62534613a47d4d3efa378317f7eda8a61b4a16891645fd1e346dd157b",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "大众点评",
+      "scene": "开屏配置",
+      "url": "https://mapi.dianping.com/mapi/operating/loadsplashconfig?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "大众点评",
+        "original_repository_path": "curated/native-full/originals/083-app-dianping.yaml",
+        "source_sha256": "0ec0e33312510071afac34b02dc7623bfa76308f837b2ed507b29f90b23ffe72",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/operating\\/(?>indexopsmodules|loadsplashconfig)"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "大众点评",
+      "scene": "首页配置",
+      "url": "https://mapi.dianping.com/mapi/intelliindex?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "大众点评",
+        "original_repository_path": "curated/native-full/originals/083-app-dianping.yaml",
+        "source_sha256": "0ec0e33312510071afac34b02dc7623bfa76308f837b2ed507b29f90b23ffe72",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "淘宝闪购",
+      "scene": "视频开屏素材",
+      "url": "https://fuss10.elemecdn.com/review-sample.mp4",
+      "synthetic": true,
+      "evidence": {
+        "module": "饿了么",
+        "original_repository_path": "curated/native-full/originals/084-app-eleme.yaml",
+        "source_sha256": "7666c569370a0d115005b7c40585678ac874f69bd0f0e48b9c93a32f5dee6737",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "1688",
+      "scene": "广告配置",
+      "url": "https://acs.m.taobao.com/gw/mtop.alibaba.advertisementservice.getadv/1.0/",
+      "synthetic": true,
+      "evidence": {
+        "module": "阿里巴巴（1688）",
+        "original_repository_path": "curated/native-full/originals/085-app-1688.yaml",
+        "source_sha256": "df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "夸克",
+      "scene": "首页配置精简",
+      "url": "https://open-cms-api.quark.cn/open-cms?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "夸克",
+        "original_repository_path": "curated/native-full/originals/057-app-quark.yaml",
+        "source_sha256": "6aba34b60c48b2ec7d9b7c26559b32e575c46d15db533e9599068b88b9e1f85b",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?"
+          }
+        ]
+      },
+      "expected": "response_body"
+    },
+    {
+      "app": "汽车之家",
+      "scene": "首页信息流",
+      "url": "https://news.app.autohome.com.cn/news_v1.0.0/news/homenavigation",
+      "synthetic": true,
+      "evidence": {
+        "module": "汽车之家",
+        "original_repository_path": "curated/native-full/originals/086-app-autohome.yaml",
+        "source_sha256": "c5e52dead646923fb0ff735f95c58875bdb889922e5ae474ef95a9fcfa9d9d39",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/news\\.app\\.autohome\\.com\\.cn\\/news_v\\d+(?:\\.\\d+){2}\\/news\\/homenavigation"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "汽车之家",
+      "scene": "个人页卡片",
+      "url": "https://mobile.app.autohome.com.cn/platform/carserver/carcard/allcard",
+      "synthetic": true,
+      "evidence": {
+        "module": "汽车之家",
+        "original_repository_path": "curated/native-full/originals/086-app-autohome.yaml",
+        "source_sha256": "c5e52dead646923fb0ff735f95c58875bdb889922e5ae474ef95a9fcfa9d9d39",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(a\\.athm\\.cn\\/)?mobile\\.app\\.autohome\\.com\\.cn\\/platform\\/carserver\\/((usercenter\\/getservicecards)|(carcard\\/allcard)|(carcard\\/mycardv\\d+)|(carcard\\/cards))"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "123云盘",
+      "scene": "开屏配置",
+      "url": "https://www.123pan.com/api/config/get?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "123云盘",
+        "original_repository_path": "curated/native-full/originals/081-app-123pan.yaml",
+        "source_sha256": "3dbc1a5b8139ee217293f4656421769c7d655139547a3d5badf7ad49513c8536",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/www\\.123pan\\.com\\/api\\/config\\/get"
+          }
+        ]
+      },
+      "expected": "terminal"
+    },
+    {
+      "app": "X",
+      "scene": "网页时间线插入广告",
+      "url": "https://x.com/i/api/graphql/review-sample/HomeTimeline?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "X 网页版",
+        "original_repository_path": "curated/native-full/originals/039-app-x-web.yaml",
+        "source_sha256": "e719b8793061869357fcd9efcf65ad171f460123ccdb35a40407df8d624f8b46",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "^https?:\\/\\/x\\.com\\/i\\/api\\/graphql\\/[^\\/]+\\/(HomeTimeline|HomeLatestTimeline|TweetDetail)"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "YouTube",
+      "scene": "推荐信息流",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/browse?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "YouTube",
+      "scene": "播放器广告配置",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/player?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:player|get_watch)(?:\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/player\\/ad_break(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "YouTube",
+      "scene": "备用API出口",
+      "url": "https://youtubei-att.googleapis.com/youtubei/v1/player?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:player|get_watch)(?:\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/player\\/ad_break(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "YouTube",
+      "scene": "媒体请求改写",
+      "url": "https://r1.googlevideo.com/videoplayback?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/(?:videoplayback|initplayback)(?:\\?[^#]*)?$"
+          }
+        ]
+      },
+      "expected": "response_script"
+    },
+    {
+      "app": "YouTube",
+      "scene": "Shorts播放序列",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/reel/reel_watch_sequence?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      },
+      "expected": "response_script"
+    }
+  ],
+  "transports": [
+    {
+      "name": "小红书 QUIC遵循原模块拒绝",
+      "url": "https://edith.xiaohongshu.com/",
+      "protocol": "quic",
+      "reject": true
+    },
+    {
+      "name": "小红书 TCP保持业务可达",
+      "url": "https://edith.xiaohongshu.com/",
+      "protocol": "tcp",
+      "reject": false
+    },
+    {
+      "name": "小红书备用域 QUIC遵循原模块拒绝",
+      "url": "https://www.rnote.com/",
+      "protocol": "quic",
+      "reject": true
+    },
+    {
+      "name": "小红书备用域 TCP保持业务可达",
+      "url": "https://www.rnote.com/",
+      "protocol": "tcp",
+      "reject": false
+    },
+    {
+      "name": "拼多多 QUIC遵循原模块拒绝",
+      "url": "https://api.pinduoduo.com/",
+      "protocol": "quic",
+      "reject": true
+    },
+    {
+      "name": "拼多多 TCP保持业务可达",
+      "url": "https://api.pinduoduo.com/",
+      "protocol": "tcp",
+      "reject": false
+    },
+    {
+      "name": "YouTube API UDP443 youtubei.googleapis.com",
+      "url": "https://youtubei.googleapis.com/",
+      "protocol": "udp",
+      "reject": true
+    },
+    {
+      "name": "YouTube API TCP出口一致 youtubei.googleapis.com",
+      "url": "https://youtubei.googleapis.com/",
+      "protocol": "tcp",
+      "reject": false,
+      "policy": "YouTube"
+    },
+    {
+      "name": "YouTube API非443端口不扩大拒绝 youtubei.googleapis.com",
+      "url": "https://youtubei.googleapis.com:8443/",
+      "protocol": "udp",
+      "reject": false
+    },
+    {
+      "name": "YouTube API UDP443 youtubei-att.googleapis.com",
+      "url": "https://youtubei-att.googleapis.com/",
+      "protocol": "udp",
+      "reject": true
+    },
+    {
+      "name": "YouTube API TCP出口一致 youtubei-att.googleapis.com",
+      "url": "https://youtubei-att.googleapis.com/",
+      "protocol": "tcp",
+      "reject": false,
+      "policy": "YouTube"
+    },
+    {
+      "name": "YouTube API非443端口不扩大拒绝 youtubei-att.googleapis.com",
+      "url": "https://youtubei-att.googleapis.com:8443/",
+      "protocol": "udp",
+      "reject": false
+    },
+    {
+      "name": "YouTube媒体QUIC r1.googlevideo.com",
+      "url": "https://r1.googlevideo.com/",
+      "protocol": "quic",
+      "reject": true
+    },
+    {
+      "name": "YouTube媒体UDP443 r1.googlevideo.com",
+      "url": "https://r1.googlevideo.com/",
+      "protocol": "udp",
+      "reject": true
+    },
+    {
+      "name": "YouTube媒体TCP r1.googlevideo.com",
+      "url": "https://r1.googlevideo.com/",
+      "protocol": "tcp",
+      "reject": false
+    },
+    {
+      "name": "YouTube媒体UDP8443 r1.googlevideo.com",
+      "url": "https://r1.googlevideo.com:8443/",
+      "protocol": "udp",
+      "reject": false
+    },
+    {
+      "name": "YouTube媒体QUIC r2---sn-review.googlevideo.com",
+      "url": "https://r2---sn-review.googlevideo.com/",
+      "protocol": "quic",
+      "reject": true
+    },
+    {
+      "name": "YouTube媒体UDP443 r2---sn-review.googlevideo.com",
+      "url": "https://r2---sn-review.googlevideo.com/",
+      "protocol": "udp",
+      "reject": true
+    },
+    {
+      "name": "YouTube媒体TCP r2---sn-review.googlevideo.com",
+      "url": "https://r2---sn-review.googlevideo.com/",
+      "protocol": "tcp",
+      "reject": false
+    },
+    {
+      "name": "YouTube媒体UDP8443 r2---sn-review.googlevideo.com",
+      "url": "https://r2---sn-review.googlevideo.com:8443/",
+      "protocol": "udp",
+      "reject": false
+    },
+    {
+      "name": "无关QUIC保持原路由",
+      "url": "https://docs.google.com/",
+      "protocol": "quic",
+      "reject": false
+    },
+    {
+      "name": "金融QUIC保护",
+      "url": "https://paypal.com/",
+      "protocol": "quic",
+      "reject": false
+    },
+    {
+      "name": "HTTPDNS UA httpdns-client/1.0",
+      "url": "https://resolver.example.net/resolve?name=example.com",
+      "protocol": "https",
+      "reject": true,
+      "user_agent": "httpdns-client/1.0"
+    },
+    {
+      "name": "HTTPDNS UA HTTPSDNS-client/1.0",
+      "url": "https://resolver.example.net/resolve?name=example.com",
+      "protocol": "https",
+      "reject": true,
+      "user_agent": "HTTPSDNS-client/1.0"
+    },
+    {
+      "name": "HTTPDNS UA HttpdnsClient",
+      "url": "https://resolver.example.net/resolve?name=example.com",
+      "protocol": "https",
+      "reject": true,
+      "user_agent": "HttpdnsClient"
+    },
+    {
+      "name": "普通UA不按HTTPDNS误杀",
+      "url": "https://resolver.example.net/resolve?name=example.com",
+      "protocol": "https",
+      "reject": false,
+      "user_agent": "Mozilla/5.0"
+    },
+    {
+      "name": "金融保护优先于HTTPDNS UA",
+      "url": "https://paypal.com/",
+      "protocol": "https",
+      "reject": false,
+      "user_agent": "HTTPDNS-client/1.0"
+    }
+  ],
+  "normal": [
+    {
+      "name": "美团订单",
+      "url": "https://wmapi.meituan.com/api/v7/order/list?test=1",
+      "synthetic": true
+    },
+    {
+      "name": "相似开屏路径反例",
+      "url": "https://wmapi.meituan.com/api/v7/openscreenExtra?test=1",
+      "synthetic": true
+    },
+    {
+      "name": "美团业务图片",
+      "url": "https://img.meituan.net/business/receipt.jpg",
+      "synthetic": true
+    },
+    {
+      "name": "麦当劳订单",
+      "url": "https://api.mcd.cn/bff/portal/home/order?test=1",
+      "synthetic": true
+    },
+    {
+      "name": "小红书普通接口路径反例",
+      "url": "https://edith.xiaohongshu.com/review-normal/login",
+      "synthetic": true
+    },
+    {
+      "name": "拼多多订单路径反例",
+      "url": "https://api.pinduoduo.com/review-normal/order",
+      "synthetic": true
+    },
+    {
+      "name": "网易云播放路径反例",
+      "url": "https://interface.music.163.com/review-normal/player",
+      "synthetic": true
+    },
+    {
+      "name": "酷安登录路径反例",
+      "url": "https://api.coolapk.com/review-normal/login",
+      "synthetic": true
+    },
+    {
+      "name": "知乎普通回答路径反例",
+      "url": "https://api.zhihu.com/review-normal/answer",
+      "synthetic": true
+    },
+    {
+      "name": "小黑盒登录路径反例",
+      "url": "https://api.xiaoheihe.cn/review-normal/login",
+      "synthetic": true
+    },
+    {
+      "name": "12306订单路径反例",
+      "url": "https://mobile.12306.cn/review-normal/order",
+      "synthetic": true
+    },
+    {
+      "name": "携程订单路径反例",
+      "url": "https://m.ctrip.com/review-normal/order",
+      "synthetic": true
+    },
+    {
+      "name": "大众点评评价路径反例",
+      "url": "https://mapi.dianping.com/review-normal/review",
+      "synthetic": true
+    },
+    {
+      "name": "1688订单路径反例",
+      "url": "https://acs.m.taobao.com/gw/review.normal.order/1.0/",
+      "synthetic": true
+    },
+    {
+      "name": "支付宝不解密业务",
+      "url": "https://alipay.com/",
+      "synthetic": true
+    },
+    {
+      "name": "微信支付业务",
+      "url": "https://api.mch.weixin.qq.com/",
+      "synthetic": true
+    },
+    {
+      "name": "工行正常访问",
+      "url": "https://icbc.com.cn/",
+      "synthetic": true
+    },
+    {
+      "name": "农行正常访问",
+      "url": "https://abchina.com/",
+      "synthetic": true
+    },
+    {
+      "name": "YouTube正常媒体TCP",
+      "url": "https://r1.googlevideo.com/review-normal/media",
+      "synthetic": true
+    },
+    {
+      "name": "高德定位路径反例",
+      "url": "https://amap-aos-info-nogw.amap.com/review-normal/location",
+      "synthetic": true
+    },
+    {
+      "name": "米家设备路径反例",
+      "url": "https://home.mi.com/review-normal/device",
+      "synthetic": true
+    }
+  ]
+}

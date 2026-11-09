@@ -76,7 +76,7 @@ rules:
             match: '6185'
             no_resolve: true
     - protocol:
-        match: QUIC
+        match: quic
     policy: REJECT
 scriptings:
 - http_response:

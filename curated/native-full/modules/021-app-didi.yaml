@@ -27,7 +27,7 @@ rules:
     - dest_port:
         match: '25641'
     - protocol:
-        match: TCP
+        match: tcp
     policy: REJECT
 - and:
     match:
@@ -36,7 +36,7 @@ rules:
     - dest_port:
         match: '25641'
     - protocol:
-        match: TCP
+        match: tcp
     policy: REJECT
 - and:
     match:
@@ -45,7 +45,7 @@ rules:
     - dest_port:
         match: '25641'
     - protocol:
-        match: TCP
+        match: tcp
     policy: REJECT
 - ip_cidr:
     match: 113.46.225.8/32

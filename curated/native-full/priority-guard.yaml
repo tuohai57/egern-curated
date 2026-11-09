@@ -580,6 +580,58 @@ rules:
 - domain_suffix:
     match: jpush.cn
     policy: 必要服务
+- and:
+    match:
+    - protocol:
+        match: quic
+    - or:
+        match:
+        - domain_suffix:
+            match: xiaohongshu.com
+        - domain_suffix:
+            match: rnote.com
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: api.pinduoduo.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei-att.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
 - domain:
     match: 114.115.217.129
     policy: 漏网域名
@@ -896,6 +948,9 @@ rules:
     match: freight.xiaojukeji.com
     policy: 滴滴
 - domain:
+    match: fuss10.elemecdn.com
+    policy: 淘宝闪购
+- domain:
     match: g-acs.m.goofish.com
     policy: 闲鱼
 - domain:
@@ -1001,6 +1056,9 @@ rules:
     match: m.airchina.com.cn
     policy: 国内长尾
 - domain:
+    match: m.ctrip.com
+    policy: 携程旅行
+- domain:
     match: m.youtube.com
     policy: YouTube
 - domain:
@@ -1027,6 +1085,9 @@ rules:
 - domain:
     match: manhattan.webapp.xiaojukeji.com
     policy: 滴滴
+- domain:
+    match: mapi.dianping.com
+    policy: 大众点评
 - domain:
     match: mapi.mafengwo.cn
     policy: 国内长尾
@@ -1317,7 +1378,7 @@ rules:
     policy: YouTube
 - domain:
     match: youtubei-att.googleapis.com
-    policy: Google
+    policy: YouTube
 - domain:
     match: youtubei.googleapis.com
     policy: YouTube

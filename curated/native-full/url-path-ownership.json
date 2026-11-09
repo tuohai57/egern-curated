@@ -124,6 +124,578 @@
       "app": "美团",
       "scene": "活动配置",
       "url": "https://s3plus.meituan.net/ocean-blk-index/index/blk_conf_73.json"
+    },
+    {
+      "app": "知乎",
+      "scene": "首页信息流",
+      "url": "https://api.zhihu.com/topstory/recommend?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?"
+          }
+        ]
+      }
+    },
+    {
+      "app": "知乎",
+      "scene": "回答夹带广告",
+      "url": "https://api.zhihu.com/questions/123/feeds?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=)"
+          }
+        ]
+      }
+    },
+    {
+      "app": "知乎",
+      "scene": "悬浮横幅",
+      "url": "https://api.zhihu.com/commercial_api/banners_v3/app_float_corner?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "知乎",
+        "original_repository_path": "curated/native-full/originals/005-app-zhihu.yaml",
+        "source_sha256": "b6646beb924ae1e3bcabe0f1b94513f2575a5a6838d5c516537fb1ac03039b11",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?"
+          },
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/"
+          }
+        ]
+      }
+    },
+    {
+      "app": "酷安",
+      "scene": "首页插入卡片",
+      "url": "https://api.coolapk.com/v6/main/dataList?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "酷安",
+        "original_repository_path": "curated/native-full/originals/019-app-coolapk.yaml",
+        "source_sha256": "1f39082febd95dd44be15d3469b6776c3d1297bc46f385f254b6198d67e738de",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/dataList"
+          }
+        ]
+      }
+    },
+    {
+      "app": "酷安",
+      "scene": "详情赞助卡",
+      "url": "https://api.coolapk.com/v6/feed/detail?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "酷安",
+        "original_repository_path": "curated/native-full/originals/019-app-coolapk.yaml",
+        "source_sha256": "1f39082febd95dd44be15d3469b6776c3d1297bc46f385f254b6198d67e738de",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?"
+          }
+        ]
+      }
+    },
+    {
+      "app": "小黑盒",
+      "scene": "信息流推广",
+      "url": "https://api.xiaoheihe.cn/bbs/app/feeds/news?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "小黑盒",
+        "original_repository_path": "curated/native-full/originals/046-app-xiaoheihe.yaml",
+        "source_sha256": "dc50eeb5a48ddd300d11cc77aa9d801994084bedf1e996509d9399a91bb55e26",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/bbs\\/app\\/feeds\\/news"
+          }
+        ]
+      }
+    },
+    {
+      "app": "小黑盒",
+      "scene": "开屏配置",
+      "url": "https://api.xiaoheihe.cn/account/get_ads_info_v2?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "小黑盒",
+        "original_repository_path": "curated/native-full/originals/046-app-xiaoheihe.yaml",
+        "source_sha256": "dc50eeb5a48ddd300d11cc77aa9d801994084bedf1e996509d9399a91bb55e26",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2"
+          }
+        ]
+      }
+    },
+    {
+      "app": "网易云音乐",
+      "scene": "广告配置",
+      "url": "https://interface.music.163.com/eapi/ad/get",
+      "synthetic": true,
+      "evidence": {
+        "module": "网易云音乐",
+        "original_repository_path": "curated/native-full/originals/013-app-netease-music.yaml",
+        "source_sha256": "096f3562558a59599d6dfed388f00101e323381fb8ece85034d417a57526c1d8",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/x?e?api\\/ad"
+          },
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/"
+          }
+        ]
+      }
+    },
+    {
+      "app": "网易云音乐",
+      "scene": "搜索默认推广",
+      "url": "https://interface.music.163.com/eapi/search/default?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "网易云音乐",
+        "original_repository_path": "curated/native-full/originals/013-app-netease-music.yaml",
+        "source_sha256": "096f3562558a59599d6dfed388f00101e323381fb8ece85034d417a57526c1d8",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default"
+          }
+        ]
+      }
+    },
+    {
+      "app": "得物",
+      "scene": "广告接口",
+      "url": "https://app.dewu.com/api/v1/app/advertisement/config?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "得物",
+        "original_repository_path": "curated/native-full/originals/043-app-dewu.yaml",
+        "source_sha256": "6a7749de14db9669148bdf7711b4dd8102c638a63dac527e7d4b580621461f0b",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/"
+          }
+        ]
+      }
+    },
+    {
+      "app": "得物",
+      "scene": "个人页精简",
+      "url": "https://app.dewu.com/api/v1/app/biz-aggregate/me/user-index?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "得物",
+        "original_repository_path": "curated/native-full/originals/043-app-dewu.yaml",
+        "source_sha256": "6a7749de14db9669148bdf7711b4dd8102c638a63dac527e7d4b580621461f0b",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/biz-aggregate\\/me\\/user-index\\?"
+          }
+        ]
+      }
+    },
+    {
+      "app": "铁路12306",
+      "scene": "广告配置",
+      "url": "https://ad.12306.cn/ad/ser/getAdList",
+      "synthetic": true,
+      "evidence": {
+        "module": "12306",
+        "original_repository_path": "curated/native-full/originals/056-app-12306.yaml",
+        "source_sha256": "9e35a4d581527ff285fa08379e50ba26395a3d95828930a027497d58b199de49",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "铁路12306",
+      "scene": "请求净化",
+      "url": "https://mobile.12306.cn/otsmobile/app/mgs/mgw.htm",
+      "synthetic": true,
+      "evidence": {
+        "module": "12306",
+        "original_repository_path": "curated/native-full/originals/056-app-12306.yaml",
+        "source_sha256": "9e35a4d581527ff285fa08379e50ba26395a3d95828930a027497d58b199de49",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/mobile\\.12306\\.cn\\/otsmobile\\/app\\/mgs\\/mgw\\.htm$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "携程旅行",
+      "scene": "广告接口",
+      "url": "https://m.ctrip.com/restapi/soa2/13916/json/tripAds",
+      "synthetic": true,
+      "evidence": {
+        "module": "携程",
+        "original_repository_path": "curated/native-full/originals/082-app-ctrip.yaml",
+        "source_sha256": "0b3f04b62534613a47d4d3efa378317f7eda8a61b4a16891645fd1e346dd157b",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds"
+          }
+        ]
+      }
+    },
+    {
+      "app": "携程旅行",
+      "scene": "广告追踪",
+      "url": "https://ma-adx.ctrip.com/_ma.gif?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "携程",
+        "original_repository_path": "curated/native-full/originals/082-app-ctrip.yaml",
+        "source_sha256": "0b3f04b62534613a47d4d3efa378317f7eda8a61b4a16891645fd1e346dd157b",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif"
+          }
+        ]
+      }
+    },
+    {
+      "app": "大众点评",
+      "scene": "开屏配置",
+      "url": "https://mapi.dianping.com/mapi/operating/loadsplashconfig?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "大众点评",
+        "original_repository_path": "curated/native-full/originals/083-app-dianping.yaml",
+        "source_sha256": "0ec0e33312510071afac34b02dc7623bfa76308f837b2ed507b29f90b23ffe72",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/operating\\/(?>indexopsmodules|loadsplashconfig)"
+          }
+        ]
+      }
+    },
+    {
+      "app": "大众点评",
+      "scene": "首页配置",
+      "url": "https://mapi.dianping.com/mapi/intelliindex?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "大众点评",
+        "original_repository_path": "curated/native-full/originals/083-app-dianping.yaml",
+        "source_sha256": "0ec0e33312510071afac34b02dc7623bfa76308f837b2ed507b29f90b23ffe72",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex"
+          }
+        ]
+      }
+    },
+    {
+      "app": "淘宝闪购",
+      "scene": "视频开屏素材",
+      "url": "https://fuss10.elemecdn.com/review-sample.mp4",
+      "synthetic": true,
+      "evidence": {
+        "module": "饿了么",
+        "original_repository_path": "curated/native-full/originals/084-app-eleme.yaml",
+        "source_sha256": "7666c569370a0d115005b7c40585678ac874f69bd0f0e48b9c93a32f5dee6737",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4"
+          }
+        ]
+      }
+    },
+    {
+      "app": "1688",
+      "scene": "广告配置",
+      "url": "https://acs.m.taobao.com/gw/mtop.alibaba.advertisementservice.getadv/1.0/",
+      "synthetic": true,
+      "evidence": {
+        "module": "阿里巴巴（1688）",
+        "original_repository_path": "curated/native-full/originals/085-app-1688.yaml",
+        "source_sha256": "df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634",
+        "matches": [
+          {
+            "section": "map_locals",
+            "phase": "map_locals",
+            "match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv"
+          }
+        ]
+      }
+    },
+    {
+      "app": "夸克",
+      "scene": "首页配置精简",
+      "url": "https://open-cms-api.quark.cn/open-cms?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "夸克",
+        "original_repository_path": "curated/native-full/originals/057-app-quark.yaml",
+        "source_sha256": "6aba34b60c48b2ec7d9b7c26559b32e575c46d15db533e9599068b88b9e1f85b",
+        "matches": [
+          {
+            "section": "body_rewrites",
+            "phase": "response_jq",
+            "match": "(?i)^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?"
+          }
+        ]
+      }
+    },
+    {
+      "app": "汽车之家",
+      "scene": "首页信息流",
+      "url": "https://news.app.autohome.com.cn/news_v1.0.0/news/homenavigation",
+      "synthetic": true,
+      "evidence": {
+        "module": "汽车之家",
+        "original_repository_path": "curated/native-full/originals/086-app-autohome.yaml",
+        "source_sha256": "c5e52dead646923fb0ff735f95c58875bdb889922e5ae474ef95a9fcfa9d9d39",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/news\\.app\\.autohome\\.com\\.cn\\/news_v\\d+(?:\\.\\d+){2}\\/news\\/homenavigation"
+          }
+        ]
+      }
+    },
+    {
+      "app": "汽车之家",
+      "scene": "个人页卡片",
+      "url": "https://mobile.app.autohome.com.cn/platform/carserver/carcard/allcard",
+      "synthetic": true,
+      "evidence": {
+        "module": "汽车之家",
+        "original_repository_path": "curated/native-full/originals/086-app-autohome.yaml",
+        "source_sha256": "c5e52dead646923fb0ff735f95c58875bdb889922e5ae474ef95a9fcfa9d9d39",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(a\\.athm\\.cn\\/)?mobile\\.app\\.autohome\\.com\\.cn\\/platform\\/carserver\\/((usercenter\\/getservicecards)|(carcard\\/allcard)|(carcard\\/mycardv\\d+)|(carcard\\/cards))"
+          }
+        ]
+      }
+    },
+    {
+      "app": "123云盘",
+      "scene": "开屏配置",
+      "url": "https://www.123pan.com/api/config/get?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "123云盘",
+        "original_repository_path": "curated/native-full/originals/081-app-123pan.yaml",
+        "source_sha256": "3dbc1a5b8139ee217293f4656421769c7d655139547a3d5badf7ad49513c8536",
+        "matches": [
+          {
+            "section": "url_rewrites",
+            "phase": "url_rewrites",
+            "match": "(?i)^https:\\/\\/www\\.123pan\\.com\\/api\\/config\\/get"
+          }
+        ]
+      }
+    },
+    {
+      "app": "X",
+      "scene": "网页时间线插入广告",
+      "url": "https://x.com/i/api/graphql/review-sample/HomeTimeline?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "X 网页版",
+        "original_repository_path": "curated/native-full/originals/039-app-x-web.yaml",
+        "source_sha256": "e719b8793061869357fcd9efcf65ad171f460123ccdb35a40407df8d624f8b46",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "^https?:\\/\\/x\\.com\\/i\\/api\\/graphql\\/[^\\/]+\\/(HomeTimeline|HomeLatestTimeline|TweetDetail)"
+          }
+        ]
+      }
+    },
+    {
+      "app": "YouTube",
+      "scene": "推荐信息流",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/browse?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "YouTube",
+      "scene": "播放器广告配置",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/player?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:player|get_watch)(?:\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/player\\/ad_break(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "YouTube",
+      "scene": "备用API出口",
+      "url": "https://youtubei-att.googleapis.com/youtubei/v1/player?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:player|get_watch)(?:\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/player\\/ad_break(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "YouTube",
+      "scene": "媒体请求改写",
+      "url": "https://r1.googlevideo.com/videoplayback?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/(?:videoplayback|initplayback)(?:\\?[^#]*)?$"
+          }
+        ]
+      }
+    },
+    {
+      "app": "YouTube",
+      "scene": "Shorts播放序列",
+      "url": "https://youtubei.googleapis.com/youtubei/v1/reel/reel_watch_sequence?test=1",
+      "synthetic": true,
+      "evidence": {
+        "module": "YouTube",
+        "original_repository_path": "curated/native-full/originals/023-app-youtube.yaml",
+        "source_sha256": "7617f7045ee6c316e74d2f859170bc3f9bbe3cbe77adba02fd0fe8097550e533",
+        "matches": [
+          {
+            "section": "scriptings",
+            "phase": "http_request",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$"
+          },
+          {
+            "section": "scriptings",
+            "phase": "http_response",
+            "match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$"
+          }
+        ]
+      }
     }
   ],
   "changes": [
@@ -133,6 +705,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/homefeed\\?",
       "match": "^(?!^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)(?:^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/homefeed\\?)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -142,6 +715,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/(edith|rec|www)\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?",
       "match": "^(?!^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)(?:^https?:\\/\\/(edith|rec|www)\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\?",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -151,6 +725,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "match": "^(?!^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)(?:^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -160,6 +735,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "match": "^(?!^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)(?:^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -169,6 +745,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash",
       "match": "^(?!^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)(?:^https?:\\/\\/[a-z]+\\.xiaohongshu\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "reason": "Allow original response purification to receive the server response"
     },
@@ -178,6 +755,7 @@
       "section": "url_rewrites",
       "previous": "^https?://edith\\.xiaohongshu\\.com/api/sns/v\\d/system_service/splash_config",
       "match": "^(?!^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config)(?:^https?://edith\\.xiaohongshu\\.com/api/sns/v\\d/system_service/splash_config)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config",
       "reason": "Allow original response purification to receive the server response"
     },
@@ -187,6 +765,7 @@
       "section": "map_locals",
       "previous": "^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords$",
       "match": "^(?!(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(?:view\\.v1\\.View\\/TFInfo|viewunite\\.v1\\.View\\/(?:PlayPause|ViewEndPage))$))(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords$)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(?:view\\.v1\\.View\\/TFInfo|viewunite\\.v1\\.View\\/(?:PlayPause|ViewEndPage))$)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -196,6 +775,7 @@
       "section": "scriptings",
       "previous": "^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/",
       "match": "(?i)^(?!^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)(?:^https:\\/\\/(g-)?acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -205,6 +785,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?",
       "match": "^(?!^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?)(?:^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -214,6 +795,7 @@
       "section": "scriptings",
       "previous": "^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "match": "^(?!^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))(?:^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -223,6 +805,7 @@
       "section": "scriptings",
       "previous": "(?i)^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "match": "(?i)^(?!^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))(?:^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -232,6 +815,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.wireless\\.home\\.splash\\.awesome\\.get",
       "match": "(?i)^(?!^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))(?:^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.wireless\\.home\\.splash\\.awesome\\.get)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "reason": "Allow original response purification to receive the server response"
     },
@@ -241,6 +825,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.wireless\\.home\\.splash\\.awesome\\.get",
       "match": "^(?!^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get))(?:^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.wireless\\.home\\.splash\\.awesome\\.get)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get)",
       "reason": "Allow original response purification to receive the server response"
     },
@@ -250,6 +835,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\\?",
       "match": "(?i)^(?!^https?:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/getappmsgad)(?:^https:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\\?)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https?:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/getappmsgad",
       "reason": "Allow original response purification to receive the server response"
     },
@@ -259,6 +845,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt",
       "match": "(?i)^(?!^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt)(?:^https?:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt",
       "reason": "Retain only the first original rejection for this matching endpoint"
     },
@@ -268,6 +855,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/.*\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen",
       "match": "(?i)^(?!^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt)(?:^https?:\\/\\/.*\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt",
       "reason": "Retain only the first original rejection for this matching endpoint"
     },
@@ -277,6 +865,7 @@
       "section": "url_rewrites",
       "previous": "^https?://amap-aos-info-nogw\\.amap\\.com/ws/aos/alimama/",
       "match": "(?i)^(?!^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt)(?:^https?://amap-aos-info-nogw\\.amap\\.com/ws/aos/alimama/)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https:\\/\\/amap-aos-info-nogw\\.amap\\.com\\/ws\\/aos\\/alimama\\/splash_screen_rt",
       "reason": "Retain only the first original rejection for this matching endpoint"
     },
@@ -286,6 +875,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v\\d\\/recommendation",
       "match": "(?i)^(?!^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))(?:^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v\\d\\/recommendation)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -295,6 +885,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v\\d\\/recommendation",
       "match": "^(?!^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))(?:^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v\\d\\/recommendation)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -303,7 +894,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
-      "match": "^(?!^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))(?:^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -313,6 +905,7 @@
       "section": "url_rewrites",
       "previous": "^https?://home\\.mi\\.com/cgi-op/api/v\\d/recommendation/(banner|myTab|openingBanner)",
       "match": "^(?!^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))(?:^https?://home\\.mi\\.com/cgi-op/api/v\\d/recommendation/(banner|myTab|openingBanner))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -321,7 +914,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
-      "match": "(?i)^(?!^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))(?:^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner))",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -331,6 +925,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(richpop|home\\/splash)",
       "match": "(?i)^(?!^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)(?:^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(richpop|home\\/splash))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -340,6 +935,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(home\\/splash|richpop)",
       "match": "^(?!^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)(?:^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(home\\/splash|richpop))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -348,7 +944,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
-      "match": "^(?!^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)(?:^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -358,6 +955,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(richpop|home\\/splash)",
       "match": "^(?!^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)(?:^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/(richpop|home\\/splash))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -366,7 +964,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
-      "match": "(?i)^(?!^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)(?:^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/api\\.mcd\\.cn\\/bff\\/portal\\/home\\/splash",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -376,6 +975,7 @@
       "section": "body_rewrites",
       "previous": "(?i)^https:\\/\\/(cn-acs\\.m|e2e-mtop)\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch",
       "match": "(?i)^(?!https?://e2e\\-mtop\\.cainiao\\.com/gw/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn/1\\.0/(?:[?#]|$))(?:^https:\\/\\/(cn-acs\\.m|e2e-mtop)\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "https?://e2e\\-mtop\\.cainiao\\.com/gw/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn/1\\.0/(?:[?#]|$)",
       "reason": "Original jq expressions composed in original order for this overlapping path"
     },
@@ -385,6 +985,7 @@
       "section": "body_rewrites",
       "previous": "(?i)^https:\\/\\/e2e-mtop\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn",
       "match": "(?i)^(?!https?://e2e\\-mtop\\.cainiao\\.com/gw/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn/1\\.0/(?:[?#]|$))(?:^https:\\/\\/e2e-mtop\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "https?://e2e\\-mtop\\.cainiao\\.com/gw/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch\\.cn/1\\.0/(?:[?#]|$)",
       "reason": "Original jq expressions composed in original order for this overlapping path"
     },
@@ -394,6 +995,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/[a-zA-Z0-9_.-]+\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch",
       "match": "(?i)^(?!^https:\\/\\/(cn-acs\\.m|e2e-mtop)\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch)(?:^https?:\\/\\/[a-zA-Z0-9_.-]+\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https:\\/\\/(cn-acs\\.m|e2e-mtop)\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.app\\.e2e\\.engine\\.page\\.fetch",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -403,6 +1005,7 @@
       "section": "scriptings",
       "previous": "^http?:\\/\\/(114\\.115\\.217\\.129)|(home\\.umetrip\\.com)\\/gateway\\/api\\/umetrip\\/native$",
       "match": "(?i)^(?!^https?://(?:114\\.115\\.217\\.129|home\\.umetrip\\.com)/gateway/api/umetrip/native(?:\\?[^#]*)?$)(?:^http?:\\/\\/(114\\.115\\.217\\.129)|(home\\.umetrip\\.com)\\/gateway\\/api\\/umetrip\\/native$)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https?://(?:114\\.115\\.217\\.129|home\\.umetrip\\.com)/gateway/api/umetrip/native(?:\\?[^#]*)?$",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -412,6 +1015,7 @@
       "section": "scriptings",
       "previous": "^https?:\\/\\/(tiebac|c\\.tieba)\\.baidu\\.com\\/c\\/(b\\/ad\\/adBid|f\\/(frs\\/(page|threadlist|generalTabList)|ad\\/getFeedAd|pb\\/page|excellent\\/personalized))\\?cmd",
       "match": "(?i)^(?!^https?:\\/\\/tieba(?:c)?\\.baidu\\.com\\/c\\/(f\\/excellent\\/personalized|f\\/frs\\/page|b\\/ad\\/adBid|f\\/ad\\/getFeedAd|f\\/pb\\/page|f\\/frs\\/generalTabList)\\?cmd=\\d+&format=protobuf)(?:^https?:\\/\\/(tiebac|c\\.tieba)\\.baidu\\.com\\/c\\/(b\\/ad\\/adBid|f\\/(frs\\/(page|threadlist|generalTabList)|ad\\/getFeedAd|pb\\/page|excellent\\/personalized))\\?cmd)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https?:\\/\\/tieba(?:c)?\\.baidu\\.com\\/c\\/(f\\/excellent\\/personalized|f\\/frs\\/page|b\\/ad\\/adBid|f\\/ad\\/getFeedAd|f\\/pb\\/page|f\\/frs\\/generalTabList)\\?cmd=\\d+&format=protobuf",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -421,6 +1025,7 @@
       "section": "scriptings",
       "previous": "^http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/c\\/(b\\/ad\\/adBid|f\\/(frs\\/(page|threadlist|generalTabList)|ad\\/getFeedAd|pb\\/page|excellent\\/personalized))\\?cmd",
       "match": "(?i)^(?!^https?:\\/\\/tieba(?:c)?\\.baidu\\.com\\/c\\/(f\\/excellent\\/personalized|f\\/frs\\/page|b\\/ad\\/adBid|f\\/ad\\/getFeedAd|f\\/pb\\/page|f\\/frs\\/generalTabList)\\?cmd=\\d+&format=protobuf)(?:^http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/c\\/(b\\/ad\\/adBid|f\\/(frs\\/(page|threadlist|generalTabList)|ad\\/getFeedAd|pb\\/page|excellent\\/personalized))\\?cmd)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?i)^https?:\\/\\/tieba(?:c)?\\.baidu\\.com\\/c\\/(f\\/excellent\\/personalized|f\\/frs\\/page|b\\/ad\\/adBid|f\\/ad\\/getFeedAd|f\\/pb\\/page|f\\/frs\\/generalTabList)\\?cmd=\\d+&format=protobuf",
       "reason": "One response owner for this matching endpoint; original script remains unchanged"
     },
@@ -429,7 +1034,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?",
-      "match": "^(?!^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?)(?:^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -438,7 +1044,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?",
-      "match": "(?i)^(?!^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?)(?:^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\?",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -448,6 +1055,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4)",
       "match": "(?i)^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -457,6 +1065,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4)",
       "match": "^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -466,6 +1075,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4)",
       "match": "^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -475,6 +1085,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4)",
       "match": "^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -484,6 +1095,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4)",
       "match": "(?i)^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -493,6 +1105,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/img\\.meituan\\.net\\/(bizad|brandCpt)\\/\\w+\\.(png|jpg)",
       "match": "(?i)^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/img\\.meituan\\.net\\/(bizad|brandCpt)\\/\\w+\\.(png|jpg))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -502,6 +1115,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg",
       "match": "^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -511,6 +1125,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/img\\.meituan\\.net\\/(bizad|brandCpt)\\/\\w+\\.(png|jpg)",
       "match": "^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/img\\.meituan\\.net\\/(bizad|brandCpt)\\/\\w+\\.(png|jpg))",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -520,6 +1135,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg",
       "match": "(?i)^(?!(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp))(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "(?:^https?:\\/\\/(s3plus|flowplus)\\.meituan\\.net\\/v\\d\\/\\w+\\/linglong\\/\\w+\\.(gif|jpg|mp4))|(?:^https?:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg)|(?:^https?:\\/\\/img\\.meituan\\.net\\/goodsawardpic\\/[a-f0-9]+\\.png\\.webp)",
       "reason": "Original binary local-response semantics take ownership of this matching endpoint"
     },
@@ -529,6 +1145,7 @@
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf",
       "match": "^(?!^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)(?:^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -537,7 +1154,8 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
-      "match": "^(?!^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)(?:^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -547,6 +1165,7 @@
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf",
       "match": "(?i)^(?!^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)(?:^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf)",
+      "fully_superseded_omitted": false,
       "except_url_pattern": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
     },
@@ -555,9 +1174,660 @@
       "kind": "verified_path_handler_ownership",
       "section": "url_rewrites",
       "previous": "(?i)^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
-      "match": "(?i)^(?!^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)(?:^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json)",
+      "match": null,
+      "fully_superseded_omitted": true,
       "except_url_pattern": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json",
       "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https:\\/\\/api\\.zhihu\\.com\\/(moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend)",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?)(?:^https:\\/\\/api\\.zhihu\\.com\\/(moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https:\\/\\/(api|web-render)\\.zhihu\\.com\\/topstory\\/recommend",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?)(?:^https:\\/\\/(api|web-render)\\.zhihu\\.com\\/topstory\\/recommend)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend)",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?)(?:^https:\\/\\/api\\.zhihu\\.com\\/(?:moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/topstory\\/recommend\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "知乎",
+      "kind": "verified_path_handler_ownership",
+      "section": "body_rewrites",
+      "previous": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?",
+      "match": "(?i)^(?!https?://api\\.zhihu\\.com/questions/123/feeds(?:[?#]|$))(?:^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "https?://api\\.zhihu\\.com/questions/123/feeds(?:[?#]|$)",
+      "reason": "Original jq expressions composed in original order for this overlapping path"
+    },
+    {
+      "module": "知乎",
+      "kind": "verified_path_handler_ownership",
+      "section": "body_rewrites",
+      "previous": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=)",
+      "match": "(?i)^(?!https?://api\\.zhihu\\.com/questions/123/feeds(?:[?#]|$))(?:^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "https?://api\\.zhihu\\.com/questions/123/feeds(?:[?#]|$)",
+      "reason": "Original jq expressions composed in original order for this overlapping path"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds?",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?)(?:^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds?)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+\\/feeds\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "知乎",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?)(?:^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "广告拦截（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?)(?:^https?:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://api\\.zhihu\\.com/commercial_api/",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?)(?:^https?://api\\.zhihu\\.com/commercial_api/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/api\\.zhihu\\.com\\/commercial_api",
+      "match": "(?i)^(?!^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?)(?:^https?:\\/\\/api\\.zhihu\\.com\\/commercial_api)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/banners_v\\d\\/app_float_corner\\?",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/(dataList|indexV8|init)",
+      "match": "(?i)^(?!^https:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/dataList)(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/(dataList|indexV8|init))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/dataList",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "(?i)^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/(feed\\/(replyList|detail)|main\\/indexV8|dataList)",
+      "match": "(?i)^(?!^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?)(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/(feed\\/(replyList|detail)|main\\/indexV8|dataList))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/(detail|replyList)\\?",
+      "match": "(?i)^(?!^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?)(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/(detail|replyList)\\?)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/(feed\\/(replyList|detail)|main\\/indexV8|dataList)",
+      "match": "(?i)^(?!^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?)(?:^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/(feed\\/(replyList|detail)|main\\/indexV8|dataList))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/api.coolapk.com\\/v6\\/feed\\/detail",
+      "match": "(?i)^(?!^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?)(?:^https?:\\/\\/api.coolapk.com\\/v6\\/feed\\/detail)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.coolapk\\.com\\/v6\\/feed\\/detail\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/api\\.xiaoheihe\\.cn\\/.*get_ads_info",
+      "match": "(?i)^(?!^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2)(?:^https?:\\/\\/api\\.xiaoheihe\\.cn\\/.*get_ads_info)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/api\\.xiaoheihe\\.cn\\/.*get_ads_info",
+      "match": "(?i)^(?!^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2)(?:^https?:\\/\\/api\\.xiaoheihe\\.cn\\/.*get_ads_info)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/api\\.xiaoheihe\\.cn\\/account\\/get_ads_info_v2",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "map_locals",
+      "previous": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "map_locals",
+      "previous": "^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "网易云音乐",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/x?e?api\\/ad",
+      "match": "(?i)^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/x?e?api\\/ad)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "网易云 SVIP 解锁",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/get",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?://interface.*\\.music\\.163\\.com/eapi/ad/get)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/interface(\\d)?.music.163.com\\/eapi\\/ad\\/",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?:\\/\\/interface(\\d)?.music.163.com\\/eapi\\/ad\\/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://interface(\\d)?.music.163.com/eapi/ad/",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?://interface(\\d)?.music.163.com/eapi/ad/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))",
+      "match": "(?i)^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "网易云音乐",
+      "kind": "verified_path_handler_ownership",
+      "section": "body_rewrites",
+      "previous": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original local response owns this endpoint; do not transform its synthetic body again"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/interface(\\d)?\\.music\\.163\\.com\\/e?api\\/ad\\/get",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/)(?:^https?:\\/\\/interface(\\d)?\\.music\\.163\\.com\\/e?api\\/ad\\/get)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/e?api\\/(ocpc\\/)?ad\\/",
+      "reason": "Original local response owns this endpoint; do not transform its synthetic body again"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "map_locals",
+      "previous": "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query)",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default)(?:^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query)",
+      "match": "^(?!^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default)(?:https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "网易云音乐",
+      "kind": "verified_path_handler_ownership",
+      "section": "body_rewrites",
+      "previous": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default",
+      "reason": "Original local response owns this endpoint; do not transform its synthetic body again"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement",
+      "match": "(?i)^(?!^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/)(?:^https?:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://app\\.dewu\\.com/api/v\\d/app/advertisement/",
+      "match": "(?i)^(?!^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/)(?:^https?://app\\.dewu\\.com/api/v\\d/app/advertisement/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "(?i)^https:\\/\\/app\\.dewu\\.com\\/api\\/v1\\/app\\/advertisement\\/",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "(?i)^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList",
+      "match": "(?i)^(?!^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$)(?:^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList",
+      "match": "(?i)^(?!^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$)(?:^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList",
+      "match": "(?i)^(?!^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$)(?:^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://m\\.ctrip\\.com/restapi/[\\w/]+tripAds",
+      "match": "^(?!^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds)(?:^https?://m\\.ctrip\\.com/restapi/[\\w/]+tripAds)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/13916\\/json\\/tripAds",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "match": "(?i)^(?!^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif)(?:^https:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "match": "^(?!^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif)(?:^https:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/operating\\/(?>indexopsmodules|loadsplashconfig)",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/operating\\/(?>indexopsmodules|loadsplashconfig)",
+      "reason": "Retain only the first original rejection for this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/mapi\\.dianping\\.com\\/mapi\\/intelliindex",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/fuss10.elemecdn.com\\/.+.mp4",
+      "match": "(?i)^(?!^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4)(?:^https?:\\/\\/fuss10.elemecdn.com\\/.+.mp4)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/fuss10.elemecdn.com\\/.+.mp4",
+      "match": "^(?!^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4)(?:^https?:\\/\\/fuss10.elemecdn.com\\/.+.mp4)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "阿里巴巴（1688）",
+      "kind": "verified_path_handler_ownership",
+      "section": "map_locals",
+      "previous": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "match": "^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv\\/",
+      "match": "(?i)^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv\\/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv\\/",
+      "match": "^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv\\/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "match": null,
+      "fully_superseded_omitted": true,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https?://acs\\.m\\.taobao\\.com/gw/mtop\\.alibaba\\.advertisementservice\\.getadv/",
+      "match": "^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https?://acs\\.m\\.taobao\\.com/gw/mtop\\.alibaba\\.advertisementservice\\.getadv/)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "match": "^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "广告拦截合集（loonlab）",
+      "kind": "verified_path_handler_ownership",
+      "section": "url_rewrites",
+      "previous": "(?i)^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "match": "(?i)^(?!^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)(?:^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+      "reason": "Original dedicated App local response takes ownership of this matching endpoint"
+    },
+    {
+      "module": "墨鱼去开屏",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "(?i)^https?:\\/\\/open-cms-api\\.(uc|quark)\\.cn\\/open-cms",
+      "match": "(?i)^(?!^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?)(?:^https?:\\/\\/open-cms-api\\.(uc|quark)\\.cn\\/open-cms)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https?:\\/\\/open-cms-api\\.(uc|quark)\\.cn\\/open-cms",
+      "match": "(?i)^(?!^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?)(?:^https?:\\/\\/open-cms-api\\.(uc|quark)\\.cn\\/open-cms)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/open-cms-api\\.quark\\.cn\\/open-cms\\?",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch)",
+      "match": "(?i)^(?!^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$)(?:^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "广告拦截&净化合集",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "(?i)^(?!^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$)(?:^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch))",
+      "match": "(?i)^(?!^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$)(?:^(?!^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(browse|next|search)(\\?[^#]*)?$)(?:^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch)))",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$",
+      "reason": "One response owner for this matching endpoint; original script remains unchanged"
+    },
+    {
+      "module": "YouTube",
+      "kind": "verified_path_handler_ownership",
+      "section": "scriptings",
+      "previous": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$",
+      "match": "(?i)^(?!^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback(?:\\?[^#]*)?$)(?:^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(?:browse|next|search|reel\\/reel_watch_sequence)(?:\\?[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback\\?[^#]*$|^http:\\/\\/youtube-logs\\.invalid(?::80)?(?:\\/[^#]*)?$|^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/initplayback(?:\\?[^#]*)?$)",
+      "fully_superseded_omitted": false,
+      "except_url_pattern": "(?i)^https:\\/\\/[A-Za-z0-9_-]+\\.googlevideo\\.com\\/videoplayback(?:\\?[^#]*)?$",
+      "reason": "Same original request script executes once at this reviewed intersection"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "identical_processing_after_ownership_omitted",
+      "section": "url_rewrites"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "identical_processing_after_ownership_omitted",
+      "section": "scriptings"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "identical_processing_after_ownership_omitted",
+      "section": "scriptings"
+    },
+    {
+      "module": "启动页去广告 Ultra+（yfamilys）",
+      "kind": "identical_processing_after_ownership_omitted",
+      "section": "scriptings"
     }
   ],
   "scope": "Named URL-path intersections only; no assertion that every arbitrary regex intersection is absent."

@@ -44,7 +44,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/sso.ifanr.com\/jiong\/IOS\/appso\/splash\/
   location: http://reject-200/
-- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/
+- match: (?i)^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/)
   location: http://reject-200/
 - match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup
   location: http://reject-200/
@@ -132,8 +132,6 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
   location: http://reject-200/
-- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/
-  location: http://reject-200/
 - match: (?i)^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php
   location: http://reject-dict/
 - match: (?i)^https?:\/\/ssp\.dzh\.com\.cn\/v2api\/adgroupjson
@@ -180,7 +178,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}
   location: http://reject-200/
-- match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+.mp4
+- match: (?i)^(?!^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4)(?:^https?:\/\/fuss10.elemecdn.com\/.+.mp4)
   location: http://reject-200/
 - match: (?i)^https?:\/\/www1.elecfans.com\/www\/delivery\/
   location: http://reject-200/
@@ -698,7 +696,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/api.psy-1.com\/cosleep\/startup
   location: http://reject-200/
-- match: (?i)^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif
+- match: (?i)^(?!^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif)(?:^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif)
   location: http://reject-200/
 - match: (?i)^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare
   location: http://reject-200/
@@ -752,7 +750,7 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/siteapi\.zaixs\.com\/.*\/start_ad
   location: http://reject-200/
-- match: (?i)^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info
+- match: (?i)^(?!^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2)(?:^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info)
   location: http://reject-200/
 - match: (?i)^https?:\/\/advertise\.zhiduodev\.com\/adv\/app\/getAdvSpaceInfo
   location: http://reject-200/
@@ -979,7 +977,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
+    match: (?i)^(?!^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$)(?:^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/096fdb696cee4ec5.js
     body_required: true
 - http_response:
@@ -1071,7 +1069,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList)
+    match: (?i)^(?!^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?)(?:^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/304ba13df67a42cf.js
     body_required: true
 - http_response:
@@ -1081,7 +1079,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms
+    match: (?i)^(?!^https:\/\/open-cms-api\.quark\.cn\/open-cms\?)(?:^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7733ced46e2fb451.js
     body_required: true
 - http_response:

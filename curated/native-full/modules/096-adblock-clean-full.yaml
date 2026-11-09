@@ -1,4 +1,4 @@
-# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+# Original scripts retained; author transport prerequisites precede host routing allowances.
 name: 广告拦截&净化合集
 description: (支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
 author: 奶思[https://github.com/fmz200]
@@ -4350,13 +4350,6 @@ rules:
 - domain_keyword:
     match: iyes.youku.com
     policy: REJECT
-- and:
-    match:
-    - protocol:
-        match: QUIC
-    - domain_suffix:
-        match: xiaohongshu.com
-    policy: REJECT
 - domain_suffix:
     match: pmm.people.com.cn
     policy: REJECT
@@ -8551,7 +8544,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad)
   status_code: 200
   headers:
     Content-Type: application/json
@@ -8566,7 +8559,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query)
+- match: ^(?!^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default)(?:^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query))
   status_code: 200
   headers:
     Content-Type: application/json
@@ -9225,7 +9218,7 @@ map_locals:
 - match: ^https?:\/\/www\.icourse163\.org\/mob\/j\/v1\/mobRecommendRPCBean\.getMaxWeightAdvertisement\.rpc
   status_code: 200
   body: ' '
-- match: ^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))
   status_code: 200
   body: ''
 - match: ^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab
@@ -10217,7 +10210,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 知乎移除首页推广
-    match: ^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend)
+    match: (?i)^(?!^https:\/\/api\.zhihu\.com\/topstory\/recommend\?)(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/4b37df660f451283.js
     body_required: true
 - http_response:
@@ -10249,7 +10242,7 @@ scriptings:
     max_size: 8388608
 - http_response:
     name: YouTube响应体
-    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
+    match: (?i)^(?!^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(player|get_watch)(\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/reel\/reel_watch_sequence(?:\?[^#]*)?$)(?:^(?!^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(browse|next|search)(\?[^#]*)?$)(?:^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/8aeee88068892fe3.js
     body_required: true
     binary_body: true

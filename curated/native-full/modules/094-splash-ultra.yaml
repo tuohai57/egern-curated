@@ -495,7 +495,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?:\/\/app\.hbooker\.com\/setting\/get_startpage_url_list
   location: http://reject/
-- match: ^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement
+- match: (?i)^(?!^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/)(?:^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement)
   location: http://reject/
 - match: ^https?:\/\/app\.api\.d3yuiw4\.com\/api\/app\/ad
   location: http://reject/
@@ -954,7 +954,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?://m\.tuniu\.com/api/operation/splash/
   location: http://reject/
-- match: ^https?://m\.ctrip\.com/restapi/[\w/]+tripAds
+- match: ^(?!^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/json\/tripAds)(?:^https?://m\.ctrip\.com/restapi/[\w/]+tripAds)
   location: http://reject/
 - match: ^https?://m\.client\.10010\.com/uniAdmsInterface/getWelcomeAd
   location: http://reject/
@@ -977,7 +977,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?://intl\.iqiyi\.com/ad_external/
   location: http://reject/
-- match: ^https?://interface(\d)?.music.163.com/eapi/ad/
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?://interface(\d)?.music.163.com/eapi/ad/)
   location: http://reject/
 - match: ^https?://img\d+\.10101111cdn\.com/adpos/
   location: http://reject/
@@ -1074,7 +1074,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?://app\.mixcapp\.com/mixc/api/v\d/ad
   location: http://reject/
-- match: ^https?://app\.dewu\.com/api/v\d/app/advertisement/
+- match: (?i)^(?!^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/)(?:^https?://app\.dewu\.com/api/v\d/app/advertisement/)
   location: http://reject/
 - match: ^https?://app\.ddpai\.com/d/api/v\d/config/get/bootscreen
   location: http://reject/
@@ -1104,7 +1104,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?://api\.zhihu\.com/fringe/ad
   location: http://reject/
-- match: ^https?://api\.zhihu\.com/commercial_api/
+- match: (?i)^(?!^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)(?:^https?://api\.zhihu\.com/commercial_api/)
   location: http://reject/
 - match: ^https?://api\.zhihu\.com/appview/api/v\d/answers/\d+/recommendations
   location: http://reject/
@@ -1578,13 +1578,13 @@ url_rewrites:
   location: http://reject-dict/
 - match: https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get)
   location: http://reject-dict/
-- match: https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query)
+- match: ^(?!^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default)(?:https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query))
   location: http://reject-dict/
 - match: https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner)
   location: http://reject-dict/
 - match: https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin)
   location: http://reject-dict/
-- match: https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad)
   location: http://reject-dict/
 - match: https?://res\.xiaojukeji\.com\/resapi\/activity\/mget
   location: http://reject-200/
@@ -1742,8 +1742,6 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/www.icourse163.org\/.*?(Advertisement)
   location: http://reject-img/
-- match: ^(?!^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)(?:^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)
-  location: http://reject-dict/
 - match: ^https?:\/\/wemallh5\.usmile\.com\/api\/sp-portal\/store\/usmile\/activity\/dayCheck\?pop
   location: http://reject-dict/
 - match: ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users
@@ -1923,8 +1921,6 @@ url_rewrites:
 - match: ^https?:\/\/s\.go\.sohu\.com\/adgtr\/\?gbcode=
   location: http://reject-img/
 - match: ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
-  location: http://reject-dict/
-- match: ^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)
   location: http://reject-dict/
 - match: ^https?:\/\/s1\.api\.tv\.itc\.cn\/v4\/mobile\/control\/switch\.json
   location: http://reject-200/
@@ -2198,8 +2194,6 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config
   location: http://reject-dict/
-- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
-  location: http://reject-dict/
 - match: ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/layout\/productList\/eventData\/v
   location: http://reject-200/
 - match: ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/coupon\/float_entrance\/get\?api_key
@@ -2256,8 +2250,6 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds
   location: http://reject-dict/
-- match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/json\/tripAds
-  location: http://reject-200/
 - match: ^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config
   location: http://reject-200/
 - match: ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd)
@@ -2352,7 +2344,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb
   location: http://reject-200/
-- match: ^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))
   location: http://reject-img/
 - match: ^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity
   location: http://reject-200/
@@ -2472,8 +2464,6 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
   location: http://reject-dict/
-- match: ^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
-  location: http://reject-dict/
 - match: ^https?:\/\/hoapp\.juneyaoair\.com\/data\/index\/getLoadPic
   location: http://reject-200/
 - match: ^https?:\/\/hmbaby\.simshine\.cn\/admin\/filter\/crowdFunding\/getNewProductData
@@ -2572,13 +2562,11 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/ga-album-cdnqn\.52tt\.com\/prod-yunying\/.+.jpg
   location: http://reject-dict/
-- match: ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
-  location: http://reject-img/
 - match: ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}
   location: http://reject-200/
 - match: ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4}
   location: http://reject-200/
-- match: ^https?:\/\/fuss10.elemecdn.com\/.+.mp4
+- match: ^(?!^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4)(?:^https?:\/\/fuss10.elemecdn.com\/.+.mp4)
   location: http://reject-200/
 - match: ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer
   location: http://reject-200/
@@ -3006,7 +2994,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?:\/\/api\.zhihu\.com\/commercial_api\/answer/\d+/bottom-v2
   location: http://reject-dict/
-- match: ^https?:\/\/api\.zhihu\.com\/commercial_api
+- match: (?i)^(?!^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)(?:^https?:\/\/api\.zhihu\.com\/commercial_api)
   location: http://reject-dict/
 - match: ^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header
   location: http://reject-dict/
@@ -3038,8 +3026,6 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai
   location: http://reject-dict/
-- match: ^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info
-  location: http://reject-200/
 - match: ^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page)
   location: http://reject-dict/
 - match: ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList)
@@ -3123,8 +3109,6 @@ url_rewrites:
 - match: ^https?:\/\/api\.merach\.com\/app\/AppAdvertisingController\/getAdvert
   location: http://reject-200/
 - match: ^https?:\/\/api\.medlive\.cn\/promotion-api/adlist
-  location: http://reject-200/
-- match: ^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
   location: http://reject-200/
 - match: ^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
   location: http://reject-200/
@@ -3382,10 +3366,8 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash
   location: http://reject-200/
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/
+- match: ^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/)
   location: http://reject-200/
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
-  location: http://reject-dict/
 - match: ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop.*splash\.ads
   location: http://reject-200/
 - match: ^https?:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage
@@ -3640,7 +3622,7 @@ url_rewrites:
   location: http://reject-200/
 - match: ^https?://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise
   location: http://reject-200/
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv/
+- match: ^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv/)
   location: http://reject-200/
 - match: ^https?://.+?\.ott\.cibntv\.net/[\w/-]+.mp4\?sid=
   location: http://reject-200/
@@ -3744,7 +3726,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/ads
   location: http://reject-dict/
-- match: ^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif
+- match: ^(?!^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif)(?:^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif)
   location: http://reject-200/
 - match: ^https:\/\/j1\.pupuapi\.com\/client\/recommendation\/hub\/interests\/products\/v2
   location: http://reject-dict/
@@ -3813,8 +3795,6 @@ url_rewrites:
 - match: ^https:\/\/appapi\.caiyicloud\.com\/cyy_gatewayapi\/home\/pub\/v3\/banners\/app_start_page
   location: http://reject-dict/
 - match: ^https:\/\/app\.peopleapp\.com\/Api\/\d+/HomeApi\/(adv|getAdvertImage)
-  location: http://reject-200/
-- match: ^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/
   location: http://reject-200/
 - match: ^https:\/\/app\.api\.versa-ai\.com\/launch\/ads\?
   location: http://reject-200/
@@ -3910,7 +3890,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise
   location: http://reject-dict/
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
+- match: ^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)
   location: http://reject-dict/
 - match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/1\.0
   location: http://reject-dict/
@@ -4295,11 +4275,6 @@ scriptings:
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/80dab9ea77a86e7c.js
     body_required: true
 - http_response:
-    name: quark
-    match: ^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms
-    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/7733ced46e2fb451.js
-    body_required: true
-- http_response:
     name: pixivAds
     match: ^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/1b1d2cdbef6f4777.js
@@ -4518,7 +4493,7 @@ scriptings:
     body_required: true
 - http_response:
     name: netease.adblock23
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get
+    match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/afb58f3503d3792b.js
     body_required: true
 - http_response:
@@ -4958,18 +4933,13 @@ scriptings:
     body_required: true
 - http_response:
     name: coolapk3
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init)
+    match: (?i)^(?!^https:\/\/api\.coolapk\.com\/v6\/main\/dataList)(?:^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/d12caced89d4ee70.js
     body_required: true
 - http_response:
     name: coolapk4
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?
+    match: (?i)^(?!^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?)(?:^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/d12caced89d4ee70.js
-    body_required: true
-- http_response:
-    name: coolapk5
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList)
-    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/304ba13df67a42cf.js
     body_required: true
 - http_response:
     name: caiyun_json11
@@ -5003,7 +4973,7 @@ scriptings:
     body_required: true
 - http_response:
     name: coolapk10
-    match: ^https?:\/\/api.coolapk.com\/v6\/feed\/detail
+    match: (?i)^(?!^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?)(?:^https?:\/\/api.coolapk.com\/v6\/feed\/detail)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/304ba13df67a42cf.js
     body_required: true
 - http_response:
@@ -5043,13 +5013,8 @@ scriptings:
     body_required: true
 - http_response:
     name: '12306'
-    match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
+    match: (?i)^(?!^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$)(?:^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/bed12b445b1c04f9.js
-    body_required: true
-- http_response:
-    name: '123062'
-    match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
-    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/096fdb696cee4ec5.js
     body_required: true
 - http_response:
     name: freshippo
@@ -5467,7 +5432,7 @@ scriptings:
     body_required: true
 - http_response:
     name: zheye.min12
-    match: ^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds?
+    match: (?i)^(?!^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?)(?:^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds?)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/646bbecb09393633.js
     body_required: true
 - http_response:
@@ -5497,7 +5462,7 @@ scriptings:
     body_required: true
 - http_response:
     name: zhihu10
-    match: ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend)
+    match: (?i)^(?!^https:\/\/api\.zhihu\.com\/topstory\/recommend\?)(?:^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend))
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/4b37df660f451283.js
     body_required: true
 - http_response:
@@ -5582,7 +5547,7 @@ scriptings:
     body_required: true
 - http_response:
     name: zheye.min15
-    match: ^https:\/\/(api|web-render)\.zhihu\.com\/topstory\/recommend
+    match: (?i)^(?!^https:\/\/api\.zhihu\.com\/topstory\/recommend\?)(?:^https:\/\/(api|web-render)\.zhihu\.com\/topstory\/recommend)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/646bbecb09393633.js
     body_required: true
 - http_response:

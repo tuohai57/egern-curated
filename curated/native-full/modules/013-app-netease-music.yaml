@@ -83,7 +83,7 @@ rules:
     match: bdlog.tanx.com
     policy: REJECT
 url_rewrites:
-- match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad
+- match: (?i)^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad)
   location: http://reject-dict/
 - match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/sp\/flow\/popup
   location: http://reject-dict/
@@ -99,13 +99,7 @@ url_rewrites:
   location: http://reject-dict/
 - match: (?i)^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend
   location: http://reject-dict/
-body_rewrites:
-- response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
-    filter: . = {}
-- response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
-    filter: . = {}
+body_rewrites: []
 mitm:
   hostnames:
   - interface*.music.163.com

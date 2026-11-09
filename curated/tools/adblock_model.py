@@ -57,7 +57,7 @@ class DomainRouter:
             self.regexes[pattern] = re.compile(pattern.replace('(?i)', ''), re.I if '(?i)' in pattern else 0)
         return self.regexes[pattern].search(value) is not None
 
-    def matches(self, kind, f, url, host):
+    def matches(self, kind, f, url, host, protocol=None, user_agent=None):
         value = f.get('match', '')
         if kind == 'domain': return host == value
         if kind == 'domain_suffix': return within(host, value)
@@ -66,10 +66,15 @@ class DomainRouter:
         if kind == 'domain_regex': return self.rx(value, host)
         if kind == 'url_regex': return self.rx(value, url)
         if kind == 'default': return True
+        if kind == 'protocol':
+            # No protocol is inferred from an HTTPS URL: it can use TCP or QUIC.
+            return protocol is not None and str(value).casefold() == protocol.casefold()
+        if kind == 'user_agent':
+            return user_agent is not None and fnmatch.fnmatchcase(user_agent.casefold(), str(value).casefold())
         if kind in {'and', 'or'}:
-            result = [self.matches(*next(iter(n.items())), url, host) for n in value]
+            result = [self.matches(*next(iter(n.items())), url, host, protocol, user_agent) for n in value]
             return all(result) if kind == 'and' else any(result)
-        if kind == 'not': return not self.matches(*next(iter(value.items())), url, host)
+        if kind == 'not': return not self.matches(*next(iter(value.items())), url, host, protocol, user_agent)
         if kind == 'dest_port':
             return str(urlsplit(url).port or (443 if url.startswith('https:') else 80)) in str(value).split(',')
         if kind == 'rule_set':
@@ -85,11 +90,11 @@ class DomainRouter:
         # UA/GeoIP/ASN/process facts are unavailable in an offline URL model.
         return False
 
-    def route(self, url):
+    def route(self, url, protocol=None, user_agent=None):
         host = urlsplit(url).hostname
         for index, (name, node) in enumerate(self.rules):
             kind, fields = next(iter(node.items()))
-            if not fields.get('disabled') and self.matches(kind, fields, url, host):
+            if not fields.get('disabled') and self.matches(kind, fields, url, host, protocol, user_agent):
                 return {'module': name, 'kind': kind, 'match': fields.get('match'),
                         'policy': fields.get('policy'), 'position': index}
         return {'policy': None, 'module': None}

@@ -153,7 +153,7 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict)
   location: http://reject-dict/
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
+- match: (?i)^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)
   location: http://reject-dict/
 - match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise
   location: http://reject-dict/
@@ -396,10 +396,6 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/catdot\.dianping\.com\/broker-service\/hijack
   location: http://reject/
-- match: (?i)^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig)
-  location: http://reject/
-- match: (?i)^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
-  location: http://reject-dict/
 - match: (?i)^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction
   location: http://reject/
 - match: (?i)^https?:\/\/mapi\.dianping\.com\/adshopping
@@ -516,8 +512,6 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4}
   location: http://reject/
-- match: (?i)^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
-  location: http://reject-img/
 - match: (?i)^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/
   location: http://reject/
 - match: (?i)^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/
@@ -906,8 +900,6 @@ url_rewrites:
   location: http://reject-200/
 - match: (?i)^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interaction\/appInfo\/appNewestVersion
   location: http://reject-200/
-- match: (?i)^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)
-  location: http://reject-200/
 - match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
   location: http://reject-dict/
 - match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?
@@ -934,24 +926,18 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/mea\.meitudata\.com\/kaiping
   location: http://reject/
-- match: (?i)^(?!^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)(?:^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?)
-  location: http://reject-dict/
 - match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
   location: http://reject-img/
 - match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)
   location: http://reject-img/
 - match: (?i)^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
   location: http://reject-img/
-- match: (?i)^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)
-  location: http://reject-dict/
 - match: (?i)^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
   location: http://reject-dict/
 - match: (?i)^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch\?appkey=213807&
   location: http://reject-dict/
 - match: (?i)^https?:\/\/capi\.mwee\.cn\/app-api\/V\d{2}\/app\/(ad|getstartad)
   location: http://reject/
-- match: (?i)^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
-  location: http://reject-dict/
 - match: (?i)^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
   location: http://reject-dict/
 - match: (?i)^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad\/
@@ -1484,7 +1470,7 @@ url_rewrites:
   location: http://reject/
 - match: (?i)^https?:\/\/www\.icourse163\.org\/mob\/j\/v1\/mobRecommendRPCBean\.getMaxWeightAdvertisement\.rpc
   location: http://reject-200/
-- match: (?i)^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))
+- match: (?i)^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)))
   location: http://reject-img/
 - match: (?i)^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab
   location: http://reject-dict/
@@ -1653,10 +1639,6 @@ url_rewrites:
 - match: (?i)^https?:\/\/www\.myusmile\.online\/user\/userTagRecord\/popup
   location: http://reject/
 - match: (?i)^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/[0-9]{5}\/json\/getTimeZoneServerIpList\?__gw_os=IOS
-  location: http://reject-200/
-- match: (?i)^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif
-  location: http://reject/
-- match: (?i)^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/json\/tripAds
   location: http://reject-200/
 - match: (?i)^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare
   location: http://reject/

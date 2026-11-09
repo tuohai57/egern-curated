@@ -9,7 +9,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
+- match: ^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)
   status_code: 200
   headers:
     Content-Type: application/json

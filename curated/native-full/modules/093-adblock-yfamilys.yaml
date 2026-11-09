@@ -297,7 +297,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/eapi\/ad\/
   location: http://reject/
-- match: ^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/
+- match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/)
   location: http://reject/
 - match: ^https?:\/\/sp\.kaola\.com\/api\/openad
   location: http://reject/
@@ -481,7 +481,7 @@ url_rewrites:
   location: http://reject/
 - match: ^https?:\/\/api\.yizhibo\.com\/common\/api\/pz$
   location: http://reject/
-- match: ^https?:\/\/api\.zhihu\.com\/commercial_api\/
+- match: (?i)^(?!^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)(?:^https?:\/\/api\.zhihu\.com\/commercial_api\/)
   location: http://reject/
 - match: ^https?:\/\/api\.zhihu\.com\/fringe\/ad
   location: http://reject/

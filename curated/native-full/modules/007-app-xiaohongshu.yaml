@@ -1,4 +1,4 @@
-# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+# Original scripts retained; author transport prerequisites precede host routing allowances.
 name: 小红书
 description: 过滤小红书广告，去除水印
 author: RuCu6[https://github.com/RuCu6], fmz200[https://github.com/fmz200], meichiny[https://github.com/meichiny],
@@ -25,17 +25,6 @@ rules:
     policy: REJECT
 - domain:
     match: t-ads.xiaohongshu.com
-    policy: REJECT
-- and:
-    match:
-    - protocol:
-        match: QUIC
-    - or:
-        match:
-        - domain_suffix:
-            match: xiaohongshu.com
-        - domain_suffix:
-            match: rnote.com
     policy: REJECT
 url_rewrites:
 - match: (?i)^https?:\/\/ci\.(?:xiaohongshu|rnote)\.com\/system_config\/watermark

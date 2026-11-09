@@ -44,6 +44,7 @@ def rule(entry):
     check(kind in {'domain','domain_suffix','domain_keyword','domain_regex','domain_wildcard','ip_cidr','ip_cidr6','asn','geoip','url_regex','user_agent','dest_port','protocol','rule_set','ssid','bssid','cellular','and','or','not','default'},'Unknown rule '+kind)
     if 'policy' in fields:check(fields['policy'] in set(M['policy_names'])|{'DIRECT','REJECT'},'Unknown policy '+str(fields['policy']))
     if kind in {'domain_regex','url_regex'}:pattern(fields['match'])
+    if kind=='protocol':check(fields.get('match') in {'tcp','udp','http','https','quic','stun'},'Protocol must use official lowercase enum')
     if kind in {'and','or'}:
         check(isinstance(fields['match'],list) and bool(fields['match']),'Empty logical expression '+kind)
         for child in fields['match']:rule(child)

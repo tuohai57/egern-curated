@@ -1,0 +1,322 @@
+{
+  "rules": [
+    {
+      "and": {
+        "match": [
+          {
+            "protocol": {
+              "match": "quic"
+            }
+          },
+          {
+            "or": {
+              "match": [
+                {
+                  "domain_suffix": {
+                    "match": "xiaohongshu.com"
+                  }
+                },
+                {
+                  "domain_suffix": {
+                    "match": "rnote.com"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
+    {
+      "and": {
+        "match": [
+          {
+            "domain": {
+              "match": "api.pinduoduo.com"
+            }
+          },
+          {
+            "protocol": {
+              "match": "quic"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
+    {
+      "and": {
+        "match": [
+          {
+            "domain": {
+              "match": "youtubei.googleapis.com"
+            }
+          },
+          {
+            "protocol": {
+              "match": "udp"
+            }
+          },
+          {
+            "dest_port": {
+              "match": "443"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
+    {
+      "and": {
+        "match": [
+          {
+            "domain": {
+              "match": "youtubei-att.googleapis.com"
+            }
+          },
+          {
+            "protocol": {
+              "match": "udp"
+            }
+          },
+          {
+            "dest_port": {
+              "match": "443"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
+    {
+      "and": {
+        "match": [
+          {
+            "domain_suffix": {
+              "match": "googlevideo.com"
+            }
+          },
+          {
+            "protocol": {
+              "match": "quic"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
+    {
+      "and": {
+        "match": [
+          {
+            "domain_suffix": {
+              "match": "googlevideo.com"
+            }
+          },
+          {
+            "protocol": {
+              "match": "udp"
+            }
+          },
+          {
+            "dest_port": {
+              "match": "443"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    }
+  ],
+  "changes": [
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "小红书",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "protocol": {
+                "match": "quic"
+              }
+            },
+            {
+              "or": {
+                "match": [
+                  {
+                    "domain_suffix": {
+                      "match": "xiaohongshu.com"
+                    }
+                  },
+                  {
+                    "domain_suffix": {
+                      "match": "rnote.com"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "拼多多",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "domain": {
+                "match": "api.pinduoduo.com"
+              }
+            },
+            {
+              "protocol": {
+                "match": "quic"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "YouTube",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "domain": {
+                "match": "youtubei.googleapis.com"
+              }
+            },
+            {
+              "protocol": {
+                "match": "udp"
+              }
+            },
+            {
+              "dest_port": {
+                "match": "443"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "YouTube",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "domain": {
+                "match": "youtubei-att.googleapis.com"
+              }
+            },
+            {
+              "protocol": {
+                "match": "udp"
+              }
+            },
+            {
+              "dest_port": {
+                "match": "443"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "YouTube",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "domain_suffix": {
+                "match": "googlevideo.com"
+              }
+            },
+            {
+              "protocol": {
+                "match": "quic"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "YouTube",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "domain_suffix": {
+                "match": "googlevideo.com"
+              }
+            },
+            {
+              "protocol": {
+                "match": "udp"
+              }
+            },
+            {
+              "dest_port": {
+                "match": "443"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": false,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    },
+    {
+      "kind": "domain_transport_guard_promoted",
+      "module": "广告拦截&净化合集",
+      "rule": {
+        "and": {
+          "match": [
+            {
+              "protocol": {
+                "match": "quic"
+              }
+            },
+            {
+              "domain_suffix": {
+                "match": "xiaohongshu.com"
+              }
+            }
+          ],
+          "policy": "REJECT"
+        }
+      },
+      "covered_by_earlier": true,
+      "reason": "Keep original domain-scoped transport rejection ahead of response-host routing allowances"
+    }
+  ],
+  "scope": "Only original domain-scoped UDP/QUIC REJECT rules; protected preamble retains priority."
+}

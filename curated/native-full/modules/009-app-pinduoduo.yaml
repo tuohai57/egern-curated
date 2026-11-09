@@ -1,4 +1,4 @@
-# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+# Original scripts retained; author transport prerequisites precede host routing allowances.
 name: 拼多多
 description: 过滤拼多多广告
 author: sooyaaabo[https://github.com/sooyaaabo], ZenmoFeiShi[https://github.com/ZenmoFeiShi],
@@ -28,13 +28,6 @@ rules:
           4}){1, 7})|((:[0-9A-Fa-f]{1, 4}){0, 5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\](\/v\d+)?\/d\d?\??"'
     - user_agent:
         match: '"*com.xunmeng.pinduoduo*"'
-    policy: REJECT
-- and:
-    match:
-    - domain:
-        match: api.pinduoduo.com
-    - protocol:
-        match: QUIC
     policy: REJECT
 - domain:
     match: sdk.1rtb.net

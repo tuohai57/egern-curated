@@ -13,16 +13,16 @@ rules:
     match: httpsdns
     policy: REJECT
 - user_agent:
-    match: '"httpdns*"'
+    match: httpdns*
     policy: REJECT
 - user_agent:
-    match: '"httpsdns*"'
+    match: httpsdns*
     policy: REJECT
 - user_agent:
-    match: '"Httpdns*"'
+    match: Httpdns*
     policy: REJECT
 - user_agent:
-    match: '"Httpsdns*"'
+    match: Httpsdns*
     policy: REJECT
 - and:
     match:

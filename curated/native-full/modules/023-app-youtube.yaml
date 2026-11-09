@@ -1,4 +1,4 @@
-# User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
+# Original scripts retained; author transport prerequisites precede host routing allowances.
 name: YouTube
 description: 移除YouTube应用广告、启用后台播放，并翻译现有字幕轨道（目标语言为zh-CN或en-US；没有字幕的视频无法翻译）。默认仅记录媒体响应头；完整采样可能增加延迟。\n该插件基于devchristian1337的YouTube插件汉化。
 author: devchristian1337[https://github.com/devchristian1337]
@@ -42,41 +42,7 @@ compat_arguments_desc: 'background_playback: 后台播放
   log_level: 可选 info/debug/warn/error
 
   capture_budget: 可选 32/16/64'
-rules:
-- and:
-    match:
-    - domain:
-        match: youtubei.googleapis.com
-    - protocol:
-        match: UDP
-    - dest_port:
-        match: '443'
-    policy: REJECT
-- and:
-    match:
-    - domain:
-        match: youtubei-att.googleapis.com
-    - protocol:
-        match: UDP
-    - dest_port:
-        match: '443'
-    policy: REJECT
-- and:
-    match:
-    - domain_suffix:
-        match: googlevideo.com
-    - protocol:
-        match: QUIC
-    policy: REJECT
-- and:
-    match:
-    - domain_suffix:
-        match: googlevideo.com
-    - protocol:
-        match: UDP
-    - dest_port:
-        match: '443'
-    policy: REJECT
+rules: []
 scriptings:
 - http_request:
     name: YouTube-请求
@@ -90,7 +56,7 @@ scriptings:
     body_required: true
 - http_request:
     name: YouTube-请求
-    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
+    match: (?i)^(?!^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback(?:\?[^#]*)?$)(?:^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$)
     script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/97e035d3d5cf5032.js
     body_required: true
 - http_response:
