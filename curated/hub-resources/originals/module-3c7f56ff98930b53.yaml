@@ -1,0 +1,14 @@
+# Source: https://raw.githubusercontent.com/jadkg/egern/main/%E4%B8%87%E5%B9%B4%E5%8E%86.js
+# Author: jadkg | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 小日子
+scriptings:
+- generic:
+    name: wannianli
+    script_url: https://raw.githubusercontent.com/jadkg/egern/main/%E4%B8%87%E5%B9%B4%E5%8E%86.js
+widgets:
+- name: wannianli
+  script_name: wannianli
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 农历信息 + 四类节日倒计时（法定 / 节气 / 民俗 / 国际）；改编自 ByteValley today_almanac.js；── 工具 ─────────────────────────────────────────────
+icon: https://egern.pages.dev/assets/icons/jadkg/egern/wannianli.jpg

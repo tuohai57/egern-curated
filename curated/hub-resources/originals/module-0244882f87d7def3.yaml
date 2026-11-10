@@ -1,0 +1,14 @@
+# Source: https://raw.githubusercontent.com/jadkg/egern/main/NetworkInfo.js
+# Author: jadkg | License: 未声明许可证
+# Egern adaptation: ErrBin
+# NetworkInfoNoTime.js - 最终版：无运营商、无时间、紫蓝渐变背景
+name: NetworkInfoNoTime.js - 最终版：无运营商、无时间、紫蓝渐变背景
+scriptings:
+- generic:
+    name: networkinfo
+    script_url: https://raw.githubusercontent.com/jadkg/egern/main/NetworkInfo.js
+widgets:
+- name: networkinfo
+  script_name: networkinfo
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。

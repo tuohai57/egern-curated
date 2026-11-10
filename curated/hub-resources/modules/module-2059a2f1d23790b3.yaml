@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/jadkg/egern/jichangdingyue.yaml
+name: 订阅流量·简约版
+scriptings:
+- generic:
+    name: 订阅流量·简约版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/cb0192833fdf5ca00315910709f32e621b3edc26c447100b7a4d7a4e0894baa3.js
+    update_interval: 86400
+widgets:
+- name: 订阅流量·简约版
+  script_name: 订阅流量·简约版·脚本1
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: square.grid.2x2.fill

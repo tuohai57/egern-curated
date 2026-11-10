@@ -1,0 +1,25 @@
+# Source: https://raw.githubusercontent.com/pronounAI/Egern/main/Subscription-Widget.js
+# Author: pronounAI | License: Apache-2.0
+# Egern adaptation: ErrBin
+name: 'Egern widget: Subscription Traffic'
+scriptings:
+- generic:
+    name: subscription-widget
+    script_url: https://raw.githubusercontent.com/pronounAI/Egern/main/Subscription-Widget.js
+widgets:
+- name: subscription-widget
+  script_name: subscription-widget
+env_schema:
+  PLAN_TOTAL_GB:
+    name: PLAN_TOTAL_GB
+  SUBSCRIPTION_NAME:
+    name: SUBSCRIPTION_NAME
+  SUBSCRIPTION_URL:
+    name: SUBSCRIPTION_URL
+  SUBSCRIPTION_USER_AGENT:
+    name: SUBSCRIPTION_USER_AGENT
+  WIDGET_STYLE:
+    name: WIDGET_STYLE
+author: 'pronounAI · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: https://egern.pages.dev/assets/icons/pronounAI/Egern/Subscription-Widget.jpg

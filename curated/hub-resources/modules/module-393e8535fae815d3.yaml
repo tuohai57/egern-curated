@@ -1,0 +1,30 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/WeatherWdg.yaml
+name: 天气·中国天气版
+description: 中国天气网 实况7天预报/生活指数，无需 Key
+author: iBL3ND
+icon: https://iili.io/njN7ugn.png
+compat_arguments:
+  weatherCity: 海口
+  weatherUserName: ''
+compat_arguments_schema:
+  weatherCity:
+    name: 城市
+    description: 要查询的城市，例如 海口、北京、慈溪，支持全国地级市及区县中文名
+    default_value: 海口
+  weatherUserName:
+    name: 名字
+    description: 大尺寸问候语显示的名字，可不填
+    default_value: ''
+dns: {}
+scriptings:
+- generic:
+    name: 天气·中国天气版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/996b78655b3ef5582e363041e673decd9caed519044d18b4f946d34467cff109.js
+    env:
+      CITY: '{{{weatherCity}}}'
+      USER_NAME: '{{{weatherUserName}}}'
+    update_interval: 86400
+widgets:
+- name: 天气·中国天气版
+  script_name: 天气·中国天气版·脚本1

@@ -1,0 +1,25 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/SIJULY/egern-radar/WeatherWdg.yaml
+name: 天气·晴雨版
+description: 蓝灰 UI 风格 · 含农历节气/逐时预报/五日预报/湿度进度条 · 数据源中国天气网（免 Key）
+author: 小龙女她爸
+icon: https://raw.githubusercontent.com/SIJULY/egern-radar/main/weather-icon.png
+compat_arguments:
+  weatherCity: ''
+compat_arguments_schema:
+  weatherCity:
+    name: 城市
+    description: 要查询的城市，例如 合肥、北京、阳江；留空或填"自动"则按 IP 自动定位（模块自带直连规则）
+    default_value: ''
+dns: {}
+scriptings:
+- generic:
+    name: 天气·晴雨版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/31d309400a3e5a3d4e7da313071e96e21811324b3a68a584f75988694eb648c3.js
+    timeout: 15
+    env:
+      CITY: '{{{weatherCity}}}'
+    update_interval: 86400
+widgets:
+- name: 天气·晴雨版
+  script_name: 天气·晴雨版·脚本1

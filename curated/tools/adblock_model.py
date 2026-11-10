@@ -43,6 +43,9 @@ class DomainRouter:
             stack_path=self.root/'curated/module-stack/manifest.json'
             stack=json.loads(stack_path.read_text(encoding='utf-8')) if stack_path.exists() else {'modules':[]}
             index={row['url']:row for row in rows+stack['modules']}
+            hub_path=self.root/'curated/hub-resources/manifest.json'
+            if hub_path.exists():
+                index.update({row['url']:row for row in json.loads(hub_path.read_text(encoding='utf-8'))['modules']})
             rows=[]
             for ref in profile.get('modules',[]):
                 if not ref.get('enabled',True):continue

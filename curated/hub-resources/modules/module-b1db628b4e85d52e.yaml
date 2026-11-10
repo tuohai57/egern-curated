@@ -1,0 +1,68 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/zhaohantao1360-hash/Hark/china-mobile-hark-ios.yaml
+name: 中国移动·简洁版
+description: 桌面/锁屏小组件：剩余话费、通用流量、其他流量、语音三环 + 今日已用/日均可用。先在「中国移动」App 用短信验证码登录一次自动捕获参数
+author: Hark（基于 zhaohantao1360-hash v20 改版，iOS 液态玻璃风格 + 用量洞察）
+env_schema:
+  CM_CAPTURE:
+    name: 抓取登录信息
+    description: 打开「中国移动」App 时自动更新登录信息。关掉后不再抓取，登录过期也不会自动恢复
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  CM_CAPTURE_NOTIFY:
+    name: 每次抓取都通知
+    description: 默认关：只在第一次抓到或登录过期恢复时通知
+    default_value: 'false'
+    options:
+    - 'true'
+    - 'false'
+  CM_PHONENUMBER:
+    name: 手机号（选填）
+    description: 11 位移动手机号；不填则用已保存的号码
+mitm:
+  hostnames:
+    includes:
+    - client.app.coc.10086.cn
+    - 10086.online-cmcc.cn
+scriptings:
+- generic:
+    name: 中国移动·简洁版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js
+    timeout: 20
+    env:
+      CM_PHONENUMBER: ''
+    update_interval: 86400
+- schedule:
+    name: 中国移动·简洁版·脚本2
+    cron: '*/20 * * * *'
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js
+    timeout: 30
+    env:
+      CM_KEEPALIVE: 'true'
+      CM_PHONENUMBER: ''
+    update_interval: 86400
+- http_request:
+    name: 中国移动·简洁版·脚本3
+    match: ^https?:\/\/(client\.app\.coc\.10086\.cn|10086\.online-cmcc\.cn)(:\d+)?\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js
+    body_required: true
+    timeout: 10
+    env:
+      CM_CAPTURE: 'true'
+      CM_CAPTURE_NOTIFY: 'false'
+    update_interval: 86400
+- http_response:
+    name: 中国移动·简洁版·脚本4
+    match: ^https?:\/\/(client\.app\.coc\.10086\.cn|10086\.online-cmcc\.cn)(:\d+)?\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js
+    timeout: 10
+    env:
+      CM_CAPTURE: 'true'
+      CM_CAPTURE_NOTIFY: 'false'
+    update_interval: 86400
+widgets:
+- name: 中国移动·简洁版
+  script_name: 中国移动·简洁版·脚本1
+icon: square.grid.2x2.fill

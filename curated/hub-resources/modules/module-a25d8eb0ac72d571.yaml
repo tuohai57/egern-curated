@@ -1,0 +1,39 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/CSG_Widget.yaml
+name: 南方电网·用电量
+description: 南方电网 昨日 本月 余额小组件（含定时保活）
+author: iBL3ND
+icon: https://iili.io/nEG5oxt.png
+compat_arguments:
+  csgCapture: 'true'
+compat_arguments_schema:
+  csgCapture:
+    name: 南方电网 Token 抓取
+    description: 打开南网在线 App 或小程序，进入「我的用电」页面即可自动获取（抓到后可以关闭）
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+dns: {}
+scriptings:
+- generic:
+    name: 南方电网·用电量·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/c9758ee274aaaff406f192ea85a724070a13a7a9e0a8842f03b08899e219869b.js
+    update_interval: 86400
+- http_request:
+    name: 南方电网·用电量·脚本2
+    match: ^https://95598\.c[^{{{csgCapture}}}]g\.cn/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/c9758ee274aaaff406f192ea85a724070a13a7a9e0a8842f03b08899e219869b.js
+    update_interval: 86400
+- schedule:
+    name: 南方电网·用电量·脚本3
+    cron: '*/20 * * * *'
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/c9758ee274aaaff406f192ea85a724070a13a7a9e0a8842f03b08899e219869b.js
+    update_interval: 86400
+mitm:
+  hostnames:
+    includes:
+    - 95598.csg.cn
+widgets:
+- name: 南方电网·用电量
+  script_name: 南方电网·用电量·脚本1

@@ -1,0 +1,15 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/NetSpeed_Widget.yaml
+name: 网络测速·标准版
+description: 测试网络下载速度，下载 Cloudflare 3MB 文件测速，显示 Mbps、MB/s 与用时，支持小中大尺寸
+author: iBL3ND
+icon: https://iili.io/nULElLJ.webp
+scriptings:
+- generic:
+    name: 网络测速·标准版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/343bd217c2716e5b2329c38fce2f287053a324f932bbd693b787a6da8c8458c1.js
+    timeout: 60
+    update_interval: 86400
+widgets:
+- name: 网络测速·标准版
+  script_name: 网络测速·标准版·脚本1

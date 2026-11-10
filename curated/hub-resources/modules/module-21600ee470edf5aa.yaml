@@ -1,0 +1,19 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Revicess/Egern/widget/youjia-widget-canvas.yaml
+name: 全国油价·画布版
+scriptings:
+- generic:
+    name: 全国油价·画布版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/e8df04fc7596523321125cf5e6a4b2d66bc2111dd546ccbba4b3ceb474821dab.js
+    update_interval: 86400
+widgets:
+- name: 全国油价·画布版
+  script_name: 全国油价·画布版·脚本1
+env_schema:
+  CITY:
+    name: CITY
+  TYPE:
+    name: TYPE
+author: 'Revicess · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: square.grid.2x2.fill

@@ -1,0 +1,15 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/jnlaoshu/MySelf/Egern/Widget/Countdown.yaml
+name: 节日倒计时·分类版
+scriptings:
+- generic:
+    name: 节日倒计时·分类版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/0a85353721651c586f0fc7755b74838cd6a8aa784a0cda1ca82866d942d8c64b.js
+    update_interval: 86400
+widgets:
+- name: 节日倒计时·分类版
+  script_name: 节日倒计时·分类版·脚本1
+author: 'jnlaoshu · Egern adaptation: ErrBin'
+description: 功能特性：；自动适配 Small / Medium / Large 三种尺寸，呈现不同排版风格。；内置农历算法，覆盖法定假日、传统节日、国际节日及金融交割/行权日。；基于
+  UTC+8 时区进行精确的倒计时计算（剩余天数）。；支持最多 6 个自定义纪念日，可单独配置清明节、春假、秋假日期。；支持节日按天数及优先级排序，并可将指定节日跨分类置顶显示。；根据工作日/周末/当天节日状态自动切换背景渐变色。；小号模式：今日节日独立高亮，其余按天数排序，可配置置顶数量与天数范围；中大号模式：分组展示，自适应裁剪。
+icon: square.grid.2x2.fill

@@ -1,0 +1,34 @@
+# Source: https://raw.githubusercontent.com/app2smile/rules/master/module/zhihu.sgmodule
+# Author: app2smile | License: MIT
+# Egern adaptation: ErrBin
+# 仓库地址 https://github.com/app2smile/rules
+name: 知乎App去广告
+description: 开屏页广告,首页右下角悬浮框,推荐列表广告,问题回答列表广告,具体回答下广告
+rules:
+- domain:
+    match: 118.89.204.198
+    policy: REJECT-DROP
+- ip_cidr:
+    match: 118.89.204.198/32
+    no_resolve: true
+    policy: REJECT-DROP
+- ip_cidr6:
+    match: 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
+    no_resolve: true
+    policy: REJECT-DROP
+mitm:
+  hostnames:
+    includes:
+    - api.zhihu.com
+    - www.zhihu.com
+    - appcloud2.zhihu.com
+    excludes: []
+scriptings:
+- http_response:
+    name: 知乎json
+    script_url: https://egern.pages.dev/scripts/app2smile/rules/js/zhihu.js
+    match: ^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/(answers\/\d+\/recommendations|articles\/\d+\/recommendation)|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?))
+    body_required: true
+    max_size: 16777216
+author: 'app2smile · Egern adaptation: ErrBin'
+icon: https://egern.pages.dev/assets/icons/app2smile/rules/module/zhihu.jpg

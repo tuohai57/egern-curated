@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Aswoth/Keek/wannianli.yaml
+name: 黄历·三卡片
+scriptings:
+- generic:
+    name: 黄历·三卡片·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/670044b1ddf28855c9bb20831c3df734ebc61ba29f5cfd0904190e4f22969a22.js
+    update_interval: 86400
+widgets:
+- name: 黄历·三卡片
+  script_name: 黄历·三卡片·脚本1
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: 日期+干支（顶部居中）｜倒计时5项（左）｜宜忌动态字号（右）；布局：左右卡片各占45%，中间留空，等宽自适应；美化：柔和渐变背景、圆角卡片带边框、干支标签、倒计时圆点、宜忌彩色标签；修复：宜忌空白时强制使用默认值
+icon: square.grid.2x2.fill

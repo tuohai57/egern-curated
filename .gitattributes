@@ -20,3 +20,8 @@ curated/module-stack/*.md text eol=lf
 curated/tools/** text eol=lf
 curated/tools/check_native_full.py text eol=lf
 curated/tools/test_native_full.cjs text eol=lf
+curated/hub-resources/originals/** -text
+curated/hub-resources/scripts/** -text
+curated/hub-resources/modules/** text eol=lf
+curated/hub-resources/*.json text eol=lf
+curated/hub-resources/*.md text eol=lf

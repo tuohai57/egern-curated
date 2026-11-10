@@ -1,0 +1,23 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Aswoth/Keek/Dingyue.yaml
+name: 订阅流量·简洁版
+scriptings:
+- generic:
+    name: 订阅流量·简洁版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/07487d7c37c2072d1dc4770c66a9d55f261d0008e30399c1cd395ff7808a27e2.js
+    update_interval: 86400
+widgets:
+- name: 订阅流量·简洁版
+  script_name: 订阅流量·简洁版·脚本1
+env_schema:
+  PLAN_TOTAL_GB:
+    name: PLAN_TOTAL_GB
+  SUBSCRIPTION_NAME:
+    name: SUBSCRIPTION_NAME
+  SUBSCRIPTION_URL:
+    name: SUBSCRIPTION_URL
+  SUBSCRIPTION_USER_AGENT:
+    name: SUBSCRIPTION_USER_AGENT
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: https://egern.pages.dev/assets/icons/Aswoth/Keek/Dingyue.jpg

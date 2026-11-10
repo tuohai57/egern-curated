@@ -1,0 +1,55 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Kaemiel/Egern/vpsjiankong.yaml
+name: 服务器监控·液态玻璃
+description: 通过 SSH 连接 VPS，实时显示 CPU、内存、磁盘、流量用量、运行时长与 IP 地址。连接失败自动显示上次缓存数据
+env_schema:
+  SERVER_HOST:
+    name: 服务器地址
+    description: 服务器 IP 或域名（IPv4/IPv6 均可，必填）
+    default_value: ''
+  SERVER_PORT:
+    name: SSH 端口
+    description: 默认 22
+    default_value: '22'
+  SERVER_USER:
+    name: SSH 用户名
+    description: 默认 root
+    default_value: root
+  SERVER_PASSWORD:
+    name: SSH 密码
+    description: 与私钥二选一，私钥优先
+    default_value: ''
+  SERVER_KEY:
+    name: SSH 私钥
+    description: 支持 RSA / Ed25519，完整格式或纯 Base64 均可
+    default_value: ''
+  WIDGET_NAME:
+    name: 组件显示名称
+    description: 留空则显示服务器 hostname
+    default_value: ''
+  MASK_IP:
+    name: IP 打码
+    description: true 打码 / false 显示完整 IP
+    default_value: 'true'
+  TRAFFIC_LIMIT:
+    name: 月流量限额 (GB)
+    description: 默认 2000
+    default_value: '2000'
+  RESET_DAY:
+    name: 流量重置日
+    description: 每月几号重置（1~31），需与 vnstat MonthRotate 一致
+    default_value: '1'
+  REFRESH_MINUTES:
+    name: 刷新间隔（分钟）
+    description: 范围 5 ~ 120，默认 15
+    default_value: '15'
+scriptings:
+- generic:
+    name: 服务器监控·液态玻璃·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2.js
+    timeout: 30
+    update_interval: 86400
+widgets:
+- name: 服务器监控·液态玻璃
+  script_name: 服务器监控·液态玻璃·脚本1
+icon: square.grid.2x2.fill

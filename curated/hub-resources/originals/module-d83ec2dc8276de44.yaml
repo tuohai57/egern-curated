@@ -1,0 +1,15 @@
+# Source: https://raw.githubusercontent.com/milull/milu/main/GPT-AI
+# Author: milull | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 📌 网络服务解锁监测 (NetStatus) 小组件
+scriptings:
+- generic:
+    name: gpt-ai
+    script_url: https://raw.githubusercontent.com/milull/milu/main/GPT-AI
+widgets:
+- name: gpt-ai
+  script_name: gpt-ai
+author: 'milull · Egern adaptation: ErrBin'
+description: ✨ 主要功能：；实时检测：支持流媒体 (YouTube, Netflix, Disney+, Spotify) 与 AI (ChatGPT, Claude, Gemini, Grok) 8项主流服务。；智能布局：完美适配
+  iOS 系统 Small、Medium、Large 三种组件尺寸。；多维监测：自动检测当前代理的地理位置（IP 归属地）及各服务的响应延迟（ms）。；防缓存机制：内置强制时间戳防缓存逻辑，确保小组件刷新时获取到最新的解锁状态。；状态提示：通过颜色（绿/黄/红）区分延迟等级，并在组件内直观反馈解锁与否。
+icon: https://egern.pages.dev/assets/icons/milull/milu/GPT-AI.jpg

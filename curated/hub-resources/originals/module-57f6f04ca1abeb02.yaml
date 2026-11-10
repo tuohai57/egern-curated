@@ -1,0 +1,14 @@
+# Source: https://raw.githubusercontent.com/Nullwhy/Egern/main/Scripts/NetUnlock.js
+# Author: Nullwhy | License: GNU GPL v3
+# Egern adaptation: ErrBin
+name: NetUnlock
+scriptings:
+- generic:
+    name: netunlock
+    script_url: https://raw.githubusercontent.com/Nullwhy/Egern/main/Scripts/NetUnlock.js
+widgets:
+- name: netunlock
+  script_name: netunlock
+author: 'Nullwhy · Egern adaptation: ErrBin'
+description: 检测流媒体与AI解锁情况
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/NetUnlock.jpg

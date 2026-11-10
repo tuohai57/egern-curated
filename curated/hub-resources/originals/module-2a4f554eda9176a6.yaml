@@ -1,0 +1,102 @@
+name: 中国广电小组件
+description: 打开中国广电 App、微信或支付宝小程序查询一次即可自动读取｜更新时间：2026-11-04 21:10（北京时间）
+author: wuhuhuuuu
+icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/ChinaBroadcastNetwork.png
+
+compat_arguments:
+  cbCapture: 'true'
+  cbCaptureNotice: 'true'
+  cbPlanNotice: 'true'
+  cbKeepaliveInterval: '15'
+  cbDebug: 'false'
+  cbUiStyle: 'classic'
+
+compat_arguments_schema:
+  cbCapture:
+    name: 中国广电数据抓取
+    description: 打开中国广电 App、微信或支付宝小程序查询一次即可自动捕获
+    default_value: 'true'
+    options:
+      - 'true'
+      - 'false'
+  cbCaptureNotice:
+    name: 中国广电数据抓取成功通知
+    description: 捕获到 App、微信或支付宝小程序套餐请求时发送通知
+    default_value: 'true'
+    options:
+      - 'true'
+      - 'false'
+  cbPlanNotice:
+    name: 套餐查询成功通知
+    description: 接口成功返回套餐数据后发送话费、流量和语音明细通知
+    default_value: 'true'
+    options:
+      - 'true'
+      - 'false'
+  cbDebug:
+    name: 调试日志
+    description: 打开后会在脚本日志里打印接口响应结构与业务字段，用于排查字段变化；平时保持关闭
+    default_value: 'false'
+    options:
+      - 'true'
+      - 'false'
+  cbUiStyle:
+    name: 显示样式
+    description: classic = 当前样式；dash = 仪表盘版（四宫格卡片）；ios = iOS 风格（圆环 + 列表）
+    default_value: 'classic'
+    options:
+      - classic
+      - dash
+      - ios
+  cbKeepaliveInterval:
+    name: 定时保活间隔
+    description: 只输入数字，单位固定为分钟；例如 15 表示每 15 分钟保活一次。最小 15，最大 1440（24 小时）
+    default_value: '15'
+
+scriptings:
+  - generic:
+      name: 中国广电小组件
+      script_url: https://raw.githubusercontent.com/moyuzaime/egern/main/ChinaBroadnet/ChinaBroadnet_Widget.js
+      update_interval: 21600
+      timeout: 20
+      env:
+        cbCapture: '{{{cbCapture}}}'
+        cbCaptureNotice: '{{{cbCaptureNotice}}}'
+        cbPlanNotice: '{{{cbPlanNotice}}}'
+        cbUiStyle: '{{{cbUiStyle}}}'
+        cbDebug: '{{{cbDebug}}}'
+
+  - schedule:
+      name: 中国广电定时保活
+      cron: '* * * * *'
+      script_url: https://raw.githubusercontent.com/moyuzaime/egern/main/ChinaBroadnet/ChinaBroadnet_Widget.js
+      update_interval: 21600
+      timeout: 15
+      env:
+        CB_KEEPALIVE: 'true'
+        cbKeepaliveInterval: '{{{cbKeepaliveInterval}}}'
+        cbDebug: '{{{cbDebug}}}'
+
+  - http_request:
+      name: 中国广电 App / 微信 / 支付宝小程序自动捕获
+      match: '^https://(?:app|wx|zfb)\.10099\.com\.cn/contact-web/api/busi/qryUserInfo'
+      script_url: https://raw.githubusercontent.com/moyuzaime/egern/main/ChinaBroadnet/ChinaBroadnet_Widget.js
+      body_required: true
+      max_size: 1048576
+      timeout: 10
+      env:
+        cbCapture: '{{{cbCapture}}}'
+        cbCaptureNotice: '{{{cbCaptureNotice}}}'
+        cbPlanNotice: '{{{cbPlanNotice}}}'
+        cbDebug: '{{{cbDebug}}}'
+
+mitm:
+  hostnames:
+    includes:
+      - app.10099.com.cn
+      - wx.10099.com.cn
+      - zfb.10099.com.cn
+
+widgets:
+  - name: china-broadnet
+    script_name: 中国广电小组件

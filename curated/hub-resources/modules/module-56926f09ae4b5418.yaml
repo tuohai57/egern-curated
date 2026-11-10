@@ -1,0 +1,18 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/BiaoerD/Enern-/NetSpeed_Widget_10s.yaml
+name: 网络测速·十秒版
+scriptings:
+- generic:
+    name: 网络测速·十秒版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/5da61312bc099893946ac211f7a21b4745c987ee1a8ada903867853d122a40bc.js
+    update_interval: 86400
+widgets:
+- name: 网络测速·十秒版
+  script_name: 网络测速·十秒版·脚本1
+env_schema:
+  GROUP:
+    name: GROUP
+author: 'BiaoerD · Egern adaptation: ErrBin'
+description: 持续测速 10 秒：每秒记录一次速度，结束后显示平均值与逐秒数据；节点显示：整合 IPPure（国家城市 / 运营商 / 住宅原生 / IP
+  风险评分）
+icon: square.grid.2x2.fill

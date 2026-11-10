@@ -1,0 +1,15 @@
+# Source: https://raw.githubusercontent.com/milull/milu/main/huankuantixing
+# Author: milull | License: 未声明许可证
+# Egern adaptation: ErrBin
+# 还款提醒小组件 - 纯显示版
+# 中号显示3张，大号显示6张
+name: 还款提醒小组件 - 纯显示版
+scriptings:
+- generic:
+    name: huankuantixing
+    script_url: https://raw.githubusercontent.com/milull/milu/main/huankuantixing
+widgets:
+- name: huankuantixing
+  script_name: huankuantixing
+author: 'milull · Egern adaptation: ErrBin'
+description: 中号显示3张，大号显示6张

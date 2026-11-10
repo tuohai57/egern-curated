@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/jadkg/egern/duoguohuilv.yaml
+name: 今日汇率
+scriptings:
+- generic:
+    name: 今日汇率·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/1e8b78ab6912f6c837291e12e8de156b520e4f7668aadf382a482862b174f44e.js
+    update_interval: 86400
+widgets:
+- name: 今日汇率
+  script_name: 今日汇率·脚本1
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: https://egern.pages.dev/assets/icons/jadkg/egern/duoguohuilv.jpg

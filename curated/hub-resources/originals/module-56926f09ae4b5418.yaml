@@ -1,0 +1,19 @@
+# Source: https://raw.githubusercontent.com/BiaoerD/Enern-/main/NetSpeed_Widget_10s.js
+# Author: BiaoerD | License: 未声明许可证
+# Egern adaptation: ErrBin
+# NetSpeed 10s 小组件
+# 持续测速 10 秒：每秒记录一次速度，结束后显示平均值与逐秒数据
+# 节点显示：整合 IPPure（国家城市 / 运营商 / 住宅原生 / IP 风险评分）
+name: NetSpeed 10s 小组件
+scriptings:
+- generic:
+    name: netspeed-widget-10s
+    script_url: https://raw.githubusercontent.com/BiaoerD/Enern-/main/NetSpeed_Widget_10s.js
+widgets:
+- name: netspeed-widget-10s
+  script_name: netspeed-widget-10s
+env_schema:
+  GROUP:
+    name: GROUP
+author: 'BiaoerD · Egern adaptation: ErrBin'
+description: 持续测速 10 秒：每秒记录一次速度，结束后显示平均值与逐秒数据；节点显示：整合 IPPure（国家城市 / 运营商 / 住宅原生 / IP 风险评分）

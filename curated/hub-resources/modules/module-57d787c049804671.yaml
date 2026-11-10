@@ -1,0 +1,21 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Aswoth/Keek/IP.yaml
+name: 出口风险·纯净度检测
+scriptings:
+- generic:
+    name: 出口风险·纯净度检测·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/53cea889e52ff63365994c96c0ae730a7a3b6d93bbc78b022261baf285c52314.js
+    update_interval: 86400
+widgets:
+- name: 出口风险·纯净度检测
+  script_name: 出口风险·纯净度检测·脚本1
+env_schema:
+  LABEL:
+    name: LABEL
+  MARK_IP:
+    name: MARK_IP
+  REFRESH_MINUTES:
+    name: REFRESH_MINUTES
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: Egern Widget 版本；env 参数：
+icon: square.grid.2x2.fill

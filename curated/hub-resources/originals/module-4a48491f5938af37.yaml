@@ -1,0 +1,27 @@
+# Source: https://raw.githubusercontent.com/Nullwhy/Egern/main/Scripts/SubscriptionCard.js
+# Author: Nullwhy | License: GNU GPL v3
+# Egern adaptation: ErrBin
+name: SubscriptionCard
+scriptings:
+- generic:
+    name: subscriptioncard
+    script_url: https://raw.githubusercontent.com/Nullwhy/Egern/main/Scripts/SubscriptionCard.js
+widgets:
+- name: subscriptioncard
+  script_name: subscriptioncard
+env_schema:
+  NAME:
+    name: NAME
+  NAME1:
+    name: NAME1
+  RESET:
+    name: RESET
+  RESET1:
+    name: RESET1
+  URL:
+    name: URL
+  URL1:
+    name: URL1
+author: 'Nullwhy · Egern adaptation: ErrBin'
+description: 机场流量用量查询；部分代码参考@iBL3ND    @Nullwhy
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/SubscriptionCard.jpg

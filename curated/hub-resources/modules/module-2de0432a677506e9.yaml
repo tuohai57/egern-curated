@@ -1,0 +1,32 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/ZLam/VPN/egern/widget/douban_ranking/douban-ranking.yaml
+name: 豆瓣口碑榜
+description: 展示豆瓣国外口碑综艺榜、全球口碑剧集榜与一周口碑电影榜，支持桌面、锁屏、24 小时缓存和失败降级。
+author: ZLam
+homepage: https://github.com/ZLam/VPN
+icon: chart.bar.xaxis
+scriptings:
+- generic:
+    name: 豆瓣口碑榜·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/92aa082340373b829b3dadd73b0b2aa63962d5ec9dedf99b029b1bc6a587bb52.js
+    timeout: 20
+    update_interval: 86400
+widgets:
+- name: 豆瓣口碑榜·1
+  script_name: 豆瓣口碑榜·脚本1
+  env:
+    COLLECTION_ID: show_global_best_weekly
+    REFRESH_HOURS: '24'
+    REQUEST_TIMEOUT_SECONDS: '10'
+- name: 豆瓣口碑榜·2
+  script_name: 豆瓣口碑榜·脚本1
+  env:
+    COLLECTION_ID: tv_global_best_weekly
+    REFRESH_HOURS: '24'
+    REQUEST_TIMEOUT_SECONDS: '10'
+- name: 豆瓣口碑榜·3
+  script_name: 豆瓣口碑榜·脚本1
+  env:
+    COLLECTION_ID: movie_weekly_best
+    REFRESH_HOURS: '24'
+    REQUEST_TIMEOUT_SECONDS: '10'

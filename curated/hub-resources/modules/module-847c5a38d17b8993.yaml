@@ -1,0 +1,58 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/CT_Widget.yaml
+name: 中国联通·套餐用量
+description: 中国联通 话费 语音 流量小组件（含定时保活）
+author: iBL3ND
+icon: https://iili.io/nEuB6Jt.png
+compat_arguments:
+  cuCapture: 'true'
+  cuGeneralFlow: 'true'
+  cuDirectionalFlow: 'true'
+compat_arguments_schema:
+  cuCapture:
+    name: 中国联通数据抓取
+    description: 直接打开 App 就可以（抓到数据后可以关闭）
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  cuGeneralFlow:
+    name: 显示通用流量
+    description: 小组件流量统计包含通用流量（关闭则只统计定向流量）
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  cuDirectionalFlow:
+    name: 显示定向流量
+    description: 小组件流量统计包含定向流量（关闭则只统计通用流量）
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+dns: {}
+scriptings:
+- generic:
+    name: 中国联通·套餐用量·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js
+    env:
+      CU_SHOW_GENERAL_FLOW: '{{{cuGeneralFlow}}}'
+      CU_SHOW_DIRECTIONAL_FLOW: '{{{cuDirectionalFlow}}}'
+    update_interval: 86400
+- http_request:
+    name: 中国联通·套餐用量·脚本2
+    match: ^https://m\.clien[{{{cuCapture}}}]\.10010\.com/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js
+    update_interval: 86400
+- schedule:
+    name: 中国联通·套餐用量·脚本3
+    cron: '*/20 * * * *'
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js
+    update_interval: 86400
+mitm:
+  hostnames:
+    includes:
+    - m.client.10010.com
+widgets:
+- name: 中国联通·套餐用量
+  script_name: 中国联通·套餐用量·脚本1

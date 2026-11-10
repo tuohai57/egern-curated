@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/milull/milu/huankuantixing.yaml
+name: 还款日期提醒
+scriptings:
+- generic:
+    name: 还款日期提醒·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/cb6eead38319a6bb6185244eda6d30691490d362305e9ceba81b04391478bc72.js
+    update_interval: 86400
+widgets:
+- name: 还款日期提醒
+  script_name: 还款日期提醒·脚本1
+author: 'milull · Egern adaptation: ErrBin'
+description: 中号显示3张，大号显示6张
+icon: square.grid.2x2.fill

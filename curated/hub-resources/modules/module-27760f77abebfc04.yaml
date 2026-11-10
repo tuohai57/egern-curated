@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Nullwhy/Egern/Scripts/Sinopec.yaml
+name: 全国油价·石化版
+scriptings:
+- generic:
+    name: 全国油价·石化版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/2b30d3aac64b97218fedaca3f6fd763907d9909d8c2861dc74ead7e6cf6f1676.js
+    update_interval: 86400
+widgets:
+- name: 全国油价·石化版
+  script_name: 全国油价·石化版·脚本1
+author: 'Nullwhy · Egern adaptation: ErrBin'
+description: 中国石化油价监控
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/Sinopec.jpg

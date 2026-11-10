@@ -1,0 +1,16 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/milull/milu/GPT-AI.yaml
+name: 网络诊断·服务监测
+scriptings:
+- generic:
+    name: 网络诊断·服务监测·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/5e9b0e266d5bfa3e67f78e9627e19cb272aa8464ab8abdec40279ffd9b9cfd76.js
+    update_interval: 86400
+widgets:
+- name: 网络诊断·服务监测
+  script_name: 网络诊断·服务监测·脚本1
+author: 'milull · Egern adaptation: ErrBin'
+description: ✨ 主要功能：；实时检测：支持流媒体 (YouTube, Netflix, Disney+, Spotify) 与 AI (ChatGPT,
+  Claude, Gemini, Grok) 8项主流服务。；智能布局：完美适配 iOS 系统 Small、Medium、Large 三种组件尺寸。；多维监测：自动检测当前代理的地理位置（IP
+  归属地）及各服务的响应延迟（ms）。；防缓存机制：内置强制时间戳防缓存逻辑，确保小组件刷新时获取到最新的解锁状态。；状态提示：通过颜色（绿/黄/红）区分延迟等级，并在组件内直观反馈解锁与否。
+icon: https://egern.pages.dev/assets/icons/milull/milu/GPT-AI.jpg

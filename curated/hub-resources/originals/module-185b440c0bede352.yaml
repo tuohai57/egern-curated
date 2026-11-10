@@ -1,0 +1,33 @@
+name: IPPure-emoji
+description: 代理出口风险评分 + 机房/住宅与原生/广播判定，深/浅配色。
+
+env_schema:
+  GROUP:
+    name: 策略组
+    description: 指定探测策略组。
+    default_value: DIRECT
+  THEME:
+    name: 主题
+    description: 切换组件配色。
+    options: ["深色（默认）", "浅色"]
+  STYLE:
+    name: 卡片样式
+    description: 自绘渐变为默认档；透明效果需搭配主屏幕透明模式使用，且只在主屏页面生效。
+    options: ["自绘渐变（默认）", "透明"]
+  IP:
+    name: IP 脱敏
+    description: 隐藏 = IP中段隐藏。
+    options: ["原文（默认）", "隐藏"]
+  EGG:
+    name: 彩蛋
+    options: ["", "开"]
+
+scriptings:
+- generic:
+    name: IPPure-emoji
+    script_url: https://raw.githubusercontent.com/Bf0rest/Egern/main/Widget/IPPure-emoji.js
+    timeout: 20
+
+widgets:
+- name: IPPure-emoji
+  script_name: IPPure-emoji

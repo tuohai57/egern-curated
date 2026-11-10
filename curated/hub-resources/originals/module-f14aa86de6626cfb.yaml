@@ -1,0 +1,23 @@
+# Source: https://raw.githubusercontent.com/Aswoth/Keek/main/Dingyue
+# Author: Aswoth | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 'Egern widget: Subscription Traffic'
+scriptings:
+- generic:
+    name: dingyue
+    script_url: https://raw.githubusercontent.com/Aswoth/Keek/main/Dingyue
+widgets:
+- name: dingyue
+  script_name: dingyue
+env_schema:
+  PLAN_TOTAL_GB:
+    name: PLAN_TOTAL_GB
+  SUBSCRIPTION_NAME:
+    name: SUBSCRIPTION_NAME
+  SUBSCRIPTION_URL:
+    name: SUBSCRIPTION_URL
+  SUBSCRIPTION_USER_AGENT:
+    name: SUBSCRIPTION_USER_AGENT
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: https://egern.pages.dev/assets/icons/Aswoth/Keek/Dingyue.jpg

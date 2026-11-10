@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Nullwhy/Egern/Scripts/NetUnlock.yaml
+name: 网络诊断·服务检测
+scriptings:
+- generic:
+    name: 网络诊断·服务检测·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b28be688cac83c6ae08d378689986cb0cc91662df2ab57b014f38cdcb4e90f21.js
+    update_interval: 86400
+widgets:
+- name: 网络诊断·服务检测
+  script_name: 网络诊断·服务检测·脚本1
+author: 'Nullwhy · Egern adaptation: ErrBin'
+description: 检测流媒体与AI解锁情况
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/NetUnlock.jpg

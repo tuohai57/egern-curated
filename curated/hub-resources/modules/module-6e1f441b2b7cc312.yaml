@@ -1,0 +1,53 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/vfelix7/rule_module_script/egern/module/CF_Server_Monitor_Net_Widget.yaml
+name: 服务器探针·延迟流量
+description: CF-Server-Monitor 延迟流量版：三网延迟和丢包、近 2 小时延迟曲线、本月流量已用/限额
+author: vfelix7
+icon: waveform.path.ecg
+env_schema:
+  CFSM_URL:
+    name: 面板地址
+    description: 例如 https://monitor.example.com，只填根地址，不要带 /admin 或 /api
+  POLICY:
+    name: 请求策略
+    description: 请求走哪个代理策略或策略组（如 Proxy）。*.workers.dev 在国内直连不通时必填
+  CFSM_TOKEN:
+    name: 登录令牌（私有站点）
+    description: 后台登录得到的 JWT，7 天有效。与下面的账号密码二选一；公开站点留空
+  CFSM_USER:
+    name: 后台账号（私有站点）
+    description: 填了账号和密码，脚本会自动登录并缓存令牌
+  CFSM_PASS:
+    name: 后台密码（私有站点）
+  SERVERS:
+    name: 只显示这些服务器
+    description: 名称或 ID，英文逗号分隔；留空显示全部
+  SHOW_HIDDEN:
+    name: 显示隐藏的服务器
+    description: 需要登录（令牌或账号密码）
+    options:
+    - 'true'
+    - 'false'
+  REFRESH_MINUTES:
+    name: 刷新间隔（分钟）
+    description: 5–720，iOS 实际刷新可能更慢
+    default_value: '15'
+  EXPIRE_WARN_DAYS:
+    name: 到期提醒（天）
+    default_value: '14'
+  MAX_ROWS:
+    name: 中尺寸最多显示几台
+    description: 1–6，超过 5 台可能显示不下
+    default_value: '4'
+  TITLE:
+    name: 标题
+    default_value: CF Monitor
+scriptings:
+- generic:
+    name: 服务器探针·延迟流量·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/4c37f49173b48e33a15fd34e8a7ca12250a8817997e7c4786a2bad93b754a587.js
+    update_interval: 300
+    timeout: 30
+widgets:
+- name: 服务器探针·延迟流量
+  script_name: 服务器探针·延迟流量·脚本1

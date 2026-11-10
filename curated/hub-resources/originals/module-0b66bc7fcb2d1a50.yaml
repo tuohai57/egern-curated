@@ -1,0 +1,13 @@
+# Source: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+# Author: xcgtb | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: '📌 桌面小组件: 🛡️ 网络诊断雷达 (实时全量刷新 + 释放 IPv6 落地版)'
+scriptings:
+- generic:
+    name: network-pro
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+widgets:
+- name: network-pro
+  script_name: network-pro
+author: 'xcgtb · Egern adaptation: ErrBin'
+description: '🎨 解锁落地出口的 IPv6 限制，完美适配双栈/纯 v6 代理节点，集成动态缩短防挤压；文件名: Network-Pro.js'

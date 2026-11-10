@@ -1,0 +1,24 @@
+# Source: https://raw.githubusercontent.com/lylywayr/NetWork-Module/main/Egern/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE.js
+# Author: lylywayr | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: Egern「网络诊断雷达」
+scriptings:
+- generic:
+    name: wangluozhenduanleida
+    script_url: https://raw.githubusercontent.com/lylywayr/NetWork-Module/main/Egern/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE.js
+widgets:
+- name: wangluozhenduanleida
+  script_name: wangluozhenduanleida
+env_schema:
+  AI:
+    name: AI
+  LMT:
+    name: LMT
+  POLICY:
+    name: POLICY
+  XY:
+    name: XY
+  YS:
+    name: YS
+author: 'lylywayr · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。

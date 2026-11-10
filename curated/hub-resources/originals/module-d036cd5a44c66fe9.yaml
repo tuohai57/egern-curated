@@ -1,0 +1,22 @@
+# Source: https://raw.githubusercontent.com/Harley0214/Egern-widgest-SUBTraffic-monitor/main/ModernSubTraffic-Egern-Generic.js
+# Author: Harley0214 | License: 未声明许可证
+# Egern adaptation: ErrBin
+# ModernSubTraffic - Egern Generic Script Widget
+# Configure subscription URLs in the Egern module Env, not in this file.
+# Primary Env:
+#   url1/name1/protocol1/reset1
+#   url2/name2/protocol2/reset2
+#   url3/name3/protocol3/reset3
+# Also accepts uppercase aliases:
+#   URL1/NAME1/PROTOCOL1/RESET1
+name: ModernSubTraffic - Egern Generic Script Widget
+scriptings:
+- generic:
+    name: modernsubtraffic-egern-generic
+    script_url: https://raw.githubusercontent.com/Harley0214/Egern-widgest-SUBTraffic-monitor/main/ModernSubTraffic-Egern-Generic.js
+widgets:
+- name: modernsubtraffic-egern-generic
+  script_name: modernsubtraffic-egern-generic
+author: 'Harley0214 · Egern adaptation: ErrBin'
+description: Configure subscription URLs in the Egern module Env, not in this file.；Primary Env:；url1/name1/protocol1/reset1；url2/name2/protocol2/reset2；url3/name3/protocol3/reset3；Also
+  accepts uppercase aliases:；URL1/NAME1/PROTOCOL1/RESET1

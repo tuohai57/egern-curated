@@ -1,0 +1,19 @@
+# Source: https://raw.githubusercontent.com/jadkg/egern/main/%E4%BB%8A%E6%97%A5%E9%BB%84%E9%87%91.js
+# Author: jadkg | License: 未声明许可证
+# Egern adaptation: ErrBin
+# 1) author: 𝕏Panda 首要显示：国际黄金（人民币/克）当日价 + 近30日均价
+# 2) 展示金店：周大福 / 六福珠宝 / 周生生
+# 3) 展示现货：国际黄金 / 国际白银 / 上海黄金 / 上海白银
+# 4) 统一人民币单价（元/克），不展示盎司价格
+# 5) 2026-03-12 23:21:46
+name: 今日黄金
+scriptings:
+- generic:
+    name: jinrihuangjin
+    script_url: https://raw.githubusercontent.com/jadkg/egern/main/%E4%BB%8A%E6%97%A5%E9%BB%84%E9%87%91.js
+widgets:
+- name: jinrihuangjin
+  script_name: jinrihuangjin
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 展示金店：周大福 / 六福珠宝 / 周生生；展示现货：国际黄金 / 国际白银 / 上海黄金 / 上海白银；统一人民币单价（元/克），不展示盎司价格
+icon: https://egern.pages.dev/assets/icons/jadkg/egern/jinrihuangjin.jpg

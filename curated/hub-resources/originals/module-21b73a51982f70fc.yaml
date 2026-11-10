@@ -1,0 +1,13 @@
+# Source: https://raw.githubusercontent.com/Aswoth/Keek/main/%E4%B8%87%E5%B9%B4%E5%8E%86.js
+# Author: Aswoth | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 📅 Egern 黄历小组件（三卡片·精美化版）
+scriptings:
+- generic:
+    name: wannianli
+    script_url: https://raw.githubusercontent.com/Aswoth/Keek/main/%E4%B8%87%E5%B9%B4%E5%8E%86.js
+widgets:
+- name: wannianli
+  script_name: wannianli
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: 日期+干支（顶部居中）｜倒计时5项（左）｜宜忌动态字号（右）；布局：左右卡片各占45%，中间留空，等宽自适应；美化：柔和渐变背景、圆角卡片带边框、干支标签、倒计时圆点、宜忌彩色标签；修复：宜忌空白时强制使用默认值

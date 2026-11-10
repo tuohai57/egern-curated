@@ -1,0 +1,42 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Bf0rest/Egern/Widget/IPPure-emoji.yaml
+name: 出口风险·表情版
+description: 代理出口风险评分 + 机房/住宅与原生/广播判定，深/浅配色。
+env_schema:
+  GROUP:
+    name: 策略组
+    description: 指定探测策略组。
+    default_value: DIRECT
+  THEME:
+    name: 主题
+    description: 切换组件配色。
+    options:
+    - 深色（默认）
+    - 浅色
+  STYLE:
+    name: 卡片样式
+    description: 自绘渐变为默认档；透明效果需搭配主屏幕透明模式使用，且只在主屏页面生效。
+    options:
+    - 自绘渐变（默认）
+    - 透明
+  IP:
+    name: IP 脱敏
+    description: 隐藏 = IP中段隐藏。
+    options:
+    - 原文（默认）
+    - 隐藏
+  EGG:
+    name: 彩蛋
+    options:
+    - ''
+    - 开
+scriptings:
+- generic:
+    name: 出口风险·表情版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/4f71317eec9790cbd613fb526bdcb75a68accbb62fd4c70544871ccb2887d714.js
+    timeout: 20
+    update_interval: 86400
+widgets:
+- name: 出口风险·表情版
+  script_name: 出口风险·表情版·脚本1
+icon: square.grid.2x2.fill

@@ -1,0 +1,28 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/app2smile/rules/module/bilibili.yaml
+name: 哔哩哔哩（微笑作者·原生接口备选）
+description: 开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告)
+mitm:
+  hostnames:
+    includes:
+    - app.bilibili.com
+    - grpc.biliapi.net
+    excludes: []
+scriptings:
+- http_response:
+    name: 哔哩哔哩（微笑作者·原生接口备选）·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/15f7786348c8edd5b4253948fc89b77fd0b4a4849aa5f90157ecf8ae1ec8a058.js
+    match: ^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2)
+    update_interval: 0
+    body_required: true
+    max_size: 16777216
+- http_response:
+    name: 哔哩哔哩（微笑作者·原生接口备选）·脚本2
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/6a1597c44b0bc2d221ce6cc6fef93a57d3a070e08443fde44b37448827a0fb4e.js
+    match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$
+    update_interval: 0
+    body_required: true
+    binary_body: true
+    max_size: 16777216
+author: 'app2smile · Egern adaptation: ErrBin'
+icon: https://egern.pages.dev/assets/icons/app2smile/rules/module/bilibili.jpg

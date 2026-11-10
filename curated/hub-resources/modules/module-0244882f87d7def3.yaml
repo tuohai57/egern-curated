@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/jadkg/egern/NetworkInfo.yaml
+name: 网络信息·渐变版
+scriptings:
+- generic:
+    name: 网络信息·渐变版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b1433d72bcc6a93f7d66f062df560d2e5a0e2e9cf5307c8e77657c6f19239324.js
+    update_interval: 86400
+widgets:
+- name: 网络信息·渐变版
+  script_name: 网络信息·渐变版·脚本1
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: square.grid.2x2.fill

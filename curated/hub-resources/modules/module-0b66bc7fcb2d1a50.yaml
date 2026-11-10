@@ -1,0 +1,14 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/xcgtb/Egern-Widgets/Network-Pro.yaml
+name: 网络诊断·实时版
+scriptings:
+- generic:
+    name: 网络诊断·实时版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/573747ff70357506e05e4158760f44819d30ff6e1675e5302d6f109b768df6d8.js
+    update_interval: 86400
+widgets:
+- name: 网络诊断·实时版
+  script_name: 网络诊断·实时版·脚本1
+author: 'xcgtb · Egern adaptation: ErrBin'
+description: '🎨 解锁落地出口的 IPv6 限制，完美适配双栈/纯 v6 代理节点，集成动态缩短防挤压；文件名: Network-Pro.js'
+icon: square.grid.2x2.fill

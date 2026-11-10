@@ -1,0 +1,32 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/Lottery-Widget.yaml
+name: 彩票开奖信息
+description: 全国彩票开奖结果，开奖号码、期号与奖池，支持小/中/大尺寸，透明与深浅自适应
+author: iBL3ND
+icon: https://iili.io/nUQcmZJ.webp
+compat_arguments:
+  彩票类型: 七星彩
+compat_arguments_schema:
+  彩票类型:
+    name: 彩票类型
+    description: 选择要显示的彩票种类，默认七星彩
+    default_value: 七星彩
+    options:
+    - 双色球
+    - 大乐透
+    - 排列三
+    - 福彩 3D
+    - 七星彩
+    - 七乐彩
+    - 排列五
+scriptings:
+- generic:
+    name: 彩票开奖信息·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/22aee02c7e4b0ddf3b88d66d8fb640c758f91274d48c0047ad9c2cd1e2df278b.js
+    env:
+      彩票类型: '{{{彩票类型}}}'
+    timeout: 30
+    update_interval: 86400
+widgets:
+- name: 彩票开奖信息
+  script_name: 彩票开奖信息·脚本1

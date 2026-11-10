@@ -1,0 +1,156 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/a13609y/yandere-widget/yandere.yaml
+name: 动漫插画
+description: 从 yande.re / Konachan 按标签取动漫插画，按小组件尺寸匹配画幅；洗牌袋换图，重复率极低；免登录，sample 图 1500px
+  体积小
+author: Cuttlefish
+icon: https://raw.githubusercontent.com/a13609y/yandere-widget/main/icon.png
+homepage: https://github.com/a13609y/yandere-widget
+manual: https://github.com/a13609y/yandere-widget#readme
+env_schema:
+  COOLDOWN:
+    name: 换图间隔（分钟）
+    description: 分钟。填 0 = 每次刷新都实时请求新图（想看新图就手动填 0）；>0 = 间隔内直接显示上次那张，不联网。不填时的默认值是 30
+    default_value: '30'
+  SHOW_S:
+    name: 分级 · 全年龄（s）
+    description: 三个开关自由组合；全关掉会自动按「仅全年龄」处理，不会筛空
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'true'
+  SHOW_Q:
+    name: 分级 · 擦边（q）
+    description: 打开后 Konachan 会自动切到 konachan.com（.net 镜像没有 q 级内容）
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'true'
+  SHOW_E:
+    name: 分级 · 工口（e）
+    description: 素材最少，单开时可能要多翻几页。同样会切到 konachan.com
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'false'
+  TAGS:
+    name: 内容 · 标签
+    description: yande.re 只有标签、没有全文搜索；多个标签是「同时满足」，用空格或逗号分隔（blue_sky clouds）。留空 = 随机。中文也行：初音
+      → hatsune_miku。常见标签：landscape、sky、clouds、hatsune_miku
+    default_value: ''
+  SITE:
+    name: 内容 · 图源
+    description: 自动 = 先查 Konachan（一次给 100 条、素材多），没结果再试 yande.re。Konachan 会按分级自动换域名：只勾「全年龄」走
+      konachan.net（纯净镜像），勾了「擦边/工口」自动走 konachan.com（实测 .net 完全不返回 q/e）
+    options:
+    - 自动
+    - yande.re
+    - Konachan
+    default_value: 自动
+  SORT:
+    name: 内容 · 排序
+    description: 随机 = 每次抽一批新的（推荐）；热度 = 全站评分降序（会偏老图）；最新 = 发布时间倒序。选哪个就自动套用对应的洗牌参数：随机=每袋50+按月切块+不回放；热度=每袋30+按月切块+10%回放；最新=每袋20+不切月+不回放
+    options:
+    - 随机
+    - 热度
+    - 最新
+    default_value: 随机
+  PERIOD:
+    name: 内容 · 时段
+    description: 只取最近这段时间发布的图。配合「随机/热度」用；选「最新」时自动忽略。时段越短素材越少，评分上限也越低（一年内最高约 190 分，一周内普遍只有
+      40~60 分）。默认「三年内」：素材够多、不会翻到十几年前的老图
+    options:
+    - 不限
+    - 一天内
+    - 一周内
+    - 一个月内
+    - 三个月内
+    - 半年内
+    - 一年内
+    - 两年内
+    - 三年内
+    - 六年内
+    default_value: 三年内
+  RATIO_CUSTOM:
+    name: 画幅 · 自定义容忍
+    description: 关 = 粗分档（≥1.35 横 / 0.75~1.35 方 / <0.75 竖）；开 = 按理想比例 ±容忍百分比（横 1.78
+      / 方 1.33 / 竖 0.71），默认开。画幅选「不限」时此项不生效
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'true'
+  RATIO_TOL:
+    name: 画幅 · 容忍百分比
+    description: 仅在上面开关打开时生效，单位 %，可填 5~50；留空按 10。基准比例按 booru 实际分布取：横 1.78 / 方 1.33（4:3，不是
+      1:1）/ 竖 0.71。例：10 时横图收 1.60~1.96、方图收 1.20~1.46、竖图收 0.64~0.78
+    default_value: '10'
+  RATIO_MODE:
+    name: 画幅 · 尺寸适配
+    description: 自动 = 小号方图 / 中号横图 / 大号方图 / 超大号横图（推荐）；也可以四个尺寸统一成方图、横图、竖图或不限。判定按实际宽高比：≥1.35
+      横、0.75~1.35 方、<0.75 竖
+    options:
+    - 自动
+    - 方图
+    - 横图
+    - 竖图
+    - 不限
+    default_value: 自动
+  MIN_W:
+    name: 过滤 · 最小短边
+    description: 图片短边低于这个值的直接跳过，防止拿到糊图
+    options:
+    - '720'
+    - '1024'
+    - '1280'
+    - '1500'
+    default_value: '1024'
+  EX_NIPPLE:
+    name: 过滤 · 露点（nipples）
+    description: 按 _ 分段匹配，erect_nipples / puffy_nipples 也会一起排掉 ｜ 站点：两站都有（`nipples`）；`nipple`
+      单数仅 yande.re
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'false'
+  EX_PANEL:
+    name: 过滤 · 多格（4koma）
+    description: 只排 4 格漫画 ｜ 站点：仅 yande.re｜默认开：多格图在小组件上基本看不清
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'true'
+  EX_WHITE:
+    name: 过滤 · 白底/透明底
+    description: 整词匹配 white、transparent、transparent_background（不会误伤 white_hair）。默认开：白底和透明底在桌面组件上都很难看
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'true'
+  EXCLUDE_EXTRA:
+    name: 过滤 · 自定义标签
+    description: 多个用逗号分隔（guro, vore）；标签内部的空格会自动转下划线（erect nipples → erect_nipples）
+    default_value: ''
+  SHOW_INFO:
+    name: 显示 · 分辨率
+    description: 左下角显示 分辨率 + 收藏数，默认关；想看再手动打开
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'false'
+  DEBUG:
+    name: 显示 · 调试角标
+    description: 一行状态：版本/图源/比例/画幅/分级/体积/排序/时段/异常标记
+    options:
+    - 'true'
+    - 'false'
+    default_value: 'false'
+scriptings:
+- generic:
+    name: 动漫插画·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/0ff3e7ceec9c7cfab14687455c272cadf885bc0321e47fffbde81aa2eb553797.js
+    timeout: 60
+    update_interval: 86400
+widgets:
+- name: 动漫插画
+  script_name: 动漫插画·脚本1
+  env: {}

@@ -1,0 +1,17 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/mickeu/Egern/shujuzhongxin.yaml
+name: 网络诊断·媒体与风险
+scriptings:
+- generic:
+    name: 网络诊断·媒体与风险·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/6f06e99da0ecd2823ff44178ad406a2d7f1158ea3ce92da5a56e9a150cba8c7b.js
+    update_interval: 86400
+widgets:
+- name: 网络诊断·媒体与风险
+  script_name: 网络诊断·媒体与风险·脚本1
+env_schema:
+  POLICY:
+    name: POLICY
+author: 'mickeu · Egern adaptation: ErrBin'
+description: '修改时间: 2026.10.08 18:45'
+icon: square.grid.2x2.fill

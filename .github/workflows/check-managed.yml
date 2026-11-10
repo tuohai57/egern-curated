@@ -11,6 +11,7 @@ on:
       - 'curated/tools/test_scripts.cjs'
       - 'curated/native-full/**'
       - 'curated/module-stack/**'
+      - 'curated/hub-resources/**'
       - 'curated/tools/check_native_full.py'
       - 'curated/tools/test_native_full.cjs'
       - 'curated/tools/adblock_model.py'
@@ -54,3 +55,5 @@ jobs:
       - run: python curated/tools/test_module_quality.py
       - run: node curated/tools/test_qx_echo.cjs
       - run: python curated/tools/check_adblock_collection.py
+      - run: python curated/tools/check_hub_resources.py
+      - run: node curated/tools/test_service_diagnostics.cjs

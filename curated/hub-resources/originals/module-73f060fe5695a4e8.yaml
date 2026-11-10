@@ -1,0 +1,15 @@
+# Source: https://raw.githubusercontent.com/mickeu/Egern/main/%E5%AE%9E%E6%97%B6%E6%B2%B9%E4%BB%B7.js
+# Author: mickeu | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 📌 全国油价 (Gas Price) 小组件
+scriptings:
+- generic:
+    name: shishiyoujia
+    script_url: https://raw.githubusercontent.com/mickeu/Egern/main/%E5%AE%9E%E6%97%B6%E6%B2%B9%E4%BB%B7.js
+widgets:
+- name: shishiyoujia
+  script_name: shishiyoujia
+author: 'mickeu · Egern adaptation: ErrBin'
+description: ✨ 【主要功能】；三端尺寸完美适配：；小号 (Small)  ：四宫格间距精调版，上下卡片行距增加至 8，极致留白且完美适配不溢出。；中号 (Medium) ：1x4 横排卡片布局，标题栏精准上移
+  4，增大下方内容舒展空间且位置锁定。；大号 (Large)  ：沉浸式 2x2 放大四宫格，独享油价历史走势折线图，字号间距完美扩容。；实时油价精准拉取：直连官方数据接口，支持 92#/95#/98#/柴油多型号及动态涨跌幅展示。；智能调价倒数引擎：内置
+  2026 年发改委法定调价日历，自动计算并渲染本轮调价倒计时。；不足 1 天时自动切换为"Xh Ym后"精确到分钟显示，不再显示"0d"。

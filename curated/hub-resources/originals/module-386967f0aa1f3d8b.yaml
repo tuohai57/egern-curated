@@ -1,0 +1,14 @@
+# Source: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/HL.js
+# Author: xcgtb | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 📅 日历 / 老黄历 (完整干支 + 完美冲煞 + 饱满排版防截断 + 间距优化版)
+scriptings:
+- generic:
+    name: hl
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/HL.js
+widgets:
+- name: hl
+  script_name: hl
+author: 'xcgtb · Egern adaptation: ErrBin'
+description: '名称: 📅 日历 / 老黄历 (完整干支 + 完美冲煞 + 饱满排版防截断 + 间距优化版)'
+icon: https://egern.pages.dev/assets/icons/xcgtb/Egern-Widgets/HL.jpg

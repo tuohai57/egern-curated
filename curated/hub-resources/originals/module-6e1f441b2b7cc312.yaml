@@ -1,0 +1,67 @@
+name: "CF 探针·延迟流量"
+description: "CF-Server-Monitor 延迟流量版：三网延迟和丢包、近 2 小时延迟曲线、本月流量已用/限额"
+author: "vfelix7"
+icon: "waveform.path.ecg"
+
+env_schema:
+  CFSM_URL:
+    name: "面板地址"
+    description: "例如 https://monitor.example.com，只填根地址，不要带 /admin 或 /api"
+  POLICY:
+    name: "请求策略"
+    description: "请求走哪个代理策略或策略组（如 Proxy）。*.workers.dev 在国内直连不通时必填"
+  CFSM_TOKEN:
+    name: "登录令牌（私有站点）"
+    description: "后台登录得到的 JWT，7 天有效。与下面的账号密码二选一；公开站点留空"
+  CFSM_USER:
+    name: "后台账号（私有站点）"
+    description: "填了账号和密码，脚本会自动登录并缓存令牌"
+  CFSM_PASS:
+    name: "后台密码（私有站点）"
+  SERVERS:
+    name: "只显示这些服务器"
+    description: "名称或 ID，英文逗号分隔；留空显示全部"
+  SHOW_HIDDEN:
+    name: "显示隐藏的服务器"
+    description: "需要登录（令牌或账号密码）"
+    options:
+      - "true"
+      - "false"
+  REFRESH_MINUTES:
+    name: "刷新间隔（分钟）"
+    description: "5–720，iOS 实际刷新可能更慢"
+    default_value: "15"
+  EXPIRE_WARN_DAYS:
+    name: "到期提醒（天）"
+    default_value: "14"
+  MAX_ROWS:
+    name: "中尺寸最多显示几台"
+    description: "1–6，超过 5 台可能显示不下"
+    default_value: "4"
+  TITLE:
+    name: "标题"
+    default_value: "CF Monitor"
+
+scriptings:
+  - generic:
+      name: "cfsm-net-widget"
+      script_url: "https://raw.githubusercontent.com/vfelix7/rule_module_script/refs/heads/master/egern/scripts/CF_Server_Monitor_Net_Widget.js"
+      update_interval: 300
+      timeout: 30
+
+widgets:
+  - name: "CF 延迟流量"
+    script_name: "cfsm-net-widget"
+
+# 与「CF 探针监控」模块可以同时安装，Env 需要各自填一份。
+# 安装模块后，在模块 Env 中至少配置：
+# CFSM_URL: "https://你的面板域名"
+#
+# 面板在 *.workers.dev 上、国内直连不通时再加：
+# POLICY: "你的代理策略组名"
+#
+# 私有站点二选一（只填在 Env 里，不要写进仓库）：
+# CFSM_TOKEN: "后台 JWT"
+# CFSM_USER: "admin" 和 CFSM_PASS: "后台密码"
+#
+# 延迟曲线需要面板「三网详情」开启（默认开启）。

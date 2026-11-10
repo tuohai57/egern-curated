@@ -1,0 +1,13 @@
+name: 服务分流自检
+description: 按各服务独立策略探测连接和响应，不把网页可达性冒充地区、账户或会员权限可用。
+author: tuohai57
+icon: network
+scriptings:
+  - generic:
+      name: 服务分流自检·脚本
+      script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/service-diagnostics.js
+      update_interval: 86400
+      timeout: 15
+widgets:
+  - name: 服务分流自检
+    script_name: 服务分流自检·脚本

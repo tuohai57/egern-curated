@@ -1,0 +1,20 @@
+# Source: https://raw.githubusercontent.com/Aswoth/Keek/main/IP
+# Author: Aswoth | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: IPPure - 节点 IP 纯净度检测
+scriptings:
+- generic:
+    name: ip
+    script_url: https://raw.githubusercontent.com/Aswoth/Keek/main/IP
+widgets:
+- name: ip
+  script_name: ip
+env_schema:
+  LABEL:
+    name: LABEL
+  MARK_IP:
+    name: MARK_IP
+  REFRESH_MINUTES:
+    name: REFRESH_MINUTES
+author: 'Aswoth · Egern adaptation: ErrBin'
+description: Egern Widget 版本；env 参数：

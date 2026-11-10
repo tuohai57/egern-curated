@@ -1,0 +1,32 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/vfelix7/rule_module_script/egern/module/IP_Purity_Widget.yaml
+name: 出口风险·脱敏版
+description: 用 IPPure 检测出口 IP 的风险分、原生/广播、住宅/机房、地区和 ASN
+author: vfelix7
+icon: shield.lefthalf.filled
+env_schema:
+  POLICY:
+    name: 检测策略
+    description: 检测哪个策略组或节点的出口 IP（如 Proxy、香港）；留空按 Egern 分流规则
+  MARK_IP:
+    name: IP 打码
+    description: 隐藏 IP 中间段，默认开启
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  REFRESH_MINUTES:
+    name: 刷新间隔（分钟）
+    default_value: '10'
+  LABEL:
+    name: 名称
+    description: 用来区分多个小组件（小号、中号显示在右下角；大号不显示，「检测」一行已写明策略）；不填时显示检测策略名
+scriptings:
+- generic:
+    name: 出口风险·脱敏版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/2f1734a7bfb6696029c9024723171cfdd135e37f85417ed8e017b3c5382b1054.js
+    update_interval: 300
+    timeout: 15
+widgets:
+- name: 出口风险·脱敏版
+  script_name: 出口风险·脱敏版·脚本1

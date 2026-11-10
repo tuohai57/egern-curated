@@ -1,0 +1,31 @@
+# Source: https://raw.githubusercontent.com/app2smile/rules/master/module/bilibili.sgmodule
+# Author: app2smile | License: MIT
+# Egern adaptation: ErrBin
+# 仓库地址 https://github.com/app2smile/rules
+# h2下走grpc.biliapi.net(Surge TF2332以上版本可正常解析) h1时走app.bilibili.com
+name: bilibili去广告8.13(>=iOS15)
+description: 开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告)
+mitm:
+  hostnames:
+    includes:
+    - app.bilibili.com
+    - grpc.biliapi.net
+    excludes: []
+scriptings:
+- http_response:
+    name: bili-json
+    script_url: https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-json.js
+    match: ^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2)
+    update_interval: 0
+    body_required: true
+    max_size: 16777216
+- http_response:
+    name: bili-proto
+    script_url: https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-proto.js
+    match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$
+    update_interval: 0
+    body_required: true
+    binary_body: true
+    max_size: 16777216
+author: 'app2smile · Egern adaptation: ErrBin'
+icon: https://egern.pages.dev/assets/icons/app2smile/rules/module/bilibili.jpg

@@ -1,0 +1,15 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/jadkg/egern/wannianli.yaml
+name: 日历·小日子
+scriptings:
+- generic:
+    name: 日历·小日子·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/331786982424564cd9a1cbaf7357b7af7ac863ec7a1046497cb7c82bd43d04ad.js
+    update_interval: 86400
+widgets:
+- name: 日历·小日子
+  script_name: 日历·小日子·脚本1
+author: 'jadkg · Egern adaptation: ErrBin'
+description: 农历信息 + 四类节日倒计时（法定 / 节气 / 民俗 / 国际）；改编自 ByteValley today_almanac.js；──
+  工具 ─────────────────────────────────────────────
+icon: https://egern.pages.dev/assets/icons/jadkg/egern/wannianli.jpg

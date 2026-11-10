@@ -1,0 +1,16 @@
+# Source: https://raw.githubusercontent.com/mickeu/Egern/main/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83.js
+# Author: mickeu | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 网络状态小组件 — 流媒体解锁检测 + IP 风险评估
+scriptings:
+- generic:
+    name: shujuzhongxin
+    script_url: https://raw.githubusercontent.com/mickeu/Egern/main/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83.js
+widgets:
+- name: shujuzhongxin
+  script_name: shujuzhongxin
+env_schema:
+  POLICY:
+    name: POLICY
+author: 'mickeu · Egern adaptation: ErrBin'
+description: '修改时间: 2026.10.08 18:45'

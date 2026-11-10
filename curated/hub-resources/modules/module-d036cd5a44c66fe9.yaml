@@ -1,0 +1,16 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/Harley0214/Egern-widgest-SUBTraffic-monitor/ModernSubTraffic-Egern-Generic.yaml
+name: 订阅流量·现代版
+scriptings:
+- generic:
+    name: 订阅流量·现代版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/737a962f08ba98a383df73c0b61127a636ea6fb0bc32e6c9f0f103ca68e3a298.js
+    update_interval: 86400
+widgets:
+- name: 订阅流量·现代版
+  script_name: 订阅流量·现代版·脚本1
+author: 'Harley0214 · Egern adaptation: ErrBin'
+description: Configure subscription URLs in the Egern module Env, not in this file.；Primary
+  Env:；url1/name1/protocol1/reset1；url2/name2/protocol2/reset2；url3/name3/protocol3/reset3；Also
+  accepts uppercase aliases:；URL1/NAME1/PROTOCOL1/RESET1
+icon: square.grid.2x2.fill

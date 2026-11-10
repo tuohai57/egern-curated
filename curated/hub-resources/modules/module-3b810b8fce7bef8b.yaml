@@ -1,0 +1,15 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/CN_Cal.yaml
+name: 日历·双周版
+description: 两周日期带农历、节日与节气
+author: iBL3ND
+icon: https://iili.io/nUZpEx4.webp
+scriptings:
+- generic:
+    name: 日历·双周版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/3ec350c3215689f3c24053da4a710ddbefcfd33dce8a58a73a8354d9682a2c46.js
+    timeout: 30
+    update_interval: 86400
+widgets:
+- name: 日历·双周版
+  script_name: 日历·双周版·脚本1

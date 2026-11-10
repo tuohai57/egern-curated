@@ -1,0 +1,14 @@
+# Source: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Widget/Countdown.js
+# Author: jnlaoshu | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: 📌 Egern 时光倒数 (Countdown) 小组件
+scriptings:
+- generic:
+    name: countdown
+    script_url: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Widget/Countdown.js
+widgets:
+- name: countdown
+  script_name: countdown
+author: 'jnlaoshu · Egern adaptation: ErrBin'
+description: 功能特性：；自动适配 Small / Medium / Large 三种尺寸，呈现不同排版风格。；内置农历算法，覆盖法定假日、传统节日、国际节日及金融交割/行权日。；基于 UTC+8 时区进行精确的倒计时计算（剩余天数）。；支持最多
+  6 个自定义纪念日，可单独配置清明节、春假、秋假日期。；支持节日按天数及优先级排序，并可将指定节日跨分类置顶显示。；根据工作日/周末/当天节日状态自动切换背景渐变色。；小号模式：今日节日独立高亮，其余按天数排序，可配置置顶数量与天数范围；中大号模式：分组展示，自适应裁剪。

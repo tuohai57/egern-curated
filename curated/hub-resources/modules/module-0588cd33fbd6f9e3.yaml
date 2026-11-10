@@ -1,0 +1,37 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/IBL3ND/module/Holiday_Countdown.yaml
+name: 节日倒计时
+description: 公历节日、24节气、农历传统节日倒计时，按天数排序，支持小中大尺寸与锁屏
+author: iBL3ND
+icon: https://iili.io/nUsZbHl.webp
+env_schema:
+  SHOW_HOLIDAYS:
+    name: 显示公历节日
+    description: 元旦、劳动节、国庆节等公历节日
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  SHOW_TERMS:
+    name: 显示24节气
+    description: 小寒、大寒、立春等24节气
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+  SHOW_TRADITIONAL:
+    name: 显示传统节日
+    description: 春节、元宵、端午、中秋等农历节日及母亲节、父亲节
+    default_value: 'true'
+    options:
+    - 'true'
+    - 'false'
+scriptings:
+- generic:
+    name: 节日倒计时·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b0f6da4612dfd6a65e6b0a04b79cdf47fc9ab0a42e4fe5c11857ef96c002eb62.js
+    timeout: 30
+    update_interval: 86400
+widgets:
+- name: 节日倒计时
+  script_name: 节日倒计时·脚本1

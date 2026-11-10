@@ -1,0 +1,25 @@
+# Egern Hub reviewed resource. Original author and script bytes retained.
+# Source: https://egern.pages.dev/modules/lylywayr/NetWork-Module/Egern/wangluozhenduanleida/wangluozhenduanleida.yaml
+name: 网络诊断·雷达版
+scriptings:
+- generic:
+    name: 网络诊断·雷达版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/5d9956ee59df4a224a4279ab6a5d17b48e8025d58892a2fee4c5c1bd7960d4e2.js
+    update_interval: 86400
+widgets:
+- name: 网络诊断·雷达版
+  script_name: 网络诊断·雷达版·脚本1
+env_schema:
+  AI:
+    name: AI
+  LMT:
+    name: LMT
+  POLICY:
+    name: POLICY
+  XY:
+    name: XY
+  YS:
+    name: YS
+author: 'lylywayr · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。
+icon: square.grid.2x2.fill
