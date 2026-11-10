@@ -683,17 +683,11 @@ rules:
     match: meta.ai
     policy: Meta AI
 - domain_suffix:
-    match: metaaivm.com
-    policy: Meta AI
-- domain_suffix:
     match: minimax.io
     policy: MiniMax国际
 - domain_suffix:
     match: mistral.ai
     policy: Mistral
-- domain_suffix:
-    match: muse.ai
-    policy: Muse
 - domain_suffix:
     match: notebooklm.google
     policy: NotebookLM

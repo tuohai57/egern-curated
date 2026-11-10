@@ -1,6 +1,6 @@
 """Service ownership, supported-country boundaries and failover regression."""
 from pathlib import Path
-import fnmatch,ipaddress,json,sys
+import fnmatch,hashlib,ipaddress,json,sys
 ROOT=Path(__file__).resolve().parents[2]
 vendor=ROOT.parent/'.vendor'
 if vendor.exists():sys.path.insert(0,str(vendor))
@@ -12,6 +12,25 @@ model=DomainRouter(ROOT,{'rules':data['main_rules']})
 def check(ok,label,**detail):
  row={'name':label,'passed':bool(ok),**detail};checks.append(row)
  if not ok:errors.append(row)
+def policy_references(value):
+ if isinstance(value,dict):
+  for key,item in value.items():
+   if key=='policy':yield item
+   else:yield from policy_references(item)
+ elif isinstance(value,list):
+  for item in value:yield from policy_references(item)
+
+legacy=json.loads((ROOT/'curated/routing/legacy-guard-compatibility.json').read_text(encoding='utf-8'))
+for profile in legacy['profiles']:
+ raw=(ROOT/profile['repository_path']).read_bytes()
+ check(hashlib.sha256(raw).hexdigest()==profile['sha256'],'旧保护URL保留原字节 '+profile['repository_path'])
+ unknown=set(policy_references(yaml.safe_load(raw)))-set(profile['allowed_policies'])
+ check(not unknown,'旧配置保护模块不存在未知策略 '+profile['repository_path'],unknown=sorted(unknown))
+check('Muse' not in legacy['profiles'][1]['allowed_policies'],'旧245组兼容样例不虚增Muse组')
+active_guard=json.loads((ROOT/'curated/native-full/manifest.json').read_text(encoding='utf-8'))['priority_guard']
+check(active_guard['repository_path']=='curated/native-full/priority-guard-ai-regions-muse.yaml','新增Muse保护使用独立URL')
+check(set(policy_references(yaml.safe_load((ROOT/active_guard['repository_path']).read_bytes())))<=set(graph)|{'DIRECT','REJECT'},'新版保护仅引用当前已有策略')
+
 def resolve(name,dead=(),path=()):
  assert name not in path,'Cycle '+name
  if name not in graph:return None if name in dead else name

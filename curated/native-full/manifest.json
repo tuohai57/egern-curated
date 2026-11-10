@@ -250,10 +250,10 @@
   ],
   "priority_guard": {
     "name": "恢复版优先保护",
-    "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/priority-guard-ai-regions.yaml",
+    "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/priority-guard-ai-regions-muse.yaml",
     "enabled": true,
     "update_interval": 86400,
-    "repository_path": "curated/native-full/priority-guard-ai-regions.yaml",
+    "repository_path": "curated/native-full/priority-guard-ai-regions-muse.yaml",
     "sha256": "1bcb7aa60f826ded3ecb0200b09c38ecb2e4e7365e6865b3d4d1d71fc168a335",
     "rules": 495
   },
