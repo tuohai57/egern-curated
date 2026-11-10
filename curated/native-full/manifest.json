@@ -26771,7 +26771,7 @@
       "sha256": "e7421da7e196b435d78184d04fd47cdc7299cb9872a98e156407c9a5527e2484",
       "enabled": true,
       "source_kind": "reviewed-repository-delta",
-      "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt",
+      "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -26786,15 +26786,15 @@
   "extra_rule_sets": [
     {
       "repository_path": "curated/native-full/repository-ad-delta.yaml",
-      "sha256": "abc9386645e89d5b3d339e5d294abdfb86f7057d4085b99528d42ab79474d670",
+      "sha256": "6b270a6ba4ad6d35632a9c343340127d9618740b246cf83d55c2a0a4355e967e",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml",
       "counts": {
-        "domain_suffix_set": 338372,
-        "domain_regex_set": 179,
+        "domain_suffix_set": 337457,
+        "domain_regex_set": 180,
         "domain_set": 54
       },
-      "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt",
-      "source_sha256": "d57a0c3c52ae72a2f06b9dcf07ae7c2deea72c9977527668ae0a18cd71df18ff"
+      "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
+      "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45"
     }
   ],
   "source_evidence": [
@@ -26805,13 +26805,13 @@
     },
     {
       "repository_path": "curated/native-full/originals/hagezi-pro.txt",
-      "sha256": "d57a0c3c52ae72a2f06b9dcf07ae7c2deea72c9977527668ae0a18cd71df18ff",
-      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt"
+      "sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt"
     },
     {
       "repository_path": "curated/native-full/originals/hagezi-LICENSE",
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/LICENSE"
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/LICENSE"
     }
   ],
   "dependencies": [

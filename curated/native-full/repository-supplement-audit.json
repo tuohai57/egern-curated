@@ -1,9 +1,9 @@
 {
-  "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt",
-  "source_sha256": "d57a0c3c52ae72a2f06b9dcf07ae7c2deea72c9977527668ae0a18cd71df18ff",
-  "source_bytes": 4425999,
+  "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
+  "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45",
+  "source_bytes": 4410033,
   "source_counts": {
-    "hagezi_pro": 224287,
+    "hagezi_pro": 223328,
     "quixotic": {
       "domain_set": 139,
       "domain_suffix_set": 210661,
@@ -17,19 +17,26 @@
   "source_metadata": {
     "hagezi-pro": {
       "repository": "hagezi/dns-blocklists",
-      "commit": "cb6dfce84b8f86611ca428e6b6994f7499fcb32e",
-      "commit_date": "2026-11-09T15:54:25Z",
-      "pinned_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt",
-      "sha256": "d57a0c3c52ae72a2f06b9dcf07ae7c2deea72c9977527668ae0a18cd71df18ff",
-      "bytes": 4425999,
+      "commit": "a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6",
+      "commit_date": "2026-11-09T23:49:57Z",
+      "pinned_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
+      "sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45",
+      "bytes": 4410033,
       "license": "GPL-3.0",
-      "domains": 224287
+      "domains": 223328,
+      "maintenance_review": {
+        "checked_at": "2026-11-10T08:04:30.807172+08:00",
+        "added_domains": 173,
+        "removed_domains": 1132,
+        "decision": "Same publisher full-source update, exact fixed-commit hash verified; financial/business/response protections and regression checks remain required.",
+        "source_not_derived_from_test_site": true
+      }
     },
     "hagezi-license": {
       "repository": "hagezi/dns-blocklists",
-      "commit": "cb6dfce84b8f86611ca428e6b6994f7499fcb32e",
-      "commit_date": "2026-11-09T15:54:25Z",
-      "pinned_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/LICENSE",
+      "commit": "a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6",
+      "commit_date": "2026-11-09T23:49:57Z",
+      "pinned_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/LICENSE",
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
       "bytes": 35149,
       "license": "GPL-3.0"
@@ -44,25 +51,25 @@
       "pinned_url": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/5eaaa84056bd2164c88ab06fddd2b1ca4472a1af/egern/adrules.yaml"
     }
   },
-  "retained": 338605,
+  "retained": 337691,
   "excluded": {
     "already_rejected_domain": 4135,
     "business_or_response_protection": 1350,
     "already_rejected_keyword": 194,
-    "internal_duplicate_or_shadow": 15375,
+    "internal_duplicate_or_shadow": 15370,
     "ip_not_imported": 1
   },
   "rule_set": {
     "repository_path": "curated/native-full/repository-ad-delta.yaml",
-    "sha256": "abc9386645e89d5b3d339e5d294abdfb86f7057d4085b99528d42ab79474d670",
+    "sha256": "6b270a6ba4ad6d35632a9c343340127d9618740b246cf83d55c2a0a4355e967e",
     "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml",
     "counts": {
-      "domain_suffix_set": 338372,
-      "domain_regex_set": 179,
+      "domain_suffix_set": 337457,
+      "domain_regex_set": 180,
       "domain_set": 54
     },
-    "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/wildcard/pro-onlydomains.txt",
-    "source_sha256": "d57a0c3c52ae72a2f06b9dcf07ae7c2deea72c9977527668ae0a18cd71df18ff"
+    "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
+    "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45"
   },
   "residuals": [
     {
@@ -1506,6 +1513,16 @@
         {
           "kind": "suffix",
           "host": "ws.voiceads.cn"
+        }
+      ]
+    },
+    {
+      "root": "weplayer.cc",
+      "expression": "^(?!(?:(?:[^.]+\\.)*ad\\.weplayer\\.cc)$)(?:[^.]+\\.)*weplayer\\.cc$",
+      "excluded": [
+        {
+          "kind": "suffix",
+          "host": "ad.weplayer.cc"
         }
       ]
     },
