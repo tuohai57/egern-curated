@@ -8,14 +8,10 @@ tag: 去广告
 url_rewrites: []
 body_rewrites:
 - response_jq:
-    match: ^https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$)
-    filter: (del(.data.data.data.mainSearch.bizData.searchContents, .data.data.data.operationList))
-      | (del(.data.data.banner, .data.data.activity, .data.data.vip))
-- response_jq:
-    match: (?i)^(?!https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$))(?:^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)
+    match: (?i)^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch
     filter: del(.data.data.data.mainSearch.bizData.searchContents, .data.data.data.operationList)
 - response_jq:
-    match: (?i)^(?!https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$))(?:^https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn)
+    match: (?i)^https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn
     filter: del(.data.data.banner, .data.data.activity, .data.data.vip)
 - response_jq:
     match: (?i)^https:\/\/longquan-mtop\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn

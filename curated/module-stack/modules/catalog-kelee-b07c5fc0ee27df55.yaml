@@ -1,0 +1,19 @@
+name: 医考帮
+description: 移除横幅推广、弹窗、首页悬浮挂件。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YiKaoBang.png
+map_locals:
+- match: (?i)^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/main\/ads\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/Main\/startPage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.yikaobang.com.cn

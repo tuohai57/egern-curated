@@ -1,0 +1,39 @@
+name: 彩云天气
+description: 移除首页推广、弹窗、悬浮窗、底栏天气助手和工具箱入口，移除我的页面广告横幅。
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ColorfulClouds.png
+rules:
+- domain:
+    match: abyss.cyapi.cn
+    policy: REJECT
+- domain:
+    match: ad.cyapi.cn
+    policy: REJECT
+- domain:
+    match: gather.colorfulclouds.net
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/\w+\/conditions|notification\/message_center|operation\/homefeatures)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 彩云天气去广告
+    match: (?i)^https:\/\/(wrapper\.cyapi\.cn|api\.caiyunapp\.com|cdn-w\.caiyunapp\.com)\/v1\/activity\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/51d20e0cd5f134603f541fdb7a05a3e9a259b8e3adece8347b90df237687c0a1.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - biz.cyapi.cn
+  - starplucker.cyapi.cn
+  - api.caiyunapp.com
+  - cdn-w.caiyunapp.com

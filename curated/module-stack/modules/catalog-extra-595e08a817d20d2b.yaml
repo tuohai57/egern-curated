@@ -1,0 +1,36 @@
+name: 快影
+description: 移除开屏广告、信息流推广、横幅推广，移除悬浮部件。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KwaiVideoeditor.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common\/getBannerByTypeV2\?
+    filter: del(.list[] | select(.bannerChannelName == "活动"))
+- response_jq:
+    match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common\/getAllBannerPage\?
+    filter: del(.data[] | select(.bannerChannelName == "活动"))
+map_locals:
+- match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common\/getBannerByType\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/merchant\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource\/activity\/pendant\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.kmovie.gifshow.com

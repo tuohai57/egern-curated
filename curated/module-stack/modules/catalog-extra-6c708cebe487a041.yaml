@@ -1,0 +1,29 @@
+name: 小桔充电
+description: 移除横幅广告、弹窗广告，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaojukejiCharge.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center\?
+    filter: delpaths([["data"]])
+map_locals:
+- match: ^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - energy.xiaojukeji.com
+  - am.didistatic.com

@@ -3,7 +3,7 @@ scriptings:
 - http_response:
     name: BuyiTunes / 1
     match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/034b4d9fbf487bae909d24320f60eb819a5a5a546522b0e5477c52975e22cb41.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b14473f13254accbc6d7e4df7f34752aff5189254e0930845bc4d3937124d4b1.js
     body_required: true
     update_interval: 86400
 mitm:

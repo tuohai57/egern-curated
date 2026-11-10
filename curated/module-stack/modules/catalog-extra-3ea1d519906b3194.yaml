@@ -1,0 +1,135 @@
+name: 快递100
+description: 移除横幅广告、弹窗广告，精简首页。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiDi100.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["adsplash"]])
+
+      ) | (
+
+      delpaths([["adIsConsumable"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adProductId"]])
+
+      )
+
+      ) | (
+
+      delpaths([["nologin_tips"]])
+
+      )
+
+      ) | (
+
+      delpaths([["index_banner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["me_banner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["index_banner_shadow"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adshongbao"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adsapp_homepage_ticket_pop"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adsoptimizationsend"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adsapp_activity_ad_array"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adbanner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adposition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adShowAgainTime"]])
+
+      )'
+- response_jq:
+    match: ^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox
+    filter: delpaths([["data","secondMenuList"]])
+map_locals:
+- match: ^https?:\/\/p\.kuaidi100\.com\/advertisement\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/p\.kuaidi100\.com\/e-commerce\/act\/actInfo\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/p\.kuaidi100\.com\/apicenter\/card\.dox
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - p.kuaidi100.com

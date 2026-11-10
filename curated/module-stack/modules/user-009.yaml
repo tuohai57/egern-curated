@@ -61,4 +61,4 @@ body_rewrites:
 - response_jq:
     match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.ai\.pageconfig\/[\d.]+\/
     filter: .data.enable="false" | .data.aiLottieUrl=""
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png

@@ -1,0 +1,26 @@
+name: 阿里云盘
+description: 移除首页广告横幅、弹窗和顶部奖励。
+author: RuCu6[https://github.com/RuCu6]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AliYunDrive.png
+homepage: https://hub.kelee.one
+rules:
+- ip_cidr:
+    match: 203.107.1.1/24
+    policy: REJECT
+    no_resolve: true
+map_locals:
+- match: ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.alipan.com
+  - member.alipan.com
+  - bizapi.alipan.com

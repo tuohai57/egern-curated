@@ -1,0 +1,60 @@
+name: 天天跳绳
+description: 移除开屏广告、横幅广告、弹窗广告、活动推广，精简首页标签和搜索页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CrazyRope.png
+map_locals:
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/abtest\/ads_v\d\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/cdn\.tiantiantiaosheng\.com\/props_config_prod\/ad_position_config\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/adolescent_mode\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/ad_sys\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\/user\/home_page\/activities$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/search\/base_info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/medal_challenge_activity\/page_switch\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/training_plan\/recommended_list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/user\/new_register_info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/popup\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.tiantiantiaosheng.com
+  - cdn.tiantiantiaosheng.com

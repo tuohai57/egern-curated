@@ -1,0 +1,72 @@
+name: 美颜相机
+description: 移除开屏广告、应用内弹窗，精简首页和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: adui.tg.meitu.com
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\?
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["response","time_limit"]])
+
+      ) | (
+
+      delpaths([["response","bubble"]])
+
+      )
+
+      ) | (
+
+      delpaths([["response","person_center"]])
+
+      )
+
+      ) | (
+
+      if (getpath(["response","function_pop","meiyan_style"]) | has("is_pop")) then
+      (setpath(["response","function_pop","meiyan_style","is_pop"]; false)) else .
+      end
+
+      )
+
+      ) | (
+
+      if (getpath(["response","onoff","vip_half_window_exit_remain_popup"]) | has("open"))
+      then (setpath(["response","onoff","vip_half_window_exit_remain_popup","open"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["response","onoff"]) | has("vip_home_exit_remain_popup")) then
+      (setpath(["response","onoff","vip_home_exit_remain_popup"]; 0)) else . end
+
+      )'
+map_locals:
+- match: ^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.meiyan.com

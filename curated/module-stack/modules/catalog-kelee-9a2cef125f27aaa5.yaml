@@ -1,0 +1,40 @@
+name: 贝壳找房
+description: 移除开屏广告、弹窗广告、悬浮广告、信息流推广、我家页面的装修推荐。移除我的页面的专属推荐、游戏入口、钱包入口。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Beike.png
+map_locals:
+- match: (?i)^https:\/\/apps\.api\.ke\.com\/config\/config\/bootpage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/userCenter\/feed\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apps\.api\.ke\.com\/config\/config\/getactivityconfig\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - apps.api.ke.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/homepage\/initData\/mini\?
+    filter: (delpaths([["data", "bootpage"], ["data", "bottom_bar_activity"]]))
+- response_jq:
+    match: (?i)^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/userCenter\/info\?
+    filter: (delpaths([["data", "islandModule"]])) | (del(.data.mainIcons.list[] |
+      select(.indexKey == "coupon")))
+- response_jq:
+    match: (?i)^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/myhome\/pagedetail\?
+    filter: (.data.moduleList |= map(select(.tab != "myHomeDecorV4")))
+- response_jq:
+    match: (?i)^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/homepage\/feed\?
+    filter: (.data.list |= map(select(.cardType == "houseContainer" or .cardType ==
+      "houseV2" or .cardType == "houseV3" or .cardType == "rentHouseDiscount" or .cardType
+      == "decorationCase")))

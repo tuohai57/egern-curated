@@ -1,0 +1,42 @@
+name: Youtube  Enhance
+description: 适用于 Youtube & Youtube Music
+compat_arguments:
+  屏蔽上传按钮: true
+  屏蔽选段按钮: true
+  屏蔽Shorts按钮: false
+  字幕翻译语言: 'off'
+  歌词翻译语言: 'off'
+  启用调试模式: false
+rules:
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: udp
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei.googleapis.com
+    - protocol:
+        match: udp
+    policy: REJECT
+scriptings:
+- http_response:
+    name: Youtube  Enhance / 1
+    match: ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/294f853ea0ce39b9e599c0ccbebfb95928e947202f96691791d8fbb45daa0466.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+map_locals:
+- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad
+  status_code: 200
+  body: ''
+mitm:
+  hostnames:
+  - '*.googlevideo.com'
+  - youtubei.googleapis.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

@@ -78,4 +78,4 @@ rules:
 - domain_suffix:
     match: tran.news.so.com
     policy: REJECT
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/a0/6a/a8a06a1e-0465-ef26-7976-0aced9145494/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg

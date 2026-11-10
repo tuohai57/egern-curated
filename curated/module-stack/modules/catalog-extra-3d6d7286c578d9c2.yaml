@@ -1,0 +1,22 @@
+name: 游民星空
+description: 移除开屏广告、列表广告 by Sliverkiss
+author: Sliverkiss
+icon: https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/ymxk.png
+body_rewrites:
+- response_jq:
+    match: http:\/\/.+\.gamersky.com/.+/lists/getListElements
+    filter: .listElements |= map(select(has("adCategory") | not))
+map_locals:
+- match: ^http:\/\/.+\.gamersky\.com\/.+\/adSystem\/ad\/.+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: https://.+\.gamersky.com/v1/statisticAd
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - '*.gamersky.com'

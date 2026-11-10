@@ -10,3 +10,4 @@ rules:
 - domain_keyword:
     match: p3.pstatp.com
     policy: REJECT
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png

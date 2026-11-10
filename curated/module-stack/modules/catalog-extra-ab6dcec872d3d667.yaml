@@ -1,0 +1,87 @@
+name: 驾校一点通
+description: 移除开屏广告、各页面广告横幅、弹窗广告，移除社区广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JiaXiaoDrive.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+- response_jq:
+    match: http-response
+    filter: .
+    disabled: true
+map_locals:
+- match: ^https:\/\/richmanrules\.ksedt\.com\/serverConfig\/3\/adConfig\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gouche\.ksedt\.com\/config\/popup\/info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/richmanrules\.ksedt\.com\/intellectWaterfallBidding\/find$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/op\.ksedt\.com\/jxedtLive\/liveIntroduceResource
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/richmanrules\.ksedt\.com\/intellectWaterfall\/find$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - richmanrules.ksedt.com
+  - gouche.ksedt.com
+  - muses.ksedt.com
+  - op.ksedt.com
+  - api.ksedt.com

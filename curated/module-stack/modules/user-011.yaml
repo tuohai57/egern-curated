@@ -27,4 +27,4 @@ body_rewrites:
     match: ^https?:\/\/cgate\.zhaopin\.com\/bdp\/my\/homepageMainModule
     filter: del(.data.commercialModule, .data.commercialModuleV5, .data.vipModule,
       .data.vipModuleCardNew)
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhiLianZhaoPin.png

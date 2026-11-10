@@ -28,6 +28,13 @@ rules:
     - user_agent:
         match: '"*com.xunmeng.pinduoduo*"'
     policy: REJECT
+- and:
+    match:
+    - domain:
+        match: api.pinduoduo.com
+    - protocol:
+        match: quic
+    policy: REJECT
 - domain:
     match: sdk.1rtb.net
     policy: REJECT
@@ -74,11 +81,18 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?
-    filter: (del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module.irregular_banner_dy))
-      | (.result.bottom_tabs? |= map(select(.link | IN("index.html","chat_list.html","personal.html")))
+    filter: '(
+
+      del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module.irregular_banner_dy)
+
+      ) | (
+
+      .result.bottom_tabs? |= map(select(.link | IN("index.html","chat_list.html","personal.html")))
       | .result.buffer_bottom_tabs? |= map(select(.link | IN("index.html","chat_list.html","personal.html")))
       | .result.all_top_opts = [] | .result.module_order? |= map(select(.module_name
-      | IN("irregular_banner","ad_module","timeline") | not)))
+      | IN("irregular_banner","ad_module","timeline") | not))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/search\?
     filter: del(.expansion)

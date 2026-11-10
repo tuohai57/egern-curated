@@ -1,0 +1,35 @@
+name: 小桔充电
+description: 移除横幅广告、弹窗广告，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaojukejiCharge.png
+map_locals:
+- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_request:
+    name: 小桔充电 / 原生响应
+    match: (?i)^https:\/\/am\.didistatic\.com\/static\/am\/cf-terminal\/epower\/epower-thanos-app\/\d+\.\d+\.\d+\/pages\/people\/index\.js$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/15ab47c17de34d9ee842ca0fcc2ed8ab5935b16a326c17f0500ab805f202bb19.js
+    body_required: false
+mitm:
+  hostnames:
+  - energy.xiaojukeji.com
+  - am.didistatic.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center\?
+    filter: (delpaths([["data"]]))

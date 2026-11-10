@@ -1310,14 +1310,14 @@ scriptings:
 - http_response:
     name: 墨鱼去开屏2.0 / 3
     match: ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ff7aa5e3b380593f2ed54638b444bfdfc86cef048654d4a645433c94290a2621.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9c8f823312c33f8f1fe4ed2f967d8cc1ecffb25dd455e65623b2c74c17f5a1a.js
     body_required: true
     update_interval: 86400
-- http_response:
+- http_request:
     name: 墨鱼去开屏2.0 / 4
     match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5843c8f35e7489e8559d181974d2ec2e09cc9d96b38cfbd349b1c578e9582727.js
-    body_required: false
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/31f024d0586f70fbfb518b8999804e4c9cae87604bb3d68f2284e508b8bd5df5.js
+    body_required: true
     update_interval: 86400
 - http_response:
     name: 墨鱼去开屏2.0 / 5
@@ -1334,7 +1334,7 @@ scriptings:
 - http_response:
     name: 墨鱼去开屏2.0 / 7
     match: ^https:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ff2d7237f669b7a2805d89bc04364eb27d7d71c1913cadffdce85aa691817f62.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a44136169d4b9e69bc9707ef4bc00aecb7e6685db37d91082b3ed21961c328c3.js
     body_required: true
     update_interval: 86400
 - http_response:
@@ -1426,7 +1426,7 @@ scriptings:
 - http_response:
     name: 墨鱼去开屏2.0 / 19
     match: ^https?:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/adca74620344e2647a7c1805edabe55892ddd68b89b5b5f209629cf47c3c9082.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d1b0d578af6ff6bd6806ed2c34f7e3b54d93b2c18513fe3aa41fb1ad9b3b6a4.js
     body_required: false
     update_interval: 86400
 - http_response:
@@ -1438,7 +1438,7 @@ scriptings:
 - http_response:
     name: 墨鱼去开屏2.0 / 21
     match: ^https?:\/\/api\.jk\.cn\/m\.api
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/52d3136c77c4d5264eb812787cba1da799d2ca84ccc51b5000c42ca20cee9dae.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/354c2132f6b2b501ff132485079f3cdeea7dde3ed7424a909df05735b5f1e8e6.js
     body_required: false
     update_interval: 86400
 - http_response:
@@ -2064,4 +2064,4 @@ mitm:
   - spclient.wg.spotify.com
   - 180.96.8.44
   - 125.215.147.40
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png

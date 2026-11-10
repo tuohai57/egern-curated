@@ -1,0 +1,37 @@
+name: 大麦
+description: 移除开屏广告、轮播图广告和弹窗广告，移除搜索填充词和专属推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.user\.my\.content\.get\/
+    filter: '(
+
+      delpaths([["data","banner"]])
+
+      ) | (
+
+      delpaths([["data","performFilmVip","userProfitList"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.mypage\.feed\/
+    filter: delpaths([["data","feedCard"]])
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get\/
+    filter: delpaths([["data","data","top","keywords"]])
+map_locals:
+- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - acs.m.taobao.com

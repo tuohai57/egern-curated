@@ -1,0 +1,14 @@
+name: 起点读书
+description: Surge和Loon可以完美去广告.但qx需全程开启代理软件才可以去广告
+mitm:
+  hostnames:
+  - magev6.if.qidian.com
+scriptings:
+- http_response:
+    name: 起点读书 / 1
+    match: ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/(deeplink\/geturl|dailyrecommend\/getdailyrecommend)|v1\/(client\/getconf$|bookshelf\/getHoverAdv|adv\/getadvlistbatch\?positions=iOS_tab))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e599a063040ecb222ad5d4f8666157ef1ee31495aef6d87fb13453dce46f5c19.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png

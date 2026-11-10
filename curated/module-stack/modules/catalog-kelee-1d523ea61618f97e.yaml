@@ -1,0 +1,73 @@
+name: 财新
+description: 过滤财新广告
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CaixinMedia.png
+map_locals:
+- match: (?i)^https:\/\/entities\.caixin\.com\/api\/(dataplus\/promotionHints|public\/push\/appIndex|public\/recommendNews)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/gateway\.caixin\.com\/api\/app-api\/cxAdInfo\/selectIndexAdInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/mappsv5\.caixin\.com\/channelv5\/article_ad_ios_info\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/gg\.caixin\.com\/s\?z=caixin&slot=\d+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/msgapi\.caixin\.com\/msg_api\/annmsg\/annlist
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除财新数据通广告
+    match: (?i)^https:\/\/entities\.caixin\.com\/api\/dataplus\/columns
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除文末广告
+    match: (?i)^https:\/\/gateway\.caixin\.com\/api\/app-api\/(caixinapp\/appinfo|search\/getkeyword)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除财新FM广告
+    match: (?i)^https:\/\/gateway\.caixin\.com\/api\/app-content\/fm\/index\/list\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除开屏广告
+    match: (?i)^https:\/\/gg\.caixin\.com\/s\?z=caixin&op=\d
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除正文广告
+    match: (?i)^https:\/\/mappsv5\.caixin\.com\/articlev5\/\d+\/\d+\.json$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除正文广告
+    match: (?i)^https:\/\/mapps?v5\.caixin\.com\/(channelv5\/list|\/?index_page_v5\/)\w+
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - e*.caixin.com
+  - g*.caixin.com
+  - m*.caixin.com

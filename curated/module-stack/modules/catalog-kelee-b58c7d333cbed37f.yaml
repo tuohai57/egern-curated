@@ -1,0 +1,48 @@
+name: 百度输入法
+description: 过滤百度输入法广告，替换个人主页随机图。
+author: Keywos[https://github.com/Keywos]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Baidu_input_method.png
+map_locals:
+- match: (?i)^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads\/list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/mime\.baidu\.com\/sapi\/v1\/(circle\/joinedlist|lccorpus\/usercorpussync|aihelpactivity\/aihelpresource)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/mime\.baidu\.com\/v5\/(fb\/st\?logtype|(notiv3|cellloc_noti|noti_cloudswitch_noti)\/info)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 百度输入法去广告
+    match: (?i)^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4401933fa39f97c72711cf075c9caa8506be46e3fdbf0572d96ab9493aaf623b.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - imeres.baidu.com
+  - mbd.baidu.com
+  - mime.baidu.com

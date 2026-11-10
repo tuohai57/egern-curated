@@ -1,0 +1,61 @@
+name: 启信宝
+description: 移除开屏广告、应用内弹窗、首页轮播图、悬浮部件和个性化推荐信息流。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiXinBao.png
+map_locals:
+- match: (?i)^https:\/\/appc\.qixin\.com\/v4\/general\/getSearchPlaceholderRedirect$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppFloatAd$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBanners$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getUserActivitys$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/homePageRecommend\/recommendCard\d+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getRecommendPersons$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendEnts$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendation$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBottomBanners$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/qxb-minicode-pic-osscache\.qixin\.com\/web\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - appc.qixin.com
+  - appc-v6.qixin.com
+  - qxb-minicode-pic-osscache.qixin.com

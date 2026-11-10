@@ -1,0 +1,51 @@
+name: 去除 keep 广告
+description: 可能需要重新安装Keep
+rules:
+- domain:
+    match: httpdns.calorietech.com
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.gotokeep\.com\/anno\/v1\/upgrade\/check$
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/api.gotokeep.com/cauchy/growth/init
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.gotokeep\.com\/training\/box\/config
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/tool\/v1\/jump\/popup$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.gotokeep\.com\/athena\/v1\/people\/my\/entry
+    policy: REJECT
+scriptings:
+- http_response:
+    name: 去除 keep 广告 / 1
+    match: https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c03478efea75ccbd251ac237dcc954d084af2573dfb825ed0dffdcd1a46375e.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: 去除 keep 广告 / 2
+    match: https:\/\/api\.gotokeep\.com\/config\/v3/basic
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/be550cf855a7e47e118f3d411f287c7a296b4837bc5f751fe4a4a22225c50ee2.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: 去除 keep 广告 / 3
+    match: ^https?:\/\/api\.gotokeep\.com\/athena\/v7\/people\/course\/(practiced|general)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/597c947abd56e11dafc33fe79714a3b8df660ea9b462470ec3af816ba21c342e.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+mitm:
+  hostnames:
+  - api.gotokeep.com
+  - kad.gotokeep.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

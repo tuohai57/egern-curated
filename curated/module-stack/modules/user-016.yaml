@@ -81,4 +81,4 @@ map_locals:
 - match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul
   status_code: 200
   body: ''
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png

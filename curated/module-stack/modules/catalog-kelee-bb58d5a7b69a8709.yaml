@@ -1,0 +1,25 @@
+name: ECOVACS HOME
+description: 移除横幅推广，精简底栏。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/EcovacsHome.png
+map_locals:
+- match: (?i)^https:\/\/api-app\.dc-cn\.cn\.ecouser\.net\/api\/ecms\/app\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/gl-cn-api\.ecovacs\.cn\/v1\/private\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - gl-cn-api.ecovacs.cn
+  - api-app.dc-cn.cn.ecouser.net
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/gl-cn-api\.ecovacs\.cn\/v3\/private\/
+    filter: (.data.navigateInfoResponseList |= map(select(.positionType == "Robot"
+      or .positionType == "Mine")))

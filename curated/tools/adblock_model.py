@@ -38,7 +38,17 @@ class DomainRouter:
             obj = yaml.safe_load((self.root/row['repository_path']).read_text(encoding='utf-8'))
             self.sets[row['url']] = {k: set(v) for k, v in obj.items() if isinstance(v, list)}
         self.active = []
-        for row in [m['priority_guard']] + m.get('extra_modules', []) + m['modules']:
+        rows=[m['priority_guard']] + m.get('extra_modules', []) + m['modules']
+        if profile is not None:
+            stack_path=self.root/'curated/module-stack/manifest.json'
+            stack=json.loads(stack_path.read_text(encoding='utf-8')) if stack_path.exists() else {'modules':[]}
+            index={row['url']:row for row in rows+stack['modules']}
+            rows=[]
+            for ref in profile.get('modules',[]):
+                if not ref.get('enabled',True):continue
+                if ref['url'] not in index:raise ValueError('Unknown active profile module: '+ref['url'])
+                rows.append({**index[ref['url']],'enabled':True})
+        for row in rows:
             if not row.get('enabled', True): continue
             obj = load_defaults((self.root/row['repository_path']).read_text(encoding='utf-8'))
             self.active.append((row['name'], obj))

@@ -1,0 +1,55 @@
+name: 摩托范
+description: 移除开屏广告、弹窗广告、横幅广告、文末广告及相关文章推荐、广告下发，移除我的页面商品推荐，精简搜索页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MotorFans.png
+map_locals:
+- match: (?i)^https:\/\/api\.58moto\.com\/advert\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.58moto\.com\/mall\/goods\/self\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.58moto\.com\/mall\/goods\/self\/homeList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22025
+  status_code: 200
+  body: '{"code":0,"msg":"success"}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22038
+  status_code: 200
+  body: '{"code":0,"msg":"success"}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/labelController\.do\?action=20112
+  status_code: 200
+  body: '{"code":0,"msg":"success"}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: 修改配置
+    match: (?i)^https:\/\/api\.58moto\.com\/expands\/config\/appWholeConfig\?key=app_whole_config$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f464b6e3853433ae5fb5667c9b17b0333cffdc0c24014b7607fde6d39823f16d.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.58moto.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22004
+    filter: (delpaths([["data", "link"]]))

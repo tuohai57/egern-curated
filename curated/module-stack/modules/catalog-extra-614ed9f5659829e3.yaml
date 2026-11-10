@@ -1,0 +1,12 @@
+name: 小爱音箱
+description: 去开屏 去 banner
+mitm:
+  hostnames:
+  - info.mina.xiaoaisound.com
+map_locals:
+- match: ^https?:\/\/info\.mina\.xiaoaisound\.com\/(advertise|payGuide)\/
+  status_code: 200
+  body: '{"code":0,"message":"Success","data":[]}'
+  headers:
+    Content-Type: application/json
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

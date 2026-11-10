@@ -1,0 +1,43 @@
+name: FlyerTea
+description: 移除开屏广告、首页广告、板块广告、帖内广告和我的页面广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FlyerTea.png
+map_locals:
+- match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=advis
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_request:
+    name: FlyerTea / 透明图片
+    match: (?i)^https:\/\/ptf\.flyertrip\.com\/static\/img\/common\/ic_plate_mine_button\.png
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_response:
+    name: 移除板块广告
+    match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/096bf18999cb7071083a09b8a054087fb91a9872753ed5b64cafb151c0eee087.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除签到弹窗广告
+    match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/096bf18999cb7071083a09b8a054087fb91a9872753ed5b64cafb151c0eee087.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - www.flyert.com.cn
+  - ptf.flyertrip.com

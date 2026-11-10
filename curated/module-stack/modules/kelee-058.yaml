@@ -1,0 +1,34 @@
+name: YueDanBa
+description: 移除开屏广告、横幅广告、商品推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YueDanBa.png
+map_locals:
+- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/base\/app\/ad\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/growth\/popup\/remind$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/recommend\/feed\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/homepage\/feed\/similarList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.17gwx.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.17gwx\.com\/operate\/elements\?
+    filter: (.data |= with_entries(select(.key | test("home_mid_many|home_mid_banner_multi|user_center_slide_show_pic|newfeed_detail_oper_middle|main_rebate_banner|zhekou_coupon_detail_oper|zhekou_jdcoupon_detail_oper|zhekou_vipcoupon_detail_oper|zhekou_pddcoupon_detail_oper")
+      | not)))

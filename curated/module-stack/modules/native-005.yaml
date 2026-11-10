@@ -25,6 +25,25 @@ rules:
 - domain:
     match: sugar.zhihu.com
     policy: REJECT
+- domain:
+    match: zxid-m.mobileservice.cn
+    policy: REJECT
+- ip_cidr:
+    match: 103.41.167.237/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 118.89.204.198/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 182.61.194.7/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
+    policy: REJECT
+    no_resolve: true
 - url_regex:
     match: (?i)^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card
     policy: REJECT
@@ -37,11 +56,6 @@ url_rewrites:
   status_code: 302
 body_rewrites:
 - response_jq:
-    match: ^https?://api\.zhihu\.com/questions/123/feeds(?:[?#]|$)
-    filter: (del(.ad_info)) | (del(.ad_info, .data.ad_info?, .query_info) | if (.data
-      | type) == "array" then .data |= map(select(.target?.answer_type? // "" | tostring
-      | contains("paid") | not)) else . end)
-- response_jq:
     match: (?i)^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/zhihu\/config\/all\?
     filter: 'def drop_keys: {"km_httpdns_new_config_tars":true,"preFetchHttpDns":true,"httpdns_detector_use_concurrent":true,"httpdns_use_memory_cache":true,"httpdns_new_config_tars":true,"coreNetworkConf_useTars":true,"km_coreNetworkConf_useTars":true,"sugarQuicConfig":true,"quic_dns_detect_enable":true,"quicMixAB":true,"quic_downgrade_enable":true,"quic_priority_strategy":true,"quic_check_health_enable":true,"tquic_configuration":true,"networkExprimentList":true,"tars_ab_list":true,"zaSetExtraRequestHeader":true};
       .data.configs |= map(select((drop_keys[.configKey] // false) | not) | if (.configValue
@@ -53,15 +67,30 @@ body_rewrites:
       or .tab_type == "hot" or .tab_type == "ring_tab"))
 - response_jq:
     match: (?i)^https:\/\/api\.zhihu\.com\/topstory\/recommend\?
-    filter: (.data |= map(select(.type == "ComponentCard"))) | (.data[]?.children
-      |= (if type == "array" then map(select(.id != "ring")) else . end))
+    filter: '(
+
+      .data |= map(select(.type == "ComponentCard"))
+
+      ) | (
+
+      .data[]?.children |= (if type == "array" then map(select(.id != "ring")) else
+      . end)
+
+      )'
 - response_jq:
-    match: (?i)^(?!https?://api\.zhihu\.com/questions/123/feeds(?:[?#]|$))(?:^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?)
+    match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?
     filter: del(.ad_info)
 - response_jq:
     match: (?i)^https:\/\/(api|page-info)(?:\.zhihu)?\.com\/answers\/v\d\/\d+(?:\?.*)?$
-    filter: (del(.third_business, .float_search_word)) | (.structured_content.segments
-      |= map(select(.type != "card")))
+    filter: '(
+
+      del(.third_business, .float_search_word)
+
+      ) | (
+
+      .structured_content.segments |= map(select(.type != "card"))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/api\.zhihu\.com\/(articles|answers|pins)\/v\d\/\d+\?
     filter: del(.third_business, .ring_info, .interaction_bar_plugins)
@@ -85,7 +114,7 @@ body_rewrites:
     match: (?i)^https:\/\/api\.zhihu\.com\/comment_v5\/(answers|pins)\/\d+\/root_comment\?
     filter: del(.atmosphere_voting_config)
 - response_jq:
-    match: (?i)^(?!https?://api\.zhihu\.com/questions/123/feeds(?:[?#]|$))(?:^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=))
+    match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
     filter: del(.ad_info, .data.ad_info?, .query_info) | if (.data | type) == "array"
       then .data |= map(select(.target?.answer_type? // "" | tostring | contains("paid")
       | not)) else . end
@@ -133,7 +162,7 @@ map_locals:
 - match: (?i)^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card\/v\d\?
   status_code: 200
   body: '{}'
-- match: (?i)^(?!^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)(?:^https:\/\/api\.zhihu\.com\/commercial_api\/)
+- match: (?i)^https:\/\/api\.zhihu\.com\/commercial_api\/
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings

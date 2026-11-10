@@ -1,0 +1,129 @@
+name: 猫耳FM
+description: 移除开屏广告、青少年模式弹窗、首页顶部入口，替换底栏的直播入口为发现入口。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CatEarFM.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/site\/launch\?
+    filter: '(
+
+      delpaths([["info","splash"]])
+
+      ) | (
+
+      delpaths([["info","splash_ready"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/site\/config$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["info","tab_bar_live"]])
+
+      ) | (
+
+      delpaths([["0"]])
+
+      )
+
+      ) | (
+
+      delpaths([["info","enable_tab_bar_live_notice"]])
+
+      )
+
+      ) | (
+
+      delpaths([["false"]])
+
+      )
+
+      ) | (
+
+      delpaths([["info","teenager_popup_mode"]])
+
+      )
+
+      ) | (
+
+      delpaths([["0"]])
+
+      )
+
+      ) | (
+
+      delpaths([["info","httpdns"]])
+
+      )
+
+      ) | (
+
+      delpaths([["info","homepage_top_task_button"]])
+
+      )
+
+      ) | (
+
+      .info.cronet |= (fromjson | .quic=false | tojson)
+
+      )'
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/site\/tabs\?
+    filter: .info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"]
+      | index($t) != null))
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/site\/icons\?
+    filter: .info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or
+      $t == "免费榜" or $t == "夜猫子" or $t == "启动音"))
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/discovery\/list$
+    filter: .info |= map(map(select(.title != "免流服务")))
+- response_jq:
+    match: ^https:\/\/app\.missevan\.com\/site\/get-top$
+    filter: delpaths([["info","search_words"]])
+map_locals:
+- match: ^https:\/\/data\.missevan\.com\/site\/ad-track$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/app\.missevan\.com\/x\/recommend\/get-popup$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - app.missevan.com
+  - data.missevan.com
+  - fm.missevan.com

@@ -1,0 +1,33 @@
+name: 网易有道词典
+description: 移除开屏广告、弹窗广告、右上角推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoDict.png
+map_locals:
+- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/activity\/startup\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/activity\/retention\/configs\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/activity\/retention\/match\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/user\/paid\/guide\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - dict.youdao.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\/
+    filter: (delpaths([["data", "vipTag"]]))

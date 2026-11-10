@@ -1,0 +1,35 @@
+name: 收银通商户端
+description: 移除开屏广告和首页推广
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShouYinTongMerchant.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https:\/\/syt\.leshuazf\.com\/merchant\/merchant\/showOpenScreenAd$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m\.fqfin\.cn\/cls\/leshuapay\/preCredit\.json$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/syt\.leshuazf\.com\/merchant\/messageCenter\/stationLetterList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/syt\.leshuazf\.com\/merchant\/merchant\/getBannerConfig$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/syt\.leshuazf\.com\/merchant\/popup\/getPopupInfo$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - syt.leshuazf.com
+  - m.fqfin.cn

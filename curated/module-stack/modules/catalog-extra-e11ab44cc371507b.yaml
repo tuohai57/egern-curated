@@ -1,0 +1,60 @@
+name: 无他相机
+description: 移除开屏广告、拍摄页面广告、右小角广告，精简底栏。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WutaCamera.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["regular","splash"]])
+
+      ) | (
+
+      delpaths([["big_day"]])
+
+      )
+
+      ) | (
+
+      delpaths([["big_day_overrides"]])
+
+      )
+
+      ) | (
+
+      delpaths([["regular","home_bottom_right_entry_v2"]])
+
+      )
+
+      ) | (
+
+      delpaths([["regular","pic_upload_alert"]])
+
+      )
+
+      ) | (
+
+      delpaths([["regular","retouching_before_icon"]])
+
+      )
+
+      ) | (
+
+      .regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me"))))
+
+      )'
+mitm:
+  hostnames:
+  - api-release.wuta-cam.com

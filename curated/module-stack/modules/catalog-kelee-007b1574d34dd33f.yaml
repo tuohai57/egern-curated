@@ -1,0 +1,77 @@
+name: 网易新闻
+description: 移除开屏广告、置顶新闻、热搜列表和搜索栏填充词。
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NeteaseNews.png
+rules:
+- domain:
+    match: nex.163.com
+    policy: DIRECT
+- domain:
+    match: gw.m.163.com
+    policy: DIRECT
+map_locals:
+- match: (?i)^https?:\/\/interface\.music\.163\.com\/eapi\/ad
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/c\.m\.163\.com\/nc\/gl\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/g1\.163\.com\/madfeedback
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/interface\.music\.163\.com\/eapi\/ad\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https?:\/\/interface3?\.music\.163\.com\/eapi\/(ad|abtest|sp|hot|store|search\/(specialkeyword|defaultkeyword|hot))
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除网易新闻广告
+    match: (?i)^https:\/\/nex\.163\.com\/q
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9f03b3b39c8b6d576b1ac18cd098ef5fd08c17fb2be9044f94344ea3a3ff4b8b.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除网易新闻广告
+    match: (?i)^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/feed\/dynamic\/headline-list\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9f03b3b39c8b6d576b1ac18cd098ef5fd08c17fb2be9044f94344ea3a3ff4b8b.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除网易新闻广告
+    match: (?i)^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/search\/hot-word
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9f03b3b39c8b6d576b1ac18cd098ef5fd08c17fb2be9044f94344ea3a3ff4b8b.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - nex.163.com
+  - interface.music.163.com
+  - c.m.163.com
+  - client.mail.163.com
+  - g1.163.com
+  - support.you.163.com
+  - interface3?.music.163.com
+  - gw.m.163.com

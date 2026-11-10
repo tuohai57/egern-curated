@@ -1,0 +1,24 @@
+name: 小米音箱
+description: 移除开屏广告、应用内横幅广告及弹窗广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/(home|cache)\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/tabPage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - marketing-aibox.v.mitvos.com

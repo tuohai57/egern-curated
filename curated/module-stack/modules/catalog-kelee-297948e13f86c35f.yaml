@@ -1,0 +1,56 @@
+name: 朴朴超市
+description: 移除超市去开屏广告，移除首页顶部轮播图和图标广告、启动小弹图广告、首页右下角悬浮动画、搜索热搜榜、搜索建议词、搜索发现热词、订单页面商，精简我的页面。
+author: kelv1n1n[https://github.com/kelv1n1n], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PuPuMall.png
+map_locals:
+- match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/account\/discount\/order
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7\?position_types=100
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/search_component_banner
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/search\/hot_keywords\/v3
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/app_resource\/resource_preload\/list_h5_resource
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/recommendation\/interests\/products
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除朴朴超市广告
+    match: (?i)^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76659d365b0da3eef1ef54cde44254f9d951799138af52a3edeea2e29a43f83f.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - j1.pupuapi.com

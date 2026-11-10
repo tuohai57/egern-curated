@@ -1,0 +1,60 @@
+name: 薄荷健康
+description: 移除记录页大家都在看、移除各类弹窗，移除广场横幅推广，精简代谢中心页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BooHee.png
+map_locals:
+- match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/status\.boohee\.com\/api\/v1\/merged_messages$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除广场推荐页面横幅
+    match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza-flow\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8b044d530e905fd358dbe155ec75aa8ee460450bed5bf8634556716d544ff388.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.boohee.com
+  - bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn
+  - lego.boohee.com
+  - status.boohee.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?
+    filter: (delpaths([["data", "recom_cards"], ["data", "recom_btns"]]))
+- response_jq:
+    match: (?i)^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\?
+    filter: (delpaths([["data", "tabs", 1, "badge"], ["data", "recommend_ads"]]))
+- response_jq:
+    match: (?i)^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$
+    filter: (delpaths([["top_banner"], ["diagnos_config"], ["partner_hospital"], ["question_answer"],
+      ["product"], ["brand_story"]]))

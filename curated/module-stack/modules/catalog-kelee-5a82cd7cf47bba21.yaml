@@ -1,0 +1,63 @@
+name: 车来了
+description: 清洗配置，移除开屏广告、首页金刚位、文章推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Chelaile.png
+rules:
+- domain:
+    match: ad.chelaile.net.cn
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/goocity\/flowPos\/home\?
+  status_code: 200
+  body: '**YGKJ{"jsonr":{"status":"00","data":{"advertList":[{"id":106,"title":"站点地图","iconUrl":"https://image3.chelaile.net.cn/89iIqxaM.png","linkUrl":"","adType":5,"showRedDot":0,"updateTime":0,"appId":"","appPath":"","bubbleOrder":0,"h5Type":0},{"id":1,"title":"地铁","iconUrl":"https://image3.chelaile.net.cn/rewrLCWY.png","linkUrl":"https://web.chelaile.net.cn/metro/index.html?h5_stats_referer=icon","adType":2,"showRedDot":0,"updateTime":0,"appId":"","appPath":"","bubbleOrder":0,"h5Type":0}]}}}YGKJ##'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/goocity\/flowPos\/listByPos\?
+  status_code: 200
+  body: '**YGKJ{}YGKJ##'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/web\.chelaile\.net\.cn\/api\/operative_position\/infoflow\/getInfo\?
+  status_code: 200
+  body: '**YGKJ{}YGKJ##'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/led-weather\/v\d\/condition_brief\?
+  status_code: 200
+  body: '**YGKJ{}YGKJ##'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/goocity\/config\/notices\?
+  status_code: 200
+  body: '**YGKJ{}YGKJ##'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/encourage\/activity\/control\?
+  status_code: 200
+  body: '**YGKJ{}YGKJ##'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_request:
+    name: 车来了 / 透明图片
+    match: (?i)^https:\/\/image3\.chelaile\.net\.cn\/hw6u6LYY\.png$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_response:
+    name: 清洗配置
+    match: (?i)^https:\/\/api\.chelaile\.net\.cn\/bus-side\/appToggle\/getStatus\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/80b889b0fd9f45da4b3327d57bb9ad1809958c68478d1bdc4cc5a62ef9e69919.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.chelaile.net.cn
+  - web.chelaile.net.cn
+  - cdn.web.chelaile.net.cn
+  - image3.chelaile.net.cn

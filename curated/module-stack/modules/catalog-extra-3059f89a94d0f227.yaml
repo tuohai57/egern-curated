@@ -1,0 +1,192 @@
+name: 知乎
+description: 移除各部分广告，移除知乎安全中心跳转，建议卸载知乎重新安装。如遇安全中心页面移除失败的，请积极反馈。
+author: RuCu6[https://github.com/RuCu6], blackmatrix7[https://github.com/blackmatrix7]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: appcloud.zhihu.com
+    policy: REJECT
+- domain:
+    match: appcloud2.in.zhihu.com
+    policy: REJECT
+- domain:
+    match: crash2.zhihu.com
+    policy: REJECT
+- domain:
+    match: mqtt.zhihu.com
+    policy: REJECT
+- domain:
+    match: sugar.zhihu.com
+    policy: REJECT
+- domain:
+    match: zxid-m.mobileservice.cn
+    policy: REJECT
+- ip_cidr:
+    match: 103.41.167.237/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 118.89.204.198/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 182.61.194.7/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/www\.zhihu\.com\/appview\/v3\/zhmore
+    policy: REJECT
+url_rewrites:
+- match: ^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*)
+  location: http://$1
+  status_code: 302
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?
+    filter: '(
+
+      (
+
+      delpaths([["activity_banner"]])
+
+      ) | (
+
+      delpaths([["activity_window"]])
+
+      )
+
+      ) | (
+
+      delpaths([["vip_tip"]])
+
+      )'
+- response_regex:
+    match: ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?
+    find: '"recommend_queries":\{.+\}'
+    replace: '"recommend_queries":{}'
+- response_jq:
+    match: ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
+    filter: .
+    disabled: true
+map_locals:
+- match: ^https:\/\/api\.zhihu\.com\/commercial_api\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/root\/window
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/me\/guides
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/people\/homepage_entry_v2
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4\/search\/clicked_recommendation\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(?:article|answer)\/\d+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/ad-style-service\/request
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4/(?:answers|questions)\/\d+/related-readings
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - '*.zhihu.com'

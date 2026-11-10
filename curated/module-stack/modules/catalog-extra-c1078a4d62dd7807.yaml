@@ -1,0 +1,24 @@
+name: Roborock
+description: 移除横幅、活动推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Roborock.png
+homepage: https://hub.kelee.one
+rules:
+- url_regex:
+    match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/app\/theme\/device\/icon\?
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - cniot.roborock.com
+  - api.roborock.com

@@ -961,7 +961,7 @@ rules:
     policy: 国内长尾
 - domain:
     match: aweme.snssdk.com
-    policy: 漏网域名
+    policy: 抖音
 - domain:
     match: baike-api.smzdm.com
     policy: 漏网域名
@@ -1535,3 +1535,54 @@ rules:
 - domain:
     match: zhiyou.m.smzdm.com
     policy: 漏网域名
+- domain:
+    match: sns.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: appmsg.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: umehome.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: opactivity.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: activity.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: umerp.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: flightstatus.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: umeflightstatus.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: startup.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: umestartup.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: user.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: umeuser.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: event.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: oss.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: amap-aos-info.amap.com
+    policy: 高德地图
+- domain:
+    match: api5-normal-lq.dcarapi.com
+    policy: 懂车帝
+- domain:
+    match: info.amap.com
+    policy: 高德地图

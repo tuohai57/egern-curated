@@ -1,0 +1,14 @@
+name: 大众评球
+description: 使用前需要卸载重装软件 by sliverkiss
+map_locals:
+- match: ^https:\/\/api\.wxcjgg\.cn\/ad\/map
+  status_code: 200
+  body: '{}'
+- match: ^http:\/\/api-tx\.dsocial\.xyz\/api\/v2\/ad_config
+  status_code: 200
+  body: '{}'
+mitm:
+  hostnames:
+  - api.wxcjgg.cn
+  - api-tx.dsocial.xyz
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

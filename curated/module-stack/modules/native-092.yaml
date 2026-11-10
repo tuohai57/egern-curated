@@ -2,9 +2,15 @@ name: 墨鱼去开屏2.0
 description: 去除开屏广告，部分APP要清除缓存或者重新安装拦截广告才会生效!
 author: ddgksf2013[https://github.com/ddgksf2013]
 homepage: https://loonlab.103516.xyz/Plugin/
-icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/AdReject.png
+icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
 tag: 去广告
 rules:
+- domain_suffix:
+    match: shenshiads.com
+    policy: REJECT
+- domain_suffix:
+    match: yfanads.com
+    policy: REJECT
 - domain_suffix:
     match: msmp.abchina.com.cn
     policy: REJECT
@@ -138,7 +144,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^(?!^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$)(?:^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList)
+    match: (?i)^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4723bc2236835eea0a8b79529c832a9af1cfd37fa1b160becb3a4b51f9067cd5.js
     body_required: true
 - http_response:
@@ -157,7 +163,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7cd5425ff0dcdd24d0fd42a4ca4a21b30c5d6edcd8052b3b7ca95c4722fcb500.js
     body_required: true
     binary_body: true
-    max_size: 8388608
+    max_size: 16777216
 - http_response:
     name: 墨鱼去开屏2.0-响应
     match: (?i)^https?:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/audit\/home\/getCommonMixData
@@ -230,7 +236,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^(?!^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?)(?:^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList))
+    match: (?i)^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
     body_required: true
 - http_response:
@@ -240,7 +246,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^(?!^https:\/\/open-cms-api\.quark\.cn\/open-cms\?)(?:^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms)
+    match: (?i)^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a80632f4308d8971f2ee1b42cb1b2c3b72c90ec5619ed33849fcc0fcbf0f1bcc.js
     body_required: true
 - http_response:
@@ -289,7 +295,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2e6850e888d092905c766f0bbedc4b4afb9a712330970cc1265105d7fb4995d0.js
     body_required: true
     binary_body: true
-    max_size: 8388608
+    max_size: 16777216
 - http_response:
     name: 墨鱼去开屏2.0-响应
     match: (?i)^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryInfoFlow
@@ -847,7 +853,7 @@ map_locals:
 - match: (?i)^https?:\/\/sso.ifanr.com\/jiong\/IOS\/appso\/splash\/
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/)
+- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup
@@ -869,6 +875,9 @@ map_locals:
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad
+  status_code: 200
+  body: ''
+- match: (?i)^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad
@@ -976,6 +985,9 @@ map_locals:
 - match: (?i)^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
   status_code: 200
   body: ''
+- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/
+  status_code: 200
+  body: ''
 - match: (?i)^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php
   status_code: 200
   body: '{}'
@@ -1045,7 +1057,7 @@ map_locals:
 - match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4)(?:^https?:\/\/fuss10.elemecdn.com\/.+.mp4)
+- match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+.mp4
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/www1.elecfans.com\/www\/delivery\/
@@ -1360,7 +1372,7 @@ map_locals:
 - match: (?i)^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$
   status_code: 200
   body: ''
-- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
+- match: (?i)^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg
@@ -1369,7 +1381,7 @@ map_locals:
 - match: (?i)^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp
   status_code: 200
   body: ''
-- match: (?i)^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg))
+- match: (?i)^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture)
@@ -1438,7 +1450,7 @@ map_locals:
 - match: (?i)^https?:\/\/comicapi\.manhuashe\.com\/v\d\/(ads\/adstrategys|public\/startupactivity)
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
+- match: (?i)^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api\.merach\.com\/app\/AppAdvertisingController\/getAdvert
@@ -1459,7 +1471,7 @@ map_locals:
 - match: (?i)^https?:\/\/aikanvod\.miguvideo\.com\/video\/p\/i_adverseInterface\.jsp
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation)
+- match: (?i)^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api\.bevol\.com\/appmain\/app\/home\/launch
@@ -1681,7 +1693,7 @@ map_locals:
 - match: (?i)^https?:\/\/td\.cgmcare\.cn\/api\/ad
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))(?:^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get)
+- match: (?i)^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/www\.zjyilin\.com\/hykweb\/\/index\/openImg
@@ -1777,7 +1789,7 @@ map_locals:
 - match: (?i)^https?:\/\/api.psy-1.com\/cosleep\/startup
   status_code: 200
   body: ''
-- match: (?i)^(?!^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif)(?:^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif)
+- match: (?i)^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif
   status_code: 200
   body: ''
 - match: (?i)^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare
@@ -1858,7 +1870,7 @@ map_locals:
 - match: (?i)^https?:\/\/siteapi\.zaixs\.com\/.*\/start_ad
   status_code: 200
   body: ''
-- match: (?i)^(?!^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2)(?:^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info)
+- match: (?i)^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/advertise\.zhiduodev\.com\/adv\/app\/getAdvSpaceInfo

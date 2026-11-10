@@ -1,0 +1,33 @@
+name: TeraBox
+description: 移除开屏广告、应用内悬浮窗、弹窗广告及横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TeraBox.png
+rules:
+- domain:
+    match: ymg-api.terabox.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/www\.terabox\.com\/adx\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/www\.terabox\.com\/api\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/www\.terabox\.com\/api\/page\/tips\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/www\.terabox\.com\/rest\/1\.0\/task\/common\/inttips\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - www.terabox.com

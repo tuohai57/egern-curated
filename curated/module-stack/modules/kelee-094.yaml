@@ -1,0 +1,58 @@
+name: Spotify_lyrics_translation.lpx
+description: 将Spotify的外语歌词翻译为简体中文，并提供双语翻译支持。
+author: VirgilClyne[https://github.com/VirgilClyne]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png
+scriptings:
+- http_response:
+    name: 跟踪响应·JSON
+    match: (?i)^https?:\/\/api\.spotify\.com\/v1\/tracks\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3de8776a9e1d37f64c6ae8e5f402e5ae797f8d2caac328e431f841297ac11eaa.js
+    body_required: true
+    update_interval: 86400
+- http_request:
+    name: 歌词请求·JSON
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/879d022f761667e7a35c71d059a351b8e7f75ecc7e4e4b359eee1fe51a6b7ce5.js
+    body_required: true
+    update_interval: 86400
+- http_request:
+    name: 歌词请求·Proto
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/879d022f761667e7a35c71d059a351b8e7f75ecc7e4e4b359eee1fe51a6b7ce5.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_response:
+    name: 翻译歌词响应·JSON
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=Translate
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8d93f76a8e58f6073e857f6e11750a9e5ebef9d7bc11fa12d18a2d95365841f9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 翻译歌词响应·Proto
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=Translate
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8d93f76a8e58f6073e857f6e11750a9e5ebef9d7bc11fa12d18a2d95365841f9.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_response:
+    name: 外部歌词响应·JSON
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=External
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cc152dab19706137b133465c8168b2f3903b76b23e815d35ea77cb8f91b081a3.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 外部歌词响应·Proto
+    match: (?i)^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=External
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cc152dab19706137b133465c8168b2f3903b76b23e815d35ea77cb8f91b081a3.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - api.spotify.com
+  - spclient.wg.spotify.com

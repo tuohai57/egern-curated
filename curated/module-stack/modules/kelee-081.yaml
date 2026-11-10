@@ -1,0 +1,14 @@
+name: DidaPincheTaxi
+description: 移除开屏广告、弹窗广告、横幅广告，精简底栏和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DidaPincheTaxi.png
+map_locals:
+- match: (?i)^https:\/\/capis\.didapinche\.com\/adbase\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - capis.didapinche.com

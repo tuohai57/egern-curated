@@ -1,0 +1,128 @@
+name: 盖得排行
+description: 精简首页、移除分类横幅推广、单单返猜你喜欢和编辑精选，移除我的页面推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GuideRank.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","countdownBanner"]])
+
+      ) | (
+
+      delpaths([["data","newEvaluations"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","freeToPayBannerPhotoUrl"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","groupBuyingList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","multiCountdownBanner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","banners"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","multiPlatformBanner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","specialSaleBannerPhotoUrl"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","guide90Evaluation"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","insurancePromotions"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getInitData\.do
+    filter: delpaths([["data","SpecialSalePageMidTabConfig"]])
+map_locals:
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/popUpAdCollection\/getActiveCollection\.do
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkCategoryPromotionInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/stockTaking\/pageStockTakingForHomePage
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/pageRecommendedItems
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/manualOperationGoods\/pageManualOperationGoods
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/listSpecialSalePageBanner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/personal\/getPersonPageInfo\.do
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - zone.guiderank-app.com

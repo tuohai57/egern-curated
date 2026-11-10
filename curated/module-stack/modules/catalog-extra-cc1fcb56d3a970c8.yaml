@@ -1,0 +1,111 @@
+name: 微博
+description: 过滤微博广告及去除各部分推广模块
+author: RuCu6[https://github.com/RuCu6], zmqcherish[https://github.com/zmqcherish]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png
+homepage: https://hub.kelee.one
+rules:
+- domain_suffix:
+    match: uve.weibo.com
+    policy: DIRECT
+- domain:
+    match: huodong.weibo.cn
+    policy: REJECT
+- domain_suffix:
+    match: biz.weibo.com
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily|push\/info)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/photo\/info\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_discover|finder_nav_polling)\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/!\/(?:search\/finder_nav_polling|sug\/list\/finderchange|was\/finder\/searchbarchange)\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - '*.weibo.cn'
+  - '*.weibo.com'
+  - weibo.com

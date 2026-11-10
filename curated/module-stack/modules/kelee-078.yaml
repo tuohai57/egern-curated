@@ -1,0 +1,38 @@
+name: TCLnScreen
+description: 移除开屏广告、横幅推广、搜索填充词，移除广告下发。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TCLnScreen.png
+map_locals:
+- match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/ads\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/v\d\/selection\/banner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/v\d\/searchrank$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/v\d\/selection\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/message\/v\d\/activity\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - tcast-o.api.leiniao.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/tcast-o\.api\.leiniao\.com\/tcast\/v\d\/config\/function\?
+    filter: (.data |= map(select(.module == "tools")))

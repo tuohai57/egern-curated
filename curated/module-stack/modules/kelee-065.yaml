@@ -1,0 +1,33 @@
+name: QuickSearch.lpx
+description: 为Safari提供快速切换搜索引擎的能力，在插件列表中点击此插件上的链接查看使用方法。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+url_rewrites:
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=bd\+([^&]+).+
+  location: https://www.baidu.com/s?wd=$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=bdimg\+([^&]+).+
+  location: https://image.baidu.com/search/index?tn=baiduimage&word=$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=gimg\+([^&]+).+
+  location: https://www.google.com/search?&tbm=isch&q=$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=b\+([^&]+).+
+  location: https://www.bing.com/search?q=$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=wk\+([^&]+).+
+  location: https://zh.wikipedia.org/wiki/$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=qm\+([^&]+).+
+  location: https://www.qimai.cn/search/index/country/cn/search/$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=gh\+([^&]+).+
+  location: https://github.com/search?q=$1
+  status_code: 307
+- match: (?i)^https:\/\/duckduckgo\.com\/\?q=(?!(?:bd|bdimg|gimg|b|wk|qm|gh)\+)([^&]+).+
+  location: https://www.google.com/search?q=$1
+  status_code: 307
+mitm:
+  hostnames:
+  - duckduckgo.com

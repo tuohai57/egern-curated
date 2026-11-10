@@ -1,0 +1,98 @@
+name: 波点音乐
+description: 精简应用配置，禁用P2P传输。移除开屏广告、横幅推广、悬浮广告、歌曲广告、商城入口、搜索推广、评论区推广、试听语音提醒。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BodianMusic.png
+map_locals:
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/(play|service|advert)\/advert\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/ucenter\/vip\/give\/config\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/home\/module\?.*&moduleId=6
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/lowPriceText\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/vipEnter\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/popup\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/invitation\/swell\/popup\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/version\/popup\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/invitation\/assist\/popup\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/pay\/h5\/common\/popup\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - bd-api.kuwo.cn
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\?
+    filter: (delpaths([["data", "groupSign", "adStartAppDialog"], ["data", "groupSign",
+      "adGuideTest"], ["data", "groupSign", "playTips"], ["data", "groupSign", "adExitChange"],
+      ["data", "conf", "adGuidePopCount"], ["data", "conf", "adDownListOpen"]])) |
+      (setpath(["data", "conf", "flowControlConfig", "uploadEnable"]; false) | setpath(["data",
+      "conf", "flowControlConfig", "p2pEnable"]; false))
+- response_jq:
+    match: (?i)^https:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\?
+    filter: (delpaths([["data", "mapTestInfo", "CommentADPosition"], ["data", "mapTestInfo",
+      "DiscoverADPosition"], ["data", "mapTestInfo", "DownloadAd"], ["data", "mapTestInfo",
+      "FreeModVoiceReminder"], ["data", "mapTestInfo", "GamesTrans"], ["data", "mapTestInfo",
+      "bodianmvdialog"], ["data", "mapTestInfo", "MvTryShowAds"], ["data", "mapTestInfo",
+      "insert"]]))
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\?
+    filter: (delpaths([["data", "iosP2PCacheEnable"], ["data", "warmStartDialog"],
+      ["data", "adsNotFinishVipPop4DayInterval"]])) | (setpath(["data", "showShopEntry"];
+      false) | setpath(["data", "iosP2pEnableSendDataLimit"]; 1))
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\?
+    filter: (delpaths([["data", "hotTopic"], ["data", "searchFind"], ["data", "globalJumpInfo"],
+      ["data", "hotWord"]]))
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/home\/index\?
+    filter: (.data.moduleList |= map(select(.type | tostring | (. != "8" and . !=
+      "1"))))
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/service\/music\/recommendList\?
+    filter: (.data.musicList[] |= del(.showAd))
+- response_jq:
+    match: (?i)^https:\/\/bd-api\.kuwo\.cn\/api\/comments\/v3\/topInfo\?
+    filter: (delpaths([["data", "putao"], ["data", "bannerVos"]]))

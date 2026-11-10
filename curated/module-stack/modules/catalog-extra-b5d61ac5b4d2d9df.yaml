@@ -1,0 +1,11 @@
+name: 催眠大师
+description: 去开屏
+mitm:
+  hostnames:
+  - cmds.omesoft.com
+body_rewrites:
+- response_regex:
+    match: ^https?:\/\/cmds\.omesoft\.com\/HypnotistWS\.asmx
+    find: <GetADResult>.*?</GetADResult>
+    replace: <GetADResult>{"ret":0,"msg":"正常","err_code":0,"data":{"ad":[]}}</GetADResult>
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

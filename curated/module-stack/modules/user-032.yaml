@@ -3,7 +3,7 @@ scriptings:
 - http_response:
     name: RevenueCat / 1
     match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/64a16c01e5042050404cb7d688299b2bc7f776e0da0378e11655676763031166.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a875fdd4cb62be0217c318a21bd9b35974cf60a95930fb923dfacaad9f722db.js
     body_required: true
     update_interval: 86400
 - http_request:

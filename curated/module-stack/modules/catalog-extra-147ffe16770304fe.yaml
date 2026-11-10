@@ -1,0 +1,20 @@
+name: 推栏
+description: 过滤推栏广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Daily.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping$
+    filter: '(
+
+      delpaths([["data","splashConf"]])
+
+      ) | (
+
+      delpaths([["data","splashConfNew"]])
+
+      )'
+mitm:
+  hostnames:
+  - m.pvp.xoyo.com

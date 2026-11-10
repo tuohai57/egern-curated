@@ -3,7 +3,7 @@ name: 广告拦截合集
 description: 针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！
 author: fmz200[https://github.com/fmz200], zirawell[https://github.com/zirawell]
 homepage: https://loonlab.103516.xyz/Plugin/
-icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/ShieldReject.png
+icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
 tag: 去广告
 compat_arguments:
   555dy_script: 'true'

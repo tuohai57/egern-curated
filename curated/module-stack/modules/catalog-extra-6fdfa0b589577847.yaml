@@ -1,0 +1,23 @@
+name: 云闪付
+description: 过滤银联云闪付广告，需要IPA签名注入方可使用，仅支持云闪付10.1.2版。App Store用户请勿使用此插件，务必点击下方主页链接查看详细教程。
+author: RuCu6[https://github.com/RuCu6]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/UnionPay.png
+homepage: https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c
+rules:
+- domain:
+    match: ads.95516.com
+    policy: REJECT
+- domain:
+    match: switch.cup.com.cn
+    policy: REJECT
+- domain:
+    match: tysdk.95516.com
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1
+    policy: REJECT
+mitm:
+  hostnames:
+  - account.95516.com
+  - base.95516.com
+  - content.95516.com

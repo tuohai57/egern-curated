@@ -1,0 +1,27 @@
+name: 美柚
+description: 移除开屏广告、弹窗推广和信息流推广，移除青少年模式弹窗和我的页面推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeetYou.png
+rules:
+- domain:
+    match: ad.seeyouyima.com
+    policy: REJECT
+- domain:
+    match: axxd.xmseeyouyima.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/circle\.(xm)?seeyouyima\.com\/v\d\/article_recommend\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - circle.seeyouyima.com
+  - circle.xmseeyouyima.com
+  - common.seeyouyima.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/common\.seeyouyima\.com\/v2\/conf_list$
+    filter: (delpaths([["data", "confList", "Minor_mode_card"]]))

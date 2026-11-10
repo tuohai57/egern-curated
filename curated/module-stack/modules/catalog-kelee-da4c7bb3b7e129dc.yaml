@@ -1,0 +1,35 @@
+name: YY语音
+description: 移除开屏广告、应用内弹窗、任务推广、频道横幅推广，精简广场顶部标签。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YYVoiceTool.png
+map_locals:
+- match: (?i)^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/flashscreen\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/homepage\/banner\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/web\.yy\.com\/yyvoice_task_sys\/bar\.html\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/yuyin-api\.baizhanlive\.com\/search\/search\/hotword\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - yuyin-api.baizhanlive.com
+  - web.yy.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/yuyin-api\.baizhanlive\.com\/postsquare\/college\/page\/tabsV3\?
+    filter: (.data.tabList |= map(select(.code == "post" or .code == "teamup" or .code
+      == "college" or .code == "aiSecretRoom")))

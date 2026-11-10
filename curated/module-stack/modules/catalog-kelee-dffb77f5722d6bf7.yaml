@@ -1,0 +1,141 @@
+name: 全民K歌
+description: 移除开屏广告、歌房页面弹窗广告、消息页广告和我的页面广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QQKSong.png
+rules:
+- domain:
+    match: adsmind.gdtimg.com
+    policy: REJECT
+- domain:
+    match: adsmind.ugdtimg.com
+    policy: REJECT
+- domain:
+    match: c2.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: huatuocode.huatuo.qq.com
+    policy: REJECT
+- domain:
+    match: info4.video.qq.com
+    policy: REJECT
+- domain:
+    match: info6.video.qq.com
+    policy: REJECT
+- domain:
+    match: ios.bugly.qq.com
+    policy: REJECT
+- domain:
+    match: ios.video.mpush.qq.com
+    policy: REJECT
+- domain:
+    match: mi.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: otheve.beacon.qq.com
+    policy: REJECT
+- domain:
+    match: pgdt.gtimg.cn
+    policy: REJECT
+- domain:
+    match: pgdt.ugdtimg.com
+    policy: REJECT
+- domain:
+    match: qzs.gdtimg.com
+    policy: REJECT
+- domain:
+    match: qzs.qq.com
+    policy: REJECT
+- domain:
+    match: rmonitor.qq.com
+    policy: REJECT
+- domain:
+    match: sdk.e.qq.com
+    policy: REJECT
+- domain:
+    match: sdkconfig.video.qq.com
+    policy: REJECT
+- domain:
+    match: t.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: tmead.y.qq.com
+    policy: REJECT
+- domain:
+    match: tmeadbak.y.qq.com
+    policy: REJECT
+- domain:
+    match: tmeadcomm.y.qq.com
+    policy: REJECT
+- domain:
+    match: tpns.qq.com
+    policy: REJECT
+- domain:
+    match: v.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: v2.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: win.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: wup.imtt.qq.com
+    policy: REJECT
+- domain:
+    match: tpstelemetry.tencent.com
+    policy: REJECT
+- domain_keyword:
+    match: trace.qq.com
+    policy: REJECT
+- domain_keyword:
+    match: trace.video.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: gdt.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: l.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: ugdtimg.com
+    policy: REJECT
+- ip_cidr:
+    match: 47.110.187.87/32
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^http:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_k_main_page_banner\/
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/wallpaper-\d+\.file\.myqcloud\.com\/dsl\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/wallpaper-\d+\.file\.myqcloud\.com\/hikari\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/amsweb-cdn-\S+-\d+\.file\.myqcloud\.com\/video\/ad_profile\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tmeadkg\.y\.qq\.com\/maproxy\/getAd$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/wnsaviator\.kg\.qq\.com\/wnsaviator\/api\/v1\/transMerge\?_webcgikey=get_activity_entry$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - wallpaper-1258344696.file.myqcloud.com
+  - amsweb-cdn-*-1258344696.file.myqcloud.com
+  - wnsaviator.kg.qq.com
+  - tmeadkg.y.qq.com

@@ -1,0 +1,23 @@
+name: 哔哩哔哩
+description: 开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告)
+mitm:
+  hostnames:
+  - app.bilibili.com
+  - grpc.biliapi.net
+scriptings:
+- http_response:
+    name: 哔哩哔哩 / 1
+    match: ^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/748ad16a92532bde2c439a8b9975f465381d20e24328cf2a58ff3a2a27328d84.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: 哔哩哔哩 / 2
+    match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png

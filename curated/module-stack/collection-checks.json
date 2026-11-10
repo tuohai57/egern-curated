@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "aggregate_sha256": "e7e924782e52e56255e57b1ae1147bfe45ba62aa638f07568c435bd5fab4c4ed",
+  "included_sources": 257,
+  "counts": {
+    "rules": 770,
+    "url_rewrites": 2,
+    "header_rewrites": 0,
+    "body_rewrites": 373,
+    "map_locals": 1151,
+    "scriptings": 232
+  },
+  "mitm_hosts": 744,
+  "unique_regexes": 1754,
+  "jq_compiled": 350,
+  "javascript_syntax_checked": 97,
+  "upstream_javascript_executed": false,
+  "runtime_verified": false,
+  "meaning": "Source integrity and syntax; arbitrary regex overlaps and actual iOS behavior are not proven."
+}

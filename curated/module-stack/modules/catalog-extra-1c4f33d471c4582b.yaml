@@ -1,0 +1,32 @@
+name: 书旗小说
+description: 移除书城横幅广告、听书广告、阅读广告、章末推荐、福利入口、悬浮窗、推荐搜索词，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShuQiCenterReader.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: render-web.11222.cn
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/ocean\.shuqireader\.com\/api\/render\/load\/resource
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/huichuan\.sm\.cn\/nativead
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - ocean.shuqireader.com
+  - huichuan.sm.cn

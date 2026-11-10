@@ -1,0 +1,27 @@
+name: SDGun 社区
+description: 去开屏, 轮播等
+mitm:
+  hostnames:
+  - mag1.sdgun.net
+map_locals:
+- match: ^https?:\/\/mag1\.sdgun\.net\/mag\/operative\/v1\/ad\/listNotEndByPlace
+  status_code: 200
+  body: '{"success":true,"code":100,"msg":null,"list":[]}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/mag1\.sdgun\.net\/mag\/operative\/v1\/Ad\/listNotEndByPlaceWap
+  status_code: 200
+  body: '{"success":true,"code":100,"data":{"themeTop":[],"wap_topic_content_ad":[],"themeBottom":[],"appThemeTopStyle":"1","userBehindAdStyle":"1","appThemeBottom":[],"cloud_ad_type":"","commentTop":[],"userBehindAd":[],"themeTopStyle":"1","appThemeTop":[],"appThemeBottomStyle":"1"},"msg":null}'
+  headers:
+    Content-Type: application/json
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/mag1\.sdgun\.net\/mag\/info\/v2\/channel\/infoListByCatId
+    filter: .list |= map(select(._type != "pic_ad"))
+- response_jq:
+    match: ^https?:\/\/mag1\.sdgun\.net\/mag\/circle\/v2\/forum\/forumViewV2
+    filter: .list |= map(select(.info_list_ad_style_type != 1))
+- response_jq:
+    match: ^https?:\/\/mag1\.sdgun\.net\/mag\/circle\/v4\/show\/showView
+    filter: del(.ads)
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

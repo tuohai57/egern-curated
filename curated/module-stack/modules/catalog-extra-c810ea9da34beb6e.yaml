@@ -1,0 +1,118 @@
+name: 快看漫画
+description: 移除开屏广告、悬浮窗、漫画广告、社区广告、各类弹窗，精简顶部标签、我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiKanComic.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: ad.v3mh.com
+    policy: REJECT
+- domain:
+    match: ipv6.kkmh.com
+    policy: REJECT
+- domain:
+    match: ipv4.kkmh.com
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?h5\.kuaikanmanhua\.com\/user\/scene\/api\/new_user\/sign_in\/list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/kb\/comic_page_banner\/detail
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/fake_push\/info
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?shop\.kkmh\.com\/mbff\/popup_administration\/page_management_popup_administration$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/h5\.kuaikanmanhua\.com\/v\d\/kb\/recharge_good\/list_h5
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/kb\/wallet
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/checkin\/api\/new_user\/tab_info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/h5\.kuaikanmanhua\.com\/game-h5\/new-user-welfare\/index\.html
+  status_code: 200
+  body: ' '
+- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/platform_base\/popups_display$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/checkin\/task_center\/get_by_task_type
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.kkmh.com
+  - cdn-api.kkmh.com
+  - social.kkmh.com
+  - cdn-social.kkmh.com
+  - h5.kuaikanmanhua.com
+  - cdn-h5.kuaikanmanhua.com
+  - pay.kkmh.com
+  - cdn-pay.kkmh.com
+  - shop.kkmh.com
+  - cdn-shop.kkmh.com
+  - topic.kkmh.com
+  - cdn-topic.kkmh.com

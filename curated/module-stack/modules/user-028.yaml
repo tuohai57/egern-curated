@@ -252,4 +252,4 @@ url_rewrites:
 - match: ^https:\/\/duckduckgo.com\/\?q=([^&]+).+
   location: https://www.google.com/search?q=$1
   status_code: 302
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Safari.png

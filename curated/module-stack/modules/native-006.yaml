@@ -26,6 +26,9 @@ rules:
     match: biz.weibo.com
     policy: REJECT
 - domain:
+    match: dns.weibo.cn
+    policy: REJECT
+- domain:
     match: huodong.weibo.cn
     policy: REJECT
 - domain:
@@ -133,6 +136,11 @@ scriptings:
 - http_response:
     name: 微博-响应
     match: (?i)^https:\/\/m?api\.weibo\.c(n|om)\/2\/groups\/allgroups\/v2\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0f1f3eba5b2c96f4f089525ad033b578b6a18a2fd99eb95409e5b0816f4a4b34.js
+    body_required: true
+- http_response:
+    name: 微博原脚本超话与热搜接口
+    match: (?i)^https?://m?api\.weibo\.c(?:n|om)/2/(?:statuses/container_timeline_topicpage|page)\?
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0f1f3eba5b2c96f4f089525ad033b578b6a18a2fd99eb95409e5b0816f4a4b34.js
     body_required: true
 mitm:

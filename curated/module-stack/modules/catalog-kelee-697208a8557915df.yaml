@@ -1,0 +1,13 @@
+name: 超级课程表
+description: 移除开屏广告、首页头图、悬浮挂件。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MyFriday.png
+rules:
+- domain:
+    match: ad.myfriday.cn
+    policy: REJECT
+- ip_cidr:
+    match: 182.92.244.70/32
+    policy: REJECT
+    no_resolve: true

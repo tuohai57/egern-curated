@@ -16,16 +16,42 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/app-api\.smzdm\.com\/util\/update$
-    filter: '((.data.silence_local_push = 0 | .data.baichuan_redirect_switch = 0)
-      | (del(.data.silence_local_push_msg, .data.video_cache_num_configs, .data.haojia_widget,
-      .data.widget, .data.operation_float))) | (def r: if type=="object" then if has("ad_campaign_name")
-      and (.ad_campaign_name|type=="string") and (.ad_campaign_name|test("\\S")) then
-      empty else . end elif type=="array" then map(r) else . end; .data.operation_float
-      |= map(map(r)))'
+    filter: '(
+
+      (
+
+      .data.silence_local_push = 0 | .data.baichuan_redirect_switch = 0
+
+      ) | (
+
+      del(.data.silence_local_push_msg, .data.video_cache_num_configs, .data.haojia_widget,
+      .data.widget, .data.operation_float)
+
+      )
+
+      ) | (
+
+      def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string")
+      and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array"
+      then map(r) else . end; .data.operation_float |= map(map(r))
+
+      )'
+- response_jq:
+    match: (?i)^https:\/\/homepage-api\.smzdm\.com\/v3\/home\?
+    filter: .
+    disabled: true
 - response_jq:
     match: (?i)^https:\/\/haojia-api\.smzdm\.com\/home\/list\?
-    filter: (del(.data.header_operation.theme)) | (.data.rows |= map(select(.cell_type
-      == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028")))
+    filter: '(
+
+      del(.data.header_operation.theme)
+
+      ) | (
+
+      .data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type
+      == "21028"))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\?
     filter: del(.data.super_coupon)
@@ -42,11 +68,18 @@ body_rewrites:
       map(select(has("ad") | not))
 - response_jq:
     match: (?i)^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\?
-    filter: (del(.data.search_faxian, .data.tonglan, .data.hongbao)) | (.data.hot_tab
-      |= (if type == "array" then map(select(.search_method != "热点主题榜")) else . end)
-      | if .data.hot_tab then .data.hot_tab |= map(if .search_method == "热搜榜搜索热榜"
-      and .rows then .rows |= map(select(.pos != null and ((.pos | tonumber) != null)))
-      else . end) else . end)
+    filter: '(
+
+      del(.data.search_faxian, .data.tonglan, .data.hongbao)
+
+      ) | (
+
+      .data.hot_tab |= (if type == "array" then map(select(.search_method != "热点主题榜"))
+      else . end) | if .data.hot_tab then .data.hot_tab |= map(if .search_method ==
+      "热搜榜搜索热榜" and .rows then .rows |= map(select(.pos != null and ((.pos | tonumber)
+      != null))) else . end) else . end
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/haojia-api\.smzdm\.com\/detail\/\d+\?
     filter: del(.data.quan_log)

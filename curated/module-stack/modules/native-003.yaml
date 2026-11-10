@@ -152,6 +152,9 @@ rules:
     match: adn-plus.com.cn
     policy: REJECT
 - domain_suffix:
+    match: beizi.biz
+    policy: REJECT
+- domain_suffix:
     match: adhub.com.cn
     policy: REJECT
 - domain_suffix:
@@ -266,6 +269,9 @@ rules:
     match: miniapp-ad.cdn.bcebos.com
     policy: REJECT
 - domain:
+    match: mobads-pre-config.cdn.bcebos.com
+    policy: REJECT
+- domain:
     match: hm.baidu.com
     policy: REJECT
 - domain:
@@ -348,6 +354,9 @@ rules:
     policy: REJECT
 - domain:
     match: tpstelemetry.tencent.com
+    policy: REJECT
+- domain:
+    match: otheve.beacon.qq.com
     policy: REJECT
 - domain:
     match: stat.y.qq.com
@@ -501,6 +510,9 @@ rules:
     match: wrating.com
     policy: REJECT
 - domain_suffix:
+    match: puata.info
+    policy: REJECT
+- domain_suffix:
     match: mobmore.com
     policy: REJECT
 - domain_suffix:
@@ -525,6 +537,9 @@ rules:
     match: umtrack0.com
     policy: REJECT
 - domain_suffix:
+    match: uyunad.com
+    policy: REJECT
+- domain_suffix:
     match: whalecloud.com
     policy: REJECT
 - domain_suffix:
@@ -534,10 +549,22 @@ rules:
     match: umengcloud.com
     policy: REJECT
 - domain_suffix:
+    match: umeng.com
+    policy: REJECT
+- domain_suffix:
+    match: umtrack.com
+    policy: REJECT
+- domain_suffix:
     match: um1.cn
     policy: REJECT
 - domain_suffix:
+    match: umsns.com
+    policy: REJECT
+- domain_suffix:
     match: adfunlink.com
+    policy: REJECT
+- domain_suffix:
+    match: tianmu.mobi
     policy: REJECT
 - domain_suffix:
     match: ubixioe.com
@@ -632,6 +659,9 @@ rules:
     policy: REJECT
 - domain:
     match: huichuan-mc.sm.cn
+    policy: REJECT
+- domain:
+    match: api.sm.cn
     policy: REJECT
 - domain:
     match: nex.163.com
@@ -736,7 +766,16 @@ rules:
     match: birdgesdk.com
     policy: REJECT
 - domain_suffix:
+    match: toponadss.com
+    policy: REJECT
+- domain_suffix:
+    match: bridgeoos.com
+    policy: REJECT
+- domain_suffix:
     match: anyrtb.com
+    policy: REJECT
+- domain_suffix:
+    match: anythinktech.com
     policy: REJECT
 - domain_suffix:
     match: combocn.com
@@ -819,6 +858,9 @@ rules:
 - domain_suffix:
     match: xinduoad.com
     policy: REJECT
+- domain_suffix:
+    match: kuaiyiad.com
+    policy: REJECT
 - domain:
     match: statis.miwuad.com
     policy: REJECT
@@ -827,6 +869,9 @@ rules:
     policy: REJECT
 - domain_suffix:
     match: richmob.cn
+    policy: REJECT
+- domain_suffix:
+    match: 66mobi.com
     policy: REJECT
 - domain:
     match: ad.shunchangzhixing.com
@@ -857,6 +902,9 @@ rules:
     policy: REJECT
 - domain_suffix:
     match: ranfenghd.com
+    policy: REJECT
+- domain_suffix:
+    match: miaozhen.com
     policy: REJECT
 - domain_suffix:
     match: qchannel01.cn

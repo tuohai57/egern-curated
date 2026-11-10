@@ -1,0 +1,34 @@
+name: 豆瓣阅读
+description: 移除开屏广告、弹窗广告、热门搜索、热搜榜。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DoubanRead.png
+map_locals:
+- match: (?i)^https:\/\/read\.douban\.com\/api\/v2\/ads\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/read\.douban\.com\/api\/v2\/popup$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_words$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_charts$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/read\.douban\.com\/api\/v2\/search\/rec_urls$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - read.douban.com

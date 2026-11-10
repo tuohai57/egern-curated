@@ -1,0 +1,15 @@
+name: YouTube
+description: 去首页瀑布流广告/播放页推荐列表广告(非贴片广告)
+mitm:
+  hostnames:
+  - youtubei.googleapis.com
+scriptings:
+- http_response:
+    name: YouTube / 1
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/366643a9bd121ed5d63003f1a5196e83c5b0ac5d427be63559f4770a32f52b39.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 2097152
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png

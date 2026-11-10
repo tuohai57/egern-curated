@@ -33,7 +33,7 @@ scriptings:
 - http_response:
     name: 百度贴吧 / 1
     match: ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b9e8931ce47c97e76d1473b915d75f5b3ad877f7439905ea2c5d10e03f33d8f2.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2d57bf8c12013d35369cc406e9191dfafa9bb24aae2284d43b8ee2dc9bf69924.js
     body_required: true
     update_interval: 86400
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/baidutieba.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png

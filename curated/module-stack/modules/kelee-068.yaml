@@ -1,0 +1,31 @@
+name: 京东
+description: 移除京东开屏广告，精简我的页面产品推广。
+author: RuCu6[https://github.com/RuCu6], Maasea[https://github.com/Maasea]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png
+rules:
+- url_regex:
+    match: ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06])
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除京东广告
+    match: (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c029c4151fe73b3a6f660d0933393d1b6afd1969651f01a88d5a357abfdd7cb4.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.m.jd.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig
+    filter: (setpath(["data", "JDMessage", "socketmonitor", "isSocketEstablishedAhead"];
+      0) | setpath(["data", "JDMessage", "socketmonitor", "isSocketReport"]; 0) |
+      setpath(["data", "JDHttpToolKit", "httpdns", "httpdns"]; 0))

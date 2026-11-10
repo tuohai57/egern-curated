@@ -1,0 +1,19 @@
+name: 360摄像机
+description: 移除开屏广告、首页推广、底栏商城入口及我的页面推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/360SmartCamera.png
+rules:
+- domain:
+    match: ad.jia.360.cn
+    policy: REJECT
+- domain:
+    match: ad.iot.360.cn
+    policy: REJECT
+mitm:
+  hostnames:
+  - jia.360.cn
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/jia\.360\.cn\/conf\/v1\.json
+    filter: (delpaths([["tab_conf"], ["ad_conf"], ["activity"]]))

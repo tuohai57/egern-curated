@@ -1,0 +1,29 @@
+name: 挖财记账
+description: 移除开屏广告、横幅广告，顶部推广、活动配置。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Wacai.png
+map_locals:
+- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/sensor\/config\/iOS\.conf\?
+  status_code: 200
+  body: '{"v":"v2","configs":{"disableSDK":true,"disableDebugMode":true,"supportTransportEncrypt":false}}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/activity\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - jz.wacaijizhang.com

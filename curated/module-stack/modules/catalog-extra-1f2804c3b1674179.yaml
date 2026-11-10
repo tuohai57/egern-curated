@@ -1,0 +1,10 @@
+name: 刺猬猫
+description: 刺猬猫app去广告 by @奶思
+rules:
+- url_regex:
+    match: ^https?:\/\/app\.hbooker\.com\/setting\/get_startpage_url_list
+    policy: REJECT
+mitm:
+  hostnames:
+  - app.hbooker.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

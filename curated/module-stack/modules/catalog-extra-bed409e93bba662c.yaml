@@ -1,0 +1,40 @@
+name: 车来了
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - web.chelaile.net.cn
+  - api.chelaile.net.cn
+  - cdn.api.chelaile.net.cn
+  - cdn.web.chelaile.net.cn
+  - atrace.chelaile.net.cn
+rules:
+- url_regex:
+    match: ^https?:\/\/.*chelaile\.net\.cn\/goocity\/flowPos\/listByPos
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/.*chelaile\.net\.cn\/(api\/)?adpub
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/124\.70\.194\.16\/(ip|adpub)
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/124\.70\.194\.16\/goocity\/flowPos\/listByPos
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/web\.chelaile\.net\.cn\/api\/operative_position\/infoflow
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/atrace\.chelaile\.net\.cn\/(wx_preloadAd|adAnalysis)
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: 车来了 / 1
+    match: ^https?:\/\/.*chelaile\.net\.cn\/goocity\/city!
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5ac31e6d28f37526c61efac734e34211a55e4afde5f5bb8bea94eaa543c04e95.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

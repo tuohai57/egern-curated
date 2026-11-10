@@ -1,0 +1,26 @@
+name: 百度翻译
+description: 移除开屏广告、横幅广告，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduTranslate.png
+map_locals:
+- match: (?i)^https:\/\/fanyi-app\.baidu\.com\/transapp\/v2\/api\/launch\/config\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/fanyi-app\.baidu\.com\/static\/react-activity\/page\/courseBoutique\.html\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - fanyi-app.baidu.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/fanyi-app\.baidu\.com\/transapp\/comment\/my\?
+    filter: (delpaths([["data", "taskBanner"], ["data", "act"]]))
+- response_jq:
+    match: (?i)^https:\/\/fanyi-app\.baidu\.com\/transapp\/recitewd\/myplan\?
+    filter: (delpaths([["data", "activityRec"], ["data", "activityRecList"]]))

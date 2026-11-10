@@ -15,6 +15,34 @@ rules:
     policy: REJECT
 - and:
     match:
+    - ip_cidr:
+        match: 110.249.199.75/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.225.147.191/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.63.61.101/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 220.243.141.0/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
     - or:
         match:
         - domain_suffix:
@@ -40,12 +68,20 @@ body_rewrites:
     filter: del(.data_map.recently_apps, .data_map.recently_users)
 - response_jq:
     match: (?i)^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\?
-    filter: (del(.data.tab_config)) | (.data.tab_list[]? |= (if .extra.side_bar.modules
-      != null then .extra.side_bar.modules[]?.items[]? |= (if .data.first_page_module?.module_title
-      == "常用功能" then .data={} else . end) else . end) | .data.tab_list |= map(if .extra.tab_list
-      != null then .extra.tab_list |= map(select(.tab_id | IN("homepage_tablive",
-      "homepage_follow", "homepage_hot_container"))) else . end) | .data.tab_list
-      |= map(select(.extra.tab_list != null and (.extra.tab_list | length > 0))))
+    filter: '(
+
+      del(.data.tab_config)
+
+      ) | (
+
+      .data.tab_list[]? |= (if .extra.side_bar.modules != null then .extra.side_bar.modules[]?.items[]?
+      |= (if .data.first_page_module?.module_title == "常用功能" then .data={} else .
+      end) else . end) | .data.tab_list |= map(if .extra.tab_list != null then .extra.tab_list
+      |= map(select(.tab_id | IN("homepage_tablive", "homepage_follow", "homepage_hot_container")))
+      else . end) | .data.tab_list |= map(select(.extra.tab_list != null and (.extra.tab_list
+      | length > 0)))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/tfe\/api\/request_combine\/v1\/\?need_personal_recommend
     filter: .data["/service/settings/v3/"].body.data.settings.homepage_two_session_tab_skin_2025

@@ -76,19 +76,28 @@ rules:
     match: ipv6.music.163.com
     policy: REJECT
 - domain:
+    match: iad.g.163.com
+    policy: REJECT
+- domain:
     match: iad.service.163.org
     policy: REJECT
 - domain:
     match: bdlog.tanx.com
     policy: REJECT
 url_rewrites: []
-body_rewrites: []
+body_rewrites:
+- response_jq:
+    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
+    filter: . = {}
+- response_jq:
+    match: (?i)^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
+    filter: . = {}
 mitm:
   hostnames:
   - interface*.music.163.com
   - ipv4.music.163.com
 map_locals:
-- match: (?i)^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad)
+- match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad
   status_code: 200
   body: '{}'
 - match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/sp\/flow\/popup

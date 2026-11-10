@@ -1,0 +1,23 @@
+name: 微信公众号
+description: 过滤微信公众号广告
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png
+rules:
+- domain_suffix:
+    match: wxs.qq.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - mp.weixin.qq.com

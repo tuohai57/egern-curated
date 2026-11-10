@@ -1,0 +1,123 @@
+name: 酷狗音乐
+description: 移除开屏广告、应用各类弹窗、各类横幅广告、评论区广告和播放器界面广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuGou.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: ads.service.kugou.com
+    policy: REJECT
+- domain:
+    match: adstats.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adsmind.gdtimg.com
+    policy: REJECT
+- domain:
+    match: adserviceretry.kugou.com
+    policy: REJECT
+- domain:
+    match: adserviceretry.kglink.cn
+    policy: REJECT
+- domain:
+    match: ad.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adservice.kugou.com
+    policy: REJECT
+- domain:
+    match: splashimgretrybssdl.cloud.kugou.com
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d
+    filter: .
+    disabled: true
+map_locals:
+- match: ^https:\/\/fx\.service\.kugou\.com\/mfx-kugoulive\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/adp\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/ads\.gateway\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/v\d\/feeds\/follow_feed_fallback
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/mstc\/musicsymbol\/v\d\/system\/profile
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/searchnofocus\/v\d\/search_no_focus_word
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/adp\/bubble\/v\d\/song_play
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/singerdiscuss\/v\d\/entrance\/comment
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/r\/v\d\/general\/putin\/midad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/sound\/banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gzacshow\.kugou\.com\/mfanxing-home\/cdn\/room\/index\/list_v2
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gzacshow\.kugou\.com\/mfx-rt-show\/cdn\/mo\/show\/headline
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m1fxgroup\.kugou\.com\/fxsing\/yqc\/alongInfo\/getUserAlongInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/hwstore\.kugou\.com\/v\d\/get_store_data
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ep\.kugou\.com\/v\d\/album_shop\/get_entrance_info
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - gateway.kugou.com
+  - fx.service.kugou.com
+  - hwstore.kugou.com
+  - ep.kugou.com
+  - gatewayretry.kugou.com
+  - gzacshow.kugou.com
+  - m1fxgroup.kugou.com

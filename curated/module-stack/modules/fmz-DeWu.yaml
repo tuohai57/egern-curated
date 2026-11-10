@@ -10,4 +10,4 @@ map_locals:
 - match: ^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg
   status_code: 200
   body: ' '
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/dewu.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png

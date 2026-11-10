@@ -1,0 +1,96 @@
+name: 蜻蜓FM
+description: 移除开屏广告、信息流广告、各类相关内容推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QtingFM.png
+rules:
+- domain:
+    match: ad.qtfm.cn
+    policy: REJECT
+- domain:
+    match: adlaunch.qtfm.cn
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/app\.qtfm\.cn\/recommendapi\/v8\/ai_assistant_point$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/signin\/show_homepage_icon$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.qtfm\.cn\/recommendapi\/v\d\/emotion$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/search\.qtfm\.cn\/v\d\/keyword\/default$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/user\/task\/play$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/i_listen\/guess_you_like\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/recpage-c\.qtfm\.cn\/v\d\/favorites$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/user\.qtfm\.cn\/u\d\/api\/v\d\/user\/following_podcaster\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/entry\.qtfm\.cn\/api\/v\d\/personal\/\?carrier
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/search\.qtfm\.cn\/v3\/entry$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/woqt2\.qtfm\.cn\/v2\/userConfig\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - app.qtfm.cn
+  - entry.qtfm.cn
+  - recpage-c.qtfm.cn
+  - user.qtfm.cn
+  - search.qtfm.cn
+  - woqt2.qtfm.cn
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/signin\/show_homepage_icon$
+    filter: (setpath(["data", "display_icon"]; false))
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/recommendapi\/v\d\/hotpage\?
+    filter: (.data.head |= map(select(.type == "IconGrid")) | .data.feeds |= map(select(.type
+      == "Channel" or .type == "Radio" or .type == "ListenListChannel")))
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/channel\/\d{6}\/playpage\/\d{8}
+    filter: (delpaths([["data", "related_recommend"], ["data", "recommend_bar"]]))
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/mylistenpage
+    filter: (delpaths([["data", "banner"]]))
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/subscribed_channels\?
+    filter: (delpaths([["data", "recommends"]]))
+- response_jq:
+    match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/channelpage\/\d+$
+    filter: (delpaths([["data", "vip_recommend"], ["data", "recommend_delivery"]]))

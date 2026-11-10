@@ -1,0 +1,124 @@
+name: 什么值得买
+description: 移除开屏广告、信息流广告、各类横幅广告、搜索页广告、文章内广告，移除活动皮肤、精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png
+rules:
+- domain:
+    match: adx-api.zdmimg.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/app-api\.smzdm\.com\/util\/loading\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app-api\.smzdm\.com\/mychannel\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/s-api\.smzdm\.com\/sou\/popup_coupon\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - app-api.smzdm.com
+  - homepage-api.smzdm.com
+  - h5.smzdm.com
+  - haojia-api.smzdm.com
+  - haojia.m.smzdm.com
+  - user-api.smzdm.com
+  - article-api.smzdm.com
+  - s-api.smzdm.com
+  - haojia-cdn.smzdm.com
+  - post.m.smzdm.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/app-api\.smzdm\.com\/util\/update$
+    filter: '(setpath(["data", "silence_local_push"]; 0) | setpath(["data", "baichuan_redirect_switch"];
+      0)) | (delpaths([["data", "silence_local_push_msg"], ["data", "video_cache_num_configs"],
+      ["data", "haojia_widget"], ["data", "widget"], ["data", "operation_float"]]))
+      | (def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string")
+      and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array"
+      then map(r) else . end; .data.operation_float |= map(map(r)))'
+- response_jq:
+    match: (?i)^https:\/\/homepage-api\.smzdm\.com\/v3\/home\?
+    filter: "(# 如果\"data.component[*].zz_content[*].ad_campaign_id\"的字符串值是有效的，则删除\"\
+      data.component[*].zz_content[*].ad_campaign_id\"所在的对象\n# 如果\"data.component[*].zz_content[*].tag\"\
+      的字符串值是有效的，则删除\"data.component[*].zz_content[*].tag\"所在的对象\n# 如果\"data.component[*].zz_content[*].model_type\"\
+      的值是字符串类型的\"ads\"则删除\"data.component[*].zz_content[*].model_type\"所在的对象\n.data.component\
+      \ |= map(\n  # 仅当 zz_content 是数组时执行过滤\n  if (.zz_content | type) == \"array\"\
+      \ then\n    .zz_content |= map(\n      select(\n        ( (.ad_campaign_id?\
+      \ | type == \"string\" and length > 0) // false ) or\n        ( (.tag? | type\
+      \ == \"string\" and length > 0) // false ) or\n        ( (.model_type? == \"\
+      ads\" and (type == \"string\")) // false )\n        | not\n      )\n    )\n\
+      \  else . end\n)\n\n# 如果\"data.component[*].zz_type\"存在，且字符串的值不是\"circular_banner\"\
+      或\"filter\"或\"list\"，则删除\"data.component[*].zz_type\"所在的对象\n| .data.component\
+      \ |= map(\n  select(.zz_type == \"circular_banner\" or .zz_type == \"filter\"\
+      \ or .zz_type == \"list\")\n)\n\n# 如果\"data.component[*].zz_content\"数组中，\"\
+      article_channel_type\"的值是字符串类型的\"questionnaire\"时，则删除\"data.component[*].zz_content[*].article_channel_type\"\
+      所在的对象。\n| .data.component |= map(\n  .zz_content |= (\n    if type == \"array\"\
+      \ then\n      map(\n        if type == \"object\" and (.article_channel_type\
+      \ // \"\") == \"questionnaire\" then\n          empty\n        else\n      \
+      \    .\n        end\n      )\n    else\n      .\n    end\n  )\n)\n\n# 移除首页主题皮肤背景\n\
+      # 删除\"data.theme\"\n| del(.data.theme)\n\n# 遍历\"data.component\"数组并安全删除\"circular_banner_option\"\
+      \n| .data.component |= map(\n  if .zz_content | type == \"object\" then\n  \
+      \  .zz_content |= del(.circular_banner_option)\n  else\n    .\n  end\n))"
+- response_jq:
+    match: (?i)^https:\/\/haojia-api\.smzdm\.com\/home\/list\?
+    filter: (delpaths([["data", "header_operation", "theme"]])) | (.data.rows |= map(select(.cell_type
+      == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028")))
+- response_jq:
+    match: (?i)^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\?
+    filter: (delpaths([["data", "super_coupon"]]))
+- response_jq:
+    match: (?i)^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\?
+    filter: (delpaths([["data", "banner"]]))
+- response_jq:
+    match: (?i)^https:\/\/user-api\.smzdm\.com\/vip$
+    filter: (delpaths([["data", "activity_entrance_info"], ["data", "big_banner"],
+      ["data", "top_banner"], ["data", "banner_switch"], ["data", "yaoqingshaiwu"],
+      ["data", "right_info"]]))
+- response_jq:
+    match: (?i)^https:\/\/s-api\.smzdm\.com\/sou\/list_v10\?
+    filter: (.data.rows |= map(select(.model_type != "ads")) | .data.top_aladdin |=
+      map(select(has("ad") | not)))
+- response_jq:
+    match: (?i)^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\?
+    filter: (delpaths([["data", "search_faxian"], ["data", "tonglan"], ["data", "hongbao"]]))
+      | (.data.hot_tab |= (if type == "array" then map(select(.search_method != "热点主题榜"))
+      else . end) | if .data.hot_tab then .data.hot_tab |= map(if .search_method ==
+      "热搜榜搜索热榜" and .rows then .rows |= map(select(.pos != null and ((.pos | tonumber)
+      != null))) else . end) else . end)
+- response_jq:
+    match: (?i)^https:\/\/haojia-api\.smzdm\.com\/detail\/\d+\?
+    filter: (delpaths([["data", "quan_log"]]))
+- response_jq:
+    match: (?i)^https:\/\/haojia-cdn\.smzdm\.com\/preload\/\d+\/fiphone\/v\d+_\d+_\d+\/wx\d+\/im\d+\/[0-9a-z]+\/[0-9a-z]+\.json$
+    filter: (delpaths([["data", "quan_log"]]))
+- response_jq:
+    match: (?i)^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list\?
+    filter: (delpaths([["data", "tuiguang_ad"], ["data", "activity_banner"]]))

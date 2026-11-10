@@ -229,3 +229,4 @@ mitm:
   hostnames:
   - -i.vip.iqiyi.com
   - '*.iqiyi.com'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/aqiyi.png

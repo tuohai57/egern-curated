@@ -1,0 +1,46 @@
+name: HantingHotels
+description: 移除弹窗、横幅，精简首页。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HantingHotels.png
+map_locals:
+- match: (?i)^https:\/\/hweb-manager\.huazhu\.com\/notice\/getAppPopupNotifyAlert$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/hweb-hotel\.huazhu\.com\/home\/getHomeLoinBanner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/hweb-hotel\.huazhu\.com\/\/home\/querySelectHotel$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/hweb-hotel\.huazhu\.com\/home\/queryHotelBrand$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/hweb-manager\.huazhu\.com\/hotels\/ad\/getHotelListNoticeMerge$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - hweb-manager.huazhu.com
+  - hweb-hotel.huazhu.com
+  - res-pub.huazhu.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/res-pub\.huazhu\.com\/frontconf\/homeconfig_45\/\w+\.json$
+    filter: (if has("content") and (.content | type) == "object" then .content |=
+      with_entries(select(.key == "topBanner" or .key == "topBannerImages")) else
+      . end)
+- response_jq:
+    match: (?i)^https:\/\/res-pub\.huazhu\.com\/frontconf\/tabbarconfig_45\/\w+\.json$
+    filter: (.content.tabbar |= map(select(.attributes.tabName == "首页" or .attributes.tabName
+      == "服务" or .attributes.tabName == "我的")))

@@ -8,7 +8,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^(?!^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)
+- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
   status_code: 200
   headers:
     Content-Type: application/json
@@ -71,7 +71,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 阿里巴巴广告
-    match: ^(?!^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))(?:^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get))
+    match: ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4cf62100424886068a5470daecec319e93ccd034c647d79a9daaa72bbbc341bb.js
     body_required: true
 - http_response:
@@ -85,4 +85,4 @@ mitm:
   - heic.alicdn.com
   - guide-acs.m.taobao.com
   - poplayer.template.alibaba.com
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg

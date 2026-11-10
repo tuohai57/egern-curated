@@ -1,0 +1,156 @@
+name: Line
+description: 移除Line各类广告
+author: jkgtw[https://github.com/jkgtw]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Line.png
+rules:
+- url_regex:
+    match: ^https:\/\/a\.line\.me\/er\/lads\/v\d\/ei\?
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/a\.line\.me\/er\/l.*\/v\d\/event\/image
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/a\.line\.me\/lass\/api\/v\d\/ads$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/a\.line\.me\/oa\/v\d\/e$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/a\.line\.me\/cs\/v\d\/oa$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/crs-event\.line\.me\/v\d\/imp
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/sch\.line\.me\/api\/v\d\/ads$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/uts-front\.line-apps\.com\/event$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/uts-front\.line-apps\.com\/settings$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/obs\.line-scdn\.net\/0h[a-zA-Z0-9_-]{50}[a-zA-Z0-9_-]*
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/obs\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/obs\.line-scdn\.net\/0hGH\d
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/obs\.line-scdn\.net\/0h.+\/\d+p\.mp4$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/obs\.line-scdn\.net\/r\/linecrs\/.+\/m180x180$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/ec-bot-obs\.line-scdn\.net\/0h[0-9a-zA-Z_-]{50}[0-9a-zA-Z_-]*
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(jpg|jpeg|png)
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/web-mmap-pay\.line-apps\.com\/tw\/liff\/campaign\/v\d\/aggregate\/ad\/banner\/
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/scdn\.line-apps\.com\/lan\/image\/line\/bannerImageEvent\/
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/scdn\.line-apps\.com\/lan\/document\/pageEvent\/line\/ios\/
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/gw\.line\.naver\.jp\/ext\/lgfp\/lad\/v\d$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/gw\.line\.naver\.jp\/lass\/api\/v\d\/ads$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/gw\.line\.naver\.jp\/tr\/event$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/legy\.line-apps\.com:443\/ext\/lgfp\/lad\/v\d$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/legy\.line-apps\.com:443\/ext\/smartch\/banner\/sch\/v\d$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/legy\.line-apps\.com\/line\.gcs\.GcsModuleService\/GetModulesByModuleIds$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/legy\.line-apps\.com:443\/tr\/event$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/lan\.line\.me\/v\d\/line\/ios
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/buy\.line\.me\/api\/graphql\?variables
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/nelo2-col\.linecorp\.com\/_store$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/cix\.line-apps\.com\/R\d\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/ad\.line-scdn\.net\/0h
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/static\.line-scdn\.net\/ad-sdk\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/scdn\.line-apps\.com\/appresources\/moretab\/list\.json
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - a.line.me
+  - ad.line-scdn.net
+  - w.line.me
+  - gw.line.naver.jp
+  - lan.line.me
+  - buy.line.me
+  - crs-event.line.me
+  - obs.line-scdn.net
+  - d.line-scdn.net
+  - scdn.line-apps.com
+  - sch.line.me
+  - static.line-scdn.net
+  - nelo2-col.linecorp.com
+  - uts-front.line-apps.com
+  - cix.line-apps.com
+  - legy.line-apps.com
+  - ec-bot-obs.line-scdn.net

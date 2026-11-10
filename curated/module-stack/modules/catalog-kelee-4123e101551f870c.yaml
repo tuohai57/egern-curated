@@ -1,0 +1,86 @@
+name: 微店
+description: 移除开屏广告、弹窗广告、猜你喜欢、猜你想搜、关注推荐，精简搜索页和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weidian.png
+map_locals:
+- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/home\.splash\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/poseidon\/exhibit\.spaceJson\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/app\.dialog\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.similarRecFeeds\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/faith\/search\.hotRecShadowWord\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/faith\/search\.getProcessTopics\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.listGoodUsers\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.myFollow\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/recommend\.getSpecialFocusList\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/collect\.recommendShop\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 配置修改
+    match: (?i)^https:\/\/thor\.weidian\.com\/appconf\/getAppConfig\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5dfa32387cc7d12bf1bb517067b2abc8a2e4d3eb83049c98cdcafed2857b24b1.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_response:
+    name: 精简钱包区
+    match: (?i)^https:\/\/thor\.weidian\.com\/wgs\/wallet\.query\.order\.entrance\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58668f38684df224e19d4f9c78e37c29c13c151359e1d9ea03f1138d0ab32b02.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - thor.weidian.com

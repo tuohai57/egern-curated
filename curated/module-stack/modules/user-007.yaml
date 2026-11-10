@@ -29,4 +29,4 @@ scriptings:
     match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/hanglvzonghengumetrip.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png

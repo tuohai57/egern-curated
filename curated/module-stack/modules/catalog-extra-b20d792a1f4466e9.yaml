@@ -1,0 +1,24 @@
+name: 百度贴吧
+description: 260106;开屏广告;推荐和吧内帖子列表的直播及广告;详情页直播/关联商品/广告;看图模式广告;首页和帖子详情页右下角悬浮广告;部分吧内的置顶/最新中间的广告/head图片广告/head直播
+compat_arguments:
+  per_filter_video: '0'
+mitm:
+  hostnames:
+  - tiebac.baidu.com
+scriptings:
+- http_response:
+    name: 百度贴吧 / 1
+    match: ^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: 百度贴吧 / 2
+    match: ^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e69a9fae6d90ad507bbda3fffb5d188b72f34d9a58f5613a3575804f53019df3.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png

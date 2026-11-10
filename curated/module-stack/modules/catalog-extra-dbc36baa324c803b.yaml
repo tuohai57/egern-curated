@@ -1,0 +1,15 @@
+name: 腾讯新闻
+description: 开屏页广告有缓存,需要全新应用
+mitm:
+  hostnames:
+  - news.ssp.qq.com
+  - r.inews.qq.com
+scriptings:
+- http_response:
+    name: 腾讯新闻 / 1
+    match: ^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/98b921f278eae3f4d99751a35c2b0c867b9716bd20713da14859f4033f8c7394.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

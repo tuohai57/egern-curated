@@ -41,7 +41,41 @@ compat_arguments_desc: 'background_playback: 后台播放
   log_level: 可选 info/debug/warn/error
 
   capture_budget: 可选 32/16/64'
-rules: []
+rules:
+- and:
+    match:
+    - domain:
+        match: youtubei.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei-att.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
 scriptings:
 - http_request:
     name: YouTube-请求
@@ -55,7 +89,7 @@ scriptings:
     body_required: true
 - http_request:
     name: YouTube-请求
-    match: (?i)^(?!^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback(?:\?[^#]*)?$)(?:^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$)
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/517e00dbe667374c4dbb45b9af265be272216331b90c20e805b203903ed0ad21.js
     body_required: true
 - http_response:

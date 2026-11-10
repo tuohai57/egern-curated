@@ -1,0 +1,25 @@
+name: 必应
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - sapphire.api.microsoftapp.net
+  - assets.msn.com
+  - api.msn.com
+scriptings:
+- http_response:
+    name: 必应 / 1
+    match: ^https?:\/\/sapphire\.api\.microsoftapp\.net\/config\/api\/v1\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/12ecdd295de9c427dbd0fbed9d356d70e6b5c0afe0105fb7f678484b4fc98ce5.js
+    body_required: true
+    update_interval: 86400
+map_locals:
+- match: ^https?:\/\/assets\.msn\.com\/service\/weather\/locations\/search
+  status_code: 200
+  body: '{}'
+- match: ^https:\/\/assets\.msn\.com\/service\/news\/feed\/pages\/startmhp
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/api\.msn\.com\/weather
+  status_code: 200
+  body: '{}'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

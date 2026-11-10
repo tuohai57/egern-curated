@@ -1,0 +1,19 @@
+name: 完美世界电竞
+description: 移除开屏广告，精简搜索页。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PerfectWorldEsport.png
+map_locals:
+- match: (?i)^https:\/\/appactivity\.wmpvp\.com\/hotsearch\/all\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.wmpvp.com
+  - appactivity.wmpvp.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.wmpvp\.com\/api\/v1\/config\/promote$
+    filter: (delpaths([["data", "ad"]]))

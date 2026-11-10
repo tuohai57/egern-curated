@@ -1,0 +1,24 @@
+name: 萝卜快跑
+description: 移除开屏广告、弹窗广告、横幅广告、新用户活动皮肤，保留优惠活动。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RoboTaxi.png
+map_locals:
+- match: (?i)^https:\/\/idgdata\.baidu\.com\/mc\/app\/api\/listterminal\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/idgdata\.baidu\.com\/operation\/api\/announce\/screen\/image_manage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/idgdata\.baidu\.com\/idgactivity\/api\/newuser\/info\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - idgdata.baidu.com

@@ -1,0 +1,165 @@
+name: 堆糖
+description: 移除开屏广告、信息流广告、热搜排行榜广告、我的页面横幅广告，移除关注推荐，精简底部导航栏。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DuiTang.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/meta\.duitang\.com\/napi\/infra\/settings\/
+    filter: delpaths([["data","AD_LINKS"]])
+- response_jq:
+    match: ^https:\/\/(www|api-2)\.duitang\.com\/napi\/home\/bottom_tab\/detail\/\?
+    filter: .data.tabs |= map(select(.group == "home" or .group == "category" or .group
+      == "me"))
+- response_jq:
+    match: ^https:\/\/api-2\.duitang\.com\/napi\/settings\/
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","SPLASH_SWING_OPEN"]])
+
+      ) | (
+
+      delpaths([["data","STICKER_SEARCH_HOT_KEYWORDS"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","REWARD_AD_PAG_EDITOR"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","REWARD_AD_PHOTO_EDITOR"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","REWARD_AD_CUTOUT_NUM"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","MAIN_EVENTS"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","QA_TOOLTIP_BOTTOM"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","OC_FOLLOW_OFFICIAL"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","AD_MENU_SELECTIONS"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","FEATURE_TEMPLATES"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","FEEDBACK_URL"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","AVATAR_MALL_UPDATE"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","WATERMARK_MALL_UPDATE"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","OC_MALL_UPDATE"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","3D_AVATAR_UPDATE"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","BENEFIT_LIST"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","SHARE_BANNER"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/xapi\.duitang\.com\/napi\/ads\/\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api-2\.duitang\.com\/napi\/vienna\/daren\/daren\/recommend\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.duitang\.com\/napi\/hot\/search\/list\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - www.duitang.com
+  - api-2.duitang.com
+  - meta.duitang.com

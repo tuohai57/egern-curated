@@ -3,10 +3,10 @@ scriptings:
 - http_response:
     name: Google人机验证 / 1
     match: ^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcfb02c0d81eadd104086dddf58428d9896de90e23ca1579bcde2634700709c5.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5907a66c0ab4dd77343eb7c7b4301f7257d1444f1013e399e135252800a9864f.js
     body_required: true
     update_interval: 86400
 mitm:
   hostnames:
   - www.google.com*
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png

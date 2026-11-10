@@ -1,0 +1,49 @@
+name: 墨迹天气
+description: 移除天气页面横幅、工具栏，移除时景关注页面推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MojiWeather.png
+map_locals:
+- match: (?i)^https:\/\/fcard\.api\.moji\.com\/flycard\/flyCard\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video\/index_flow\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video_user\/hotGuyRcm\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/zone\/follow_src_zone\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/sns\.api\.moji\.com\/user\/dynamic_v9\/json\/someone_interest\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - fcard.api.moji.com
+  - vdo.api.moji.com
+  - sns.api.moji.com
+  - mme.api.moji.com
+  - psnlz.api.moji.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/mme\.api\.moji\.com\/json\/entrance\/list$
+    filter: (del(.entrance_region_res_list[] | select(.region_name == "皇冠区域" or .region_name
+      == "banner区")) | .entrance_region_res_list[].entrance_res_list |= if . then
+      map(select(.entrance_name | . != "墨迹钱包" and . != "墨圈")) else . end)

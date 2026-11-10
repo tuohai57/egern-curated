@@ -25,6 +25,17 @@ rules:
 - domain:
     match: t-ads.xiaohongshu.com
     policy: REJECT
+- and:
+    match:
+    - protocol:
+        match: quic
+    - or:
+        match:
+        - domain_suffix:
+            match: xiaohongshu.com
+        - domain_suffix:
+            match: rnote.com
+    policy: REJECT
 url_rewrites: []
 body_rewrites:
 - response_jq:

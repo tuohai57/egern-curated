@@ -1,0 +1,695 @@
+name: 微信小程序
+description: 收录常用小程序的去广告，作者署名在插件内。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: wxsnsdy.wxs.qq.com
+    policy: REJECT
+- domain:
+    match: wxsmsdy.video.qq.com
+    policy: REJECT
+- domain:
+    match: wxsnsdythumb.wxs.qq.com
+    policy: REJECT
+- domain:
+    match: ads-shopping.shouqianba.com
+    policy: REJECT
+- domain:
+    match: ad.maoyan.com
+    policy: REJECT
+- domain:
+    match: e.jparking.cn
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/mbmodule-openapi\.paas\.cmbchina\.com\/graphic\/v2\/module\/graphic
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/app\.95504\.net\/app\/json\/page_ad\/initPageAd\?ver=
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/flow\.dmall\.com\/app\/home\/pops
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.yonghuivip\.com\/api\/fp\/homepage\/pop
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/activity\.yonghuivip\.com\/api\/app\/fp\/homepage\/pop
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/activity\.yonghuivip\.com\/api\/\/web\/shensuan\/ad
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/sauron-report\.yonghuivip\.com\/collect
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/ump\.ems\.com\.cn\/mailAd$
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/hdgateway\.zto\.com\/getApolloConfig
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/hdgateway\.zto\.com\/track
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/hdgateway\.zto\.com\/getAdInfo
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/hdgateway\.zto\.com\/listJumperShow
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/fscdn\.zto\.com\/fs1
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/ad\.xiaotucc\.com\/advert
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api-marketing\.zhinengxiyifang\.cn\/api\/v2\/cloudcode\/wechat\/bid
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.szbgcx\.cn\/account\/adv\/
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$
+    filter: delpaths([["data"]])
+- response_jq:
+    match: ^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$
+    filter: '(
+
+      (
+
+      delpaths([["data",0]])
+
+      ) | (
+
+      delpaths([["data",1]])
+
+      )
+
+      ) | (
+
+      delpaths([["data",2]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\?
+    filter: delpaths([["data","popUpWindows"]])
+- response_jq:
+    match: ^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\?
+    filter: del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name
+      != "充流量" and .name != "领话费券"))
+- response_jq:
+    match: ^https:\/\/chong\.qq\.com\/tws\/wxmobile4app\/GetSecondProduct\?
+    filter: del(.respInfo.productList) | .respInfo.shortcut |= map(select(.name !=
+      "充流量" and .name != "领话费券"))
+- response_jq:
+    match: ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\?
+    filter: '(
+
+      (
+
+      (
+
+      delpaths([["data","request","number","markSeat","servicehallOperList"]])
+
+      ) | (
+
+      delpaths([["data","request","number","servicehallOperList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","request","number","markSeat","servicehallFuncList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","request","number","servicehallFuncList"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/images\.qmai\.cn\/s214925\/2023
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/dsp\.fcbox\.com\/adSearch\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/res\.pizzahut\.com\.cn\/CRM
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/miniprogram\.ishansong\.com\/cms\/faq\/query
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ads\.ishansong\.com\/advert
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/minicap\.caocaokeji\.cn\/advert-bss\/pullAdvert
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/r2\.gzyct\.com\/qrcode\/advert
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/applets\.jtexpress\.com\.cn
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.hellobike\.com\/api\?adx
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.kuaidihelp\.com\/g_order_core\/v2\/mina\/User\/getBannerList
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wxproj\.seeyouyima\.com\/data\/today_tips
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/suyun-guest\.daojia\.com\/api\/kuaigou\/banjia\/review
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ne\.gdsz\.sinopec\.com\/gateway\/api\/omp\/mt\/appAdvertising
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/qapi\.huolala\.cn\/ads
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/qapi\.huolala\.cn\/home_new_user
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/qapi\.huolala\.cn\/get_service_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/appuser-static\.huolala\.cn\/imgs
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/dock\.tenchii\.com\/DockCard\/api\/mini\/card\/list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/customer-app\.sto\.cn\/api\/app\/banner\/banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/sto-customer-app\.oss-cn-shanghai\.aliyuncs\.com\/images
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/supplier-api\.imdada\.cn\/fe\/public\/ad\/spot\?forwardServiceName=growth-activity
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mobile-api\.imlaidian\.com\/api\/args
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/s\.jiediankeji\.com\/adv
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/smarket\.dian\.so
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/file\.dian\.so\/c\/leto
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.songguo7\.com\/(\w{3})?mp\/v2\/misc\/(toast|user_operate_info|unlock_without_order|unlock_operate_info)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api-fouth-mem\.huazhu\.com\/api\/rights\/bannerList
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wxapp\.bestwehotel\.com\/gw3\/app-mini\/trip-hotel-banner\/activity\/getActivityInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.bthhotels\.com\/miniapp\/weixin\/v1\/home\/index_banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/app\.homeinns\.com\/api\/v6\/indexs
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/app\.homeinns\.com\/api\/v5\/local
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/app\.homeinns\.com\/api\/v5\/index
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/mina\/systemSetting
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/plt\.yorentown\.com\/pltapp\/v1\/banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/member\.lxjchina\.com\.cn\/mini-server\/home\/page\/banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gw-passenger-wap\.01zhuanche\.com\/gw-passenger-wap\/zhuanche-passenger-token\/commonSkipToken\/common\/getAdList
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.deppon\.com\/gwapi\/memberService\/eco\/member\/grade\/commonInterface
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/passengerapi\.saicmobility\.com\/(ad\/requestAd|pay\/v1\/queryOpenedCouponPackages)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/passenger\.t3go\.cn\/passenger-activity-api\/notoken\/api\/v1\/resource\/getSource
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ad\.maoyan\.com\/api\/position\/detail
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/tbgapplet\.carlsberg\.asia\/tuborg\/banner\/(loading|index)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name=
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/qrCode\/getAdvInfo$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/tourism\/tourismBase\/api\/scenic\/getThemeProduct?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/carService\/getCivilzedSlogan
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.online-cmcc\.cn\/contactpoint\/customer\/api\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/wx\.10086\.cn\/qwhdhub\/activity\/info
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - 3pp.starbucks.com.cn
+  - aag.enmonster.com
+  - activity.yonghuivip.com
+  - ad.maoyan.com
+  - ad.xiaotucc.com
+  - ads.ishansong.com
+  - alittle-tea.oss-cn-shanghai.aliyuncs.com
+  - api-fouth-mem.huazhu.com
+  - api-marketing.zhinengxiyifang.cn
+  - api.hellobike.com
+  - api.hengdianfilm.com
+  - api.hongyibo.com.cn
+  - api.kuaidihelp.com
+  - api.maoyan.com
+  - api.mcd.cn
+  - api.pinduoduo.com
+  - api.prod.dj.mstand.cn
+  - api.songguo7.com
+  - api.yonghuivip.com
+  - apiproxy.zuche.com
+  - apis.alenable.com
+  - app.95504.net
+  - app.homeinns.com
+  - applets.jtexpress.com.cn
+  - appuser-static.huolala.cn
+  - as.xiaojukeji.com
+  - capis*.didapinche.com
+  - cappapi.alittle-tea.com
+  - cbd-gateway-service-applets.hualala.com
+  - ccmsupport-sz.tenpay.com
+  - coco-com.e.verystar.net
+  - creditcardapp.bankcomm.com
+  - customer-app.sto.cn
+  - daijia.kuaidadi.com
+  - dock.tenchii.com
+  - dsp.fcbox.com
+  - file.dian.so
+  - flow.dmall.com
+  - fscdn.zto.com
+  - gw-passenger-wap.01zhuanche.com
+  - hdgateway.zto.com
+  - htwkop.xiaojukeji.com
+  - images.qmai.cn
+  - lawsonapi.yorentown.com
+  - m.ctrip.com
+  - mapi.xiaotucc.com
+  - mbmodule-openapi.paas.cmbchina.com
+  - member.lxjchina.com.cn
+  - miniapp.sexytea2013.com
+  - minicap.caocaokeji.cn
+  - minifm.maxxipoint.com
+  - minipro.95504.net
+  - miniprogram.ishansong.com
+  - mkt-gateway.tuhu.cn
+  - mobile-api.imlaidian.com
+  - mxsa.mxbc.net
+  - newton.gumingnc.com
+  - passenger.t3go.cn
+  - passengerapi.saicmobility.com
+  - plt.yorentown.com
+  - qapi.huolala.cn
+  - r2.gzyct.com
+  - res.hongyibo.com.cn
+  - res.pizzahut.com.cn
+  - s.jiediankeji.com
+  - saas-ad.cloudpnr.com
+  - sauron-report.yonghuivip.com
+  - smarket.dian.so
+  - sto-customer-app.oss-cn-shanghai.aliyuncs.com
+  - supplier-api.imdada.cn
+  - suyun-guest.daojia.com
+  - tbgapplet.carlsberg.asia
+  - tm-api.pin-dao.cn
+  - ucmp.sf-express.com
+  - ump.ems.com.cn
+  - vod-movie.maoyan.com
+  - webapi.qmai.cn
+  - webchatapp.fcbox.com
+  - wechat-api.i-xiaoma.com.cn
+  - www.deppon.com
+  - wx.bthhotels.com
+  - wx.maoyan.com
+  - wxapp.bestwehotel.com
+  - wxproj.seeyouyima.com
+  - wxs-weixin.sd.zhumanggroup.com
+  - mcsp.cloudpnr.com
+  - api.szbgcx.cn
+  - rms.meituan.com
+  - chong.qq.com
+  - wx.online-cmcc.cn
+  - wx.10086.cn
+  - ne.gdsz.sinopec.com
+  - mobile.12306.cn

@@ -1,0 +1,36 @@
+name: KOOK
+description: 移除开屏广告、房间横幅推广、精简我的页面，移除底栏商城入口。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KOOK.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$
+    filter: '(
+
+      (
+
+      delpaths([["ad_banner"]])
+
+      ) | (
+
+      delpaths([["advertise_on_off"]])
+
+      )
+
+      ) | (
+
+      if (getpath([]) | has("ios_mall_switch")) then (setpath(["ios_mall_switch"];
+      false)) else . end
+
+      )'
+map_locals:
+- match: ^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - m.kookapp.cn
+  - www.kookapp.cn

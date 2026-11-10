@@ -1,0 +1,35 @@
+name: 最右
+description: 移除开屏广告、信息流广告和广告轮播图。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZuiYou.png
+rules:
+- domain:
+    match: adapi.izuiyou.com
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv
+    policy: REJECT
+map_locals:
+- match: (?i)^https?:\/\/api\.izuiyou\.com\/config\/get_banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/api\.izuiyou\.com\/ad\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/zyfile\.izuiyou\.com\/zyfile\/c2\/a0\/[a-z0-9-]+\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.izuiyou.com
+  - zyfile.izuiyou.com

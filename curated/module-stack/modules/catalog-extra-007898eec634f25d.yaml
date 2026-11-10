@@ -1,0 +1,16 @@
+name: Twitch去廣告
+description: Avoid Twitch ads by grabbing video playlists from Russia
+compat_arguments:
+  luminous: https://as.luminous.dev
+scriptings:
+- http_response:
+    name: Twitch去廣告 / 1
+    match: https://usher.ttvnw.net/(api/channel/hls|vod)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f6ffc0469df4cfb6d9e655f4ecd673e0494e89abefa60cef7574af580ad6b1f9.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+mitm:
+  hostnames:
+  - usher.ttvnw.net
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

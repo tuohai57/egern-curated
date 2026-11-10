@@ -1,0 +1,36 @@
+name: 财新
+description: 过滤财新广告
+author: RuCu6[https://github.com/RuCu6]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CaixinMedia.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https:\/\/entities\.caixin\.com\/api\/(dataplus\/promotionHints|public\/push\/appIndex|public\/recommendNews)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gateway\.caixin\.com\/api\/app-api\/cxAdInfo\/selectIndexAdInfo
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/mappsv5\.caixin\.com\/channelv5\/article_ad_ios_info\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gg\.caixin\.com\/s\?z=caixin&slot=\d+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/msgapi\.caixin\.com\/msg_api\/annmsg\/annlist
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - e*.caixin.com
+  - g*.caixin.com
+  - m*.caixin.com

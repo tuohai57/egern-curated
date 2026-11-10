@@ -1,0 +1,24 @@
+name: 挖财记账
+description: 移除弹窗广告、推广语横幅和右下角悬浮广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WaCaiJiZhang.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/ribbon\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - jz.wacaijizhang.com

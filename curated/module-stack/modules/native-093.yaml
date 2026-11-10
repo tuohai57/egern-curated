@@ -215,6 +215,9 @@ rules:
     match: ^https?:\/\/[A-Za-z0-9_-]+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/
     policy: REJECT
 - url_regex:
+    match: ^https?:\/\/[A-Za-z0-9_-]+\.snssdk\.com\/.+_ad\/
+    policy: REJECT
+- url_regex:
     match: ^https?:\/\/[A-Za-z0-9_-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
     policy: REJECT
 - url_regex:
@@ -359,6 +362,9 @@ rules:
     match: ^https?:\/\/e\.dangdang\.com\/media\/api\d\.go\?action=getDeviceStartPage
     policy: REJECT
 - url_regex:
+    match: ^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd
+    policy: REJECT
+- url_regex:
     match: ^https?:\/\/capis(-slb)?\.didapinche\.com\/ad\/
     policy: REJECT
 - url_regex:
@@ -381,6 +387,18 @@ rules:
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/pic\.edaijia\.cn\/adsplash\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\?
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/i\.ys7\.com\/api\/ads
@@ -560,7 +578,7 @@ rules:
     match: ^https?:\/\/img\.meituan\.net\/(adunion|display|dpmobile|midas)\/\w+\.(gif|jpg|jpg\.webp)$
     policy: REJECT
 - url_regex:
-    match: ^(?!(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp))(?:^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4))
+    match: ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg
@@ -599,7 +617,7 @@ rules:
     match: ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/eapi\/ad\/
     policy: REJECT
 - url_regex:
-    match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/)
+    match: ^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/sp\.kaola\.com\/api\/openad
@@ -785,6 +803,12 @@ rules:
     match: ^https?:\/\/news\.ssp\.qq\.com\/app
     policy: REJECT
 - url_regex:
+    match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/music\/common\/upload\/t_splash_info\/
+    policy: REJECT
+- url_regex:
     match: ^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/
     policy: REJECT
 - url_regex:
@@ -875,7 +899,7 @@ rules:
     match: ^https?:\/\/api\.yizhibo\.com\/common\/api\/pz$
     policy: REJECT
 - url_regex:
-    match: (?i)^(?!^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)(?:^https?:\/\/api\.zhihu\.com\/commercial_api\/)
+    match: ^https?:\/\/api\.zhihu\.com\/commercial_api\/
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/api\.zhihu\.com\/fringe\/ad

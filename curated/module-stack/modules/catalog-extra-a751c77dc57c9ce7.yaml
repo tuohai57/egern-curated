@@ -1,0 +1,177 @@
+name: CMS广告拦截
+description: 去除插入式廣告
+compat_arguments:
+  彈窗通知: false
+url_rewrites:
+- match: (^https?:\/\/s\d+\.bfengbf\.com\/video)(.+)_z5q\.ts
+  location: $1$2.ts
+  status_code: 302
+scriptings:
+- http_response:
+    name: CMS广告拦截 / 1
+    match: ^https?:\/\/m3u8\.(hmrvideo|heimuertv)\.com\/play\/(.+).m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    timeout: 30
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 2
+    match: ^https?:\/\/((?:v\.lzcdn|v\.cdnlz|vip.*\.lz[-]?cdn)\d+\.com)\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 3
+    match: ^https?:\/\/(super|svipsvip|vip)\.ffzy[A-Za-z0-9-]+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 4
+    match: ^https?:\/\/c\d+\.rrcdnbf\d+\.com\/video\/(.+)\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 5
+    match: ^https?:\/\/vip\.kuaikan-(cdn|play)\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 6
+    match: ^https:\/\/bfikuncdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 7
+    match: ^https:\/\/play\.modujx\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 8
+    match: ^https:\/\/vod\.lyhuicheng\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 9
+    match: ^https:\/\/ukzy\.ukubf\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 10
+    match: ^https:\/\/.+\.wgslsw\.com\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 11
+    match: ^https:\/\/leshiyuncdn\.36s\.top\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 12
+    match: ^https:\/\/m3u8\.juasu\.buzz\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 13
+    match: ^https:\/\/askzycdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 14
+    match: ^https:\/\/.+\.97img\.com\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 15
+    match: ^https:\/\/.+\.bfbfhao\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 16
+    match: ^https:\/\/player\.cl9987\.com:188\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 17
+    match: ^https:\/\/v\.ykv3\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 18
+    match: ^https:\/\/.+\.3sybf\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 19
+    match: ^https:\/\/bfnxxcdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+- http_response:
+    name: CMS广告拦截 / 20
+    match: ^https:\/\/player\.huangguam3u\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0ac7daeadc7735103e93b3ce2970981984603e9585870397a6706fd897752cbb.js
+    body_required: true
+    update_interval: 86400
+    max_size: 16777216
+mitm:
+  hostnames:
+  - v.cdnlz*.com
+  - v.lzcdn*.com
+  - vip*.lz-cdn*.com
+  - vip.lzcdn*.com
+  - '*.ffzy*.com'
+  - '*.rrcdnbf*.com'
+  - vip.kuaikan*.com
+  - bfikuncdn.com
+  - play.modujx*.com
+  - vod.lyhuicheng.com
+  - ukzy.ukubf*.com
+  - '*.wgslsw.com'
+  - askzycdn.com
+  - t0.97img.com
+  - '*.bfbfhao.com'
+  - player.cl9987.com:188
+  - v.ykv3.com
+  - '*.3sybf.com'
+  - bfnxxcdn.com
+  - player.huangguam3u.com
+  - leshiyuncdn.36s.top
+  - m3u8.jiasu.buzz
+  - m3u8.hmrvideo.com
+  - m3u8.heimuertv.com
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CMSPlayer.png

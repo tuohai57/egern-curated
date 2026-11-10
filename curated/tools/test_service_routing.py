@@ -8,7 +8,11 @@ from adblock_model import DomainRouter
 import yaml
 data=json.loads((ROOT/'curated/routing/service-audit.json').read_text(encoding='utf-8'))
 graph=data['graph'];spec=data['spec'];checks=[];errors=[]
-model=DomainRouter(ROOT,{'rules':data['main_rules']})
+# Supply the actual baseline module references explicitly. A profile containing
+# only local rules must not silently stand in for an enabled module stack.
+baseline=json.loads((ROOT/'curated/native-full/manifest.json').read_text(encoding='utf-8'))
+baseline_rows=[baseline['priority_guard']]+baseline.get('extra_modules',[])+baseline['modules']
+model=DomainRouter(ROOT,{'rules':data['main_rules'],'modules':[{'url':r['url'],'enabled':r.get('enabled',True)} for r in baseline_rows]})
 def check(ok,label,**detail):
  row={'name':label,'passed':bool(ok),**detail};checks.append(row)
  if not ok:errors.append(row)
@@ -109,13 +113,13 @@ for name in spec['ai_groups']:
  check(resolve(name,leaves) is None if leaves!={'DIRECT'} else resolve(name)=='DIRECT','AI 全故障边界 '+name)
 for name,_,roots in spec['domestic']:
  if name in spec.get('domestic_proxy_overrides',{}):
-  check(graph[name]['target']==spec['domestic_proxy_overrides'][name],'真机反馈的Apple国内兼容出口 '+name)
+  check(graph[name]['kind'] in {'auto_test','fallback'} and graph[name]['policies']==[spec['domestic_proxy_overrides'][name]] and graph[name]['interval']==0,'用户指定的Apple国内全自动兼容出口 '+name)
   check(resolve(name)==resolve('Apple智能')!='DIRECT','Apple国内与智能出口联动 '+name)
  else:check(resolve(name)=='DIRECT','国区服务直连 '+name)
 for name,target in spec['targets'].items():
  check(graph[name]['policies']==[target] and graph[name]['interval']==0,'独立服务自动入口 '+name)
-check(not spec.get('domestic_proxy_overrides'),'撤回Apple国内代理例外')
-check(countries('Apple国内')=={'DIRECT'} and resolve('Apple国内',list(spec['pools']['Apple智能']))=='DIRECT','Apple国内在全部地区故障时仍直连')
+check(spec.get('domestic_proxy_overrides')=={'Apple国内':'Apple智能'},'遵循用户最新要求：Apple国内归Apple智能')
+check(countries('Apple国内')==countries('Apple智能') and resolve('Apple国内',list(spec['pools']['Apple智能'])) is None,'Apple国内跟随智能出口且故障时不落到未许可地区')
 check(graph['Apple智能']['kind']=='auto_test' and graph['Apple智能']['policies']==spec['pools']['Apple智能'] and '香港' not in graph['Apple智能']['policies'],'Apple智能直接列非香港地区自动测速组')
 for name,g in graph.items():
  if g.get('policies') in [['DIRECT'],['REJECT']]:check(g['interval']==0,'固定内置策略不参加健康检查 '+name)

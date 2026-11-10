@@ -1,0 +1,23 @@
+name: IT之家
+description: 过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图，自定义移除项需在插件配置。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
+map_locals:
+- match: (?i)^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+scriptings:
+- http_response:
+    name: IT之家去广告
+    match: (?i)^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+|topmenu\/getfeeds\?)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d451582bdbbd4c2bc8754a1ba9cfb1f99a0c1beeb068ea2733dee8617f9f627d.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - napi.ithome.com
+  - api.zuihuimai.com
+  - dat.ruanmei.com

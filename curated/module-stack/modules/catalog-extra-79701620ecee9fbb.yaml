@@ -1,0 +1,12 @@
+name: 小喵看书
+description: 移除小喵看书章末广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiaoRead.png
+homepage: https://hub.kelee.one
+rules:
+- url_regex:
+    match: ^https:\/\/api\.miaomiaoyd\.com\/book\/config\/getAdsSettings$
+    policy: REJECT
+mitm:
+  hostnames:
+  - api.miaomiaoyd.com

@@ -1,0 +1,23 @@
+name: Reddit
+description: 过滤应用内推广，阻止NSFW提示。
+author: xream[https://github.com/xream]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png
+mitm:
+  hostnames:
+  - gql.reddit.com
+  - gql-fed.reddit.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https?:\/\/gql(-fed)?\.reddit\.com
+    filter: "(#2024-12-02 10:28:36\nwalk(\n  if type == \"object\" then\n    #设置 NSFW\
+      \ 相关的字段, 防止一直弹窗确认\n    (if .isNsfw == true then .isNsfw = false else . end)\n\
+      \    | (if .isNsfwMediaBlocked == true then .isNsfwMediaBlocked = false else\
+      \ . end)\n    | (if .isNsfwContentShown == false then .isNsfwContentShown =\
+      \ true else . end)\n    #把 commentsPageAds 设置为空数组\n    | (if (.commentsPageAds\
+      \ | type == \"array\") then (.commentsPageAds = []) else . end)\n    #过滤掉广告相关的数据\n\
+      \    | (if ( (.node | type == \"object\") and (.node.cells | type == \"array\"\
+      ) and (.node.cells | any(.__typename? == \"AdMetadataCell\" or .isAdPost? ==\
+      \ true)) ) then empty else . end)\n    | (if (.node | type == \"object\") and\
+      \ (.node.adPayload | type == \"object\") then empty else . end)\n    | (if .__typename\
+      \ == \"AdPost\" then empty else . end)\n  else . \nend))"

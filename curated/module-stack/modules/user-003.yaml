@@ -85,4 +85,4 @@ map_locals:
 - match: ^https:\/\/wkrt\.tingyun\.com\/getMobileRedirectHost
   status_code: 200
   body: '{}'
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhuanZhuan.png

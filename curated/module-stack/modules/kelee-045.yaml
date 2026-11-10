@@ -1,0 +1,94 @@
+name: 抖音
+description: 精简左右侧边栏、移除底栏切换，其余内容后续再完善。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
+rules:
+- and:
+    match:
+    - ip_cidr:
+        match: 101.126.58.201/32
+        policy: NO-RESOLVE
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 110.249.199.75/32
+        policy: NO-RESOLVE
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.225.147.191/32
+        policy: NO-RESOLVE
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.63.61.101/32
+        policy: NO-RESOLVE
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 220.243.141.0/32
+        policy: NO-RESOLVE
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - or:
+        match:
+        - domain_suffix:
+            match: bytegecko.com
+        - domain_suffix:
+            match: byteeffecttos.com
+    - domain_keyword:
+        match: ncdn
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/api\/ad\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/zlink\.ugsdk\.cn\/ad\/
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - aweme.snssdk.com
+  - api5-normal-m.amemv.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/((aweme\.snssdk\.com|api5-normal-m\.amemv\.com)|api5-normal-m\.amemv\.com)\/aweme\/homepage\/sidebar_data\/\?
+    filter: (delpaths([["data_map", "recently_apps"], ["data_map", "recently_users"]]))
+- response_jq:
+    match: (?i)^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\?
+    filter: (delpaths([["data", "tab_config"]])) | (.data.tab_list[]? |= (if .extra.side_bar.modules
+      != null then .extra.side_bar.modules[]?.items[]? |= (if .data.first_page_module?.module_title
+      == "常用功能" then .data={} else . end) else . end) | .data.tab_list |= map(if .extra.tab_list
+      != null then .extra.tab_list |= map(select(.tab_id | IN("homepage_tablive",
+      "homepage_follow", "homepage_hot_container"))) else . end) | .data.tab_list
+      |= map(select(.extra.tab_list != null and (.extra.tab_list | length > 0))))
+- response_jq:
+    match: (?i)^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/tfe\/api\/request_combine\/v1\/\?need_personal_recommend
+    filter: (setpath(["data", "/service/settings/v3/", "body", "data", "settings",
+      "homepage_two_session_tab_skin_2025"]; false) | setpath(["data", "/service/settings/v3/",
+      "body", "data", "settings", "homepage_tab_skin_enable"]; false))

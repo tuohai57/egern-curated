@@ -1,0 +1,34 @@
+name: 百度贴吧
+description: 移除开屏广告、信息流广告和帖内广告，精简侧拉抽屉及我的页面。需注意此插件会导致新回复等通知功能不可用，需手动进入消息页点击查看。仅限iOS
+  15及以上版本系统使用。
+author: ZenmoFeiShi[https://github.com/ZenmoFeiShi],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],app2smile[https://github.com/app2smile]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png
+homepage: https://github.com/luestr/ProxyResource/blob/main/README.md
+rules:
+- domain:
+    match: afd.baidu.com
+    policy: REJECT
+- domain:
+    match: mobads.baidu.com
+    policy: REJECT
+- domain:
+    match: 180.76.76.200
+    policy: REJECT
+- ip_cidr:
+    match: 180.76.76.200/32
+    policy: REJECT
+    no_resolve: true
+map_locals:
+- match: ^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover
+  status_code: 200
+  body: '{}'
+- match: ^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide
+  status_code: 200
+  body: '{}'
+- match: ^https:\/\/tiebac\.baidu\.com\/c\/u\/chat\/getChatSubscriptionList
+  status_code: 200
+  body: '{}'
+mitm:
+  hostnames:
+  - tiebac.baidu.com
+  - tieba.baidu.com

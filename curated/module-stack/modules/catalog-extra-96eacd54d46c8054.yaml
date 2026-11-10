@@ -1,0 +1,12 @@
+name: 中国联通
+description: 去开屏
+mitm:
+  hostnames:
+  - m.client.10010.com
+map_locals:
+- match: ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm
+  status_code: 200
+  body: '{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}'
+  headers:
+    Content-Type: application/json
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

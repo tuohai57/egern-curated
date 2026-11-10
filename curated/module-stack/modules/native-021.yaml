@@ -235,8 +235,15 @@ body_rewrites:
     filter: .data.layout.order |= ["header-card-1", "driver-card-1"]
 - response_jq:
     match: (?i)^https:\/\/daijia\.kuaidadi\.com:443\/gateway\?
-    filter: (del(.data.variantInfo)) | (.data |= with_entries(select(.value.isAd !=
-      1)))
+    filter: '(
+
+      del(.data.variantInfo)
+
+      ) | (
+
+      .data |= with_entries(select(.value.isAd != 1))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me
     filter: .data.cards |= (map(select(.title != "天天领福利" and .title != "金融服务" and

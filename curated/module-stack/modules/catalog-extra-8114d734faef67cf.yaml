@@ -1,0 +1,37 @@
+name: Jump
+description: 移除Jump开屏广告
+author: MoonYuki[https://github.com/MoonYuki]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Jump.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: zlsdk.1rtb.net
+    policy: REJECT
+- domain:
+    match: jp.ad.gameley.com
+    policy: REJECT
+- domain:
+    match: toblog.ctobsnssdk.com
+    policy: REJECT
+- domain:
+    match: s3plus.meituan.net
+    policy: REJECT
+- domain:
+    match: images.pinduoduo.com
+    policy: REJECT
+- domain:
+    match: qh-material.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: admobile.top
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:?\/\/switch.jumpvg.com\/jump\/getlaunchad\/v2$
+    filter: del(.data.adList)|.data.launchAd.showType=0
+- response_jq:
+    match: ^https:?\/\/switch.jumpvg.com\/jump\/recommend\/ad_conf$
+    filter: .data=[]
+mitm:
+  hostnames:
+  - switch.jumpvg.com

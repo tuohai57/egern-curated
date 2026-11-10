@@ -1,0 +1,41 @@
+name: 有道翻译官
+description: 移除开屏广告、横幅推广，精简首页。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoTrans.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/fanyiguan-server\.youdao\.com\/server\/banner\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/dict\.youdao\.com\/wordbook\/recommend\?all=false
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/trans_abtest\/online\/iOS\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - gorgon.youdao.com
+  - fanyiguan-server.youdao.com
+  - api-overmind.youdao.com

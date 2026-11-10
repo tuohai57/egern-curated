@@ -34,3 +34,4 @@ rules:
 - domain_suffix:
     match: d.meituan.net
     policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/meituan.png

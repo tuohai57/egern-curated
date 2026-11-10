@@ -21,3 +21,4 @@ map_locals:
 mitm:
   hostnames:
   - home.mi.com
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png

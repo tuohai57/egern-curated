@@ -1,0 +1,43 @@
+name: 学习通
+description: 移除开屏广告、横幅推广，精简校园补给站频道。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChaoXingStudy.png
+map_locals:
+- match: (?i)^https:\/\/home-yd\.chaoxing\.com\/apis\/data\/getAdsRecommend\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/home-yd\.chaoxing\.com\/apis\/banner\/getConfigInfoForXsqy\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/groupyd2\.chaoxing\.com\/apis\/activity\/getActivitys_attention\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appswh\.chaoxing\.com\/apis\/activity\/getNoteTopicList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - learn.chaoxing.com
+  - home-yd.chaoxing.com
+  - apps.chaoxing.com
+  - groupyd2.chaoxing.com
+  - appswh.chaoxing.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\?
+    filter: (delpaths([["data", "ad"]]))
+- response_jq:
+    match: (?i)^https:\/\/apps\.chaoxing\.com\/apis\/home\/getHpXsqy\.jspx\?
+    filter: (.data.list |= map(select(.pid == 4 or .pid == 44)) | .data.list_xsqy
+      |= map(select(.pid == 4 or .pid == 44)) | .data.list_xysqbj |= map(select(.pid
+      == 4 or .pid == 44)) | .data.lanmu |= map(select(.id == 4 or .id == 44))) |
+      (delpaths([["data", "list_timeapp"]]))

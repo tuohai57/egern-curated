@@ -1,0 +1,77 @@
+name: HUPU
+description: 移除虎扑开屏广告、首页顶部推广、我的页面多余模块及各类横幅推广。
+author: ZenmoFeiShi[https://github.com/ZenmoFeiShi]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HUPU.png
+map_locals:
+- match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/reddot\/v1\/app\/getReddot
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/(bbsallapi\/tag\/v1\/heatTag|bbsrankapi\/v1\/rating\/list)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/search\/v2\/(hintkeylist|hotkeylist)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/goblin\.hupu\.com\/\d\/\d\.\d\.\d+\/interfaceAd\/getOther\/v\d
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/goblin\.hupu\.com\/\d\/\d\.\d\.\d+\/interfaceAd\/getOther\/batch
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/fairy\.mobileapi\.hupu\.com\/gallery\/getmod2
+  status_code: 200
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/3\/8\.0\.86\/bplcommentapi\/bpl\/score_tab\/groups
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/3\/8\.0\.86\/bplapi\/banner\/getLocationBanners
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除虎扑广告
+    match: (?i)^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/43ec9962925a76ca49cf1491a73430bd1b7fc3ef206de50eb0083c75b69865a6.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除虎扑广告
+    match: (?i)^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/43ec9962925a76ca49cf1491a73430bd1b7fc3ef206de50eb0083c75b69865a6.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除虎扑广告
+    match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/43ec9962925a76ca49cf1491a73430bd1b7fc3ef206de50eb0083c75b69865a6.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除虎扑广告
+    match: (?i)^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/43ec9962925a76ca49cf1491a73430bd1b7fc3ef206de50eb0083c75b69865a6.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - games.mobileapi.hupu.com
+  - fairy.mobileapi.hupu.com
+  - bbs.mobileapi.hupu.com
+  - goblin.hupu.com

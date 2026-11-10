@@ -3,7 +3,7 @@ name: 微信小程序去广告
 description: 收录常用小程序的去广告，作者署名在插件内。
 author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
-icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png
 open_url: https://apps.apple.com/app/id414478124
 tag: 去广告
 rules:

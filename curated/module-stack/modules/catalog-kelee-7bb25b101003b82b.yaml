@@ -1,0 +1,24 @@
+name: 排班日历
+description: 移除开屏广告、横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AxWorkSchedule.png
+map_locals:
+- match: (?i)^https:\/\/schedule-api\.julanling\.com\/api\d\/get_splash$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/schedule-api\.julanling\.com\/api\d\/index_advert$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/schedule-api\.julanling\.com\/api\d\/queryAdvertConfig$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - schedule-api.julanling.com

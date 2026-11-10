@@ -1,0 +1,10 @@
+name: 粉象生活
+description: 去开屏(JQ 版)
+mitm:
+  hostnames:
+  - api.fenxianglife.com
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2
+    filter: .data.list = []
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

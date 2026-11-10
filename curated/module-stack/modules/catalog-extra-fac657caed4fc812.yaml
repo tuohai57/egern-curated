@@ -1,0 +1,13 @@
+name: 铁路12306
+description: 过滤12306应用内广告及开屏广告
+author: RuCu6[https://github.com/RuCu6]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: ad.12306.cn
+    policy: DIRECT
+mitm:
+  hostnames:
+  - ad.12306.cn
+  - mobile.12306.cn

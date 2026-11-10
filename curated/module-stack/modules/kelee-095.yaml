@@ -1,0 +1,33 @@
+name: Spotify
+description: 移除播放广告，恢复歌手和专辑列表的正常展示。修改插件自定义配置项需要重新登陆方可生效。
+author: 001ProMax[https://github.com/001ProMax]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png
+rules:
+- and:
+    match:
+    - domain_suffix:
+        match: spotify.com
+    - protocol:
+        match: quic
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: Protobuf处理
+    match: (?i)^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4e988bddebb4c25bcc37937178d84aeec825cf79dcc864ca9558c1eaacccd613.js
+    body_required: true
+    update_interval: 86400
+    timeout: 5
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - '*-spclient.spotify.com'
+  - spclient.wg.spotify.com

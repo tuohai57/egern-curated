@@ -12,8 +12,20 @@ rules:
 - domain:
     match: adstats.tencentvideo.com
     policy: REJECT
+- domain_suffix:
+    match: ugdtimg.com
+    policy: REJECT
+- domain:
+    match: info4.video.qq.com
+    policy: REJECT
+- domain:
+    match: info6.video.qq.com
+    policy: REJECT
 - domain:
     match: ugchsy.gtimg.com
+    policy: REJECT
+- domain:
+    match: rmonitor.qq.com
     policy: REJECT
 - domain:
     match: activity.video.qq.com
@@ -34,6 +46,15 @@ rules:
     match: static-res.qq.com
     policy: REJECT
 - domain_suffix:
+    match: gdtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: l.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: gdt.qq.com
+    policy: REJECT
+- domain_suffix:
     match: video.mpush.qq.com
     policy: REJECT
 - domain_suffix:
@@ -52,7 +73,13 @@ rules:
     match: track.qq.com
     policy: REJECT
 - domain_keyword:
+    match: trace.qq.com
+    policy: REJECT
+- domain_keyword:
     match: pgdt.gtimg.c
+    policy: REJECT
+- domain_keyword:
+    match: trace.video.qq.com
     policy: REJECT
 - domain_keyword:
     match: 1258344696.file.myqcloud.com

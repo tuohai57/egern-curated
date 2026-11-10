@@ -1,0 +1,401 @@
+name: Keep
+description: 移除开屏广告、搜索推荐和弹窗广告，精简底栏和首页标签。移除关注推荐、文章相关推荐和信息流中的课程推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: kad.gotokeep.com
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","adTimeoutReport"]])
+
+      ) | (
+
+      delpaths([["data","spotShowReport"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","adSupplementIntervalMinutes"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","adSupplementSwitch"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityBrandFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","searchFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","feedDetailSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","homePageFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","followFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedRecommendSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityFeedSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedFindSpotAdRequestMoment"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedSpotFixedPositionSecond"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","searchFeedSpotFixedPositionSecond"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","followFeedSpotFixedPositionSecond"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityFeedSpotFixedPositionSecond"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","searchFeedSpotFixedPositionThird"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedFindSpotFixedPositionSecond"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedFindSpotFixedPositionThird"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityFeedSpotFixedPositionInitial"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityFeedSpotFixedPositionThird"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","feedDetailDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedRecommendDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotFeedFindDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","homePageFeedDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","followFeedDynamicSpotPosition"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","searchFeedSpotPositionDynamic"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityFeedSpotPositionDynamic"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activityBrandFeedSpotPositionDynamic"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","splashAdLoadTimeLimit"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","courseAdLoadTimeLimit"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","feedAdLoadTimeLimit"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","aliHCSpotConfig"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","gdtSpotConfig"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pugcThresholdPercent"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pugcStepMinSeconds"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pugcStepMaxSeconds"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pugcPreLoadEarlySeconds"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pugcLoadPostPreRolls"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","closeConfirmButtonText"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$
+    filter: .data.modules |= map(select(.code == "unionFeedEntry"))
+- response_jq:
+    match: ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\?
+    filter: if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end
+- response_jq:
+    match: ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic\?
+    filter: .data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or .
+      == "schedule" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs
+      |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend"
+      or . == "suitTab" or . == "union_feed_route"))
+- response_jq:
+    match: ^https:\/\/api\.gotokeep\.com\/pencil-webapp\/play\/v1\/games\?
+    filter: .data.games[].microGames[] |= if .leftIcon? and .leftIcon.type == "aiMode"
+      then del(.leftIcon) else . end
+map_locals:
+- match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/search\/v4\/hotHashtag\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.gotokeep.com

@@ -1,0 +1,64 @@
+name: 酷我音乐
+description: 移除开屏广告、各类弹窗、悬浮窗、各类横幅广告、信息流广告、歌词评论区广告和播放器界面广告，精简侧边栏。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Kuwo.png
+rules:
+- url_regex:
+    match: ^http:\/\/rich\.kuwo\.cn\/AdService\/
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/rich\.kuwo\.cn\/EcomResourceServer\/
+    policy: REJECT
+- ip_cidr:
+    match: 111.206.98.63/32
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^http:\/\/searchrecterm\.kuwo\.cn\/recterm\.s
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/vip\d\.kuwo\.cn\/commercia\/vipconf\/projectPage\/getPageContent
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tingshu\.kuwo\.cn\/v2\/api\/pay\/user\/info
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appi\.kuwo\.cn\/kuwopay\/personal\/cells
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - appi.kuwo.cn
+  - mc.tencentmusic.com
+  - vip*.kuwo.cn
+  - tingshu.kuwo.cn
+body_rewrites:
+- response_jq:
+    match: (?i)^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio
+    filter: (walk(if type == "object" and .type == "stripAdvert" then del(.child)
+      else . end))

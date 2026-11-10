@@ -22,3 +22,4 @@ rules:
 - domain_suffix:
     match: urls.api.twitter.com
     policy: REJECT
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png

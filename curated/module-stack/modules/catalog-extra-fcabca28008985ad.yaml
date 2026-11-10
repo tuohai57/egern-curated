@@ -1,0 +1,60 @@
+name: 数字心动
+description: 移除开屏广告、首页顶部标签、轮播图、悬浮挂件、热门搜索、信息流广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DigitalHeartbeat.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-common-proxy-api\/api\/advertising\/proxy\/getOpenScreenAdvertising$
+    filter: if (getpath(["data"]) | has("advertisingList")) then (setpath(["data","advertisingList"];
+      [])) else . end
+- response_jq:
+    match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/getBrand$
+    filter: .data |= map(select(.advertisementName == "路跑赛事" or .advertisementName
+      == "线上赛" or .advertisementName == "越野赛事"))
+- response_jq:
+    match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$
+    filter: '(
+
+      (
+
+      (
+
+      delpaths([["data","topHotSearchList"]])
+
+      ) | (
+
+      delpaths([["data","bannerListTwo"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","textAdvertisementList"]])
+
+      )
+
+      ) | (
+
+      .data.recommendList |= map(select(.raceAdList | not or length == 0))
+
+      )'
+map_locals:
+- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/appConfigBanner\/listBannerRelease\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-content-center-api\/api\/global\/search\/hotSearch\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/advertisement\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api-changzheng.chinaath.com

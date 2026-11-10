@@ -1,0 +1,67 @@
+name: 哔哩哔哩
+description: 哔哩哔哩：去广告\n自定义去除APP内界面元素
+author: ClydeTime[https://github.com/ClydeTime],VirgilClyne[https://github.com/VirgilClyne],app2smile[https://github.com/app2smile],RuCu6[https://github.com/RuCu6],Maasea[https://github.com/Maasea]
+homepage: https://ADBlock.BiliUniverse.io
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png
+compat_arguments:
+  Splash: true
+  Feed.AD: true
+  Feed.Activity: false
+  Feed.Vertical: false
+  Feed.BlockUpLiveList: ''
+  Feed.Story: true
+  Search.AD: true
+  Search.HotSearch: true
+  PGC.AD: true
+  Xlive.AD: true
+  Dynamic.HotTopics: true
+  Dynamic.MostVisited: false
+  Dynamic.MostVisitedLiveOnly: false
+  Dynamic.AdCard: true
+  View.AD: true
+  DM.Command: false
+  DM.Colorful: false
+  Reply.AD: true
+  LogLevel: WARN
+rules:
+- url_regex:
+    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\?
+  status_code: 200
+  body: '{}'
+- match: ^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\?
+  status_code: 200
+  body: '{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}'
+  headers:
+    content-type: application/json
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\?
+    filter: del(.data.payment)
+mitm:
+  hostnames:
+  - manga.bilibili.com
+  - api.live.bilibili.com
+  - api.vc.bilibili.com
+  - app.bilibili.com
+  - app.biliapi.net
+  - api.bilibili.com
+  - api.biliapi.net
+  - grpc.biliapi.net

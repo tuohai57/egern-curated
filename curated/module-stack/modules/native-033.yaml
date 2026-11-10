@@ -7,7 +7,13 @@ rules:
     match: partner.uc.cn
     policy: REJECT
 - domain_suffix:
+    match: ubixioe.com
+    policy: REJECT
+- domain_suffix:
     match: uczzd.cn
+    policy: REJECT
+- domain_suffix:
+    match: ranfenghd.com
     policy: REJECT
 - domain_suffix:
     match: zconfig.alibabausercontent.com
@@ -23,6 +29,12 @@ rules:
     policy: REJECT
 - domain_suffix:
     match: rhdc-acs.youku.com
+    policy: REJECT
+- domain:
+    match: httpdns.alicdn.com
+    policy: REJECT
+- domain:
+    match: adsmind.ugdtimg.com
     policy: REJECT
 - domain:
     match: amdc.m.youku.com

@@ -1,0 +1,36 @@
+name: 脉脉
+description: 移除开屏广告、信息流广告、横幅推广、相关帖子推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaiMai.png
+map_locals:
+- match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除信息流和评论区大块广告
+    match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e941215a83fa4b06cef7e5931776cef1ac777d0e3e0273b6674b7897f20e9466.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - open.taou.com
+  - h3.open.taou.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?
+    filter: (delpaths([["feeds"]]))

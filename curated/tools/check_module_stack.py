@@ -15,7 +15,7 @@ for row in manifest['modules']:
  assert isinstance(obj,dict) and isinstance(obj.get('name'),str),row['name']
  for section in ('rules','url_rewrites','header_rewrites','body_rewrites','map_locals','scriptings'):
   assert isinstance(obj.get(section,[]),list),(row['name'],section)
- if row['name']=='去广告合并合集（Egern）':
+ if p.name=='000-adblock-merged-complete.yaml':
   assert row['enabled'] is True
   assert row['counts']['scriptings']==len(obj.get('scriptings',[]))
 print(json.dumps({'passed':True,'modules':len(manifest['modules']),'enabled_default':sum(1 for r in manifest['modules'] if r.get('enabled')),'unique_urls':len(urls)},ensure_ascii=False))

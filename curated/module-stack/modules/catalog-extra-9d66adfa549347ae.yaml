@@ -1,0 +1,43 @@
+name: 快对
+description: 移除开屏广告、横幅推广，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiDuiZuoYe.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: adx.zuoyebang.com
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/www\.kuaiduizuoye\.com\/codesearch\/aid\/home$
+    filter: delpaths([["data","homeBannerList"]])
+map_locals:
+- match: ^https:\/\/www\.kuaiduizuoye\.com\/init\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.kuaiduizuoye\.com\/activity\/init\/checkappconfig$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/appbannersv3$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/initbanner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/apivip\.kuaiduizuoye\.com\/viponline\/scancode\/mycard$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - www.kuaiduizuoye.com
+  - apivip.kuaiduizuoye.com

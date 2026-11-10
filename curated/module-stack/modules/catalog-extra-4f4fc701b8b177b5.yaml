@@ -1,0 +1,37 @@
+name: 微脉圈
+description: 移除开屏广告、聊天页横幅提示及发现页面的横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weimai.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/confssl\d?\.iweimai\.cn\/wm_ios_update\.json\?
+    filter: '(
+
+      (
+
+      (
+
+      if (getpath([]) | has("isShowCJAd")) then (setpath(["isShowCJAd"]; 0)) else
+      . end
+
+      ) | (
+
+      delpaths([["launchAd"]])
+
+      )
+
+      ) | (
+
+      delpaths([["adBanners"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad"]])
+
+      )'
+mitm:
+  hostnames:
+  - confssl*.iweimai.cn

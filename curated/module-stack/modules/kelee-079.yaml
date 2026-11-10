@@ -1,0 +1,41 @@
+name: 豆瓣
+description: 移除开屏广告、各页面信息流广告、首页横幅、搜索填充词。此插件需要IPA签名方可使用，App Store用户请勿使用此插件，务必点击下方主页链接查看详细教程。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DouBan.png
+map_locals:
+- match: (?i)^https:\/\/api\.douban\.com\/v\d\/app_ads\/splash
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/erebor\/feed_ad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/m\.douban\.com\/rexxar\/api\/v\d\/market\/products\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/movie\/ad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/home_banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/search\/found_words
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.douban.com
+  - frodo.douban.com
+  - m.douban.com

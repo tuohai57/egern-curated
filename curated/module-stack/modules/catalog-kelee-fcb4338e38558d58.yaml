@@ -1,0 +1,80 @@
+name: 闪动校园
+description: 精简首页和底部导航
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShandongSchool.png
+map_locals:
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/union\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/home\/getAdPopup$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/street\/listRecommendBanner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/street\/listThemeBanner$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/home\/activityEntry$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/home\/promoSlots\/config$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/channel\/subject\/hotspot\/rank$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/jackpot\/award\/home$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/jackpot\/award\/lotteryPage$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/jackpot\/award\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/mall\/goods\/recommend\/pagePointsGoodsList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.huachenjie.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/home\/homePage\/config$
+    filter: (.data.functionEntries |= map(select(.name == "运动" or .name == "空间"))
+      | del(.data.seaview))
+- response_jq:
+    match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/api\/user\/cs\/index$
+    filter: (delpaths([["data", "bannerList"]]))
+- response_jq:
+    match: (?i)^https:\/\/api\.huachenjie\.com\/run-front\/common\/bottom-bar\/redDot$
+    filter: (delpaths([["data", "inspiration"]]))

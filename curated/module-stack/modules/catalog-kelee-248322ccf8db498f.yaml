@@ -1,0 +1,19 @@
+name: Sofascore
+description: 移除横幅及信息流广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Sofascore.png
+map_locals:
+- match: (?i)^https:\/\/api\.sofascore\.com\/api\/v\d\/dsp\/country\/[A-Z]{2}$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.sofascore\.com\/api\/v\d\/trending\/grid\/tiles\/[A-Z]{2}$
+  status_code: 200
+  body: '{"tiles":[]}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.sofascore.com

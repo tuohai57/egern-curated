@@ -1,0 +1,21 @@
+name: 配音秀
+description: 移除开屏广告、弹窗、横幅、各类关注推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DubbingShow.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/live\/LiveList
+    filter: delpaths([["data","banners"]])
+- response_jq:
+    match: ^https:\/\/iosapi\.peiyinxiu\.com\/api\/live\/FollowList
+    filter: delpaths([["obj","data"]])
+- response_jq:
+    match: ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Friend\/GetRecommendUsers
+    filter: delpaths([["obj","data"]])
+- response_jq:
+    match: ^https:\/\/iosapi\.peiyinxiu\.com\/api\/Union\/HomeData
+    filter: delpaths([["obj","data"]])
+mitm:
+  hostnames:
+  - iosapi.peiyinxiu.com

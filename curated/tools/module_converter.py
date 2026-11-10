@@ -68,7 +68,7 @@ def convert(text, name, dependency, binary_local, adapter=None):
         if 'argument' in options:
             fields['env']={'argument':unquote(options['argument'])}
         if adapter and phase in {'http_request','http_response'} and options.get('qx'):
-            fields['script_url']=adapter(url,fields['script_url'])
+            fields['script_url']=adapter(url,fields['script_url'],options)
         add('scriptings',{phase:fields})
     for raw in text.splitlines():
         line=raw.strip()
@@ -145,8 +145,8 @@ def convert(text, name, dependency, binary_local, adapter=None):
             elif re.match(r'^\S+\s+url\s+',line):
                 pattern,_,action,payload=(line.split(None,3)+[''])[:4]
                 if action.startswith('script-'):
-                    if action=='script-echo-response':
-                        script(pattern,payload.strip(),'http_request',{'requires-body':'false','qx':True,'echo':True});continue
+                    if action in {'script-echo-response','script-analyze-echo-response'}:
+                        script(pattern,payload.strip(),'http_request',{'requires-body':'true' if action=='script-analyze-echo-response' else 'false','qx':True,'echo':True});continue
                     phase='http_response' if 'response' in action else 'http_request'
                     script(pattern,payload.strip(),phase,{'requires-body':'true' if 'body' in action else 'false','qx':True})
                 elif action.startswith('jsonjq-'):

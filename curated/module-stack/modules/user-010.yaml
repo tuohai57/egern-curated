@@ -9,4 +9,4 @@ body_rewrites:
 - response_jq:
     match: ^https?:\/\/.*yangjibao.com\/unify_ad
     filter: .data=null
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/tianping.png
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d5/32/6f/d5326f98-43dc-3496-82fd-07df31920210/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg

@@ -2,7 +2,7 @@ name: '📺 BiliBili: 🔀 Redirect'
 description: 哔哩哔哩：重定向\n中国站CDN自定义
 author: VirgilClyne[https://github.com/VirgilClyne]
 homepage: https://biliverse.github.io/guide/redirect
-icon: https://github.com/Biliverse/Redirect/raw/main/src/assets/icon_rounded.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png
 open_url: http://boxjs.com/#/app/BiliBili.Redirect
 url_rewrites:
 - match: ^http:\/\/upos-sz-mirror[a-z0-9-]*ov\.bilivideo\.com(?::80)?\/upgcxcode\/
@@ -26,9 +26,9 @@ url_rewrites:
 - match: ^https:\/\/upos-sz-mirrorakam\.akamaized\.net(?::(?:443|4483))?\/upgcxcode\/
   location: https://upos-sz-mirrorali.bilivideo.com/upgcxcode/
 - match: ^https:\/\/upos-sz-mirror[a-z0-9-]*bstar1\.bilivideo\.com(?::(?:443|4483))?\/upgcxcode\/
-  location: https://upos-sz-mirrorali.bilivideo.com00/upgcxcode/
+  location: https://upos-sz-mirrorali.bilivideo.com0/upgcxcode/
 - match: ^https:\/\/upos-bstar1-mirrorakam\.akamaized\.net(?::(?:443|4483))?\/upgcxcode\/
-  location: https://upos-sz-mirrorali.bilivideo.com11/upgcxcode/
+  location: https://upos-sz-mirrorali.bilivideo.com1/upgcxcode/
 map_locals:
 - match: ^https:\/\/(?:biliverse\.github\.io|app\.bilibili\.com)\/api\/Redirect(?:\?.*)?$
   status_code: 200

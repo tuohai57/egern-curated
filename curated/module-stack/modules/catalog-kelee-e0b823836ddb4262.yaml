@@ -1,0 +1,43 @@
+name: 随手记
+description: 移除开屏广告、神象云账本内部广告、我的页面广告，移除社区入口。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KingdeeMyMoney.png
+map_locals:
+- match: (?i)^https:\/\/tg\.feidee\.com\/online_ad\/api\/search\.do$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/yunmk\.feidee\.net\/cab-market-ws\/market\/v2\/contents$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/v2\/ads\/.+esultNum
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.feidee\.net\/v1\/configs\/client\/configs
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/show
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/yun\.feidee\.net\/cab-periodic-activity-ws\/terminal\/v1\/members\/status
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - tg.feidee.com
+  - yunmk.feidee.net
+  - community.feidee.com
+  - api.feidee.net
+  - yun.feidee.net

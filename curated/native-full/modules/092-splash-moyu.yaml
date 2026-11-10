@@ -3,7 +3,7 @@ name: 墨鱼去开屏2.0
 description: 去除开屏广告，部分APP要清除缓存或者重新安装拦截广告才会生效!
 author: ddgksf2013[https://github.com/ddgksf2013]
 homepage: https://loonlab.103516.xyz/Plugin/
-icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/AdReject.png
+icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
 tag: 去广告
 rules:
 - domain_suffix:

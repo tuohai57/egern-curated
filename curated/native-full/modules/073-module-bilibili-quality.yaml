@@ -1,7 +1,7 @@
 # User v12.5 restoration; original scripts retained; verified URL-path conflicts resolved.
 name: bilibil解锁大会员画质
 description: bilibili解锁大会员画质
-icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png
 scriptings:
 - http_response:
     name: 哔哩哔哩番剧开启1080P+

@@ -1,0 +1,108 @@
+name: 薄荷健康
+description: 移除记录页大家都在看、移除各类弹窗，移除广场横幅推广，精简代谢中心页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BooHee.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?
+    filter: '(
+
+      delpaths([["data","recom_cards"]])
+
+      ) | (
+
+      delpaths([["data","recom_btns"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\?
+    filter: '(
+
+      delpaths([["data","tabs",1,"badge"]])
+
+      ) | (
+
+      delpaths([["data","recommend_ads"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["top_banner"]])
+
+      ) | (
+
+      delpaths([["diagnos_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["partner_hospital"]])
+
+      )
+
+      ) | (
+
+      delpaths([["question_answer"]])
+
+      )
+
+      ) | (
+
+      delpaths([["product"]])
+
+      )
+
+      ) | (
+
+      delpaths([["brand_story"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/status\.boohee\.com\/api\/v1\/merged_messages$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.boohee.com
+  - bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn
+  - lego.boohee.com
+  - status.boohee.com

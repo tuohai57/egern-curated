@@ -1,0 +1,649 @@
+name: 百度贴吧
+description: 移除开屏广告、信息流广告和帖内广告，精简侧拉抽屉及我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], app2smile[https://github.com/app2smile]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png
+homepage: https://hub.kelee.one
+compat_arguments:
+  per_filter_video_thread: true
+rules:
+- domain:
+    match: 180.76.76.200
+    policy: REJECT
+- ip_cidr:
+    match: 180.76.76.200/32
+    policy: REJECT
+    no_resolve: true
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/tiebac\.baidu\.com\/c\/s\/sync$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["activity_switch"]])
+
+      ) | (
+
+      delpaths([["video_report_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["advertisement_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["next_start"]])
+
+      )
+
+      ) | (
+
+      delpaths([["push_strategy_new"]])
+
+      )
+
+      ) | (
+
+      delpaths([["live_activity_guide"]])
+
+      )
+
+      ) | (
+
+      delpaths([["h5_pop_ups"]])
+
+      )
+
+      ) | (
+
+      delpaths([["duxiaoman_url"]])
+
+      )
+
+      ) | (
+
+      delpaths([["is_need_remind_live_rooms"]])
+
+      )
+
+      ) | (
+
+      delpaths([["floating_icon"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_stlog_switch"]])
+
+      )
+
+      ) | (
+
+      delpaths([["first_time_motivate"]])
+
+      )
+
+      ) | (
+
+      delpaths([["windowStrategyList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_adsense"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["videoup_guide_pop"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_origin_config_switch"]])
+
+      )
+
+      ) | (
+
+      delpaths([["needNewUserLead"]])
+
+      )
+
+      ) | (
+
+      delpaths([["h5_pop_ups_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["alaTabColor"]])
+
+      )
+
+      ) | (
+
+      delpaths([["search_guide"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_sdk_priority"]])
+
+      )
+
+      ) | (
+
+      delpaths([["low_version_pop_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_num_competition_frs"]])
+
+      )
+
+      ) | (
+
+      delpaths([["live_new_user_guide_day"]])
+
+      )
+
+      ) | (
+
+      delpaths([["screen_fill_data_result"]])
+
+      )
+
+      ) | (
+
+      delpaths([["yy_live_tab"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ad_num_competition_personalize"]])
+
+      )
+
+      ) | (
+
+      delpaths([["complete_apk_url"]])
+
+      )
+
+      ) | (
+
+      delpaths([["user_activity"]])
+
+      )
+
+      ) | (
+
+      delpaths([["homepage_guide"]])
+
+      )
+
+      ) | (
+
+      delpaths([["bottom_bubble_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["home_screen_ad"]])
+
+      )
+
+      ) | (
+
+      delpaths([["afSearch_tab"]])
+
+      )
+
+      ) | (
+
+      delpaths([["recent_client_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["video_activity"]])
+
+      )
+
+      ) | (
+
+      delpaths([["namoaixud_url"]])
+
+      )
+
+      ) | (
+
+      delpaths([["yy_live_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["user_growth_task_list"]])
+
+      )
+
+      ) | (
+
+      delpaths([["cloud_control_data_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","pb_banner_funad_cache_strategy"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","pb_comment_asyncafd_cache_strategy"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","download_edge_float"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","download_pause_retain_dialog_conf"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","download_mobile_dialog_conf"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","download_fake_progress_config_a"]])
+
+      )
+
+      ) | (
+
+      delpaths([["wl_config","download_fake_progress_config_b"]])
+
+      )
+
+      ) | (
+
+      delpaths([["scheme_whitelist"]])
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("home_ad_num")) then (setpath(["wl_config","home_ad_num"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("frs_ad_num")) then (setpath(["wl_config","frs_ad_num"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("pb_comment_ad_num")) then (setpath(["wl_config","pb_comment_ad_num"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("index_bear_density")) then (setpath(["wl_config","index_bear_density"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("frs_bear_density")) then (setpath(["wl_config","frs_bear_density"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("index_bear_first_floor_max")) then (setpath(["wl_config","index_bear_first_floor_max"];
+      999999999)) else . end
+
+      )
+
+      ) | (
+
+      if (getpath(["wl_config"]) | has("index_bear_first_floor_min")) then (setpath(["wl_config","index_bear_first_floor_min"];
+      999999999)) else . end
+
+      )
+
+      ) | (
+
+      .index_tab_info |= map(select(.tab_name == "推荐")) | .top_level_navi |= {"推荐":
+      .["推荐"], "侧边栏": .["侧边栏"], "关注": .["关注"]}
+
+      )'
+- response_jq:
+    match: ^https?:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["url_map"]])
+
+      ) | (
+
+      delpaths([["user_agent_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["bubble_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["duxiaoman_entry"]])
+
+      )
+
+      ) | (
+
+      delpaths([["uc_card"]])
+
+      )
+
+      ) | (
+
+      delpaths([["finance_tab"]])
+
+      )
+
+      ) | (
+
+      delpaths([["vip_banner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["ala_live_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["recom_naws_list"]])
+
+      )
+
+      ) | (
+
+      delpaths([["duxiaoman"]])
+
+      )
+
+      ) | (
+
+      delpaths([["user","consume_info"]])
+
+      )
+
+      ) | (
+
+      delpaths([["namoaixud_entry"]])
+
+      )
+
+      ) | (
+
+      if (getpath(["user","shake_ad_switch"]) | has("is_show")) then (setpath(["user","shake_ad_switch","is_show"];
+      0)) else . end
+
+      )
+
+      ) | (
+
+      .custom_grid |= map(select(.title != "游戏大厅" and .title != "预约管理" and .title
+      != "领话费" and .title != "短故事")) | .zone_info |= map(.common_func |= (if .common_func_noraml
+      then .common_func_noraml |= map(select(.name != "创建智能体")) else . end)) | .zone_info
+      |= map(select(.type != "commerce" and .type != "banner" and .type != "game"))
+
+      )'
+- response_jq:
+    match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/forum\/forumGuide$
+    filter: delpaths([["hot_search"]])
+- response_jq:
+    match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/frs\/frsBottom\?
+    filter: delpaths([["card_activity"]])
+- response_jq:
+    match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$
+    filter: delpaths([["card_activity"]])
+- response_jq:
+    match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$
+    filter: '(
+
+      (
+
+      (
+
+      delpaths([["game_center"]])
+
+      ) | (
+
+      delpaths([["tools"]])
+
+      )
+
+      ) | (
+
+      delpaths([["task_list"]])
+
+      )
+
+      ) | (
+
+      delpaths([["vip_banner"]])
+
+      )'
+map_locals:
+- match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getInterestClassList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/search\/discover$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/tieba\.baidu\.com\/c\/f\/forum\/getForumAlbum$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^http:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/hotforum$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/tieba\.baidu\.com\/mo\/q\/search\/startPage\?
+  status_code: 200
+  body: '{"no":0,"error":"success"}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - tiebac.baidu.com
+  - tieba.baidu.com

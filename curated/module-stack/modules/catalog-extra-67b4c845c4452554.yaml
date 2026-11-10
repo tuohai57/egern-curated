@@ -1,0 +1,36 @@
+name: TubeMax
+description: 过滤TubeMax广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TubeMax.png
+homepage: https://hub.kelee.one
+rules:
+- domain_suffix:
+    match: adjust.com
+    policy: REJECT
+- domain_suffix:
+    match: applvn.com
+    policy: REJECT
+- domain_suffix:
+    match: app-measurement.com
+    policy: REJECT
+- domain_suffix:
+    match: pangle.io
+    policy: REJECT
+- domain_suffix:
+    match: applovin.com
+    policy: REJECT
+- domain_suffix:
+    match: appier.net
+    policy: REJECT
+- domain_suffix:
+    match: adsmoloco.com
+    policy: REJECT
+- domain_suffix:
+    match: adcanvas.com
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/.*\.i18n-pglstatp\.com\/obj\/ad-pattern-sg
+    policy: REJECT
+mitm:
+  hostnames:
+  - '*.i18n-pglstatp.com'

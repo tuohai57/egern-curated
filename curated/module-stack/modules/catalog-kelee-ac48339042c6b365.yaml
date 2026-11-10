@@ -1,0 +1,33 @@
+name: ZAKER
+description: 移除开屏广告、置顶轮播图广告和文末广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZAKER.png
+map_locals:
+- match: (?i)^https:\/\/iphone\.myzaker\.com\/zaker\/cover\.php\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/iphone\.myzaker\.com\/zaker\/block_top_ad\.php\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - iphone.myzaker.com
+  - ggs.myzaker.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/iphone\.myzaker\.com\/zaker\/article_mongo_sec\.php\?
+    filter: (delpaths([["data", "ad_url"]]))
+- response_jq:
+    match: (?i)^https:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\?
+    filter: (delpaths([["data", "article_bottom"], ["data", "recommend_ad"]]))
+- response_jq:
+    match: (?i)^https:\/\/iphone\.myzaker\.com\/zaker\/follow_promote\.php\?
+    filter: (.data.list |= map(select(.type != "web")))
+- response_jq:
+    match: (?i)^https:\/\/iphone\.myzaker\.com\/zaker\/car_tab\/index\.php\?
+    filter: (.data.gallery |= map(select(.type != "web")))

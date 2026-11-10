@@ -1,0 +1,13 @@
+name: Reddit
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - gql-fed.reddit.com
+scriptings:
+- http_response:
+    name: Reddit / 1
+    match: ^https?:\/\/gql-fed\.reddit\.com\/$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9fba62bb23f38607739e135376c88c8276d4f26d7e1cac478ad7467cedd0590e.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png

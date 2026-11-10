@@ -1,0 +1,14 @@
+name: 小喵看书
+description: 移除小喵看书章末广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiaoRead.png
+map_locals:
+- match: (?i)^https:\/\/api\.miaomiaoyd\.com\/book\/config\/getAdsSettings$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - api.miaomiaoyd.com

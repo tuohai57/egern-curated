@@ -254,15 +254,16 @@
     "enabled": true,
     "update_interval": 86400,
     "repository_path": "curated/native-full/priority-guard-ai-regions-muse.yaml",
-    "sha256": "1bcb7aa60f826ded3ecb0200b09c38ecb2e4e7365e6865b3d4d1d71fc168a335",
-    "rules": 495
+    "sha256": "d5703f27fb0567fc3fa969b46a9f71c998009e64ee3ca5c0a3ce5d361afff845",
+    "rules": 512,
+    "icon": null
   },
   "modules": [
     {
       "name": "0. 优先级补丁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/001-00-override.yaml",
       "repository_path": "curated/native-full/modules/001-00-override.yaml",
-      "sha256": "6929149c13d557595dcaa262f1faed2c11bf6558cefe93d63cecb78c2ab72f95",
+      "sha256": "29b8a0964bbd2d909d85efad0d66cbb080ce2f7e23cfa34e802c4efee4b3a9af",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/00-override.yaml",
       "source_sha256": "e3c9556ace2f8215067d8c4a982cac1c5900888275740dc39c9c665088ca8f15",
@@ -281,7 +282,8 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
     },
     {
       "name": "HTTPDNS 拦截器",
@@ -343,7 +345,8 @@
         "msglb.91160.com",
         "ucdc2-upaas.uc.cn",
         "gw-cn.jiaoliuqu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png"
     },
     {
       "name": "广告平台拦截器",
@@ -466,7 +469,8 @@
         "video-dsp.pddpic.com",
         "t-dsp.pinduoduo.com",
         "images.pinduoduo.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/Website_icon/120px/TencentAd.png"
     },
     {
       "name": "跳过代理检测",
@@ -491,7 +495,8 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/SkipProxy.png"
     },
     {
       "name": "知乎",
@@ -596,7 +601,8 @@
       },
       "hosts": [
         "*.zhihu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
     },
     {
       "name": "微博",
@@ -637,7 +643,8 @@
         "*.weibo.cn",
         "*.weibo.com",
         "weibo.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png"
     },
     {
       "name": "小红书",
@@ -711,7 +718,8 @@
         "rec.rnote.com",
         "www.rnote.com",
         "so.rnote.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/RedNote.png"
     },
     {
       "name": "闲鱼",
@@ -782,7 +790,8 @@
       "hosts": [
         "acs.m.goofish.com",
         "g-acs.m.goofish.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png"
     },
     {
       "name": "拼多多",
@@ -842,7 +851,8 @@
         "api.pinduoduo.com",
         "api.yangkeduo.com",
         "m.pinduoduo.net"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/PinDuoDuo.png"
     },
     {
       "name": "腾讯视频",
@@ -913,7 +923,8 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/TencentVideo.png"
     },
     {
       "name": "百度网盘",
@@ -964,7 +975,8 @@
       "hosts": [
         "pan.baidu.com",
         "afd.baidu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduNetDisk.png"
     },
     {
       "name": "高德地图",
@@ -1011,7 +1023,8 @@
       },
       "hosts": [
         "*.amap.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png"
     },
     {
       "name": "网易云音乐",
@@ -1070,13 +1083,14 @@
       "hosts": [
         "interface*.music.163.com",
         "ipv4.music.163.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
       "name": "B站净化（Sparkle）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/014-app-bilibili-sparkle.yaml",
       "repository_path": "curated/native-full/modules/014-app-bilibili-sparkle.yaml",
-      "sha256": "58c2a5a8081e3e4b786b7c70081891562aee269b3944c27807a2cb6b075604b9",
+      "sha256": "b38dc8c1349f78aea288032460d193e867a71ae6e447d0e36a911b173b4d800f",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-bilibili-sparkle.yaml",
       "source_sha256": "44d0dccbbb25bbb7934aac78b120a3676e970e312a52206b6987aebfe0739be4",
@@ -1171,13 +1185,14 @@
         "api.live.bilibili.com",
         "www.bilibili.com",
         "line3-h5-mobile-api.biligame.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "B站重定向（BiliUniverse）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/015-app-bilibili-redirect.yaml",
       "repository_path": "curated/native-full/modules/015-app-bilibili-redirect.yaml",
-      "sha256": "971ddcf91afd6a1346796aaa05b34c27b753b1d20e9353a87fd0b94df0e770e0",
+      "sha256": "4dbd96d703cc0f2acd04253b8c5bf2448d6b1afae1658a38b22c8624e598c708",
       "enabled": false,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-bilibili-redirect.yaml",
       "source_sha256": "befe2b242094bb903499bd56b1f43a8c729a7404e65a78cef5cfbc194e7dfbd1",
@@ -1242,13 +1257,14 @@
         "cn-hk-eq-*.bilivideo.com:4483",
         "upos-*-mirrorakam.akamaized.net:4483",
         "app.bilibili.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "B站去广告（BiliUniverse）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/016-app-bilibili-adblock.yaml",
       "repository_path": "curated/native-full/modules/016-app-bilibili-adblock.yaml",
-      "sha256": "9ec5197de4427cd40fca31ea5d3d29cf5e63dba2127d0228400ee6500d5a8d32",
+      "sha256": "02bbb62c4f1f1e5ae6233e718fe979d54b61a8bfd1e728f88eb57273bd0c4a4f",
       "enabled": false,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-bilibili-adblock.yaml",
       "source_sha256": "3fe32f5603cd94b473120262bb9c1db1e66fdcc48b46e15e791c8d5fb71b6551",
@@ -1329,13 +1345,14 @@
         "cm.bilibili.com",
         "adtrack.qianwen.com",
         "tkio-redirect.solar-engine.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "B站全局（BiliUniverse）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/017-app-bilibili-global.yaml",
       "repository_path": "curated/native-full/modules/017-app-bilibili-global.yaml",
-      "sha256": "ea43e398c68e702c9a8df3258273a347000476474b0b50f04e4aad4457655cc2",
+      "sha256": "28c183b5ab56301afdf9b8178fb1ae92b49b0fd17687518d0046b24fdbf11043",
       "enabled": false,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-bilibili-global.yaml",
       "source_sha256": "971d1f9000f19391fb4b73b46926bb7b82f47524b60c562a27cb71b0795535cb",
@@ -1427,7 +1444,8 @@
         "api.bilibili.com",
         "api.biliapi.net",
         "grpc.biliapi.net"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "哔哩哔哩",
@@ -1490,7 +1508,8 @@
         "api.live.bilibili.com",
         "www.bilibili.com",
         "line3-h5-mobile-api.biligame.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "酷安",
@@ -1545,7 +1564,8 @@
       "hosts": [
         "api.coolapk.com",
         "www.coolapk.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CoolApk.png"
     },
     {
       "name": "什么值得买",
@@ -1618,7 +1638,8 @@
         "post.m.smzdm.com",
         "qianbao.smzdm.com",
         "s3.zdmimg.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png"
     },
     {
       "name": "滴滴出行",
@@ -1751,7 +1772,8 @@
         "manhattan.webapp.xiaojukeji.com",
         "mapi.xiaojukeji.com",
         "res.xiaojukeji.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
     },
     {
       "name": "Spotify",
@@ -1859,7 +1881,8 @@
       "hosts": [
         "spclient.wg.spotify.com",
         "*spclient.spotify.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png"
     },
     {
       "name": "YouTube",
@@ -2055,13 +2078,14 @@
         "m.youtube.com",
         "music.youtube.com",
         "*.googlevideo.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png"
     },
     {
       "name": "爱奇艺",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/024-app-iqiyi.yaml",
       "repository_path": "curated/native-full/modules/024-app-iqiyi.yaml",
-      "sha256": "051ff31c6ddc48de83521b89af44eb1071a65e572ef16a36309d50042d656b60",
+      "sha256": "1606a10970a7b2ac761e630d57b8dad6ca0f8b0492ff95a1762774fc28ebdda9",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-iqiyi.yaml",
       "source_sha256": "cd290dbc497d7e009a7064fd987b3355c050aeb558c88d8c4ca9e148cfe4cdca",
@@ -2086,13 +2110,14 @@
       "hosts": [
         "-i.vip.iqiyi.com",
         "*.iqiyi.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/aqiyi.png"
     },
     {
       "name": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/025-app-taobao.yaml",
       "repository_path": "curated/native-full/modules/025-app-taobao.yaml",
-      "sha256": "cbbeb260a5f628096027f91efd81688f3c90bbfaef575c748d9b4947172d9bfc",
+      "sha256": "576aa143921d04636c597ca03dd99dfc7ccf9fc6dcee1e2cb5d1e8bbcdf8635b",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-taobao.yaml",
       "source_sha256": "8ef772cf1e54f853f6d8a46a7d1e533cc02590538ea8efbd9ae608dcf54a44e1",
@@ -2109,13 +2134,14 @@
         "acs.m.taobao.com",
         "guide-acs.m.taobao.com",
         "poplayer.template.alibaba.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png"
     },
     {
       "name": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/026-app-jd.yaml",
       "repository_path": "curated/native-full/modules/026-app-jd.yaml",
-      "sha256": "d89550d78dd1d18d1f9d3bbb87db48e45aa219e26f8a4035806526b403d8982b",
+      "sha256": "819ebf4969bf66158064b97159242a0da9f07eb1609b14f041bebe4d4ef97adb",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-jd.yaml",
       "source_sha256": "48304e2d95147f9272f454eee76d5ea3f52632302336d1381b05c1914fd27072",
@@ -2148,13 +2174,14 @@
       "hosts": [
         "api.m.jd.com",
         "dns.jd.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png"
     },
     {
       "name": "快手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/027-app-kuaishou.yaml",
       "repository_path": "curated/native-full/modules/027-app-kuaishou.yaml",
-      "sha256": "cf992bfd821206e726e5eae40ac8dc0f3c5d4054f4440883d2ef698758cd4637",
+      "sha256": "073ccf973ffd7191746e35f5208bdea0c98b42a5c2bb66f06ae7c07b0b2843d1",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-kuaishou.yaml",
       "source_sha256": "2378fe63450027ca15e45d233bd85416ed547eab980ae8d0dec3e3b87de3ac11",
@@ -2176,13 +2203,14 @@
         "apissl.ksapisrv.com",
         "az2-api-js.gifshow.com",
         "az2-live.ksapisrv.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/kuaishou.png"
     },
     {
       "name": "芒果TV",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/028-app-mgtv.yaml",
       "repository_path": "curated/native-full/modules/028-app-mgtv.yaml",
-      "sha256": "7af8d3b38413709cdfa4fd703a3af257b449aea28f3ccd8515233d2a96a91f3c",
+      "sha256": "223ff25a5ac7b82ba045bc17c655c3ed052f0f3fca94b347d3ba99ec04d7bd9f",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-mgtv.yaml",
       "source_sha256": "0a1e1ff7b28e863227f86afc38451153d8da46587fd8aa4db7556d013b9eaf14",
@@ -2202,13 +2230,14 @@
       },
       "hosts": [
         "*.mgtv.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mangguotv.png"
     },
     {
       "name": "QQ音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/029-app-qqmusic.yaml",
       "repository_path": "curated/native-full/modules/029-app-qqmusic.yaml",
-      "sha256": "25e54fca4fc3e90b143fefe997779eb1783d5836facb367bd52ffa9c3957f428",
+      "sha256": "c9cc0c2f9dee9d81e56372179cdcbafd9f56976fc78840a64a8485213d2611e6",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-qqmusic.yaml",
       "source_sha256": "5ad2e310a8f50a236fe548cbdea94466540fcd486ce7564c9dd11722b0a075d7",
@@ -2294,13 +2323,14 @@
         "us.l.qq.com",
         "y.gtimg.cn",
         "music.y.qq.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QQMusic.png"
     },
     {
       "name": "酷我音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/030-app-kuwo.yaml",
       "repository_path": "curated/native-full/modules/030-app-kuwo.yaml",
-      "sha256": "24a03e775fc6ce0da674b7d6bb2ed96c37574bc055a2253263fa48564e2c31ee",
+      "sha256": "7d19f702f2772816b74ac89aa00d283db56c39258f986f4db8e4fddad762d1f2",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-kuwo.yaml",
       "source_sha256": "2f5fcc6568297a580cd28db2119b3249de592accea8782ff48abda3428bc5f45",
@@ -2320,13 +2350,14 @@
         "searchrecterm.kuwo.cn",
         "musicpay.kuwo.cn",
         "vip1.kuwo.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Kuwo.png"
     },
     {
       "name": "汽水音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/031-app-qishui.yaml",
       "repository_path": "curated/native-full/modules/031-app-qishui.yaml",
-      "sha256": "511ea1c620fe447de2408aa64127140d87ce3f2319ef6a0ef040789de9991227",
+      "sha256": "e0c4d4d95db0b1741355d62faa31bb88644b7cdb52146b03b62acfaf23395420",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-qishui.yaml",
       "source_sha256": "5520a60b62b88aaebc40b29f0ac0069c0f5821a47afe600aac6889df5916d9fc",
@@ -2409,13 +2440,14 @@
         "api-access.pangolin-sdk-toutiao?.com",
         "sf*-fe-tos.pglstatp-toutiao.com",
         "lf-cdn-tos.bytescm.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png"
     },
     {
       "name": "喜马拉雅",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/032-app-ximalaya.yaml",
       "repository_path": "curated/native-full/modules/032-app-ximalaya.yaml",
-      "sha256": "aea7118635b8d5909f79263c37e02a42e4841fe526fd3c5b3bba61d0fcbed7c9",
+      "sha256": "c48ce6fde6e1f4f8a5f146050386d6a00a648f80826c983d3d5967a764199874",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-ximalaya.yaml",
       "source_sha256": "b9ba3358f537b2614559a42d0f5bfc237e77db4916f6ad2cdbdc77d6d5eb45e6",
@@ -2437,13 +2469,14 @@
         "mobwsa.ximalaya.com",
         "m.ximalaya.com",
         "mwsa.ximalaya.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Himalaya.png"
     },
     {
       "name": "优酷",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/033-app-youku.yaml",
       "repository_path": "curated/native-full/modules/033-app-youku.yaml",
-      "sha256": "6c942699b00556461843e776f403d44fa27b2862df573592fe5e3276655a4430",
+      "sha256": "1a2ba1d28903031f23071af539aac3f6a85bcb5dcfadccee17840efb8209b85b",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-youku.yaml",
       "source_sha256": "3b366108920e74282ec451646a82d259e6631c2fcb5b8096be877ce327202d94",
@@ -2477,13 +2510,14 @@
         "acs.youku.com",
         "push.m.youku.com",
         "un-acs.youku.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/youkushipin.png"
     },
     {
       "name": "斗鱼直播",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/034-app-douyu.yaml",
       "repository_path": "curated/native-full/modules/034-app-douyu.yaml",
-      "sha256": "f63f9d095e68142322ec806831ae82352a4a56413ea528c2865e0bbd62faaaa8",
+      "sha256": "14185b99cce837079c22fc01e034cabef16b423c007dca7ab6d0dc83ff48906f",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-douyu.yaml",
       "source_sha256": "4ebf5f7f29da6b99882785f75dc1f24e84de5fa54d8a780457c723d33daec571",
@@ -2523,13 +2557,14 @@
         "staticlive.douyucdn.cn",
         "capi.douyucdn.cn",
         "douyucdn.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Douyu.png"
     },
     {
       "name": "虎牙直播",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/035-app-huya.yaml",
       "repository_path": "curated/native-full/modules/035-app-huya.yaml",
-      "sha256": "a20b2bfc53e41b49af73fe5722aba5dc7fe9ce06f5304b0bc2a1b52323eb5213",
+      "sha256": "336a4bbeb44efe258796e11152a4bcbbeac0e9a3e99a6b76c5d3e313b3402296",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-huya.yaml",
       "source_sha256": "bb3fba727dfc6a6960d4c379f96ef8adf15858a6b8b3e7495442f01a967d2d79",
@@ -2556,13 +2591,14 @@
         "business.msstatic.com",
         "cdnfile1.msstatic.com",
         "live-ads.huya.com"
-      ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/47/c9/98/47c998ef-0f32-a014-e814-1f39073b7518/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
     },
     {
       "name": "美团",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/036-app-meituan.yaml",
       "repository_path": "curated/native-full/modules/036-app-meituan.yaml",
-      "sha256": "cf8ab56716165f8ccd525b03d8c6817e6a6605a086428b92f76f3c63db35dc1b",
+      "sha256": "6ec99d0d65bf236c6f7bae2ec24964a20be752f913c152640c48922cf3c02ad6",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-meituan.yaml",
       "source_sha256": "08084df175d78f0c7551339bb8eb878f84c058397cfee7d7694ac2be05ddc68e",
@@ -2575,13 +2611,14 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/meituan.png"
     },
     {
       "name": "懂车帝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/037-app-dcar.yaml",
       "repository_path": "curated/native-full/modules/037-app-dcar.yaml",
-      "sha256": "50c7203d488932137655b65a9d74eb665f5f29b88c52f4a7b6d35656bae4c087",
+      "sha256": "31b002eb6e3276904e87aa846afd61916babf2d5c056d7d0cee2f54f4c704d9f",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-dcar.yaml",
       "source_sha256": "2fa7db02daadc8acdb68965c1918b2828883e6f7a68ba6787b0f8597156de7a5",
@@ -2594,13 +2631,14 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6e/2a/81/6e2a81b3-80bd-1d66-91bf-f1e02af10a29/DCDAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
     },
     {
       "name": "WPS / 金山",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/038-app-wps.yaml",
       "repository_path": "curated/native-full/modules/038-app-wps.yaml",
-      "sha256": "7df148bfc4a7452b378355bd6d1512e29b39f0c8566c0cefa79ba8c13269aa08",
+      "sha256": "637a100618381769bc035584cad22fdcad6cada1e7ea55fbf52095b5d260fe64",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-wps.yaml",
       "source_sha256": "3e12cb7818d0cbf86e70332ab232f7e4fab2dd28c302b735f6d84f265061b1c8",
@@ -2613,13 +2651,14 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wps.png"
     },
     {
       "name": "X 网页版",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/039-app-x-web.yaml",
       "repository_path": "curated/native-full/modules/039-app-x-web.yaml",
-      "sha256": "f6e36c81675ade86fe325013c6d5a6b40e2f1b037885f3aa3a893083ded7c921",
+      "sha256": "9b6c5ebd43c3ef7e4ece2df52be0059c2548bc982e16cdf70e0f9bd8b7e6b820",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-x-web.yaml",
       "source_sha256": "e719b8793061869357fcd9efcf65ad171f460123ccdb35a40407df8d624f8b46",
@@ -2634,13 +2673,14 @@
       },
       "hosts": [
         "x.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png"
     },
     {
       "name": "Twitter (X)",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/040-app-twitter.yaml",
       "repository_path": "curated/native-full/modules/040-app-twitter.yaml",
-      "sha256": "17009a061bfc3019cfc22a777b9de81fc9a2a8011e1913aacca7de6756c0fd65",
+      "sha256": "7406bd35c85a19d0dcb41446838eb1b1e41d3a9764a46c79ae1ea96a6e1a0280",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-twitter.yaml",
       "source_sha256": "82b7bd37c7d36edc39b8a7988ef4d6f8a5092a6b92e5c6fc6c132307bdc8570e",
@@ -2653,13 +2693,14 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png"
     },
     {
       "name": "Facebook",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/041-app-facebook.yaml",
       "repository_path": "curated/native-full/modules/041-app-facebook.yaml",
-      "sha256": "a92d727e711e6ba6099a097e28b43ebca2627f5f2aee64399ea178a823a1cd8d",
+      "sha256": "2e482ef11e52d1183ad58d6fa8c16c5c1b2956d1787d9b38f7ae3b1f8aad3edd",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-facebook.yaml",
       "source_sha256": "e8c8f020ed2e2d7faaffe81750b409cafe5fb109d9e3a76ce56cefa9f2f89601",
@@ -2672,13 +2713,14 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/04ProxySoft/facebook.png"
     },
     {
       "name": "TikTok",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/042-app-tiktok.yaml",
       "repository_path": "curated/native-full/modules/042-app-tiktok.yaml",
-      "sha256": "a572ca59487802ebfe98b0eb0dc8353861bf513ae22bfd075b9d4bc69d002fd1",
+      "sha256": "79f1a1ae6ba4a094e46ae2387250ad640b13ec4d76c6e2e823b7bf47481b0609",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-tiktok.yaml",
       "source_sha256": "5525fd729a11174f352e79691d53bfc2460a2798ec8c6b50d1612f5d3414b3ab",
@@ -2691,7 +2733,8 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png"
     },
     {
       "name": "得物",
@@ -2725,7 +2768,8 @@
       },
       "hosts": [
         "app.dewu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png"
     },
     {
       "name": "瑞幸咖啡",
@@ -2746,7 +2790,8 @@
       },
       "hosts": [
         "capi.lkcoffee.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LuckinCoffee.png"
     },
     {
       "name": "米游社",
@@ -2773,7 +2818,8 @@
       "hosts": [
         "bbs-api.miyoushe.com",
         "bbs-api-ab.miyoushe.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/miHoYoBBS.png"
     },
     {
       "name": "小黑盒",
@@ -2794,7 +2840,8 @@
       },
       "hosts": [
         "api.xiaoheihe.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaoHeiHe.png"
     },
     {
       "name": "马蜂窝",
@@ -2820,7 +2867,8 @@
       },
       "hosts": [
         "mapi.mafengwo.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaFengWo.png"
     },
     {
       "name": "淘票票",
@@ -2850,7 +2898,8 @@
       },
       "hosts": [
         "acs.m.taobao.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taopiaopiao.png"
     },
     {
       "name": "大麦",
@@ -2871,7 +2920,8 @@
       },
       "hosts": [
         "acs.m.taobao.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png"
     },
     {
       "name": "起点读书",
@@ -2898,7 +2948,8 @@
       "hosts": [
         "magev6.if.qidian.com",
         "ywab.reader.qq.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png"
     },
     {
       "name": "百度文库",
@@ -2920,7 +2971,8 @@
       "hosts": [
         "appwk.baidu.com",
         "tanbi.baidu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduWenku.png"
     },
     {
       "name": "粉笔",
@@ -2944,7 +2996,8 @@
         "market-api.fenbi.com",
         "ke.fenbi.com",
         "hera-webapp.fenbi.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FenBi.png"
     },
     {
       "name": "小象超市",
@@ -2972,7 +3025,8 @@
         "portal-portm.meituan.com",
         "mall.meituan.com",
         "businessapi.ksedt.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iMaiCai.png"
     },
     {
       "name": "叮咚买菜",
@@ -3012,7 +3066,8 @@
         "119.29.29.*",
         "maicai.api.ddxq.mobi",
         "user.api.ddxq.mobi"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png"
     },
     {
       "name": "番茄小说",
@@ -3031,7 +3086,8 @@
         "map_locals": 0,
         "scriptings": 0
       },
-      "hosts": []
+      "hosts": [],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png"
     },
     {
       "name": "12306",
@@ -3058,7 +3114,8 @@
       "hosts": [
         "ad.12306.cn",
         "mobile.12306.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"
     },
     {
       "name": "夸克",
@@ -3085,7 +3142,8 @@
       "hosts": [
         "open-cms-api.quark.cn",
         "stars.shuqireader.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QuarkBrowser.png"
     },
     {
       "name": "豆瓣",
@@ -3108,7 +3166,8 @@
         "api.douban.com",
         "frodo.douban.com",
         "m.douban.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DouBan.png"
     },
     {
       "name": "阿里云盘",
@@ -3140,7 +3199,8 @@
         "api.alipan.com",
         "member.alipan.com",
         "bizapi.alipan.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AliYunDrive.png"
     },
     {
       "name": "Reddit",
@@ -3162,7 +3222,8 @@
       "hosts": [
         "gql.reddit.com",
         "gql-fed.reddit.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png"
     },
     {
       "name": "Line",
@@ -3236,7 +3297,8 @@
         "cix.line-apps.com",
         "legy.line-apps.com",
         "ec-bot-obs.line-scdn.net"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Line.png"
     },
     {
       "name": "美颜相机",
@@ -3266,7 +3328,8 @@
       },
       "hosts": [
         "api.meiyan.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png"
     },
     {
       "name": "凤凰新闻",
@@ -3327,7 +3390,8 @@
         "config.nine.ifeng.com",
         "user.iclient.ifeng.com",
         "comment.ifeng.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ifengNews.png"
     },
     {
       "name": "百度贴吧",
@@ -3392,7 +3456,8 @@
       "hosts": [
         "tiebac.baidu.com",
         "tieba.baidu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png"
     },
     {
       "name": "Google 搜索重定向",
@@ -3413,13 +3478,14 @@
       },
       "hosts": [
         "www.google.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png"
     },
     {
       "name": "微信公众号",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/066-app-wechat-mp.yaml",
       "repository_path": "curated/native-full/modules/066-app-wechat-mp.yaml",
-      "sha256": "01ba7af6744d253aabfa2b3a4e306804acee474326377ef9eec27c05e2ba5904",
+      "sha256": "4cd0a5f896129ee7445100a73b83b1a2d3bb39897e1df2bc5a3a8e2c4690d2de",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-wechat-mp.yaml",
       "source_sha256": "cbcdb60693bb9038d02584c86d00299422991e9098299405191bf47d91ce2485",
@@ -3444,13 +3510,14 @@
       },
       "hosts": [
         "mp.weixin.qq.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
       "name": "微信小程序",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/067-app-wechat-mini.yaml",
       "repository_path": "curated/native-full/modules/067-app-wechat-mini.yaml",
-      "sha256": "d65557c33fc3b9ad42db593293d009d6004fde352f5ed94f0f9cd502107c73b8",
+      "sha256": "66a560ad36c5d2774b52769ed7aa484a64b88d9e80cfc0175861636e90b03b6b",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-wechat-mini.yaml",
       "source_sha256": "b978df1dd1a86bac36b97bdc76be5bc0d3c39e76965e82781cf5eb4d09231ea6",
@@ -3614,7 +3681,8 @@
         "wx.10086.cn",
         "ne.gdsz.sinopec.com",
         "mobile.12306.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
       "name": "微信本体",
@@ -4674,13 +4742,14 @@
         "newton.gumingnc.com",
         "apis.folidaymall.com",
         "wx.mygolbs.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
       "name": "微信外部链接解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/069-app-wechat-link.yaml",
       "repository_path": "curated/native-full/modules/069-app-wechat-link.yaml",
-      "sha256": "af12e035baaba26b91dfcae03f99d6bd36d07d2544dd9358c6ed3b52ff7f7acc",
+      "sha256": "333d2d0eedc5cbd2cd36de9b862382b7dff75828c001715662d1cf0acc852335",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-wechat-link.yaml",
       "source_sha256": "8bcbafb08e9f096b429e5b4c3e400dde5e5eaba0112334965ed1e545dd3e6297",
@@ -4701,7 +4770,8 @@
       "hosts": [
         "weixin110.qq.com",
         "security.wechat.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
       "name": "iRingo 天气",
@@ -4794,7 +4864,8 @@
       },
       "hosts": [
         "weatherkit.apple.com"
-      ]
+      ],
+      "icon": "https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-128x128.png"
     },
     {
       "name": "iRingo 地图",
@@ -4839,13 +4910,14 @@
       "hosts": [
         "configuration.ls.apple.com",
         "gspe35-ssl.ls.apple.com"
-      ]
+      ],
+      "icon": "https://developer.apple.com/assets/elements/icons/maps/maps-128x128.png"
     },
     {
       "name": "网易云 SVIP 解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/072-module-netease-svip.yaml",
       "repository_path": "curated/native-full/modules/072-module-netease-svip.yaml",
-      "sha256": "cba1881b27f388f67ae511d665b25e182ef485eb60b1da6538830f6a3fd9d2e4",
+      "sha256": "fd2296101fcdbe9995972f802e21c59687ec97e05080ffc64adf5d320332a132",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/module-netease-svip.yaml",
       "source_sha256": "820148355c21820ef0da58c51a404916cee87cc26884e589f3be6249fc9cfbae",
@@ -4951,13 +5023,14 @@
       },
       "hosts": [
         "interface*.music.163.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
       "name": "B 站画质解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/073-module-bilibili-quality.yaml",
       "repository_path": "curated/native-full/modules/073-module-bilibili-quality.yaml",
-      "sha256": "bd08a6029e40b76f7ff37d605c907f926ed6e4fda69c87566e815acf74f32996",
+      "sha256": "b7c1848fd2bad73430a8bed4a0be65982a1185e01145acd23399ef30d1ac0510",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/module-bilibili-quality.yaml",
       "source_sha256": "a77e739438e66ed5c8b89251c17c08d4c7fbea236c0577082628350c6f915ece",
@@ -4980,13 +5053,14 @@
       "hosts": [
         "api.bilibili.com",
         "app.bilibili.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "B 站皮肤",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/074-module-bilibili-skin.yaml",
       "repository_path": "curated/native-full/modules/074-module-bilibili-skin.yaml",
-      "sha256": "7e14c3ada98b918acb40f42ce90edbb43c25a5c9c1c0e7b8679eda30369e577c",
+      "sha256": "5b3c97861599c90dfee997949e6e7962d34d6c0d827025ede9663b01f8d995e6",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/module-bilibili-skin.yaml",
       "source_sha256": "c80ac5d5bed8e09abc60a6d501fe0f6726fcef4e7a89e07fee09435d9976f38e",
@@ -5002,7 +5076,8 @@
       "hosts": [
         "app.bilibili.com",
         "api.bilibili.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "name": "Sub-Store",
@@ -5048,7 +5123,8 @@
       },
       "hosts": [
         "sub.store"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/cc63/ICON/main/Sub-Store.png"
     },
     {
       "name": "BoxJs",
@@ -5072,7 +5148,8 @@
         "boxjs.net",
         "*.boxjs.com",
         "*.boxjs.net"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/chavyleung/scripts/master/box/icons/BoxJs.png"
     },
     {
       "name": "插件中心（QuantumultXMark）",
@@ -5096,7 +5173,8 @@
         "kelvinlab.wuyra.com",
         "loonlab.103516.xyz",
         "surge.qingr.moe"
-      ]
+      ],
+      "icon": "https://hub.kelee.one/IMG/Web/favicon_32px.ico"
     },
     {
       "name": "抖音",
@@ -5191,13 +5269,14 @@
       "hosts": [
         "aweme.snssdk.com",
         "api5-normal-m.amemv.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png"
     },
     {
       "name": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/079-app-mijia.yaml",
       "repository_path": "curated/native-full/modules/079-app-mijia.yaml",
-      "sha256": "29ab4dd14efc895d0d36ac958ad3c537485f28ead0d8ee99ba61c9bdbb7c1816",
+      "sha256": "825d2b7634538c1c471141e3b7e6231fd3f72b97d95e65a7e2d99eeebf66a149",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-mijia.yaml",
       "source_sha256": "1be2de39c8aff8bda59cb8e990efe6850ecf12be6a3a9d9409048d9f266afbcf",
@@ -5212,7 +5291,8 @@
       },
       "hosts": [
         "home.mi.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png"
     },
     {
       "name": "菜鸟",
@@ -5264,7 +5344,8 @@
         "cn-acs.m.cainiao.com",
         "e2e-mtop.cainiao.com",
         "longquan-mtop.cainiao.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png"
     },
     {
       "name": "123云盘",
@@ -5285,13 +5366,14 @@
       },
       "hosts": [
         "www.123pan.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/123NetWorkDisk.png"
     },
     {
       "name": "携程",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/082-app-ctrip.yaml",
       "repository_path": "curated/native-full/modules/082-app-ctrip.yaml",
-      "sha256": "0fedfcbf2f1fee1ed63e50aa3e1971ae5205c22b870bdc8f19bae81e71c33f1b",
+      "sha256": "8ae9ea45dbf84fb23a6bff7dc3246b366e051ee49e655c4877077f0961f1fd66",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-ctrip.yaml",
       "source_sha256": "0b3f04b62534613a47d4d3efa378317f7eda8a61b4a16891645fd1e346dd157b",
@@ -5317,13 +5399,14 @@
         "m.ctrip.com",
         "ma-adx.ctrip.com",
         "mbd.baidu.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png"
     },
     {
       "name": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/083-app-dianping.yaml",
       "repository_path": "curated/native-full/modules/083-app-dianping.yaml",
-      "sha256": "193b45de86fa5f7e4446f4bdd08f0a39c7f79a08803088a54165713af40f9825",
+      "sha256": "f8c579ab95627e316748580768f458b580379cdeecfdd744239e36be31bf1216",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-dianping.yaml",
       "source_sha256": "0ec0e33312510071afac34b02dc7623bfa76308f837b2ed507b29f90b23ffe72",
@@ -5409,13 +5492,14 @@
         "s3plus.meituan.net",
         "p*.meituan.net",
         "ddplus.meituan.net"
-      ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
       "name": "饿了么",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/084-app-eleme.yaml",
       "repository_path": "curated/native-full/modules/084-app-eleme.yaml",
-      "sha256": "143f11a618fd5d60eb11ee0da911f8a0831c5a6cac3a24e94ff669fc7b3d67d0",
+      "sha256": "5f098667ffbee282b758aa9cb42084834688054404f9c7c9a610901de36e100e",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-eleme.yaml",
       "source_sha256": "7666c569370a0d115005b7c40585678ac874f69bd0f0e48b9c93a32f5dee6737",
@@ -5471,13 +5555,14 @@
         "cube.elemecdn.com",
         "www1.elecfans.com",
         "nr-op.elemecdn.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png"
     },
     {
       "name": "阿里巴巴（1688）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/085-app-1688.yaml",
       "repository_path": "curated/native-full/modules/085-app-1688.yaml",
-      "sha256": "d4c7b0443adac228c9745d3562e12b3b6dc58ca7a40032eef1678f947e15e354",
+      "sha256": "2a883f4536776a5e1dd96c3672c3d513bf44885c99a85415c81caca05795c869",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-1688.yaml",
       "source_sha256": "df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634",
@@ -5514,7 +5599,8 @@
         "heic.alicdn.com",
         "guide-acs.m.taobao.com",
         "poplayer.template.alibaba.com"
-      ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
       "name": "汽车之家",
@@ -5571,7 +5657,8 @@
         "mobile.app.autohome.com.cn",
         "news.app.autohome.com.cn",
         "pcmx.autohome.com.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png"
     },
     {
       "name": "航旅纵横",
@@ -5603,13 +5690,14 @@
       "hosts": [
         "114.115.217.129",
         "home.umetrip.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"
     },
     {
       "name": "麦当劳",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/088-app-mcdonalds.yaml",
       "repository_path": "curated/native-full/modules/088-app-mcdonalds.yaml",
-      "sha256": "06688bc49d890d9001864c8b423bf3473e19b275b4879b9ef67af335e601c0d8",
+      "sha256": "026944c8fc6aff3d2fea4585356906881a2a3073720f05a52e710e888eb78c53",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-mcdonalds.yaml",
       "source_sha256": "7e26a766513e38ea47f55ecc5de4732f3eab13fcd893ae79f287025f147eec59",
@@ -5624,7 +5712,8 @@
       },
       "hosts": [
         "api.mcd.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mcdonalds.png"
     },
     {
       "name": "网易邮箱大师",
@@ -5651,7 +5740,8 @@
       "hosts": [
         "appconf.mail.163.com",
         "dashi.163.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png"
     },
     {
       "name": "字节跳动（红果/抖音/番茄兜底）",
@@ -5686,7 +5776,8 @@
         "snssdk.com",
         "tiktokv.com",
         "dsp.toutiao.com"
-      ]
+      ],
+      "icon": null
     },
     {
       "name": "CMS 广告拦截",
@@ -5811,13 +5902,14 @@
         "player.huangguam3u.com",
         "leshiyuncdn.36s.top",
         "cs1.feidaozy.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CMSPlayer.png"
     },
     {
       "name": "墨鱼去开屏",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/092-splash-moyu.yaml",
       "repository_path": "curated/native-full/modules/092-splash-moyu.yaml",
-      "sha256": "7a412297d839eff8306e5dfae3b43805da72b01babebc6b8c876f2b470cc2656",
+      "sha256": "4b4f66563dfdd34520c1cf01885e69a2ea44cec86198b70995b366520937a078",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/splash-moyu.yaml",
       "source_sha256": "48ad880cfaf5534ba7bd51c059695002fa6432bfdf4d71d4d95bdb1bb81e1cba",
@@ -6589,7 +6681,8 @@
         "spclient.wg.spotify.com",
         "180.96.8.44",
         "125.215.147.40"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png"
     },
     {
       "name": "广告拦截（yfamilys）",
@@ -7894,7 +7987,8 @@
         "tiku.zhan.com",
         "webboot.zhangyue.com",
         "saad.ms.zhangyue.net"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     },
     {
       "name": "启动页去广告 Ultra+（yfamilys）",
@@ -13885,13 +13979,14 @@
         "zt-app.go189.cn",
         "ztoread.ziroom.com",
         "zua.zhidiantianxia.cn"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png"
     },
     {
       "name": "广告拦截合集（loonlab）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/095-adblock-collection.yaml",
       "repository_path": "curated/native-full/modules/095-adblock-collection.yaml",
-      "sha256": "8a5def5c4c1ef5e6eb76b813fe38b9b7c33268bf4613de1494b362baf148daea",
+      "sha256": "3bcb8063deb7ee6e3ad412e0084cd22bc971ad5f16f682cb37ae2bf5715750a2",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/adblock-collection.yaml",
       "source_sha256": "3d587f6de1d9249a892f5ac17194373ae69e0aba5be2e0a4deb037dfa1d5fb97",
@@ -15324,13 +15419,14 @@
         "r.inews.qq.com",
         "api.tv.sohu.com",
         "mapi.dianping.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     },
     {
       "name": "广告拦截&净化合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/096-adblock-clean-full.yaml",
       "repository_path": "curated/native-full/modules/096-adblock-clean-full.yaml",
-      "sha256": "70bec2b76f48d147bda2bb725f8609b660f4e340ededfdd6b9ea3d5f440d799c",
+      "sha256": "06a9d9c7535d16db1bb4286e1495d09501fd46e80472f812f58d930ef7cc8be1",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/adblock-clean-full.yaml",
       "source_sha256": "537ca666853ad3f21b113a4858fcc2bbfaff41c81383053430f64a99e254bbff",
@@ -26831,7 +26927,8 @@
         "www.zybang.com",
         "ih2.ireader.com",
         "book.img.ireader.com"
-      ]
+      ],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     }
   ],
   "extra_modules": [
@@ -26851,7 +26948,8 @@
         "scriptings": 0
       },
       "hosts": [],
-      "changes": []
+      "changes": [],
+      "icon": null
     }
   ],
   "extra_rule_sets": [
@@ -26865,7 +26963,8 @@
         "domain_set": 59
       },
       "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
-      "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45"
+      "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45",
+      "icon": null
     }
   ],
   "source_evidence": [

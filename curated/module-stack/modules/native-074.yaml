@@ -1,7 +1,7 @@
 name: '📺 BiliBili: 👘 Modified'
 description: 哔哩哔哩：👘 皮肤
 author: MartinsKing
-icon: https://raw.githubusercontent.com/ClydeTime/BiliBili/main/database/icon_Avatar.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png
 open_url: http://boxjs.com/#/app/BiliBili.clydetime.sub
 scriptings:
 - http_response:

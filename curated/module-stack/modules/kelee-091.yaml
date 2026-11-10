@@ -1,0 +1,37 @@
+name: YouTube
+description: 移除YouTube视频、瀑布流、搜索和Shorts中的广告，移除底栏的Shorts按钮和上传按钮，增加画中画及字幕翻译功能。移除YouTube
+  Music底栏的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。此插件需要启用MitM over HTTP/2和QUIC回退保护。支持Premium订阅用户使用，不支持tvOS设备。
+author: Maasea[https://github.com/Maasea], VirgilClyne[https://github.com/VirgilClyne],
+  Choler[https://github.com/Choler], DivineEngine[https://github.com/DivineEngine],
+  app2smile[https://github.com/app2smile]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
+scriptings:
+- http_response:
+    name: YouTube去广告
+    match: (?i)^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e0885f4cb3f017f8fed166e1e6434803b4e66dd27436220cec3f4c4e38875d3f.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_request:
+    name: 请求初始化
+    match: (?i)^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/263e59ece06c773aee67bdb57102948523373ae3a6c509abaf835f66134e66df.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_request:
+    name: 请求日志事件
+    match: (?i)^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/645d9efee23f75417de904c8cd766f247d45562d847eefe2e3cc5523aea43f4e.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - '*.googlevideo.com'
+  - youtubei.googleapis.com

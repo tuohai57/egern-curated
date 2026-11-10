@@ -1,0 +1,10 @@
+name: 飞猫管家
+description: 移除开屏 by @sliverkiss
+icon: https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/fmgj.png
+rules:
+- url_regex:
+    match: https://app.flymodem.com.cn/Appapi/Public/welecome
+    policy: REJECT
+mitm:
+  hostnames:
+  - app.flymodem.com.cn

@@ -1,0 +1,41 @@
+name: 书旗小说
+description: 移除书城横幅广告、听书广告、阅读广告、章末推荐、福利入口、悬浮窗、推荐搜索词，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShuQiCenterReader.png
+rules:
+- domain:
+    match: render-web.11222.cn
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/huichuan\.sm\.cn\/nativead
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/ocean\.shuqireader\.com\/api\/render\/load\/resource
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除书城横幅和阅读广告
+    match: (?i)^https:\/\/ocean\.shuqireader\.com\/sqios\/render\/render\/page\/bookstore$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/aae03c4a577abdd6a9a77069ce6d16b327e5821afc6a85c8b689dcddf1b5f976.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - ocean.shuqireader.com
+  - huichuan.sm.cn

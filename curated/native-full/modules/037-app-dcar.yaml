@@ -10,3 +10,4 @@ rules:
 - domain_keyword:
     match: p6-pack.byteimg.com
     policy: REJECT
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6e/2a/81/6e2a81b3-80bd-1d66-91bf-f1e02af10a29/DCDAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg

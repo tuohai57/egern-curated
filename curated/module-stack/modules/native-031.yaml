@@ -158,6 +158,13 @@ rules:
 - and:
     match:
     - domain_keyword:
+        match: -ad-
+    - domain_suffix:
+        match: byteimg.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
         match: -ttam-
     - domain_suffix:
         match: ibyteimg.com
@@ -222,6 +229,13 @@ rules:
     match:
     - domain_keyword:
         match: if
+    - domain_keyword:
+        match: -analytics.bytescm.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: lf
     - domain_keyword:
         match: -analytics.bytescm.com
     policy: REJECT
@@ -320,6 +334,9 @@ rules:
     match: tosv.byted.org
     policy: REJECT
 - domain:
+    match: extlog.snssdk.com
+    policy: REJECT
+- domain:
     match: mssdk-bu.bytedance.com
     policy: REJECT
 - domain:
@@ -335,10 +352,19 @@ rules:
     match: gromore.pangolin-sdk-toutiao.com
     policy: REJECT
 - domain_keyword:
+    match: -ad-sign.byteimg.com
+    policy: REJECT
+- domain_keyword:
     match: log-api.pangolin-sdk-toutiao
     policy: REJECT
 - domain_keyword:
+    match: -ad.byteoversea.com
+    policy: REJECT
+- domain_keyword:
     match: video-cn.snssdk.com
+    policy: REJECT
+- domain_keyword:
+    match: asiad.byteactivity
     policy: REJECT
 - url_regex:
     match: ^https:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/
@@ -372,4 +398,4 @@ mitm:
   - api-access.pangolin-sdk-toutiao?.com
   - sf*-fe-tos.pglstatp-toutiao.com
   - lf-cdn-tos.bytescm.com
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png

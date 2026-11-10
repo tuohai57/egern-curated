@@ -29,4 +29,4 @@ body_rewrites:
 - response_jq:
     match: ^https?:\/\/mail\.163\.com\/fgw\/mailsrv-webrobot\/.*user\/info
     filter: .result |= del(.assistantInfo, .quotaData)
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/mail.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png

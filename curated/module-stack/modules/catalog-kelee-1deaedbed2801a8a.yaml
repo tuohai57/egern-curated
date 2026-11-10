@@ -1,0 +1,31 @@
+name: 大姨妈月经期助手
+description: 移除信息流广告，精简首页金刚位及我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dayima.png
+map_locals:
+- match: (?i)^https:\/\/forumapi\.yoloho\.com\/topic\/relate\/recommend\/flow\/getList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/shop18476221\.m\.youzan\.com\/wscshop\/showcase\/feature\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - forumapi.yoloho.com
+  - dataapi.yoloho.com
+  - shop18476221.m.youzan.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/forumapi\.yoloho\.com\/index\/recommend\/listV\d\?
+    filter: (.recommendList |= map(select(.voType == 0)))
+- response_jq:
+    match: (?i)^https:\/\/dataapi\.yoloho\.com\/tool\/bubble\/event\/new\/iconList\?
+    filter: (.data |= map(select(.id == 21 or .id == 23 or .id == 24 or .id == 40)))
+- response_jq:
+    match: (?i)^https:\/\/dataapi\.yoloho\.com\/tool\/card\/mine\/app\?
+    filter: (.data |= map(select(.type == "1")))

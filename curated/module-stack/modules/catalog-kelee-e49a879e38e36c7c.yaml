@@ -1,0 +1,30 @@
+name: OKOK
+description: 移除开屏广告、横幅广告，精简首页，拦截优惠购页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKOK.png
+map_locals:
+- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/home\/collection\/smartv\d\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/communityManage\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/good\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/shop171777386\.m\.youzan\.com\/v2\/showcase\/homepage\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - api.chips-cloud.com
+  - shop171777386.m.youzan.com

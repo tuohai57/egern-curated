@@ -1,0 +1,19 @@
+name: 智慧苏州
+description: 移除开屏广告、横幅，移除信息流推广。
+author: xream[https://github.com/xream]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SuZhouCitizenCard.png
+homepage: https://hub.kelee.one
+map_locals:
+- match: ^https?:\/\/newapp2\.szsmk\.com\/app\/config\/queryMainAd
+  status_code: 200
+  body: '{"message":"操作成功","main_ad_list":[],"code":"000000"}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/newapp2\.szsmk\.com\/app\/config\/(queryCarousel|queryRecommendation)\/
+  status_code: 200
+  body: '{"code":"000000","message":"操作成功","list":[]}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - newapp2.szsmk.com

@@ -9,15 +9,30 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/cow\?
-    filter: (.bottomNav|=map(select(.NavId=="bottomNavNews" or .NavId=="bottomNavMine")))
-      | (del(.zip_url))
+    filter: '(
+
+      .bottomNav|=map(select(.NavId=="bottomNavNews" or .NavId=="bottomNavMine"))
+
+      ) | (
+
+      del(.zip_url)
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/channel\?
-    filter: (.defaultChannel |= map(select(.id == "commenterch" or .id == "sy" or
-      .id == "vipchannel" or .id == "rank_hot_merge" or .id == "rtnews" or .id ==
-      "sp" or .id == "mil" or .id == "finance" or .id == "history" or .id == "momentsnew"
+    filter: '(
+
+      .defaultChannel |= map(select(.id == "commenterch" or .id == "sy" or .id ==
+      "vipchannel" or .id == "rank_hot_merge" or .id == "rtnews" or .id == "sp" or
+      .id == "mil" or .id == "finance" or .id == "history" or .id == "momentsnew"
       or .id == "taihai" or .id == "focusnews" or .id == "rcmd" or .id == "tw" or
-      .id == "HK" or .id == "dawanqu1"))) | (del(.more, .youngChannel))
+      .id == "HK" or .id == "dawanqu1"))
+
+      ) | (
+
+      del(.more, .youngChannel)
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/headline\?
     filter: walk(if type == "object" and has("item") and (.item | type == "array")

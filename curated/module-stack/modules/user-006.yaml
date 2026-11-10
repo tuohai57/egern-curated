@@ -18,31 +18,31 @@ scriptings:
 - http_request:
     name: 哈啰 / 1
     match: ^https:\/\/resource\.51downapp\.cn\/f414fbc17c411b4e986ba8891c738a49\.json\?(?:[^#]*&)?md5=e5230c919f7e3f3af3256161fbfaa0e2&(?:[^#]*&)?hbe_qx_ui=1\.3$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d00ea8bcd130b8c935dcdb88bd73aad6bb442aceff03f49d077af6570a923e9.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c554a98a70bf4cac69098cf646fe4e555763638807d7b26f7ce7920f58b84548.js
     body_required: false
     update_interval: 86400
 - http_response:
     name: 哈啰 / 2
     match: ^https:\/\/api\.hellobike\.com(?::443)?\/secretkey(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d00ea8bcd130b8c935dcdb88bd73aad6bb442aceff03f49d077af6570a923e9.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1994a51a930d2ac8d9df4fb82133446315b083f916586f6a5a654d754e51cd1e.js
     body_required: true
     update_interval: 86400
 - http_request:
     name: 哈啰 / 3
     match: ^https?:\/\/(?:api|marketingapi|entertainment)\.hellobike\.com(?::\d+)?\/api(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d00ea8bcd130b8c935dcdb88bd73aad6bb442aceff03f49d077af6570a923e9.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1994a51a930d2ac8d9df4fb82133446315b083f916586f6a5a654d754e51cd1e.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 哈啰 / 4
     match: ^https?:\/\/(?:api|marketingapi|entertainment)\.hellobike\.com(?::\d+)?\/api(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d00ea8bcd130b8c935dcdb88bd73aad6bb442aceff03f49d077af6570a923e9.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1994a51a930d2ac8d9df4fb82133446315b083f916586f6a5a654d754e51cd1e.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 哈啰 / 5
     match: ^https:\/\/taxiapi\.hellobike\.com(?::443)?\/api(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7d00ea8bcd130b8c935dcdb88bd73aad6bb442aceff03f49d077af6570a923e9.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1994a51a930d2ac8d9df4fb82133446315b083f916586f6a5a654d754e51cd1e.js
     body_required: true
     update_interval: 86400
 mitm:
@@ -57,4 +57,4 @@ mitm:
   - mi.gdt.qq.com
   - v2mi.gdt.qq.com
   - resource.51downapp.cn
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3a/22/25/3a2225ec-deca-6efb-0dad-c26a5e7c9204/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg

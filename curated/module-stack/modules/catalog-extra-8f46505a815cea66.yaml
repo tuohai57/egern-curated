@@ -1,0 +1,210 @@
+name: 雪球
+description: 移除开屏广告、各类横幅广告、信息流广告、帖内广告、新用户定向广告、各类弹窗、股票精选推荐、基金精选推荐、聪明的投资者推荐、私募推荐、直播推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Snowball.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.*timeline_tab_name
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","im_notice_show"]])
+
+      ) | (
+
+      delpaths([["data","request_notice_show"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","timeline_tab_name"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","profileMenuConfig_anonymous_V12"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","trade_open_account_promotion_url"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","trade_unify_open_account_list"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","community_ad_download_msg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","home_tab_dynamic"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","home_tab_dynamic_before"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","home_tab_dynamic_after"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data"]])
+
+      )
+
+      ) | (
+
+      delpaths([["isitor_page_login_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","open_wechat_mini_app_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","user_guide_contact_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","brokers_router_config"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","my_page_right_items"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+home_visitor_relation_config
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/ucprofile\/api\/user\/batchGetUserBasicInfo\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/lightsnow\/launch\/plan\/bee\/query\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/lightsnow\/optional\/banner\/query\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/snowflake-theme\/query\/v1\/hot_event\/rich_tag_new\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/query\/v1\/hot_event\/tag\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+cube_detail_bottom_operation_trade_button
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/zj_card\.json\?feed_id=207
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/portfolio_tab_symbol\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/stock\.xueqiu\.com\/v5\/stock\/group\/recommend\/default\/list\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.xueqiu\.com\/livestream\/structure\/live\/hotCard\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/fund\.xueqiu\.com\/fundx\/activity\/x\/web\/c\/index\/dataByCode\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.xueqiu.com
+  - open.xueqiu.com
+  - stock.xueqiu.com
+  - fund.xueqiu.com
+  - 39.103.79.14
+  - 39.106.97.84
+  - 47.95.49.75
+  - 101.201.62.20
+  - 101.201.62.26
+  - 101.201.175.228
+  - 124.250.48.3
+  - 182.92.145.50
+  - 182.92.251.113

@@ -1,0 +1,1 @@
+{"name": "高德地图", "source_hashes": ["add6bc087948ea30507b13e4156d58453406f39e7600db6cd4c4c43ac9c632db", "d0c1caf909e3e9151ec890eb31bc14dc28b34c49d6c8a1ef42c147cd949564b3"], "upstreams": ["https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx", "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/AmapAds.conf"]}

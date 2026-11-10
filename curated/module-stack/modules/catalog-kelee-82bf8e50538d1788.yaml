@@ -1,0 +1,28 @@
+name: 配音秀
+description: 移除开屏广告、弹窗、横幅、各类关注推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DubbingShow.png
+scriptings:
+- http_response:
+    name: 移除首页底部弹窗
+    match: (?i)^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/00b312e3ed559cfcda15cb43e637c94d6293ad3cb34b2c5d23d9bd330668fe52.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - iosapi.peiyinxiu.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/iosapi\.peiyinxiu\.com\/Api\/live\/LiveList
+    filter: (delpaths([["data", "banners"]]))
+- response_jq:
+    match: (?i)^https:\/\/iosapi\.peiyinxiu\.com\/api\/live\/FollowList
+    filter: (delpaths([["obj", "data"]]))
+- response_jq:
+    match: (?i)^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Friend\/GetRecommendUsers
+    filter: (delpaths([["obj", "data"]]))
+- response_jq:
+    match: (?i)^https:\/\/iosapi\.peiyinxiu\.com\/api\/Union\/HomeData
+    filter: (delpaths([["obj", "data"]]))

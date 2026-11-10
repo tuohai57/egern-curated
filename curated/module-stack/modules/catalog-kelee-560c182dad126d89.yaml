@@ -1,0 +1,33 @@
+name: 小宇宙
+description: 移除开屏广告、搜索框推荐词和AI总结。
+author: wish
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CosmosPodcast.png
+map_locals:
+- match: (?i)^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.xiaoyuzhoufm.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list
+    filter: (.data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER")))

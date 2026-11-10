@@ -1,0 +1,24 @@
+name: 南网在线
+description: 移除首页推广，精简搜索页和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CSG.png
+map_locals:
+- match: (?i)^https:\/\/95598\.csg\.cn\/mp\/ucs\/ma\/zt\/content\/queryHotInformations$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/95598\.csg\.cn\/mp\/mpaas\/rubik\/openapi\/rubik\/mobile\/getRubikScene$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - 95598.csg.cn
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/95598\.csg\.cn\/mp\/mpaas\/mgw\.htm$
+    filter: (if .info | contains("RUBIK-TRACEID:") then .scene.page.areas |= map(select(.areaId
+      | test("kingkong_|9grid_|message_|nearmap_|recommend_"))) else . end)

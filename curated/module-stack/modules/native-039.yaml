@@ -2,7 +2,7 @@ name: X(Twitter)网页版去广告
 description: 移除网页版 X (Twitter) 广告。
 author: 奶思[https://github.com/fmz200]
 homepage: https://github.com/fmz200/wool_scripts
-icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/X.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
 tag: 去广告, X, 奶思
 scriptings:
 - http_response:

@@ -1,0 +1,33 @@
+name: 成分喵
+description: 移除首页推广活动、广告组件请求、移除被查商品购买链接、搜索发现。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChengFenMiao.png
+map_locals:
+- match: (?i)^https:\/\/app\.chengfenmiao\.com\/Listing\/LiveHots\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.chengfenmiao\.com\/helper\/VersionCheck\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.chengfenmiao\.com\/item\/closet\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/app\.chengfenmiao\.com\/Helper\/HotWords\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - app.chengfenmiao.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/app\.chengfenmiao\.com\/helper\/setting\?
+    filter: (delpaths([["detail_buy_sites"], ["bottom_sites"]]))

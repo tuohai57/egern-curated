@@ -1,0 +1,39 @@
+name: 阿里云盘
+description: 移除首页广告横幅、弹窗和顶部奖励。
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AliYunDrive.png
+rules:
+- ip_cidr:
+    match: 203.107.1.1/24
+    policy: REJECT
+    no_resolve: true
+map_locals:
+- match: (?i)^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除阿里云盘广告
+    match: (?i)^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4909ecde19541ad5e83be296e87eab83e62ede4e710fceee3d59dc4cf11f3e38.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除阿里云盘广告
+    match: (?i)^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4909ecde19541ad5e83be296e87eab83e62ede4e710fceee3d59dc4cf11f3e38.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.alipan.com
+  - member.alipan.com
+  - bizapi.alipan.com

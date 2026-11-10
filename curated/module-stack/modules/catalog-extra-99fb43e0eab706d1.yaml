@@ -1,0 +1,28 @@
+name: 小宇宙
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - api.xiaoyuzhoufm.com
+  - 118.31.123.175
+  - 112.124.203.116
+  - 118.31.125.171
+  - 47.57.181.112
+  - 47.57.182.96
+map_locals:
+- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-express
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-preset
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash-screen\/list
+  status_code: 200
+  body: ''
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list
+    filter: .data |= map(select(.type != "DISCOVERY_BANNER"))
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

@@ -9,8 +9,16 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$
-    filter: (.Data.WolfEye = 0 | .Data.CloudSetting.TeenShowFreq = 0) | (del(.Data.ActivityPageBackPushNoticeFrequency,
-      .Data.ActivityIcon, .Data.ActivityPopup, .Data.LuckBag))
+    filter: '(
+
+      .Data.WolfEye = 0 | .Data.CloudSetting.TeenShowFreq = 0
+
+      ) | (
+
+      del(.Data.ActivityPageBackPushNoticeFrequency, .Data.ActivityIcon, .Data.ActivityPopup,
+      .Data.LuckBag)
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/dailyrecommend\/getdailyrecommend\?
     filter: .Data.Items = "[]"

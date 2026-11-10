@@ -18,6 +18,7 @@ on:
       - 'curated/tools/test_app_ad_paths.py'
       - 'curated/routing/**'
       - 'curated/tools/test_service_routing.py'
+      - 'curated/tools/**'
       - '.github/workflows/check-managed.yml'
   pull_request:
     paths:
@@ -46,3 +47,9 @@ jobs:
       - run: python curated/tools/test_app_ad_paths.py
       - run: python curated/tools/test_service_routing.py
       - run: python curated/tools/check_module_stack.py
+      - run: node curated/tools/test_dcar_ad_cleaner.cjs
+      - run: python curated/tools/test_module_converter.py
+      - run: python curated/tools/test_loon_lpx_converter.py
+      - run: python curated/tools/test_adblock_collection.py
+      - run: node curated/tools/test_qx_echo.cjs
+      - run: python curated/tools/check_adblock_collection.py

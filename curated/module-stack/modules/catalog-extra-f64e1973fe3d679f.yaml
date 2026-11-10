@@ -1,0 +1,32 @@
+name: 一刻相册
+description: 移除开屏广告、横幅广告和弹窗推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduPhoto.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?
+    filter: '(
+
+      delpaths([["data","service","config","advertisement"]])
+
+      ) | (
+
+      delpaths([["data","service","config","youa","pm_config_ad"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/pan\.baidu\.com\/act\/api\/conf\?.*conf_key=youa_core_config_ios
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/youai\/material\/v1\/getbynavid\?.*nav_id=1
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - pan.baidu.com
+  - mbd.baidu.com

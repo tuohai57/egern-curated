@@ -1,0 +1,29 @@
+name: Roborock
+description: 移除横幅、活动推广、机器人图标，精简服务中心。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Roborock.png
+map_locals:
+- match: (?i)^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/cniot\.roborock\.com\/api\/v1\/app\/theme\/device\/icon\?
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - cniot.roborock.com
+  - api.roborock.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.roborock\.com\/v2\/h5\.page\.item\.info\?id=4115$
+    filter: (.data |= map(select(.title == "常用功能")))

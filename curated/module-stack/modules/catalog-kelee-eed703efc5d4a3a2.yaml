@@ -1,0 +1,24 @@
+name: 比特球云盘
+description: 移除开屏广告和各类横幅推广。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BitqiuPan.png
+map_locals:
+- match: (?i)^https:\/\/pan-api\.bitqiu\.com\/activity\/getPromoteGuide$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^http:\/\/pan-api\.bitqiu\.com\/activity\/getUrlList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/pan-api\.bitqiu\.com\/activity\/guides$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - pan-api.bitqiu.com

@@ -1,0 +1,22 @@
+name: 易校园
+description: 移除开屏广告、横幅广告、弹窗广告、悬浮广告、文末广告、消息广告、校园头条，精简首页金刚位和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YiSchool.png
+map_locals:
+- match: (?i)^https:\/\/compus\.xiaofubao\.com\/compus\/advertising\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - compus.xiaofubao.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/compus\.xiaofubao\.com\/compus\/user\/getUserExt$
+    filter: (delpaths([["data", "adPopSwitch"], ["data", "adSplashSwitch"]]))
+- response_jq:
+    match: (?i)^https:\/\/compus\.xiaofubao\.com\/compus\/application\/getHomeAppList$
+    filter: (.rows|=map(select(.appCode=="kechengbiao_app1" or .appCode=="siliuji"
+      or .appCode=="NEWJIAOFEIDATING")))

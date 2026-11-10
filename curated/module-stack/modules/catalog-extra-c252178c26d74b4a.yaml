@@ -1,0 +1,16 @@
+name: Reddit
+description: 过滤推广, 关 NSFW 提示, 自动开启翻译(JQ 版)
+compat_arguments:
+  NSFW: Nsfw
+  TRANSLATION: http-request
+  TRANSLATION_VALUE: enabled, seo, zh-hans
+mitm:
+  hostnames:
+  - gql.reddit.com
+  - gql-fed.reddit.com
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/gql(-fed)?\.reddit\.com
+    filter: .
+    disabled: true
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png

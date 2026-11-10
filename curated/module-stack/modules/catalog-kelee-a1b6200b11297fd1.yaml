@@ -1,0 +1,19 @@
+name: Dlabel云标签
+description: 移除开屏广告及首页横幅。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dlabel.png
+map_locals:
+- match: (?i)^https:\/\/dlabel\.ctaiot\.com\/api\/spreadstart\/list\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/dlabel\.ctaiot\.com\/api\/spread\/journey\/select\.json\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - dlabel.ctaiot.com

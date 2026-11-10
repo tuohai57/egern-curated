@@ -1,0 +1,42 @@
+name: 中国联通
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - m.client.10010.com
+  - img.client.10010.com
+rules:
+- domain_suffix:
+    match: ad.10010.com
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/customer\/querySmartServicekhd.htm
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientIndex\/api\/v1\/index\/queryIndexExclusiveOffers
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/img\.client\.10010\.com\/homejingxuan12\/js\/(pubuliu|1homeView)
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/search_service\/search\/searchScrollWord
+    filter: .["113000004"]=[]
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientIndex\/homefusion\/fuInter
+    filter: del(.["HomeFusion.backGroundQuery"], .["HomeFusion.bottomLabel"].bottomMallKey)
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientMyPage\/v\d\/api\/myWallet
+    filter: .data={}
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientMyPage\/v\d\/api\/myPoints
+    filter: .data={}
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientMyPage\/v\d\/api\/myColorfulRingtone
+    filter: .data={}
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientMyPage\/v\d\/api\/newUserInfo
+    filter: .data={}
+- response_jq:
+    match: ^https?:\/\/m\.client\.10010\.com\/clientMyPage\/v\d\/api\/getDeviceInfo
+    filter: .data={}
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

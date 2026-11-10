@@ -1,0 +1,35 @@
+name: PICOOC
+description: 移除开屏广告、悬浮广告，拦截发现页，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PICOOC.png
+map_locals:
+- match: (?i)^https:\/\/api2\.picooc\.com\/v\d\/api\/focus\/strategy\/execute\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api2\.picooc\.com\/v\d\/api\/dietGuide\/query\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api2\.picooc\.com\/program\/listMainProgram\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/a\.picooc\.com\/v\d\/api\/camp\/sys\/config\/coupon\/pattern\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api2\.picooc\.com\/v\d\/api\/account\/getTabsInfo\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api2.picooc.com
+  - a.picooc.com

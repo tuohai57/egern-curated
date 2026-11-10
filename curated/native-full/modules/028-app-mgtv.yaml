@@ -159,3 +159,4 @@ scriptings:
 mitm:
   hostnames:
   - '*.mgtv.com'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mangguotv.png

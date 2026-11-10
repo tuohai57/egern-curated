@@ -454,6 +454,9 @@ rules:
 - domain:
     match: music.httpdns.c.163.com
     policy: REJECT
+- domain:
+    match: httpdns.yunxindns.com
+    policy: REJECT
 - ip_cidr:
     match: 59.111.239.61/32
     policy: REJECT
@@ -536,6 +539,9 @@ rules:
     policy: REJECT
     no_resolve: true
 - domain:
+    match: httpdns.zybang.com
+    policy: REJECT
+- domain:
     match: serveraddr.service.kugou.com
     policy: REJECT
 - domain:
@@ -556,6 +562,9 @@ rules:
     policy: REJECT
 - url_regex:
     match: ^http:\/\/\[[0-9a-fA-F:]+\]:\d+\/httpdns\/
+    policy: REJECT
+- domain:
+    match: httpdns.zybang.com
     policy: REJECT
 - url_regex:
     match: (?i)^https?:\/\/cdn\.wup\.huya\.com\/monitor\/monitor\.jsp

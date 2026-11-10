@@ -1,0 +1,49 @@
+name: 百度网盘
+description: 移除开屏广告、首页卡片广告、传输页面广告、各类弹窗，精简侧拉抽屉和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduNetDisk.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/pan\.baidu\.com\/feed\/kingkongdistrict\?
+    filter: .data.data |= map(select(.type != "novel" and .type != "shortplay" and
+      .type != "print" and .type != "job_hunt"))
+map_locals:
+- match: ^https:\/\/pan\.baidu\.com\/api\/getconfig\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/api\/plugin\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/pan\.baidu\.com\/recommend\/query\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - pan.baidu.com

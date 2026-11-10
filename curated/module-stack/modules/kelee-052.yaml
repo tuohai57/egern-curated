@@ -1,0 +1,23 @@
+name: NetEaseGodlike
+description: 移除开屏广告，精简大量冗余的配置文件，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NetEaseGodlike.png
+map_locals:
+- match: (?i)^https:\/\/god\.gameyw\.netease\.com\/v\d\/ad
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+scriptings:
+- http_response:
+    name: 网易大神去广告
+    match: (?i)^https:\/\/app-conf\.ds\.163\.com\/v1\/app\/base\/conf\/static\/start-config\?os=ios
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8e6d18a4deaef423190f51e9cb91c643ece48cd773d07c29357ed8384773bef6.js
+    body_required: true
+    update_interval: 86400
+    timeout: 10
+mitm:
+  hostnames:
+  - god.gameyw.netease.com
+  - app-conf.ds.163.com

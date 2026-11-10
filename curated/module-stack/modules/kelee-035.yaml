@@ -1,0 +1,28 @@
+name: 智联招聘
+description: 移除开屏广告、弹窗、职位页面推广和各类横幅推广。此插件需要IPA签名方可使用，App Store用户请勿使用此插件，务必点击下方主页链接查看详细教程。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhiLianZhaoPin.png
+rules:
+- url_regex:
+    match: ^https:\/\/(ask|cgate)\.zhaopin\.com\/operation\/ad\/
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/cgate\.zhaopin\.com\/resumeapi\/resumeCheck\/positionDetailBottomTipCheck$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/cgate\.zhaopin\.com\/bdp\/commercial\/queryLinkData$
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+mitm:
+  hostnames:
+  - ask.zhaopin.com
+  - cgate.zhaopin.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/ask\.zhaopin\.com\/plat-zqa-server\/home\/\d\.\d\.\d\/getHomeContents\?
+    filter: (delpaths([["data", "templates", 0, "data", "banner"]]))

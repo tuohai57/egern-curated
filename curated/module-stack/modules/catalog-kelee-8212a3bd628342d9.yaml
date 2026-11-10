@@ -1,0 +1,63 @@
+name: 百度文库
+description: 移除开屏广告、横幅广告、弹窗广告、信息流推广、搜索发现、热门搜索、资料库搜索推荐，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduWenku.png
+map_locals:
+- match: (?i)^https:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/search\/hot\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/search\/wkhotwords\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/task\/viptasklist\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/activity\/interface\/wkapppopup\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/abg\/index\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/recommenddoc\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/vipdoccard\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - appwk.baidu.com
+  - tanbi.baidu.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/index\/home\?
+    filter: (delpaths([["data", "bannerInfo"], ["data", "bannerList"], ["data", "bannerListV2"]]))
+- response_jq:
+    match: (?i)^https:\/\/(appwk|tanbi)\.baidu\.com\/gsula\/sula\/syncmrecall$
+    filter: (delpaths([["data", "items"]]))
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/index\/tab\?
+    filter: (delpaths([["data"]]))
+- response_jq:
+    match: (?i)^https:\/\/appwk\.baidu\.com\/appapi\/forum\/feed\?reqMode=wenkuapp_main_feed
+    filter: (delpaths([["data"]]))

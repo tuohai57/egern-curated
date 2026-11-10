@@ -1,0 +1,38 @@
+name: 最美壁纸
+description: 移除悬浮广告、横幅广告、轮播图广告，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iWallBiZhi.png
+map_locals:
+- match: (?i)^https:\/\/api\.fzxhmy\.com\/seek\/trendingword\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.fzxhmy\.com\/tone\/trending\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 移除首页广告配置
+    match: (?i)^https:\/\/api\.fzxhmy\.com\/core\/initialize\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85bb24cccb37499fe8c4e334a61b3c8b5a6485bb167a33141879e46ee0a3f531.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除首页轮播图广告
+    match: (?i)^https:\/\/api\.fzxhmy\.com\/landing\/initialize\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e799e430ef3f751c686a4cf3df5d8dc2ab7c7b81170f3feb08e6ee45452762e9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 移除头像页横幅跳转
+    match: (?i)^https:\/\/api\.fzxhmy\.com\/avatar\/landing\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/66aec750fd71c6de8100e26789080efc736c3592f982cfb6703cdb13e96af1db.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.fzxhmy.com

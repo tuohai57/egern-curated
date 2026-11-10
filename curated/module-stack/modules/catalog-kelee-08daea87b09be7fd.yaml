@@ -1,0 +1,15 @@
+name: DJ多多
+description: 移除开屏广告及歌单广告
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DjDuoDuo.png
+scriptings:
+- http_response:
+    name: 去广告
+    match: (?i)^https:\/\/api\.dianyinduoduo\.com\/v4\/config\.php\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6357b9dd30b48b64e24d206763e8276ac28b4e2a88c0435116eda42fdecda9e6.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.dianyinduoduo.com

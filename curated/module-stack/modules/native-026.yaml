@@ -42,6 +42,17 @@ rules:
 - domain_suffix:
     match: jd.c-ptsp.com.cn
     policy: REJECT
+- domain:
+    match: dns.jd.com
+    policy: REJECT
+- ip_cidr:
+    match: 101.124.19.122/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:db40:5100:1011::5/128
+    policy: REJECT
+    no_resolve: true
 - url_regex:
     match: ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052
     policy: REJECT

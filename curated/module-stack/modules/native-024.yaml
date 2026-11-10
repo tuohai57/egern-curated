@@ -19,6 +19,9 @@ rules:
     match: iqiyim.adtrack.enlightent.cn
     policy: REJECT
 - domain:
+    match: dig.bdurl.net
+    policy: REJECT
+- domain:
     match: t7z.cupid.iqiyi.com
     policy: REJECT
 - domain:
@@ -59,6 +62,9 @@ rules:
     policy: REJECT
 - domain_suffix:
     match: count.game.pps.tv
+    policy: REJECT
+- domain_suffix:
+    match: cupid.iqiyi.com
     policy: REJECT
 - domain_suffix:
     match: emoticon.sns.iqiyi.com

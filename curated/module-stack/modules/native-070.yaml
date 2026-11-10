@@ -83,35 +83,35 @@ scriptings:
     match: ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ce1db90d77c44fce972db0c2e319845fc1d6a276d41d772c0294882e59d7f999.js
     env:
-      _compat.$argument: DataSets="airQuality,currentWeather,forecastDaily,forecastHourly,forecastNextHour,weatherAlerts"&Weather.Provider="ColorfulClouds"&WeatherAlerts.Provider="QWeatherWeb"&NextHour.Provider="ColorfulClouds"&AirQuality.Current.Pollutants.Provider="ColorfulClouds"&AirQuality.Calculate.Algorithm="EU_EAQI"&API.ColorfulClouds.Token=""&API.QWeather.Host="devapi.qweather.com"&API.QWeather.Token=""&API.WAQI.Token=""&Storage="ColorfulClouds00"&LogLevel="ColorfulClouds11"
+      _compat.$argument: DataSets="airQuality,currentWeather,forecastDaily,forecastHourly,forecastNextHour,weatherAlerts"&Weather.Provider="ColorfulClouds"&WeatherAlerts.Provider="QWeatherWeb"&NextHour.Provider="ColorfulClouds"&AirQuality.Current.Pollutants.Provider="ColorfulClouds"&AirQuality.Calculate.Algorithm="EU_EAQI"&API.ColorfulClouds.Token=""&API.QWeather.Host="devapi.qweather.com"&API.QWeather.Token=""&API.WAQI.Token=""&Storage="ColorfulClouds0"&LogLevel="ColorfulClouds1"
     body_required: true
 - http_request:
     name: 🌤 WeatherKit.api.v1.airQualityScale.request
     match: ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/airQualityScale\/
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/da05af299dd2172e1c25a2bff349cdda268114ee7fc43340cc48da29c76ea033.js
     env:
-      _compat.$argument: DataSets="ColorfulClouds22"&Weather.Provider="ColorfulClouds33"&WeatherAlerts.Provider="ColorfulClouds44"&NextHour.Provider="ColorfulClouds55"&AirQuality.Current.Pollutants.Provider="ColorfulClouds66"&AirQuality.Calculate.Algorithm="ColorfulClouds77"&API.ColorfulClouds.Token="ColorfulClouds88"&API.QWeather.Host="ColorfulClouds99"&API.QWeather.Token="QWeatherWeb00"&API.WAQI.Token="QWeatherWeb11"&Storage="QWeatherWeb22"&LogLevel="QWeatherWeb33"
+      _compat.$argument: DataSets="ColorfulClouds2"&Weather.Provider="ColorfulClouds3"&WeatherAlerts.Provider="ColorfulClouds4"&NextHour.Provider="ColorfulClouds5"&AirQuality.Current.Pollutants.Provider="ColorfulClouds6"&AirQuality.Calculate.Algorithm="ColorfulClouds7"&API.ColorfulClouds.Token="ColorfulClouds8"&API.QWeather.Host="ColorfulClouds9"&API.QWeather.Token="QWeatherWeb0"&API.WAQI.Token="QWeatherWeb1"&Storage="QWeatherWeb2"&LogLevel="QWeatherWeb3"
     body_required: true
 - http_request:
     name: 🌤 WeatherKit.api.v1.weatherAlerts.html.request
     match: ^https?://weatherkit\.apple\.com/api/v1/weatherAlerts\?[^#]*&ids=[^&#]*-[0-9]{9}(?:&|$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/da05af299dd2172e1c25a2bff349cdda268114ee7fc43340cc48da29c76ea033.js
     env:
-      _compat.$argument: DataSets="QWeatherWeb44"&Weather.Provider="QWeatherWeb55"&WeatherAlerts.Provider="QWeatherWeb66"&NextHour.Provider="QWeatherWeb77"&AirQuality.Current.Pollutants.Provider="QWeatherWeb88"&AirQuality.Calculate.Algorithm="QWeatherWeb99"&API.ColorfulClouds.Token="ColorfulClouds00"&API.QWeather.Host="ColorfulClouds11"&API.QWeather.Token="ColorfulClouds22"&API.WAQI.Token="ColorfulClouds33"&Storage="ColorfulClouds44"&LogLevel="ColorfulClouds55"
+      _compat.$argument: DataSets="QWeatherWeb4"&Weather.Provider="QWeatherWeb5"&WeatherAlerts.Provider="QWeatherWeb6"&NextHour.Provider="QWeatherWeb7"&AirQuality.Current.Pollutants.Provider="QWeatherWeb8"&AirQuality.Calculate.Algorithm="QWeatherWeb9"&API.ColorfulClouds.Token="ColorfulClouds0"&API.QWeather.Host="ColorfulClouds1"&API.QWeather.Token="ColorfulClouds2"&API.WAQI.Token="ColorfulClouds3"&Storage="ColorfulClouds4"&LogLevel="ColorfulClouds5"
     body_required: true
 - http_request:
     name: 🌤 WeatherKit.api.v1.weatherAlerts.api.request
     match: ^https?://weatherkit\.apple\.com/api/v1/weatherAlerts\?[^#]*&ids=-?[0-9]+(?:\.[0-9]+)?,-?[0-9]+(?:\.[0-9]+)?(?:&|$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/da05af299dd2172e1c25a2bff349cdda268114ee7fc43340cc48da29c76ea033.js
     env:
-      _compat.$argument: DataSets="ColorfulClouds66"&Weather.Provider="ColorfulClouds77"&WeatherAlerts.Provider="ColorfulClouds88"&NextHour.Provider="ColorfulClouds99"&AirQuality.Current.Pollutants.Provider="ColorfulClouds00"&AirQuality.Calculate.Algorithm="ColorfulClouds11"&API.ColorfulClouds.Token="ColorfulClouds22"&API.QWeather.Host="ColorfulClouds33"&API.QWeather.Token="ColorfulClouds44"&API.WAQI.Token="ColorfulClouds55"&Storage="ColorfulClouds66"&LogLevel="ColorfulClouds77"
+      _compat.$argument: DataSets="ColorfulClouds6"&Weather.Provider="ColorfulClouds7"&WeatherAlerts.Provider="ColorfulClouds8"&NextHour.Provider="ColorfulClouds9"&AirQuality.Current.Pollutants.Provider="ColorfulClouds0"&AirQuality.Calculate.Algorithm="ColorfulClouds1"&API.ColorfulClouds.Token="ColorfulClouds2"&API.QWeather.Host="ColorfulClouds3"&API.QWeather.Token="ColorfulClouds4"&API.WAQI.Token="ColorfulClouds5"&Storage="ColorfulClouds6"&LogLevel="ColorfulClouds7"
     body_required: true
 - http_response:
     name: 🌤 WeatherKit.api.v2.weather.response
     match: ^https?:\/\/weatherkit\.apple\.com\/api\/v2\/weather\/
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ce1db90d77c44fce972db0c2e319845fc1d6a276d41d772c0294882e59d7f999.js
     env:
-      _compat.$argument: DataSets="ColorfulClouds88"&Weather.Provider="ColorfulClouds99"&WeatherAlerts.Provider="EU_EAQI00"&NextHour.Provider="EU_EAQI11"&AirQuality.Current.Pollutants.Provider="EU_EAQI22"&AirQuality.Calculate.Algorithm="EU_EAQI33"&API.ColorfulClouds.Token="EU_EAQI44"&API.QWeather.Host="EU_EAQI55"&API.QWeather.Token="EU_EAQI66"&API.WAQI.Token="EU_EAQI77"&Storage="EU_EAQI88"&LogLevel="EU_EAQI99"
+      _compat.$argument: DataSets="ColorfulClouds8"&Weather.Provider="ColorfulClouds9"&WeatherAlerts.Provider="EU_EAQI0"&NextHour.Provider="EU_EAQI1"&AirQuality.Current.Pollutants.Provider="EU_EAQI2"&AirQuality.Calculate.Algorithm="EU_EAQI3"&API.ColorfulClouds.Token="EU_EAQI4"&API.QWeather.Host="EU_EAQI5"&API.QWeather.Token="EU_EAQI6"&API.WAQI.Token="EU_EAQI7"&Storage="EU_EAQI8"&LogLevel="EU_EAQI9"
     body_required: true
     binary_body: true
     max_size: 8388608

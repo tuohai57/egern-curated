@@ -1,0 +1,70 @@
+name: 亲宝宝
+description: 移除开屏广告、弹窗广告、广告下发、用户行为上报，精简搜索页、育儿页和我的页面，拦截商城页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Qbb.png
+rules:
+- domain:
+    match: apimall.qbb6.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/api\.qbb6\.com\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.qbb6\.com\/commons\/main\/tab\/info\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apicommunity\.qbb6\.com\/community\/recommend\/user\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apipt\.qbb6\.com\/parenting\/pt\/home\/post\/card\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apipt\.qbb6\.com\/lib\/search\/hot\/keys\/v\d\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apiuser\.qbb6\.com\/user\/member\/info\/get\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apimall\.qbb6\.com\/mall\/v\d\/goods\/count\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/apimall\.qbb6\.com\/mall\/homepage\/data\/get\/v\d$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 精简我的页面
+    match: (?i)^https:\/\/api\.qbb6\.com\/commons\/self\/button\/group\/get\/v\d\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/11f97d5614fa9e1476f0f0993908cff31cc6137a7b10d2bbf2be10f0b28210ab.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 精简育儿页面
+    match: (?i)^https:\/\/apipt\.qbb6\.com\/parenting\/pt\/homepage\/get\/v\d\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/777c52e0bb54ff3982350f826bc9a3cdbddc74538c6411e87cd050e775e7548a.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.qbb6.com
+  - apicommunity.qbb6.com
+  - apipt.qbb6.com
+  - apiuser.qbb6.com
+  - apimall.qbb6.com

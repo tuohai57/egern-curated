@@ -1,0 +1,63 @@
+name: 联掌门户
+description: 移除开屏广告、弹窗，以及首页、服务和发现页的无用内容
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+map_locals:
+- match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/app3rd/getApp3rdGenreList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/ad/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getAdSlotList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/requestAd$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getSdkStartConfigList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/index/getRecommendList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeInfo$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeShopList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getSdkAdSlotList$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: (?i)^http://lzmh\.lz-qs\.com:5090/resource/download/
+  status_code: 404
+  body: ''
+body_rewrites:
+- response_jq:
+    match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v2/user/getUserBaseInfoAndConfig\?
+    filter: del(.value.config)
+mitm:
+  hostnames:
+  - lzmh.lz-qs.com:6025
+  - yuudnn.lz-qs.com:9220
+  - yuudnn.lz-qs.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

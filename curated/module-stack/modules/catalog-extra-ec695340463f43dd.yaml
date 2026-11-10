@@ -1,0 +1,86 @@
+name: 网易有道词典
+description: 移除开屏广告、弹窗广告、横幅广告、信息流广告、旧版翻译页面广告及搜索填充词。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoDict.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\?
+    filter: delpaths([["data","vipTag"]])
+- response_jq:
+    match: ^https:\/\/dict\.youdao\.com\/course\/tab\/translateTab\?
+    filter: delpaths([["data"]])
+- response_jq:
+    match: ^https:\/\/dict\.youdao\.com\/course\/tab\/home\?
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","popup"]])
+
+      ) | (
+
+      delpaths([["data","tab"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","searchSuggestList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","newBanner"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","icon","promotionList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","icon","iconList",1,"bubble"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","icon","iconList",2,"bubble"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","icon","iconList",8,"bubble"]])
+
+      )'
+map_locals:
+- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - gorgon.youdao.com
+  - dict.youdao.com

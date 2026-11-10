@@ -35,97 +35,97 @@ scriptings:
 - http_response:
     name: 小红书 / 1
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/tabfeed
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 2
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/video\/save
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 3
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/live_photo\/save
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 4
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 5
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/widgets
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 6
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/redtube\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 7
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/videofeed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 8
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/feed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 9
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/imagefeed
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 10
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 11
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 12
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 13
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hot_list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 14
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hint
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 15
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\/categories
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 小红书 / 16
     match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/trending
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/87d216356773b5f6168b4807d6897194fcf3d9f8fb5b108549a40d6522adc558.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2c019818a25aea30cf8022063f08405e414879df96d9675164fe97518ae7d329.js
     body_required: true
     update_interval: 86400
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiaohongshu.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/RedNote.png

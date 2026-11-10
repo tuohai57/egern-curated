@@ -1,0 +1,29 @@
+name: 脉脉
+description: 移除开屏广告、信息流广告、横幅推广、相关帖子推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaiMai.png
+homepage: https://hub.kelee.one
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?
+    filter: delpaths([["feeds"]])
+map_locals:
+- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - open.taou.com
+  - h3.open.taou.com

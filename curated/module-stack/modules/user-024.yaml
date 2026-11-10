@@ -99,4 +99,4 @@ scriptings:
     match: ^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png

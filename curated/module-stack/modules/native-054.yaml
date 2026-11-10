@@ -32,8 +32,15 @@ body_rewrites:
     filter: del(.data.ai_enter_config)
 - response_jq:
     match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\?
-    filter: (del(.data.top_advert_data, .data.suspension)) | (.data.list |= map(select(has("capsule_freedom_zone")
-      | not)))
+    filter: '(
+
+      del(.data.top_advert_data, .data.suspension)
+
+      ) | (
+
+      .data.list |= map(select(has("capsule_freedom_zone") | not))
+
+      )'
 - response_jq:
     match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/guide-service\/productApi\/productDetail\/info\?
     filter: del(.data.detail.chatEntry)

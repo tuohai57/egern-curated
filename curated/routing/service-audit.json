@@ -838,7 +838,9 @@
       "讯飞星火",
       "MiniMax国内"
     ],
-    "domestic_proxy_overrides": {},
+    "domestic_proxy_overrides": {
+      "Apple国内": "Apple智能"
+    },
     "apple_ai_device_feedback": "2026-11-11: user reports Apple domestic can remain DIRECT; Apple Intelligence works with directly listed regional groups other than Hong Kong. Restore domestic DNS and DIRECT, and make Apple Intelligence its own non-Hong-Kong regional auto_test pool; latest user request requires latency-based automatic switching within allowed regions. This is user feedback, not automated device certification.",
     "default_foreign_target": "开发下载地区出口",
     "limitations": [
@@ -1474,7 +1476,7 @@
     "Apple国内": {
       "kind": "fallback",
       "policies": [
-        "DIRECT"
+        "Apple智能"
       ],
       "interval": 0
     },
@@ -2695,6 +2697,23 @@
     }
   },
   "main_rules": [
+    {
+      "and": {
+        "match": [
+          {
+            "protocol": {
+              "match": "udp"
+            }
+          },
+          {
+            "dest_port": {
+              "match": "53,3478,5349,19302,19305"
+            }
+          }
+        ],
+        "policy": "REJECT"
+      }
+    },
     {
       "rule_set": {
         "name": "去广告远程规则",
@@ -6070,27 +6089,27 @@
       "policy": "Apple"
     },
     {
-      "scene": "Apple CN restored DIRECT",
+      "scene": "Apple CN follows requested AI exit",
       "host": "www.apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "Apple CN root stays DIRECT",
+      "scene": "Apple CN root follows requested AI exit",
       "host": "apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "Apple CN account child stays DIRECT",
+      "scene": "Apple CN account child follows requested AI exit",
       "host": "account.apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "iCloud CN root stays DIRECT",
+      "scene": "iCloud CN root follows requested AI exit",
       "host": "icloud.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "iCloud CN account child stays DIRECT",
+      "scene": "iCloud CN account child follows requested AI exit",
       "host": "setup.icloud.com.cn",
       "policy": "Apple国内"
     },
@@ -6646,6 +6665,180 @@
     }
   ],
   "dns_forward": [
+    {
+      "domain_suffix": {
+        "match": "apple.com.cn",
+        "value": "国外加密DNS"
+      }
+    },
+    {
+      "domain_suffix": {
+        "match": "icloud.com.cn",
+        "value": "国外加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "acs.m.goofish.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "g-acs.m.goofish.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "sns.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "appmsg.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "home.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "umehome.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "opactivity.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "activity.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "umerp.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "flightstatus.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "umeflightstatus.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "startup.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "umestartup.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "user.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "umeuser.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "event.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "oss.umetrip.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "amap-aos-info-nogw.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "amap-aos-info.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "m5.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "ai.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "m5-zb.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "center.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "sns.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "info.amap.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "api5-normal-lq.dcarapi.com",
+        "value": "国内加密DNS"
+      }
+    },
+    {
+      "domain": {
+        "match": "aweme.snssdk.com",
+        "value": "国内加密DNS"
+      }
+    },
     {
       "domain_suffix": {
         "match": "localhost",
@@ -32947,5 +33140,5 @@
     "yangjibao.com",
     "yunshanfu.cn"
   ],
-  "private_profile_sha256": "f5ee2e198c8ab8fcf813d5af819e1fdfe7033fbd99bdf29806eff9a480cc2663"
+  "private_profile_sha256": "84494d6d2ae5f577287a188bef3e40ebdbe091b2d09f8e2243d407094fa4a350"
 }

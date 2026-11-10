@@ -1,0 +1,120 @@
+name: 高德地图
+description: 过滤高德地图开屏广告、各页面推广，精简我的页面。
+author: RuCu6[https://github.com/RuCu6], kelv1n1n[https://github.com/kelv1n1n], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: amap-aos-info-nogw.amap.com
+    policy: REJECT
+- domain:
+    match: free-aos-cdn-image.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: v.smtcdns.com
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?
+    filter: '(
+
+      (
+
+      delpaths([["data","commonMaterial"]])
+
+      ) | (
+
+      delpaths([["data","tipsOperationLocation"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","resourcePlacement"]])
+
+      )'
+- response_jq:
+    match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\?
+    filter: delpaths([["history_tags"]])
+- response_jq:
+    match: ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?
+    filter: delpaths([["data","carTips","data","popupInfo"]])
+map_locals:
+- match: ^https:\/\/m5-zb\.amap\.com\/ws\/ride\/home\/page\/get_commuting_card\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/ai\.amap\.com\/v1\/ai_rec\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - '*.amap.com'

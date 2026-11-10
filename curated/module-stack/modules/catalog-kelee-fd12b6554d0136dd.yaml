@@ -1,0 +1,150 @@
+name: 快看漫画
+description: 移除开屏广告、悬浮窗、漫画广告、社区广告、各类弹窗，精简顶部标签、我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiKanComic.png
+rules:
+- domain:
+    match: ad.v3mh.com
+    policy: REJECT
+- domain:
+    match: ipv6.kkmh.com
+    policy: REJECT
+- domain:
+    match: ipv4.kkmh.com
+    policy: REJECT
+map_locals:
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?h5\.kuaikanmanhua\.com\/user\/scene\/api\/new_user\/sign_in\/list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/kb\/comic_page_banner\/detail
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/fake_push\/info
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?shop\.kkmh\.com\/mbff\/popup_administration\/page_management_popup_administration$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/h5\.kuaikanmanhua\.com\/v\d\/kb\/recharge_good\/list_h5
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/kb\/wallet
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/checkin\/api\/new_user\/tab_info$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/h5\.kuaikanmanhua\.com\/game-h5\/new-user-welfare\/index\.html
+  status_code: 200
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/platform_base\/popups_display$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/checkin\/task_center\/get_by_task_type
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+scriptings:
+- http_response:
+    name: 修改广告参数
+    match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/comic\/recommend
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 精简首页热门标签
+    match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/discovery_v\d\/tab_list_v\d
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 精简社区标签
+    match: (?i)^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/homepage\/comicVideo\/v\d\/configs
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 精简社区信息流
+    match: (?i)^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/unified_feed$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.kkmh.com
+  - cdn-api.kkmh.com
+  - social.kkmh.com
+  - cdn-social.kkmh.com
+  - h5.kuaikanmanhua.com
+  - cdn-h5.kuaikanmanhua.com
+  - pay.kkmh.com
+  - cdn-pay.kkmh.com
+  - shop.kkmh.com
+  - cdn-shop.kkmh.com
+  - topic.kkmh.com
+  - cdn-topic.kkmh.com

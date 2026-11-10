@@ -79,3 +79,4 @@ rules:
     match: ad.12306.cn
     policy: REJECT
     name: 12306 开屏广告（压住模块的 DIRECT）
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

@@ -1,0 +1,193 @@
+name: 阅友
+description: 移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png
+homepage: https://hub.kelee.one
+rules:
+- domain:
+    match: ads.reader.yueyouxs.com
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\?
+    filter: '(
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      (
+
+      delpaths([["data","isShowDLPopup"]])
+
+      ) | (
+
+      delpaths([["data","isShowGame"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","touTiaoShowDlPopup"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","offLineDownload","WatchVideoBtnDesc"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","readVipFirstCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","readVipNormalCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","notifyAd"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotStartSplashTime"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotStartReqSwitch"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","isShowBFTab"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","popReqDelayTime"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","benefitCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","chestTask"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","hotStartAd"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","activeTagList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","secondOrderCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","secondOrderList"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","blockedWordsCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","aaReportListCfg"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","pddAdSwitch"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","isShowShelfAuthPopup"]])
+
+      )
+
+      ) | (
+
+      delpaths([["data","firstPopUpAmount"]])
+
+      )
+
+      ) | (
+
+      if (getpath(["data"]) | has("isAdClosed")) then (setpath(["data","isAdClosed"];
+      true)) else . end
+
+      )'
+mitm:
+  hostnames:
+  - goway.reader.yueyouxs.com

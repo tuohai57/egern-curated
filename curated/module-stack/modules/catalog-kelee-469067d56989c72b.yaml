@@ -1,0 +1,28 @@
+name: 慧生活798
+description: 移除开屏广告、横幅广告，精简底栏。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SmartLife.png
+map_locals:
+- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/acc\/score\/mission-lst$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/ep\/lst-simple\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/ui\/app\/master$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - i.ilife798.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/acc\/login$
+    filter: (delpaths([["data", "ar"], ["data", "showAd"]]))

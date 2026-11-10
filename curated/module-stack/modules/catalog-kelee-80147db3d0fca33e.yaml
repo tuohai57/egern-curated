@@ -1,0 +1,29 @@
+name: 库街区
+description: 移除开屏广告、弹窗广告、搜索页面的热搜及话题热榜。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuroBBS.png
+map_locals:
+- match: (?i)^https:\/\/api\.kurobbs\.com\/config\/getOpenScreen$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.kurobbs\.com\/config\/index\/windows$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.kurobbs\.com\/config\/search\/getSearchConfig\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/api\.kurobbs\.com\/forum\/app\/topic\/hotlist\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - api.kurobbs.com

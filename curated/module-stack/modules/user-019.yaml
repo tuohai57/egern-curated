@@ -1,12 +1,12 @@
 name: '12306'
 scriptings:
-- http_response:
+- http_request:
     name: 12306 / 1
     match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5843c8f35e7489e8559d181974d2ec2e09cc9d96b38cfbd349b1c578e9582727.js
-    body_required: false
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/31f024d0586f70fbfb518b8999804e4c9cae87604bb3d68f2284e508b8bd5df5.js
+    body_required: true
     update_interval: 86400
 mitm:
   hostnames:
   - ad.12306.cn
-icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/12306.png
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png

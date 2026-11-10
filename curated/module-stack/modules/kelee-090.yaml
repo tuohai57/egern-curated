@@ -1,0 +1,64 @@
+name: Aiinquiry
+description: 移除开屏广告、应用内弹窗、首页轮播图、悬浮部件、信息流和搜索填充词。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Aiinquiry.png
+map_locals:
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/bannerPicAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/getPopConfigAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/getHotTopicAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/getNewsReportAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/getExpertVideoAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/apps\/getHotRecommendV2Ajax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/m\/getLoginWordsAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/getAppPopSettingAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/app\/commonstatusAjax
+  status_code: 404
+  body: ''
+  headers:
+    Content-Type: text/plain; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/apps\/getHomeMonitorDataAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/aiqicha\.baidu\.com\/apps\/searchRecommendAjax
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - aiqicha.baidu.com

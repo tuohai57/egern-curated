@@ -1,0 +1,32 @@
+name: YouTube
+mitm:
+  hostnames:
+  - '*.googlevideo.com'
+  - www.youtube.com
+  - s.youtube.com
+  - youtubei.googleapis.com
+url_rewrites:
+- match: (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+)
+  location: $1$2$3
+  status_code: 302
+map_locals:
+- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking)
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: YouTube / 1
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/666750140f30dd0cb83be1b36f942faa847ebddfae198b33e3104f04fcfd2bc0.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png

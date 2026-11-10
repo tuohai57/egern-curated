@@ -1,0 +1,14 @@
+name: 创维智慧云
+description: 移除开屏广告、横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SkyworthDigitalPicamera.png
+map_locals:
+- match: (?i)^https:\/\/app\.skyworthdigitaliot\.com\/skyworthOperation\/v\d\/appOperation\/allBannerConfig\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - app.skyworthdigitaliot.com

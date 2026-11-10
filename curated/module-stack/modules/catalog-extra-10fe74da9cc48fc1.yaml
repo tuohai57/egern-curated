@@ -1,0 +1,25 @@
+name: 宝宝树孕育
+description: 过滤宝宝树孕育广告
+author: RuCu6[https://github.com/RuCu6]
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BabyTree.png
+homepage: https://hub.kelee.one
+rules:
+- url_regex:
+    match: ^http:\/\/go\.babytree\.com\/go_pregnancy\/api\/(index_activity\/get_app_index_activity|sign\/sign_h_5)\?
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/go\.babytree\.com\/go_search\/api\/mobile_search_new\/get_multi_search_default_keywords\?
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/m\.meitun\.com\/newapi\/router\/topic\/hometptf\/feedRecommend
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/pic08\.babytreeimg\.com\/knowledge\/2022\/0923\/\w+
+    policy: REJECT
+- url_regex:
+    match: ^http:\/\/plough\.babytree\.com\/plough\.do
+    policy: REJECT
+mitm:
+  hostnames:
+  - api.babytree.com
+  - go.babytree.com

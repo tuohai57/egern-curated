@@ -1,0 +1,24 @@
+name: 一甜相机
+description: 移除开屏广告、悬浮广告及图片选择器横幅广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yitian.png
+map_locals:
+- match: (?i)^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/ad\/
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+- match: (?i)^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v4\/op\/actPositions\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
+mitm:
+  hostnames:
+  - m2u-api.getkwai.com
+  - api-m2u.kuaishou.com
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/system\/configs\?
+    filter: (delpaths([["data", "shouldUseLMAdFirst"], ["data", "incentiveCfgList"]]))
