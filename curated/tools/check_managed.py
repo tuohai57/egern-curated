@@ -39,7 +39,7 @@ for dep in M['dependencies']:
         check(hashlib.sha256((ROOT/dep['source_repository_path']).read_bytes()).hexdigest()==dep['upstream_sha256'],'Independent source hash mismatch')
 for spec in R['sets']:
     obj=yaml.safe_load((ROOT/spec['repository_path']).read_text(encoding='utf-8'))
-    check(set(obj)<={'domain_set','domain_suffix_set','ip_cidr_set','no_resolve'},'Unsupported ruleset keys')
+    check(set(obj)<={'domain_set','domain_suffix_set','domain_keyword_set','ip_cidr_set','no_resolve'},'Unsupported ruleset keys')
     for key,values in obj.items():
         if key=='no_resolve':continue
         for value in values:

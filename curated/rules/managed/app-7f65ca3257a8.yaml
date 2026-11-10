@@ -1,6 +1,7 @@
 # Maintained normalized subset; provenance in managed-rules.json
 domain_suffix_set:
 - algolia.net
+- arkoselabs.com
 - auth0.com
 - bintray.com
 - browser-intake-datadoghq.com
@@ -11,6 +12,7 @@ domain_suffix_set:
 - intercom.io
 - intercomcdn.com
 - launchdarkly.com
+- livekit.cloud
 - observeit.net
 - segment.io
 - sentry-cdn.com

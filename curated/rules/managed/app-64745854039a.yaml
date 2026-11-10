@@ -1,0 +1,8 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- microsoft.com.cn
+- microsoftonline.cn
+- office365-net.cn
+- office365.cn
+- onmschina.cn
+- sharepoint.cn

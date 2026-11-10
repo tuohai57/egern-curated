@@ -1,0 +1,203 @@
+{
+  "checked_at": "2026-11-10T20:28:41.082613+08:00",
+  "sources": {
+    "egern-groups": {
+      "url": "https://egernapp.com/zh-CN/docs/configuration/policy_groups",
+      "final_url": "https://egernapp.com/zh-CN/docs/configuration/policy_groups/",
+      "status": 200,
+      "sha256": "59108c2374d14820233235d0bef141c3f6171160ef154d8e0594388bcec64c01",
+      "bytes": 78569,
+      "file": "sources\\service-routing-2026-11-10\\egern-groups.txt"
+    },
+    "apple-network": {
+      "url": "https://support.apple.com/en-us/101555",
+      "final_url": "https://support.apple.com/en-us/101555",
+      "status": 200,
+      "sha256": "66c80e67fd6489102e3d5f6c865d32903f85365b9cf48c45c87004d4d1a235cc",
+      "bytes": 304227,
+      "file": "sources\\service-routing-2026-11-10\\apple-network.txt"
+    },
+    "apple-intelligence": {
+      "url": "https://support.apple.com/en-us/121115",
+      "final_url": "https://support.apple.com/en-us/121115",
+      "status": 200,
+      "sha256": "c0d202c29840aaa276f1f86767af16510b115b46f1ebae3fc3f01dcd4f21267a",
+      "bytes": 176320,
+      "file": "sources\\service-routing-2026-11-10\\apple-intelligence.txt"
+    },
+    "openai-countries": {
+      "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+      "error": "HTTPError",
+      "transport": "private US test node"
+    },
+    "openai-network": {
+      "url": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+      "error": "HTTPError",
+      "transport": "private US test node"
+    },
+    "anthropic-countries": {
+      "url": "https://www.anthropic.com/supported-countries",
+      "final_url": "https://www.anthropic.com/legal/supported-regions",
+      "status": 200,
+      "sha256": "1e44023b300e146df75aeb99a2cb6ef093075f6628e448dd964ecc07d6133b6a",
+      "bytes": 173700,
+      "file": "sources\\service-routing-2026-11-10\\anthropic-countries.txt"
+    },
+    "gemini-countries": {
+      "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+      "final_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+      "status": 200,
+      "sha256": "57eee5209357fc42df316efcded000bd4b10b02ef0aad884874aa0df92d4fa79",
+      "bytes": 1633691,
+      "file": "sources\\service-routing-2026-11-10\\gemini-countries.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "gemini-api-countries": {
+      "url": "https://ai.google.dev/gemini-api/docs/available-regions",
+      "final_url": "https://aistudio.google.com/docs/available-regions",
+      "status": 200,
+      "sha256": "b132fd5451fcd1b8673be5673d208e0e74d53e8d6dfff3c5b6d3eaa25e716cfc",
+      "bytes": 39432,
+      "file": "sources\\service-routing-2026-11-10\\gemini-api-countries.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "m365-china": {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges-21vianet?view=o365-worldwide",
+      "final_url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges-21vianet?view=o365-worldwide",
+      "status": 200,
+      "sha256": "2f211670a9525dae4c9c7a46b3077c28a7199fdbd1bd489fff1c78f2469e23b4",
+      "bytes": 58930,
+      "file": "sources\\service-routing-2026-11-10\\m365-china.txt"
+    },
+    "copilot-countries": {
+      "url": "https://support.microsoft.com/en-us/topic/supported-regions-and-languages-in-microsoft-copilot-26de43a1-c176-4fdc-ae57-03a1f7c8c3f4",
+      "error": "HTTPError",
+      "transport": "private US test node"
+    },
+    "github-copilot-network": {
+      "url": "https://docs.github.com/en/copilot/reference/allowlist-reference",
+      "final_url": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+      "status": 200,
+      "sha256": "02d5d00a93206177635fb86094a9404eeaa89cea949751d9278d6eefdad0c671",
+      "bytes": 751645,
+      "file": "sources\\service-routing-2026-11-10\\github-copilot-network.txt"
+    },
+    "xai-docs": {
+      "url": "https://docs.x.ai/docs/overview",
+      "final_url": "https://docs.x.ai/overview",
+      "status": 200,
+      "sha256": "a7f8816c5f8e5b9b55578ace17406ba19b10233231f21d9cc5b8c7ec001566db",
+      "bytes": 522974,
+      "file": "sources\\service-routing-2026-11-10\\xai-docs.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "perplexity-api": {
+      "url": "https://docs.perplexity.ai/getting-started/quickstart",
+      "final_url": "https://docs.perplexity.ai/docs/getting-started/quickstart",
+      "status": 200,
+      "sha256": "9569de028d1fd36fca4e0d681f439e2138b3a162e784cd096e6e338c77696fbd",
+      "bytes": 984654,
+      "file": "sources\\service-routing-2026-11-10\\perplexity-api.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "mistral-api": {
+      "url": "https://docs.mistral.ai/getting-started/quickstart",
+      "final_url": "https://docs.mistral.ai/",
+      "status": 200,
+      "sha256": "a5a6dcb4a7b0df7c2d402fe0c3b9e74b585d1a13c20bd4b57dbae0db41a38c11",
+      "bytes": 766665,
+      "file": "sources\\service-routing-2026-11-10\\mistral-api.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "deepseek-api": {
+      "url": "https://api-docs.deepseek.com/",
+      "final_url": "https://api-docs.deepseek.com/",
+      "status": 200,
+      "sha256": "2753c4e803b3be1943e8bbc9ad661f13e447b6293fbc92908b0a1af7781f8de8",
+      "bytes": 51222,
+      "file": "sources\\service-routing-2026-11-10\\deepseek-api.txt"
+    },
+    "qwen-api": {
+      "url": "https://www.alibabacloud.com/help/en/model-studio/getting-started/first-api-call-to-qwen",
+      "final_url": "https://www.alibabacloud.com/help/en/model-studio/what-is-model-studio",
+      "status": 200,
+      "sha256": "ee386def4537ca480b7935cd84fc36cb651e79c2282853f1c8260bb356ad562f",
+      "bytes": 68777,
+      "file": "sources\\service-routing-2026-11-10\\qwen-api.txt"
+    },
+    "kimi-api": {
+      "url": "https://platform.moonshot.cn/docs/guide/start-using-kimi-api",
+      "final_url": "https://platform.kimi.com/docs/get-api-key",
+      "status": 200,
+      "sha256": "cab7cead0a735f3f7c781e93643c7c7e34810f3a5faa1b9adcfa1edd20cbd4aa",
+      "bytes": 271093,
+      "file": "sources\\service-routing-2026-11-10\\kimi-api.txt"
+    },
+    "zhipu-api": {
+      "url": "https://docs.bigmodel.cn/cn/guide/start/introduction",
+      "final_url": "https://docs.bigmodel.cn/cn/guide/start/introduction",
+      "status": 200,
+      "sha256": "9e95b9e7034dd9335720b383b9432fb83aa90d39f97e6eff3862101a35b63374",
+      "bytes": 157430,
+      "file": "sources\\service-routing-2026-11-10\\zhipu-api.txt"
+    },
+    "minimax-api": {
+      "url": "https://platform.minimax.io/docs/guides/quickstart",
+      "final_url": "https://platform.minimax.io/docs/guides/quickstart-preparation",
+      "status": 200,
+      "sha256": "ab7e5155ffb344f431970ea133fac3eefbb08657819d4d3a44bd5470f0c5e2d3",
+      "bytes": 201906,
+      "file": "sources\\service-routing-2026-11-10\\minimax-api.txt"
+    },
+    "copilot-home": {
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+      "error": "HTTPError",
+      "transport": "private US test node"
+    },
+    "openai-api-countries": {
+      "url": "https://developers.openai.com/api/docs/supported-countries",
+      "final_url": "https://developers.openai.com/api/docs/supported-countries",
+      "status": 200,
+      "sha256": "b3d0b0cdd488fd9e04b891c50e624a0b5b665ab233bfe0295d32d9a3aadc80db",
+      "bytes": 381989,
+      "file": "sources\\service-routing-2026-11-10\\openai-api-countries.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "google-cn-home": {
+      "url": "https://www.google.cn/",
+      "final_url": "https://www.google.cn/",
+      "status": 200,
+      "sha256": "fd40db7de185e7d6d2e92a0b44bc7f16f9a467b7707d063ea46c48de353eda66",
+      "bytes": 1408,
+      "file": "sources\\service-routing-2026-11-10\\google-cn-home.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "qwen-home": {
+      "url": "https://qwen.ai/",
+      "final_url": "https://qwen.ai/",
+      "status": 200,
+      "sha256": "59475b737cdad558e5148c0809d50685a0b73a662f8199f825543771436803da",
+      "bytes": 94729,
+      "file": "sources\\service-routing-2026-11-10\\qwen-home.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "kimi-home": {
+      "url": "https://www.kimi.com/",
+      "final_url": "https://www.kimi.com/",
+      "status": 200,
+      "sha256": "d973c57422ea8453315cf11836a6b1d43cdb777dde737f38c91e199cfbad1aaf",
+      "bytes": 219589,
+      "file": "sources\\service-routing-2026-11-10\\kimi-home.txt",
+      "transport": "private US test node; no account credentials"
+    },
+    "qwen-region-api": {
+      "url": "https://www.alibabacloud.com/help/en/model-studio/getting-started/models",
+      "final_url": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "status": 200,
+      "sha256": "3b04ae2db5793269936110459376c28f96ebe6b4daadd4df7cb802db3ab64941",
+      "bytes": 42794,
+      "file": "sources\\service-routing-2026-11-10\\qwen-region-api.txt",
+      "transport": "private US test node; no account credentials"
+    }
+  }
+}

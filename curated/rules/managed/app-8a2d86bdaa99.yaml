@@ -1,0 +1,8 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- azure-mobile.cn
+- azure.cn
+- chinacloud-mobile.cn
+- chinacloudapi.cn
+- chinacloudapp.cn
+- windowsazure.cn

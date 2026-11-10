@@ -1,0 +1,100 @@
+"""Service ownership, supported-country boundaries and failover regression."""
+from pathlib import Path
+import fnmatch,json,sys
+ROOT=Path(__file__).resolve().parents[2]
+vendor=ROOT.parent/'.vendor'
+if vendor.exists():sys.path.insert(0,str(vendor))
+from adblock_model import DomainRouter
+import yaml
+data=json.loads((ROOT/'curated/routing/service-audit.json').read_text(encoding='utf-8'))
+graph=data['graph'];spec=data['spec'];checks=[];errors=[]
+model=DomainRouter(ROOT,{'rules':data['main_rules']})
+def check(ok,label,**detail):
+ row={'name':label,'passed':bool(ok),**detail};checks.append(row)
+ if not ok:errors.append(row)
+def resolve(name,dead=(),path=()):
+ assert name not in path,'Cycle '+name
+ if name not in graph:return None if name in dead else name
+ g=graph[name];kind=g['kind']
+ if kind=='country':return None if g['country'] in dead else g['country']
+ if kind=='financial':return None if g['country'] in dead else '金融:'+g['country']
+ if kind=='conditional':return resolve(g['target'],dead,path+(name,))
+ if kind=='select':return resolve(g['policies'][0],dead,path+(name,))
+ candidates=g.get('policies',g.get('countries',[]))
+ return next((v for child in candidates if (v:=resolve(child,dead,path+(name,))) is not None),None)
+def countries(name,path=()):
+ assert name not in path,'Cycle '+name
+ if name not in graph:return {name}
+ g=graph[name]
+ if g['kind']=='country':return {g['country']}
+ if g['kind']=='financial':return {'金融:'+g['country']}
+ if g['kind']=='conditional':return countries(g['target'],path+(name,))
+ if g['kind']=='select':return countries(g['policies'][0],path+(name,))
+ return set().union(*(countries(v,path+(name,)) for v in g.get('policies',g.get('countries',[]))))
+for name in graph:check(graph[name]['kind']!='select' or name=='Apple AI补充','仅用户要求的 Apple AI补充允许切 DIRECT '+name)
+check(graph['Apple AI补充']['policies']==['Apple智能','DIRECT'],'Apple AI补充 默认自动代理，停用时可手动直连')
+supplement_url='https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/rules/managed/apple-ai-supplement.yaml'
+supplement_path=ROOT/'curated/rules/managed/apple-ai-supplement.yaml'
+supplement=yaml.safe_load(supplement_path.read_text(encoding='utf-8'))
+expected={
+ 'domain_set':{'guzzoni.apple.com','mask-api.fe.apple-dns.net','mask-api.icloud.com','mask-t.apple-dns.net','mask.apple-dns.net'},
+ 'domain_suffix_set':{'smoot.apple.com','apple-relay.apple.com','apple-relay.cloudflare.com','apple-relay.fastly-edge.com','apple-relay.mask.apple-dns.net','cp4.cloudflare.com','gateway.icloud.com','ls.apple.com','mask-h2.icloud.com','mask.icloud.com','apps.mastic.com','apple-relay.akamaized.net'},
+ 'domain_keyword_set':{'siri'}}
+check({k:set(v) for k,v in supplement.items()}==expected,'截图远程集合保持18个有效选择器')
+check(sum(len(v) for v in supplement.values())==18,'截图规则总数可由远程YAML复算')
+refs=[f for _,node in model.rules for kind,f in node.items() if kind=='rule_set' and f['match']==supplement_url]
+check(len(refs)==1 and refs[0]['policy']=='Apple AI补充' and refs[0]['update_interval']==86400,'截图远程集合仅引用一次并每天更新')
+for kind,values in expected.items():
+ for value in values:
+  host='siriously.example.com' if kind=='domain_keyword_set' else value
+  route=model.route('https://'+host+'/')
+  check(route['policy']=='Apple AI补充','截图范围独立控制 '+host,actual=route['policy'])
+  if route['policy']=='Apple AI补充':
+   original=graph['Apple AI补充']['policies']
+   try:
+    graph['Apple AI补充']['policies']=['DIRECT','Apple智能']
+    check(resolve(route['policy'])=='DIRECT','补充开关选择DIRECT可达 '+host)
+   finally:graph['Apple AI补充']['policies']=original
+for host,policy in [('siri.paypal.com','PayPal'),('siri.icbc.com.cn','中国工商银行'),('gspe19-cn-ssl.ls.apple.com','Apple地图国内')]:
+ actual=model.route('https://'+host+'/')['policy']
+ check(actual==policy,'金融与国内地图具体例外前置 '+host,actual=actual,expected=policy)
+check(model.blocked('siri.googlesyndication.com'),'宽siri关键词不放行已有广告域')
+for name,members in spec['pools'].items():
+ members=[r for r in members if r in graph and graph[r]['kind']=='country']
+ check(graph[name]['policies']==members,'地区顺序 '+name)
+ check(graph[name]['interval']==120,'故障检查间隔 '+name)
+ for country in members:
+  check(resolve(name,[r for r in members if r!=country])==country,'仅 '+country+' 存活 '+name)
+ check(resolve(name,members) is None,'全部地区失败不越界 '+name)
+for name in spec['ai_groups']:
+ leaves=countries(name)
+ check(bool(leaves),'AI 存在出口 '+name)
+ check(not (leaves & {'香港','DIRECT','自动选择','故障转移'}) or leaves=={'DIRECT'},'AI 无香港/通用池后备 '+name,regions=sorted(leaves))
+ check(resolve(name,leaves) is None if leaves!={'DIRECT'} else resolve(name)=='DIRECT','AI 全故障边界 '+name)
+for name,_,roots in spec['domestic']:
+ check(resolve(name)=='DIRECT','国区服务直连 '+name)
+for name,target in spec['targets'].items():
+ check(graph[name]['target']==target,'独立服务目标 '+name)
+def dns(host):
+ for node in data['dns_forward']:
+  kind,p=next(iter(node.items()));value=p['match']
+  if (kind=='domain' and host==value) or (kind=='domain_suffix' and (host==value or host.endswith('.'+value))) or (kind=='domain_wildcard' and fnmatch.fnmatchcase(host,value)):return p['value']
+for row in data['fixtures']:
+ actual=model.route('https://'+row['host']+'/')['policy']
+ if row['policy'] is None:
+  check(actual not in spec['ai_groups'],'公共域名未误占到 AI '+row['host'],actual=actual)
+  continue
+ check(actual==row['policy'],'模块和主规则归属 '+row['scene'],actual=actual,expected=row['policy'])
+ endpoint=resolve(row['policy'])
+ expected='国内加密DNS' if endpoint=='DIRECT' else '国外加密DNS'
+ check(dns(row['host'])==expected,'DNS 与服务分类一致 '+row['scene'],actual=dns(row['host']),expected=expected)
+for name,roots in spec['critical'].items():
+ for h in roots:
+  check(h in data['mitm_excludes'] and '*.'+h in data['mitm_excludes'],'关键 AI/账户接口不解密 '+h)
+for labels in [('OpenAI','ChatGPT','Sora','Apple智能','Siri','Apple私密中继'),('Google','Google 国外','Gemini','Google AI Studio','NotebookLM'),('Microsoft','Outlook','Teams','Microsoft Copilot','Bing'),('GitHub','GitHub Copilot'),('Anthropic','Claude'),('X','Grok'),('Meta共享','Meta AI','Facebook','Instagram','WhatsApp')]:
+ for dead in [(),('美国',),('美国','日本')]:
+  check(len({resolve(n,dead) for n in labels})==1,'共享链路地区联动 '+' / '.join(labels)+' '+str(dead))
+result={'passed':not errors,'checks':len(checks),'failures':errors,'ai_groups':len(spec['ai_groups']),'country_pools':len(spec['pools']),'route_witnesses':len(data['fixtures']),'scope':data['scope']}
+(ROOT/'curated/routing/test-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+print(json.dumps(result,ensure_ascii=False))
+if errors:raise SystemExit(1)

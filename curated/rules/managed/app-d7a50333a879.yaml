@@ -1,0 +1,6 @@
+# Maintained normalized subset; provenance in managed-rules.json
+domain_suffix_set:
+- google.cn
+- googlechinawebmaster.com
+- gstatic-cn.com
+- gstatic.cn

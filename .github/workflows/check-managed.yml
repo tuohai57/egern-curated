@@ -15,6 +15,8 @@ on:
       - 'curated/tools/adblock_model.py'
       - 'curated/tools/test_adblock_coverage.py'
       - 'curated/tools/test_app_ad_paths.py'
+      - 'curated/routing/**'
+      - 'curated/tools/test_service_routing.py'
       - '.github/workflows/check-managed.yml'
   pull_request:
     paths:
@@ -41,3 +43,4 @@ jobs:
       - run: node curated/tools/test_native_full.cjs
       - run: python curated/tools/test_adblock_coverage.py
       - run: python curated/tools/test_app_ad_paths.py
+      - run: python curated/tools/test_service_routing.py

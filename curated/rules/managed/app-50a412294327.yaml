@@ -1,5 +1,3 @@
 # Maintained normalized subset; provenance in managed-rules.json
 domain_suffix_set:
-- chatgpt.com
-- oaistatic.com
-- oaiusercontent.com
+- chat.openai.com

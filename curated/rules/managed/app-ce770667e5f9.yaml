@@ -270,7 +270,6 @@ domain_suffix_set:
 - google.ci
 - google.cl
 - google.cm
-- google.cn
 - google.co.ao
 - google.co.bw
 - google.co.ck
@@ -355,6 +354,7 @@ domain_suffix_set:
 - google.cv
 - google.cz
 - google.de
+- google.dev
 - google.dj
 - google.dk
 - google.dm
@@ -488,8 +488,6 @@ domain_suffix_set:
 - gooogle.com
 - gridaware.app
 - gsrc.io
-- gstatic-cn.com
-- gstatic.cn
 - gstaticcnapps.cn
 - gsuite.com
 - gv.com

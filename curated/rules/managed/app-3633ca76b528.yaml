@@ -1,6 +1,5 @@
 # Maintained normalized subset; provenance in managed-rules.json
 domain_suffix_set:
-- baidubce.com
 - baidustatic.com
 - bcebos.com
 - bdimg.com

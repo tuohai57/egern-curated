@@ -1,0 +1,1531 @@
+name: 恢复版优先保护
+description: 金融、必要服务、DNS 传输优先；保留响应净化接口到对应 App 策略。
+rules:
+- ip_cidr:
+    match: 127.0.0.0/8
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 10.0.0.0/8
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 172.16.0.0/12
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 192.168.0.0/16
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 169.254.0.0/16
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 224.0.0.0/4
+    policy: 局域网
+    no_resolve: true
+- ip_cidr:
+    match: 255.255.255.255/32
+    policy: 局域网
+    no_resolve: true
+- ip_cidr6:
+    match: ::1/128
+    policy: 局域网
+    no_resolve: true
+- ip_cidr6:
+    match: fc00::/7
+    policy: 局域网
+    no_resolve: true
+- ip_cidr6:
+    match: fe80::/10
+    policy: 局域网
+    no_resolve: true
+- ip_cidr6:
+    match: ff00::/8
+    policy: 局域网
+    no_resolve: true
+- dest_port:
+    match: '53'
+    policy: REJECT
+- ip_cidr:
+    match: 1.1.1.1/32
+    policy: DNS代理
+    no_resolve: true
+- ip_cidr:
+    match: 8.8.8.8/32
+    policy: DNS代理
+    no_resolve: true
+- ip_cidr:
+    match: 223.5.5.5/32
+    policy: 必要服务
+    no_resolve: true
+- ip_cidr:
+    match: 1.12.12.12/32
+    policy: 必要服务
+    no_resolve: true
+- domain_suffix:
+    match: localhost
+    policy: 局域网
+- domain_suffix:
+    match: local
+    policy: 局域网
+- domain_suffix:
+    match: lan
+    policy: 局域网
+- domain_suffix:
+    match: home.arpa
+    policy: 局域网
+- domain_suffix:
+    match: buy.itunes.apple.com
+    policy: Apple Pay
+- domain_suffix:
+    match: pay.weixin.qq.com
+    policy: 微信支付
+- domain_suffix:
+    match: payapp.weixin.qq.com
+    policy: 微信支付
+- domain_suffix:
+    match: wxpay.weixin.qq.com
+    policy: 微信支付
+- domain_suffix:
+    match: 10jqka.com.cn
+    policy: 同花顺
+- domain_suffix:
+    match: 1234567.com.cn
+    policy: 天天基金
+- domain_suffix:
+    match: 95559.com.cn
+    policy: 交通银行
+- domain_suffix:
+    match: abchina.com.cn
+    policy: 中国农业银行
+- domain_suffix:
+    match: alipay.com.cn
+    policy: 支付宝
+- domain_suffix:
+    match: apple-pay-gateway-nc-pod1.apple.com
+    policy: Apple Pay
+- domain_suffix:
+    match: apple-pay-gateway.apple.com
+    policy: Apple Pay
+- domain_suffix:
+    match: applepay.apple.com
+    policy: Apple Pay
+- domain_suffix:
+    match: ccb.com.cn
+    policy: 建设银行
+- domain_suffix:
+    match: chinabank.com.cn
+    policy: 京东金融
+- domain_suffix:
+    match: chinastock.com.cn
+    policy: 中国银河证券
+- domain_suffix:
+    match: cib.com.cn
+    policy: 兴业银行
+- domain_suffix:
+    match: cmbc.com.cn
+    policy: 民生银行
+- domain_suffix:
+    match: fund.eastmoney.com
+    policy: 天天基金
+- domain_suffix:
+    match: fundmobapi.eastmoney.com
+    policy: 天天基金
+- domain_suffix:
+    match: fundztapi.eastmoney.com
+    policy: 天天基金
+- domain_suffix:
+    match: htsc.com.cn
+    policy: 华泰证券
+- domain_suffix:
+    match: ibkr.com.cn
+    policy: Interactive Brokers
+- domain_suffix:
+    match: ibkr.com.hk
+    policy: Interactive Brokers
+- domain_suffix:
+    match: icbc.com.cn
+    policy: 中国工商银行
+- domain_suffix:
+    match: interactivebrokers.co.uk
+    policy: Interactive Brokers
+- domain_suffix:
+    match: interactivebrokers.com.au
+    policy: Interactive Brokers
+- domain_suffix:
+    match: interactivebrokers.com.hk
+    policy: Interactive Brokers
+- domain_suffix:
+    match: interactivebrokers.com.sg
+    policy: Interactive Brokers
+- domain_suffix:
+    match: jr.jd.com
+    policy: 京东金融
+- domain_suffix:
+    match: mmpay.qpic.cn
+    policy: 微信支付
+- domain_suffix:
+    match: pay.google.com
+    policy: Google Pay
+- domain_suffix:
+    match: payments.google.com
+    policy: Google Pay
+- domain_suffix:
+    match: payments.googleapis.com
+    policy: Google Pay
+- domain_suffix:
+    match: paypal.com.cn
+    policy: PayPal
+- domain_suffix:
+    match: pingan.com.cn
+    policy: 平安银行
+- domain_suffix:
+    match: qpay.qq.com
+    policy: 微信支付
+- domain_suffix:
+    match: schwab.co.uk
+    policy: Charles Schwab
+- domain_suffix:
+    match: schwab.com.hk
+    policy: Charles Schwab
+- domain_suffix:
+    match: schwab.com.sg
+    policy: Charles Schwab
+- domain_suffix:
+    match: spdb.com.cn
+    policy: 浦发银行
+- domain_suffix:
+    match: spdbccc.com.cn
+    policy: 浦发银行
+- domain_suffix:
+    match: webull.co.jp
+    policy: Webull
+- domain_suffix:
+    match: webull.com.au
+    policy: Webull
+- domain_suffix:
+    match: webull.com.br
+    policy: Webull
+- domain_suffix:
+    match: webull.com.sg
+    policy: Webull
+- domain_suffix:
+    match: 18.cn
+    policy: 东方财富
+- domain_suffix:
+    match: 95516.com
+    policy: 云闪付
+- domain_suffix:
+    match: 95568.cn
+    policy: 民生银行
+- domain_suffix:
+    match: 95599.cn
+    policy: 中国农业银行
+- domain_suffix:
+    match: abchina.com
+    policy: 中国农业银行
+- domain_suffix:
+    match: alipay-eco.com
+    policy: 支付宝
+- domain_suffix:
+    match: alipay.com
+    policy: 支付宝
+- domain_suffix:
+    match: alipaydev.com
+    policy: 支付宝
+- domain_suffix:
+    match: alipaydns.com
+    policy: 支付宝
+- domain_suffix:
+    match: alipayhk.com
+    policy: AlipayHK
+- domain_suffix:
+    match: alipayobjects.com
+    policy: 支付宝
+- domain_suffix:
+    match: alipayplus.com
+    policy: 支付宝
+- domain_suffix:
+    match: antfin.com
+    policy: 蚂蚁财富
+- domain_suffix:
+    match: antfortune.com
+    policy: 蚂蚁财富
+- domain_suffix:
+    match: antgroup.com
+    policy: 蚂蚁财富
+- domain_suffix:
+    match: baitiao.com
+    policy: 京东金融
+- domain_suffix:
+    match: bankcomm.com
+    policy: 交通银行
+- domain_suffix:
+    match: bankofchina.com
+    policy: 中国银行
+- domain_suffix:
+    match: binance.com
+    policy: Binance
+- domain_suffix:
+    match: binance.us
+    policy: Binance
+- domain_suffix:
+    match: bnbstatic.com
+    policy: Binance
+- domain_suffix:
+    match: boc.cn
+    policy: 中国银行
+- domain_suffix:
+    match: braintree-api.com
+    policy: PayPal
+- domain_suffix:
+    match: braintreegateway.com
+    policy: PayPal
+- domain_suffix:
+    match: braintreepayments.com
+    policy: PayPal
+- domain_suffix:
+    match: ccb.cn
+    policy: 建设银行
+- domain_suffix:
+    match: ccb.com
+    policy: 建设银行
+- domain_suffix:
+    match: chinaunionpay.com
+    policy: 云闪付
+- domain_suffix:
+    match: citicbank.com
+    policy: 中信银行
+- domain_suffix:
+    match: citiccard.com
+    policy: 中信银行
+- domain_suffix:
+    match: cmbchina.com
+    policy: 招商银行
+- domain_suffix:
+    match: cmbimg.com
+    policy: 招商银行
+- domain_suffix:
+    match: coinbase.com
+    policy: Coinbase
+- domain_suffix:
+    match: coinbasecdn.net
+    policy: Coinbase
+- domain_suffix:
+    match: cryptowat.ch
+    policy: Kraken
+- domain_suffix:
+    match: danjuanfunds.com
+    policy: 蛋卷基金
+- domain_suffix:
+    match: dfcfw.com
+    policy: 东方财富
+- domain_suffix:
+    match: eastmoney.com
+    policy: 东方财富
+- domain_suffix:
+    match: ecitic.com
+    policy: 中信银行
+- domain_suffix:
+    match: futu.com
+    policy: 富途牛牛
+- domain_suffix:
+    match: futuhk.com
+    policy: 富途牛牛
+- domain_suffix:
+    match: futunn.com
+    policy: 富途牛牛
+- domain_suffix:
+    match: futusecurities.com
+    policy: 富途牛牛
+- domain_suffix:
+    match: googlepay.com
+    policy: Google Pay
+- domain_suffix:
+    match: gtht.com
+    policy: 国泰海通
+- domain_suffix:
+    match: gtja.com
+    policy: 国泰海通
+- domain_suffix:
+    match: hexin.cn
+    policy: 同花顺
+- domain_suffix:
+    match: htsc.com
+    policy: 华泰证券
+- domain_suffix:
+    match: htsec.com
+    policy: 国泰海通
+- domain_suffix:
+    match: ibkr.com
+    policy: Interactive Brokers
+- domain_suffix:
+    match: icbc.com
+    policy: 中国工商银行
+- domain_suffix:
+    match: interactivebrokers.com
+    policy: Interactive Brokers
+- domain_suffix:
+    match: jdjr.com
+    policy: 京东金融
+- domain_suffix:
+    match: jdpay.com
+    policy: 京东金融
+- domain_suffix:
+    match: kraken.com
+    policy: Kraken
+- domain_suffix:
+    match: krakenfx.com
+    policy: Kraken
+- domain_suffix:
+    match: okcoin.com
+    policy: OKX
+- domain_suffix:
+    match: oklink.com
+    policy: OKX
+- domain_suffix:
+    match: okx.com
+    policy: OKX
+- domain_suffix:
+    match: pay.google
+    policy: Google Pay
+- domain_suffix:
+    match: paypal.cn
+    policy: PayPal
+- domain_suffix:
+    match: paypal.com
+    policy: PayPal
+- domain_suffix:
+    match: paypal.me
+    policy: PayPal
+- domain_suffix:
+    match: paypalobjects.com
+    policy: PayPal
+- domain_suffix:
+    match: pingan.com
+    policy: 平安银行
+- domain_suffix:
+    match: psbc.com
+    policy: 邮储银行
+- domain_suffix:
+    match: revolut.com
+    policy: Revolut
+- domain_suffix:
+    match: revolutassets.com
+    policy: Revolut
+- domain_suffix:
+    match: schwab.com
+    policy: Charles Schwab
+- domain_suffix:
+    match: schwabcdn.com
+    policy: Charles Schwab
+- domain_suffix:
+    match: stripe.com
+    policy: Stripe
+- domain_suffix:
+    match: tenpay.com
+    policy: 微信支付
+- domain_suffix:
+    match: thinkorswim.com
+    policy: Charles Schwab
+- domain_suffix:
+    match: transferwise.com
+    policy: Wise
+- domain_suffix:
+    match: unionpay.com
+    policy: 云闪付
+- domain_suffix:
+    match: unionpayintl.com
+    policy: 云闪付
+- domain_suffix:
+    match: webull.com
+    policy: Webull
+- domain_suffix:
+    match: webull.hk
+    policy: Webull
+- domain_suffix:
+    match: wechatpay.cn
+    policy: 微信支付
+- domain_suffix:
+    match: wechatpay.com
+    policy: 微信支付
+- domain_suffix:
+    match: wise.com
+    policy: Wise
+- domain_suffix:
+    match: wise.jobs
+    policy: Wise
+- domain_suffix:
+    match: yangjibao.com
+    policy: 养基宝
+- domain_suffix:
+    match: yunshanfu.cn
+    policy: 云闪付
+- domain_suffix:
+    match: extshort.weixin.qq.com
+    policy: 微信
+- domain_suffix:
+    match: gspe11-2-cn-ssl.ls.apple.com
+    policy: Apple地图国内
+- domain_suffix:
+    match: gspe12-cn-ssl.ls.apple.com
+    policy: Apple地图国内
+- domain_suffix:
+    match: gspe19-2-cn-ssl.ls.apple.com
+    policy: Apple地图国内
+- domain_suffix:
+    match: gspe19-cn-ssl.ls.apple.com
+    policy: Apple地图国内
+- domain_suffix:
+    match: gspe79-cn-ssl.ls.apple.com
+    policy: Apple地图国内
+- domain_suffix:
+    match: login.m.taobao.com
+    policy: 淘宝
+- domain_suffix:
+    match: login.weixin.qq.com
+    policy: 微信
+- domain_suffix:
+    match: long.weixin.qq.com
+    policy: 微信
+- domain_suffix:
+    match: mask-api.fe2.apple-dns.net
+    policy: Apple私密中继
+- domain_suffix:
+    match: push-apple.com.akadns.net
+    policy: Apple系统服务
+- domain_suffix:
+    match: short.weixin.qq.com
+    policy: 微信
+- domain_suffix:
+    match: szshort.weixin.qq.com
+    policy: 微信
+- domain_suffix:
+    match: aapps.mzstatic.com
+    policy: Apple智能
+- domain_suffix:
+    match: accounts.google.com
+    policy: Google
+- domain_suffix:
+    match: ai.google.dev
+    policy: Google AI Studio
+- domain_suffix:
+    match: aistudio.google.com
+    policy: Google AI Studio
+- domain_suffix:
+    match: alt1-mtalk.google.com
+    policy: Google
+- domain_suffix:
+    match: alt2-mtalk.google.com
+    policy: Google
+- domain_suffix:
+    match: appleid.apple.com
+    policy: Apple账户
+- domain_suffix:
+    match: captive.apple.com
+    policy: Apple系统服务
+- domain_suffix:
+    match: chat.openai.com
+    policy: ChatGPT
+- domain_suffix:
+    match: chatgpt.livekit.cloud
+    policy: ChatGPT
+- domain_suffix:
+    match: configuration.apple.com
+    policy: Apple系统服务
+- domain_suffix:
+    match: copilot-proxy.githubusercontent.com
+    policy: GitHub Copilot
+- domain_suffix:
+    match: copilot-telemetry.githubusercontent.com
+    policy: GitHub Copilot
+- domain_suffix:
+    match: copilot.cloud.microsoft
+    policy: Microsoft Copilot
+- domain_suffix:
+    match: copilot.microsoft.com
+    policy: Microsoft Copilot
+- domain_suffix:
+    match: dashscope-intl.aliyuncs.com
+    policy: 通义千问国际
+- domain_suffix:
+    match: dashscope-us.aliyuncs.com
+    policy: 通义千问美国API
+- domain_suffix:
+    match: fcm.googleapis.com
+    policy: Google
+- domain_suffix:
+    match: firebaseinstallations.googleapis.com
+    policy: Google
+- domain_suffix:
+    match: gemini.google.com
+    policy: Gemini
+- domain_suffix:
+    match: generativelanguage.googleapis.com
+    policy: Google AI Studio
+- domain_suffix:
+    match: gsa.apple.com
+    policy: Apple账户
+- domain_suffix:
+    match: identity.apple.com
+    policy: Apple账户
+- domain_suffix:
+    match: idmsa.apple.com
+    policy: Apple账户
+- domain_suffix:
+    match: login.live.com
+    policy: Microsoft
+- domain_suffix:
+    match: login.microsoft.com
+    policy: Microsoft
+- domain_suffix:
+    match: login.microsoftonline.com
+    policy: Microsoft
+- domain_suffix:
+    match: login.qq.com
+    policy: QQ
+- domain_suffix:
+    match: login.taobao.com
+    policy: 淘宝
+- domain_suffix:
+    match: mtalk.google.com
+    policy: Google
+- domain_suffix:
+    match: notebooklm.google.com
+    policy: NotebookLM
+- domain_suffix:
+    match: notify.windows.com
+    policy: Microsoft
+- domain_suffix:
+    match: oauth2.googleapis.com
+    policy: Google
+- domain_suffix:
+    match: openai-api.arkoselabs.com
+    policy: ChatGPT
+- domain_suffix:
+    match: origin-tracker.githubusercontent.com
+    policy: GitHub Copilot
+- domain_suffix:
+    match: ptlogin2.qq.com
+    policy: QQ
+- domain_suffix:
+    match: push-dra.dbankcloud.com
+    policy: 必要服务
+- domain_suffix:
+    match: push.apple.com
+    policy: Apple系统服务
+- domain_suffix:
+    match: push.dbankcloud.com
+    policy: 必要服务
+- domain_suffix:
+    match: push.hicloud.com
+    policy: 必要服务
+- domain_suffix:
+    match: sydney.bing.com
+    policy: Microsoft Copilot
+- domain_suffix:
+    match: wns.windows.com
+    policy: Microsoft
+- domain_suffix:
+    match: anthropic.com
+    policy: Anthropic
+- domain_suffix:
+    match: chatgpt.com
+    policy: ChatGPT
+- domain_suffix:
+    match: claude.ai
+    policy: Claude
+- domain_suffix:
+    match: claude.com
+    policy: Claude
+- domain_suffix:
+    match: cohere.ai
+    policy: Cohere
+- domain_suffix:
+    match: cohere.com
+    policy: Cohere
+- domain_suffix:
+    match: copilot.com
+    policy: Microsoft Copilot
+- domain_suffix:
+    match: generativeai.google
+    policy: Gemini
+- domain_suffix:
+    match: getui.com
+    policy: 必要服务
+- domain_suffix:
+    match: getui.net
+    policy: 必要服务
+- domain_suffix:
+    match: githubcopilot.com
+    policy: GitHub Copilot
+- domain_suffix:
+    match: grok.com
+    policy: Grok
+- domain_suffix:
+    match: hf.co
+    policy: Hugging Face
+- domain_suffix:
+    match: huggingface.co
+    policy: Hugging Face
+- domain_suffix:
+    match: igexin.com
+    policy: 必要服务
+- domain_suffix:
+    match: jiguang.cn
+    policy: 必要服务
+- domain_suffix:
+    match: jpush.cn
+    policy: 必要服务
+- domain_suffix:
+    match: meta.ai
+    policy: Meta AI
+- domain_suffix:
+    match: minimax.io
+    policy: MiniMax国际
+- domain_suffix:
+    match: mistral.ai
+    policy: Mistral
+- domain_suffix:
+    match: notebooklm.google
+    policy: NotebookLM
+- domain_suffix:
+    match: oaistatic.com
+    policy: ChatGPT
+- domain_suffix:
+    match: oaiusercontent.com
+    policy: ChatGPT
+- domain_suffix:
+    match: openai.com
+    policy: OpenAI
+- domain_suffix:
+    match: openrouter.ai
+    policy: OpenRouter
+- domain_suffix:
+    match: perplexity.ai
+    policy: Perplexity
+- domain_suffix:
+    match: poe.com
+    policy: Poe
+- domain_suffix:
+    match: qwen.ai
+    policy: 通义千问国际
+- domain_suffix:
+    match: sora.com
+    policy: Sora
+- domain_suffix:
+    match: x.ai
+    policy: Grok
+- and:
+    match:
+    - protocol:
+        match: quic
+    - or:
+        match:
+        - domain_suffix:
+            match: xiaohongshu.com
+        - domain_suffix:
+            match: rnote.com
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: api.pinduoduo.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain:
+        match: youtubei-att.googleapis.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- and:
+    match:
+    - domain_suffix:
+        match: googlevideo.com
+    - protocol:
+        match: udp
+    - dest_port:
+        match: '443'
+    policy: REJECT
+- domain:
+    match: 114.115.217.129
+    policy: 漏网域名
+- domain:
+    match: 47.100.65.202
+    policy: 漏网域名
+- domain:
+    match: 47.110.187.87
+    policy: 漏网域名
+- domain:
+    match: acs.m.goofish.com
+    policy: 闲鱼
+- domain:
+    match: acs.m.taobao.com
+    policy: 淘宝
+- domain:
+    match: acs.youku.com
+    policy: 优酷
+- domain:
+    match: ad.12306.cn
+    policy: 铁路12306
+- domain:
+    match: adservice.sigmob.cn
+    policy: 国内长尾
+- domain:
+    match: afd.baidu.com
+    policy: 百度
+- domain:
+    match: ai.amap.com
+    policy: 高德地图
+- domain:
+    match: amap-aos-info-nogw.amap.com
+    policy: 高德地图
+- domain:
+    match: amdc.m.taobao.com
+    policy: 淘宝
+- domain:
+    match: apapia-sqk.manmanbuy.com
+    policy: 漏网域名
+- domain:
+    match: api-a.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: api-account.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: api-chat.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: api-user.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: api.369cx.cn
+    policy: 国内长尾
+- domain:
+    match: api.alipan.com
+    policy: 漏网域名
+- domain:
+    match: api.bevol.com
+    policy: 漏网域名
+- domain:
+    match: api.bilibili.com
+    policy: 哔哩哔哩
+- domain:
+    match: api.boohee.com
+    policy: 漏网域名
+- domain:
+    match: api.caiyunapp.com
+    policy: 漏网域名
+- domain:
+    match: api.coolapk.com
+    policy: 酷安
+- domain:
+    match: api.gamer.com.tw
+    policy: 漏网域名
+- domain:
+    match: api.gotokeep.com
+    policy: 漏网域名
+- domain:
+    match: api.jk.cn
+    policy: 国内长尾
+- domain:
+    match: api.live.bilibili.com
+    policy: 哔哩哔哩
+- domain:
+    match: api.m.jd.com
+    policy: 京东
+- domain:
+    match: api.m.mi.com
+    policy: 小米共享
+- domain:
+    match: api.mcd.cn
+    policy: 国内长尾
+- domain:
+    match: api.pinduoduo.com
+    policy: 拼多多
+- domain:
+    match: api.prod.dj.mstand.cn
+    policy: 国内长尾
+- domain:
+    match: api.qeeniao.com
+    policy: 漏网域名
+- domain:
+    match: api.rr.tv
+    policy: 漏网域名
+- domain:
+    match: api.shenyin.name
+    policy: 漏网域名
+- domain:
+    match: api.sodalife.xyz
+    policy: 漏网域名
+- domain:
+    match: api.u51.com
+    policy: 漏网域名
+- domain:
+    match: api.udache.com
+    policy: 滴滴
+- domain:
+    match: api.ulife.group
+    policy: 漏网域名
+- domain:
+    match: api.weibo.cn
+    policy: 微博
+- domain:
+    match: api.xiaoheihe.cn
+    policy: 小黑盒
+- domain:
+    match: api.zhihu.com
+    policy: 知乎
+- domain:
+    match: api5-normal-m.amemv.com
+    policy: 抖音
+- domain:
+    match: apiproxy.zuche.com
+    policy: 漏网域名
+- domain:
+    match: apis.folidaymall.com
+    policy: 漏网域名
+- domain:
+    match: app-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: app-conf.ds.163.com
+    policy: 漏网域名
+- domain:
+    match: app-v1.ecoliving168.com
+    policy: 漏网域名
+- domain:
+    match: app.bilibili.com
+    policy: 哔哩哔哩
+- domain:
+    match: app.dewu.com
+    policy: 得物
+- domain:
+    match: app.zhuanzhuan.com
+    policy: 漏网域名
+- domain:
+    match: appcloud2.zhihu.com
+    policy: 知乎
+- domain:
+    match: appconf.mail.163.com
+    policy: 网易邮箱大师
+- domain:
+    match: apps.teamair.cn
+    policy: 国内长尾
+- domain:
+    match: apps.workair.cn
+    policy: 国内长尾
+- domain:
+    match: appwk.baidu.com
+    policy: 百度
+- domain:
+    match: article-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: as.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: askzycdn.com
+    policy: 漏网域名
+- domain:
+    match: audiobookpay.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: aweme.snssdk.com
+    policy: 漏网域名
+- domain:
+    match: baike-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: bbs-api-ab.miyoushe.com
+    policy: 漏网域名
+- domain:
+    match: bbs-api.miyoushe.com
+    policy: 漏网域名
+- domain:
+    match: beta-api.crunchyroll.com
+    policy: 漏网域名
+- domain:
+    match: bfikuncdn.com
+    policy: 漏网域名
+- domain:
+    match: bfnxxcdn.com
+    policy: 漏网域名
+- domain:
+    match: bizapi.alipan.com
+    policy: 漏网域名
+- domain:
+    match: boot.biz.weibo.com
+    policy: 微博
+- domain:
+    match: bp-api.bestv.cn
+    policy: 国内长尾
+- domain:
+    match: bp-api.bestv.com.cn
+    policy: 国内长尾
+- domain:
+    match: cappapi.alittle-tea.com
+    policy: 漏网域名
+- domain:
+    match: careapi.oclean.com
+    policy: 漏网域名
+- domain:
+    match: ccsp-egmas.sf-express.com
+    policy: 漏网域名
+- domain:
+    match: center.amap.com
+    policy: 高德地图
+- domain:
+    match: chat-live.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: chong.qq.com
+    policy: QQ
+- domain:
+    match: ci.xiaohongshu.com
+    policy: 小红书
+- domain:
+    match: client.tujia.com
+    policy: 漏网域名
+- domain:
+    match: cn-acs.m.cainiao.com
+    policy: 菜鸟
+- domain:
+    match: coco-com.e.verystar.net
+    policy: 漏网域名
+- domain:
+    match: comment.ifeng.com
+    policy: 漏网域名
+- domain:
+    match: common.diditaxi.com.cn
+    policy: 滴滴
+- domain:
+    match: conf.diditaxi.com.cn
+    policy: 滴滴
+- domain:
+    match: config-service.seeyouyima.com
+    policy: 漏网域名
+- domain:
+    match: config.nine.ifeng.com
+    policy: 漏网域名
+- domain:
+    match: configuration.ls.apple.com
+    policy: Apple AI补充
+- domain:
+    match: creditcardapp.bankcomm.cn
+    policy: 国内长尾
+- domain:
+    match: creditcardapp.bankcomm.com
+    policy: 交通银行
+- domain:
+    match: cs1.feidaozy.com
+    policy: 漏网域名
+- domain:
+    match: ct.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: daijia.kuaidadi.com
+    policy: 漏网域名
+- domain:
+    match: data-collector.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: ddpay.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: ddplus.meituan.net
+    policy: 美团
+- domain:
+    match: dict.youdao.com
+    policy: 漏网域名
+- domain:
+    match: dili.sqcosmos.com
+    policy: 漏网域名
+- domain:
+    match: dyncdn.me
+    policy: 漏网域名
+- domain:
+    match: e2e-mtop.cainiao.com
+    policy: 菜鸟
+- domain:
+    match: ec.ems.com.cn
+    policy: 国内长尾
+- domain:
+    match: edith.rnote.com
+    policy: 漏网域名
+- domain:
+    match: edith.xiaohongshu.com
+    policy: 小红书
+- domain:
+    match: flowplus.meituan.net
+    policy: 美团
+- domain:
+    match: freight.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: fuss10.elemecdn.com
+    policy: 淘宝闪购
+- domain:
+    match: g-acs.m.goofish.com
+    policy: 闲鱼
+- domain:
+    match: g.alicdn.com
+    policy: 阿里共享
+- domain:
+    match: gateway-mobile-gray.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: gateway.cotticoffee.com
+    policy: 漏网域名
+- domain:
+    match: gg.caixin.com
+    policy: 漏网域名
+- domain:
+    match: grpc.biliapi.net
+    policy: 哔哩哔哩
+- domain:
+    match: gspe35-ssl.ls.apple.com
+    policy: Apple AI补充
+- domain:
+    match: guide-acs.m.taobao.com
+    policy: 淘宝
+- domain:
+    match: gw.xiaocantech.com
+    policy: 漏网域名
+- domain:
+    match: h3.open.taou.com
+    policy: 漏网域名
+- domain:
+    match: haojia-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: haojia-cdn.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: haojia.m.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: hera-webapp.fenbi.com
+    policy: 漏网域名
+- domain:
+    match: home.mi.com
+    policy: 米家
+- domain:
+    match: home.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: homepage-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: htwkop.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: hub.kelee.one
+    policy: 漏网域名
+- domain:
+    match: img.meituan.net
+    policy: 美团
+- domain:
+    match: interface.music.163.com
+    policy: 网易云音乐
+- domain:
+    match: interface3.music.163.com
+    policy: 网易云音乐
+- domain:
+    match: interface9.music.163.com
+    policy: 网易云音乐
+- domain:
+    match: ipv4.music.163.com
+    policy: 网易云音乐
+- domain:
+    match: iqushangwang.8quan.com
+    policy: 漏网域名
+- domain:
+    match: j1.pupuapi.com
+    policy: 漏网域名
+- domain:
+    match: ke.fenbi.com
+    policy: 漏网域名
+- domain:
+    match: kelvinlab.wuyra.com
+    policy: 漏网域名
+- domain:
+    match: lawsonapi.yorentown.com
+    policy: 漏网域名
+- domain:
+    match: lcen.xiaote.net
+    policy: 漏网域名
+- domain:
+    match: leshiyuncdn.36s.top
+    policy: 漏网域名
+- domain:
+    match: longquan-mtop.cainiao.com
+    policy: 菜鸟
+- domain:
+    match: loonlab.103516.xyz
+    policy: 漏网域名
+- domain:
+    match: m-cloud.zhihu.com
+    policy: 知乎
+- domain:
+    match: m.airchina.com.cn
+    policy: 国内长尾
+- domain:
+    match: m.ctrip.com
+    policy: 携程旅行
+- domain:
+    match: m.youtube.com
+    policy: YouTube
+- domain:
+    match: m3u8.heimuertv.com
+    policy: 漏网域名
+- domain:
+    match: m3u8.hmrvideo.com
+    policy: 漏网域名
+- domain:
+    match: m5-zb.amap.com
+    policy: 高德地图
+- domain:
+    match: m5.amap.com
+    policy: 高德地图
+- domain:
+    match: magev6.if.qidian.com
+    policy: 漏网域名
+- domain:
+    match: maicai.api.ddxq.mobi
+    policy: 漏网域名
+- domain:
+    match: manga.bilibili.com
+    policy: 哔哩哔哩
+- domain:
+    match: manhattan.webapp.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: mapi.dianping.com
+    policy: 大众点评
+- domain:
+    match: mapi.mafengwo.cn
+    policy: 国内长尾
+- domain:
+    match: mapi.weibo.com
+    policy: 微博
+- domain:
+    match: mapi.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: mapi.xiaotucc.com
+    policy: 漏网域名
+- domain:
+    match: marketing.cmschina.com
+    policy: 漏网域名
+- domain:
+    match: mcsp.cloudpnr.com
+    policy: 漏网域名
+- domain:
+    match: member.alipan.com
+    policy: 漏网域名
+- domain:
+    match: mgesq.api.mgtv.com
+    policy: 芒果TV
+- domain:
+    match: mgxhtj.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: miniapp.qmai.cn
+    policy: 国内长尾
+- domain:
+    match: miniapp.sexytea2013.com
+    policy: 漏网域名
+- domain:
+    match: minifm.maxxipoint.com
+    policy: 漏网域名
+- domain:
+    match: misc-api-prd-mx.wandafilm.com
+    policy: 漏网域名
+- domain:
+    match: mobile.12306.cn
+    policy: 铁路12306
+- domain:
+    match: mp.weixin.qq.com
+    policy: 微信
+- domain:
+    match: music.youtube.com
+    policy: YouTube Music
+- domain:
+    match: musicpay.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: napi.ithome.com
+    policy: 漏网域名
+- domain:
+    match: nbcps-mtop.cainiao.com
+    policy: 菜鸟
+- domain:
+    match: netflow-mtop.cainiao.com
+    policy: 菜鸟
+- domain:
+    match: newclient.map.baidu.com
+    policy: 百度地图
+- domain:
+    match: news.app.autohome.com.cn
+    policy: 汽车之家
+- domain:
+    match: newton.gumingnc.com
+    policy: 漏网域名
+- domain:
+    match: nine.ifeng.com
+    policy: 漏网域名
+- domain:
+    match: nmobi.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: npay.meituan.com
+    policy: 美团
+- domain:
+    match: oauth.secure.pixiv.net
+    policy: 漏网域名
+- domain:
+    match: oneapp-api.faw-vw.com
+    policy: 漏网域名
+- domain:
+    match: open-cms-api.quark.cn
+    policy: 夸克
+- domain:
+    match: open-cms-api.uc.cn
+    policy: 国内长尾
+- domain:
+    match: open.taou.com
+    policy: 漏网域名
+- domain:
+    match: optimus-ads.amap.com
+    policy: 高德地图
+- domain:
+    match: p.kuaidi100.com
+    policy: 漏网域名
+- domain:
+    match: page-info.zhihu.com
+    policy: 知乎
+- domain:
+    match: pan.baidu.com
+    policy: 百度网盘
+- domain:
+    match: passenger.t3go.cn
+    policy: 国内长尾
+- domain:
+    match: player.huangguam3u.com
+    policy: 漏网域名
+- domain:
+    match: poplayer.template.alibaba.com
+    policy: 阿里共享
+- domain:
+    match: portal-portm.meituan.com
+    policy: 美团
+- domain:
+    match: portal.zjzwfw.gov.cn
+    policy: 国内长尾
+- domain:
+    match: post.m.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: post.soulapp.cn
+    policy: 国内长尾
+- domain:
+    match: push.m.youku.com
+    policy: 优酷
+- domain:
+    match: qianbao.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: rec.xiaohongshu.com
+    policy: 小红书
+- domain:
+    match: render-oss-cdn.amap.com
+    policy: 高德地图
+- domain:
+    match: res.xiaojukeji.com
+    policy: 滴滴
+- domain:
+    match: rms.meituan.com
+    policy: 美团
+- domain:
+    match: s-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: s3.zdmimg.com
+    policy: 漏网域名
+- domain:
+    match: s3plus.meituan.net
+    policy: 美团
+- domain:
+    match: saas-ad.cloudpnr.com
+    policy: 漏网域名
+- domain:
+    match: sapphire.api.microsoftapp.net
+    policy: Microsoft
+- domain:
+    match: searchrecterm.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: sh-gateway.shihuo.cn
+    policy: 国内长尾
+- domain:
+    match: sns.amap.com
+    policy: 高德地图
+- domain:
+    match: so.xiaohongshu.com
+    policy: 小红书
+- domain:
+    match: social.blued.cn
+    policy: 国内长尾
+- domain:
+    match: spclient.wg.spotify.com
+    policy: Spotify
+- domain:
+    match: starplucker.cyapi.cn
+    policy: 国内长尾
+- domain:
+    match: sub.store
+    policy: 漏网域名
+- domain:
+    match: surge.qingr.moe
+    policy: 漏网域名
+- domain:
+    match: t0.97img.com
+    policy: 漏网域名
+- domain:
+    match: tanbi.baidu.com
+    policy: 百度
+- domain:
+    match: tft-app.cdtft.cn
+    policy: 国内长尾
+- domain:
+    match: tieba.baidu.com
+    policy: TiebaPure
+- domain:
+    match: tiebac.baidu.com
+    policy: TiebaPure
+- domain:
+    match: tiku.fenbi.com
+    policy: 漏网域名
+- domain:
+    match: ump.ems.com.cn
+    policy: 国内长尾
+- domain:
+    match: un-acs.youku.com
+    policy: 优酷
+- domain:
+    match: user-api.smzdm.com
+    policy: 漏网域名
+- domain:
+    match: user.api.ddxq.mobi
+    policy: 漏网域名
+- domain:
+    match: v.ykv3.com
+    policy: 漏网域名
+- domain:
+    match: vip1.kuwo.cn
+    policy: 国内长尾
+- domain:
+    match: vod.lyhuicheng.com
+    policy: 漏网域名
+- domain:
+    match: vue3-api.zhixiny.cn
+    policy: 国内长尾
+- domain:
+    match: weatherkit.apple.com
+    policy: Apple
+- domain:
+    match: web-render.zhihu.com
+    policy: 知乎
+- domain:
+    match: web.meituan.com
+    policy: 美团
+- domain:
+    match: webapi.qmai.cn
+    policy: 国内长尾
+- domain:
+    match: weibointl.api.weibo.cn
+    policy: 微博
+- domain:
+    match: wmapi.meituan.com
+    policy: 美团
+- domain:
+    match: wrapper.cyapi.cn
+    policy: 国内长尾
+- domain:
+    match: www.123pan.com
+    policy: 123云盘
+- domain:
+    match: www.1314zhilv.com
+    policy: 漏网域名
+- domain:
+    match: www.bilibili.com
+    policy: 哔哩哔哩
+- domain:
+    match: www.coolapk.com
+    policy: 酷安
+- domain:
+    match: www.flyert.com
+    policy: 漏网域名
+- domain:
+    match: www.flyert.com.cn
+    policy: 国内长尾
+- domain:
+    match: www.myusmile.online
+    policy: 漏网域名
+- domain:
+    match: www.tailgdd.com
+    policy: 漏网域名
+- domain:
+    match: www.xiaohongshu.com
+    policy: 小红书
+- domain:
+    match: www.youtube.com
+    policy: YouTube
+- domain:
+    match: www.zhihu.com
+    policy: 知乎
+- domain:
+    match: wx.mygolbs.com
+    policy: 漏网域名
+- domain:
+    match: youtube.com
+    policy: YouTube
+- domain:
+    match: youtubei-att.googleapis.com
+    policy: YouTube
+- domain:
+    match: youtubei.googleapis.com
+    policy: YouTube
+- domain:
+    match: yunbusiness.ccb.com
+    policy: 建设银行
+- domain:
+    match: zgrb.epicc.com.cn
+    policy: 国内长尾
+- domain:
+    match: zhiyou.m.smzdm.com
+    policy: 漏网域名

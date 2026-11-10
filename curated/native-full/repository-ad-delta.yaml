@@ -18766,7 +18766,6 @@ domain_suffix_set:
 - ads.onlineathens.com
 - ads.ontecnia.com
 - ads.onvertise.com
-- ads.openai.com
 - ads.operiada.pl
 - ads.opoka.org.pl
 - ads.optyczne.pl
@@ -54763,8 +54762,6 @@ domain_suffix_set:
 - bzqqftz.icu
 - bzqxze.remixshop.com
 - bzqy2p14z.com
-- bzr.openai.com
-- bzrcdn.openai.com
 - bzrch.heyskipperfishing.com
 - bzrpp.nakednutrition.ca
 - bzrpvk.com
@@ -68424,7 +68421,6 @@ domain_suffix_set:
 - copilot-telemetry-service.norges-automobil-forbund.ghe.com
 - copilot-telemetry-service.raiffeisen.ghe.com
 - copilot-telemetry-service.ssi-schaefer.ghe.com
-- copilot-telemetry.githubusercontent.com
 - copiousgoutswimwear.com
 - copitinamon.com
 - coplimentues.com
@@ -179403,7 +179399,6 @@ domain_suffix_set:
 - metrics.ansys.com
 - metrics.antena3.com
 - metrics.anthem.com
-- metrics.anthropic.com
 - metrics.antonsiekmann.com
 - metrics.anvil.works
 - metrics.anytime.gr
@@ -220817,7 +220812,6 @@ domain_suffix_set:
 - r.nexoraid1.space
 - r.niwepa.com
 - r.onmyway.com
-- r.openai.com
 - r.partner.badoo.ru
 - r.phhhoto.com
 - r.planerange.com
@@ -281435,7 +281429,6 @@ domain_suffix_set:
 - statsforever.com
 - statshunt.com
 - statsie.com
-- statsig.anthropic.com
 - statsig.prizepicks.com
 - statsit.com
 - statsjs.klevu.com
@@ -290996,7 +290989,6 @@ domain_suffix_set:
 - telemetry.brazilsouth.arcdataservices.com
 - telemetry.broadcom.com
 - telemetry.broadcom.com.cdn.cloudflare.net
-- telemetry.business.githubcopilot.com
 - telemetry.bybanking.com
 - telemetry.bydata.com
 - telemetry.c.taegiscloud.com
@@ -291095,7 +291087,6 @@ domain_suffix_set:
 - telemetry.eia.hagercloud.com
 - telemetry.elastic.co
 - telemetry.emqx.io
-- telemetry.enterprise.githubcopilot.com
 - telemetry.eu-central-1.kiro.dev
 - telemetry.eu-central-1.sigmacomputing.com
 - telemetry.eu-central-2.sigmacomputing.com
@@ -291153,7 +291144,6 @@ domain_suffix_set:
 - telemetry.in.sigmacomputing.com
 - telemetry.incredibuild.com
 - telemetry.indazn.com
-- telemetry.individual.githubcopilot.com
 - telemetry.influxdata.com
 - telemetry.infosysapps.com
 - telemetry.infosysapps.com.edgekey.net

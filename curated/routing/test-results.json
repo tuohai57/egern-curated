@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": 987,
+  "failures": [],
+  "ai_groups": 31,
+  "country_pools": 24,
+  "route_witnesses": 123,
+  "scope": "Offline graph and first-match model, not Egern/iOS execution or AI account acceptance."
+}
