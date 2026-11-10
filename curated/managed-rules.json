@@ -100,7 +100,7 @@
       "name": "Apple AI补充",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/rules/managed/apple-ai-supplement.yaml",
       "repository_path": "curated/rules/managed/apple-ai-supplement.yaml",
-      "sha256": "b90d94dac28426770be090c4fd45d4917e4f6c996cfbd33cddab1a840b71d1ae",
+      "sha256": "b774353faf3554debb9aa4433d4fb8dffa2c32d371457b6bd2fe27e47c8d19e6",
       "rules": [
         {
           "index": 150,
@@ -260,6 +260,20 @@
           "policy": "Apple AI补充",
           "section": "protected",
           "origin": "User screenshot; broad keyword retained as requested"
+        },
+        {
+          "kind": "domain_keyword",
+          "value": "apple-relay",
+          "policy": "Apple AI补充",
+          "section": "protected",
+          "origin": "User screenshot; broad keyword retained as requested"
+        },
+        {
+          "kind": "ip_cidr",
+          "value": "17.248.152.0/24",
+          "policy": "Apple AI补充",
+          "section": "protected",
+          "origin": "User screenshot 2026-11-11: two /24 host spellings normalized to one network; not an Apple AI endpoint certification"
         }
       ]
     },

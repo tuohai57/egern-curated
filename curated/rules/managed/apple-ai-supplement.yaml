@@ -1,4 +1,5 @@
 # Maintained normalized subset; provenance in managed-rules.json
+no_resolve: true
 domain_set:
 - mask-api.fe.apple-dns.net
 - mask-api.icloud.com
@@ -22,3 +23,6 @@ domain_suffix_set:
 - smoot.apple.com
 domain_keyword_set:
 - siri
+- apple-relay
+ip_cidr_set:
+- 17.248.152.0/24

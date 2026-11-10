@@ -79,7 +79,14 @@ class DomainRouter:
             return str(urlsplit(url).port or (443 if url.startswith('https:') else 80)) in str(value).split(',')
         if kind == 'rule_set':
             obj = self.sets.get(value, {})
-            return (host in obj.get('domain_set', set()) or
+            try:
+                address = ipaddress.ip_address(host)
+            except ValueError:
+                address = None
+            ip_match = address is not None and any(
+                address in ipaddress.ip_network(net)
+                for net in obj.get('ip_cidr_set', set()))
+            return (ip_match or host in obj.get('domain_set', set()) or
                     any(v in obj.get('domain_suffix_set', set()) for v in parents(host)) or
                     any(v in host for v in obj.get('domain_keyword_set', set())) or
                     any(fnmatch.fnmatchcase(host, v) for v in obj.get('domain_wildcard_set', set())) or

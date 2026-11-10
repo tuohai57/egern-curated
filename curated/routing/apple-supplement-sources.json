@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-11-10",
+  "reviewed_on": "2026-11-11",
   "scope": "User-supplied third-party routing hints, not an official Apple AI requirement or device unlock certification.",
   "sources": [
     {
@@ -36,6 +36,16 @@
       "type": "domain_suffix",
       "value": "guzzoni.apple.com",
       "action": "Broaden existing exact matcher to suffix and remove duplicate exact matcher"
+    },
+    {
+      "type": "ip_cidr",
+      "value": "17.248.152.0/24",
+      "action": "User screenshot on 2026-11-11: normalize 17.248.152.145/24 and 17.248.152.113/24 to one network; no_resolve true; match before general Apple 17/8 DIRECT"
+    },
+    {
+      "type": "domain_keyword",
+      "value": "apple-relay",
+      "action": "User second screenshot on 2026-11-11; retain broad keyword with financial and necessary-service exceptions ahead"
     }
   ],
   "already_covered": [
@@ -51,5 +61,14 @@
     }
   ],
   "retained_user_screenshot_value": "apps.mastic.com is separate from apps.mzstatic.com; not silently corrected",
-  "effective_selectors": 20
+  "effective_selectors": 22,
+  "screenshot_followup": {
+    "received_on": "2026-11-11",
+    "ip_literals": [
+      "17.248.152.145/24",
+      "17.248.152.113/24"
+    ],
+    "keyword": "apple-relay",
+    "status": "Routing coverage requested by user; screenshot shows ChatGPT unavailable and is not proof of successful device access."
+  }
 }
