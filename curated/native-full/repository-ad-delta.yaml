@@ -1,4 +1,4 @@
-# HaGeZi Multi PRO (GPL-3.0) + QuixoticHeart literal domain feeds.
+# HaGeZi Multi PRO (GPL-3.0), QuixoticHeart and reviewed AWAvenue full-protection exact additions.
 # Source, license and finite ownership exceptions: repository-supplement-audit.json.
 domain_regex_set:
 - ^(?!(?:(?:[^.]+\.)*10086\.cn\.baidu\.cdn\.yiwk\.com)$)(?:[^.]+\.)*yiwk\.com$
@@ -207,11 +207,15 @@ domain_set:
 - bs.mail.ru
 - clck.yandex.net
 - clck.yango.com
+- click.googleanalytics.com
 - click.rustore.ru
 - error-tracking.megamarket.tech
+- g-staic.ganjingworld.com
 - google-analytics-suite.ozon.ru
+- heads-fa.spotify.com
 - loyalnost-adv.ozon.ru
 - mc.yandex.net
+- mobile.events.data.microsoft.com
 - new-adv.ozon.ru
 - pixel.yandex.com
 - prodvizhenie-adv.ozon.ru
@@ -229,6 +233,7 @@ domain_set:
 - t.mail.ru
 - target.vk.com
 - tracing-http.megamarket.tech
+- uedas.qidian.com
 - ut.taobao.com
 - web-analytics.wildberries.ru
 - whiteline.mail.ru

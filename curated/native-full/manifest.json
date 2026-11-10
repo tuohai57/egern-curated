@@ -193,6 +193,7 @@
     "Perplexity",
     "Mistral",
     "Meta AI",
+    "Muse",
     "Hugging Face",
     "Poe",
     "OpenRouter",
@@ -253,8 +254,8 @@
     "enabled": true,
     "update_interval": 86400,
     "repository_path": "curated/native-full/priority-guard-ai-regions.yaml",
-    "sha256": "307a597c92de15cbec329dd6d4413c6c87fd12f987d617f6a59719252a48cc79",
-    "rules": 493
+    "sha256": "1bcb7aa60f826ded3ecb0200b09c38ecb2e4e7365e6865b3d4d1d71fc168a335",
+    "rules": 495
   },
   "modules": [
     {
@@ -26830,7 +26831,7 @@
       "name": "仓库补充广告规则",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-supplement.yaml",
       "repository_path": "curated/native-full/repository-ad-supplement.yaml",
-      "sha256": "e7421da7e196b435d78184d04fd47cdc7299cb9872a98e156407c9a5527e2484",
+      "sha256": "af40076f576a046f28464d246bf333fe8d97a900f4abdcaacb1ee1e52633b1b6",
       "enabled": true,
       "source_kind": "reviewed-repository-delta",
       "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
@@ -26848,12 +26849,12 @@
   "extra_rule_sets": [
     {
       "repository_path": "curated/native-full/repository-ad-delta.yaml",
-      "sha256": "698ce3500b10e571cdaa0b5340e84f9cccc1d8e9712ec72b6ae26145569f2454",
+      "sha256": "ce348234fbed6f4c020fbbb829dc547114c86d389be1a13fe5063e8599fca51e",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml",
       "counts": {
         "domain_suffix_set": 337447,
         "domain_regex_set": 180,
-        "domain_set": 54
+        "domain_set": 59
       },
       "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
       "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45"
@@ -26874,6 +26875,16 @@
       "repository_path": "curated/native-full/originals/hagezi-LICENSE",
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/LICENSE"
+    },
+    {
+      "repository_path": "curated/native-full/originals/awavenue-full.list",
+      "sha256": "d4e2ac925d4b6c9d5034ae2dbda2c3f2b30b9ef86b89e6d752eb90335ff11125",
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+    },
+    {
+      "repository_path": "curated/native-full/originals/awavenue-LICENSE",
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/LICENSE"
     }
   ],
   "dependencies": [

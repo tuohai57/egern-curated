@@ -1,8 +1,8 @@
 {
-  "review_date": "2026-11-10",
+  "review_date": "2026-11-11",
   "scope": "Offline graph and first-match model, not Egern/iOS execution or AI account acceptance.",
   "spec": {
-    "review_date": "2026-11-10",
+    "review_date": "2026-11-11",
     "pools": {
       "OpenAI共享出口": [
         "美国",
@@ -217,6 +217,7 @@
       "Perplexity": "Perplexity地区出口",
       "Mistral": "Mistral地区出口",
       "Meta AI": "Meta海外出口",
+      "Muse": "通用AI海外出口",
       "Facebook": "Meta海外出口",
       "Messenger": "Meta海外出口",
       "Instagram": "Meta海外出口",
@@ -563,9 +564,18 @@
         "Meta AI",
         null,
         [
-          "meta.ai"
+          "meta.ai",
+          "metaaivm.com"
         ],
         "Meta海外出口"
+      ],
+      [
+        "Muse",
+        null,
+        [
+          "muse.ai"
+        ],
+        "通用AI海外出口"
       ],
       [
         "Hugging Face",
@@ -735,7 +745,8 @@
         "mistral.ai"
       ],
       "Meta AI": [
-        "meta.ai"
+        "meta.ai",
+        "metaaivm.com"
       ],
       "Hugging Face": [
         "huggingface.co",
@@ -781,6 +792,9 @@
       "Grok": [
         "grok.com",
         "x.ai"
+      ],
+      "Muse": [
+        "muse.ai"
       ]
     },
     "ai_groups": [
@@ -799,6 +813,7 @@
       "Perplexity",
       "Mistral",
       "Meta AI",
+      "Muse",
       "Hugging Face",
       "Poe",
       "OpenRouter",
@@ -1643,6 +1658,10 @@
     "Meta AI": {
       "kind": "conditional",
       "target": "Meta海外出口"
+    },
+    "Muse": {
+      "kind": "conditional",
+      "target": "通用AI海外出口"
     },
     "Hugging Face": {
       "kind": "conditional",
@@ -5260,6 +5279,41 @@
     }
   ],
   "fixtures": [
+    {
+      "scene": "User-provided Muse website",
+      "host": "muse.ai",
+      "policy": "Muse"
+    },
+    {
+      "scene": "Muse API child namespace",
+      "host": "api.muse.ai",
+      "policy": "Muse"
+    },
+    {
+      "scene": "User-provided Meta AI asset namespace",
+      "host": "metaaivm.com",
+      "policy": "Meta AI"
+    },
+    {
+      "scene": "Meta AI asset child namespace",
+      "host": "assets.metaaivm.com",
+      "policy": "Meta AI"
+    },
+    {
+      "scene": "Meta company namespace remains shared social",
+      "host": "meta.com",
+      "policy": "Facebook"
+    },
+    {
+      "scene": "Instagram media ownership retained",
+      "host": "cdninstagram.com",
+      "policy": "Instagram"
+    },
+    {
+      "scene": "Meta CDN shared ownership retained",
+      "host": "fbcdn.net",
+      "policy": "Meta共享"
+    },
     {
       "scene": "Apple PCC Cloudflare",
       "host": "apple-relay.cloudflare.com",
@@ -31880,10 +31934,12 @@
     "*.mask.apple-dns.net",
     "*.mask.icloud.com",
     "*.meta.ai",
+    "*.metaaivm.com",
     "*.minimax.io",
     "*.mistral.ai",
     "*.mmpay.qpic.cn",
     "*.mtalk.google.com",
+    "*.muse.ai",
     "*.notebooklm.google",
     "*.notebooklm.google.com",
     "*.notify.windows.com",
@@ -32115,10 +32171,12 @@
     "mask.apple-dns.net",
     "mask.icloud.com",
     "meta.ai",
+    "metaaivm.com",
     "minimax.io",
     "mistral.ai",
     "mmpay.qpic.cn",
     "mtalk.google.com",
+    "muse.ai",
     "notebooklm.google",
     "notebooklm.google.com",
     "notify.windows.com",
@@ -32194,5 +32252,5 @@
     "yangjibao.com",
     "yunshanfu.cn"
   ],
-  "private_profile_sha256": "d48c04ef68df3723d0ff316ee1f45cb818cb9a4c83d97f15521f0e62f8a370c4"
+  "private_profile_sha256": "076d9310b45fbb737fef9d4d6aa97c4c74001f1ecdfed283cd496d2985305f04"
 }

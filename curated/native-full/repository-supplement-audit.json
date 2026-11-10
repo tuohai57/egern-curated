@@ -12,7 +12,8 @@
       "domain_regex_set": 4,
       "ip_cidr_set": 40,
       "ip_cidr6_set": 4
-    }
+    },
+    "awavenue_approved_exact": 5
   },
   "source_metadata": {
     "hagezi-pro": {
@@ -41,6 +42,88 @@
       "bytes": 35149,
       "license": "GPL-3.0"
     },
+    "awavenue_full": {
+      "path": "Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "snapshot": "Filters__AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+      "commit": "72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa",
+      "sha256": "d4e2ac925d4b6c9d5034ae2dbda2c3f2b30b9ef86b89e6d752eb90335ff11125",
+      "bytes": 27494,
+      "pinned_url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "license": "GPL-3.0",
+      "review": {
+        "reviewed_on": "2026-11-11",
+        "source": {
+          "path": "Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+          "snapshot": "Filters__AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+          "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+          "commit": "72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa",
+          "sha256": "d4e2ac925d4b6c9d5034ae2dbda2c3f2b30b9ef86b89e6d752eb90335ff11125",
+          "bytes": 27494,
+          "pinned_url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+        },
+        "license": {
+          "path": "LICENSE",
+          "snapshot": "LICENSE",
+          "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+          "commit": "72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa",
+          "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+          "bytes": 35141,
+          "pinned_url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/LICENSE"
+        },
+        "license_name": "GPL-3.0",
+        "variant": "Full protection, reviewed finite additions; not an unmodified full-profile installation",
+        "source_selectors": 976,
+        "source_exact_domains": 960,
+        "source_suffix_domains": 12,
+        "source_keywords": 4,
+        "approved_exact_domains": [
+          "g-staic.ganjingworld.com",
+          "heads-fa.spotify.com",
+          "click.googleanalytics.com",
+          "mobile.events.data.microsoft.com",
+          "uedas.qidian.com"
+        ],
+        "omitted_literal_domains": [
+          {
+            "host": "alicoccdncnc-xn.inter.71edge.com",
+            "reason": "Video delivery namespace; pure-ad-only effect not independently established"
+          },
+          {
+            "host": "alicoccdnct-xn.inter.71edge.com",
+            "reason": "Video delivery namespace; pure-ad-only effect not independently established"
+          },
+          {
+            "host": "pay.sboot.cn",
+            "reason": "Payment-named endpoint; role and normal-use impact unverified"
+          }
+        ],
+        "not_imported": "All duplicates, protected response/business hosts, source broad keywords, unverified CDN/payment endpoints, and original module-owned DNS transport/configuration hosts",
+        "issue_reviews": [
+          {
+            "number": 38,
+            "action": "Do not import a0.app.xiaomi.com; author explicitly retains backup-affecting block as a privacy tradeoff"
+          },
+          {
+            "number": 197,
+            "action": "Review suggestions individually; do not bulk allow all telemetry or HTTPDNS based on unverified community comments"
+          },
+          {
+            "number": 219,
+            "action": "Unconfirmed api.ad.xiaomi.com cloud-backup report; no blanket ad-API allow added"
+          },
+          {
+            "number": 193,
+            "action": "No wholesale import: shared media/CDNs, financial domains, push endpoints, bare IPs and an Android package name mixed into candidate list; linked project declares current implementation nearly unusable"
+          },
+          {
+            "number": 220,
+            "action": "Closed owner-reported group-chat fix without a public domain correction; no invented whitelist"
+          }
+        ],
+        "scope": "Full-protection source with author-declared advertising/privacy classification plus actual-policy/protection and Issues review; five exact additions only, not device verification."
+      }
+    },
     "quixotic": {
       "name": "quixotic-adrules.yaml",
       "url": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/ruleset/egern/adrules.yaml",
@@ -51,7 +134,7 @@
       "pinned_url": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/5eaaa84056bd2164c88ab06fddd2b1ca4472a1af/egern/adrules.yaml"
     }
   },
-  "retained": 337681,
+  "retained": 337686,
   "excluded": {
     "already_rejected_domain": 4135,
     "business_or_response_protection": 1360,
@@ -61,12 +144,12 @@
   },
   "rule_set": {
     "repository_path": "curated/native-full/repository-ad-delta.yaml",
-    "sha256": "698ce3500b10e571cdaa0b5340e84f9cccc1d8e9712ec72b6ae26145569f2454",
+    "sha256": "ce348234fbed6f4c020fbbb829dc547114c86d389be1a13fe5063e8599fca51e",
     "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-delta.yaml",
     "counts": {
       "domain_suffix_set": 337447,
       "domain_regex_set": 180,
-      "domain_set": 54
+      "domain_set": 59
     },
     "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",
     "source_sha256": "b9f7a06bf551b90a11083c55520053eb370ef7b4f7812fa3286c0425ae270e45"
@@ -2472,6 +2555,7 @@
     "a-map.link",
     "a-map.vip",
     "a-msedge.net",
+    "a0.app.xiaomi.com",
     "a1t2w1lzfr.com",
     "aadrm.cn",
     "aadrm.com",
@@ -2551,6 +2635,8 @@
     "alibaba.com",
     "alibabagroup.com",
     "alicdn.com",
+    "alicoccdncnc-xn.inter.71edge.com",
+    "alicoccdnct-xn.inter.71edge.com",
     "alipay-eco.com",
     "alipay.com",
     "alipay.com.cn",
@@ -2615,6 +2701,7 @@
     "api.rr.tv",
     "api.shenyin.name",
     "api.sodalife.xyz",
+    "api.statsig.com",
     "api.u51.com",
     "api.udache.com",
     "api.ulife.group",
@@ -2878,6 +2965,7 @@
     "bdymkt.com",
     "bdysite.com",
     "bdysites.com",
+    "beacons.gvt2.com",
     "beatthatquote.com",
     "beautyandthebeastmusical.co.uk",
     "beta-api.crunchyroll.com",
@@ -3105,6 +3193,7 @@
     "ccsp-egmas.sf-express.com",
     "cdn-apple.com",
     "cdn-telegram.org",
+    "cdn.ynuf.aliapp.org",
     "cdninstagram.com",
     "ceawgez.com",
     "cegid-cloud.cn",
@@ -5001,6 +5090,7 @@
     "messengerdevelopers.com",
     "meta.ai",
     "meta.com",
+    "metaaivm.com",
     "meu95otw4967t.com",
     "mezamca.com",
     "mfg-inspector.com",
@@ -5253,6 +5343,7 @@
     "mtyun.com",
     "mulightapp.com",
     "muscdn.com",
+    "muse.ai",
     "music.youtube",
     "music.youtube.com",
     "musical.ly",
@@ -5483,6 +5574,7 @@
     "passport.net",
     "paxlicense.org",
     "pay.google",
+    "pay.sboot.cn",
     "paypal.cn",
     "paypal.com",
     "paypal.com.cn",
@@ -6742,11 +6834,13 @@
     "mask.apple-dns.net",
     "mask.icloud.com",
     "meta.ai",
+    "metaaivm.com",
     "minimax.io",
     "mistral.ai",
     "mmpay.qpic.cn",
     "mobile.launchdarkly.com",
     "mtalk.google.com",
+    "muse.ai",
     "notebooklm.google",
     "notebooklm.google.com",
     "notify.windows.com",
@@ -12304,5 +12398,5 @@
     "zymo.mps.weibo.com",
     "zzpush.58.com"
   ],
-  "scope": "Complete literal domain feeds from Multi PRO and QuixoticHeart. Ordinary service routing is not rejection. Existing REJECT/processing ownership and business endpoints are subtracted; no benchmark-specific generation. No whole shared-IP or keyword imports."
+  "scope": "Complete literal feeds from Multi PRO and QuixoticHeart plus five reviewed AWAvenue full-protection exact domains. Ordinary service routing is not rejection. Existing REJECT/processing ownership and business endpoints are subtracted; no benchmark-specific generation. No whole shared-IP or keyword imports."
 }
