@@ -12,6 +12,14 @@
         "德国",
         "台湾"
       ],
+      "Apple智能": [
+        "美国",
+        "日本",
+        "新加坡",
+        "英国",
+        "德国",
+        "台湾"
+      ],
       "Anthropic地区出口": [
         "美国",
         "日本",
@@ -192,7 +200,6 @@
       "Apple Music": "Apple海外出口",
       "Apple TV+": "Apple海外出口",
       "Apple账户": "Apple海外出口",
-      "Apple智能": "OpenAI共享出口",
       "Siri": "Apple AI补充",
       "Apple私密中继": "Apple智能",
       "Microsoft": "Microsoft国外",
@@ -432,7 +439,7 @@
           "gspe1-ssl.ls.apple.com",
           "aapps.mzstatic.com"
         ],
-        "OpenAI共享出口"
+        "Apple智能"
       ],
       [
         "Siri",
@@ -831,17 +838,13 @@
       "讯飞星火",
       "MiniMax国内"
     ],
-    "domestic_proxy_overrides": {
-      "Apple国内": "Apple智能"
-    },
-    "domestic_proxy_override_evidence": {
-      "Apple国内": "2026-11-11 user device feedback: Apple AI fails with this group DIRECT and works after changing it to a foreign policy. Keep the legacy group hidden, follow Apple Intelligence automatically, and use foreign encrypted DNS. The exact triggering request is not captured; this is a group-level compatibility workaround."
-    },
+    "domestic_proxy_overrides": {},
+    "apple_ai_device_feedback": "2026-11-11: user reports Apple domestic can remain DIRECT; Apple Intelligence works with directly listed regional groups other than Hong Kong. Restore domestic DNS and DIRECT, and make Apple Intelligence its own non-Hong-Kong regional auto_test pool; latest user request requires latency-based automatic switching within allowed regions. This is user feedback, not automated device certification.",
     "default_foreign_target": "开发下载地区出口",
     "limitations": [
       "地区来自订阅名称而非独立出口定位；300 秒探测仅测 HTTPS 连通性，不检测 AI 解锁、登录资格或账号风控。",
       "Gemini 网页和 API 取支持地区交集，不使用香港作为 API 后备；其他 AI 未确认的地区不扩展，使用美国节点池。",
-      "Apple 智能与 OpenAI 共享出口以保护 ChatGPT 扩展链路；无法改变硬件、Apple 账户、语言及监管限制。",
+      "Apple 智能直接使用非香港地区组，OpenAI/ChatGPT/Sora仍共享自身出口；两条策略链不强制绑定，ChatGPT扩展仍需手机验证；无法改变硬件、Apple账户、语言及监管限制。",
       "相同域名无法推断 App、Apple ID 店面或 Microsoft 租户所在地区；只对明确的国区命名空间直连。",
       "流媒体跨地区故障切换可能改变片库，游戏商店国家和支付资格仍由账号决定。"
     ]
@@ -902,7 +905,8 @@
         "德国",
         "英国"
       ],
-      "interval": 300
+      "interval": 300,
+      "tolerance": 100
     },
     "故障转移": {
       "kind": "fallback",
@@ -918,35 +922,56 @@
       "interval": 120
     },
     "DNS代理": {
-      "kind": "conditional",
-      "target": "DNS海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "DNS海外出口"
+      ],
+      "interval": 0
     },
     "去广告": {
-      "kind": "conditional",
-      "target": "REJECT"
+      "kind": "fallback",
+      "policies": [
+        "REJECT"
+      ],
+      "interval": 0
     },
     "局域网": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "必要服务": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "国外长尾": {
-      "kind": "conditional",
-      "target": "海外长尾地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "海外长尾地区出口"
+      ],
+      "interval": 0
     },
     "国内长尾": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "漏网域名": {
-      "kind": "conditional",
-      "target": "未知流量地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "未知流量地区出口"
+      ],
+      "interval": 0
     },
     "YouTube共享出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -955,10 +980,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "字节海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "日本",
         "新加坡",
@@ -967,10 +993,11 @@
         "英国",
         "德国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "OpenAI共享出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -979,829 +1006,1445 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "微信": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "QQ": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "淘宝": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "天猫": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "京东": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "拼多多": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "抖音": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "快手": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "小红书": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "微博": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "哔哩哔哩": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "百度": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "百度网盘": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "百度地图": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "腾讯视频": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "爱奇艺": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "优酷": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "芒果TV": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "网易云音乐": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "QQ音乐": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "钉钉": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "企业微信": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "美团": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "淘宝闪购": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "滴滴": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "携程旅行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "高德地图": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "夸克": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "WPS Office": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "网易邮箱大师": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "123云盘": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "爱思全能版": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "米家": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "微信输入法": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中国电信": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "360手机卫士": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "腾讯手机管家": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "全球网测": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "葫芦侠": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "TiebaPure": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "酷安": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "小黑盒": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "知乎": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "1688": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "抖音商城": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "闲鱼": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "菜鸟": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "得物": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "大众点评": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "航旅纵横": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "铁路12306": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "麦当劳": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "大麦": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "汽车之家": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "懂车帝": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "极影相机": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "飓风相机": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "雷神加速器": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "掌上无畏契约": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "金铲铲之战": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "火影忍者": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "王者荣耀": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "红果短剧": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "番茄小说": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "豆包": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "美颜相机": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Apple国内": {
-      "kind": "conditional",
-      "target": "Apple智能"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Apple系统服务": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Apple地图国内": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Google 国内": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Microsoft国内": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Azure中国": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Steam中国": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Epic中国": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "DeepSeek": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Kimi": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "通义千问": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "智谱清言": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "文心一言": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "腾讯元宝": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "讯飞星火": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "MiniMax国内": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "支付宝": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "微信支付": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "云闪付": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中国工商银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中国农业银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中国银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "建设银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "交通银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "邮储银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "招商银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "平安银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中信银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "浦发银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "兴业银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "民生银行": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "东方财富": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "同花顺": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "华泰证券": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "国泰海通": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "富途牛牛": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "蚂蚁财富": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "天天基金": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "蛋卷基金": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "中国银河证券": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "养基宝": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "京东金融": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Apple Pay": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Google": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Gmail": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Google Drive": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Google 相册": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Google 地图": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Google Play": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "YouTube": {
-      "kind": "conditional",
-      "target": "YouTube共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "YouTube共享出口"
+      ],
+      "interval": 0
     },
     "YouTube Music": {
-      "kind": "conditional",
-      "target": "YouTube共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "YouTube共享出口"
+      ],
+      "interval": 0
     },
     "X": {
-      "kind": "conditional",
-      "target": "xAI地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "xAI地区出口"
+      ],
+      "interval": 0
     },
     "Facebook": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "Messenger": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "Instagram": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "WhatsApp": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "Telegram": {
-      "kind": "conditional",
-      "target": "社交通讯地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "社交通讯地区出口"
+      ],
+      "interval": 0
     },
     "TikTok": {
-      "kind": "conditional",
-      "target": "字节海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "字节海外出口"
+      ],
+      "interval": 0
     },
     "Netflix": {
-      "kind": "conditional",
-      "target": "Netflix地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Netflix地区出口"
+      ],
+      "interval": 0
     },
     "Disney+": {
-      "kind": "conditional",
-      "target": "Disney地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Disney地区出口"
+      ],
+      "interval": 0
     },
     "Spotify": {
-      "kind": "conditional",
-      "target": "Spotify地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Spotify地区出口"
+      ],
+      "interval": 0
     },
     "Apple": {
-      "kind": "conditional",
-      "target": "Apple国外"
+      "kind": "auto_test",
+      "policies": [
+        "Apple国外"
+      ],
+      "interval": 0
     },
     "App Store": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "iCloud": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "Apple Music": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "Apple TV+": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "Microsoft": {
-      "kind": "conditional",
-      "target": "Microsoft国外"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft国外"
+      ],
+      "interval": 0
     },
     "Outlook": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "OneDrive": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "Teams": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "GitHub": {
-      "kind": "conditional",
-      "target": "GitHub海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "GitHub海外出口"
+      ],
+      "interval": 0
     },
     "OpenAI": {
-      "kind": "conditional",
-      "target": "OpenAI共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "OpenAI共享出口"
+      ],
+      "interval": 0
     },
     "Anthropic": {
-      "kind": "conditional",
-      "target": "Anthropic地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Anthropic地区出口"
+      ],
+      "interval": 0
     },
     "Steam": {
-      "kind": "conditional",
-      "target": "游戏地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "游戏地区出口"
+      ],
+      "interval": 0
     },
     "Epic": {
-      "kind": "conditional",
-      "target": "游戏地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "游戏地区出口"
+      ],
+      "interval": 0
     },
     "Reddit": {
-      "kind": "conditional",
-      "target": "社交通讯地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "社交通讯地区出口"
+      ],
+      "interval": 0
     },
     "Discord": {
-      "kind": "conditional",
-      "target": "社交通讯地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "社交通讯地区出口"
+      ],
+      "interval": 0
     },
     "Zoom": {
-      "kind": "conditional",
-      "target": "社交通讯地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "社交通讯地区出口"
+      ],
+      "interval": 0
     },
     "Aidoku": {
-      "kind": "conditional",
-      "target": "开发下载地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "开发下载地区出口"
+      ],
+      "interval": 0
     },
     "Tachimanga": {
-      "kind": "conditional",
-      "target": "开发下载地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "开发下载地区出口"
+      ],
+      "interval": 0
     },
     "Infuse": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Egern": {
-      "kind": "conditional",
-      "target": "开发下载地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "开发下载地区出口"
+      ],
+      "interval": 0
     },
     "Surge": {
-      "kind": "conditional",
-      "target": "开发下载地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "开发下载地区出口"
+      ],
+      "interval": 0
     },
     "Google Chrome": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "HP": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "ChatGPT": {
-      "kind": "conditional",
-      "target": "OpenAI共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "OpenAI共享出口"
+      ],
+      "interval": 0
     },
     "Grok": {
-      "kind": "conditional",
-      "target": "xAI地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "xAI地区出口"
+      ],
+      "interval": 0
     },
     "Swiftgram": {
-      "kind": "conditional",
-      "target": "Telegram"
+      "kind": "auto_test",
+      "policies": [
+        "Telegram"
+      ],
+      "interval": 0
     },
     "Gemini": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Apple国外": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "Apple账户": {
-      "kind": "conditional",
-      "target": "Apple海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Apple海外出口"
+      ],
+      "interval": 0
     },
     "Apple智能": {
-      "kind": "conditional",
-      "target": "OpenAI共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "美国",
+        "日本",
+        "新加坡",
+        "英国",
+        "德国",
+        "台湾"
+      ],
+      "interval": 300,
+      "tolerance": 100
     },
     "Apple私密中继": {
-      "kind": "conditional",
-      "target": "Apple智能"
+      "kind": "auto_test",
+      "policies": [
+        "Apple智能"
+      ],
+      "interval": 0
     },
     "Google 国外": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Microsoft国外": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "Bing": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "Microsoft Copilot": {
-      "kind": "conditional",
-      "target": "Microsoft海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Microsoft海外出口"
+      ],
+      "interval": 0
     },
     "GitHub Copilot": {
-      "kind": "conditional",
-      "target": "GitHub海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "GitHub海外出口"
+      ],
+      "interval": 0
     },
     "Sora": {
-      "kind": "conditional",
-      "target": "OpenAI共享出口"
+      "kind": "auto_test",
+      "policies": [
+        "OpenAI共享出口"
+      ],
+      "interval": 0
     },
     "Claude": {
-      "kind": "conditional",
-      "target": "Anthropic"
+      "kind": "auto_test",
+      "policies": [
+        "Anthropic"
+      ],
+      "interval": 0
     },
     "Google AI Studio": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "NotebookLM": {
-      "kind": "conditional",
-      "target": "Google海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Google海外出口"
+      ],
+      "interval": 0
     },
     "Perplexity": {
-      "kind": "conditional",
-      "target": "Perplexity地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Perplexity地区出口"
+      ],
+      "interval": 0
     },
     "Mistral": {
-      "kind": "conditional",
-      "target": "Mistral地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "Mistral地区出口"
+      ],
+      "interval": 0
     },
     "Meta AI": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "Muse": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "Hugging Face": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "Poe": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "OpenRouter": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "Cohere": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "MiniMax国际": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "通义千问国际": {
-      "kind": "conditional",
-      "target": "阿里AI国际出口"
+      "kind": "auto_test",
+      "policies": [
+        "阿里AI国际出口"
+      ],
+      "interval": 0
     },
     "通义千问美国API": {
-      "kind": "conditional",
-      "target": "通用AI海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "通用AI海外出口"
+      ],
+      "interval": 0
     },
     "Apple AI补充": {
-      "kind": "select",
+      "kind": "auto_test",
       "policies": [
-        "Apple智能",
-        "DIRECT"
-      ]
+        "Apple智能"
+      ],
+      "interval": 0
     },
     "PayPal": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Wise": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Revolut": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Interactive Brokers": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Charles Schwab": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Webull": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Binance": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Coinbase": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Kraken": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "OKX": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "AlipayHK": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Google Pay": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "Stripe": {
-      "kind": "conditional",
-      "target": "金融固定节点"
+      "kind": "auto_test",
+      "policies": [
+        "金融固定节点"
+      ],
+      "interval": 0
     },
     "腾讯共享": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "阿里共享": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "字节共享": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "百度共享": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Meta共享": {
-      "kind": "conditional",
-      "target": "Meta海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "Meta海外出口"
+      ],
+      "interval": 0
     },
     "公共基础服务": {
-      "kind": "conditional",
-      "target": "公共服务地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "公共服务地区出口"
+      ],
+      "interval": 0
     },
     "字节共享海外": {
-      "kind": "conditional",
-      "target": "字节海外出口"
+      "kind": "auto_test",
+      "policies": [
+        "字节海外出口"
+      ],
+      "interval": 0
     },
     "小米共享": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Riot共享": {
-      "kind": "conditional",
-      "target": "游戏地区出口"
+      "kind": "auto_test",
+      "policies": [
+        "游戏地区出口"
+      ],
+      "interval": 0
     },
     "公共风控服务": {
-      "kind": "conditional",
-      "target": "DIRECT"
+      "kind": "fallback",
+      "policies": [
+        "DIRECT"
+      ],
+      "interval": 0
     },
     "Siri": {
-      "kind": "conditional",
-      "target": "Apple AI补充"
+      "kind": "auto_test",
+      "policies": [
+        "Apple AI补充"
+      ],
+      "interval": 0
     },
     "Anthropic地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1810,10 +2453,11 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Google海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1822,10 +2466,11 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Apple海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1834,10 +2479,11 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Microsoft海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1846,10 +2492,11 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "GitHub海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1857,54 +2504,61 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "xAI地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Perplexity地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Mistral地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "德国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Meta海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "通用AI海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "阿里AI国际出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "新加坡",
         "美国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "社交通讯地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "香港",
         "日本",
@@ -1914,10 +2568,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "游戏地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "日本",
         "香港",
@@ -1927,10 +2582,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "开发下载地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "日本",
         "新加坡",
@@ -1940,10 +2596,11 @@
         "英国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "公共服务地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1953,10 +2610,11 @@
         "台湾",
         "香港"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "DNS海外出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -1965,10 +2623,11 @@
         "德国",
         "台湾"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "海外长尾地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "日本",
         "新加坡",
@@ -1978,10 +2637,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "未知流量地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "日本",
         "新加坡",
@@ -1991,10 +2651,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Netflix地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "新加坡",
         "日本",
@@ -2003,10 +2664,11 @@
         "德国",
         "英国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Disney地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "新加坡",
         "日本",
@@ -2015,10 +2677,11 @@
         "英国",
         "德国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     },
     "Spotify地区出口": {
-      "kind": "fallback",
+      "kind": "auto_test",
       "policies": [
         "美国",
         "日本",
@@ -2027,7 +2690,8 @@
         "英国",
         "德国"
       ],
-      "interval": 120
+      "interval": 300,
+      "tolerance": 100
     }
   },
   "main_rules": [
@@ -5406,27 +6070,27 @@
       "policy": "Apple"
     },
     {
-      "scene": "Apple CN device compatibility override",
+      "scene": "Apple CN restored DIRECT",
       "host": "www.apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "Apple CN root follows AI",
+      "scene": "Apple CN root stays DIRECT",
       "host": "apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "Apple CN account child follows AI",
+      "scene": "Apple CN account child stays DIRECT",
       "host": "account.apple.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "iCloud CN root follows AI",
+      "scene": "iCloud CN root stays DIRECT",
       "host": "icloud.com.cn",
       "policy": "Apple国内"
     },
     {
-      "scene": "iCloud CN account child follows AI",
+      "scene": "iCloud CN account child stays DIRECT",
       "host": "setup.icloud.com.cn",
       "policy": "Apple国内"
     },
@@ -22226,12 +22890,6 @@
     },
     {
       "domain_suffix": {
-        "match": "apple.com.cn",
-        "value": "国外加密DNS"
-      }
-    },
-    {
-      "domain_suffix": {
         "match": "applepay.apple.com",
         "value": "国内加密DNS"
       }
@@ -22353,12 +23011,6 @@
     {
       "domain_suffix": {
         "match": "ibkr.com.cn",
-        "value": "国外加密DNS"
-      }
-    },
-    {
-      "domain_suffix": {
-        "match": "icloud.com.cn",
         "value": "国外加密DNS"
       }
     },
@@ -32295,5 +32947,5 @@
     "yangjibao.com",
     "yunshanfu.cn"
   ],
-  "private_profile_sha256": "9cb5625a8e388c887c90bda6562b4690da33264c6f91dddeb70226fa48cd7fb2"
+  "private_profile_sha256": "f5ee2e198c8ab8fcf813d5af819e1fdfe7033fbd99bdf29806eff9a480cc2663"
 }

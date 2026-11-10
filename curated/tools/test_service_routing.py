@@ -31,16 +31,18 @@ active_guard=json.loads((ROOT/'curated/native-full/manifest.json').read_text(enc
 check(active_guard['repository_path']=='curated/native-full/priority-guard-ai-regions-muse.yaml','新增Muse保护使用独立URL')
 check(set(policy_references(yaml.safe_load((ROOT/active_guard['repository_path']).read_bytes())))<=set(graph)|{'DIRECT','REJECT'},'新版保护仅引用当前已有策略')
 
-def resolve(name,dead=(),path=()):
+def resolve(name,dead=(),path=(),latency=None):
  assert name not in path,'Cycle '+name
  if name not in graph:return None if name in dead else name
  g=graph[name];kind=g['kind']
  if kind=='country':return None if g['country'] in dead else g['country']
  if kind=='financial':return None if g['country'] in dead else '金融:'+g['country']
- if kind=='conditional':return resolve(g['target'],dead,path+(name,))
- if kind=='select':return resolve(g['policies'][0],dead,path+(name,))
+ if kind=='conditional':return resolve(g['target'],dead,path+(name,),latency)
+ if kind=='select':return resolve(g['policies'][0],dead,path+(name,),latency)
  candidates=g.get('policies',g.get('countries',[]))
- return next((v for child in candidates if (v:=resolve(child,dead,path+(name,))) is not None),None)
+ live=[v for child in candidates if (v:=resolve(child,dead,path+(name,),latency)) is not None]
+ if not live:return None
+ return min(live,key=lambda v:(latency or {}).get(v,100)) if kind=='auto_test' else live[0]
 def countries(name,path=()):
  assert name not in path,'Cycle '+name
  if name not in graph:return {name}
@@ -50,8 +52,9 @@ def countries(name,path=()):
  if g['kind']=='conditional':return countries(g['target'],path+(name,))
  if g['kind']=='select':return countries(g['policies'][0],path+(name,))
  return set().union(*(countries(v,path+(name,)) for v in g.get('policies',g.get('countries',[]))))
-for name in graph:check(graph[name]['kind']!='select' or name=='Apple AI补充','仅用户要求的 Apple AI补充允许切 DIRECT '+name)
-check(graph['Apple AI补充']['policies']==['Apple智能','DIRECT'],'Apple AI补充 默认自动代理，停用时可手动直连')
+for name in graph:check(graph[name]['kind']!='select','无手动选择组 '+name)
+for name in graph:check(graph[name]['kind']!='conditional','无SSID或移动网络条件组 '+name)
+check(graph['Apple AI补充']['kind']=='auto_test' and graph['Apple AI补充']['policies']==['Apple智能'],'Apple AI补充全自动跟随智能，无直连回落')
 supplement_url='https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/rules/managed/apple-ai-supplement.yaml'
 supplement_path=ROOT/'curated/rules/managed/apple-ai-supplement.yaml'
 supplement=yaml.safe_load(supplement_path.read_text(encoding='utf-8'))
@@ -72,11 +75,7 @@ for kind,values in expected.items():
   route=model.route('https://'+host+'/')
   check(route['policy']=='Apple AI补充','截图范围独立控制 '+host,actual=route['policy'])
   if route['policy']=='Apple AI补充':
-   original=graph['Apple AI补充']['policies']
-   try:
-    graph['Apple AI补充']['policies']=['DIRECT','Apple智能']
-    check(resolve(route['policy'])=='DIRECT','补充开关选择DIRECT可达 '+host)
-   finally:graph['Apple AI补充']['policies']=original
+   check(resolve(route['policy'])==resolve('Apple智能')!='DIRECT','补充域名跟随智能自动出口 '+host)
 for host in ['17.248.152.0','17.248.152.113','17.248.152.145','17.248.152.255']:
  check(model.route('https://'+host+'/')['policy']=='Apple AI补充','截图IP全网段先于Apple直连兜底 '+host)
 for host in ['17.248.151.255','17.248.153.0']:
@@ -97,10 +96,11 @@ for host in ['wps.apple.com','apps.mzstatic.com']:
  check(host in data['mitm_excludes'] and '*.'+host in data['mitm_excludes'],'新增共享服务不解密 '+host)
 for name,members in spec['pools'].items():
  members=[r for r in members if r in graph and graph[r]['kind']=='country']
- check(graph[name]['policies']==members,'地区顺序 '+name)
- check(graph[name]['interval']==120,'故障检查间隔 '+name)
+ check(graph[name]['kind']=='auto_test' and graph[name]['policies']==members,'测速地区白名单 '+name)
+ check(graph[name]['interval']==300 and graph[name]['tolerance']==100,'测速间隔与切换容差 '+name)
  for country in members:
   check(resolve(name,[r for r in members if r!=country])==country,'仅 '+country+' 存活 '+name)
+  check(resolve(name,latency={r:25 if r==country else 900 for r in members})==country,'慢速时选更低延迟地区 '+country+' '+name)
  check(resolve(name,members) is None,'全部地区失败不越界 '+name)
 for name in spec['ai_groups']:
  leaves=countries(name)
@@ -113,9 +113,12 @@ for name,_,roots in spec['domestic']:
   check(resolve(name)==resolve('Apple智能')!='DIRECT','Apple国内与智能出口联动 '+name)
  else:check(resolve(name)=='DIRECT','国区服务直连 '+name)
 for name,target in spec['targets'].items():
- check(graph[name]['target']==target,'独立服务目标 '+name)
-check(spec.get('domestic_proxy_overrides')=={'Apple国内':'Apple智能'},'Apple兼容例外仅限用户反馈的一个组')
-check(countries('Apple国内')==countries('Apple智能') and 'DIRECT' not in countries('Apple国内'),'Apple国内兼容出口不会故障回落直连')
+ check(graph[name]['policies']==[target] and graph[name]['interval']==0,'独立服务自动入口 '+name)
+check(not spec.get('domestic_proxy_overrides'),'撤回Apple国内代理例外')
+check(countries('Apple国内')=={'DIRECT'} and resolve('Apple国内',list(spec['pools']['Apple智能']))=='DIRECT','Apple国内在全部地区故障时仍直连')
+check(graph['Apple智能']['kind']=='auto_test' and graph['Apple智能']['policies']==spec['pools']['Apple智能'] and '香港' not in graph['Apple智能']['policies'],'Apple智能直接列非香港地区自动测速组')
+for name,g in graph.items():
+ if g.get('policies') in [['DIRECT'],['REJECT']]:check(g['interval']==0,'固定内置策略不参加健康检查 '+name)
 for name in ['Apple系统服务','Apple地图国内','Apple Pay']:
  check(resolve(name)=='DIRECT','Apple兼容改动保留独立必要服务直连 '+name)
 def dns(host):
@@ -134,7 +137,7 @@ for row in data['fixtures']:
 for name,roots in spec['critical'].items():
  for h in roots:
   check(h in data['mitm_excludes'] and '*.'+h in data['mitm_excludes'],'关键 AI/账户接口不解密 '+h)
-for labels in [('OpenAI','ChatGPT','Sora','Apple智能','Apple国内','Siri','Apple私密中继'),('Google','Google 国外','Gemini','Google AI Studio','NotebookLM'),('Microsoft','Outlook','Teams','Microsoft Copilot','Bing'),('GitHub','GitHub Copilot'),('Anthropic','Claude'),('X','Grok'),('Meta共享','Meta AI','Facebook','Instagram','WhatsApp')]:
+for labels in [('OpenAI','ChatGPT','Sora'),('Apple智能','Apple AI补充','Siri','Apple私密中继'),('Google','Google 国外','Gemini','Google AI Studio','NotebookLM'),('Microsoft','Outlook','Teams','Microsoft Copilot','Bing'),('GitHub','GitHub Copilot'),('Anthropic','Claude'),('X','Grok'),('Meta共享','Meta AI','Facebook','Instagram','WhatsApp')]:
  for dead in [(),('美国',),('美国','日本')]:
   check(len({resolve(n,dead) for n in labels})==1,'共享链路地区联动 '+' / '.join(labels)+' '+str(dead))
 result={'passed':not errors,'checks':len(checks),'failures':errors,'ai_groups':len(spec['ai_groups']),'country_pools':len(spec['pools']),'route_witnesses':len(data['fixtures']),'scope':data['scope']}
