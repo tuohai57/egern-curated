@@ -831,6 +831,12 @@
       "讯飞星火",
       "MiniMax国内"
     ],
+    "domestic_proxy_overrides": {
+      "Apple国内": "Apple智能"
+    },
+    "domestic_proxy_override_evidence": {
+      "Apple国内": "2026-11-11 user device feedback: Apple AI fails with this group DIRECT and works after changing it to a foreign policy. Keep the legacy group hidden, follow Apple Intelligence automatically, and use foreign encrypted DNS. The exact triggering request is not captured; this is a group-level compatibility workaround."
+    },
     "default_foreign_target": "开发下载地区出口",
     "limitations": [
       "地区来自订阅名称而非独立出口定位；300 秒探测仅测 HTTPS 连通性，不检测 AI 解锁、登录资格或账号风控。",
@@ -1241,7 +1247,7 @@
     },
     "Apple国内": {
       "kind": "conditional",
-      "target": "DIRECT"
+      "target": "Apple智能"
     },
     "Apple系统服务": {
       "kind": "conditional",
@@ -5400,9 +5406,34 @@
       "policy": "Apple"
     },
     {
-      "scene": "Apple CN",
+      "scene": "Apple CN device compatibility override",
       "host": "www.apple.com.cn",
       "policy": "Apple国内"
+    },
+    {
+      "scene": "Apple CN root follows AI",
+      "host": "apple.com.cn",
+      "policy": "Apple国内"
+    },
+    {
+      "scene": "Apple CN account child follows AI",
+      "host": "account.apple.com.cn",
+      "policy": "Apple国内"
+    },
+    {
+      "scene": "iCloud CN root follows AI",
+      "host": "icloud.com.cn",
+      "policy": "Apple国内"
+    },
+    {
+      "scene": "iCloud CN account child follows AI",
+      "host": "setup.icloud.com.cn",
+      "policy": "Apple国内"
+    },
+    {
+      "scene": "Other China account namespaces stay direct",
+      "host": "tenant.microsoftonline.cn",
+      "policy": "Microsoft国内"
     },
     {
       "scene": "CloudKit",
@@ -22195,6 +22226,12 @@
     },
     {
       "domain_suffix": {
+        "match": "apple.com.cn",
+        "value": "国外加密DNS"
+      }
+    },
+    {
+      "domain_suffix": {
         "match": "applepay.apple.com",
         "value": "国内加密DNS"
       }
@@ -22316,6 +22353,12 @@
     {
       "domain_suffix": {
         "match": "ibkr.com.cn",
+        "value": "国外加密DNS"
+      }
+    },
+    {
+      "domain_suffix": {
+        "match": "icloud.com.cn",
         "value": "国外加密DNS"
       }
     },
@@ -32252,5 +32295,5 @@
     "yangjibao.com",
     "yunshanfu.cn"
   ],
-  "private_profile_sha256": "ff4c08a5bacfc26bf70335f1c1a9d72daa48aa1215629601438f63a16922008b"
+  "private_profile_sha256": "9cb5625a8e388c887c90bda6562b4690da33264c6f91dddeb70226fa48cd7fb2"
 }

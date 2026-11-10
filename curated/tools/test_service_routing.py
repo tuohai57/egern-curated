@@ -108,9 +108,16 @@ for name in spec['ai_groups']:
  check(not (leaves & {'香港','DIRECT','自动选择','故障转移'}) or leaves=={'DIRECT'},'AI 无香港/通用池后备 '+name,regions=sorted(leaves))
  check(resolve(name,leaves) is None if leaves!={'DIRECT'} else resolve(name)=='DIRECT','AI 全故障边界 '+name)
 for name,_,roots in spec['domestic']:
- check(resolve(name)=='DIRECT','国区服务直连 '+name)
+ if name in spec.get('domestic_proxy_overrides',{}):
+  check(graph[name]['target']==spec['domestic_proxy_overrides'][name],'真机反馈的Apple国内兼容出口 '+name)
+  check(resolve(name)==resolve('Apple智能')!='DIRECT','Apple国内与智能出口联动 '+name)
+ else:check(resolve(name)=='DIRECT','国区服务直连 '+name)
 for name,target in spec['targets'].items():
  check(graph[name]['target']==target,'独立服务目标 '+name)
+check(spec.get('domestic_proxy_overrides')=={'Apple国内':'Apple智能'},'Apple兼容例外仅限用户反馈的一个组')
+check(countries('Apple国内')==countries('Apple智能') and 'DIRECT' not in countries('Apple国内'),'Apple国内兼容出口不会故障回落直连')
+for name in ['Apple系统服务','Apple地图国内','Apple Pay']:
+ check(resolve(name)=='DIRECT','Apple兼容改动保留独立必要服务直连 '+name)
 def dns(host):
  for node in data['dns_forward']:
   kind,p=next(iter(node.items()));value=p['match']
@@ -127,7 +134,7 @@ for row in data['fixtures']:
 for name,roots in spec['critical'].items():
  for h in roots:
   check(h in data['mitm_excludes'] and '*.'+h in data['mitm_excludes'],'关键 AI/账户接口不解密 '+h)
-for labels in [('OpenAI','ChatGPT','Sora','Apple智能','Siri','Apple私密中继'),('Google','Google 国外','Gemini','Google AI Studio','NotebookLM'),('Microsoft','Outlook','Teams','Microsoft Copilot','Bing'),('GitHub','GitHub Copilot'),('Anthropic','Claude'),('X','Grok'),('Meta共享','Meta AI','Facebook','Instagram','WhatsApp')]:
+for labels in [('OpenAI','ChatGPT','Sora','Apple智能','Apple国内','Siri','Apple私密中继'),('Google','Google 国外','Gemini','Google AI Studio','NotebookLM'),('Microsoft','Outlook','Teams','Microsoft Copilot','Bing'),('GitHub','GitHub Copilot'),('Anthropic','Claude'),('X','Grok'),('Meta共享','Meta AI','Facebook','Instagram','WhatsApp')]:
  for dead in [(),('美国',),('美国','日本')]:
   check(len({resolve(n,dead) for n in labels})==1,'共享链路地区联动 '+' / '.join(labels)+' '+str(dead))
 result={'passed':not errors,'checks':len(checks),'failures':errors,'ai_groups':len(spec['ai_groups']),'country_pools':len(spec['pools']),'route_witnesses':len(data['fixtures']),'scope':data['scope']}
