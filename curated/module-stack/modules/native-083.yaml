@@ -17,10 +17,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif
+- match: (?:^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif)|(?:^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif)
   status_code: 200
   body: ''
 scriptings:

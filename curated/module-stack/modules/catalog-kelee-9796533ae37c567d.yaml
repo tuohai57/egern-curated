@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png
 map_locals:
-- match: (?i)^https:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/(home|cache)\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/tabPage\?
+- match: (?i:^https:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/)|(?i:^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/(home|cache)\?)|(?i:^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/tabPage\?)
   status_code: 200
   body: '{}'
   headers:

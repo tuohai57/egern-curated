@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SmartLife.png
 map_locals:
-- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/acc\/score\/mission-lst$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/ep\/lst-simple\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/ui\/app\/master$
+- match: (?i:^https:\/\/i\.ilife798\.com\/api\/v\d\/acc\/score\/mission-lst$)|(?i:^https:\/\/i\.ilife798\.com\/api\/v\d\/ep\/lst-simple\?)|(?i:^https:\/\/i\.ilife798\.com\/api\/v\d\/ui\/app\/master$)
   status_code: 200
   body: '{}'
   headers:
@@ -25,4 +15,8 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/i\.ilife798\.com\/api\/v\d\/acc\/login$
-    filter: (delpaths([["data", "ar"], ["data", "showAd"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"ar\"], [\"\
+      data\", \"showAd\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

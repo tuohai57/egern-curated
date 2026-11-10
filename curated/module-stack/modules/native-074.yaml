@@ -6,12 +6,7 @@ open_url: http://boxjs.com/#/app/BiliBili.clydetime.sub
 scriptings:
 - http_response:
     name: 📺 BiliBili.Modified.x.resource.show.skin
-    match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85352007c5257cc7de99218d8f2e4c0c44de491bf5a334a5e928464ab99542d7.js
-    body_required: true
-- http_response:
-    name: 📺 BiliBili.Modified.x.v2
-    match: ^https:\/\/app\.bilibili\.com\/x\/v2\/(account\/(myinfo|mine)|space)([\/?]|$)
+    match: (?:^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?)|(?:^https:\/\/app\.bilibili\.com\/x\/v2\/(account\/(myinfo|mine)|space)([\/?]|$))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85352007c5257cc7de99218d8f2e4c0c44de491bf5a334a5e928464ab99542d7.js
     body_required: true
 - http_response:

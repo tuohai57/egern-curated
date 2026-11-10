@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TmallCampus.png
 map_locals:
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.advertising\.config\.list\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.ai\.agent\.assistant\.settings\.get\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.delivering\.recall\.general\.data\.query\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.app\.home\.pop\.get\/
+- match: (?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.advertising\.config\.list\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.ai\.agent\.assistant\.settings\.get\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.delivering\.recall\.general\.data\.query\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.app\.home\.pop\.get\/)
   status_code: 200
   body: '{}'
   headers:
@@ -30,9 +15,17 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.kangaroo\.core\.service\.route\.fixrespagerecommend\/
-    filter: (delpaths([["data", "resultValue", "data", "normal-banner-resource-code"],
-      ["data", "resultValue", "data", "feeds-channel-code"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"resultValue\"\
+      , \"data\", \"normal-banner-resource-code\"], [\"data\", \"resultValue\", \"\
+      data\", \"feeds-channel-code\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.tmall\.campus\.guide\.app\.userprofile\.framework\.v\d\/
-    filter: (del(.data.memberBenefit, .data.memberBenefitNew) | .data.moduleSorts
-      |= map(select(. != "memberBenefit" and . != "memberBenefitNew")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.data.memberBenefit, .data.memberBenefitNew)\
+      \ | .data.moduleSorts |= map(select(. != \"memberBenefit\" and . != \"memberBenefitNew\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

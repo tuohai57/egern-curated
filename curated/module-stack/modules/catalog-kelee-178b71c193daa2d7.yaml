@@ -8,22 +8,7 @@ rules:
     match: ymg-api.terabox.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/www\.terabox\.com\/adx\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/www\.terabox\.com\/api\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/www\.terabox\.com\/api\/page\/tips\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/www\.terabox\.com\/rest\/1\.0\/task\/common\/inttips\?
+- match: (?i:^https:\/\/www\.terabox\.com\/adx\/)|(?i:^https:\/\/www\.terabox\.com\/api\/ad\/)|(?i:^https:\/\/www\.terabox\.com\/api\/page\/tips\?)|(?i:^https:\/\/www\.terabox\.com\/rest\/1\.0\/task\/common\/inttips\?)
   status_code: 200
   body: '{}'
   headers:

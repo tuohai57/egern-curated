@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NarwelRobots.png
 map_locals:
-- match: (?i)^https:\/\/cn-app\.narwaltech\.com\/operate\/appPosition\/listSplash\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/cn-app\.narwaltech\.com\/operate\/cactivity\/listByResourceIds\?resourceIds=(user_center_banner|index_banner)
+- match: (?i:^https:\/\/cn-app\.narwaltech\.com\/operate\/appPosition\/listSplash\?)|(?i:^https:\/\/cn-app\.narwaltech\.com\/operate\/cactivity\/listByResourceIds\?resourceIds=(user_center_banner|index_banner))
   status_code: 200
   body: '{}'
   headers:

@@ -16,619 +16,108 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/tiebac\.baidu\.com\/c\/s\/sync$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["activity_switch"]])
-
-      ) | (
-
-      delpaths([["video_report_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["advertisement_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["next_start"]])
-
-      )
-
-      ) | (
-
-      delpaths([["push_strategy_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["live_activity_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["h5_pop_ups"]])
-
-      )
-
-      ) | (
-
-      delpaths([["duxiaoman_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["is_need_remind_live_rooms"]])
-
-      )
-
-      ) | (
-
-      delpaths([["floating_icon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_stlog_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["first_time_motivate"]])
-
-      )
-
-      ) | (
-
-      delpaths([["windowStrategyList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_adsense"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["videoup_guide_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_origin_config_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["needNewUserLead"]])
-
-      )
-
-      ) | (
-
-      delpaths([["h5_pop_ups_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["alaTabColor"]])
-
-      )
-
-      ) | (
-
-      delpaths([["search_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_sdk_priority"]])
-
-      )
-
-      ) | (
-
-      delpaths([["low_version_pop_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_num_competition_frs"]])
-
-      )
-
-      ) | (
-
-      delpaths([["live_new_user_guide_day"]])
-
-      )
-
-      ) | (
-
-      delpaths([["screen_fill_data_result"]])
-
-      )
-
-      ) | (
-
-      delpaths([["yy_live_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_num_competition_personalize"]])
-
-      )
-
-      ) | (
-
-      delpaths([["complete_apk_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["user_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["homepage_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["bottom_bubble_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["home_screen_ad"]])
-
-      )
-
-      ) | (
-
-      delpaths([["afSearch_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["recent_client_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["video_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["namoaixud_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["yy_live_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["user_growth_task_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["cloud_control_data_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","pb_banner_funad_cache_strategy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","pb_comment_asyncafd_cache_strategy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","download_edge_float"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","download_pause_retain_dialog_conf"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","download_mobile_dialog_conf"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","download_fake_progress_config_a"]])
-
-      )
-
-      ) | (
-
-      delpaths([["wl_config","download_fake_progress_config_b"]])
-
-      )
-
-      ) | (
-
-      delpaths([["scheme_whitelist"]])
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("home_ad_num")) then (setpath(["wl_config","home_ad_num"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("frs_ad_num")) then (setpath(["wl_config","frs_ad_num"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("pb_comment_ad_num")) then (setpath(["wl_config","pb_comment_ad_num"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("index_bear_density")) then (setpath(["wl_config","index_bear_density"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("frs_bear_density")) then (setpath(["wl_config","frs_bear_density"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("index_bear_first_floor_max")) then (setpath(["wl_config","index_bear_first_floor_max"];
-      999999999)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["wl_config"]) | has("index_bear_first_floor_min")) then (setpath(["wl_config","index_bear_first_floor_min"];
-      999999999)) else . end
-
-      )
-
-      ) | (
-
-      .index_tab_info |= map(select(.tab_name == "推荐")) | .top_level_navi |= {"推荐":
-      .["推荐"], "侧边栏": .["侧边栏"], "关注": .["关注"]}
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"activity_switch\"\
+      ]])\n) | (\ndelpaths([[\"video_report_config\"]])\n)\n) | (\ndelpaths([[\"advertisement_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"next_start\"]])\n)\n) | (\ndelpaths([[\"push_strategy_new\"\
+      ]])\n)\n) | (\ndelpaths([[\"live_activity_guide\"]])\n)\n) | (\ndelpaths([[\"\
+      h5_pop_ups\"]])\n)\n) | (\ndelpaths([[\"duxiaoman_url\"]])\n)\n) | (\ndelpaths([[\"\
+      is_need_remind_live_rooms\"]])\n)\n) | (\ndelpaths([[\"floating_icon\"]])\n\
+      )\n) | (\ndelpaths([[\"ad_stlog_switch\"]])\n)\n) | (\ndelpaths([[\"first_time_motivate\"\
+      ]])\n)\n) | (\ndelpaths([[\"windowStrategyList\"]])\n)\n) | (\ndelpaths([[\"\
+      ad_adsense\"]])\n)\n) | (\ndelpaths([[\"ad_config\"]])\n)\n) | (\ndelpaths([[\"\
+      videoup_guide_pop\"]])\n)\n) | (\ndelpaths([[\"ad_origin_config_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"needNewUserLead\"]])\n)\n) | (\ndelpaths([[\"h5_pop_ups_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"alaTabColor\"]])\n)\n) | (\ndelpaths([[\"search_guide\"\
+      ]])\n)\n) | (\ndelpaths([[\"ad_sdk_priority\"]])\n)\n) | (\ndelpaths([[\"low_version_pop_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"ad_num_competition_frs\"]])\n)\n) | (\ndelpaths([[\"\
+      live_new_user_guide_day\"]])\n)\n) | (\ndelpaths([[\"screen_fill_data_result\"\
+      ]])\n)\n) | (\ndelpaths([[\"yy_live_tab\"]])\n)\n) | (\ndelpaths([[\"ad_num_competition_personalize\"\
+      ]])\n)\n) | (\ndelpaths([[\"complete_apk_url\"]])\n)\n) | (\ndelpaths([[\"user_activity\"\
+      ]])\n)\n) | (\ndelpaths([[\"homepage_guide\"]])\n)\n) | (\ndelpaths([[\"bottom_bubble_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"home_screen_ad\"]])\n)\n) | (\ndelpaths([[\"afSearch_tab\"\
+      ]])\n)\n) | (\ndelpaths([[\"recent_client_info\"]])\n)\n) | (\ndelpaths([[\"\
+      video_activity\"]])\n)\n) | (\ndelpaths([[\"namoaixud_url\"]])\n)\n) | (\ndelpaths([[\"\
+      yy_live_config\"]])\n)\n) | (\ndelpaths([[\"user_growth_task_list\"]])\n)\n\
+      ) | (\ndelpaths([[\"cloud_control_data_info\"]])\n)\n) | (\ndelpaths([[\"wl_config\"\
+      ,\"pb_banner_funad_cache_strategy\"]])\n)\n) | (\ndelpaths([[\"wl_config\",\"\
+      pb_comment_asyncafd_cache_strategy\"]])\n)\n) | (\ndelpaths([[\"wl_config\"\
+      ,\"download_edge_float\"]])\n)\n) | (\ndelpaths([[\"wl_config\",\"download_pause_retain_dialog_conf\"\
+      ]])\n)\n) | (\ndelpaths([[\"wl_config\",\"download_mobile_dialog_conf\"]])\n\
+      )\n) | (\ndelpaths([[\"wl_config\",\"download_fake_progress_config_a\"]])\n\
+      )\n) | (\ndelpaths([[\"wl_config\",\"download_fake_progress_config_b\"]])\n\
+      )\n) | (\ndelpaths([[\"scheme_whitelist\"]])\n)\n) | (\nif (getpath([\"wl_config\"\
+      ]) | has(\"home_ad_num\")) then (setpath([\"wl_config\",\"home_ad_num\"]; 0))\
+      \ else . end\n)\n) | (\nif (getpath([\"wl_config\"]) | has(\"frs_ad_num\"))\
+      \ then (setpath([\"wl_config\",\"frs_ad_num\"]; 0)) else . end\n)\n) | (\nif\
+      \ (getpath([\"wl_config\"]) | has(\"pb_comment_ad_num\")) then (setpath([\"\
+      wl_config\",\"pb_comment_ad_num\"]; 0)) else . end\n)\n) | (\nif (getpath([\"\
+      wl_config\"]) | has(\"index_bear_density\")) then (setpath([\"wl_config\",\"\
+      index_bear_density\"]; 0)) else . end\n)\n) | (\nif (getpath([\"wl_config\"\
+      ]) | has(\"frs_bear_density\")) then (setpath([\"wl_config\",\"frs_bear_density\"\
+      ]; 0)) else . end\n)\n) | (\nif (getpath([\"wl_config\"]) | has(\"index_bear_first_floor_max\"\
+      )) then (setpath([\"wl_config\",\"index_bear_first_floor_max\"]; 999999999))\
+      \ else . end\n)\n) | (\nif (getpath([\"wl_config\"]) | has(\"index_bear_first_floor_min\"\
+      )) then (setpath([\"wl_config\",\"index_bear_first_floor_min\"]; 999999999))\
+      \ else . end\n)\n) | (\n.index_tab_info |= map(select(.tab_name == \"推荐\"))\
+      \ | .top_level_navi |= {\"推荐\": .[\"推荐\"], \"侧边栏\": .[\"侧边栏\"], \"关注\": .[\"\
+      关注\"]}\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["url_map"]])
-
-      ) | (
-
-      delpaths([["user_agent_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["bubble_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["duxiaoman_entry"]])
-
-      )
-
-      ) | (
-
-      delpaths([["uc_card"]])
-
-      )
-
-      ) | (
-
-      delpaths([["finance_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["vip_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ala_live_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["recom_naws_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["duxiaoman"]])
-
-      )
-
-      ) | (
-
-      delpaths([["user","consume_info"]])
-
-      )
-
-      ) | (
-
-      delpaths([["namoaixud_entry"]])
-
-      )
-
-      ) | (
-
-      if (getpath(["user","shake_ad_switch"]) | has("is_show")) then (setpath(["user","shake_ad_switch","is_show"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      .custom_grid |= map(select(.title != "游戏大厅" and .title != "预约管理" and .title
-      != "领话费" and .title != "短故事")) | .zone_info |= map(.common_func |= (if .common_func_noraml
-      then .common_func_noraml |= map(select(.name != "创建智能体")) else . end)) | .zone_info
-      |= map(select(.type != "commerce" and .type != "banner" and .type != "game"))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\ndelpaths([[\"url_map\"]])\n) | (\ndelpaths([[\"user_agent_info\"]])\n\
+      )\n) | (\ndelpaths([[\"bubble_info\"]])\n)\n) | (\ndelpaths([[\"duxiaoman_entry\"\
+      ]])\n)\n) | (\ndelpaths([[\"uc_card\"]])\n)\n) | (\ndelpaths([[\"finance_tab\"\
+      ]])\n)\n) | (\ndelpaths([[\"vip_banner\"]])\n)\n) | (\ndelpaths([[\"ala_live_info\"\
+      ]])\n)\n) | (\ndelpaths([[\"recom_naws_list\"]])\n)\n) | (\ndelpaths([[\"duxiaoman\"\
+      ]])\n)\n) | (\ndelpaths([[\"user\",\"consume_info\"]])\n)\n) | (\ndelpaths([[\"\
+      namoaixud_entry\"]])\n)\n) | (\nif (getpath([\"user\",\"shake_ad_switch\"])\
+      \ | has(\"is_show\")) then (setpath([\"user\",\"shake_ad_switch\",\"is_show\"\
+      ]; 0)) else . end\n)\n) | (\n.custom_grid |= map(select(.title != \"游戏大厅\" and\
+      \ .title != \"预约管理\" and .title != \"领话费\" and .title != \"短故事\")) | .zone_info\
+      \ |= map(.common_func |= (if .common_func_noraml then .common_func_noraml |=\
+      \ map(select(.name != \"创建智能体\")) else . end)) | .zone_info |= map(select(.type\
+      \ != \"commerce\" and .type != \"banner\" and .type != \"game\"))\n)\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/forum\/forumGuide$
-    filter: delpaths([["hot_search"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"hot_search\"]])\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/frs\/frsBottom\?
-    filter: delpaths([["card_activity"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"card_activity\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$
-    filter: delpaths([["card_activity"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"card_activity\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["game_center"]])
-
-      ) | (
-
-      delpaths([["tools"]])
-
-      )
-
-      ) | (
-
-      delpaths([["task_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["vip_banner"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"game_center\"\
+      ]])\n) | (\ndelpaths([[\"tools\"]])\n)\n) | (\ndelpaths([[\"task_list\"]])\n\
+      )\n) | (\ndelpaths([[\"vip_banner\"]])\n)\n) ]) as $__egern_results\n      \
+      \ | if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getInterestClassList$
+- match: (?:^https?:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getInterestClassList$)|(?:^https?:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https?:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https?:\/\/tieba\.baidu\.com\/c\/f\/search\/discover$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/tieba\.baidu\.com\/c\/f\/forum\/getForumAlbum$
+- match: (?:^https?:\/\/tieba\.baidu\.com\/c\/f\/search\/discover$)|(?:^https:\/\/tieba\.baidu\.com\/c\/f\/forum\/getForumAlbum$)
   status_code: 200
   body: '{}'
   headers:

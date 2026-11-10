@@ -14,17 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\?
+- match: (?i:^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$)|(?i:^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\?)|(?i:^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\?)
   status_code: 200
   body: '{}'
   headers:
@@ -37,24 +27,47 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/site\/launch\?
-    filter: (delpaths([["info", "splash"], ["info", "splash_ready"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"info\", \"splash\"],\
+      \ [\"info\", \"splash_ready\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/site\/config$
-    filter: (delpaths([["info", "tab_bar_live"], ["0"], ["info", "enable_tab_bar_live_notice"],
-      ["false"], ["info", "teenager_popup_mode"], ["0"]])) | (delpaths([["info", "httpdns"],
-      ["info", "homepage_top_task_button"]])) | (.info.cronet |= (fromjson | .quic=false
-      | tojson))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"info\", \"tab_bar_live\"\
+      ], [\"0\"], [\"info\", \"enable_tab_bar_live_notice\"], [\"false\"], [\"info\"\
+      , \"teenager_popup_mode\"], [\"0\"]])) | (delpaths([[\"info\", \"httpdns\"],\
+      \ [\"info\", \"homepage_top_task_button\"]])) | (.info.cronet |= (fromjson |\
+      \ .quic=false | tojson))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/site\/tabs\?
-    filter: (.info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"]
-      | index($t) != null)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.info.tabs |= map(select(.title as\
+      \ $t | [\"直播\", \"发现\", \"广播剧\", \"听书\", \"分类\"] | index($t) != null)))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/site\/icons\?
-    filter: (.info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or
-      $t == "免费榜" or $t == "夜猫子" or $t == "启动音")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.info.icons |= map(select(.title\
+      \ as $t | $t == \"直播\" or $t == \"必听剧\" or $t == \"免费榜\" or $t == \"夜猫子\" or\
+      \ $t == \"启动音\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/discovery\/list$
-    filter: (.info |= map(map(select(.title != "免流服务"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.info |= map(map(select(.title !=\
+      \ \"免流服务\"))))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.missevan\.com\/site\/get-top$
-    filter: (delpaths([["info", "search_words"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"info\", \"search_words\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

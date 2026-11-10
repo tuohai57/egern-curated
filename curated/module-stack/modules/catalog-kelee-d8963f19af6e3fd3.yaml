@@ -11,22 +11,7 @@ rules:
     match: saad.ms.zhangyue.net
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/dj\.palmestore\.com\/djad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dj\.palmestore\.com\/zybk\/api\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dj\.palmestore\.com\/zyapi\/bookstore\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dj\.palmestore\.com\/zybk\/api\/bookshelf\/index\?
+- match: (?i:^https:\/\/dj\.palmestore\.com\/djad\/)|(?i:^https:\/\/dj\.palmestore\.com\/zybk\/api\/ad\/)|(?i:^https:\/\/dj\.palmestore\.com\/zyapi\/bookstore\/ad\/)|(?i:^https:\/\/dj\.palmestore\.com\/zybk\/api\/bookshelf\/index\?)
   status_code: 200
   body: '{}'
   headers:
@@ -37,8 +22,15 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/dj\.palmestore\.com\/zybk\/api\/powerup\/userGroup\?
-    filter: (delpaths([["body", "sevenDaysAd"], ["body", "shortPlayShow"], ["body",
-      "sdkShortPlayAB"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"body\", \"sevenDaysAd\"\
+      ], [\"body\", \"shortPlayShow\"], [\"body\", \"sdkShortPlayAB\"]]))\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/dj\.palmestore\.com\/zybk\/api\/search\/index\?
-    filter: (delpaths([["body", "keywords"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"body\", \"keywords\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

@@ -4,32 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Uki.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/startInfo$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/indexBanner$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/getPopup
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/allPopUpConfig$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/advConf$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.chenlongtech\.cn\/v\d\/user\/checkQTSheInsurance$
+- match: (?:^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/startInfo$)|(?:^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/indexBanner$)|(?:^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/getPopup)|(?:^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/allPopUpConfig$)|(?:^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/advConf$)|(?:^https:\/\/api\.chenlongtech\.cn\/v\d\/user\/checkQTSheInsurance$)
   status_code: 200
   body: '{}'
   headers:

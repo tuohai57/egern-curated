@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoTrans.png
 map_locals:
-- match: (?i)^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s
+- match: (?i:^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s)|(?i:^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s)|(?i:^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s)
   status_code: 200
   body: '{}'
   headers:
@@ -24,12 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/activity\/fanyiguan\/sevendayfree\/imei\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/wordbook\/recommend\?all=false
+- match: (?i:^https:\/\/dict\.youdao\.com\/vip\/activity\/fanyiguan\/sevendayfree\/imei\?)|(?i:^https:\/\/dict\.youdao\.com\/wordbook\/recommend\?all=false)
   status_code: 200
   body: '{}'
   headers:

@@ -4,62 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HeartideBrainWave.png
 map_locals:
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/startup\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/user\/identity\/ad\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/discover\/ad$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/home\/activity\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/my\/ad\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/search\/config\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/search\/ranks\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/search\/inputs\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/sleeps\/guides\/banner\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/search\/ranks\/items\?
+- match: (?i:^https:\/\/api\.psy-1\.com\/cosleep\/startup\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/ad\/)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/user\/identity\/ad\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/discover\/ad$)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/home\/activity\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/ad\/)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/my\/ad\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/search\/config\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/search\/ranks\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/search\/inputs\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/sleeps\/guides\/banner\?)|(?i:^https:\/\/api\.psy-1\.com\/cosleep\/newborn\/search\/ranks\/items\?)
   status_code: 200
   body: '{}'
   headers:

@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/marki.png
 map_locals:
-- match: (?i)^https:\/\/marki\.markiapp\.com\/mkg\/MomStats\/getFlowWindowList$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/marki\.markiapp\.com\/mkg\/Advertising\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/marki\.markiapp\.com\/mkg\/MomStats\/getIntegralAdv$
+- match: (?i:^https:\/\/marki\.markiapp\.com\/mkg\/MomStats\/getFlowWindowList$)|(?i:^https?:\/\/marki\.markiapp\.com\/mkg\/Advertising\/)|(?i:^https:\/\/marki\.markiapp\.com\/mkg\/MomStats\/getIntegralAdv$)
   status_code: 200
   body: '{}'
   headers:

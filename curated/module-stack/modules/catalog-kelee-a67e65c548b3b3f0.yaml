@@ -27,17 +27,29 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/meta\.duitang\.com\/napi\/infra\/settings\/
-    filter: (delpaths([["data", "AD_LINKS"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"AD_LINKS\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/(www|api-2)\.duitang\.com\/napi\/home\/bottom_tab\/detail\/\?
-    filter: (.data.tabs |= map(select(.group == "home" or .group == "category" or
-      .group == "me")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.tabs |= map(select(.group ==\
+      \ \"home\" or .group == \"category\" or .group == \"me\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api-2\.duitang\.com\/napi\/settings\/
-    filter: (delpaths([["data", "SPLASH_SWING_OPEN"], ["data", "STICKER_SEARCH_HOT_KEYWORDS"],
-      ["data", "REWARD_AD_PAG_EDITOR"], ["data", "REWARD_AD_PHOTO_EDITOR"], ["data",
-      "REWARD_AD_CUTOUT_NUM"], ["data", "MAIN_EVENTS"], ["data", "QA_TOOLTIP_BOTTOM"],
-      ["data", "OC_FOLLOW_OFFICIAL"], ["data", "AD_MENU_SELECTIONS"], ["data", "FEATURE_TEMPLATES"],
-      ["data", "FEEDBACK_URL"], ["data", "AVATAR_MALL_UPDATE"], ["data", "WATERMARK_MALL_UPDATE"],
-      ["data", "OC_MALL_UPDATE"], ["data", "3D_AVATAR_UPDATE"], ["data", "BENEFIT_LIST"],
-      ["data", "SHARE_BANNER"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"SPLASH_SWING_OPEN\"\
+      ], [\"data\", \"STICKER_SEARCH_HOT_KEYWORDS\"], [\"data\", \"REWARD_AD_PAG_EDITOR\"\
+      ], [\"data\", \"REWARD_AD_PHOTO_EDITOR\"], [\"data\", \"REWARD_AD_CUTOUT_NUM\"\
+      ], [\"data\", \"MAIN_EVENTS\"], [\"data\", \"QA_TOOLTIP_BOTTOM\"], [\"data\"\
+      , \"OC_FOLLOW_OFFICIAL\"], [\"data\", \"AD_MENU_SELECTIONS\"], [\"data\", \"\
+      FEATURE_TEMPLATES\"], [\"data\", \"FEEDBACK_URL\"], [\"data\", \"AVATAR_MALL_UPDATE\"\
+      ], [\"data\", \"WATERMARK_MALL_UPDATE\"], [\"data\", \"OC_MALL_UPDATE\"], [\"\
+      data\", \"3D_AVATAR_UPDATE\"], [\"data\", \"BENEFIT_LIST\"], [\"data\", \"SHARE_BANNER\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

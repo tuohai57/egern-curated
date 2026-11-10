@@ -6,28 +6,21 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$
-    filter: '(
-
-      (
-
-      delpaths([["data","functionOperatorInfoList"]])
-
-      ) | (
-
-      delpaths([["data","memberOperator"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityTabInfoList"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"functionOperatorInfoList\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"memberOperator\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"activityTabInfoList\"]])\n)\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$
-    filter: .data.config[] |= if .result.tools then .result.tools |= map(select(.name
-      == "邮件追踪" or .name == "替身邮箱")) else . end | del(.data.config[] | select(.functionName
-      == "Function-AD"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.config[] |= if .result.tools\
+      \ then .result.tools |= map(select(.name == \"邮件追踪\" or .name == \"替身邮箱\"))\
+      \ else . end | del(.data.config[] | select(.functionName == \"Function-AD\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
 - match: ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$
   status_code: 200

@@ -79,34 +79,19 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get
-    filter: '(
-
-      (
-
-      delpaths([["data","data","ad"]])
-
-      ) | (
-
-      delpaths([["data","data","watermark"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","data","ykad"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"data\"\
+      ,\"ad\"]])\n) | (\ndelpaths([[\"data\",\"data\",\"watermark\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"data\",\"ykad\"]])\n)\n) ]) as $__egern_results\n    \
+      \   | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?
-    filter: '(
-
-      delpaths([["data","tipContent"]])
-
-      ) | (
-
-      delpaths([["data","tipContentNew"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"tipContent\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"tipContentNew\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - push.m.youku.com

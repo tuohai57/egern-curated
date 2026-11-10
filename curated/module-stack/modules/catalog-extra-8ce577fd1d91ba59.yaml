@@ -10,27 +10,17 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig
-    filter: '(
-
-      (
-
-      if (getpath(["data","JDMessage","socketmonitor"]) | has("isSocketEstablishedAhead"))
-      then (setpath(["data","JDMessage","socketmonitor","isSocketEstablishedAhead"];
-      0)) else . end
-
-      ) | (
-
-      if (getpath(["data","JDMessage","socketmonitor"]) | has("isSocketReport")) then
-      (setpath(["data","JDMessage","socketmonitor","isSocketReport"]; 0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["data","JDHttpToolKit","httpdns"]) | has("httpdns")) then (setpath(["data","JDHttpToolKit","httpdns","httpdns"];
-      0)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\nif (getpath([\"data\",\"JDMessage\"\
+      ,\"socketmonitor\"]) | has(\"isSocketEstablishedAhead\")) then (setpath([\"\
+      data\",\"JDMessage\",\"socketmonitor\",\"isSocketEstablishedAhead\"]; 0)) else\
+      \ . end\n) | (\nif (getpath([\"data\",\"JDMessage\",\"socketmonitor\"]) | has(\"\
+      isSocketReport\")) then (setpath([\"data\",\"JDMessage\",\"socketmonitor\",\"\
+      isSocketReport\"]; 0)) else . end\n)\n) | (\nif (getpath([\"data\",\"JDHttpToolKit\"\
+      ,\"httpdns\"]) | has(\"httpdns\")) then (setpath([\"data\",\"JDHttpToolKit\"\
+      ,\"httpdns\",\"httpdns\"]; 0)) else . end\n)\n) ]) as $__egern_results\n   \
+      \    | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06])
   status_code: 200

@@ -19,16 +19,32 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch
-    filter: del(.data.data.data.mainSearch.bizData.searchContents, .data.data.data.operationList)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.data.data.mainSearch.bizData.searchContents,\
+      \ .data.data.data.operationList)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn
-    filter: del(.data.data.banner, .data.data.activity, .data.data.vip)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.data.banner, .data.data.activity,\
+      \ .data.data.vip)\n) ]) as $__egern_results\n       | if ($__egern_results |\
+      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/longquan-mtop\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn
-    filter: del(.data.result.placeContentMap["780001"].contentList)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.result.placeContentMap[\"\
+      780001\"].contentList)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads
-    filter: if .data.result[0].materialId == "39017" then . else .data = {} end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .data.result[0].materialId == \"\
+      39017\" then . else .data = {} end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - netflow-mtop.cainiao.com

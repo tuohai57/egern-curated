@@ -6,8 +6,11 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/gl-cn-api\.ecovacs\.cn\/v3\/private\/
-    filter: .data.navigateInfoResponseList |= map(select(.positionType == "Robot"
-      or .positionType == "Mine"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.navigateInfoResponseList |=\
+      \ map(select(.positionType == \"Robot\" or .positionType == \"Mine\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/api-app\.dc-cn\.cn\.ecouser\.net\/api\/ecms\/app\/ad\/
   status_code: 200

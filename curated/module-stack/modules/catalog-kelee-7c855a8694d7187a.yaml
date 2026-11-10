@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LiveLab.png
 map_locals:
-- match: (?i)^https:\/\/api\.livelab\.com\.cn\/pgc\/advert\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.livelab\.com\.cn\/search\/appHotWords\/app\/queryHotWords$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.livelab\.com\.cn\/appShow\/hotSearch\/app\/rankList$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.livelab\.com\.cn\/appShow\/app\/homepage\/banners\?bannerModuleId=(82|84|53)
+- match: (?i:^https:\/\/api\.livelab\.com\.cn\/pgc\/advert\/)|(?i:^https:\/\/api\.livelab\.com\.cn\/search\/appHotWords\/app\/queryHotWords$)|(?i:^https:\/\/api\.livelab\.com\.cn\/appShow\/hotSearch\/app\/rankList$)|(?i:^https:\/\/api\.livelab\.com\.cn\/appShow\/app\/homepage\/banners\?bannerModuleId=(82|84|53))
   status_code: 200
   body: '{}'
   headers:
@@ -30,4 +15,8 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.livelab\.com\.cn\/appShow\/app\/homepage\/modules\?tabId=5$
-    filter: (.data |= map(select(.id | IN(51, 52, 81, 82, 83, 84))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.id | IN(51,\
+      \ 52, 81, 82, 83, 84))))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

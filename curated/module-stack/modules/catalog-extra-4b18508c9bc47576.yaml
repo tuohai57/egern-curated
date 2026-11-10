@@ -16,24 +16,28 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/yyapp-idx\.yy\.com\/mobyy\/nav\/index\/idx\?
-    filter: .data[].modules |= map(select(.name != "新版本滚动条" and .name != "通栏轮播" and
-      .name != "新静默位"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data[].modules |= map(select(.name\
+      \ != \"新版本滚动条\" and .name != \"通栏轮播\" and .name != \"新静默位\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/tab\.yy\.com\/tabs\?
-    filter: '(
-
-      delpaths([["data","tabsForSelect"]])
-
-      ) | (
-
-      .data.tabs |= map(select(.alias == "follow" or .alias == "im" or .alias == "me"))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"tabsForSelect\"\
+      ]])\n) | (\n.data.tabs |= map(select(.alias == \"follow\" or .alias == \"im\"\
+      \ or .alias == \"me\"))\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/personal-center\.yy\.com\/personalCenter\/list\?
-    filter: .data.modules |= map(select(.moduleName != "Banner轮播")) | .data.modules
-      |= map(if has("entrances") then .entrances |= map(select(.bizCode|IN("jishijiedaikuan","duxiaoman2","chongzhi","freeData")|not))
-      else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.modules |= map(select(.moduleName\
+      \ != \"Banner轮播\")) | .data.modules |= map(if has(\"entrances\") then .entrances\
+      \ |= map(select(.bizCode|IN(\"jishijiedaikuan\",\"duxiaoman2\",\"chongzhi\"\
+      ,\"freeData\")|not)) else . end)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/yyapp-fastnet\.yy\.com\/dispatch\?
   status_code: 200

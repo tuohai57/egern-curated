@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/findEquitysV5
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/mycardv6
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/chat\/gse\/recquery
+- match: (?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/findEquitysV5)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/mycardv6)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/chat\/gse\/recquery)
   status_code: 200
   body: '{}'
   headers:
@@ -24,27 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/gethotactcards
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/extendedcards
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getwashcarlist
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getdealertab
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getoillist
+- match: (?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/gethotactcards)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/extendedcards)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getwashcarlist)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getdealertab)|(?:^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getoillist)
   status_code: 200
   body: '{}'
   headers:
@@ -84,12 +54,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=vrcore\.list
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=platform\.search
+- match: (?:^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=vrcore\.list)|(?:^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=platform\.search)
   status_code: 200
   body: '{}'
   headers:

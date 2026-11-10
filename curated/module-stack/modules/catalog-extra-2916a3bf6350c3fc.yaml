@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoTrans.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s
+- match: (?:^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s)|(?:^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s)|(?:^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s)
   status_code: 200
   body: '{}'
   headers:

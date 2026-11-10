@@ -6,35 +6,14 @@ homepage: https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aa
 body_rewrites:
 - response_jq:
     match: ^https:\/\/consumer\.fcbox\.com\/v1\/dynamicConfig\/findTabbarConfig\/mainPage$
-    filter: '(
-
-      (
-
-      delpaths([["data","lifeService"]])
-
-      ) | (
-
-      delpaths([["data","mall"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","wash"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"lifeService\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"mall\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      wash\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/v\d\/clientPage\/modulesAggregated\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/v\d\/clientPage\/jinGangFirst\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/v2\/home\/mallInfo$
+- match: (?:^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/v\d\/clientPage\/modulesAggregated\?)|(?:^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/v\d\/clientPage\/jinGangFirst\?)|(?:^https:\/\/consumer\.fcbox\.com\/v2\/home\/mallInfo$)
   status_code: 200
   body: '{}'
   headers:
@@ -44,27 +23,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/hs-portal\/app\/config\/page\/home\/v2\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/post\/suggestion\/query$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/retentionPopup$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/clientPopup\/v\d\/queryPopupWithPriority$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/guidePopup\/popup$
+- match: (?:^https:\/\/consumer\.fcbox\.com\/hs-portal\/app\/config\/page\/home\/v2\?)|(?:^https:\/\/consumer\.fcbox\.com\/post\/suggestion\/query$)|(?:^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/retentionPopup$)|(?:^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/clientPopup\/v\d\/queryPopupWithPriority$)|(?:^https:\/\/consumer\.fcbox\.com\/fcboxactivityweb\/api\/guidePopup\/popup$)
   status_code: 200
   body: '{}'
   headers:

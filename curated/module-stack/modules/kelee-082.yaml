@@ -4,42 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png
 map_locals:
-- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/hacking-newbie\/v1\/app\/coupon\/module\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v3\/background_words\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v3\/background_words\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v1\/rank_words\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/sns-rec\/v1\/attention\/feed\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/sns-rec\/v1\/search\/word-skip\/new-list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.dewu\.com\/sns-rec\/v1\/search\/hotword-list\?
+- match: (?i:^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/)|(?i:^https:\/\/app\.dewu\.com\/hacking-newbie\/v1\/app\/coupon\/module\?)|(?i:^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v3\/background_words\?)|(?i:^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v3\/background_words\?)|(?i:^https:\/\/app\.dewu\.com\/api\/v1\/app\/search\/lexicon\/v1\/rank_words\?)|(?i:^https:\/\/app\.dewu\.com\/sns-rec\/v1\/attention\/feed\?)|(?i:^https:\/\/app\.dewu\.com\/sns-rec\/v1\/search\/word-skip\/new-list\?)|(?i:^https:\/\/app\.dewu\.com\/sns-rec\/v1\/search\/hotword-list\?)
   status_code: 200
   body: '{}'
   headers:
@@ -50,15 +15,27 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/biz-aggregate\/me\/user-index\?
-    filter: (.data.modules |= map(if .key == "wallet" then .data.menus |= map(select(.key
-      == "coupon" or .key == "allowance" or .key == "gift" or .key == "balance"))
-      else . end) | .data.modules |= map(select(.key != "merchant" and .key != "discountCoupon")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.modules |= map(if .key == \"\
+      wallet\" then .data.menus |= map(select(.key == \"coupon\" or .key == \"allowance\"\
+      \ or .key == \"gift\" or .key == \"balance\")) else . end) | .data.modules |=\
+      \ map(select(.key != \"merchant\" and .key != \"discountCoupon\")))\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.dewu\.com\/api\/v1\/app\/account\/wallet\/page\/entrance\?
-    filter: '(.data.groupInfoDTOS |= map(.moduleInfoDTO = {assetModule: .moduleInfoDTO.assetModule})
-      | .data.moduleNames = [.data.moduleNames[] | select(. == "assetModule")] | .
-      as $full | $full | .data.groupNames |= (map(select(. == "MAIN" or . == "ASYNC_COMMON"
-      or . == "ASYNC_GOODS_FEEDS"))))'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.groupInfoDTOS |= map(.moduleInfoDTO\
+      \ = {assetModule: .moduleInfoDTO.assetModule}) | .data.moduleNames = [.data.moduleNames[]\
+      \ | select(. == \"assetModule\")] | . as $full | $full | .data.groupNames |=\
+      \ (map(select(. == \"MAIN\" or . == \"ASYNC_COMMON\" or . == \"ASYNC_GOODS_FEEDS\"\
+      ))))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.dewu\.com\/identify-discovery\/v1\/discovery\/index\?
-    filter: (.data.groups |= map(.items |= map(select(.title == "消息中心"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.groups |= map(.items |= map(select(.title\
+      \ == \"消息中心\"))))\n) ]) as $__egern_results\n       | if ($__egern_results |\
+      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

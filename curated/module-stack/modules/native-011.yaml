@@ -10,8 +10,12 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/pan\.baidu\.com\/feed\/kingkongdistrict\?
-    filter: .data.data |= map(select(.type != "novel" and .type != "shortplay" and
-      .type != "print" and .type != "job_hunt"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.data |= map(select(.type !=\
+      \ \"novel\" and .type != \"shortplay\" and .type != \"print\" and .type != \"\
+      job_hunt\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 scriptings:
 - http_response:
     name: 百度网盘-响应
@@ -20,12 +24,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 百度网盘-响应
-    match: (?i)^https:\/\/pan\.baidu\.com\/feed\/cardinfos
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2fdc54b1c7acd53df4ac5379485df8c50834859eed20a8b590de2da0df217ac6.js
-    body_required: true
-- http_response:
-    name: 百度网盘-响应
-    match: (?i)^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter
+    match: (?i:^https:\/\/pan\.baidu\.com\/feed\/cardinfos)|(?i:^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2fdc54b1c7acd53df4ac5379485df8c50834859eed20a8b590de2da0df217ac6.js
     body_required: true
 - http_response:
@@ -48,43 +47,19 @@ mitm:
   - pan.baidu.com
   - afd.baidu.com
 map_locals:
-- match: (?i)^https:\/\/pan\.baidu\.com\/api\/getconfig\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/api\/plugin\/get\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/pan\.baidu\.com\/recommend\/query\/list\?
+- match: (?i:^https:\/\/pan\.baidu\.com\/api\/getconfig\?)|(?i:^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?)|(?i:^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\?)|(?i:^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\?)|(?i:^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv\?)|(?i:^https:\/\/pan\.baidu\.com\/api\/plugin\/get\?)|(?i:^https:\/\/pan\.baidu\.com\/recommend\/query\/list\?)
   status_code: 200
   body: '{}'
 - match: (?i)^https?:\/\/.*baidu\.com\/rest\/.*\/membership\/proxy\/guide
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list
-  status_code: 200
-  body: ''
-- match: (?i)^https:\/\/pan\.baidu\.com\/feed\/hotlist
+- match: (?i:^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list)|(?i:^https:\/\/pan\.baidu\.com\/feed\/hotlist)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/.*zhangyuyidong\.cn\/api\/zysdk
   status_code: 200
   body: ''
-- match: (?i)^https:\/\/pan\.baidu\.com\/queryintent\/queryhint
-  status_code: 200
-  body: ''
-- match: (?i)^https:\/\/pan\.baidu\.com\/coins\/center\/notice
+- match: (?i:^https:\/\/pan\.baidu\.com\/queryintent\/queryhint)|(?i:^https:\/\/pan\.baidu\.com\/coins\/center\/notice)
   status_code: 200
   body: ''
 - match: (?i)^https:\/\/pan\.baidu\.com\/recommend\/shortseries\/list

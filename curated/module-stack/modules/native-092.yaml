@@ -66,10 +66,17 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https?:\/\/api\.qeeniao\.com\/nap\/ad
-    filter: .data={}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data={}\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba.*mytab
-    filter: .data.model.children |= map(select(.name | contains("营销") | not))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.model.children |= map(select(.name\
+      \ | contains(\"营销\") | not))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_regex:
     match: (?i)^https?:\/\/beta-api\.crunchyroll\.com\/cms
     find: offset_ms":\d+
@@ -132,10 +139,16 @@ body_rewrites:
     replace: vip_pop_up:2
 - response_jq:
     match: (?i)^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd
-    filter: . = {}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/apiproxy\.zuche\.com\/resource\/cardes\/toufang\/marketing
-    filter: . = {}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 scriptings:
 - http_response:
     name: 墨鱼去开屏2.0-响应
@@ -221,12 +234,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 墨鱼去开屏2.0-响应
-    match: (?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1f02ab57c96cffe522bb0ad30acef049d9fb8d35b0132c57552bbe7e26779175.js
-    body_required: true
-- http_response:
-    name: 墨鱼去开屏2.0-响应
-    match: (?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush
+    match: (?i:^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising)|(?i:^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1f02ab57c96cffe522bb0ad30acef049d9fb8d35b0132c57552bbe7e26779175.js
     body_required: true
 - http_response:
@@ -348,12 +356,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: 墨鱼去开屏2.0 / tiny GIF
-    match: (?i)^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/(search|interfaceAdMonitor|status|hupuBbsPm)\/(hotkey|init|hupuBbsPm)\.
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: 墨鱼去开屏2.0 / tiny GIF
-    match: (?i)^https?:\/\/games\.mobileapi\.hupu\.com\/interfaceAdMonitor
+    match: (?i:^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/(search|interfaceAdMonitor|status|hupuBbsPm)\/(hotkey|init|hupuBbsPm)\.)|(?i:^https?:\/\/games\.mobileapi\.hupu\.com\/interfaceAdMonitor)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -853,10 +856,7 @@ map_locals:
 - match: (?i)^https?:\/\/sso.ifanr.com\/jiong\/IOS\/appso\/splash\/
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup
+- match: (?i:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/)|(?i:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/.*aastocks\.com\/ad\/
@@ -868,22 +868,13 @@ map_locals:
 - match: (?i)^https?:\/\/tiebac\.baidu\.com\/c\/f\/ad\/getFeedAd
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement
+- match: (?i:^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo)|(?i:^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry
+- match: (?i:^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list)|(?i:^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad)|(?i:^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/gateway\.shouqiev\.com\/fsda\/app\/bootImage\.json
@@ -967,16 +958,10 @@ map_locals:
 - match: (?i)^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/.*?\/v\d\/(version|top_notice\?|advert\?position=[^2]+)
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash
+- match: (?i:^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash)|(?i:^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.*)
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.*
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices)
+- match: (?i:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget)|(?i:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices))
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd
@@ -1009,10 +994,7 @@ map_locals:
 - match: (?i)^https?:\/\/cdn\.dianshihome\.com\/static\/ad\/
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get
+- match: (?i:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome)|(?i:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)
@@ -1051,22 +1033,13 @@ map_locals:
 - match: (?i)^https?:\/\/elemecdn.com\/.+\/sitemap
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4}
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/fuss10.elemecdn.com\/.+.mp4
+- match: (?i:^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4})|(?i:^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4})|(?i:^https?:\/\/fuss10.elemecdn.com\/.+.mp4)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/www1.elecfans.com\/www\/delivery\/
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/63c4e3b558bb610008969f89
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn
+- match: (?i:^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/63c4e3b558bb610008969f89)|(?i:^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn)
   status_code: 200
   body: ''
 - match: (?i)^http:\/\/gateway2\.etnet\.com\.hk\/etnetApp\/theme\/seasonal\/v30\/theme.json
@@ -1075,10 +1048,7 @@ map_locals:
 - match: (?i)^https?:\/\/gateway-api\.dushu365\.com\/chief-orch\/config\/config\/v100\/appConfig
   status_code: 200
   body: ''
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource
-  status_code: 200
-  body: ''
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.availablesplashstrategies
+- match: (?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.availablesplashstrategies)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=advis
@@ -1195,10 +1165,7 @@ map_locals:
 - match: (?i)^https?:\/\/prod\.zh\.igpsport\.com\/.+\/GetStartAd
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/channel\/module\/opens
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/popup
+- match: (?i:^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/channel\/module\/opens)|(?i:^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/popup)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts)
@@ -1282,10 +1249,7 @@ map_locals:
 - match: (?i)^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/open3\.vistastory\.com\/v3\/api\/index\/loading_ad
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/open3\.vistastory\.com\/v3\/api\.*get_popup
+- match: (?i:^https?:\/\/open3\.vistastory\.com\/v3\/api\/index\/loading_ad)|(?i:^https?:\/\/open3\.vistastory\.com\/v3\/api\.*get_popup)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window
@@ -1354,10 +1318,7 @@ map_locals:
 - match: (?i)^https?:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush\/*
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/lens\.leoao\.com\/lens\/.+(getUserScheme|queryAppBanners|Advert|popup)
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/lens\.leoao\.com\/lens\/.*Advertising
+- match: (?i:^https?:\/\/lens\.leoao\.com\/lens\/.+(getUserScheme|queryAppBanners|Advert|popup))|(?i:^https?:\/\/lens\.leoao\.com\/lens\/.*Advertising)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/apptec\.leapmotor\.cn\/appNewInterface\/getAppStartPageInfo
@@ -1375,10 +1336,7 @@ map_locals:
 - match: (?i)^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp
+- match: (?i:^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg)|(?i:^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg)
@@ -1399,10 +1357,7 @@ map_locals:
 - match: (?i)^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/public\/(getStartUpMessage|getStartPageAds|getShelfActivity)
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/ad
+- match: (?i:^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/public\/(getStartUpMessage|getStartPageAds|getShelfActivity))|(?i:^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/ad)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/dispatcher\.camera360\.com\/api\/v1\/list$
@@ -1495,10 +1450,7 @@ map_locals:
 - match: (?i)^https?:\/\/api\.21ec74\.com\/v2\.5\/ad
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/slapi\.oray\.net\/client\/ad
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/slapi\.oray\.net\/adver
+- match: (?i:^https?:\/\/slapi\.oray\.net\/client\/ad)|(?i:^https?:\/\/slapi\.oray\.net\/adver)
   status_code: 200
   body: ''
 - match: (?i)^https:\/\/access\.mypikpak\.com\/access_controller\/v1\/area_accessible
@@ -1597,10 +1549,7 @@ map_locals:
 - match: (?i)^https:\/\/apis\.lifeweek\.com\.cn\/api\/baseConfig\/getIosNewConfig
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryAdImages
+- match: (?i:^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade)|(?i:^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryAdImages)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen
@@ -1624,10 +1573,7 @@ map_locals:
 - match: (?i)^https?:\/\/app\.homeinns\.com\/api\/landing
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/dateSignature\/random
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog
+- match: (?i:^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/dateSignature\/random)|(?i:^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api1\.34580\.com\/wx\/Home\/AdvertisementPhotoshootRequest
@@ -1666,10 +1612,7 @@ map_locals:
 - match: (?i)^https:\/\/top-widgets-api\.xiaozujian\.com\/api\/ad\/config
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getFullScreenPic|getQQNewsRemoteConfig)
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/r\.inews\.qq\.com\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc)
+- match: (?i:^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getFullScreenPic|getQQNewsRemoteConfig))|(?i:^https?:\/\/r\.inews\.qq\.com\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc))
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/mrobot\.pconline\.com\.cn\/s-900\/onlineinfo\/cms\/launch
@@ -1726,10 +1669,7 @@ map_locals:
 - match: (?i)^https?:\/\/client\.mail\.163.com\/apptrack\/confinfo\/(searchMultiAds.do|showAds.do)
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/support\.you\.163\.com\/appversync\/check\.do
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
+- match: (?i:^https?:\/\/support\.you\.163\.com\/appversync\/check\.do)|(?i:^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/m\.you\.163\.com\/activity\/popWindow
@@ -1738,10 +1678,7 @@ map_locals:
 - match: (?i)^https?:\/\/yanxuan\.nosdn\.127\.net\/.*\.mp4
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword
+- match: (?i:^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info)|(?i:^https?:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList)
@@ -1798,10 +1735,7 @@ map_locals:
 - match: (?i)^https?:\/\/lchttpapi\.xczim\.com\/1\.1\/functions\/getLaunchImageForIOS
   status_code: 200
   body: ''
-- match: (?i)^https:\/\/api\.xiaoyi\.com\/v5\/app\/mobile\/ads
-  status_code: 200
-  body: ''
-- match: (?i)^https:\/\/api\.xiaoyi\.com\/v5\/app\/config\?userid=.*
+- match: (?i:^https:\/\/api\.xiaoyi\.com\/v5\/app\/mobile\/ads)|(?i:^https:\/\/api\.xiaoyi\.com\/v5\/app\/config\?userid=.*)
   status_code: 200
   body: ''
 - match: (?i)^https:\/\/api\.xiachufang\.com\/v\d\/ad\/
@@ -1837,10 +1771,7 @@ map_locals:
 - match: (?i)^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/.*yuanfudao\.com\/iphone\/splashes
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/.*yuanfudao\.com\/leo-mis\/iphone\/splashes
+- match: (?i:^https?:\/\/.*yuanfudao\.com\/iphone\/splashes)|(?i:^https?:\/\/.*yuanfudao\.com\/leo-mis\/iphone\/splashes)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/.*1rtb\.net\/sdk\/req_ad\?
@@ -1894,10 +1825,7 @@ map_locals:
 - match: (?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=home_launchConfig
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/api\.yikaobang\.com\.cn\/client\/main\/homePageSmallAd
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/api\.yikaobang\.com\.cn\/index\.php\/Client\/main\/startPage
+- match: (?i:^https?:\/\/api\.yikaobang\.com\.cn\/client\/main\/homePageSmallAd)|(?i:^https?:\/\/api\.yikaobang\.com\.cn\/index\.php\/Client\/main\/startPage)
   status_code: 200
   body: ''
 - match: (?i)^https:\/\/new-app-api\.ylyk\.com\/v1\/user\/myinfo\/adviser
@@ -1978,19 +1906,13 @@ map_locals:
 - match: (?i)^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos$
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv)
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd)
+- match: (?i:^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv))|(?i:^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd))
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/a\.qiumibao\.com\/activities\/config\.php$
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/a\.qiumibao\.com\/ios\/config\/\?version_code=
+- match: (?i:^https?:\/\/a\.qiumibao\.com\/activities\/config\.php$)|(?i:^https?:\/\/a\.qiumibao\.com\/ios\/config\/\?version_code=)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/syh\.zybang\.com\/com\/adx\/
@@ -2008,13 +1930,7 @@ map_locals:
 - match: (?i)^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list
   status_code: 200
   body: ''
-- match: (?i)^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad
-  status_code: 200
-  body: ''
-- match: (?i)^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad
+- match: (?i:^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad)|(?i:^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad)|(?i:^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad)
   status_code: 200
   body: ''
 - match: (?i)^https?:\/\/api\.ireader\.mobi\/activity\/ad\/openScreen

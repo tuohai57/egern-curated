@@ -10,20 +10,14 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/yuyin-api\.baizhanlive\.com\/postsquare\/college\/page\/tabsV3\?
-    filter: .data.tabList |= map(select(.code == "post" or .code == "teamup" or .code
-      == "college" or .code == "aiSecretRoom"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.tabList |= map(select(.code\
+      \ == \"post\" or .code == \"teamup\" or .code == \"college\" or .code == \"\
+      aiSecretRoom\"))\n) ]) as $__egern_results\n       | if ($__egern_results |\
+      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/flashscreen\/get\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/homepage\/banner\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/yuyin-api\.baizhanlive\.com\/search\/search\/hotword\?
+- match: (?:^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/flashscreen\/get\?)|(?:^https:\/\/yuyin-api\.baizhanlive\.com\/homepage\/homepage\/banner\?)|(?:^https:\/\/yuyin-api\.baizhanlive\.com\/search\/search\/hotword\?)
   status_code: 200
   body: '{}'
   headers:

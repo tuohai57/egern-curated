@@ -6,5 +6,8 @@ mitm:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2
-    filter: .data.list = []
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.list = []\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

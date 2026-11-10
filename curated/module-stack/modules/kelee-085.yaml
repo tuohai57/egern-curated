@@ -123,20 +123,29 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\?
-    filter: (.data[][]?="stun.chat.bilibili.com:3478")
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data[][]?=\"stun.chat.bilibili.com:3478\"\
+      )\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(show|event\/list2)\?
-    filter: (.data |= with_entries(if .key | IN("show", "event_list") then .value
-      = [] else . end))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= with_entries(if .key | IN(\"\
+      show\", \"event_list\") then .value = [] else . end))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?
-    filter: "(.data.tab = [\n    {\n        pos: 1,\n        id: 477,\n        name:\
-      \ \"推荐\",\n        tab_id: \"推荐tab\",\n        uri: \"bilibili://pegasus/promo\"\
-      ,\n        default_selected: 1\n    },\n    {\n        pos: 2,\n        id:\
-      \ 478,\n        name: \"热门\",\n        tab_id: \"热门tab\",\n        uri: \"bilibili://pegasus/hottopic\"\
-      \n    },\n    {\n        pos: 3,\n        id: 545,\n        name: \"动画\",\n\
-      \        tab_id: \"bangumi\",\n        uri: \"bilibili://pgc/home\"\n    },\n\
-      \    {\n        pos: 4,\n        id: 151,\n        name: \"影视\",\n        tab_id:\
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.tab = [\n    {\n        pos:\
+      \ 1,\n        id: 477,\n        name: \"推荐\",\n        tab_id: \"推荐tab\",\n\
+      \        uri: \"bilibili://pegasus/promo\",\n        default_selected: 1\n \
+      \   },\n    {\n        pos: 2,\n        id: 478,\n        name: \"热门\",\n  \
+      \      tab_id: \"热门tab\",\n        uri: \"bilibili://pegasus/hottopic\"\n  \
+      \  },\n    {\n        pos: 3,\n        id: 545,\n        name: \"动画\",\n   \
+      \     tab_id: \"bangumi\",\n        uri: \"bilibili://pgc/home\"\n    },\n \
+      \   {\n        pos: 4,\n        id: 151,\n        name: \"影视\",\n        tab_id:\
       \ \"film\",\n        uri: \"bilibili://pgc/cinema-tab\"\n    },\n    {\n   \
       \     pos: 5,\n        id: 731,\n        name: \"直播\",\n        tab_id: \"直播tab\"\
       ,\n        uri: \"bilibili://live/home\"\n    }\n] | \n.data.top = [\n    {\n\
@@ -154,42 +163,68 @@ body_rewrites:
       \        tab_id: \"我的Bottom\",\n        uri: \"bilibili://user_center/\",\n\
       \        icon: \"http://i0.hdslb.com/bfs/archive/4b0b2c49ffeb4f0c2e6a4cceebeef0aab1c53fe1.png\"\
       ,\n        icon_selected: \"http://i0.hdslb.com/bfs/archive/a54a8009116cb896e64ef14dcf50e5cade401e00.png\"\
-      \n    }\n]\n\n)"
+      \n    }\n]\n\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?
-    filter: (if .data.items then .data.items |= map(select((.banner_item == null)
-      and (.ad_info == null) and (.card_goto == "av") and (.card_type | IN("small_cover_v2",
-      "large_cover_single_v9", "large_cover_v1")))) end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(if .data.items then .data.items |=\
+      \ map(select((.banner_item == null) and (.ad_info == null) and (.card_goto ==\
+      \ \"av\") and (.card_type | IN(\"small_cover_v2\", \"large_cover_single_v9\"\
+      , \"large_cover_v1\")))) end)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\?
-    filter: (del(.data.payment))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.data.payment))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.bilibili\.com\/pgc\/page\/channel\?
-    filter: (.data.modules |= map(select(.type != "TIP") | if .type == "BANNER" then
-      .module_data.items |= map(select(.url | startswith("https://www.bilibili.com/blackboard/era/")
-      | not)) else . end))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.modules |= map(select(.type\
+      \ != \"TIP\") | if .type == \"BANNER\" then .module_data.items |= map(select(.url\
+      \ | startswith(\"https://www.bilibili.com/blackboard/era/\") | not)) else .\
+      \ end))\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story\?
-    filter: (if .data.items then .data.items |= map(select((.ad_info == null) and
-      (.card_goto | IN("vertical_ad_av", "vertical_ad_live", "vertical_ad_picture")
-      | not)) | del(.story_cart_icon, .free_flow_toast, .image_infos, .course_info,
-      .game_info)) end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(if .data.items then .data.items |=\
+      \ map(select((.ad_info == null) and (.card_goto | IN(\"vertical_ad_av\", \"\
+      vertical_ad_live\", \"vertical_ad_picture\") | not)) | del(.story_cart_icon,\
+      \ .free_flow_toast, .image_infos, .course_info, .game_info)) end)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.live\.bilibili\.com\/xlive\/open-interface\/v2\/tracker\/conf\?
-    filter: (.data.domains=["wss://tracker.chat.bilibili.com"])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.domains=[\"wss://tracker.chat.bilibili.com\"\
+      ])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
-    filter: (delpaths([["data", "common_equip"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"common_equip\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(\/ipad)?\?
-    filter: "(.data |= (\n    del(.answer, .live_tip, .vip_section, .vip_section_v2,\
-      \ .modular_vip_section) | \n    .vip_type = 2 | \n    .vip |= if . != null and\
-      \ .status == 0 \n        then . + { status: 1, type: 2, due_date: 9005270400000,\
-      \ role: 15 }\n        else . \n    end | \n    if .sections_v2 then .sections_v2\
-      \ = \n        [\n            {\n                \"items\": [\n             \
-      \       {\n                        \"id\": 396,\n                        \"\
-      title\": \"离线缓存\",\n                        \"uri\": \"bilibili://user_center/download\"\
-      ,\n                        \"icon\": \"http://i0.hdslb.com/bfs/archive/5fc84565ab73e716d20cd2f65e0e1de9495d56f8.png\"\
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= (\n    del(.answer, .live_tip,\
+      \ .vip_section, .vip_section_v2, .modular_vip_section) | \n    .vip_type = 2\
+      \ | \n    .vip |= if . != null and .status == 0 \n        then . + { status:\
+      \ 1, type: 2, due_date: 9005270400000, role: 15 }\n        else . \n    end\
+      \ | \n    if .sections_v2 then .sections_v2 = \n        [\n            {\n \
+      \               \"items\": [\n                    {\n                      \
+      \  \"id\": 396,\n                        \"title\": \"离线缓存\",\n            \
+      \            \"uri\": \"bilibili://user_center/download\",\n               \
+      \         \"icon\": \"http://i0.hdslb.com/bfs/archive/5fc84565ab73e716d20cd2f65e0e1de9495d56f8.png\"\
       ,\n                        \"common_op_item\": {}\n                    },\n\
       \                    {\n                        \"id\": 397,\n             \
       \           \"title\": \"历史记录\",\n                        \"uri\": \"bilibili://user_center/history\"\
@@ -274,8 +309,14 @@ body_rewrites:
       \ \"title\": \"设置\",\n                \"uri\": \"bilibili://user_center/setting\"\
       ,\n                \"icon\": \"http://i0.hdslb.com/bfs/feed-admin/34e8faea00b3dd78977266b58d77398b0ac9410b.png\"\
       ,\n                \"mng_resource\": { \"icon_id\": 0, \"icon\": \"\" }\n  \
-      \          }\n        ] \n    end \n))"
+      \          }\n        ] \n    end \n))\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?
-    filter: '(.data.vip |= if . != null and .status == 0 then . + { status: 1, type:
-      2, due_date: 9005270400000, role: 15 } else . end)'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.vip |= if . != null and .status\
+      \ == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else\
+      \ . end)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

@@ -8,12 +8,7 @@ rules:
     match: wxs.qq.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword
+- match: (?i:^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\?)|(?i:^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword)
   status_code: 200
   body: '{}'
   headers:

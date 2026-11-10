@@ -25,37 +25,18 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v\d\/user\/my-center\?
-    filter: '(
-
-      delpaths([["data","func_area",1]])
-
-      ) | (
-
-      delpaths([["data","func_area",2]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"func_area\"\
+      ,1]])\n) | (\ndelpaths([[\"data\",\"func_area\",2]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/api-cfg\.wtzw\.com\/v\d\/splash\/
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/book-store\/config
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/book-store\/push-book
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/operation
+- match: (?:^https:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose)|(?:^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/book-store\/config)|(?:^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/book-store\/push-book)|(?:^https:\/\/api-bc\.wtzw\.com\/api\/v\d\/operation)
   status_code: 200
   body: '{}'
   headers:
@@ -70,12 +51,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/api-cfg\.wtzw\.com\/v\d\/offline-adv\/index
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-cfg\.wtzw\.com\/v\d\/operation\/index\?ad_personal_switch
+- match: (?:^https:\/\/api-cfg\.wtzw\.com\/v\d\/offline-adv\/index)|(?:^https:\/\/api-cfg\.wtzw\.com\/v\d\/operation\/index\?ad_personal_switch)
   status_code: 200
   body: '{}'
   headers:

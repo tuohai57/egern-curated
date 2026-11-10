@@ -27,13 +27,7 @@ rules:
 scriptings:
 - http_response:
     name: 微博 / 1
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 2
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d
+    match: (?:^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_detail)|(?:^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
     update_interval: 86400
@@ -45,13 +39,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 微博 / 4
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 5
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail
+    match: (?:^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline))|(?:^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
     update_interval: 86400
@@ -75,55 +63,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 微博 / 9
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 10
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 11
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 12
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 13
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 14
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 15
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 16
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|container/get_item)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 17
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist
+    match: (?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|container/get_item))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
     update_interval: 86400
@@ -165,36 +105,21 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 微博 / 24
-    match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 微博 / 25
-    match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic
+    match: (?:^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center)|(?:^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
     update_interval: 86400
 map_locals:
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/push\/info
+- match: (?:^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive)|(?:^https?:\/\/api\.weibo\.cn\/\d\/push\/info)
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.weibo\.cn\/.*\/media_homelist
+- match: (?:^https?:\/\/api\.weibo\.cn\/.*\/media_homelist)|(?:^https?:\/\/api\.weibo\.cn\/.*finder\/searchbarchange)
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/.*finder\/searchbarchange
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser
+- match: (?:^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload)|(?:^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime
@@ -203,10 +128,7 @@ map_locals:
 - match: ^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight
+- match: (?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl
@@ -221,5 +143,9 @@ map_locals:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/api\.weibo\.cn\/\d\/ug\/checkin\/stream
-    filter: .items |= map(select(.category != "card"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.items |= map(select(.category !=\
+      \ \"card\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png

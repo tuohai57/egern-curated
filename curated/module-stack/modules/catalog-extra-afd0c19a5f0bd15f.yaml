@@ -6,64 +6,45 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/tnc\d-(bjlgy|ali[a-z]{2})\d?\.zijieapi\.com\/get_domains\/v\d\/\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      if (getpath(["data"]) | has("opaque_data_enabled")) then (setpath(["data","opaque_data_enabled"];
-      0)) else . end
-
-      ) | (
-
-      if (getpath(["data"]) | has("ttnet_http_dns_enabled")) then (setpath(["data","ttnet_http_dns_enabled"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["data"]) | has("ttnet_quic_enabled")) then (setpath(["data","ttnet_quic_enabled"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["data"]) | has("ttnet_tt_http_dns")) then (setpath(["data","ttnet_tt_http_dns"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      .data.ttnet_dispatch_actions |= map(select(.action != "dispatch" and .action
-      != "tc"))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\nif (getpath([\"data\"\
+      ]) | has(\"opaque_data_enabled\")) then (setpath([\"data\",\"opaque_data_enabled\"\
+      ]; 0)) else . end\n) | (\nif (getpath([\"data\"]) | has(\"ttnet_http_dns_enabled\"\
+      )) then (setpath([\"data\",\"ttnet_http_dns_enabled\"]; 0)) else . end\n)\n\
+      ) | (\nif (getpath([\"data\"]) | has(\"ttnet_quic_enabled\")) then (setpath([\"\
+      data\",\"ttnet_quic_enabled\"]; 0)) else . end\n)\n) | (\nif (getpath([\"data\"\
+      ]) | has(\"ttnet_tt_http_dns\")) then (setpath([\"data\",\"ttnet_tt_http_dns\"\
+      ]; 0)) else . end\n)\n) | (\n.data.ttnet_dispatch_actions |= map(select(.action\
+      \ != \"dispatch\" and .action != \"tc\"))\n)\n) ]) as $__egern_results\n   \
+      \    | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/me\?
-    filter: delpaths([["reward_ad_banner"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"reward_ad_banner\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/feed\/song-tab\?
-    filter: del(.items[] | select(.type == "video_track_mix"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.items[] | select(.type == \"\
+      video_track_mix\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/card\?
-    filter: '(
-
-      delpaths([["preview_guide"]])
-
-      ) | (
-
-      del(.card_items[] | select(has("priority_display")))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"preview_guide\"]])\n\
+      ) | (\ndel(.card_items[] | select(has(\"priority_display\")))\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/more-panel\?
-    filter: .blocks |= map(select(.type != "related_video"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.blocks |= map(select(.type != \"\
+      related_video\"))\n) ]) as $__egern_results\n       | if ($__egern_results |\
+      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/commerce\/upsells_config\?
   status_code: 200
@@ -85,32 +66,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/treasure\/entrance\/config\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/activities\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/media_ads\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/commerce\/upsells\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/commerce\/v2\/commerce_info\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/listen-video\/reminder\?
+- match: (?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/treasure\/entrance\/config\?)|(?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/activities\?)|(?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/media_ads\?)|(?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/commerce\/upsells\?)|(?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/commerce\/v2\/commerce_info\?)|(?:^https:\/\/(beta-luna\.douyin|api5-lq\.qishui)\.com\/luna\/listen-video\/reminder\?)
   status_code: 200
   body: '{}'
   headers:

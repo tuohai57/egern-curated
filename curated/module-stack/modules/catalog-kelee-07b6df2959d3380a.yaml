@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/miHoYoBBS.png
 map_locals:
-- match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$
+- match: (?i:^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$)|(?i:^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$)
   status_code: 200
   body: '{}'
   headers:
@@ -26,15 +21,27 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppStartupData$
-    filter: (delpaths([["data", "resp_map", "/teenager/api/info"], ["data", "resp_map",
-      "/apihub/api/getAppConfig", "data", "get_app_config_response", "config", "is_show_teenager_mode_btn"],
-      ["data", "resp_map", "/apihub/api/getAppConfig", "data", "get_app_config_response",
-      "config", "teenager_popup_freq_type"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"resp_map\"\
+      , \"/teenager/api/info\"], [\"data\", \"resp_map\", \"/apihub/api/getAppConfig\"\
+      , \"data\", \"get_app_config_response\", \"config\", \"is_show_teenager_mode_btn\"\
+      ], [\"data\", \"resp_map\", \"/apihub/api/getAppConfig\", \"data\", \"get_app_config_response\"\
+      , \"config\", \"teenager_popup_freq_type\"]]))\n) ]) as $__egern_results\n \
+      \      | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppConfig$
-    filter: (setpath(["data", "config", "teenager_popup_freq_type"]; 0) | setpath(["data",
-      "config", "is_show_teenager_mode_btn"]; 0))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"config\", \"\
+      teenager_popup_freq_type\"]; 0) | setpath([\"data\", \"config\", \"is_show_teenager_mode_btn\"\
+      ]; 0))\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/bbs-api-ab\.miyoushe\.com\/teenager\/api\/info$
-    filter: (setpath(["data", "is_enabled"]; false) | setpath(["data", "is_teenager"];
-      false) | setpath(["data", "is_force"]; false))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"is_enabled\"\
+      ]; false) | setpath([\"data\", \"is_teenager\"]; false) | setpath([\"data\"\
+      , \"is_force\"]; false))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

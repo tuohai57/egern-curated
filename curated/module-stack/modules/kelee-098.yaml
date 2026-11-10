@@ -65,27 +65,12 @@ rules:
     match: ^https:\/\/scdn\.line-apps\.com\/lan\/document\/pageEvent\/line\/ios\/
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/gw\.line\.naver\.jp\/ext\/lgfp\/lad\/v\d$
+- match: (?i:^https:\/\/gw\.line\.naver\.jp\/ext\/lgfp\/lad\/v\d$)|(?i:^https:\/\/gw\.line\.naver\.jp\/lass\/api\/v\d\/ads$)|(?i:^https:\/\/gw\.line\.naver\.jp\/tr\/event$)
   status_code: 404
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/gw\.line\.naver\.jp\/lass\/api\/v\d\/ads$
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/gw\.line\.naver\.jp\/tr\/event$
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/legy\.line-apps\.com:443\/ext\/lgfp\/lad\/v\d$
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/legy\.line-apps\.com:443\/ext\/smartch\/banner\/sch\/v\d$
+- match: (?i:^https:\/\/legy\.line-apps\.com:443\/ext\/lgfp\/lad\/v\d$)|(?i:^https:\/\/legy\.line-apps\.com:443\/ext\/smartch\/banner\/sch\/v\d$)
   status_code: 404
   body: ''
   headers:

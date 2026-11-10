@@ -6,69 +6,32 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/appwk\.baidu\.com\/appapi\/index\/home\?
-    filter: '(
-
-      (
-
-      delpaths([["data","bannerInfo"]])
-
-      ) | (
-
-      delpaths([["data","bannerList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","bannerListV2"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"bannerInfo\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"bannerList\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"bannerListV2\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(appwk|tanbi)\.baidu\.com\/gsula\/sula\/syncmrecall$
-    filter: delpaths([["data","items"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"items\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/appwk\.baidu\.com\/appapi\/index\/tab\?
-    filter: delpaths([["data"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\"]])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/appwk\.baidu\.com\/appapi\/forum\/feed\?reqMode=wenkuapp_main_feed
-    filter: delpaths([["data"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\"]])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/appapi\/search\/hot\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/naapi\/search\/wkhotwords\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/appapi\/task\/viptasklist\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/activity\/interface\/wkapppopup\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/appapi\/abg\/index\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/recommenddoc\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/vipdoccard\?
+- match: (?:^https:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad\?)|(?:^https:\/\/appwk\.baidu\.com\/appapi\/search\/hot\?)|(?:^https:\/\/appwk\.baidu\.com\/naapi\/search\/wkhotwords\?)|(?:^https:\/\/appwk\.baidu\.com\/appapi\/task\/viptasklist\?)|(?:^https:\/\/appwk\.baidu\.com\/activity\/interface\/wkapppopup\?)|(?:^https:\/\/appwk\.baidu\.com\/appapi\/abg\/index\?)|(?:^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/recommenddoc\?)|(?:^https:\/\/appwk\.baidu\.com\/naapi\/recommend\/vipdoccard\?)
   status_code: 200
   body: '{}'
   headers:

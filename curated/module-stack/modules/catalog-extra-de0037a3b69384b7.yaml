@@ -6,127 +6,35 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.bevol\.com\/appmain\/app\/home\/page$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["result","versionPopUp"]])
-
-      ) | (
-
-      delpaths([["result","isShowSearchLabel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","isShowSearchFeedBack"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","centerBannerAdvert"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","programmaticAdvertising"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","mattsData"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","questionnaireMap"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","appPullDownAdvert"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"\
+      result\",\"versionPopUp\"]])\n) | (\ndelpaths([[\"result\",\"isShowSearchLabel\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"isShowSearchFeedBack\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"centerBannerAdvert\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"programmaticAdvertising\"]])\n)\n) | (\ndelpaths([[\"result\",\"mattsData\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"questionnaireMap\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"appPullDownAdvert\"]])\n)\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.bevol\.com\/appmain\/app\/home\/feed$
-    filter: '(
-
-      delpaths([["result","banners"]])
-
-      ) | (
-
-      . | .result.returnList |= (map(select(.tname == "userPart"))) | .result.returnList
-      |= map(select(. | has("adId") | not))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"result\",\"banners\"\
+      ]])\n) | (\n. | .result.returnList |= (map(select(.tname == \"userPart\")))\
+      \ | .result.returnList |= map(select(. | has(\"adId\") | not))\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.bevol\.com\/trialbox\/shop\/app\/homePage$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      delpaths([["result","firstPersonActivity"]])
-
-      ) | (
-
-      delpaths([["result","mainActivity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","brandZone"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","imageAD2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","couponPopupInfo"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\ndelpaths([[\"result\"\
+      ,\"firstPersonActivity\"]])\n) | (\ndelpaths([[\"result\",\"mainActivity\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"brandZone\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"imageAD2\"]])\n)\n) | (\ndelpaths([[\"result\",\"couponPopupInfo\"]])\n)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.bevol\.com\/appmain\/app\/home\/launch$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.bevol\.com\/appmain\/app\/home\/popup$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.bevol\.com\/personal\/page$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.bevol\.com\/seach\/foundAndTopSearch$
+- match: (?:^https:\/\/api\.bevol\.com\/appmain\/app\/home\/launch$)|(?:^https:\/\/api\.bevol\.com\/appmain\/app\/home\/popup$)|(?:^https:\/\/api\.bevol\.com\/personal\/page$)|(?:^https:\/\/api\.bevol\.com\/seach\/foundAndTopSearch$)
   status_code: 200
   body: '{}'
   headers:

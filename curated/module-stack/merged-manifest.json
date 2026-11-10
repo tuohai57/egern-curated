@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "e7e924782e52e56255e57b1ae1147bfe45ba62aa638f07568c435bd5fab4c4ed",
+  "sha256": "e656ab996d215c79759373f37005d3f5c6a2c4cd2a25f284df10678cfbd42955",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -269,35 +269,35 @@
       "app": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
       "repository_path": "curated/module-stack/modules/native-005.yaml",
-      "sha256": "08c8319b694a49cfc1da6e6f846f7b23cec9d6e8d184edb3bb2293e0757fe909",
+      "sha256": "b4d7e34e5eadfaacd2fe5a87224139e7d3e4b0c9bb2d53574f177fe1a8c9de92",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
     },
     {
       "app": "微博",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-006.yaml",
       "repository_path": "curated/module-stack/modules/native-006.yaml",
-      "sha256": "aef432af136e3d3057a6bfff299a289c6307a3e64abb6afad9de291ba5a9d45e",
+      "sha256": "42d726b1337cc727584b1f76b2a17ce4b2225974fc15b04b6f5c13407a7b3b55",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png"
     },
     {
       "app": "小红书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Xiaohongshu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Xiaohongshu.yaml",
-      "sha256": "4e0b573607c2081ff99c2bb9072f7b2966219c560eacad8f201b106863686e0c",
+      "sha256": "4da26b8cc0ba3e87097a80fd7f6d4093540da638dd84ea6d66fc5bf38f46c8e4",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/RedNote.png"
     },
     {
       "app": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-014.yaml",
       "repository_path": "curated/module-stack/modules/user-014.yaml",
-      "sha256": "57e5143de27d1de1e330d440ae551f9a9b0d2b71bd9e5ed339053967792e9e48",
+      "sha256": "771e074268a18d1a95b732dad9f46d04e4dff4e526b9b705770937f4315a4674",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png"
     },
     {
       "app": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-009.yaml",
       "repository_path": "curated/module-stack/modules/native-009.yaml",
-      "sha256": "7676837b102863f8f1661212427ebfd5eb535726614452e582bda7beacae53c6",
+      "sha256": "e0c97935fbeed51bb18d17452811f400bdcd6fa662e4b3850112826e87300809",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/PinDuoDuo.png"
     },
     {
@@ -311,77 +311,77 @@
       "app": "百度网盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-011.yaml",
       "repository_path": "curated/module-stack/modules/native-011.yaml",
-      "sha256": "b47bf7dba15caa5327487c9bd1e8ce24f05090dcd91603fba2b9b53b7837f4aa",
+      "sha256": "f9cc6592b4f1a9deec71686f4f64dc3714cea2520b3b3ef61ee7573c18d8d6c1",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduNetDisk.png"
     },
     {
       "app": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Amap.yaml",
       "repository_path": "curated/module-stack/modules/app-Amap.yaml",
-      "sha256": "05f2470e9374bd3b9afbbce6dc562034c136e7592bbb303c84da5aa479d8ed72",
+      "sha256": "486695a2e2adf2f444a5d9aea2ef094ae664238c6b2dab280212437767d6598f",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png"
     },
     {
       "app": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "f5b65c7d483138c440437b2de7617f60b36eb17aab1c6788d4e117b1726172eb",
+      "sha256": "5f030c8f5ab83f5873dcbc97656601588f94735e65e4e2903ec444330ecd16e7",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
       "app": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-014.yaml",
       "repository_path": "curated/module-stack/modules/native-014.yaml",
-      "sha256": "d914d160a3da0265366fa00603c840ecd73169ae28b72ed73ebf440cf5e2017c",
+      "sha256": "84ede9a2cd2d88f97022bf907bd2bb5223418a7a4be127cb9179ed98e51b319d",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {
       "app": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-019.yaml",
       "repository_path": "curated/module-stack/modules/native-019.yaml",
-      "sha256": "86cf5ac3996ec9e449afc12c7945dfa19287fe6ad76a2934404e3ffae3543327",
+      "sha256": "a2a930df124e01b9818163fc3ef73e128fc0523cb13131fab9308f400d5682d2",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CoolApk.png"
     },
     {
       "app": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
       "repository_path": "curated/module-stack/modules/native-020.yaml",
-      "sha256": "73a09e7765d4943df4acf46ede0ddaa2b5c4952d81f95f6b3c4bd472f399e944",
+      "sha256": "c9deaeee8d3ed9e47fe000e297bb80bb5497e17ffe2861ffb934c57bdd5fe2d0",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png"
     },
     {
       "app": "滴滴出行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
       "repository_path": "curated/module-stack/modules/native-021.yaml",
-      "sha256": "5519045059d6d45df1511693ed995999276a077a85d885ade38e6b04625f89d7",
+      "sha256": "d367c085a34b336a5d720d0ad5ed488c061c757556c5622f5a7b496a4b774f8d",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
     },
     {
       "app": "Spotify",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-022.yaml",
       "repository_path": "curated/module-stack/modules/native-022.yaml",
-      "sha256": "6c5b67e9cc40374a7dad7f684a47e2c6b6ef95d51ee50dd7c2f7fd5209b444e7",
+      "sha256": "18f1be803d7aa92d772deb2bf7442ebb149a829fdbc41328edfaed2a5658eac5",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png"
     },
     {
       "app": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-023.yaml",
       "repository_path": "curated/module-stack/modules/native-023.yaml",
-      "sha256": "10ca3abbb962d68554a5d31294f171fbb12d1db0a18038d66bb5ac38840d666c",
+      "sha256": "4e1bed05776878db8f4cc4c3360441000557566ce97bd63a9612448a429c27c1",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png"
     },
     {
       "app": "爱奇艺",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-024.yaml",
       "repository_path": "curated/module-stack/modules/native-024.yaml",
-      "sha256": "a6c00595454425ac9c9daa39ab064c722ab0218d3d863c18f0f9209bdf85b99c",
+      "sha256": "06ba0c510569ae96a115e352c28fe899a720ce3a5f30e4397bfd88c6e60922f5",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/aqiyi.png"
     },
     {
       "app": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-025.yaml",
       "repository_path": "curated/module-stack/modules/native-025.yaml",
-      "sha256": "4a988f9797b0b605465a59d09937fbe7734a808934cdf79a288c94d607495534",
+      "sha256": "c1d81f65851d5e0870960dc6fe978c60c62d71d07340d9fda85bcd4421b41475",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png"
     },
     {
@@ -395,28 +395,28 @@
       "app": "快手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-027.yaml",
       "repository_path": "curated/module-stack/modules/native-027.yaml",
-      "sha256": "f12c1a0b00abe108e7efe3acf8a6a363dee597fff87bea8d1fba3ad4d50cd896",
+      "sha256": "690168f6c21d5c05df8a6390b2cb3f08d3699d87cc7cc50bd0d762430cd9777b",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/kuaishou.png"
     },
     {
       "app": "芒果TV",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-028.yaml",
       "repository_path": "curated/module-stack/modules/native-028.yaml",
-      "sha256": "9e887e6aaa27131f63f9557d37b773c5271efba64db58620468a7d9fdced9350",
+      "sha256": "b003200402b26348c7db1f210c056016bfa084325cd1a092b6ed5c297520e43b",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mangguotv.png"
     },
     {
       "app": "QQ音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-029.yaml",
       "repository_path": "curated/module-stack/modules/native-029.yaml",
-      "sha256": "ed502e463ff4a2950a773d2d4a95e27b220f4aa7ba89653c175ea43fd0cb8cab",
+      "sha256": "edcfafafe57bc57afb7bd0edef448f2bf1f21f7aa1f106df656ccdfd28f6abcb",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QQMusic.png"
     },
     {
       "app": "酷我音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-030.yaml",
       "repository_path": "curated/module-stack/modules/native-030.yaml",
-      "sha256": "35332af97192452dd630d13f6bc0d839e07a3eacb8edc72b2e1e697c82f2dfe1",
+      "sha256": "18d462a011d1987ee6b45a06dffcb3fc5d12aa200e1f9d27cd0e1b82ec5062ba",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Kuwo.png"
     },
     {
@@ -430,21 +430,21 @@
       "app": "喜马拉雅",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-032.yaml",
       "repository_path": "curated/module-stack/modules/native-032.yaml",
-      "sha256": "61aeba24a37a62827f907073a86f46bde7b8a13a464825c3b2330272884bca28",
+      "sha256": "3aeaa52667b58a7adda6a9cfba6e5bd54acd9dd38ae8796c2cb398fc95465cea",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Himalaya.png"
     },
     {
       "app": "优酷",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-033.yaml",
       "repository_path": "curated/module-stack/modules/native-033.yaml",
-      "sha256": "dc1092a3eb6ab985f1de0e9084f9748f916db745b5ab9677a2fae4cd3ad8d569",
+      "sha256": "40ffed99d101f11dc9cc5fffbf6cd1cd9f5a2a6b0542d386729af8842fded55a",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/youkushipin.png"
     },
     {
       "app": "斗鱼直播",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-034.yaml",
       "repository_path": "curated/module-stack/modules/native-034.yaml",
-      "sha256": "0dbd3e3b68e4ed29eea197fb89eac0bad3fba07509b7b07ed47388dcda126c05",
+      "sha256": "7f6405a5d7cf3c48f37d92d68c6f38f3d583d605e31b240daef355065713c557",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Douyu.png"
     },
     {
@@ -493,14 +493,14 @@
       "app": "抖音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-078.yaml",
       "repository_path": "curated/module-stack/modules/native-078.yaml",
-      "sha256": "839fe12e78504f955776b1391ba4491f9cda1ffcef73bbfcef7f6d95b9ade680",
+      "sha256": "a14a77266b76030b46117cf29de9e22aa1a5ee207642fba29f0283edd2711c22",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png"
     },
     {
       "app": "得物",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-043.yaml",
       "repository_path": "curated/module-stack/modules/native-043.yaml",
-      "sha256": "756d328f26c7135fe3bcfbb3892f8aafa289296b8e755d7d45c409383244ac7e",
+      "sha256": "0f062f4d6149e143af6f62ee108cc15cc31b139a3a0221d6a28d108ebb3f68cc",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png"
     },
     {
@@ -514,70 +514,70 @@
       "app": "米游社",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-045.yaml",
       "repository_path": "curated/module-stack/modules/native-045.yaml",
-      "sha256": "1e58e3e0d49586cc92f83d8913aa6e482d1f95ed5853e1daa66b44dd52b10737",
+      "sha256": "71bd79cf7dfd6e94b47358cfdc9b627903792943732ad8155d754370fc68ab41",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/miHoYoBBS.png"
     },
     {
       "app": "小黑盒",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-046.yaml",
       "repository_path": "curated/module-stack/modules/native-046.yaml",
-      "sha256": "c757e2c1b32d5eba6c04cf5f7c0a24634921926d55e8244233d477d39515ac65",
+      "sha256": "3e8aa8e58b7b5b1a915ad2c4a2d37527fd04f8665ffc830a770146eb973bb24d",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaoHeiHe.png"
     },
     {
       "app": "马蜂窝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-047.yaml",
       "repository_path": "curated/module-stack/modules/native-047.yaml",
-      "sha256": "df4bde1bfc3234b58fdc33ef60e105f221c7f2ee1402e8cacff9ca8bb67e94b2",
+      "sha256": "0a4c256b10b7e5a87964d97673e1af756135fb036e55e6acf61faf2f318ef63e",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaFengWo.png"
     },
     {
       "app": "淘票票",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-048.yaml",
       "repository_path": "curated/module-stack/modules/native-048.yaml",
-      "sha256": "9019ef4f13d42b9b3f8d4671014dde62bdd61d46658005b3594cbae086f44c11",
+      "sha256": "36a4568f36f8a3cbf36ec70ffb025fa76c1431cab1e9f2cb619cd295e583584d",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taopiaopiao.png"
     },
     {
       "app": "大麦",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-049.yaml",
       "repository_path": "curated/module-stack/modules/native-049.yaml",
-      "sha256": "184c08232d88559c5246db9419c7fbcf07af3dbc52c454f9bfae85548111655a",
+      "sha256": "5479587ca05cad90d48f0a071c69167bb169ad90c6dc87d9f15066f8e631f31c",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png"
     },
     {
       "app": "起点读书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-050.yaml",
       "repository_path": "curated/module-stack/modules/native-050.yaml",
-      "sha256": "d879cb75b181d859575673b28bc23ca10f6c4bf422b9231a810644f0b033d6b6",
+      "sha256": "3060539f4116e9528ebaa74a55ca78f6e74e387e0e437de66e2d71f7dfc11ff2",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png"
     },
     {
       "app": "百度文库",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-051.yaml",
       "repository_path": "curated/module-stack/modules/native-051.yaml",
-      "sha256": "b5f37fa21c46d56f750adc48eac8c1de28cb9fd8cfd1ded3f74dfbbbd2025d18",
+      "sha256": "ab81c947b5967131df688bea4e31b2b250ca7d149d7521e6e921dfd633ba7df1",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduWenku.png"
     },
     {
       "app": "粉笔",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-052.yaml",
       "repository_path": "curated/module-stack/modules/native-052.yaml",
-      "sha256": "e150c973ccf419526e3df16bc6997e1be88a246064abf6dc6e2eceb191ad1ea6",
+      "sha256": "a0d5eabb93aa63fd52ff179b64be24d5a0216a9b34b15ba00c63ab3ad3e71ea1",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FenBi.png"
     },
     {
       "app": "小象超市",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-053.yaml",
       "repository_path": "curated/module-stack/modules/native-053.yaml",
-      "sha256": "5a0087046eb94d9969225529cc5328df9206686eec19a976eaa4b35c7a36f79f",
+      "sha256": "3c2ec24b93cc9933a59cb7f2c319cb859f7ba7ba4a9dfbc65235aed51f2c6290",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iMaiCai.png"
     },
     {
       "app": "叮咚买菜",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-054.yaml",
       "repository_path": "curated/module-stack/modules/native-054.yaml",
-      "sha256": "722a46b3bab52edd07cc4a414fd9d64396bd8c01246212230e63a107f26d8170",
+      "sha256": "b5ba8d82cbb858b7deb829d1e44ac5db7db711cc712728bd9d58d131341c111c",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png"
     },
     {
@@ -591,21 +591,21 @@
       "app": "铁路12306",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
       "repository_path": "curated/module-stack/modules/native-056.yaml",
-      "sha256": "9c742969267d4d6b4f5db4d37f19f70eb870c2977a1fdec179b4b06c96367a7a",
+      "sha256": "b65469e26834baece621dab1684dd462b1e062462c8b23bd3202ff30eb6d0463",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"
     },
     {
       "app": "夸克",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-057.yaml",
       "repository_path": "curated/module-stack/modules/native-057.yaml",
-      "sha256": "33a4e1a089049e084ccd5cd2557d94ea237166894aab969a24b6444683849172",
+      "sha256": "e95b7c4af9186b9d7a77c46abedfc88bd42939c422436a56f87bffbebfe1f642",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QuarkBrowser.png"
     },
     {
       "app": "豆瓣",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-058.yaml",
       "repository_path": "curated/module-stack/modules/native-058.yaml",
-      "sha256": "cb95563451dad92f6a39e1d571f5f1efde4a69bb84ac9f4734fbaa0a2e628bba",
+      "sha256": "b1dd59d895676cdec2d0a1aa8814f9157c10a1f52e16c0b91ed89200c04157ef",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DouBan.png"
     },
     {
@@ -626,28 +626,28 @@
       "app": "美颜相机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-062.yaml",
       "repository_path": "curated/module-stack/modules/native-062.yaml",
-      "sha256": "7b05ac23efd5bcd8011937cdffeee18b9967ad23a24bc7ec36d1bbfd7c43a205",
+      "sha256": "25d2bc64a5941c4e936ca047ac988d92405d7bf0fa66d1204c2d18b45422cb51",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png"
     },
     {
       "app": "凤凰新闻",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-063.yaml",
       "repository_path": "curated/module-stack/modules/native-063.yaml",
-      "sha256": "ba379f19dff008284125430b2706c617b330a8e7c99c51b6cfd4b86a21716fee",
+      "sha256": "6645fb55a65da10c1339909f83f804e17ada94d670c14df5d6e8562c4f5222b2",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ifengNews.png"
     },
     {
       "app": "百度贴吧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-064.yaml",
       "repository_path": "curated/module-stack/modules/native-064.yaml",
-      "sha256": "e6f1b9735aa10307d0b33f0a86970ad6227dfebaabaffa705dfd78a5fcbd5655",
+      "sha256": "1f079433d2334f324410b7f0394c58fd0fd599e575198a3493e4413568f53d15",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png"
     },
     {
       "app": "微信本体",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-068.yaml",
       "repository_path": "curated/module-stack/modules/native-068.yaml",
-      "sha256": "4d3104eb0979a9544661e9468084bc94c65b2300c0920862a7bc611c3e3e75df",
+      "sha256": "9852f3efaa2a84ae2ddaef16f5fdaf3a4bc8a7153a4f687ea02fb55ecb948129",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
@@ -661,35 +661,35 @@
       "app": "汽车之家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-086.yaml",
       "repository_path": "curated/module-stack/modules/native-086.yaml",
-      "sha256": "390d2d79dcc0580e177c538099249420e8996053adb3b71794af37b793c611b1",
+      "sha256": "2e70ab69fa3d2dbe3b24743343e2c88fd7e38de6cf2011c934c56dff7402b0ab",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png"
     },
     {
       "app": "网易邮箱大师",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-089.yaml",
       "repository_path": "curated/module-stack/modules/native-089.yaml",
-      "sha256": "95d8f8bda4d4a80dbf4ca0e71437e407766baaefca110514b3d37347dde2fe60",
+      "sha256": "5143dfd85e0959004e5d56c5b2bbe09e774da101a9b2bdef015ad40537637480",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png"
     },
     {
       "app": "Keep",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-021.yaml",
       "repository_path": "curated/module-stack/modules/user-021.yaml",
-      "sha256": "b8c98c19731ccedde1f5d2318bf0b53b95b79f3895f9f30ac4e6b4e8d1ebc294",
+      "sha256": "31056d58624b20c9f74570c7a741650dd76fdd92018d4d873f098570557889f0",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png"
     },
     {
       "app": "转转",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-003.yaml",
       "repository_path": "curated/module-stack/modules/user-003.yaml",
-      "sha256": "5ffe8f3ef3b5d382f51c1d3e213f075edcf62a64ffe5b91cee78450ca8834bc5",
+      "sha256": "fa97de33885b749898d8038b7c39f85020302d8ff7e18782ea47eb4045528f91",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhuanZhuan.png"
     },
     {
       "app": "智联招聘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-011.yaml",
       "repository_path": "curated/module-stack/modules/user-011.yaml",
-      "sha256": "e95146315358422ae6560e6b571d49c0af7c97a51f40dae694345a4d7bd1fdbd",
+      "sha256": "2fdf61f4ea7415ee6b42a068076e3ba5a894a3174f14198c97b209a486cde1f3",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhiLianZhaoPin.png"
     },
     {
@@ -703,28 +703,28 @@
       "app": "ValorantBible",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-038.yaml",
       "repository_path": "curated/module-stack/modules/kelee-038.yaml",
-      "sha256": "7d0f55af23c18eef9556514c765443083c5bb62b995c39c8afe6ab69deb723f1",
+      "sha256": "4e8826c1f5d2e56fab60f56c0d0d78fc43790da511c08ee230537c65d80916aa",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ValorantBible.png"
     },
     {
       "app": "XunLei",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-039.yaml",
       "repository_path": "curated/module-stack/modules/kelee-039.yaml",
-      "sha256": "86c07cc0631d7b17bd6b7480f1f91e7a2b440f649522f677fee663dd709ab6c6",
+      "sha256": "9d1043b57a32441e78d2c060c831416ba9d3dba2f07d991275845ff08569974d",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XunLei.png"
     },
     {
       "app": "OnTheWay",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-040.yaml",
       "repository_path": "curated/module-stack/modules/kelee-040.yaml",
-      "sha256": "cd12b8fcf8c03817513437f5c6bbd8520e1732aae49c9e14669cf32b0b7a5177",
+      "sha256": "977b4d9601fc995e460a624e1ea2b302e0cd0925499d52b6654399c7d889dcf5",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OnTheWay.png"
     },
     {
       "app": "Walmart",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-046.yaml",
       "repository_path": "curated/module-stack/modules/kelee-046.yaml",
-      "sha256": "2279186cf9b8aa3f0f9c5be948d2e45d8a319ada0685d8c7641c75966b88a5a6",
+      "sha256": "3ce400f4d24d299383e92c6dae789d7bd014f9927fbb18039342a5ffcdae6a6d",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Walmart.png"
     },
     {
@@ -738,70 +738,70 @@
       "app": "SF-Express",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-056.yaml",
       "repository_path": "curated/module-stack/modules/kelee-056.yaml",
-      "sha256": "9473ecb091393b5f2e21d6a3d283bcee6b800cdc9dddaedd21da969473bb2c44",
+      "sha256": "9dbebcb9a13ff3865f450b10918c1183d624581e3062ea3dc5e3c57544eadd85",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SF-Express.png"
     },
     {
       "app": "YueDanBa",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-058.yaml",
       "repository_path": "curated/module-stack/modules/kelee-058.yaml",
-      "sha256": "86d4b4af49d29e5ff3e2f35194cf2f5762f8266a87eac223db3c4d1ca8e27f9a",
+      "sha256": "617870eae24a7ca79e3e5d78eb929a192a2471d84723bf9f5fdb4165d29c4407",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YueDanBa.png"
     },
     {
       "app": "TV_Assistant",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-062.yaml",
       "repository_path": "curated/module-stack/modules/kelee-062.yaml",
-      "sha256": "b07829ce07d3ccab2150b024761aeabdaf9f30346c455dfe2b059b2be4f62725",
+      "sha256": "3e3b6ee811debb9ded74f04ce8c9a00122ee1864b03b2664b2259f372148d87e",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TV_Assistant.png"
     },
     {
       "app": "JDWaimai",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-067.yaml",
       "repository_path": "curated/module-stack/modules/kelee-067.yaml",
-      "sha256": "34c48c35533d9b72c226063673c1c28f821070d1723873bdbf237d4e6e3b458c",
+      "sha256": "e46245b8cd75f746ca7a51d1fdd7d1340b61394a2e91b77ea89d7b155035554d",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JDWaimai.png"
     },
     {
       "app": "HUPU",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-069.yaml",
       "repository_path": "curated/module-stack/modules/kelee-069.yaml",
-      "sha256": "ac3dfadca655e01bb9f70c1144c637090bd4d189f7742b9103d561c1ae2194c4",
+      "sha256": "5dffa657591e3e7186390ba02028e34109984f5487010aee0c662941208f169a",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HUPU.png"
     },
     {
       "app": "HantingHotels",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-070.yaml",
       "repository_path": "curated/module-stack/modules/kelee-070.yaml",
-      "sha256": "58fa4dd2b208395871b8bc0bb039a6f28792319745ddf063eb95c578727902fa",
+      "sha256": "2652d0ba2333ebfb159606ac1a270435862fa9522dea08c90394ba449111dbd7",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HantingHotels.png"
     },
     {
       "app": "MrHema",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-071.yaml",
       "repository_path": "curated/module-stack/modules/kelee-071.yaml",
-      "sha256": "302af6490cdd0bc862296103553f4e4906312951c084f8400b37853de767da87",
+      "sha256": "20a56ada925c4e7bd3c180b86ef91d61ade53dcd27faf0bc8d4d3e76e09c4352",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MrHema.png"
     },
     {
       "app": "FlyerTea",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-075.yaml",
       "repository_path": "curated/module-stack/modules/kelee-075.yaml",
-      "sha256": "e4fc4f429dffc0f8d20e1436f2aeef57350bda8a44b3252dc97ccbc50a77974f",
+      "sha256": "be2a860229823dfdbc2c88499f8f888a852fced336ab06d27b41bf4805c380e8",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FlyerTea.png"
     },
     {
       "app": "TaobaoTravel",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-076.yaml",
       "repository_path": "curated/module-stack/modules/kelee-076.yaml",
-      "sha256": "2082aab4d2a4e4eaf117c1eb4ab93389d1cb7ca72902caf1daf4c494745e13ef",
+      "sha256": "1225427e8ed465d70a7e37f756191ecb01e1ce3afaadcef003ea8eb297da36c6",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TaobaoTravel.png"
     },
     {
       "app": "TCLnScreen",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-078.yaml",
       "repository_path": "curated/module-stack/modules/kelee-078.yaml",
-      "sha256": "1d5d93b9024811416c1bc17e9b7a46b84f9a3f46b833ff63330bc49522563ff9",
+      "sha256": "6f8769b3cd592a152628df85d549c2ae44faccc98c0d32d8c499c1e2d57819c8",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TCLnScreen.png"
     },
     {
@@ -815,14 +815,14 @@
       "app": "Aiinquiry",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-090.yaml",
       "repository_path": "curated/module-stack/modules/kelee-090.yaml",
-      "sha256": "bfc6826c0a3776729fa3b316c2cb7d2aff91ec11ffd767929bd349d27947f059",
+      "sha256": "3296b487d66092b1d36a9027e6b5f3072d52751803db18592e78f3c496222f13",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Aiinquiry.png"
     },
     {
       "app": "KOOK",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-099.yaml",
       "repository_path": "curated/module-stack/modules/kelee-099.yaml",
-      "sha256": "3d45a837b863a528023cb5c59d94ff336c2cb38b9f5793c57472053287c012b3",
+      "sha256": "a2dc8d3984a1d9a5831afbc30df860abe92571be91ee6e722422295979d7765a",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KOOK.png"
     },
     {
@@ -836,7 +836,7 @@
       "app": "菜鸟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-080.yaml",
       "repository_path": "curated/module-stack/modules/native-080.yaml",
-      "sha256": "55cf2473188085ccbd9d118a93f4850c06cd43c05a33f77ff3acbba74f43f95f",
+      "sha256": "044f4b345fb1be0d91b0a34f723fa1473237d842b2f2e7decc7376824833fd32",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png"
     },
     {
@@ -857,7 +857,7 @@
       "app": "1688",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-085.yaml",
       "repository_path": "curated/module-stack/modules/native-085.yaml",
-      "sha256": "799abf98d2b3b47749309b312f3230a91aac226c131279360c1cdce753565ae3",
+      "sha256": "96899bb22a0026966d2d4324cc7b1ab56355229424cfa7e757db9fb19efeb792",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
@@ -871,14 +871,14 @@
       "app": "携程旅行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-082.yaml",
       "repository_path": "curated/module-stack/modules/native-082.yaml",
-      "sha256": "58048311313102290a96ce7dd5fa69be47652cfaf7bced496a699275b93b1f56",
+      "sha256": "59326be87dc0a6fbca46e44adc31a583686a25f24881bb81de95d65993a47067",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png"
     },
     {
       "app": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
       "repository_path": "curated/module-stack/modules/native-083.yaml",
-      "sha256": "6a7cd27fd43813b6d8408eb9d1d6cb0af7f90679c22145fe00d34df3073a4a30",
+      "sha256": "ca5f62674d0100871f09fc0a4eb18ae4d07a8a41216ebd7fff86117055f2fc27",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
@@ -892,7 +892,7 @@
       "app": "Google",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Google.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Google.yaml",
-      "sha256": "19c95e4d8908cb2c3835e515972caf37afdc828ecd78636a945c0b290ba36233",
+      "sha256": "25167d036fa314364b72a474eaed543de58358245d59b99990c2f063adf7b5f8",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png"
     },
     {
@@ -906,14 +906,14 @@
       "app": "美团外卖",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Meituan-MeituanWaimai.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Meituan-MeituanWaimai.yaml",
-      "sha256": "3b7801dd89a7522a0b77e2f1711779770d5857d74bfe9c6156ba07184f50513e",
+      "sha256": "4efe218d93a3aa722199fbbd394d84f4aeb6112880febd870f117e5b6736ee4f",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTuanItakeaway.png"
     },
     {
       "app": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-079.yaml",
       "repository_path": "curated/module-stack/modules/native-079.yaml",
-      "sha256": "dd4a40aba2d267785ea305a82b65d7ba5073a0a85758ba6578c6be221c8ac4db",
+      "sha256": "30aa3a91897a999cd8bd90c58b46d984ae4a86b0692143b129655d813186eb47",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png"
     },
     {
@@ -927,7 +927,7 @@
       "app": "两步路户外助手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-29efdb80dadad315.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-29efdb80dadad315.yaml",
-      "sha256": "08fd32b59e272da6f556bd220f4cb9c05b73fa831a10fd2f11f8729ef3729bb0",
+      "sha256": "fb9ef33b7c9325d5cf13aa8ba2b7e4c15265b7eefc3e3bb9da1bc35d0b458ed6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/2bulu.png"
     },
@@ -935,7 +935,7 @@
       "app": "360摄像机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a02a7acfd9b6db38.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a02a7acfd9b6db38.yaml",
-      "sha256": "3bd5b7964f63f404519000da59296abc7bacc83f8eb61a39b608024508f3a710",
+      "sha256": "104daf413b23a3a442b815fb11efb661756343fa946dddfc234a6418ef2ed581",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/360SmartCamera.png"
     },
@@ -943,7 +943,7 @@
       "app": "36氪",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-104c5ba235361399.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-104c5ba235361399.yaml",
-      "sha256": "d59a4ecd18b89daf02a3fc9a4e63e0a558eab17642c0f5f2214114630aa98cae",
+      "sha256": "59301eac305656dc6a8653ac28293f58a0d5f1dfc0a20013f8dfd41f876818d7",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/36Kr.png"
     },
@@ -951,7 +951,7 @@
       "app": "前程无忧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1af3d4db1b1b9764.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-1af3d4db1b1b9764.yaml",
-      "sha256": "8b58125e2a192a3bcc662937db029c877e1ad13a031fe0670406d1c00b489f7f",
+      "sha256": "979bc04fea42bdaec56d6e7771788b3512bf53e21e1822631300c80b7b729929",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/51Job.png"
     },
@@ -959,7 +959,7 @@
       "app": "555电影",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-6e48d4e25da04cc0.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-6e48d4e25da04cc0.yaml",
-      "sha256": "b387e73bda267c1e67bd6be2f143a73ff8e9422cc60fa5a45d4aefd8dda17dab",
+      "sha256": "aa0ac0040b83791310af37a4eaa582389cf79acc51eecdd3258e64405e4a60c6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/555DY.png"
     },
@@ -967,7 +967,7 @@
       "app": "5EPlay",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-23c5ac5b2f4f210e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-23c5ac5b2f4f210e.yaml",
-      "sha256": "68564d773e6760ad9da4a84ba9c27dae71889f699d814658f4cd86d94ad67323",
+      "sha256": "8aa6aa220077ac4ffc9e9cbe814ef2363bb4d901df1d63bed58d474369b94211",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/5EPlay.png"
     },
@@ -975,7 +975,7 @@
       "app": "健康160",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-81aa72a5890bd751.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-81aa72a5890bd751.yaml",
-      "sha256": "f93543638534ccbfd09d8c68bacc4cb7beeb838809aa1c03e5dd6cd4d7f8e0a1",
+      "sha256": "5ec2f4465b0f8235c6d97e3e4b368396172800fde443180fc5442fd3f73ee062",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/91160.png"
     },
@@ -983,7 +983,7 @@
       "app": "海雀",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35c081fdb67a26e5.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-35c081fdb67a26e5.yaml",
-      "sha256": "19439000a43fccd7b5a6c9f9b96dbc9461c1ad0263a6747fcfc1222d4588ea42",
+      "sha256": "35ea1dab8d9ca0693232af1ea78c23349b6f4ec792419029fbb5aaad22be6f02",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AlcidaeVideo.png"
     },
@@ -991,7 +991,7 @@
       "app": "排班日历",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7bb25b101003b82b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-7bb25b101003b82b.yaml",
-      "sha256": "97c65fde6394ee89fc961283475ffb3693a8a64ff674042f4a59a602c34337d4",
+      "sha256": "c6d9d43ac6046625d332a956568a0c101b9a7254c125584c3abaea9cffcabf4b",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AxWorkSchedule.png"
     },
@@ -999,7 +999,7 @@
       "app": "宝宝树孕育",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9cb391ff82e7c6f0.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-9cb391ff82e7c6f0.yaml",
-      "sha256": "4bf5144e390be56c1af45b223a6ae85ed9d182e99fd88e2cb21dd5f772b4ccce",
+      "sha256": "124703ca6e840432e04702725fbb15a03e0c94835aaffc8de0dd937e264bf2ff",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BabyTree.png"
     },
@@ -1015,7 +1015,7 @@
       "app": "百度翻译",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8890f33e8b45855e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-8890f33e8b45855e.yaml",
-      "sha256": "a80ffd0ba59a7ccca161387e6ac512a6b72d75b126f6a195f4020cb130003e8e",
+      "sha256": "a28b32682726c7908271454b1b8bee666c77a676186c85de76721da3a3c094ed",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduTranslate.png"
     },
@@ -1023,7 +1023,7 @@
       "app": "贝壳找房",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9a2cef125f27aaa5.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-9a2cef125f27aaa5.yaml",
-      "sha256": "e4edd64d7e82bd6f4053f1ac0596af6520d17dffdc761abbed334d4d1f6007e6",
+      "sha256": "b189b0ce5c58fa51b718e0c5b404d02ed545116d0f2fe36f2656a5908a4d0eed",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Beike.png"
     },
@@ -1031,7 +1031,7 @@
       "app": "比特球云盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-eed703efc5d4a3a2.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-eed703efc5d4a3a2.yaml",
-      "sha256": "fc7c05ba57aa0da29d7cfc6180914d00eb1b7f139fa55990af7b970482e273ea",
+      "sha256": "5db62c6500d5e165c4f57d4e4fb7eb70f1fec66bb1393c204b5a6ed7eb92e860",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BitqiuPan.png"
     },
@@ -1039,7 +1039,7 @@
       "app": "比心",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-49cd6282e09111ea.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-49cd6282e09111ea.yaml",
-      "sha256": "327ce7bc5f8199e718680ec93aeccde0ff8f8fbba59ebbfb8ca25d6085a3249e",
+      "sha256": "9381cf1a6deeacd6aa26eb640147cb6b09905d77d7e9b4439e28d43f17eec5b2",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bixin.png"
     },
@@ -1047,7 +1047,7 @@
       "app": "波点音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-2a7dd88c9bdef484.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-2a7dd88c9bdef484.yaml",
-      "sha256": "3ccdaf3033ce73b2242b83f612b2470c3c7cb90e04ab58175896f147b150dd62",
+      "sha256": "61ac46a19a504835be827aeefc658618e2e23f7bd7dba35d60bb165fa57c7a28",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BodianMusic.png"
     },
@@ -1055,7 +1055,7 @@
       "app": "薄荷健康",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-caca27662aa4ffae.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-caca27662aa4ffae.yaml",
-      "sha256": "3a105d693973b6400fc0ffea0533539476580d21b773b8626f405f0bf5d2ab5c",
+      "sha256": "acfaea7c46c0c480393f020afaa67a35177c0a481cf796c9ed6d742e7ab49bd2",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BooHee.png"
     },
@@ -1063,7 +1063,7 @@
       "app": "财新",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1d523ea61618f97e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-1d523ea61618f97e.yaml",
-      "sha256": "97f3420f78a48ed65b51f5e3706d64852f92f41be919574e8040be5e395d8bf3",
+      "sha256": "7fc31323b9d831e4c3dc7923887556dae76c783294b0522afbcd48210ef907c5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CaixinMedia.png"
     },
@@ -1071,7 +1071,7 @@
       "app": "猫耳FM",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c1c65ba389ac611b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-c1c65ba389ac611b.yaml",
-      "sha256": "8770a6b9172c6b4a57333e0851cbd131e310a7ff607b136fa791c3e65af200f9",
+      "sha256": "a6a999e62a237c2578fcec12eb384b004ab6e212900ac40894f1176bfcbb50e8",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CatEarFM.png"
     },
@@ -1079,7 +1079,7 @@
       "app": "CC直播",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a631ca36f8bd2873.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a631ca36f8bd2873.yaml",
-      "sha256": "e8b321416e3e7f76a632b2c27db145afac937198bf270ebc4af68d0cca770559",
+      "sha256": "58df23050674ce138174f73276735bc3a880f911ede6d27968312b4889a86f83",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CCLive.png"
     },
@@ -1087,7 +1087,7 @@
       "app": "测测",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-851dff430dca5b64.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-851dff430dca5b64.yaml",
-      "sha256": "2bbe06297c5d9a61916ffa7068770b0c0a18f5817b41ddae1e026780c63ccb62",
+      "sha256": "cb25277e25fd3ed3b23f397a2d8792ce3856e0aad1d0836817919a96ef8a704e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cece.png"
     },
@@ -1095,7 +1095,7 @@
       "app": "学习通",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-af536c1fd228e628.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-af536c1fd228e628.yaml",
-      "sha256": "ab9416c634b771f5dc773c4df0fee03bed1cf9e3937516e1fe28ca4264ee7d85",
+      "sha256": "66c7b6828e679fdd2ffe0a3de4f077ce7722d7ed63b7935d5320b24426bb7494",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChaoXingStudy.png"
     },
@@ -1111,7 +1111,7 @@
       "app": "车来了",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5a82cd7cf47bba21.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5a82cd7cf47bba21.yaml",
-      "sha256": "246fc8edab8b153e7355d26a1af23b108f969a3298fa10bc2cd490429248ee9a",
+      "sha256": "7476b497e41f3385df44ec3ae8d112d31302d1d1cb2eb12cb06a6a164e7892ac",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Chelaile.png"
     },
@@ -1119,7 +1119,7 @@
       "app": "成分喵",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-f62b080ef7dfec1a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-f62b080ef7dfec1a.yaml",
-      "sha256": "50b9d29a82e4b011108ea75dc2f2575d44cb2b576557c7963cf896aa2d9654c9",
+      "sha256": "b53418eee081ed7c2b9f235a35b845e460ad29a43e03dce609f94068bddb5d57",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChengFenMiao.png"
     },
@@ -1127,7 +1127,7 @@
       "app": "触站",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-010e40276fe4ef8a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-010e40276fe4ef8a.yaml",
-      "sha256": "2785a9b08f8bdecc56e7eb24ff60ad12392a7855a97391b306fc0b8e1913d8dd",
+      "sha256": "62c03921046fe59350009c22ce89e02e2728bd2c932a1af48fae401c5ac478b1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Chuzhan.png"
     },
@@ -1143,7 +1143,7 @@
       "app": "小宇宙",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-560c182dad126d89.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-560c182dad126d89.yaml",
-      "sha256": "6d3fad2451413b15d831b8c7f582f622bb9f813cc2834bd0867bbafa2895648e",
+      "sha256": "aff2de8d1bb32d20b1f8e724e25e7394bcab1d74d1d75ffea50400a22ed1cdd9",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CosmosPodcast.png"
     },
@@ -1151,7 +1151,7 @@
       "app": "天天跳绳",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-07864975046f4657.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-07864975046f4657.yaml",
-      "sha256": "f1fdbbb2b62f08f61e96d3e71c32bdc63730c340bb32897c3f01e24277089260",
+      "sha256": "83c58ace1a367a02f8f8e0b0a0aa684b61d5995015c9778dea416a2a1ccc9536",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CrazyRope.png"
     },
@@ -1159,7 +1159,7 @@
       "app": "南网在线",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5a550c686c8f099e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5a550c686c8f099e.yaml",
-      "sha256": "3e37ab831c41dbe6385e8746a638ae0c2de7d9bd3b8bd9d151aac194c6bca9e8",
+      "sha256": "01d9b4530629d666ad09b3b866322c5f5e9a11514b4c40fc33bd0dbc1922811d",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CSG.png"
     },
@@ -1167,7 +1167,7 @@
       "app": "推栏",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-4a74dc47f277be72.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-4a74dc47f277be72.yaml",
-      "sha256": "ada5568c11150e5289ffac65418742715807f95beaeac68dd6dbddecb2011287",
+      "sha256": "9d6d64dd216969a605f56eeba70f20c4b6a635a945e80272c155c4a05d198cbf",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Daily.png"
     },
@@ -1175,7 +1175,7 @@
       "app": "大姨妈月经期助手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1deaedbed2801a8a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-1deaedbed2801a8a.yaml",
-      "sha256": "4060e6ad02b878afc2c5e7633a5b090ae2a1c7da15a71badf6f7c959baa5304b",
+      "sha256": "cf9fe9dea401f01cbfb1d5a2b6729c1da930db113a86c566cd50aae4cd6e4815",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dayima.png"
     },
@@ -1183,7 +1183,7 @@
       "app": "数字心动",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-802fd6e67f3aae15.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-802fd6e67f3aae15.yaml",
-      "sha256": "523843623245cc6a695460d046fede859461b53c85cbbab71769a94514f9668c",
+      "sha256": "3b6f4e3f90dbbda9b6c701f8a6890bec2de27e62649423a50ce6ce4dd30894fb",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DigitalHeartbeat.png"
     },
@@ -1199,7 +1199,7 @@
       "app": "Dlabel云标签",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a1b6200b11297fd1.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a1b6200b11297fd1.yaml",
-      "sha256": "a8818c8eeefdf7f00750e0a254b39e52f33d0d8bd63e688e8dabe2d869b82a92",
+      "sha256": "5525261e227c8146b864dbcc2fb59629f2d2e99871c6659fac628e8531218b77",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dlabel.png"
     },
@@ -1207,7 +1207,7 @@
       "app": "豆瓣阅读",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ab2cf862e33f21be.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-ab2cf862e33f21be.yaml",
-      "sha256": "0da9b4198176e1045baf762654dce0563a340f7a2dde760843e9f57153a70afb",
+      "sha256": "a75d150b5f9263a64a96a772572d62df661cddd85a5e3522e3cd8670ee089027",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DoubanRead.png"
     },
@@ -1215,7 +1215,7 @@
       "app": "DREAME",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7cb2856bf932874a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-7cb2856bf932874a.yaml",
-      "sha256": "a75243f10e1c4576c6e69bc8f32eb75dd97733756da9cc06f24e5da59977ccfd",
+      "sha256": "c7f8131d52e02c5164001278792fd13156da43ae78420d5f0a867b14f7f482d6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DREAME.png"
     },
@@ -1223,7 +1223,7 @@
       "app": "配音秀",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-82bf8e50538d1788.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-82bf8e50538d1788.yaml",
-      "sha256": "33bc4b453cf64fa5f0f0be9e5a7d5c5a145cf2559d56711c4408837c03556fe5",
+      "sha256": "ea1bdf9820470f8cc82f5b9f12901aac26b0785dfbf7cd94e56a564dc6dcbcb1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DubbingShow.png"
     },
@@ -1231,7 +1231,7 @@
       "app": "堆糖",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a67e65c548b3b3f0.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a67e65c548b3b3f0.yaml",
-      "sha256": "22ebc2b1416c19dc7f8a96e08195f41d779ee396f878d865691891b8f69a68f3",
+      "sha256": "5473f8a19625c4221e045e5cd11cede66d35abb0f730fba5e3d56ba8d471f86a",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DuiTang.png"
     },
@@ -1239,7 +1239,7 @@
       "app": "e充电",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-05ba85dafca2250e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-05ba85dafca2250e.yaml",
-      "sha256": "793593c7c248cfa7e86a8d4df37688710af11380048946e1557fb3d0515f67d0",
+      "sha256": "8d43fafb3c8f2e1ca5255c1fd9c3fc1f7ddb4c8901968a8475f4ad5fff0df268",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/EasyCharge.png"
     },
@@ -1247,7 +1247,7 @@
       "app": "ECOVACS HOME",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-bb58d5a7b69a8709.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-bb58d5a7b69a8709.yaml",
-      "sha256": "8a0fa0360c1e52cf9580a4bbc521a89688badfd40c1c62860e09b87e012a86fa",
+      "sha256": "f6cfe6a43cd9441dee991c33183b9599f5504b0d5e7b64a6f7c407c70e14e2e5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/EcovacsHome.png"
     },
@@ -1255,7 +1255,7 @@
       "app": "中华万年历",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d3fcfc4a7cc8d332.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-d3fcfc4a7cc8d332.yaml",
-      "sha256": "f6b07c00e6c05e3b65106855aedb8f237b7e3b26c7e27a7f0c308e04cfc395f0",
+      "sha256": "7a5cd3c1e12e06efbc19bef180df64be94844adb8179c96f14c944a53053215f",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/EtouchEcalendar.png"
     },
@@ -1263,7 +1263,7 @@
       "app": "摩天轮",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-930ce3cc6ced714e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-930ce3cc6ced714e.yaml",
-      "sha256": "6e96013bd4fea624a3e0f53e3853c27b6e560e474d686905bb16603771f38988",
+      "sha256": "c87ea51680fcd4d0731225eed4f73ded935992a7c2d907aaf527416dc101c8e5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FerrisWheel.png"
     },
@@ -1271,7 +1271,7 @@
       "app": "华尔街见闻",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b727cfacab03cccf.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b727cfacab03cccf.yaml",
-      "sha256": "da707679692337eddfdf865332fb2bb496776f72810a1b1bb8ea98b9888be197",
+      "sha256": "d81fa8e3ce964bfafd581d4717e428edaf98b938fdaa7168ab33fc1ab12d11f9",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FinanceNews.png"
     },
@@ -1287,7 +1287,7 @@
       "app": "稿定设计",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e6c777f69279dfff.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-e6c777f69279dfff.yaml",
-      "sha256": "113f505f8b8ba07915e01c3e9d3165a3644405ea01f52e10ceddcef66bbf159d",
+      "sha256": "1b214b76c7cc2cada46f1cdb11df4abb4bab1cf39621bd3ae1b496ae452cff1c",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GaoDing.png"
     },
@@ -1295,7 +1295,7 @@
       "app": "盖得排行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-15e3ce0bd9cad46d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-15e3ce0bd9cad46d.yaml",
-      "sha256": "5c54f67433dde724d95aba75f17fcca7c65cc517f2f2c9570cd481d8d98d02e7",
+      "sha256": "b91e0f686fd97f8412e56b81deff9d8f2ef6a41870bbd0dbf11abf888a4f3dc9",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GuideRank.png"
     },
@@ -1303,7 +1303,7 @@
       "app": "小睡眠",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-643018a600bccf86.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-643018a600bccf86.yaml",
-      "sha256": "5a82a1c24984a9c0f60a120ccb417ff8f46e5cc82adecfc272aa95b66867a156",
+      "sha256": "adb19cb08c8ac861b1d0d68ff88a03b3391e746a6e4391af12ac9c378ae39e14",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/HeartideBrainWave.png"
     },
@@ -1319,7 +1319,7 @@
       "app": "虎嗅",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5b6f6de1659bdc6b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5b6f6de1659bdc6b.yaml",
-      "sha256": "c884421539f83818edaa30f17d265f6d29d6dce17b254a78dd9d2619fd310c49",
+      "sha256": "4939260ec951fe55d7d4528e361fdbf53e6352ad523ae1462829f1b5f4d4d700",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Huxiu.png"
     },
@@ -1327,7 +1327,7 @@
       "app": "掌阅",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-716bc4c8956e9129.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-716bc4c8956e9129.yaml",
-      "sha256": "173758a51dd107d083eca9ec9b13a951ad69e00ba3bd48b95f0d21576af6ee30",
+      "sha256": "a3782beb48970935e799720b7e44fda45a38e2c96a6d65ad0def1ffadf455ba1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iReader.png"
     },
@@ -1343,7 +1343,7 @@
       "app": "得间小说",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d8963f19af6e3fd3.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-d8963f19af6e3fd3.yaml",
-      "sha256": "a12f1391fe7ea4ba205be5474cb85612f5ca5713e5dccb8ee4b930bcefaeea0b",
+      "sha256": "bd1148e57f6b9808f574e264f4580c2d0b6bf4fac7e73133feb6229e502dea41",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iReaderDejian.png"
     },
@@ -1359,7 +1359,7 @@
       "app": "最美壁纸",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-739b5af48d2574b7.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-739b5af48d2574b7.yaml",
-      "sha256": "e42158807c1b3ac738e6247e27c0a391a0fceed86aac7ebbaaa5e9b139d86a3b",
+      "sha256": "fce3740d36b6c6c5e5cd86564d6cf7ab18ad0ffb78c292de4269be6a8e693bf5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iWallBiZhi.png"
     },
@@ -1367,7 +1367,7 @@
       "app": "驾考宝典",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a545f553076bbdf1.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a545f553076bbdf1.yaml",
-      "sha256": "9dbd3a9e25624f922d1df622ee2acf56dd67e081a38b7529b436c267d97c100c",
+      "sha256": "3cfbf34c25bc47f3662a9a5e65c7ac204a4de2ca337545af7c3ee8a159663c1a",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JiaKaoBaoDian.png"
     },
@@ -1375,7 +1375,7 @@
       "app": "Jump",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5a8556996725a937.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5a8556996725a937.yaml",
-      "sha256": "e46641d84a733055e21c4d59de2f0624baf907c40b504b336912aabfbddeeac1",
+      "sha256": "0b1a40425dc1d7642ae4bd219f9c65792c806a6f016a3aca09452dd0c4685ac1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Jump.png"
     },
@@ -1383,7 +1383,7 @@
       "app": "帆书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-2fcc2dd3af320799.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-2fcc2dd3af320799.yaml",
-      "sha256": "c38a808d079740a4af7f4b0b10ec2eb789dcba5257b6de41451d1082e7274cc9",
+      "sha256": "49e7547e14b3ca11367ec6c2744546c84ac73dce41541ac0a792ee0290ee7150",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KebidaDushu.png"
     },
@@ -1399,7 +1399,7 @@
       "app": "快递100",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0bc752647aaf509c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-0bc752647aaf509c.yaml",
-      "sha256": "59a929a2688427cc5713a3a6a6cbe33947d35081e5f1ed74e64be35fd76e9d92",
+      "sha256": "7d72647b82e0842a8836c8f8e274eccf6b859980c9cc3769ef7300d8a9293332",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiDi100.png"
     },
@@ -1407,7 +1407,7 @@
       "app": "快对",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a7f19bebedf966e1.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a7f19bebedf966e1.yaml",
-      "sha256": "df7b39d23346ab151837e82e4ed5deeafe0c166c071c3fe369be3e3ab7be9d43",
+      "sha256": "4c52743cd28926dd635def4ab82e75d4f706ebe5b33ab915344689cdc4a3dbad",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiDuiZuoYe.png"
     },
@@ -1415,7 +1415,7 @@
       "app": "快看漫画",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fd12b6554d0136dd.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-fd12b6554d0136dd.yaml",
-      "sha256": "badde9efaf1b66919b9b888ceb4d3e172b871f40eeb3f7dfe0ed65f56d23fd10",
+      "sha256": "2225ca0be7fee57f1f45a851eb646504e6907de5f01768ead4a254939c5e5284",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiKanComic.png"
     },
@@ -1423,7 +1423,7 @@
       "app": "酷狗概念版",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-14c49fe53ed93fba.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-14c49fe53ed93fba.yaml",
-      "sha256": "d9daf466e066647b2d0dc61dcfbc32ff2c5ac6b83b453ea26c3f094baed1e953",
+      "sha256": "e006355b03922e18130eed32e9517d966ad9b5830e0a7bb824acd33006c7111e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuGouYouth.png"
     },
@@ -1431,7 +1431,7 @@
       "app": "库街区",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-80147db3d0fca33e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-80147db3d0fca33e.yaml",
-      "sha256": "93501439c5b8b299940191f08c4fd7a68f38309eb78f23793b4c00c0676f441d",
+      "sha256": "3ddb060e962938c4512b8a3b6e59f5485c46b1ca61a40c9bb6d1997461bdb8b3",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuroBBS.png"
     },
@@ -1439,7 +1439,7 @@
       "app": "快影",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1e27d04fd483b536.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-1e27d04fd483b536.yaml",
-      "sha256": "857554ae10a8a1ff0d0f42d2101def1b238ee121942534e7fe049f6e950504fc",
+      "sha256": "43d5bcf55ed657fa4cf0d05c78299b1392c15f4147c2a324416862350d9ac28d",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KwaiVideoeditor.png"
     },
@@ -1447,7 +1447,7 @@
       "app": "纷玩岛",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7c855a8694d7187a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-7c855a8694d7187a.yaml",
-      "sha256": "055d5779d47543c7477929bbf360e869a36407326eece4b948aa641541afbd60",
+      "sha256": "0a98a2ae391ab6c43f515b9dcc6bb9e319561975f99feb163617ec81a00ba9e7",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LiveLab.png"
     },
@@ -1455,7 +1455,7 @@
       "app": "掌上英雄联盟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8945fb82d40db78d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-8945fb82d40db78d.yaml",
-      "sha256": "d35a28f33e7ea040f4a792929f60cc388f8eba138eb2879acfb95b6674086326",
+      "sha256": "ba7a9c4f41f86b6db132c8e96a4451dc9470abebea25e5fd181c901301cff8f0",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LOL_Bible.png"
     },
@@ -1463,7 +1463,7 @@
       "app": "联掌门户",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-649136a7938ed8b1.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-649136a7938ed8b1.yaml",
-      "sha256": "d7971426ffde554c83aa94ab5be6cd883ec5c5e5176cb4d75492da4eda40ab71",
+      "sha256": "5d7f0842764cffeb19bdb46ba7473d445c53bf391a15f5c1669edcf6623657ed",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LZMH.png"
     },
@@ -1471,7 +1471,7 @@
       "app": "脉脉",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d1b91fa71cf4009f.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-d1b91fa71cf4009f.yaml",
-      "sha256": "2b4e1ef7c8088bddc2f89521a98d49e43444b95456b049175143a876e7200b39",
+      "sha256": "cb3e4062d2cc26a388304389ca808b54eaa5a4b521a2a40ece8c6a7e1d4329c9",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaiMai.png"
     },
@@ -1479,7 +1479,7 @@
       "app": "马克水印相机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-26976f396fc71493.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-26976f396fc71493.yaml",
-      "sha256": "49ba6f7f784e5f8e1213026185b69bf38c709850c89726373aa22cb141cc117e",
+      "sha256": "113a46e865dbf0408c60924e408b533d56430f827a06ea90be4554018583a21f",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/marki.png"
     },
@@ -1487,7 +1487,7 @@
       "app": "美柚",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35d82562839a0ae7.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-35d82562839a0ae7.yaml",
-      "sha256": "d1f5a4c67caf8bbd9a8055611e9b9b84e77397996c1328b226ab036d7c818994",
+      "sha256": "5d34fb6e182c55f4a7ff622b1bd1ad24d7ebe6290c6142b92dba3809b29f61d6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeetYou.png"
     },
@@ -1495,7 +1495,7 @@
       "app": "每日赛车",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-712c7adec68d9d74.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-712c7adec68d9d74.yaml",
-      "sha256": "bd5dbe006f04b29ff11c684c5139a83605688ed04e807d91d3138a15e39af1ac",
+      "sha256": "e2508dd40969ac539070c568790414ac42d907af8acc3acdd628ac54d656fec8",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiRiSaiChe.png"
     },
@@ -1503,7 +1503,7 @@
       "app": "美食杰",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-107899f01c39ceef.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-107899f01c39ceef.yaml",
-      "sha256": "b4d27517028bfbe08bf9161f93871d59a9c69ff4ff54531e72526295f702b8e8",
+      "sha256": "d06b9fa2ecc1e0965ece71817c397bfee252b4a262f18eaf6c4bb9ba334806a5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiShiJie.png"
     },
@@ -1511,7 +1511,7 @@
       "app": "美图秀秀",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-6a867611eb19bed3.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-6a867611eb19bed3.yaml",
-      "sha256": "7f3b65a66accbd89a6916287246b061347ff7a6d41fd2f47e170c4c074e04a2c",
+      "sha256": "3453d2d5e8e87361c26675d8ceeb08a76adaaacdaa9780c9c94e1505c77a5624",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTu.png"
     },
@@ -1519,7 +1519,7 @@
       "app": "美丽修行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-3c47e10cc25166e4.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-3c47e10cc25166e4.yaml",
-      "sha256": "f825b8d5d538564181cf6c8c18af19284247cd617a942c09a659a7e0f5cfe851",
+      "sha256": "9f14c04d727ba7f84a4d0480a3a3bf136fa4c8dffe25e252006b5e791b639d9d",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Meizhixiuxing.png"
     },
@@ -1535,7 +1535,7 @@
       "app": "漫客栈",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ef69f0ac40096673.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-ef69f0ac40096673.yaml",
-      "sha256": "d21a1aeca330fd9f5ad3d073459cce25032456f0a0630ba385824ac452f83aef",
+      "sha256": "26aa3b1786331d776f96f8d485ac0734d7bcf81fc3a0c143e1444455be3c1cd9",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MKZ.png"
     },
@@ -1551,7 +1551,7 @@
       "app": "萌娘百科",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-bdf5468c753283db.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-bdf5468c753283db.yaml",
-      "sha256": "fba93d98483fda21cd2e72d3e170856f4a804254b30130abda294ebeaf060334",
+      "sha256": "0b5c6941666f373e0f8c342260e211dbff2c38a935fa6e2a09cade9155f252ef",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MoeGirlWiki.png"
     },
@@ -1559,7 +1559,7 @@
       "app": "墨迹天气",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5bfca277969ca907.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5bfca277969ca907.yaml",
-      "sha256": "443d097e48ee3b9c1414330c698e374360f9ca515f9e34798d3b7cc8faff60e2",
+      "sha256": "439a28a4b67a9048b36693311498ec4b121f744ea5c310091faf154801178c95",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MojiWeather.png"
     },
@@ -1567,7 +1567,7 @@
       "app": "摩托范",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-214c56dbf4cc856b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-214c56dbf4cc856b.yaml",
-      "sha256": "c64297d8dae0ac5e38021f23b1596490cc1681e56f799f03a01aaa0fcbe39987",
+      "sha256": "eceb019a0db82ad6658b520e5ee1d17e445f105f38ec757763b03007100e5d42",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MotorFans.png"
     },
@@ -1583,7 +1583,7 @@
       "app": "云鲸智能",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ffd92f697966d200.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-ffd92f697966d200.yaml",
-      "sha256": "74a25d423a749a05c81c91e4c96ff467283c7664e912f07e9e0fd192208c157b",
+      "sha256": "db7918b9a19eab2f69ea2a32fdde0517f57defb15ed02ba1b2b012ccc408eccf",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NarwelRobots.png"
     },
@@ -1591,7 +1591,7 @@
       "app": "OKOK",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e49a879e38e36c7c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-e49a879e38e36c7c.yaml",
-      "sha256": "f29c64ee921d86db1aeb87b9eec0ee4f2f089bc95cce1b1164a4d0ad868b954b",
+      "sha256": "cf8e78993223353b5b159cb842fed5efd9f276d7040e8cb309f3ed4a13d9e362",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKOK.png"
     },
@@ -1607,7 +1607,7 @@
       "app": "胖乖生活",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-3a9ccc82e301155d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-3a9ccc82e301155d.yaml",
-      "sha256": "1aaa79d2de915bbfca9d979a34476560cdd21a4370f95403c98785f9f4ff39d7",
+      "sha256": "15b5f618985227934b8dbbddbf57dc63efd80ecb34a8edf5e5acd8f50cb2e9b5",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PangguaiLife.png"
     },
@@ -1615,7 +1615,7 @@
       "app": "完美世界电竞",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e0133a7c238f19d4.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-e0133a7c238f19d4.yaml",
-      "sha256": "b360fac39f3d5051b983a4680698c5cfac0dd739adf31d1c6b24928a3660fcd9",
+      "sha256": "1eee5032c917e501881151cf0c0fbe9dd8afadfa76d37ff6851b060f04a2fabe",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PerfectWorldEsport.png"
     },
@@ -1623,7 +1623,7 @@
       "app": "中国人保",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-f5b666104761128a.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-f5b666104761128a.yaml",
-      "sha256": "fa74d9196ecf7f0e8a95bae299c22ec12bf8918f22e54e437cb97e808dfaec79",
+      "sha256": "6dc69f0de3c760051a8992994a37353b0b00de06cafd935f4d5ad85c44033b1b",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PICC_Insurance.png"
     },
@@ -1631,7 +1631,7 @@
       "app": "PICOOC",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1c8859730dbcea0c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-1c8859730dbcea0c.yaml",
-      "sha256": "66662d1cfdf0e34995aabccf241eb3a10abca6311d3f237a5fdc17db570e1381",
+      "sha256": "664302e25c9d832f0282b1aac1d8e413656b051de8399943c6b97faea294df3d",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PICOOC.png"
     },
@@ -1639,7 +1639,7 @@
       "app": "Pinterest",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-905ce81e2a26cb54.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-905ce81e2a26cb54.yaml",
-      "sha256": "944cb8256349834c3800459d870b8f45f396343b6e1a340a781f399958cfcade",
+      "sha256": "944e95596ef57bb1959b94e2734c95a3fa4ff8e3e426229384fe88bcf91ac2e6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Pinterest.png"
     },
@@ -1647,7 +1647,7 @@
       "app": "皮皮虾",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8db2c4929d6358ce.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-8db2c4929d6358ce.yaml",
-      "sha256": "08e11bd3fe5e1854f9e5530e96d9f5bdfd7a463676b4b30df0dfaf4f92c754b9",
+      "sha256": "cf529963e1297f964b755b2f28e97c1cc5fd1ba4d6a0df33123c265f0048cc15",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PiPiXia.png"
     },
@@ -1655,7 +1655,7 @@
       "app": "朴朴超市",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-297948e13f86c35f.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-297948e13f86c35f.yaml",
-      "sha256": "eeef4c0e1012401eb37653514286d865b76952eb53fc9d3eddf227ac36410a8c",
+      "sha256": "63975e67152efdb49672217da7eedcb4ff1ec7b0c798409692f1403956929faf",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PuPuMall.png"
     },
@@ -1663,7 +1663,7 @@
       "app": "亲宝宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c101f03fbb1ae09c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-c101f03fbb1ae09c.yaml",
-      "sha256": "e07a3919f825da77fbc0b3f9f1a9b06e736eb3fdcf79aa882cce9ef47db0c861",
+      "sha256": "d7a4c3b04b025957a8e08ef70472f90db2795c767a804e4cf8d96d9d7390a569",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Qbb.png"
     },
@@ -1671,7 +1671,7 @@
       "app": "启信宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b656e3cea059916d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b656e3cea059916d.yaml",
-      "sha256": "93477fbb2ca3da3166f4637a9a94c6728e5f60d7c326bba18b9ee19c66185194",
+      "sha256": "55d14fad9831e7db7fd9981389dcd478e51a8fc93157bfc576f281c804b12a18",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiXinBao.png"
     },
@@ -1679,7 +1679,7 @@
       "app": "全民K歌",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-dffb77f5722d6bf7.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-dffb77f5722d6bf7.yaml",
-      "sha256": "3c5950bb6dcb9cde9ba396928dbfd1ff0c7f233fcb76a65932b53df0448106b9",
+      "sha256": "84cbad4f9903c9112644c82b7c43f2491a6ecc7eebe85e693095842eef6eda7f",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QQKSong.png"
     },
@@ -1687,7 +1687,7 @@
       "app": "蜻蜓FM",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7b84505d174b4588.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-7b84505d174b4588.yaml",
-      "sha256": "e7f297f6fd8cf6453a964f36a414c1d148af1dcdc3a19228e49640bb809c2e9c",
+      "sha256": "76dc746a7ae365166f1add2ae4f8c33da2c3bc4c400c1823cd15524c0dab13a7",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QtingFM.png"
     },
@@ -1695,7 +1695,7 @@
       "app": "Reddit",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-76270eb3f7ef7866.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-76270eb3f7ef7866.yaml",
-      "sha256": "5d6dcc68a8f8b401aa9de7c50c163a9adc2ec5290c1fe9d58b3f09d4a7e3271f",
+      "sha256": "56d3e46c220d0523f49099760dc4b1bc166f00848d53ab3e3b7930710d54cba3",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png"
     },
@@ -1703,7 +1703,7 @@
       "app": "ReelShort",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-eecd41fd7cce58b1.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-eecd41fd7cce58b1.yaml",
-      "sha256": "35a6364774afebfa9e8064457e2e861bda99ce208ab03e8f6761f74e25f531ef",
+      "sha256": "01439ec33d814ab27edd510a3c6f571dd5a144fab95d6a5aca3c7f20143e1d25",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ReelShort.png"
     },
@@ -1711,7 +1711,7 @@
       "app": "风鸟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c7d6b7567c78c6a8.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-c7d6b7567c78c6a8.yaml",
-      "sha256": "e5101c711c4ad88c86a9dd2e0ffa25421453a05398d3846cf685b6803fd1f37b",
+      "sha256": "843dd8e8f86f8e0f8613db9ab7d3c2fed44adc718edce1be54ec56939eb48e73",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RiskBird.png"
     },
@@ -1719,7 +1719,7 @@
       "app": "Roborock",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8761e9409a3c0257.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-8761e9409a3c0257.yaml",
-      "sha256": "e1fcdee86420a9fd69b29ca20991dfde62eb41dd15130731d97d6b1d996cc82e",
+      "sha256": "14ab2250d19fedb6b4cedfe96b335b878578f0b1f338edb5c7a64bc7f8a6c394",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Roborock.png"
     },
@@ -1727,7 +1727,7 @@
       "app": "萝卜快跑",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0e403cf9b67548e4.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-0e403cf9b67548e4.yaml",
-      "sha256": "e9a0c4283a33224dda779d60b10bf6ef718f6e238216d2054c1f367eb11f7f07",
+      "sha256": "c63903cd628b7859103fb0b6c5c1370aec3227a2a306d0641702e35d95665356",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RoboTaxi.png"
     },
@@ -1751,7 +1751,7 @@
       "app": "闪动校园",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fcb4338e38558d58.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-fcb4338e38558d58.yaml",
-      "sha256": "02c197778cbefa8ebebb74748f721fb34229694446e1bd819ad770bc58d6fdaa",
+      "sha256": "a3b0ec3b553cd120ed9922009f874843a91f91fbee5e1faeda09fdae194e31a1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShandongSchool.png"
     },
@@ -1767,7 +1767,7 @@
       "app": "口袋壁纸",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9e2968465610c3ec.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-9e2968465610c3ec.yaml",
-      "sha256": "8b9cb5a7b8e48392d5cba3c87505b887ee5def5983c61c30bcf26898e1546a82",
+      "sha256": "f4cefa88de4dbbf27a394ef19b3124bf1e2f16bc9995319a52923a175ba2322e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShoujiDesk.png"
     },
@@ -1775,7 +1775,7 @@
       "app": "收银通商户端",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b39e3f8da46bc49e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b39e3f8da46bc49e.yaml",
-      "sha256": "1b323d1192d25bffe0b26b30344c60223c22d5f1771f9cad70ddc174bd731fba",
+      "sha256": "b6712393ef3434289b46458805d0f924328e4a3bb50b94b84d989703d0c667d1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShouYinTongMerchant.png"
     },
@@ -1783,7 +1783,7 @@
       "app": "书旗小说",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-61f583ff2a07883d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-61f583ff2a07883d.yaml",
-      "sha256": "f05850f02df6008092113699387eaae10a1d72a2b84613c0d48b02f2b0ffbd21",
+      "sha256": "8ae2577ab3b0e880160276fef1ce74aeaf02c2ade344e34a29ba04779f967e8a",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShuQiCenterReader.png"
     },
@@ -1791,7 +1791,7 @@
       "app": "新浪财经",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8eeae9a190954b28.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-8eeae9a190954b28.yaml",
-      "sha256": "c59c3584e9e8e081791e21070ee36164dc6f223f53e75859b1e7a38d5fdf38dc",
+      "sha256": "b86dc1c4e8a9f810cec17956aa77d65df91e93c987acaf669717a7ca6abca186",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SinaStock.png"
     },
@@ -1807,7 +1807,7 @@
       "app": "慧生活798",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-469067d56989c72b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-469067d56989c72b.yaml",
-      "sha256": "d54a02ec030da56eec72632f87abb305df9d4004233fc708c4c95509ed143f69",
+      "sha256": "9e110fe0553699b2bf76eae51f91222e3ea88d7aa9f1e5cc9e46d61bb7543f94",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SmartLife.png"
     },
@@ -1823,7 +1823,7 @@
       "app": "雪球",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5538b5d44efe7abf.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-5538b5d44efe7abf.yaml",
-      "sha256": "e5db1722d56681d24f79c2e6f69aa1e0e7fbd08b13b043c8b074accafeee0cd0",
+      "sha256": "c6bc178cb50ae613c366bb3e2b53d4e68bc0e382126d72a576b01a3542f331b2",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Snowball.png"
     },
@@ -1847,7 +1847,7 @@
       "app": "Soul",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-3cbd61649a86fd2c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-3cbd61649a86fd2c.yaml",
-      "sha256": "9508ff6735c0ac8d4a03f87706abc2f51e290e7d9510e41febd7cd9333b001bf",
+      "sha256": "4b1342773056feceda69360d2d49970352f0de3275721b33f9151c4fbee3c09b",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Soul.png"
     },
@@ -1855,7 +1855,7 @@
       "app": "他趣",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b8fc86a3cabd9c4d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b8fc86a3cabd9c4d.yaml",
-      "sha256": "8fefda34402afee0e2ebfc94260e55d957ea58e8b387801b9cfea7085ee7918a",
+      "sha256": "7835ad5fbc2c9f60c214b4be7444b61efb786a60d02ed6ac938501bb598b9646",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taqu.png"
     },
@@ -1863,7 +1863,7 @@
       "app": "TeraBox",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-178b71c193daa2d7.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-178b71c193daa2d7.yaml",
-      "sha256": "f2375d820fd1aae1121c720e16cb180ff94a3642609409c33aa50463327ed328",
+      "sha256": "1b5e807cf47844e76b25ba66f39f544efd751d0f4e8a092f6102a4ea9274a248",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TeraBox.png"
     },
@@ -1879,7 +1879,7 @@
       "app": "图怪兽",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ca62d427bed9d504.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-ca62d427bed9d504.yaml",
-      "sha256": "7a49ff8b2fa124d477fe320cbcb55abe1ea01d711930b01cc571f61b39aa0538",
+      "sha256": "7f83007b662b9733e6f3d9918874efc8e859557be85c2cd35ace8348da053109",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TuGuaiShou.png"
     },
@@ -1887,7 +1887,7 @@
       "app": "Tumblr",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-22590f98bd0ea381.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-22590f98bd0ea381.yaml",
-      "sha256": "fd5b211390225468899bc8c8b51258714bc6ee4e20690174cae099ba41d8f04b",
+      "sha256": "48a627139f4edd722a7460b6bf73dceba6524f1080f149756f2e70f21555a7dc",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Tumblr.png"
     },
@@ -1903,7 +1903,7 @@
       "app": "Uki",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35dfbc19b6261897.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-35dfbc19b6261897.yaml",
-      "sha256": "5500aff02ae62241797e7ed7239b2ef85bf1a5b7cbe7f0b472fef0c0040141a6",
+      "sha256": "69b210c13883b14873d287d88850ca299cd2a6ed2c3d636e8d1085f95f49744c",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Uki.png"
     },
@@ -1911,7 +1911,7 @@
       "app": "萤石云视频",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a626fc8bf52a7acf.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-a626fc8bf52a7acf.yaml",
-      "sha256": "8b9adb4a571e1bc2ea5b56c157a55f42ebece4d1491e317215a01126511fb6a7",
+      "sha256": "dd9a925645c36f333243bcc6e8f8f7bad1dfa0effbc9501e667dbdc690ed7aac",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/VideoGo.png"
     },
@@ -1919,7 +1919,7 @@
       "app": "挖财记账",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-99b8087c4e424e09.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-99b8087c4e424e09.yaml",
-      "sha256": "bd2f27c370e536206b603002498cfa03a9dd3fd8545e00d234f7baac49d5bc10",
+      "sha256": "ab6abd661f9fab94e61171e95a6e732567f0ef4697919939d5ea967365066686",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Wacai.png"
     },
@@ -1927,7 +1927,7 @@
       "app": "WakeUp课程表",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-2e1038260331e833.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-2e1038260331e833.yaml",
-      "sha256": "a49a41ecabc808f5e2d6e322bc47416c0f2b047f9d8beb2bf7e68d97e7309be4",
+      "sha256": "06f1f073d8d1efab2ecbd0ff2d00a7d3660ab3552e386e75e8577fdacfe0a1ab",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WakeupSchedule.png"
     },
@@ -1943,7 +1943,7 @@
       "app": "微店",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-4123e101551f870c.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-4123e101551f870c.yaml",
-      "sha256": "6a61b1dd321875975e12809e3403e2570e034eff4e12ecaac4fb6a06a4c216c6",
+      "sha256": "36f77343afa41b7245e34ecd1e4408793df83572af2ed4ee063e2b0dc85fbe68",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weidian.png"
     },
@@ -1951,7 +1951,7 @@
       "app": "微脉圈",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9884eff95f618871.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-9884eff95f618871.yaml",
-      "sha256": "70bf391e9a053f1b3926d26383cdb3b77605a567cd447bbb135acd0c2f6e9b19",
+      "sha256": "4bac68400482c97a71212b9977f05f7b273539b997cb20b4978347fe81f8215e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weimai.png"
     },
@@ -1959,7 +1959,7 @@
       "app": "威锋",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-227d87023617a884.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-227d87023617a884.yaml",
-      "sha256": "9c337e27afe775b95316a24b99aa3e80a8fa820e9ec038e7e0d105e38d36aebd",
+      "sha256": "718be0468dd3db6b6c97ea6fd5ab4bd4228d1a501951f05d458612b050e5ddcb",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WPForum.png"
     },
@@ -1967,7 +1967,7 @@
       "app": "金山文档",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-366de70737d39604.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-366de70737d39604.yaml",
-      "sha256": "e500ecfdf91b0c27705a8c6eefd5b9d97570fec03363b9e8d700b45ef5b26688",
+      "sha256": "d148da83f54b00ebab3e610f28dcf91ef47d5c439b9d95aec17e54b59c564e67",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WPS_Documents.png"
     },
@@ -1975,7 +1975,7 @@
       "app": "无他相机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b050cfb46a23fe97.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b050cfb46a23fe97.yaml",
-      "sha256": "07065a82c60061daa4b7003f4aa581c62272c94b9426790a18528af49bc655e8",
+      "sha256": "a337fd5d8630d0230af3c926742bb4f97149ab8219ca06db0bb81429a2001a56",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WutaCamera.png"
     },
@@ -1991,7 +1991,7 @@
       "app": "下厨房",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-90daf81c40e3f449.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-90daf81c40e3f449.yaml",
-      "sha256": "4dd703c3b08f6e6172912321c5ae2729d669e555550f751be6ae0f46b000b64b",
+      "sha256": "8f8d1c36b40330b77513dd94d2b2ec9c6d44aa7eb7958db4c856d69146a23996",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaChuFang.png"
     },
@@ -1999,7 +1999,7 @@
       "app": "小白智慧打印",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0afc709cb4eaf4fd.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-0afc709cb4eaf4fd.yaml",
-      "sha256": "c07d9e909f6471af215c099105b557775ee4fc9f79d02a30ca0629b303159da9",
+      "sha256": "147a6c2ea82082534c8c2355266909bba0986c4b2f99a30486c845e799f2bcff",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaobaiPrint.png"
     },
@@ -2007,7 +2007,7 @@
       "app": "小米音箱",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9796533ae37c567d.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-9796533ae37c567d.yaml",
-      "sha256": "462d2bef827e67365bc2ba396f72d4db0df06acd682e3d86da3f97b604f94559",
+      "sha256": "1bebb8291860a354106b1d7bf3ff94e9ebd4b1e1388911f771c0c7d405708f19",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png"
     },
@@ -2015,7 +2015,7 @@
       "app": "医考帮",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b07c5fc0ee27df55.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b07c5fc0ee27df55.yaml",
-      "sha256": "b5df08dd8dee31f97064cc6aa2c9ede4a8f9eb6b686601c813aff196e15decaa",
+      "sha256": "c04a64259305055f926656ca4a8eb15d75e24c5a335f95c540e69a561b8b09e6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YiKaoBang.png"
     },
@@ -2023,7 +2023,7 @@
       "app": "易校园",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b09c110f88c81607.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-b09c110f88c81607.yaml",
-      "sha256": "6b8f70f33a183a19e38b0753dd217ed40b1d50c612f7f3f349290f221c23ca0f",
+      "sha256": "64305d3d2d707cd0a62f59433418f9d16a27f555a338e24ca3a4030f0979cbd1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YiSchool.png"
     },
@@ -2031,7 +2031,7 @@
       "app": "一甜相机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35d75fdb3fc7ca25.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-35d75fdb3fc7ca25.yaml",
-      "sha256": "c1f7e201177442594d7f441f8caaa87fb77ab537d42e6a18cd6e03efd58c8e35",
+      "sha256": "4db17ced57027f84f4cec56668f3db84fe379c365ff662edd45f7790c366e216",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yitian.png"
     },
@@ -2047,7 +2047,7 @@
       "app": "有道翻译官",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7bf1db1f2236459f.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-7bf1db1f2236459f.yaml",
-      "sha256": "b2e61c2e446e09a2965694933a217b6a2992e7cb2196410388a5c23c0734b331",
+      "sha256": "2feb33b6ff5e145aeb5f78d51d1b4223c5c85409aa1468a334e5e55e2d58a9e1",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoTrans.png"
     },
@@ -2055,7 +2055,7 @@
       "app": "阅友",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e4f19502e844825e.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-e4f19502e844825e.yaml",
-      "sha256": "acf6f953999a74a89db983b3745b437cfc3c078a2d276e92970eb6a466e872d2",
+      "sha256": "d5e09562cd3eb3f60e353368113198d3c334b350a81b38387939b0e5c37c9d27",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png"
     },
@@ -2063,7 +2063,7 @@
       "app": "好轻",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-13d4faff26015c2b.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-13d4faff26015c2b.yaml",
-      "sha256": "6b651080875d60ed9398f155c4b9bda41c669e901d75df7bb15ece3ca326b331",
+      "sha256": "3e365a3b13221ad6b5fea8437d2c6599962a8c8ec09937c3e862968fdf906260",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YunmaiScale.png"
     },
@@ -2071,7 +2071,7 @@
       "app": "YY",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-daadfdb9d23bf52f.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-daadfdb9d23bf52f.yaml",
-      "sha256": "8bb152e542618f09623de9cc1a2f3ad13967af3fba0e42cf4494b413fe1480f2",
+      "sha256": "3d485557b53ba698b95b0597a6848e61af87e5ebac2ad419569f688f843a389e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YY_Voice.png"
     },
@@ -2079,7 +2079,7 @@
       "app": "YY语音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-da4c7bb3b7e129dc.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-da4c7bb3b7e129dc.yaml",
-      "sha256": "3b3fc0b1c18b579c0bd41e1fa7971d7394ddbef2148072b9b21217586a1cce13",
+      "sha256": "22f74fb6f35cb435106a8c5d4b3f7d3724cc976a133ac104041f85d4bf440ebf",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YYVoiceTool.png"
     },
@@ -2087,7 +2087,7 @@
       "app": "ZAKER",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ac48339042c6b365.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-ac48339042c6b365.yaml",
-      "sha256": "3de47d8d622f590e2307006ef650d8e2f9fc57704a6dc05cd36da9bc7547e327",
+      "sha256": "7692e1c5e8a000cb4aed422a898696126cbf006b61000973c04fb072d1eb3a9e",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZAKER.png"
     },
@@ -2095,7 +2095,7 @@
       "app": "直播吧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c684b14cc6c499db.yaml",
       "repository_path": "curated/module-stack/modules/catalog-kelee-c684b14cc6c499db.yaml",
-      "sha256": "8986b8c50fd7269083021d93436bb55d9ab3407443793502d59a52e8a2b167d6",
+      "sha256": "978b21758d8697a9feb9af201a532ccd38a35dcdca6f40e06e50332dd754dd98",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Zhibo8.png"
     },
@@ -2119,7 +2119,7 @@
       "app": "必应",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-fc03c2292ed012b4.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-fc03c2292ed012b4.yaml",
-      "sha256": "b5f01adff47ff5e4959ba15c161d962806b6da4766b601707103835aa1cdc99e",
+      "sha256": "839306a6e384935f6b318eea32827c49e44b642dd4ca8fe6678992cc5fa20689",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
     },
@@ -2127,7 +2127,7 @@
       "app": "中国联通",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-a751613faf1902f5.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-a751613faf1902f5.yaml",
-      "sha256": "25715ca037712c788fa6987771e713de8516cb148020a7318244398fadd0f76d",
+      "sha256": "094c7be0baacab02728f13cad19106e21bcab05dac6f21c263a7d1e66d242eec",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
     },
@@ -2175,7 +2175,7 @@
       "app": "游民星空",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-3d6d7286c578d9c2.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-3d6d7286c578d9c2.yaml",
-      "sha256": "6167d54cd4b63b188a8402a7e2a822ccc943a6c7fe37f72180d39c41128a2e53",
+      "sha256": "6bc68436a74898f12798870ff9cc41c7db196f639b694cb0455827ef1d701fe6",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/ymxk.png"
     },
@@ -2183,7 +2183,7 @@
       "app": "粉象生活",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-65152c5f1bbe0002.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-65152c5f1bbe0002.yaml",
-      "sha256": "4006267b2386c1cfd8eb8b77fe34fb5e5fe12c82a853c1b539036b4b48e71881",
+      "sha256": "63446447f062ef30259db345c09205ac754300c1b45e2a68e8f16de5d43f314f",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
     },
@@ -2207,7 +2207,7 @@
       "app": "SDGun 社区",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-f3ce56b989073dbd.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-f3ce56b989073dbd.yaml",
-      "sha256": "f1d07113896ce48b68f4d161c09bf2f8b79573479ba63b55147832036a05c111",
+      "sha256": "bca7998418365e5ce92530a659240bf620251a4db8a953d1d0f1db85f4e8db8c",
       "collection_extension": true,
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
     },
@@ -2233,8 +2233,8 @@
     "url_rewrites": 2,
     "header_rewrites": 0,
     "body_rewrites": 373,
-    "map_locals": 1151,
-    "scriptings": 232
+    "map_locals": 595,
+    "scriptings": 175
   },
   "mitm_hosts": 744,
   "changes": [
@@ -2358,13 +2358,6 @@
     },
     {
       "kind": "exact_duplicate_omitted",
-      "section": "map_locals",
-      "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-15e3ce0bd9cad46d.yaml",
-      "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-15e3ce0bd9cad46d.yaml",
-      "match": "(?i)^https:\\/\\/zone\\.guiderank-app\\.com\\/guiderank-web\\/app\\/common\\/getWeworkPromotionInfoBySceneType"
-    },
-    {
-      "kind": "exact_duplicate_omitted",
       "section": "rules",
       "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-716bc4c8956e9129.yaml",
       "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d8963f19af6e3fd3.yaml",
@@ -2379,24 +2372,10 @@
     },
     {
       "kind": "exact_duplicate_omitted",
-      "section": "map_locals",
-      "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fd12b6554d0136dd.yaml",
-      "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fd12b6554d0136dd.yaml",
-      "match": "(?i)^https:\\/\\/(cdn-)?api\\.kkmh\\.com\\/v\\d\\/business\\/mine\\/business_config"
-    },
-    {
-      "kind": "exact_duplicate_omitted",
       "section": "rules",
       "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-062.yaml",
       "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-6a867611eb19bed3.yaml",
       "match": "adui.tg.meitu.com"
-    },
-    {
-      "kind": "exact_duplicate_omitted",
-      "section": "map_locals",
-      "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ef69f0ac40096673.yaml",
-      "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ef69f0ac40096673.yaml",
-      "match": "(?i)^https:\\/\\/base\\.mkzcdn\\.com\\/advert\\/app\\/task\\/motivate\\/v\\d"
     },
     {
       "kind": "exact_duplicate_omitted",
@@ -2537,13 +2516,6 @@
       "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Google.yaml",
       "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a49bb1096826827a.yaml",
       "match": "app-measurement.com"
-    },
-    {
-      "kind": "exact_duplicate_omitted",
-      "section": "map_locals",
-      "first": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-4123e101551f870c.yaml",
-      "second": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-4123e101551f870c.yaml",
-      "match": "(?i)^https:\\/\\/thor\\.weidian\\.com\\/warlock\\/recommend\\.guessULike\\/"
     },
     {
       "kind": "domain_reject_omitted_to_preserve_http_processing",
@@ -3121,7 +3093,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/2bulu_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-29efdb80dadad315.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3137,7 +3109,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/36Kr_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-104c5ba235361399.yaml",
       "included": true,
-      "operations_added": 14,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3145,7 +3117,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/51Job_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1af3d4db1b1b9764.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3169,7 +3141,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/91160_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-81aa72a5890bd751.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 9,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3177,7 +3149,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/AlcidaeVideo_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35c081fdb67a26e5.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3185,7 +3157,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/AxWorkSchedule_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7bb25b101003b82b.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3193,7 +3165,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/BabyTree_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9cb391ff82e7c6f0.yaml",
       "included": true,
-      "operations_added": 8,
+      "operations_added": 7,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3267,7 +3239,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Beike_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9a2cef125f27aaa5.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3282,7 +3254,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/BitqiuPan_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-eed703efc5d4a3a2.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3298,7 +3270,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/BodianMusic_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-2a7dd88c9bdef484.yaml",
       "included": true,
-      "operations_added": 18,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3306,7 +3278,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/BooHee_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-caca27662aa4ffae.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3314,7 +3286,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/CaixinMedia_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1d523ea61618f97e.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 10,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3322,7 +3294,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/CatEarFM_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c1c65ba389ac611b.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 9,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3338,7 +3310,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Cece_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-851dff430dca5b64.yaml",
       "included": true,
-      "operations_added": 18,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3346,7 +3318,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ChaoXingStudy_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-af536c1fd228e628.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3362,7 +3334,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Chelaile_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5a82cd7cf47bba21.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3370,7 +3342,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-f62b080ef7dfec1a.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3378,7 +3350,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Chuzhan_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-010e40276fe4ef8a.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3394,7 +3366,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/CosmosPodcast_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-560c182dad126d89.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3402,7 +3374,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/CrazyRope_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-07864975046f4657.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3410,7 +3382,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/CSG_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5a550c686c8f099e.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3434,7 +3406,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/DigitalHeartbeat_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-802fd6e67f3aae15.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3457,7 +3429,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a1b6200b11297fd1.yaml",
       "included": true,
-      "operations_added": 2,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3465,7 +3437,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/DoubanRead_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ab2cf862e33f21be.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3504,7 +3476,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/EasyCharge_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-05ba85dafca2250e.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3520,7 +3492,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/EtouchEcalendar_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d3fcfc4a7cc8d332.yaml",
       "included": true,
-      "operations_added": 8,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3548,7 +3520,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/FerrisWheel_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-930ce3cc6ced714e.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3556,7 +3528,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/FinanceNews_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b727cfacab03cccf.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 6,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3572,7 +3544,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e6c777f69279dfff.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3580,7 +3552,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-15e3ce0bd9cad46d.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3588,7 +3560,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/HeartideBrainWave_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-643018a600bccf86.yaml",
       "included": true,
-      "operations_added": 12,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3626,7 +3598,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/iReader_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-716bc4c8956e9129.yaml",
       "included": true,
-      "operations_added": 9,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3642,7 +3614,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/iReaderDejian_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d8963f19af6e3fd3.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3658,7 +3630,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/iWallBiZhi_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-739b5af48d2574b7.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3666,7 +3638,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a545f553076bbdf1.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 10,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3696,7 +3668,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-2fcc2dd3af320799.yaml",
       "included": true,
-      "operations_added": 18,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3719,7 +3691,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0bc752647aaf509c.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3727,7 +3699,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KuaiDuiZuoYe_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a7f19bebedf966e1.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3735,7 +3707,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KuaiKanComic_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fd12b6554d0136dd.yaml",
       "included": true,
-      "operations_added": 25,
+      "operations_added": 20,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3757,7 +3729,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KuGouYouth_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-14c49fe53ed93fba.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3765,7 +3737,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KuroBBS_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-80147db3d0fca33e.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3780,7 +3752,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/KwaiVideoeditor_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1e27d04fd483b536.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3788,7 +3760,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/LiveLab_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7c855a8694d7187a.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3796,7 +3768,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/LOL_Bible_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8945fb82d40db78d.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3804,7 +3776,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/LZMH_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-649136a7938ed8b1.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 7,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3819,7 +3791,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/MaiMai_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-d1b91fa71cf4009f.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3834,7 +3806,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/marki_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-26976f396fc71493.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3881,7 +3853,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Meizhixiuxing_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-3c47e10cc25166e4.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3904,7 +3876,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/MKZ_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ef69f0ac40096673.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3920,7 +3892,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/MoeGirlWiki_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-bdf5468c753283db.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3928,7 +3900,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5bfca277969ca907.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3936,7 +3908,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/MotorFans_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-214c56dbf4cc856b.yaml",
       "included": true,
-      "operations_added": 9,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3952,7 +3924,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/NarwelRobots_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ffd92f697966d200.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3977,7 +3949,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/OKOK_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-e49a879e38e36c7c.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -3993,7 +3965,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/PangguaiLife_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-3a9ccc82e301155d.yaml",
       "included": true,
-      "operations_added": 8,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4009,7 +3981,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-f5b666104761128a.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4017,7 +3989,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/PICOOC_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-1c8859730dbcea0c.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4033,7 +4005,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/PiPiXia_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8db2c4929d6358ce.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4041,7 +4013,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-297948e13f86c35f.yaml",
       "included": true,
-      "operations_added": 8,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4049,7 +4021,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Qbb_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c101f03fbb1ae09c.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 8,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4064,7 +4036,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/QiXinBao_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b656e3cea059916d.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4072,7 +4044,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/QQKSong_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-dffb77f5722d6bf7.yaml",
       "included": true,
-      "operations_added": 26,
+      "operations_added": 25,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4080,7 +4052,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7b84505d174b4588.yaml",
       "included": true,
-      "operations_added": 19,
+      "operations_added": 17,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4113,7 +4085,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ReelShort_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-eecd41fd7cce58b1.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4121,7 +4093,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c7d6b7567c78c6a8.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4129,7 +4101,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Roborock_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-8761e9409a3c0257.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4137,7 +4109,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/RoboTaxi_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0e403cf9b67548e4.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4181,7 +4153,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ShandongSchool_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-fcb4338e38558d58.yaml",
       "included": true,
-      "operations_added": 15,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4197,7 +4169,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ShoujiDesk_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9e2968465610c3ec.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4205,7 +4177,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ShouYinTongMerchant_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b39e3f8da46bc49e.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4213,7 +4185,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ShuQiCenterReader_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-61f583ff2a07883d.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4237,7 +4209,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/SmartLife_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-469067d56989c72b.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4253,7 +4225,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Snowball_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-5538b5d44efe7abf.yaml",
       "included": true,
-      "operations_added": 17,
+      "operations_added": 10,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4292,7 +4264,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Taqu_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b8fc86a3cabd9c4d.yaml",
       "included": true,
-      "operations_added": 11,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4300,7 +4272,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/TeraBox_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-178b71c193daa2d7.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4342,7 +4314,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/TuGuaiShou_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ca62d427bed9d504.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4366,7 +4338,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35dfbc19b6261897.yaml",
       "included": true,
-      "operations_added": 10,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4374,7 +4346,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/VideoGo_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-a626fc8bf52a7acf.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4382,7 +4354,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Wacai_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-99b8087c4e424e09.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4441,7 +4413,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Weidian_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-4123e101551f870c.yaml",
       "included": true,
-      "operations_added": 13,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4465,7 +4437,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-366de70737d39604.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4489,7 +4461,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/XiaChuFang_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-90daf81c40e3f449.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4497,7 +4469,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/XiaobaiPrint_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-0afc709cb4eaf4fd.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4525,7 +4497,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-9796533ae37c567d.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4533,7 +4505,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/YiKaoBang_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-b07c5fc0ee27df55.yaml",
       "included": true,
-      "operations_added": 2,
+      "operations_added": 1,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4549,7 +4521,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-35d75fdb3fc7ca25.yaml",
       "included": true,
-      "operations_added": 3,
+      "operations_added": 2,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4572,7 +4544,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-7bf1db1f2236459f.yaml",
       "included": true,
-      "operations_added": 7,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4621,7 +4593,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/YYVoiceTool_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-da4c7bb3b7e129dc.yaml",
       "included": true,
-      "operations_added": 5,
+      "operations_added": 4,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4629,7 +4601,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/ZAKER_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-ac48339042c6b365.yaml",
       "included": true,
-      "operations_added": 6,
+      "operations_added": 5,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4637,7 +4609,7 @@
       "source_url": "https://kelee.one/Tool/Loon/Lpx/Zhibo8_remove_ads.lpx",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-kelee-c684b14cc6c499db.yaml",
       "included": true,
-      "operations_added": 13,
+      "operations_added": 10,
       "reason": "disjoint_reviewed_app_source"
     },
     {
@@ -4689,7 +4661,7 @@
       "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/dc3ea2c1fb2db870676b26da24006083eb1d44d3/AdBlock/BingSimplify.conf",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-fc03c2292ed012b4.yaml",
       "included": true,
-      "operations_added": 4,
+      "operations_added": 3,
       "reason": "disjoint_reviewed_app_source"
     },
     {

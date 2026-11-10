@@ -12,21 +12,22 @@ map_locals:
 - match: ^https?:\/\/appconf\.mail\.163\.com\/mmad\/master\/get\.do
   status_code: 200
   body: ''
-- match: ^https?:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/getRegConfig\.do
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do
+- match: (?:^https?:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get)|(?:^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/getRegConfig\.do)|(?:^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do)
   status_code: 200
   body: '{}'
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/.*conf\.do
-    filter: .data |= del(.masterLoginGuideList, .masterOperatorList, .functionOperatorInfoList,
-      .memberOperator, .activityTabInfoList, .extList)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= del(.masterLoginGuideList,\
+      \ .masterOperatorList, .functionOperatorInfoList, .memberOperator, .activityTabInfoList,\
+      \ .extList)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/mail\.163\.com\/fgw\/mailsrv-webrobot\/.*user\/info
-    filter: .result |= del(.assistantInfo, .quotaData)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.result |= del(.assistantInfo, .quotaData)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png

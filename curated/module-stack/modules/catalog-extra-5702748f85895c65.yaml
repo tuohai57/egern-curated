@@ -6,96 +6,52 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/site\/launch\?
-    filter: '(
-
-      delpaths([["info","splash"]])
-
-      ) | (
-
-      delpaths([["info","splash_ready"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"info\",\"splash\"\
+      ]])\n) | (\ndelpaths([[\"info\",\"splash_ready\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/site\/config$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["info","tab_bar_live"]])
-
-      ) | (
-
-      delpaths([["0"]])
-
-      )
-
-      ) | (
-
-      delpaths([["info","enable_tab_bar_live_notice"]])
-
-      )
-
-      ) | (
-
-      delpaths([["false"]])
-
-      )
-
-      ) | (
-
-      delpaths([["info","teenager_popup_mode"]])
-
-      )
-
-      ) | (
-
-      delpaths([["0"]])
-
-      )
-
-      ) | (
-
-      delpaths([["info","httpdns"]])
-
-      )
-
-      ) | (
-
-      delpaths([["info","homepage_top_task_button"]])
-
-      )
-
-      ) | (
-
-      .info.cronet |= (fromjson | .quic=false | tojson)
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"\
+      info\",\"tab_bar_live\"]])\n) | (\ndelpaths([[\"0\"]])\n)\n) | (\ndelpaths([[\"\
+      info\",\"enable_tab_bar_live_notice\"]])\n)\n) | (\ndelpaths([[\"false\"]])\n\
+      )\n) | (\ndelpaths([[\"info\",\"teenager_popup_mode\"]])\n)\n) | (\ndelpaths([[\"\
+      0\"]])\n)\n) | (\ndelpaths([[\"info\",\"httpdns\"]])\n)\n) | (\ndelpaths([[\"\
+      info\",\"homepage_top_task_button\"]])\n)\n) | (\n.info.cronet |= (fromjson\
+      \ | .quic=false | tojson)\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/site\/tabs\?
-    filter: .info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"]
-      | index($t) != null))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.info.tabs |= map(select(.title as\
+      \ $t | [\"直播\", \"发现\", \"广播剧\", \"听书\", \"分类\"] | index($t) != null))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/site\/icons\?
-    filter: .info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or
-      $t == "免费榜" or $t == "夜猫子" or $t == "启动音"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.info.icons |= map(select(.title as\
+      \ $t | $t == \"直播\" or $t == \"必听剧\" or $t == \"免费榜\" or $t == \"夜猫子\" or $t\
+      \ == \"启动音\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/discovery\/list$
-    filter: .info |= map(map(select(.title != "免流服务")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.info |= map(map(select(.title !=\
+      \ \"免流服务\")))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.missevan\.com\/site\/get-top$
-    filter: delpaths([["info","search_words"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"info\",\"search_words\"\
+      ]])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
 - match: ^https:\/\/data\.missevan\.com\/site\/ad-track$
   status_code: 200
@@ -107,17 +63,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\?
+- match: (?:^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$)|(?:^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\?)|(?:^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\?)
   status_code: 200
   body: '{}'
   headers:

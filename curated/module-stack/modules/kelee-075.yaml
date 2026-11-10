@@ -9,12 +9,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata
+- match: (?i:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon)|(?i:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata)
   status_code: 200
   body: '{}'
   headers:
@@ -27,13 +22,7 @@ scriptings:
     body_required: false
 - http_response:
     name: 移除板块广告
-    match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/096bf18999cb7071083a09b8a054087fb91a9872753ed5b64cafb151c0eee087.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除签到弹窗广告
-    match: (?i)^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign
+    match: (?i:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5)|(?i:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/096bf18999cb7071083a09b8a054087fb91a9872753ed5b64cafb151c0eee087.js
     body_required: true
     update_interval: 86400

@@ -4,22 +4,7 @@ author: Keywos[https://github.com/Keywos]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Baidu_input_method.png
 map_locals:
-- match: (?i)^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads\/list
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/mime\.baidu\.com\/sapi\/v1\/(circle\/joinedlist|lccorpus\/usercorpussync|aihelpactivity\/aihelpresource)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list
+- match: (?i:^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads\/list)|(?i:^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist))|(?i:^https?:\/\/mime\.baidu\.com\/sapi\/v1\/(circle\/joinedlist|lccorpus\/usercorpussync|aihelpactivity\/aihelpresource))|(?i:^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list)
   status_code: 200
   body: '{}'
   headers:

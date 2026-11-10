@@ -16,51 +16,32 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?
-    filter: '(
-
-      (
-
-      delpaths([["data","commonMaterial"]])
-
-      ) | (
-
-      delpaths([["data","tipsOperationLocation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","resourcePlacement"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"commonMaterial\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"tipsOperationLocation\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"resourcePlacement\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\?
-    filter: delpaths([["history_tags"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"history_tags\"]])\n)\
+      \ ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?
-    filter: delpaths([["data","carTips","data","popupInfo"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"carTips\",\"\
+      data\",\"popupInfo\"]])\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/m5-zb\.amap\.com\/ws\/ride\/home\/page\/get_commuting_card\?
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\?
+- match: (?:^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList\?)|(?:^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\?)|(?:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan))|(?:^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\?)
   status_code: 200
   body: '{}'
   headers:
@@ -75,27 +56,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\?
+- match: (?:^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\?)|(?:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2))|(?:^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword))|(?:^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?)|(?:^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\?)
   status_code: 200
   body: '{}'
   headers:
@@ -105,12 +66,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving)
+- match: (?:^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization))|(?:^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving))
   status_code: 200
   body: '{}'
   headers:

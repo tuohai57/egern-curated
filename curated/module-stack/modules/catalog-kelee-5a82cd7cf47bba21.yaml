@@ -28,17 +28,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/led-weather\/v\d\/condition_brief\?
-  status_code: 200
-  body: '**YGKJ{}YGKJ##'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/goocity\/config\/notices\?
-  status_code: 200
-  body: '**YGKJ{}YGKJ##'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https:\/\/api\.chelaile\.net\.cn\/encourage\/activity\/control\?
+- match: (?i:^https:\/\/api\.chelaile\.net\.cn\/led-weather\/v\d\/condition_brief\?)|(?i:^https:\/\/api\.chelaile\.net\.cn\/goocity\/config\/notices\?)|(?i:^https:\/\/api\.chelaile\.net\.cn\/encourage\/activity\/control\?)
   status_code: 200
   body: '**YGKJ{}YGKJ##'
   headers:

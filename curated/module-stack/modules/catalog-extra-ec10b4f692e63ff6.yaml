@@ -3,27 +3,12 @@ description: 移除开屏广告、弹窗，以及首页、服务和发现页的�
 author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 map_locals:
-- match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/app3rd/getApp3rdGenreList\?
+- match: (?i:^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/app3rd/getApp3rdGenreList\?)|(?i:^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/ad/)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v1/ad/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getAdSlotList$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/requestAd$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getSdkStartConfigList$
+- match: (?i:^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getAdSlotList$)|(?i:^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/requestAd$)|(?i:^https://yuudnn\.lz-qs\.com:9220/mssp-api/api/v1/mrtb/getSdkStartConfigList$)
   status_code: 200
   body: '{}'
   headers:
@@ -33,12 +18,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: (?i)^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeInfo$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeShopList$
+- match: (?i:^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeInfo$)|(?i:^https://yuudnn\.lz-qs\.com/lzmh_app_api/o2o/api/v2/o2o/homeShopList$)
   status_code: 200
   body: '{}'
   headers:
@@ -54,7 +34,10 @@ map_locals:
 body_rewrites:
 - response_jq:
     match: (?i)^https://lzmh\.lz-qs\.com:6025/lzmh_app_api/api/v2/user/getUserBaseInfoAndConfig\?
-    filter: del(.value.config)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.value.config)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - lzmh.lz-qs.com:6025

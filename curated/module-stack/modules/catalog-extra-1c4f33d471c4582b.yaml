@@ -16,12 +16,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$
+- match: (?:^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2)|(?:^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$)
   status_code: 200
   body: '{}'
   headers:

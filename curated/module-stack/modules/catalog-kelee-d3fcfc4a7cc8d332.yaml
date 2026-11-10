@@ -8,27 +8,7 @@ rules:
     match: sdk.ad.sfys365.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/auth\/voice_room_entrance\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\?
+- match: (?i:^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/auth\/voice_room_entrance\/list\?)|(?i:^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\?)|(?i:^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\?)|(?i:^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\?)|(?i:^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\?)
   status_code: 200
   body: '{}'
   headers:
@@ -40,11 +20,19 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/v0-client-lz\.rili\.cn\/lizhi\/api\/zhwnl\/cal_module\/(datas|config)\?
-    filter: (.data |= map(select(.module_name as $name | ["实用工具","会员下icon","天气页面_右上角图标","天气页面_24小时","天气页面_15日","每日插屏","下拉屏保","星座Tab（黄历页）"]
-      | index($name) != null)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.module_name\
+      \ as $name | [\"实用工具\",\"会员下icon\",\"天气页面_右上角图标\",\"天气页面_24小时\",\"天气页面_15日\"\
+      ,\"每日插屏\",\"下拉屏保\",\"星座Tab（黄历页）\"] | index($name) != null)))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^http:\/\/pc\.suishenyun\.net\/peacock\/api\/adspool\?
-    filter: (.data |= map((.layout |= map(select(.key_name == "实用工具" or .key_name
-      == "会员下icon" or .key_name == "天气页面_右上角图标" or .key_name == "天气页面_24小时" or .key_name
-      == "天气页面_15日" or .key_name == "每日插屏" or .key_name == "下拉屏保" or .key_name ==
-      "星座Tab（黄历页）"))) | select(.layout | length > 0)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map((.layout |= map(select(.key_name\
+      \ == \"实用工具\" or .key_name == \"会员下icon\" or .key_name == \"天气页面_右上角图标\" or\
+      \ .key_name == \"天气页面_24小时\" or .key_name == \"天气页面_15日\" or .key_name == \"\
+      每日插屏\" or .key_name == \"下拉屏保\" or .key_name == \"星座Tab（黄历页）\"))) | select(.layout\
+      \ | length > 0)))\n) ]) as $__egern_results\n       | if ($__egern_results |\
+      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

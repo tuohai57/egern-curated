@@ -9,9 +9,13 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news
-    filter: .result.links |= map(if .content_type == 27 then del(.title, .ad_pm, .img_gif,
-      .idea_id, .ad_report, .label, .source, .intranet_only, .ad_cm, .content_type,
-      .PROTOCOL, .img, .ad_ratio) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.result.links |= map(if .content_type\
+      \ == 27 then del(.title, .ad_pm, .img_gif, .idea_id, .ad_report, .label, .source,\
+      \ .intranet_only, .ad_cm, .content_type, .PROTOCOL, .img, .ad_ratio) else .\
+      \ end)\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 mitm:
   hostnames:
   - api.xiaoheihe.cn

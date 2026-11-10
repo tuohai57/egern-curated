@@ -25,6 +25,9 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/cgate\.zhaopin\.com\/bdp\/my\/homepageMainModule
-    filter: del(.data.commercialModule, .data.commercialModuleV5, .data.vipModule,
-      .data.vipModuleCardNew)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.commercialModule, .data.commercialModuleV5,\
+      \ .data.vipModule, .data.vipModuleCardNew)\n) ]) as $__egern_results\n     \
+      \  | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhiLianZhaoPin.png

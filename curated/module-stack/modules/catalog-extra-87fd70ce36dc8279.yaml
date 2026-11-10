@@ -6,65 +6,45 @@ homepage: https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aa
 body_rewrites:
 - response_jq:
     match: ^https:\/\/newclient\.map\.baidu\.com\/feed\/govui\/rich_content
-    filter: delpaths([["data"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\"]])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/newclient\.map\.baidu\.com\/client\/noticebar\/get\?
-    filter: delpaths([["content","multi_data"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"content\",\"multi_data\"\
+      ]])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/newclient\.map\.baidu\.com\/(client\/)?usersystem\/mine\/page\?
-    filter: if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([]) | has(\"data\")) then\
+      \ (setpath([\"data\"]; {})) else . end\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads&type=user_home_new_service
-    filter: delpaths([["ads"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"ads\"]])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\?
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["Result","cards",1]])
-
-      ) | (
-
-      delpaths([["Result","cards",4]])
-
-      )
-
-      ) | (
-
-      delpaths([["Result","cards",5]])
-
-      )
-
-      ) | (
-
-      delpaths([["Result","cards",9]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"Result\",\"\
+      cards\",1]])\n) | (\ndelpaths([[\"Result\",\"cards\",4]])\n)\n) | (\ndelpaths([[\"\
+      Result\",\"cards\",5]])\n)\n) | (\ndelpaths([[\"Result\",\"cards\",9]])\n)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/afd\.baidu\.com\/afd\/entry\?action=(update|query)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/popup\/getentrancecordovaurl$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/cobuild\/pull\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/operationgirdle$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/baseinfo$
+- match: (?:^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/popup\/getentrancecordovaurl$)|(?:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/cobuild\/pull\?)|(?:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/operationgirdle$)|(?:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/baseinfo$)
   status_code: 200
   body: '{}'
   headers:

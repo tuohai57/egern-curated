@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKOK.png
 map_locals:
-- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/home\/collection\/smartv\d\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/communityManage\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.chips-cloud\.com\/v\d\/good\/list\?
+- match: (?i:^https:\/\/api\.chips-cloud\.com\/v\d\/home\/collection\/smartv\d\?)|(?i:^https:\/\/api\.chips-cloud\.com\/v\d\/communityManage\/list\?)|(?i:^https:\/\/api\.chips-cloud\.com\/v\d\/good\/list\?)
   status_code: 200
   body: '{}'
   headers:

@@ -6,65 +6,37 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppStartupData$
-    filter: '(
-
-      (
-
-      delpaths([["data","resp_map","/teenager/api/info"]])
-
-      ) | (
-
-      delpaths([["data","resp_map","/apihub/api/getAppConfig","data","get_app_config_response","config","is_show_teenager_mode_btn"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","resp_map","/apihub/api/getAppConfig","data","get_app_config_response","config","teenager_popup_freq_type"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"resp_map\"\
+      ,\"/teenager/api/info\"]])\n) | (\ndelpaths([[\"data\",\"resp_map\",\"/apihub/api/getAppConfig\"\
+      ,\"data\",\"get_app_config_response\",\"config\",\"is_show_teenager_mode_btn\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"resp_map\",\"/apihub/api/getAppConfig\"\
+      ,\"data\",\"get_app_config_response\",\"config\",\"teenager_popup_freq_type\"\
+      ]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppConfig$
-    filter: '(
-
-      if (getpath(["data","config"]) | has("teenager_popup_freq_type")) then (setpath(["data","config","teenager_popup_freq_type"];
-      0)) else . end
-
-      ) | (
-
-      if (getpath(["data","config"]) | has("is_show_teenager_mode_btn")) then (setpath(["data","config","is_show_teenager_mode_btn"];
-      0)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\nif (getpath([\"data\",\"config\"\
+      ]) | has(\"teenager_popup_freq_type\")) then (setpath([\"data\",\"config\",\"\
+      teenager_popup_freq_type\"]; 0)) else . end\n) | (\nif (getpath([\"data\",\"\
+      config\"]) | has(\"is_show_teenager_mode_btn\")) then (setpath([\"data\",\"\
+      config\",\"is_show_teenager_mode_btn\"]; 0)) else . end\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/bbs-api-ab\.miyoushe\.com\/teenager\/api\/info$
-    filter: '(
-
-      (
-
-      if (getpath(["data"]) | has("is_enabled")) then (setpath(["data","is_enabled"];
-      false)) else . end
-
-      ) | (
-
-      if (getpath(["data"]) | has("is_teenager")) then (setpath(["data","is_teenager"];
-      false)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["data"]) | has("is_force")) then (setpath(["data","is_force"];
-      false)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\nif (getpath([\"data\"]) | has(\"\
+      is_enabled\")) then (setpath([\"data\",\"is_enabled\"]; false)) else . end\n\
+      ) | (\nif (getpath([\"data\"]) | has(\"is_teenager\")) then (setpath([\"data\"\
+      ,\"is_teenager\"]; false)) else . end\n)\n) | (\nif (getpath([\"data\"]) | has(\"\
+      is_force\")) then (setpath([\"data\",\"is_force\"]; false)) else . end\n)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$
+- match: (?:^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$)|(?:^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$)
   status_code: 200
   body: '{}'
   headers:

@@ -7,21 +7,7 @@ compat_arguments:
 scriptings:
 - http_response:
     name: 酷安 / 1
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 酷安 / 2
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 酷安 / 3
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?
+    match: (?:^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?)|(?:^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init))|(?:^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
     body_required: true
     update_interval: 86400

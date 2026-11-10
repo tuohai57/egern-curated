@@ -8,12 +8,7 @@ rules:
     match: apimall.qbb6.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/api\.qbb6\.com\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.qbb6\.com\/commons\/main\/tab\/info\/get\?
+- match: (?i:^https:\/\/api\.qbb6\.com\/ad\/)|(?i:^https:\/\/api\.qbb6\.com\/commons\/main\/tab\/info\/get\?)
   status_code: 200
   body: '{}'
   headers:
@@ -23,12 +18,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apipt\.qbb6\.com\/parenting\/pt\/home\/post\/card\/get\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apipt\.qbb6\.com\/lib\/search\/hot\/keys\/v\d\?
+- match: (?i:^https:\/\/apipt\.qbb6\.com\/parenting\/pt\/home\/post\/card\/get\?)|(?i:^https:\/\/apipt\.qbb6\.com\/lib\/search\/hot\/keys\/v\d\?)
   status_code: 200
   body: '{}'
   headers:
@@ -38,12 +28,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apimall\.qbb6\.com\/mall\/v\d\/goods\/count\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apimall\.qbb6\.com\/mall\/homepage\/data\/get\/v\d$
+- match: (?i:^https:\/\/apimall\.qbb6\.com\/mall\/v\d\/goods\/count\?)|(?i:^https:\/\/apimall\.qbb6\.com\/mall\/homepage\/data\/get\/v\d$)
   status_code: 200
   body: '{}'
   headers:

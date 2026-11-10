@@ -48,12 +48,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$
+- match: (?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\?)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$)
   status_code: 200
   body: '{}'
   headers:
@@ -63,17 +58,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$
+- match: (?i:^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$)
   status_code: 200
   body: '{}'
   headers:
@@ -83,12 +68,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData
+- match: (?i:^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData)|(?i:^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData)
   status_code: 404
   body: ''
   headers:
@@ -103,12 +83,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/activity\.yonghuivip\.com\/api\/app\/fp\/homepage\/pop
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/activity\.yonghuivip\.com\/api\/\/web\/shensuan\/ad
+- match: (?i:^https:\/\/activity\.yonghuivip\.com\/api\/app\/fp\/homepage\/pop)|(?i:^https:\/\/activity\.yonghuivip\.com\/api\/\/web\/shensuan\/ad)
   status_code: 404
   body: ''
   headers:
@@ -128,17 +103,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global
+- match: (?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup)|(?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner)|(?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global)
   status_code: 200
   body: '{}'
   headers:
@@ -148,12 +113,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising
+- match: (?i:^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing)|(?i:^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising)
   status_code: 200
   body: '{}'
   headers:
@@ -213,17 +173,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/ads
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/home_new_user
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/get_service_list
+- match: (?i:^https:\/\/qapi\.huolala\.cn\/ads)|(?i:^https:\/\/qapi\.huolala\.cn\/home_new_user)|(?i:^https:\/\/qapi\.huolala\.cn\/get_service_list)
   status_code: 200
   body: '{}'
   headers:
@@ -233,12 +183,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut
+- match: (?i:^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get)|(?i:^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut)
   status_code: 200
   body: '{}'
   headers:
@@ -263,22 +208,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/hdgateway\.zto\.com\/getApolloConfig
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/hdgateway\.zto\.com\/track
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/hdgateway\.zto\.com\/getAdInfo
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/hdgateway\.zto\.com\/listJumperShow
+- match: (?i:^https:\/\/hdgateway\.zto\.com\/getApolloConfig)|(?i:^https:\/\/hdgateway\.zto\.com\/track)|(?i:^https:\/\/hdgateway\.zto\.com\/getAdInfo)|(?i:^https:\/\/hdgateway\.zto\.com\/listJumperShow)
   status_code: 404
   body: ''
   headers:
@@ -338,12 +268,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes
+- match: (?i:^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2)|(?i:^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes)
   status_code: 200
   body: '{}'
   headers:
@@ -363,17 +288,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v6\/indexs
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v5\/local
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v5\/index
+- match: (?i:^https:\/\/app\.homeinns\.com\/api\/v6\/indexs)|(?i:^https:\/\/app\.homeinns\.com\/api\/v5\/local)|(?i:^https:\/\/app\.homeinns\.com\/api\/v5\/index)
   status_code: 200
   body: '{}'
   headers:
@@ -383,17 +298,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend
+- match: (?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery)|(?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo)|(?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend)
   status_code: 200
   body: '{}'
   headers:
@@ -448,12 +353,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent
+- match: (?i:^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds)|(?i:^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent)
   status_code: 200
   body: '{}'
   headers:
@@ -473,27 +373,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances
+- match: (?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances)
   status_code: 200
   body: '{}'
   headers:
@@ -513,12 +393,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=
+- match: (?i:^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=)|(?i:^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=)
   status_code: 200
   body: '{}'
   headers:
@@ -533,12 +408,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList
+- match: (?i:^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query)|(?i:^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList)
   status_code: 200
   body: '{}'
   headers:
@@ -558,17 +428,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/qrCode\/getAdvInfo$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/tourism\/tourismBase\/api\/scenic\/getThemeProduct?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/carService\/getCivilzedSlogan
+- match: (?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/qrCode\/getAdvInfo$)|(?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/tourism\/tourismBase\/api\/scenic\/getThemeProduct?)|(?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/carService\/getCivilzedSlogan)
   status_code: 200
   body: '{}'
   headers:
@@ -754,23 +614,46 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$
-    filter: (delpaths([["data"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\"]]))\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$
-    filter: (delpaths([["data", 0], ["data", 1], ["data", 2]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", 0], [\"data\"\
+      , 1], [\"data\", 2]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\?
-    filter: (delpaths([["data", "popUpWindows"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"popUpWindows\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\?
-    filter: (del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name
-      != "充流量" and .name != "领话费券")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.respInfo.reserveProductList)\
+      \ | .respInfo.shortcut |= map(select(.name != \"充流量\" and .name != \"领话费券\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/wxmobile4app\/GetSecondProduct\?
-    filter: (del(.respInfo.productList) | .respInfo.shortcut |= map(select(.name !=
-      "充流量" and .name != "领话费券")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.respInfo.productList) | .respInfo.shortcut\
+      \ |= map(select(.name != \"充流量\" and .name != \"领话费券\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\?
-    filter: (delpaths([["data", "request", "number", "markSeat", "servicehallOperList"],
-      ["data", "request", "number", "servicehallOperList"], ["data", "request", "number",
-      "markSeat", "servicehallFuncList"], ["data", "request", "number", "servicehallFuncList"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"request\"\
+      , \"number\", \"markSeat\", \"servicehallOperList\"], [\"data\", \"request\"\
+      , \"number\", \"servicehallOperList\"], [\"data\", \"request\", \"number\",\
+      \ \"markSeat\", \"servicehallFuncList\"], [\"data\", \"request\", \"number\"\
+      , \"servicehallFuncList\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

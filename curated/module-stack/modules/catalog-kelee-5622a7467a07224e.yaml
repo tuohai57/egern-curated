@@ -20,47 +20,12 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/
+- match: (?i:^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/)|(?i:^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop)
   status_code: 404
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd\/\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/marketingNotice\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rollHotKeyword\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rankingList\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/search\/hotKeyword\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike\?
+- match: (?i:^https:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd\/\?)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/marketingNotice\?)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rollHotKeyword\?)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rankingList\?)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/search\/hotKeyword\?)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend$)|(?i:^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike\?)
   status_code: 200
   body: '{}'
   headers:
@@ -83,23 +48,46 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/categoriesNewDetail\?
-    filter: (delpaths([["data", "ad_info"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"ad_info\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig\?
-    filter: (delpaths([["data", "ai_enter_config"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"ai_enter_config\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\?
-    filter: (delpaths([["data", "top_advert_data"], ["data", "suspension"]])) | (.data.list
-      |= map(select(has("capsule_freedom_zone") | not)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"top_advert_data\"\
+      ], [\"data\", \"suspension\"]])) | (.data.list |= map(select(has(\"capsule_freedom_zone\"\
+      ) | not)))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/maicai\.api\.ddxq\.mobi\/guide-service\/productApi\/productDetail\/info\?
-    filter: (delpaths([["data", "detail", "chatEntry"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"detail\",\
+      \ \"chatEntry\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/bottomNavi
-    filter: (del(.data.adId?) | if (.data.bottom_list? | length > 0) then .data.bottom_list
-      |= map(select(.type != "eatwhat")) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.data.adId?) | if (.data.bottom_list?\
+      \ | length > 0) then .data.bottom_list |= map(select(.type != \"eatwhat\"))\
+      \ else . end)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/homeFlowDetail
-    filter: (walk(if type == "object" and has("list") then .list |= map(if type ==
-      "object" and has("multi_advertise_data_list") then del(.multi_advertise_data_list)
-      else . end) else . end))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(walk(if type == \"object\" and has(\"\
+      list\") then .list |= map(if type == \"object\" and has(\"multi_advertise_data_list\"\
+      ) then del(.multi_advertise_data_list) else . end) else . end))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

@@ -6,1159 +6,133 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/open-cms-api\.uc\.cn\/open-cms\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["result","cms_sK_home_top_banner"]])
-
-      ) | (
-
-      delpaths([["result","cms_camera_member_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_activity_banner_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_activity_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_my_activity_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sk_home_top_svip_promotion"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_teachers_day_goods_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camear_vip_retain_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camear_svip_retain_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_lottie_coupon_modal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_miaosha_keep_modal_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_popup_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_show_coupon_popup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_svip_refund_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_svip_first_buy_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_lottie_universal_popup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_pay_error_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_dongfeng_common_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_ad_mark_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_adblock_rules"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_pay_scene_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_pay_huodong_toast"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_export_pay_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_king_vip_label"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_rights_and_interests_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_default_goods"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_year_goods_ctrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_skip_image_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_pdf_office_pay_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_trial_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_my_list_part_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_welfare_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_home_sign_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_lottery_on_off"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_lottery_checked_goods"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_lottery_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_home_newbie_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_home_bubble"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_appstore_comment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_appstore_comment_native_item"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","encourage_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_tips_dialog"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","export_file_tips"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_qrcode_title_msg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mobilize_external_app_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_deeplink_back_desc"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","idfa_auth_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_idfa_auth_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_dongfeng_double_eleven_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","gaokao_nu_vip_grant"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_skip_button_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","nu_grant_vip_pop_type"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_member_coupon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_coupon_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_welfare_config_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_welfare_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_member_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_svip_member_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_svip_member_center"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_center"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vipplus_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_pay_vip_retain_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_popup_activity_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_lottery_on_off_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_preview_right_bottom"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_share_link_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_tool_set_pic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_membership_new_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_first_purchase_dialog_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_pay_pre_render_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_assets_membership_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_ios_vip_renew"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_startup_purchase_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_membership_page_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_price"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_repurchase_dialog_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_year_goods_ctrl_new_logic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_venue_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","enable_svip_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_pdf_image_pay_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mini_login_panel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mobile_binding_config_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_login_retain_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_login_thirdpart_entrance"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_menu_quick_login_func_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_login_before_share_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_diamond_main_area"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_diamond_sub_area"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_feed_diamond_main_area"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_king_home_tools_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_gather_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_my_right_item_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","enable_popup_imediatly"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_new_guide_tab_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","query_scan_king_guidance_function"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_full_screen_newbie_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_pcguide_qrcode"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_res_sniffer_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_wk_blank_page_refresh_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_border_poster"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_license_poster_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cartoon_templates"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_idphoto_dresses"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_selfie_template_res"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_selfie_smile_res"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_app_act_mgr_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","test_na_cms"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_command_prompts"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_camera_ai_tab_sample_list_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_doc_scan_filter_ui_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_scandoc_filters"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","gaokao_zhiyuan_export_svip"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_idphoto_filters"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_paper_bottom_tools_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_enable_edit_page_recommend_data_opt"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_disable_edit_page_recommend_data_supplement"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_skills"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_camera_compass_urls"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_enable_channel_re_active"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_write_free_num"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_sniff_float_tool_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_custom_module_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_action_bar_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_guide_pdfwater_days"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_king_home_tools"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_idcard_show_cloud_print"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_idphoto_show_cloud_print"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_album_content"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_question_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_member_center_experiment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ios_my_member"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_tools_navi_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_home_imgtext_deeplink"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_file_picker_info_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_ai_camera_with__config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_hot_group_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_hot_size_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_share_miniframe_enable_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_enable_sharelink"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_native_photo_search"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_prefetch_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_home_searchbar_camera_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucdc_server_ip"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"result\",\"cms_sK_home_top_banner\"]])\n\
+      ) | (\ndelpaths([[\"result\",\"cms_camera_member_banner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_asset_activity_banner_list\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_asset_activity_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_camera_my_activity_banner\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_sk_home_top_svip_promotion\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_teachers_day_goods_banner\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"camear_vip_retain_pop\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camear_svip_retain_pop\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_lottie_coupon_modal\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_miaosha_keep_modal_show\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_camera_asset_popup_activity\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_camera_show_coupon_popup\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"scan_svip_refund_pop\"]])\n)\n) | (\ndelpaths([[\"result\",\"scan_svip_first_buy_pop\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_lottie_universal_popup\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_camera_asset_pay_error_activity\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_dongfeng_common_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_web_ad_mark_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_adblock_rules\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_pay_scene_window\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_pay_huodong_toast\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_camera_export_pay_guide_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"scan_king_vip_label\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_vip_rights_and_interests_text\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_vip_default_goods\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      camera_vip_year_goods_ctrl\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_skip_image_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_pdf_office_pay_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"camera_trial_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_my_list_part_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_search_welfare_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_home_sign_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_member_lottery_on_off\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_vip_lottery_checked_goods\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_lottery_banner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_home_newbie_guide\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_scanking_home_bubble\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_appstore_comment\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_home_appstore_comment_native_item\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"encourage_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_tips_dialog\"]])\n)\n) | (\ndelpaths([[\"result\",\"export_file_tips\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_qrcode_title_msg\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_mobilize_external_app_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_deeplink_back_desc\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"idfa_auth_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_idfa_auth_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_dongfeng_double_eleven_url\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"gaokao_nu_vip_grant\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_skip_button_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"nu_grant_vip_pop_type\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qkscan_member_coupon\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qkscan_coupon_time\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_search_welfare_config_v2\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_welfare_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qkscan_member_rights\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qkscan_svip_member_rights\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_svip_member_center\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      camera_member_center\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_pay_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vipplus_pay_url\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_scanking_pay_vip_retain_switch\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_camera_asset_popup_activity_new\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"camera_member_lottery_on_off_new\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_preview_right_bottom\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"camera_share_link_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_tool_set_pic\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_membership_new_style\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_first_purchase_dialog_interval\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_vip_pay_pre_render_url\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"camera_assets_membership_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qkscan_ios_vip_renew\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_startup_purchase_interval\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_membership_page_url\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_vip_price\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_repurchase_dialog_interval\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"camera_pay_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_year_goods_ctrl_new_logic\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_venue_switch\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"enable_svip_tab\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_pdf_image_pay_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_mini_login_panel\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_mobile_binding_config_new\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_scanking_login_retain_switch\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_login_thirdpart_entrance\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_menu_quick_login_func_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_login_before_share_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_diamond_main_area\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_diamond_sub_area\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_feed_diamond_main_area\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"scan_king_home_tools_new\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_gather_tab\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_my_right_item_data\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"enable_popup_imediatly\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_new_guide_tab_list\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"query_scan_king_guidance_function\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"sk_full_screen_newbie_show\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_pcguide_qrcode\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_res_sniffer_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cd_wk_blank_page_refresh_guide\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_camera_border_poster\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_license_poster_list\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cartoon_templates\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_idphoto_dresses\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_selfie_template_res\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_selfie_smile_res\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_app_act_mgr_data\"]])\n)\n) | (\ndelpaths([[\"result\",\"test_na_cms\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_command_prompts\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"sk_camera_ai_tab_sample_list_data\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_doc_scan_filter_ui_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_camera_scandoc_filters\"]])\n)\n) | (\ndelpaths([[\"result\",\"gaokao_zhiyuan_export_svip\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_idphoto_filters\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_paper_bottom_tools_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_enable_edit_page_recommend_data_opt\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_disable_edit_page_recommend_data_supplement\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_skills\"]])\n)\n) | (\ndelpaths([[\"result\",\"qk_camera_compass_urls\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_enable_channel_re_active\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"scan_write_free_num\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_web_sniff_float_tool_enable\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_custom_module_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_action_bar_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_guide_pdfwater_days\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"scan_king_home_tools\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_idcard_show_cloud_print\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"sk_idphoto_show_cloud_print\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_album_content\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_question_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_member_center_experiment\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_ios_my_member\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ai_tools_navi_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"sk_home_imgtext_deeplink\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_file_picker_info_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"chat_ai_camera_with__config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_hot_group_list\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cd_hot_size_list\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_share_miniframe_enable_tab\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"sk_enable_sharelink\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"camera_native_photo_search\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_search_prefetch_switch\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cd_home_searchbar_camera_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      ucdc_server_ip\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/scan-order\.quark\.cn\/api\/member\/v1\/center\?
   status_code: 200

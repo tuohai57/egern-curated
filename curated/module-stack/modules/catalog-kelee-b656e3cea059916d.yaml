@@ -9,42 +9,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppFloatAd$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBanners$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getUserActivitys$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/homePageRecommend\/recommendCard\d+
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getRecommendPersons$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendEnts$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendation$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBottomBanners$
+- match: (?i:^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppFloatAd$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBanners$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getUserActivitys$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/homePageRecommend\/recommendCard\d+)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/user\/getRecommendPersons$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendEnts$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/getRecommendation$)|(?i:^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBottomBanners$)
   status_code: 200
   body: '{}'
   headers:

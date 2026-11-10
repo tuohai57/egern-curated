@@ -16,12 +16,7 @@ rules:
     match: cm.kwad.com
     policy: REJECT
 map_locals:
-- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\?
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/
+- match: (?:^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\?)|(?:^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/)
   status_code: 200
   headers:
     Content-Type: application/json

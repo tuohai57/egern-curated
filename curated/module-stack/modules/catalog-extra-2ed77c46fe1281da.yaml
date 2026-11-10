@@ -10,59 +10,21 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["response","time_limit"]])
-
-      ) | (
-
-      delpaths([["response","bubble"]])
-
-      )
-
-      ) | (
-
-      delpaths([["response","person_center"]])
-
-      )
-
-      ) | (
-
-      if (getpath(["response","function_pop","meiyan_style"]) | has("is_pop")) then
-      (setpath(["response","function_pop","meiyan_style","is_pop"]; false)) else .
-      end
-
-      )
-
-      ) | (
-
-      if (getpath(["response","onoff","vip_half_window_exit_remain_popup"]) | has("open"))
-      then (setpath(["response","onoff","vip_half_window_exit_remain_popup","open"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["response","onoff"]) | has("vip_home_exit_remain_popup")) then
-      (setpath(["response","onoff","vip_home_exit_remain_popup"]; 0)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\ndelpaths([[\"response\"\
+      ,\"time_limit\"]])\n) | (\ndelpaths([[\"response\",\"bubble\"]])\n)\n) | (\n\
+      delpaths([[\"response\",\"person_center\"]])\n)\n) | (\nif (getpath([\"response\"\
+      ,\"function_pop\",\"meiyan_style\"]) | has(\"is_pop\")) then (setpath([\"response\"\
+      ,\"function_pop\",\"meiyan_style\",\"is_pop\"]; false)) else . end\n)\n) | (\n\
+      if (getpath([\"response\",\"onoff\",\"vip_half_window_exit_remain_popup\"])\
+      \ | has(\"open\")) then (setpath([\"response\",\"onoff\",\"vip_half_window_exit_remain_popup\"\
+      ,\"open\"]; 0)) else . end\n)\n) | (\nif (getpath([\"response\",\"onoff\"])\
+      \ | has(\"vip_home_exit_remain_popup\")) then (setpath([\"response\",\"onoff\"\
+      ,\"vip_home_exit_remain_popup\"]; 0)) else . end\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?
+- match: (?:^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?)|(?:^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?)
   status_code: 200
   body: '{}'
   headers:

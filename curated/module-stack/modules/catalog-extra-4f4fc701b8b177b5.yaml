@@ -6,32 +6,13 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/confssl\d?\.iweimai\.cn\/wm_ios_update\.json\?
-    filter: '(
-
-      (
-
-      (
-
-      if (getpath([]) | has("isShowCJAd")) then (setpath(["isShowCJAd"]; 0)) else
-      . end
-
-      ) | (
-
-      delpaths([["launchAd"]])
-
-      )
-
-      ) | (
-
-      delpaths([["adBanners"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\nif (getpath([]) | has(\"\
+      isShowCJAd\")) then (setpath([\"isShowCJAd\"]; 0)) else . end\n) | (\ndelpaths([[\"\
+      launchAd\"]])\n)\n) | (\ndelpaths([[\"adBanners\"]])\n)\n) | (\ndelpaths([[\"\
+      ad\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 mitm:
   hostnames:
   - confssl*.iweimai.cn

@@ -14,22 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.ys7\.com\/v3\/config\/service\/entrance\/bannerInfo
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.ys7\.com\/v3\/intelligent-app\/apps\/linkage
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.ys7\.com\/v3\/configurations\/gray\/info\?grayTypes=185
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.ys7\.com\/v3\/videoclips\/square\/video\/query
+- match: (?i:^https:\/\/api\.ys7\.com\/v3\/config\/service\/entrance\/bannerInfo)|(?i:^https:\/\/api\.ys7\.com\/v3\/intelligent-app\/apps\/linkage)|(?i:^https:\/\/api\.ys7\.com\/v3\/configurations\/gray\/info\?grayTypes=185)|(?i:^https:\/\/api\.ys7\.com\/v3\/videoclips\/square\/video\/query)
   status_code: 200
   body: '{}'
   headers:

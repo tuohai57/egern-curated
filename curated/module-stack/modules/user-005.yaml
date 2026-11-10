@@ -166,13 +166,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 美团 / 4
-    match: ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a48981f5d1cdac2d7c72c8f1164752ce712113eaf687aeeba2829e78c66308a.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 美团 / 5
-    match: ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/
+    match: (?:^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword)|(?:^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a48981f5d1cdac2d7c72c8f1164752ce712113eaf687aeeba2829e78c66308a.js
     body_required: true
     update_interval: 86400
@@ -184,13 +178,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 美团 / 7
-    match: ^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a48981f5d1cdac2d7c72c8f1164752ce712113eaf687aeeba2829e78c66308a.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 美团 / 8
-    match: ^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture
+    match: (?:^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry)|(?:^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a48981f5d1cdac2d7c72c8f1164752ce712113eaf687aeeba2829e78c66308a.js
     body_required: true
     update_interval: 86400

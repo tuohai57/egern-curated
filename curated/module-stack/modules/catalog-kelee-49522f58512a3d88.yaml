@@ -9,22 +9,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/popup\/getentrancecordovaurl$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/cobuild\/pull\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/operationgirdle$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/baseinfo$
+- match: (?i:^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/popup\/getentrancecordovaurl$)|(?i:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/cobuild\/pull\?)|(?i:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/operationgirdle$)|(?i:^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/baseinfo$)
   status_code: 200
   body: '{}'
   headers:
@@ -48,17 +33,34 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/newclient\.map\.baidu\.com\/feed\/govui\/rich_content
-    filter: (delpaths([["data"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\"]]))\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/newclient\.map\.baidu\.com\/client\/noticebar\/get\?
-    filter: (delpaths([["content", "multi_data"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"content\", \"multi_data\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/newclient\.map\.baidu\.com\/(client\/)?usersystem\/mine\/page\?
-    filter: (setpath(["data"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\"]; \"{}\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads&type=user_home_new_service
-    filter: (delpaths([["ads"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"ads\"]]))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\?
-    filter: (delpaths([["Result", "cards", 1], ["Result", "cards", 4], ["Result",
-      "cards", 5], ["Result", "cards", 9]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"Result\", \"cards\"\
+      , 1], [\"Result\", \"cards\", 4], [\"Result\", \"cards\", 5], [\"Result\", \"\
+      cards\", 9]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

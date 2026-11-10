@@ -8,12 +8,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
+- match: (?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)|(?:^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$)
   status_code: 200
   body: '{}'
   headers:
@@ -31,12 +26,7 @@ scriptings:
     body_required: false
 - http_request:
     name: 美团 & 美团外卖 / binary local
-    match: ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 美团 & 美团外卖 / binary local
-    match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
+    match: (?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)|(?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
 mitm:

@@ -6,34 +6,21 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/recommend\/info\?
-    filter: delpaths([["data","rollingBanner"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"rollingBanner\"\
+      ]])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/ke\.fenbi\.com\/(iphone|ipad)\/v3\/apps\/config\?
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["data","bottomIconInfos","position","iconDefaultUrl"]])
-
-      ) | (
-
-      delpaths([["data","bottomIconInfos","position","iconSelectedUrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","bottomIconInfos","position","nightModeIconDefaultUrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","bottomIconInfos","position","nightModeIconSelectedUrl"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"data\",\"bottomIconInfos\"\
+      ,\"position\",\"iconDefaultUrl\"]])\n) | (\ndelpaths([[\"data\",\"bottomIconInfos\"\
+      ,\"position\",\"iconSelectedUrl\"]])\n)\n) | (\ndelpaths([[\"data\",\"bottomIconInfos\"\
+      ,\"position\",\"nightModeIconDefaultUrl\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"bottomIconInfos\",\"position\",\"nightModeIconSelectedUrl\"]])\n)\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/keapi\.fenbi\.com\/app\/(iphone|ipad)\/position_resource\/get_banners\?
   status_code: 200
@@ -45,12 +32,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/keapi\.fenbi\.com\/app\/(iphone|ipad)\/position_resource\/get_home_banners\?.*position_resource_type=2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/keapi\.fenbi\.com\/app\/iphone\/\w+\/reddot\?
+- match: (?:^https:\/\/keapi\.fenbi\.com\/app\/(iphone|ipad)\/position_resource\/get_home_banners\?.*position_resource_type=2)|(?:^https:\/\/keapi\.fenbi\.com\/app\/iphone\/\w+\/reddot\?)
   status_code: 200
   body: '{}'
   headers:
@@ -60,17 +42,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/topic\/hotquery\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/explore\/consts\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/announcement\/hotquery\/list\?
+- match: (?:^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/topic\/hotquery\/list\?)|(?:^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/explore\/consts\?)|(?:^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/announcement\/hotquery\/list\?)
   status_code: 200
   body: '{}'
   headers:

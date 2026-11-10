@@ -14,42 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/adolescent_mode\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/ad_sys\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\/user\/home_page\/activities$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/search\/base_info$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/medal_challenge_activity\/page_switch\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/training_plan\/recommended_list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/user\/new_register_info$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tiantiantiaosheng\.com\/api2\/popup\/list\?
+- match: (?i:^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/adolescent_mode\/)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/ad_sys\/)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api\/user\/home_page\/activities$)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api\d\/search\/base_info$)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api2\/medal_challenge_activity\/page_switch\?)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api2\/training_plan\/recommended_list$)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api2\/user\/new_register_info$)|(?i:^https:\/\/api\.tiantiantiaosheng\.com\/api2\/popup\/list\?)
   status_code: 200
   body: '{}'
   headers:

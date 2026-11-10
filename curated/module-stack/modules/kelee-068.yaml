@@ -26,6 +26,10 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig
-    filter: (setpath(["data", "JDMessage", "socketmonitor", "isSocketEstablishedAhead"];
-      0) | setpath(["data", "JDMessage", "socketmonitor", "isSocketReport"]; 0) |
-      setpath(["data", "JDHttpToolKit", "httpdns", "httpdns"]; 0))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"JDMessage\"\
+      , \"socketmonitor\", \"isSocketEstablishedAhead\"]; 0) | setpath([\"data\",\
+      \ \"JDMessage\", \"socketmonitor\", \"isSocketReport\"]; 0) | setpath([\"data\"\
+      , \"JDHttpToolKit\", \"httpdns\", \"httpdns\"]; 0))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

@@ -63,12 +63,7 @@ scriptings:
     body_required: false
 - http_request:
     name: 大众点评 / binary local
-    match: ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 大众点评 / binary local
-    match: ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif
+    match: (?:^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif)|(?:^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
 - http_response:

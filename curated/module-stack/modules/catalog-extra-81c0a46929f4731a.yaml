@@ -6,119 +6,26 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["data","countdownBanner"]])
-
-      ) | (
-
-      delpaths([["data","newEvaluations"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","freeToPayBannerPhotoUrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","groupBuyingList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","multiCountdownBanner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","banners"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","multiPlatformBanner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","specialSaleBannerPhotoUrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","guide90Evaluation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","insurancePromotions"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"\
+      data\",\"countdownBanner\"]])\n) | (\ndelpaths([[\"data\",\"newEvaluations\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"freeToPayBannerPhotoUrl\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"groupBuyingList\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      multiCountdownBanner\"]])\n)\n) | (\ndelpaths([[\"data\",\"banners\"]])\n)\n\
+      ) | (\ndelpaths([[\"data\",\"multiPlatformBanner\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"specialSaleBannerPhotoUrl\"]])\n)\n) | (\ndelpaths([[\"data\",\"guide90Evaluation\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"insurancePromotions\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getInitData\.do
-    filter: delpaths([["data","SpecialSalePageMidTabConfig"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"SpecialSalePageMidTabConfig\"\
+      ]])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/popUpAdCollection\/getActiveCollection\.do
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkCategoryPromotionInfo
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/stockTaking\/pageStockTakingForHomePage
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/pageRecommendedItems
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/manualOperationGoods\/pageManualOperationGoods
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/listSpecialSalePageBanner
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/personal\/getPersonPageInfo\.do
+- match: (?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/popUpAdCollection\/getActiveCollection\.do)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkCategoryPromotionInfo)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/stockTaking\/pageStockTakingForHomePage)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/pageRecommendedItems)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/manualOperationGoods\/pageManualOperationGoods)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/listSpecialSalePageBanner)|(?:^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/personal\/getPersonPageInfo\.do)
   status_code: 200
   body: '{}'
   headers:

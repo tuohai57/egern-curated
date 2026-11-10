@@ -5,7 +5,11 @@ icon: https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/ymxk.pn
 body_rewrites:
 - response_jq:
     match: http:\/\/.+\.gamersky.com/.+/lists/getListElements
-    filter: .listElements |= map(select(has("adCategory") | not))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.listElements |= map(select(has(\"\
+      adCategory\") | not))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^http:\/\/.+\.gamersky\.com\/.+\/adSystem\/ad\/.+
   status_code: 200

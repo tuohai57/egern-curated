@@ -4,32 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LOL_Bible.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/recommend\/platstrongshell\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/club\/match\/get_ai_search_words$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/mlol_news\/search\/varcache_hotV\d\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank_tab\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mlol\.qt\.qq\.com\/go\/zone\/bottomtab_tip\?
+- match: (?:^https:\/\/mlol\.qt\.qq\.com\/go\/recommend\/platstrongshell\?)|(?:^https:\/\/mlol\.qt\.qq\.com\/go\/club\/match\/get_ai_search_words$)|(?:^https:\/\/mlol\.qt\.qq\.com\/go\/mlol_news\/search\/varcache_hotV\d\?)|(?:^https:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank_tab\?)|(?:^https:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank\?)|(?:^https:\/\/mlol\.qt\.qq\.com\/go\/zone\/bottomtab_tip\?)
   status_code: 200
   body: '{}'
   headers:

@@ -46,42 +46,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/firework-portal\/v\d+\/sync\?
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/business-sale-promotion-guide-mobile-web\/popup\/
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/
+- match: (?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/firework-portal\/v\d+\/sync\?)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/business-sale-promotion-guide-mobile-web\/popup\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/)
   status_code: 200
   headers:
     Content-Type: application/json
@@ -91,12 +56,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\?
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/
+- match: (?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\?)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/)
   status_code: 200
   headers:
     Content-Type: application/json

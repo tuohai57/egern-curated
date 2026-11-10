@@ -14,17 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/syt\.leshuazf\.com\/merchant\/messageCenter\/stationLetterList$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/syt\.leshuazf\.com\/merchant\/merchant\/getBannerConfig$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/syt\.leshuazf\.com\/merchant\/popup\/getPopupInfo$
+- match: (?i:^https:\/\/syt\.leshuazf\.com\/merchant\/messageCenter\/stationLetterList$)|(?i:^https:\/\/syt\.leshuazf\.com\/merchant\/merchant\/getBannerConfig$)|(?i:^https:\/\/syt\.leshuazf\.com\/merchant\/popup\/getPopupInfo$)
   status_code: 200
   body: '{}'
   headers:

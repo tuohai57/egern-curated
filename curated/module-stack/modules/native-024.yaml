@@ -149,17 +149,7 @@ map_locals:
   headers:
     Content-Type: application/json
   body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?
+- match: (?:^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?)
   status_code: 200
   headers:
     Content-Type: application/json
@@ -177,22 +167,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 爱奇艺首页信息流广告
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺首页信息流广告
-    match: ^https?:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺播放详情页广告
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺搜索页列表广告
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?
+    match: (?:^https?:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?)|(?:^https?:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?)|(?:^https?:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?)|(?:^https?:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
@@ -202,22 +177,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 爱奇艺我的页面菜单
-    match: ^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺首页左上角天气
-    match: ^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺通用控制,各tab页二楼
-    match: ^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: 爱奇艺底部tab、顶部tab
-    match: ^https?:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?
+    match: (?:^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:

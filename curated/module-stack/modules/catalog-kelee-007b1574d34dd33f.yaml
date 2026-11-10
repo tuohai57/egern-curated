@@ -55,13 +55,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 移除网易新闻广告
-    match: (?i)^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/feed\/dynamic\/headline-list\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9f03b3b39c8b6d576b1ac18cd098ef5fd08c17fb2be9044f94344ea3a3ff4b8b.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除网易新闻广告
-    match: (?i)^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/search\/hot-word
+    match: (?i:^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/feed\/dynamic\/headline-list\?)|(?i:^https:\/\/gw\.m\.163\.com\/nc\/api\/v1\/search\/hot-word)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9f03b3b39c8b6d576b1ac18cd098ef5fd08c17fb2be9044f94344ea3a3ff4b8b.js
     body_required: true
     update_interval: 86400

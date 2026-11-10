@@ -99,12 +99,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/
-  status_code: 200
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen
+- match: (?i:^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/)|(?i:^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen)
   status_code: 200
   body: ''
   headers:
@@ -134,62 +129,17 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$
+- match: (?i:^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$)|(?i:^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$)|(?i:^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$)
   status_code: 404
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$
+- match: (?i:^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg)|(?i:^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg)|(?i:^http:\/\/img\.dailmo\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg)|(?i:^http:\/\/img\.dailmo\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg)
   status_code: 404
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.dailmo\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.dailmo\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.allahall\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.allahall\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.allahall\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.allahall\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^http:\/\/img\.allahall\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.jpg
+- match: (?i:^http:\/\/img\.allahall\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg)|(?i:^http:\/\/img\.allahall\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg)|(?i:^http:\/\/img\.allahall\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg)|(?i:^http:\/\/img\.allahall\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg)|(?i:^http:\/\/img\.allahall\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.jpg)
   status_code: 404
   body: ''
   headers:
@@ -204,17 +154,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/gw\.alicdn\.com\/mt\/
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4}
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4}
+- match: (?i:^https:\/\/gw\.alicdn\.com\/mt\/)|(?i:^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4})|(?i:^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4})
   status_code: 404
   body: ''
   headers:
@@ -224,17 +164,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getGameData\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\?
+- match: (?i:^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\?)|(?i:^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getGameData\?)|(?i:^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\?)
   status_code: 200
   body: '{}'
   headers:
@@ -264,12 +194,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/course\/tab\/translateTab
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/homepage\/tile
+- match: (?i:^https:\/\/dict\.youdao\.com\/course\/tab\/translateTab)|(?i:^https:\/\/dict\.youdao\.com\/homepage\/tile)
   status_code: 200
   body: '{}'
   headers:
@@ -284,17 +209,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/commonsearch
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/dict\.youdao\.com\/dictusertask\/system
+- match: (?i:^https:\/\/dict\.youdao\.com\/commonsearch)|(?i:^https:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo)|(?i:^https:\/\/dict\.youdao\.com\/dictusertask\/system)
   status_code: 200
   body: '{}'
   headers:
@@ -354,12 +269,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.jpg\?imageMogr2\/quality\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169)
+- match: (?i:^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.jpg\?imageMogr2\/quality\/)|(?i:^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169))
   status_code: 200
   body: '{}'
   headers:
@@ -379,17 +289,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION
+- match: (?i:^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP)|(?i:^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE)|(?i:^https:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION)
   status_code: 200
   body: '{}'
   headers:
@@ -419,22 +319,12 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_WATCH_SPORT
+- match: (?i:^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_WATCH_SPORT)|(?i:^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_HEALTH_DEVICE_TAB_PAGE)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_HEALTH_DEVICE_TAB_PAGE
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryloadingbanner\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/
+- match: (?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryloadingbanner\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/)
   status_code: 200
   body: '{}'
   headers:
@@ -452,32 +342,7 @@ map_locals:
 scriptings:
 - http_request:
     name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/homepage_ad\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sleep_ad\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_summary_ad\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_training_ad\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/step_detail_ad\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: 广告拦截合集 / 透明图片
-    match: (?i)^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/training_video_ad\?
+    match: (?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/homepage_ad\?)|(?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sleep_ad\?)|(?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_summary_ad\?)|(?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_training_ad\?)|(?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/step_detail_ad\?)|(?i:^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/training_video_ad\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
 body_rewrites:
@@ -487,7 +352,10 @@ body_rewrites:
     replace: <GetADResult>{"ret":0,"msg":"正常","err_code":0,"data":{"ad":[]}}</GetADResult>
 - response_jq:
     match: (?i)^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2
-    filter: (.data.list=[])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.list=[])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - api.zcool.com.cn

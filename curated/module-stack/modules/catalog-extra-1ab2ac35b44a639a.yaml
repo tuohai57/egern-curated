@@ -6,87 +6,33 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$
-    filter: del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type?
-      == "ad"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type?\
+      \ == \"ad\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["content","recipe_ad"]])
-
-      ) | (
-
-      delpaths([["content","splash_ad_req_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","splash_sdk_ad_req_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","splash_ad_lifecycle_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","waterfall_ad_feedback"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","homepage_waterfall_test_ad_pos"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","ad_app_look_around"]])
-
-      )
-
-      ) | (
-
-      delpaths([["content","ad_sdk_text_removal_keywords"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"\
+      content\",\"recipe_ad\"]])\n) | (\ndelpaths([[\"content\",\"splash_ad_req_time\"\
+      ]])\n)\n) | (\ndelpaths([[\"content\",\"splash_sdk_ad_req_time\"]])\n)\n) |\
+      \ (\ndelpaths([[\"content\",\"splash_ad_lifecycle_interval\"]])\n)\n) | (\n\
+      delpaths([[\"content\",\"waterfall_ad_feedback\"]])\n)\n) | (\ndelpaths([[\"\
+      content\",\"homepage_waterfall_test_ad_pos\"]])\n)\n) | (\ndelpaths([[\"content\"\
+      ,\"ad_app_look_around\"]])\n)\n) | (\ndelpaths([[\"content\",\"ad_sdk_text_removal_keywords\"\
+      ]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.xiachufang\.com\/v2\/homepage\/ranking_list\/paged_homepage_ranking_list_section_v2\.json$
-    filter: .cells |= map(del(.side_slip_activity_cell, .dish_square_cell))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.cells |= map(del(.side_slip_activity_cell,\
+      \ .dish_square_cell))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.xiachufang\.com\/v2\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json
+- match: (?:^https:\/\/api\.xiachufang\.com\/v2\/ad\/)|(?:^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json)|(?:^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json)|(?:^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json)
   status_code: 200
   body: '{}'
   headers:

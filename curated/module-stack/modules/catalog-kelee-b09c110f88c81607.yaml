@@ -15,8 +15,15 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/compus\.xiaofubao\.com\/compus\/user\/getUserExt$
-    filter: (delpaths([["data", "adPopSwitch"], ["data", "adSplashSwitch"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"adPopSwitch\"\
+      ], [\"data\", \"adSplashSwitch\"]]))\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/compus\.xiaofubao\.com\/compus\/application\/getHomeAppList$
-    filter: (.rows|=map(select(.appCode=="kechengbiao_app1" or .appCode=="siliuji"
-      or .appCode=="NEWJIAOFEIDATING")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.rows|=map(select(.appCode==\"kechengbiao_app1\"\
+      \ or .appCode==\"siliuji\" or .appCode==\"NEWJIAOFEIDATING\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

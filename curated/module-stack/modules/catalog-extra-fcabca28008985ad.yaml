@@ -6,51 +6,30 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-common-proxy-api\/api\/advertising\/proxy\/getOpenScreenAdvertising$
-    filter: if (getpath(["data"]) | has("advertisingList")) then (setpath(["data","advertisingList"];
-      [])) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([\"data\"]) | has(\"advertisingList\"\
+      )) then (setpath([\"data\",\"advertisingList\"]; [])) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/getBrand$
-    filter: .data |= map(select(.advertisementName == "路跑赛事" or .advertisementName
-      == "线上赛" or .advertisementName == "越野赛事"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= map(select(.advertisementName\
+      \ == \"路跑赛事\" or .advertisementName == \"线上赛\" or .advertisementName == \"越野赛事\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["data","topHotSearchList"]])
-
-      ) | (
-
-      delpaths([["data","bannerListTwo"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","textAdvertisementList"]])
-
-      )
-
-      ) | (
-
-      .data.recommendList |= map(select(.raceAdList | not or length == 0))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"data\",\"topHotSearchList\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"bannerListTwo\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"textAdvertisementList\"]])\n)\n) | (\n.data.recommendList |= map(select(.raceAdList\
+      \ | not or length == 0))\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/appConfigBanner\/listBannerRelease\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-content-center-api\/api\/global\/search\/hotSearch\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/advertisement\/
+- match: (?:^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/appConfigBanner\/listBannerRelease\?)|(?:^https:\/\/api-changzheng\.chinaath\.com\/changzheng-content-center-api\/api\/global\/search\/hotSearch\/list$)|(?:^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/advertisement\/)
   status_code: 200
   body: '{}'
   headers:

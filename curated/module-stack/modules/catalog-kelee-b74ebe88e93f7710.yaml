@@ -41,9 +41,17 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list
-    filter: (delpaths([["data", "pendant_a"], ["data", "entrance_d"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"pendant_a\"\
+      ], [\"data\", \"entrance_d\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/venus\.douyucdn\.cn\/venus\/config\/static\/update.+keyCodeSet=flow_config
-    filter: (setpath(["greatGodGameSitterSwitch"]; 0) | setpath(["followMoreAnchorEntrance"];
-      0) | setpath(["sdklivebanner"]; 0) | setpath(["homeActFloatSwitch"]; 0) | setpath(["bringGoodsSwitch"];
-      0) | setpath(["qqGameSwitch"]; 0))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"greatGodGameSitterSwitch\"\
+      ]; 0) | setpath([\"followMoreAnchorEntrance\"]; 0) | setpath([\"sdklivebanner\"\
+      ]; 0) | setpath([\"homeActFloatSwitch\"]; 0) | setpath([\"bringGoodsSwitch\"\
+      ]; 0) | setpath([\"qqGameSwitch\"]; 0))\n) ]) as $__egern_results\n       |\
+      \ if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"

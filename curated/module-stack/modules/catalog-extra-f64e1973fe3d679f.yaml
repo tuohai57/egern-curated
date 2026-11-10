@@ -6,22 +6,14 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?
-    filter: '(
-
-      delpaths([["data","service","config","advertisement"]])
-
-      ) | (
-
-      delpaths([["data","service","config","youa","pm_config_ad"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"service\"\
+      ,\"config\",\"advertisement\"]])\n) | (\ndelpaths([[\"data\",\"service\",\"\
+      config\",\"youa\",\"pm_config_ad\"]])\n)\n) ]) as $__egern_results\n       |\
+      \ if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/pan\.baidu\.com\/act\/api\/conf\?.*conf_key=youa_core_config_ios
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/youai\/material\/v1\/getbynavid\?.*nav_id=1
+- match: (?:^https:\/\/pan\.baidu\.com\/act\/api\/conf\?.*conf_key=youa_core_config_ios)|(?:^https:\/\/pan\.baidu\.com\/youai\/material\/v1\/getbynavid\?.*nav_id=1)
   status_code: 200
   body: '{}'
   headers:

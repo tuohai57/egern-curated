@@ -11,12 +11,7 @@ rules:
     match: adlaunch.qtfm.cn
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/app\.qtfm\.cn\/recommendapi\/v8\/ai_assistant_point$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/signin\/show_homepage_icon$
+- match: (?i:^https:\/\/app\.qtfm\.cn\/recommendapi\/v8\/ai_assistant_point$)|(?i:^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/signin\/show_homepage_icon$)
   status_code: 200
   body: '{}'
   headers:
@@ -31,12 +26,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/user\/task\/play$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/i_listen\/guess_you_like\?
+- match: (?i:^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/user\/task\/play$)|(?i:^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/i_listen\/guess_you_like\?)
   status_code: 200
   body: '{}'
   headers:
@@ -77,20 +67,43 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/signin\/show_homepage_icon$
-    filter: (setpath(["data", "display_icon"]; false))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"display_icon\"\
+      ]; false))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/recommendapi\/v\d\/hotpage\?
-    filter: (.data.head |= map(select(.type == "IconGrid")) | .data.feeds |= map(select(.type
-      == "Channel" or .type == "Radio" or .type == "ListenListChannel")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.head |= map(select(.type ==\
+      \ \"IconGrid\")) | .data.feeds |= map(select(.type == \"Channel\" or .type ==\
+      \ \"Radio\" or .type == \"ListenListChannel\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/channel\/\d{6}\/playpage\/\d{8}
-    filter: (delpaths([["data", "related_recommend"], ["data", "recommend_bar"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"related_recommend\"\
+      ], [\"data\", \"recommend_bar\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/mylistenpage
-    filter: (delpaths([["data", "banner"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"banner\"]]))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v\d\/subscribed_channels\?
-    filter: (delpaths([["data", "recommends"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"recommends\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.qtfm\.cn\/m-bff\/v1\/channelpage\/\d+$
-    filter: (delpaths([["data", "vip_recommend"], ["data", "recommend_delivery"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"vip_recommend\"\
+      ], [\"data\", \"recommend_delivery\"]]))\n) ]) as $__egern_results\n       |\
+      \ if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"

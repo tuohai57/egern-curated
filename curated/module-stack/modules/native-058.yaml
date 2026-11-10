@@ -21,12 +21,6 @@ map_locals:
 - match: (?i)^https:\/\/m\.douban\.com\/rexxar\/api\/v\d\/market\/products\/
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/movie\/ad
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/home_banner
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/frodo\.douban\.com\/api\/v\d\/search\/found_words
+- match: (?i:^https:\/\/frodo\.douban\.com\/api\/v\d\/movie\/ad)|(?i:^https:\/\/frodo\.douban\.com\/api\/v\d\/home_banner)|(?i:^https:\/\/frodo\.douban\.com\/api\/v\d\/search\/found_words)
   status_code: 200
   body: '{}'

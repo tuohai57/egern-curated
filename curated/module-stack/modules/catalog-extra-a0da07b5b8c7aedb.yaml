@@ -70,46 +70,35 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/((aweme\.snssdk\.com|api5-normal-m\.amemv\.com)|api5-normal-m\.amemv\.com)\/aweme\/homepage\/sidebar_data\/\?
-    filter: '(
-
-      delpaths([["data_map","recently_apps"]])
-
-      ) | (
-
-      delpaths([["data_map","recently_users"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data_map\",\"recently_apps\"\
+      ]])\n) | (\ndelpaths([[\"data_map\",\"recently_users\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\?
-    filter: '(
-
-      delpaths([["data","tab_config"]])
-
-      ) | (
-
-      .data.tab_list[]? |= (if .extra.side_bar.modules != null then .extra.side_bar.modules[]?.items[]?
-      |= (if .data.first_page_module?.module_title == "常用功能" then .data={} else .
-      end) else . end) | .data.tab_list |= map(if .extra.tab_list != null then .extra.tab_list
-      |= map(select(.tab_id | IN("homepage_tablive", "homepage_follow", "homepage_hot_container")))
-      else . end) | .data.tab_list |= map(select(.extra.tab_list != null and (.extra.tab_list
-      | length > 0)))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"tab_config\"\
+      ]])\n) | (\n.data.tab_list[]? |= (if .extra.side_bar.modules != null then .extra.side_bar.modules[]?.items[]?\
+      \ |= (if .data.first_page_module?.module_title == \"常用功能\" then .data={} else\
+      \ . end) else . end) | .data.tab_list |= map(if .extra.tab_list != null then\
+      \ .extra.tab_list |= map(select(.tab_id | IN(\"homepage_tablive\", \"homepage_follow\"\
+      , \"homepage_hot_container\"))) else . end) | .data.tab_list |= map(select(.extra.tab_list\
+      \ != null and (.extra.tab_list | length > 0)))\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/tfe\/api\/request_combine\/v1\/\?need_personal_recommend
-    filter: '(
-
-      if (getpath(["data","/service/settings/v3/","body","data","settings"]) | has("homepage_two_session_tab_skin_2025"))
-      then (setpath(["data","/service/settings/v3/","body","data","settings","homepage_two_session_tab_skin_2025"];
-      false)) else . end
-
-      ) | (
-
-      if (getpath(["data","/service/settings/v3/","body","data","settings"]) | has("homepage_tab_skin_enable"))
-      then (setpath(["data","/service/settings/v3/","body","data","settings","homepage_tab_skin_enable"];
-      false)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\nif (getpath([\"data\",\"/service/settings/v3/\"\
+      ,\"body\",\"data\",\"settings\"]) | has(\"homepage_two_session_tab_skin_2025\"\
+      )) then (setpath([\"data\",\"/service/settings/v3/\",\"body\",\"data\",\"settings\"\
+      ,\"homepage_two_session_tab_skin_2025\"]; false)) else . end\n) | (\nif (getpath([\"\
+      data\",\"/service/settings/v3/\",\"body\",\"data\",\"settings\"]) | has(\"homepage_tab_skin_enable\"\
+      )) then (setpath([\"data\",\"/service/settings/v3/\",\"body\",\"data\",\"settings\"\
+      ,\"homepage_tab_skin_enable\"]; false)) else . end\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - aweme.snssdk.com

@@ -78,12 +78,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 酷我音乐
-    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d5119438070518dcd250dba9d678d85b063db97db3a52bdce2ae34760469ae8a.js
-    body_required: true
-- http_response:
-    name: 酷我音乐
-    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?
+    match: (?:^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?)|(?:^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d5119438070518dcd250dba9d678d85b063db97db3a52bdce2ae34760469ae8a.js
     body_required: true
 mitm:

@@ -28,125 +28,113 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/cards\.iqiyi\.com\/views_home\/3\.0\/qy_home\?
-    filter: '(
-
-      delpaths([["base","statistics"]])
-
-      ) | (
-
-      del(.cards[] | select(.alias_name == "focus" or .alias_name == "ad_mobile_flow"
-      or .alias_name == "ad_trueview"))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"base\",\"statistics\"\
+      ]])\n) | (\ndel(.cards[] | select(.alias_name == \"focus\" or .alias_name ==\
+      \ \"ad_mobile_flow\" or .alias_name == \"ad_trueview\"))\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/category_home\?
-    filter: del(.base.statistics | select(.ad_str)) | del(.cards[] | select(.alias_name
-      == "entrence_focus" or .alias_name == "ad_trueview"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.base.statistics | select(.ad_str))\
+      \ | del(.cards[] | select(.alias_name == \"entrence_focus\" or .alias_name ==\
+      \ \"ad_trueview\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/cards\.iqiyi\.com\/waterfall(-plt)?\/3\.0\/feed\?
-    filter: del(.base.statistics | select(.ad_str)) | del(.. | select(.block_class?))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.base.statistics | select(.ad_str))\
+      \ | del(.. | select(.block_class?))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?
-    filter: '(
-
-      delpaths([["kv_pair","activity_tab"]])
-
-      ) | (
-
-      del(.cards[] | select(.alias_name == "play_vip_promotion" or .alias_name ==
-      "play_detail_tag" or .alias_name == "play_chat_entrance" or .alias_name == "play_ad_no_vip"
-      or .alias_name == "play_vertical_short_video" or .alias_name == "play_rap_custom"
-      or .alias_name == "play_topical_tab" or .alias_name == "play_vertical" or .alias_name
-      == "play_water_fall_like")) | del(.. | select(.block_class?))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"kv_pair\",\"activity_tab\"\
+      ]])\n) | (\ndel(.cards[] | select(.alias_name == \"play_vip_promotion\" or .alias_name\
+      \ == \"play_detail_tag\" or .alias_name == \"play_chat_entrance\" or .alias_name\
+      \ == \"play_ad_no_vip\" or .alias_name == \"play_vertical_short_video\" or .alias_name\
+      \ == \"play_rap_custom\" or .alias_name == \"play_topical_tab\" or .alias_name\
+      \ == \"play_vertical\" or .alias_name == \"play_water_fall_like\")) | del(..\
+      \ | select(.block_class?))\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\?
     filter: .
     disabled: true
 - response_jq:
     match: ^https:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/hot_query_search\?
-    filter: .cards |= map(select(.alias_name as $name | $name != "ad_trueview" and
-      $name != "ad_mobile_flow" and $name != "search_mid_text_ad")) | if .base.statistics.ad_str?
-      then del(.base.statistics) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.cards |= map(select(.alias_name as\
+      \ $name | $name != \"ad_trueview\" and $name != \"ad_mobile_flow\" and $name\
+      \ != \"search_mid_text_ad\")) | if .base.statistics.ad_str? then del(.base.statistics)\
+      \ else . end\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\?
-    filter: .cards |= map(select(has("alias_name")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.cards |= map(select(has(\"alias_name\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/iface2\.iqiyi\.com\/views_menus\/3\.0\/bottom_theme\?
-    filter: '(
-
-      delpaths([["theme_list"]])
-
-      ) | (
-
-      .cards |= map(.items |= map(select(.other.bottom_tab_type == "rec" or .other.bottom_tab_type
-      == "my")))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"theme_list\"]])\n\
+      ) | (\n.cards |= map(.items |= map(select(.other.bottom_tab_type == \"rec\"\
+      \ or .other.bottom_tab_type == \"my\")))\n)\n) ]) as $__egern_results\n    \
+      \   | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/iface2\.iqiyi\.com\/views_menus\/3\.0\/home_top_menu\?
-    filter: .nav_group_data[].nav_list |= map(select(. == "0" or . == "2" or . ==
-      "1007" or . == "1" or . == "6" or . == "3"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.nav_group_data[].nav_list |= map(select(.\
+      \ == \"0\" or . == \"2\" or . == \"1007\" or . == \"1\" or . == \"6\" or . ==\
+      \ \"3\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["content","resource","cast_device_ad"]])
-
-      ) | (
-
-      if (getpath(["content","switchs","app_ad"]) | has("app_ad_enable")) then (setpath(["content","switchs","app_ad","app_ad_enable"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["content","switchs","app_ad"]) | has("app_ad_duration")) then (setpath(["content","switchs","app_ad","app_ad_duration"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["content","switchs","ios_tech"]) | has("kPreadAdHintSwitch")) then
-      (setpath(["content","switchs","ios_tech","kPreadAdHintSwitch"]; 0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["content","switchs","ios_tech"]) | has("ad_download")) then (setpath(["content","switchs","ios_tech","ad_download"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath(["content","switchs","m_qiyi_ios_tech"]) | has("KFocusAdVideoPlayTimesIn4G"))
-      then (setpath(["content","switchs","m_qiyi_ios_tech","KFocusAdVideoPlayTimesIn4G"];
-      0)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\ndelpaths([[\"content\"\
+      ,\"resource\",\"cast_device_ad\"]])\n) | (\nif (getpath([\"content\",\"switchs\"\
+      ,\"app_ad\"]) | has(\"app_ad_enable\")) then (setpath([\"content\",\"switchs\"\
+      ,\"app_ad\",\"app_ad_enable\"]; 0)) else . end\n)\n) | (\nif (getpath([\"content\"\
+      ,\"switchs\",\"app_ad\"]) | has(\"app_ad_duration\")) then (setpath([\"content\"\
+      ,\"switchs\",\"app_ad\",\"app_ad_duration\"]; 0)) else . end\n)\n) | (\nif (getpath([\"\
+      content\",\"switchs\",\"ios_tech\"]) | has(\"kPreadAdHintSwitch\")) then (setpath([\"\
+      content\",\"switchs\",\"ios_tech\",\"kPreadAdHintSwitch\"]; 0)) else . end\n\
+      )\n) | (\nif (getpath([\"content\",\"switchs\",\"ios_tech\"]) | has(\"ad_download\"\
+      )) then (setpath([\"content\",\"switchs\",\"ios_tech\",\"ad_download\"]; 0))\
+      \ else . end\n)\n) | (\nif (getpath([\"content\",\"switchs\",\"m_qiyi_ios_tech\"\
+      ]) | has(\"KFocusAdVideoPlayTimesIn4G\")) then (setpath([\"content\",\"switchs\"\
+      ,\"m_qiyi_ios_tech\",\"KFocusAdVideoPlayTimesIn4G\"]; 0)) else . end\n)\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?
-    filter: delpaths([["adSlots"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"adSlots\"]])\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/search\.video\.iqiyi\.com\/q\?
-    filter: delpaths([["data"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\"]])\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?
-    filter: .data |= map(select(.statistic.block != "wd_liebiao_2") | select(all(.menuList[]?.statistic2.block;
-      . != "wd_liebiao_3")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= map(select(.statistic.block\
+      \ != \"wd_liebiao_2\") | select(all(.menuList[]?.statistic2.block; . != \"wd_liebiao_3\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
 - match: ^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?
   status_code: 200
@@ -154,13 +142,7 @@ map_locals:
 - match: ^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\?
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?
+- match: (?:^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?)
   status_code: 200
   body: '{}'
 mitm:

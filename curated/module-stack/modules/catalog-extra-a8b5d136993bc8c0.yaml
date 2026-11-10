@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MKZ.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/base\.mkzcdn\.com\/advert\/app\/read\/v\d
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/base\.mkzcdn\.com\/advert\/app\/story\/read\/v\d
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/base\.mkzcdn\.com\/advert\/app\/task\/motivate\/v\d
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/base\.mkzcdn\.com\/advert\/app\/user\/slide\d\/v\d\/
+- match: (?:^https:\/\/base\.mkzcdn\.com\/advert\/app\/read\/v\d)|(?:^https:\/\/base\.mkzcdn\.com\/advert\/app\/story\/read\/v\d)|(?:^https:\/\/base\.mkzcdn\.com\/advert\/app\/task\/motivate\/v\d)|(?:^https:\/\/base\.mkzcdn\.com\/advert\/app\/user\/slide\d\/v\d\/)
   status_code: 200
   body: '{}'
   headers:

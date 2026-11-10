@@ -9,53 +9,66 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/cow\?
-    filter: '(
-
-      .bottomNav|=map(select(.NavId=="bottomNavNews" or .NavId=="bottomNavMine"))
-
-      ) | (
-
-      del(.zip_url)
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n.bottomNav|=map(select(.NavId==\"\
+      bottomNavNews\" or .NavId==\"bottomNavMine\"))\n) | (\ndel(.zip_url)\n)\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/channel\?
-    filter: '(
-
-      .defaultChannel |= map(select(.id == "commenterch" or .id == "sy" or .id ==
-      "vipchannel" or .id == "rank_hot_merge" or .id == "rtnews" or .id == "sp" or
-      .id == "mil" or .id == "finance" or .id == "history" or .id == "momentsnew"
-      or .id == "taihai" or .id == "focusnews" or .id == "rcmd" or .id == "tw" or
-      .id == "HK" or .id == "dawanqu1"))
-
-      ) | (
-
-      del(.more, .youngChannel)
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n.defaultChannel |= map(select(.id\
+      \ == \"commenterch\" or .id == \"sy\" or .id == \"vipchannel\" or .id == \"\
+      rank_hot_merge\" or .id == \"rtnews\" or .id == \"sp\" or .id == \"mil\" or\
+      \ .id == \"finance\" or .id == \"history\" or .id == \"momentsnew\" or .id ==\
+      \ \"taihai\" or .id == \"focusnews\" or .id == \"rcmd\" or .id == \"tw\" or\
+      \ .id == \"HK\" or .id == \"dawanqu1\"))\n) | (\ndel(.more, .youngChannel)\n\
+      )\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/headline\?
-    filter: walk(if type == "object" and has("item") and (.item | type == "array")
-      then .item |= map(select(.type == "phvideo" or .type == "doc" or .type == "phreclist"))
-      else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nwalk(if type == \"object\" and has(\"\
+      item\") and (.item | type == \"array\") then .item |= map(select(.type == \"\
+      phvideo\" or .type == \"doc\" or .type == \"phreclist\")) else . end)\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/getNewsDocs\?
-    filter: del(.body.showAdvert, .body.adData)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.body.showAdvert, .body.adData)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/phoenixTvChannel\?
-    filter: map(if has("item") then .item|=map(select(.type=="columnfastmessagescroll"
-      or .type=="phvideo" or .type=="videoseriesrecommendmarquee" or .type=="short"))
-      else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nmap(if has(\"item\") then .item|=map(select(.type==\"\
+      columnfastmessagescroll\" or .type==\"phvideo\" or .type==\"videoseriesrecommendmarquee\"\
+      \ or .type==\"short\")) else . end)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/videoimmersionlistv\d\?
-    filter: map(if has("item") then .item|=map(select(.type=="miniVideo" or .type=="phvideo"))
-      else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nmap(if has(\"item\") then .item|=map(select(.type==\"\
+      miniVideo\" or .type==\"phvideo\")) else . end)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/nine\.ifeng\.com\/shortList\?
-    filter: map(.item|=map(select(.type=="short")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nmap(.item|=map(select(.type==\"short\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/comment\.ifeng\.com\/v\d\/get\/commentlist\?
-    filter: del(.comments[] | select(.type == "advert"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.comments[] | select(.type ==\
+      \ \"advert\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 mitm:
   hostnames:
   - nine.ifeng.com
@@ -63,31 +76,13 @@ mitm:
   - user.iclient.ifeng.com
   - comment.ifeng.com
 map_locals:
-- match: (?i)^https:\/\/nine\.ifeng\.com\/adPreload\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/startUpAdPrestrainList\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/startUpAddAd\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/searchhotwordsrollv\d\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/searchvideohotwordsroll\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/searchHotwordsReact\?
+- match: (?i:^https:\/\/nine\.ifeng\.com\/adPreload\?)|(?i:^https:\/\/nine\.ifeng\.com\/startUpAdPrestrainList\?)|(?i:^https:\/\/nine\.ifeng\.com\/startUpAddAd\?)|(?i:^https:\/\/nine\.ifeng\.com\/searchhotwordsrollv\d\?)|(?i:^https:\/\/nine\.ifeng\.com\/searchvideohotwordsroll\?)|(?i:^https:\/\/nine\.ifeng\.com\/searchHotwordsReact\?)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/user\.iclient\.ifeng\.com\/active_task\/channel\?
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/newRelatedDocs\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/nine\.ifeng\.com\/getdocbackinfo\?
+- match: (?i:^https:\/\/nine\.ifeng\.com\/newRelatedDocs\?)|(?i:^https:\/\/nine\.ifeng\.com\/getdocbackinfo\?)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/user\.iclient\.ifeng\.com\/event_protal\/list_lite\?

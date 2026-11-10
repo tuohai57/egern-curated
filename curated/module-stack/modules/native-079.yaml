@@ -7,12 +7,7 @@ rules:
     match: sdkconfig.ad.xiaomi.com
     policy: REJECT
 map_locals:
-- match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner)
-  status_code: 200
-  headers:
-    Content-Type: application/json
-  body: '{}'
-- match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
+- match: (?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))|(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner)
   status_code: 200
   headers:
     Content-Type: application/json

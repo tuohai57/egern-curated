@@ -19,13 +19,7 @@ rules:
     policy: REJECT
     no_resolve: true
 map_locals:
-- match: ^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/tiebac\.baidu\.com\/c\/u\/chat\/getChatSubscriptionList
+- match: (?:^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover)|(?:^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide)|(?:^https:\/\/tiebac\.baidu\.com\/c\/u\/chat\/getChatSubscriptionList)
   status_code: 200
   body: '{}'
 mitm:

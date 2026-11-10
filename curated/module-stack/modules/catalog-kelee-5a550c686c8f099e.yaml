@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CSG.png
 map_locals:
-- match: (?i)^https:\/\/95598\.csg\.cn\/mp\/ucs\/ma\/zt\/content\/queryHotInformations$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/95598\.csg\.cn\/mp\/mpaas\/rubik\/openapi\/rubik\/mobile\/getRubikScene$
+- match: (?i:^https:\/\/95598\.csg\.cn\/mp\/ucs\/ma\/zt\/content\/queryHotInformations$)|(?i:^https:\/\/95598\.csg\.cn\/mp\/mpaas\/rubik\/openapi\/rubik\/mobile\/getRubikScene$)
   status_code: 200
   body: '{}'
   headers:
@@ -20,5 +15,9 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/95598\.csg\.cn\/mp\/mpaas\/mgw\.htm$
-    filter: (if .info | contains("RUBIK-TRACEID:") then .scene.page.areas |= map(select(.areaId
-      | test("kingkong_|9grid_|message_|nearmap_|recommend_"))) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(if .info | contains(\"RUBIK-TRACEID:\"\
+      ) then .scene.page.areas |= map(select(.areaId | test(\"kingkong_|9grid_|message_|nearmap_|recommend_\"\
+      ))) else . end)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

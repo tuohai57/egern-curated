@@ -77,13 +77,7 @@ map_locals:
 - match: ^https?:\/\/.+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/
   status_code: 200
   body: ' '
-- match: ^https?:\/\/.+\.amemv\.com\/.+app_log
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/.+\.amemv\.com\/.+report
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/.+\.amemv\.com\/.+stats
+- match: (?:^https?:\/\/.+\.amemv\.com\/.+app_log)|(?:^https?:\/\/.+\.amemv\.com\/.+report)|(?:^https?:\/\/.+\.amemv\.com\/.+stats)
   status_code: 200
   body: ''
 mitm:

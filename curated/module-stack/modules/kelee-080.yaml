@@ -14,32 +14,12 @@ rules:
     match: adtrack.xiaojukeji.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\?
+- match: (?i:^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\?)|(?i:^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget$)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=prado\.cms\.delivery\.batch
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=prado\.cms\.AggregateDeliveryRemoteService\.aggregateDelivery
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.c\.p\.queryLevelAndRightsStatus
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.cos\.p\.popup
+- match: (?i:^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=prado\.cms\.delivery\.batch)|(?i:^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=prado\.cms\.AggregateDeliveryRemoteService\.aggregateDelivery)|(?i:^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.c\.p\.queryLevelAndRightsStatus)|(?i:^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.cos\.p\.popup)
   status_code: 200
   body: '{}'
   headers:
@@ -74,69 +54,125 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
-    filter: (.data |= map(select(.name != "isUseNetConnectivity") | .assign.args.rootca_pin
-      = 0 | .assign.args.sni_list = {}))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.name != \"isUseNetConnectivity\"\
+      ) | .assign.args.rootca_pin = 0 | .assign.args.sni_list = {}))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/slow\?
-    filter: (delpaths([["data", "order_cards", "new_loss_banner_card"], ["data", "order_cards",
-      "call_car_card_80"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"order_cards\"\
+      , \"new_loss_banner_card\"], [\"data\", \"order_cards\", \"call_car_card_80\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core\?
-    filter: (.data.order_cards.nav_list_card.data |= map(select(.nav_id == "dache_anycar"
-      or .nav_id == "carmate" or .nav_id == "driverservice" or .nav_id == "zhandianbashi"
-      or .nav_id == "pincheche" or .nav_id == "bike" or .nav_id == "nav_more_v3"))
-      | .data.disorder_cards.top_nav_list.data.top_nav_info |= map(select(.nav_id
-      == "chu_xing" or .nav_id == "freight_cargo")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.order_cards.nav_list_card.data\
+      \ |= map(select(.nav_id == \"dache_anycar\" or .nav_id == \"carmate\" or .nav_id\
+      \ == \"driverservice\" or .nav_id == \"zhandianbashi\" or .nav_id == \"pincheche\"\
+      \ or .nav_id == \"bike\" or .nav_id == \"nav_more_v3\")) | .data.disorder_cards.top_nav_list.data.top_nav_info\
+      \ |= map(select(.nav_id == \"chu_xing\" or .nav_id == \"freight_cargo\")))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast\?
-    filter: (delpaths([["data", "disorder_cards", "communicate_card"], ["data", "disorder_cards",
-      "not_login_bottom_bar"], ["data", "disorder_cards", "riding_code_card"], ["data",
-      "order_cards"], ["data", "disorder_cards", "car_icon", "data", "icon_info_new_agreement"]]))
-      | (delpaths([["data", "disorder_cards", "guess_card"], ["data", "disorder_cards",
-      "scene_list_card"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"disorder_cards\"\
+      , \"communicate_card\"], [\"data\", \"disorder_cards\", \"not_login_bottom_bar\"\
+      ], [\"data\", \"disorder_cards\", \"riding_code_card\"], [\"data\", \"order_cards\"\
+      ], [\"data\", \"disorder_cards\", \"car_icon\", \"data\", \"icon_info_new_agreement\"\
+      ]])) | (delpaths([[\"data\", \"disorder_cards\", \"guess_card\"], [\"data\"\
+      , \"disorder_cards\", \"scene_list_card\"]]))\n) ]) as $__egern_results\n  \
+      \     | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/layout
-    filter: (.data |= (.instances |= (to_entries | map(select(.key as $k | ["center_base_info_card",
-      "center_tool_card", "center_wallet_finance_card", "center_order_related_card"]
-      | index($k))) | from_entries)) | .data.instances.center_wallet_finance_card.data.view_info
-      |= map(select(.title == "优惠卡券")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= (.instances |= (to_entries\
+      \ | map(select(.key as $k | [\"center_base_info_card\", \"center_tool_card\"\
+      , \"center_wallet_finance_card\", \"center_order_related_card\"] | index($k)))\
+      \ | from_entries)) | .data.instances.center_wallet_finance_card.data.view_info\
+      \ |= map(select(.title == \"优惠卡券\")))\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.udache\.com\/gulfstream\/porsche\/v\d\/dache_homepage_layout\?
-    filter: (delpaths([["data", "instances", "dache_main_core_icon"]])) | (.data |=
-      (.instances |= (to_entries | map(select(.key | test("feed_back_|dache_main_member|order_container_|dache_main_core_icon|dache_main_card_")))
-      | from_entries)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"instances\"\
+      , \"dache_main_core_icon\"]])) | (.data |= (.instances |= (to_entries | map(select(.key\
+      \ | test(\"feed_back_|dache_main_member|order_container_|dache_main_core_icon|dache_main_card_\"\
+      ))) | from_entries)))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.udache\.com\/intercity\/ticket\/api\/v\d\/core\/getFullPageInfoLayout\?
-    filter: (.data.disorder_components |= (map(select(.name == "history_order_card"
-      or .name == "inprogress_order_card" or .name == "station_calendar" or .name
-      == "main_card_v2" or .name == "user_history_order"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.disorder_components |= (map(select(.name\
+      \ == \"history_order_card\" or .name == \"inprogress_order_card\" or .name ==\
+      \ \"station_calendar\" or .name == \"main_card_v2\" or .name == \"user_history_order\"\
+      ))))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.cos\.apolloConfig
-    filter: (.data |= map(select(.name != "daijia-memberInfo-config" and .name !=
-      "daijia-transfer-share-config")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.name != \"daijia-memberInfo-config\"\
+      \ and .name != \"daijia-transfer-share-config\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/daijia\.kuaidadi\.com(:443)?\/gateway\?api=lj\.cos\.apolloToggle
-    filter: (.data |= map(select(.name as $n | {daijia_app_estimate_pre_req_switch:true,daijia_agent_car_picture_check:true,daijia_bluetooth_wifi_degrade_switch:true,daijia_weixin_publish_login:true,daijia_estimate_recommend_degrade_switch:true,daijia_yugu_policy_switch:true,daijia_home_location_guide_switch:true,daijia_estimate_switch:true}
-      | has($n))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.name as $n |\
+      \ {daijia_app_estimate_pre_req_switch:true,daijia_agent_car_picture_check:true,daijia_bluetooth_wifi_degrade_switch:true,daijia_weixin_publish_login:true,daijia_estimate_recommend_degrade_switch:true,daijia_yugu_policy_switch:true,daijia_home_location_guide_switch:true,daijia_estimate_switch:true}\
+      \ | has($n))))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.udache\.com\/gulfstream\/porsche\/v\d\/bronze\/pinchengle_homepage_layout$
-    filter: (.data.instances |= with_entries(select(.key | IN("dacheanycar-certificates-1",
-      "main-card-1", "map-1", "nav-1", "tool-container-1"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.instances |= with_entries(select(.key\
+      \ | IN(\"dacheanycar-certificates-1\", \"main-card-1\", \"map-1\", \"nav-1\"\
+      , \"tool-container-1\"))))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.udache\.com\/gulfstream\/porsche\/v\d\/SFCHomeTab\?
-    filter: (.data.tab_list |= map(select(.tab_id == "passenger" or .tab_id == "driver")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.tab_list |= map(select(.tab_id\
+      \ == \"passenger\" or .tab_id == \"driver\")))\n) ]) as $__egern_results\n \
+      \      | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/htwkop\.xiaojukeji\.com(:443)?\/gateway\?api=hm\.fa\.querySellCardSummary
-    filter: (setpath(["data"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\"]; \"{}\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/htwkop\.xiaojukeji\.com(:443)?\/gateway\?api=hm\.fa\.queryWelfareCenter
-    filter: (setpath(["data"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\"]; \"{}\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/poi\.map\.xiaojukeji\.com\/mapapi\/startinfo\?api_version
-    filter: (delpaths([["rec_destination"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"rec_destination\"]]))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/poi\.map\.xiaojukeji\.com\/mapapi\/poiinfo\?product_id
-    filter: (delpaths([["rec_destination"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"rec_destination\"]]))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/common\.diditaxi\.com\.cn\/user_common\/itineraryList\?
-    filter: (del(.data.tab_nav[]?.tab_param))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.data.tab_nav[]?.tab_param))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

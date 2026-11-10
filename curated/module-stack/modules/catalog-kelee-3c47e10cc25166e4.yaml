@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Meizhixiuxing.png
 map_locals:
-- match: (?i)^https:\/\/api\.bevol\.com\/appmain\/app\/home\/launch$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.bevol\.com\/appmain\/app\/home\/popup$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.bevol\.com\/personal\/page$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.bevol\.com\/seach\/foundAndTopSearch$
+- match: (?i:^https:\/\/api\.bevol\.com\/appmain\/app\/home\/launch$)|(?i:^https:\/\/api\.bevol\.com\/appmain\/app\/home\/popup$)|(?i:^https:\/\/api\.bevol\.com\/personal\/page$)|(?i:^https:\/\/api\.bevol\.com\/seach\/foundAndTopSearch$)
   status_code: 200
   body: '{}'
   headers:
@@ -30,15 +15,27 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.bevol\.com\/appmain\/app\/home\/page$
-    filter: (delpaths([["result", "versionPopUp"], ["result", "isShowSearchLabel"],
-      ["result", "isShowSearchFeedBack"], ["result", "centerBannerAdvert"], ["result",
-      "programmaticAdvertising"], ["result", "mattsData"], ["result", "questionnaireMap"],
-      ["result", "appPullDownAdvert"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"result\", \"versionPopUp\"\
+      ], [\"result\", \"isShowSearchLabel\"], [\"result\", \"isShowSearchFeedBack\"\
+      ], [\"result\", \"centerBannerAdvert\"], [\"result\", \"programmaticAdvertising\"\
+      ], [\"result\", \"mattsData\"], [\"result\", \"questionnaireMap\"], [\"result\"\
+      , \"appPullDownAdvert\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.bevol\.com\/appmain\/app\/home\/feed$
-    filter: (delpaths([["result", "banners"]])) | (. | .result.returnList |= (map(select(.tname
-      == "userPart"))) | .result.returnList |= map(select(. | has("adId") | not)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"result\", \"banners\"\
+      ]])) | (. | .result.returnList |= (map(select(.tname == \"userPart\"))) | .result.returnList\
+      \ |= map(select(. | has(\"adId\") | not)))\n) ]) as $__egern_results\n     \
+      \  | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.bevol\.com\/trialbox\/shop\/app\/homePage$
-    filter: (delpaths([["result", "firstPersonActivity"], ["result", "mainActivity"],
-      ["result", "brandZone"], ["result", "imageAD2"], ["result", "couponPopupInfo"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"result\", \"firstPersonActivity\"\
+      ], [\"result\", \"mainActivity\"], [\"result\", \"brandZone\"], [\"result\"\
+      , \"imageAD2\"], [\"result\", \"couponPopupInfo\"]]))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

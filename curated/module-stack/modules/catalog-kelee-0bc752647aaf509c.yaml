@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiDi100.png
 map_locals:
-- match: (?i)^https?:\/\/p\.kuaidi100\.com\/advertisement\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/p\.kuaidi100\.com\/e-commerce\/act\/actInfo\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/p\.kuaidi100\.com\/apicenter\/card\.dox
+- match: (?i:^https?:\/\/p\.kuaidi100\.com\/advertisement\/)|(?i:^https?:\/\/p\.kuaidi100\.com\/e-commerce\/act\/actInfo\?)|(?i:^https?:\/\/p\.kuaidi100\.com\/apicenter\/card\.dox)
   status_code: 200
   body: '{}'
   headers:
@@ -25,10 +15,18 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$
-    filter: (delpaths([["adsplash"], ["adIsConsumable"], ["adProductId"], ["nologin_tips"],
-      ["index_banner"], ["me_banner"], ["index_banner_shadow"], ["adshongbao"], ["adsapp_homepage_ticket_pop"],
-      ["adsoptimizationsend"], ["adsapp_activity_ad_array"], ["adbanner"], ["adposition"],
-      ["adShowAgainTime"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"adsplash\"], [\"adIsConsumable\"\
+      ], [\"adProductId\"], [\"nologin_tips\"], [\"index_banner\"], [\"me_banner\"\
+      ], [\"index_banner_shadow\"], [\"adshongbao\"], [\"adsapp_homepage_ticket_pop\"\
+      ], [\"adsoptimizationsend\"], [\"adsapp_activity_ad_array\"], [\"adbanner\"\
+      ], [\"adposition\"], [\"adShowAgainTime\"]]))\n) ]) as $__egern_results\n  \
+      \     | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox
-    filter: (delpaths([["data", "secondMenuList"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"secondMenuList\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

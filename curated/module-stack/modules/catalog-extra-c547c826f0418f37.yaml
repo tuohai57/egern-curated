@@ -6,24 +6,13 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list
-    filter: .data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= map(select(.type != \"DISCOVERY_HEADER\"\
+      \ and .type != \"DISCOVERY_BANNER\"))\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category
+- match: (?:^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash)|(?:^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai)|(?:^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category)
   status_code: 200
   body: '{}'
   headers:

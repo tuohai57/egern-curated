@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YiKaoBang.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/main\/ads\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/Main\/startPage\?
+- match: (?:^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/main\/ads\?)|(?:^https:\/\/api\.yikaobang\.com\.cn\/index\.php\/client\/Main\/startPage\?)
   status_code: 200
   body: '{}'
   headers:

@@ -27,64 +27,26 @@ url_rewrites:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list
-    filter: '(
-
-      delpaths([["data","pendant_a"]])
-
-      ) | (
-
-      delpaths([["data","entrance_d"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"pendant_a\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"entrance_d\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/venus\.douyucdn\.cn\/venus\/config\/static\/update.+keyCodeSet=flow_config
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      if (getpath([]) | has("greatGodGameSitterSwitch")) then (setpath(["greatGodGameSitterSwitch"];
-      0)) else . end
-
-      ) | (
-
-      if (getpath([]) | has("followMoreAnchorEntrance")) then (setpath(["followMoreAnchorEntrance"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath([]) | has("sdklivebanner")) then (setpath(["sdklivebanner"]; 0))
-      else . end
-
-      )
-
-      ) | (
-
-      if (getpath([]) | has("homeActFloatSwitch")) then (setpath(["homeActFloatSwitch"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath([]) | has("bringGoodsSwitch")) then (setpath(["bringGoodsSwitch"];
-      0)) else . end
-
-      )
-
-      ) | (
-
-      if (getpath([]) | has("qqGameSwitch")) then (setpath(["qqGameSwitch"]; 0)) else
-      . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\nif (getpath([]) | has(\"\
+      greatGodGameSitterSwitch\")) then (setpath([\"greatGodGameSitterSwitch\"]; 0))\
+      \ else . end\n) | (\nif (getpath([]) | has(\"followMoreAnchorEntrance\")) then\
+      \ (setpath([\"followMoreAnchorEntrance\"]; 0)) else . end\n)\n) | (\nif (getpath([])\
+      \ | has(\"sdklivebanner\")) then (setpath([\"sdklivebanner\"]; 0)) else . end\n\
+      )\n) | (\nif (getpath([]) | has(\"homeActFloatSwitch\")) then (setpath([\"homeActFloatSwitch\"\
+      ]; 0)) else . end\n)\n) | (\nif (getpath([]) | has(\"bringGoodsSwitch\")) then\
+      \ (setpath([\"bringGoodsSwitch\"]; 0)) else . end\n)\n) | (\nif (getpath([])\
+      \ | has(\"qqGameSwitch\")) then (setpath([\"qqGameSwitch\"]; 0)) else . end\n\
+      )\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
 - match: ^https:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
   status_code: 200

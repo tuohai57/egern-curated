@@ -13,23 +13,11 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/jia\.360\.cn\/conf\/v1\.json
-    filter: '(
-
-      (
-
-      delpaths([["tab_conf"]])
-
-      ) | (
-
-      delpaths([["ad_conf"]])
-
-      )
-
-      ) | (
-
-      delpaths([["activity"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"tab_conf\"]])\n\
+      ) | (\ndelpaths([[\"ad_conf\"]])\n)\n) | (\ndelpaths([[\"activity\"]])\n)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - jia.360.cn

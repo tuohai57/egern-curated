@@ -6,81 +6,29 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?
-    filter: '(
-
-      delpaths([["data","recom_cards"]])
-
-      ) | (
-
-      delpaths([["data","recom_btns"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"recom_cards\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"recom_btns\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\?
-    filter: '(
-
-      delpaths([["data","tabs",1,"badge"]])
-
-      ) | (
-
-      delpaths([["data","recommend_ads"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"tabs\",1,\"\
+      badge\"]])\n) | (\ndelpaths([[\"data\",\"recommend_ads\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["top_banner"]])
-
-      ) | (
-
-      delpaths([["diagnos_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["partner_hospital"]])
-
-      )
-
-      ) | (
-
-      delpaths([["question_answer"]])
-
-      )
-
-      ) | (
-
-      delpaths([["product"]])
-
-      )
-
-      ) | (
-
-      delpaths([["brand_story"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\ndelpaths([[\"top_banner\"\
+      ]])\n) | (\ndelpaths([[\"diagnos_config\"]])\n)\n) | (\ndelpaths([[\"partner_hospital\"\
+      ]])\n)\n) | (\ndelpaths([[\"question_answer\"]])\n)\n) | (\ndelpaths([[\"product\"\
+      ]])\n)\n) | (\ndelpaths([[\"brand_story\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?
+- match: (?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?)|(?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?)|(?:^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?)
   status_code: 200
   body: '{}'
   headers:

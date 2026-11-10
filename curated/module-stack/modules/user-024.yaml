@@ -18,19 +18,13 @@ map_locals:
 - match: ^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen
   status_code: 200
   body: ''
-- match: ^https?:\/\/.*\.amap\.com\/v\d\/ai_rec\/
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\?
+- match: (?:^https?:\/\/.*\.amap\.com\/v\d\/ai_rec\/)|(?:^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\?)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information
   status_code: 200
   body: ''
-- match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather
+- match: (?:^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend)|(?:^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather)
   status_code: 200
   body: '{}'
 scriptings:
@@ -42,55 +36,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 高德地图 / 2
-    match: ^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 3
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 4
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 5
-    match: ^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 6
-    match: ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 7
-    match: ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 8
-    match: ^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 9
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 高德地图 / 10
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword
+    match: (?:^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart)|(?:^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource)|(?:^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page)|(?:^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen)|(?:^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
     body_required: true
     update_interval: 86400

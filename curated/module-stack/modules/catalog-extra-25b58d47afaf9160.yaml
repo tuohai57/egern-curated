@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuroBBS.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/api\.kurobbs\.com\/config\/getOpenScreen$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.kurobbs\.com\/config\/index\/windows$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.kurobbs\.com\/config\/search\/getSearchConfig\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.kurobbs\.com\/forum\/app\/topic\/hotlist\?
+- match: (?:^https:\/\/api\.kurobbs\.com\/config\/getOpenScreen$)|(?:^https:\/\/api\.kurobbs\.com\/config\/index\/windows$)|(?:^https:\/\/api\.kurobbs\.com\/config\/search\/getSearchConfig\?)|(?:^https:\/\/api\.kurobbs\.com\/forum\/app\/topic\/hotlist\?)
   status_code: 200
   body: '{}'
   headers:

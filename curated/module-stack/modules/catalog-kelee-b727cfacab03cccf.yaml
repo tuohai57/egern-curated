@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FinanceNews.png
 map_locals:
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/advertising\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/kvconfig\/items\/search_keywords_wscnvip$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/search\/hotsearch\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/articles\/hot\?
+- match: (?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/advertising\/)|(?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/kvconfig\/items\/search_keywords_wscnvip$)|(?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/search\/hotsearch\?)|(?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/articles\/hot\?)
   status_code: 200
   body: '{}'
   headers:
@@ -29,17 +14,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/lives\/relateddata\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/articles\/relateddata\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/carousel\/information-flow\?
+- match: (?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/lives\/relateddata\/)|(?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/articles\/relateddata\/)|(?i:^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/carousel\/information-flow\?)
   status_code: 200
   body: '{}'
   headers:
@@ -50,10 +25,22 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/kvconfig\/items\/tabbarconfig1$
-    filter: (.data.items |= [.[] | select(.key == "news" or .key == "live")])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.items |= [.[] | select(.key\
+      \ == \"news\" or .key == \"live\")])\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/articles\/
-    filter: (delpaths([["data", "recommend_vip_img_uri"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"recommend_vip_img_uri\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api-one-wscn\.awtmt\.com\/\/apiv1\/kvconfig\/items\/membersrights$
-    filter: (delpaths([["data", "vip_article"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"vip_article\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

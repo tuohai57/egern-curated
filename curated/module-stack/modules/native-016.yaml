@@ -51,15 +51,9 @@ map_locals:
     Content-Length: '5'
     grpc-status: '0'
   body: ''
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words
+- match: (?:^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words)|(?:^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr)|(?:^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist)
   body: '{}'
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr
-  body: '{}'
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist
-  body: '{}'
-- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash
-  body: '{}'
-- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash
+- match: (?:^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash)|(?:^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash)
   body: '{}'
 - match: ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\?
   body: '{}'
@@ -92,12 +86,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 📺 BiliBili.ADBlock.response.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/(web-interface\/wbi\/index\/top\/feed\/rcmd|vip\/ads\/materials)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-- http_response:
-    name: 📺 BiliBili.ADBlock.pgc.page.response.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/page\/(bangumi|cinema\/tab\?)
+    match: (?:^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/(web-interface\/wbi\/index\/top\/feed\/rcmd|vip\/ads\/materials)\?)|(?:^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/page\/(bangumi|cinema\/tab\?))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
     body_required: true
 - http_response:
@@ -114,56 +103,7 @@ scriptings:
     max_size: 262144
 - http_response:
     name: 📺 BiliBili.ADBlock.dynamic.response.grpc
-    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)(Personal)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.playurl.response.grpc
-    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.search.response.grpc
-    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.dm.response.grpc
-    match: ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.interface.response.grpc
-    match: ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.reply.response.grpc
-    match: ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/(MainList|DetailList|ReplyInfo)$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.reply.v2.response.grpc
-    match: ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v2\.Reply\/SubjectDescription$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_response:
-    name: 📺 BiliBili.ADBlock.pgc.response.grpc
-    match: ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$
+    match: (?:^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)(Personal)?$)|(?:^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$)|(?:^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$)|(?:^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile))|(?:^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus)|(?:^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/(MainList|DetailList|ReplyInfo)$)|(?:^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v2\.Reply\/SubjectDescription$)|(?:^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60.js
     body_required: true
     binary_body: true

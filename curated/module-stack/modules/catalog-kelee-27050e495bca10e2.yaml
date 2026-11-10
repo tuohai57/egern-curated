@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaojukejiCharge.png
 map_locals:
-- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$
+- match: (?i:^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?))|(?i:^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?))|(?i:^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$)
   status_code: 200
   body: '{}'
   headers:
@@ -32,4 +22,7 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center\?
-    filter: (delpaths([["data"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\"]]))\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

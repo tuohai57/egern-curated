@@ -9,13 +9,7 @@ mitm:
 scriptings:
 - http_response:
     name: 彩云天气 / 1
-    match: ^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 2
-    match: ^https?:\/\/biz\.cyapi\.cn\/v\d\/user
+    match: (?:^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail)|(?:^https?:\/\/biz\.cyapi\.cn\/v\d\/user)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
     body_required: true
     update_interval: 86400
@@ -33,43 +27,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 彩云天气 / 5
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 6
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 7
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 8
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 9
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 10
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 彩云天气 / 11
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns
+    match: (?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
     body_required: true
     update_interval: 86400

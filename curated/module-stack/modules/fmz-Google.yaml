@@ -162,17 +162,7 @@ rules:
 scriptings:
 - http_request:
     name: Google / binary local
-    match: ^https?:\/\/.+\.googleapis.com/.+ad_break
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: Google / binary local
-    match: ^https?:\/\/.+\.googleapis.com/.+log_event
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-    body_required: false
-- http_request:
-    name: Google / binary local
-    match: ^https?:\/\/.+\.googleapis.com/adsmeasurement
+    match: (?:^https?:\/\/.+\.googleapis.com/.+ad_break)|(?:^https?:\/\/.+\.googleapis.com/.+log_event)|(?:^https?:\/\/.+\.googleapis.com/adsmeasurement)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
     body_required: false
 - http_request:

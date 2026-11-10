@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YueDanBa.png
 map_locals:
-- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/base\/app\/ad\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/growth\/popup\/remind$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/recommend\/feed\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.17gwx\.com\/v2\/homepage\/feed\/similarList\?
+- match: (?i:^https:\/\/api\.17gwx\.com\/v2\/base\/app\/ad\?)|(?i:^https:\/\/api\.17gwx\.com\/v2\/growth\/popup\/remind$)|(?i:^https:\/\/api\.17gwx\.com\/v2\/recommend\/feed\/list\?)|(?i:^https:\/\/api\.17gwx\.com\/v2\/homepage\/feed\/similarList\?)
   status_code: 200
   body: '{}'
   headers:
@@ -30,5 +15,9 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.17gwx\.com\/operate\/elements\?
-    filter: (.data |= with_entries(select(.key | test("home_mid_many|home_mid_banner_multi|user_center_slide_show_pic|newfeed_detail_oper_middle|main_rebate_banner|zhekou_coupon_detail_oper|zhekou_jdcoupon_detail_oper|zhekou_vipcoupon_detail_oper|zhekou_pddcoupon_detail_oper")
-      | not)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= with_entries(select(.key\
+      \ | test(\"home_mid_many|home_mid_banner_multi|user_center_slide_show_pic|newfeed_detail_oper_middle|main_rebate_banner|zhekou_coupon_detail_oper|zhekou_jdcoupon_detail_oper|zhekou_vipcoupon_detail_oper|zhekou_pddcoupon_detail_oper\"\
+      ) | not)))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

@@ -108,12 +108,7 @@ rules:
     match: ^http:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_k_main_page_banner\/
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/wallpaper-\d+\.file\.myqcloud\.com\/dsl\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/wallpaper-\d+\.file\.myqcloud\.com\/hikari\/
+- match: (?i:^https:\/\/wallpaper-\d+\.file\.myqcloud\.com\/dsl\/)|(?i:^https?:\/\/wallpaper-\d+\.file\.myqcloud\.com\/hikari\/)
   status_code: 200
   body: '{}'
   headers:

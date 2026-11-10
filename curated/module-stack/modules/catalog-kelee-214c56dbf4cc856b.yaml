@@ -4,37 +4,12 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MotorFans.png
 map_locals:
-- match: (?i)^https:\/\/api\.58moto\.com\/advert\/
+- match: (?i:^https:\/\/api\.58moto\.com\/advert\/)|(?i:^https:\/\/api\.58moto\.com\/mall\/goods\/self\/list\?)|(?i:^https:\/\/api\.58moto\.com\/mall\/goods\/self\/homeList\?)|(?i:^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do$)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.58moto\.com\/mall\/goods\/self\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.58moto\.com\/mall\/goods\/self\/homeList\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22025
-  status_code: 200
-  body: '{"code":0,"msg":"success"}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22038
-  status_code: 200
-  body: '{"code":0,"msg":"success"}'
-  headers:
-    Content-Type: application/json
-- match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/labelController\.do\?action=20112
+- match: (?i:^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22025)|(?i:^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22038)|(?i:^https:\/\/api\.58moto\.com\/forum\/public\/labelController\.do\?action=20112)
   status_code: 200
   body: '{"code":0,"msg":"success"}'
   headers:
@@ -52,4 +27,7 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.58moto\.com\/forum\/public\/businessEssayController\.do\?action=22004
-    filter: (delpaths([["data", "link"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"link\"]]))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

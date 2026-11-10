@@ -13,10 +13,7 @@ map_locals:
 - match: ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad
   status_code: 200
   body: ''
-- match: ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking)
+- match: (?:^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads)|(?:^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking))
   status_code: 200
   body: ''
 - match: ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext

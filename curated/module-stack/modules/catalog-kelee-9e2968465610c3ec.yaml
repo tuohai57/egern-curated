@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ShoujiDesk.png
 map_locals:
-- match: (?i)^https:\/\/api\.tdz5\.com\/search\/hotword\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.tdz5\.com\/ring\/hot\?
+- match: (?i:^https:\/\/api\.tdz5\.com\/search\/hotword\?)|(?i:^https:\/\/api\.tdz5\.com\/ring\/hot\?)
   status_code: 200
   body: '{}'
   headers:

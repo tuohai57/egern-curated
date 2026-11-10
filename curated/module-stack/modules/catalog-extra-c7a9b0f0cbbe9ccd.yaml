@@ -28,19 +28,10 @@ rules:
     match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$
     policy: REJECT
 map_locals:
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words
+- match: (?:^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words)|(?:^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr)|(?:^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash
+- match: (?:^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash)|(?:^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\?
@@ -54,7 +45,10 @@ map_locals:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\?
-    filter: del(.data.payment)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.payment)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - manga.bilibili.com

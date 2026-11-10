@@ -7,13 +7,7 @@ mitm:
   - 42.187.199.248
   - kad.gotokeep.com
 map_locals:
-- match: ^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v\d\/popup\/getPopUp
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/kprime\/v\d\/popups\/primeGuide
+- match: (?:^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v\d\/popup\/getPopUp)|(?:^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog)|(?:^https?:\/\/api\.gotokeep\.com\/kprime\/v\d\/popups\/primeGuide)
   status_code: 200
   body: ''
 - match: ^https?:\/\/hc-ssp\.sm\.cn
@@ -25,46 +19,13 @@ map_locals:
 - match: ^https?:\/\/api.gotokeep.com/cauchy/growth/init
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/ads\/v\d\/ads\/preload
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/training\/box\/config
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check
+- match: (?:^https?:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list)|(?:^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list)|(?:^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list)|(?:^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list)|(?:^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad)|(?:^https?:\/\/api\.gotokeep\.com\/ads\/v\d\/ads\/preload)|(?:^https?:\/\/api\.gotokeep\.com\/training\/box\/config)|(?:^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check)
   status_code: 200
   body: ''
 scriptings:
 - http_response:
     name: Keep / 1
-    match: ^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: Keep / 2
-    match: ^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: Keep / 3
-    match: ^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/course
+    match: (?:^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$)|(?:^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic)|(?:^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/course)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js
     body_required: true
     update_interval: 86400

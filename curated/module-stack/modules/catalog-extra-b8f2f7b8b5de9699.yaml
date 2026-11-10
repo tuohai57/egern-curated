@@ -7,31 +7,7 @@ mitm:
 scriptings:
 - http_response:
     name: 喜马拉雅 / 1
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 喜马拉雅 / 2
-    match: ^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 喜马拉雅 / 3
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 喜马拉雅 / 4
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 喜马拉雅 / 5
-    match: ^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage
+    match: (?:^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories)|(?:^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic)|(?:^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix)|(?:^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category)|(?:^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
     body_required: true
     update_interval: 86400

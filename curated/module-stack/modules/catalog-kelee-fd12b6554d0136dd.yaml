@@ -24,27 +24,12 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get
+- match: (?i:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get)|(?i:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId
+- match: (?i:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId)|(?i:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId)|(?i:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId)
   status_code: 200
   body: '{}'
   headers:
@@ -69,12 +54,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list
+- match: (?i:^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list)|(?i:^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list)
   status_code: 200
   body: '{}'
   headers:
@@ -112,25 +92,13 @@ map_locals:
 scriptings:
 - http_response:
     name: 修改广告参数
-    match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/comic\/recommend
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 精简首页热门标签
-    match: (?i)^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/discovery_v\d\/tab_list_v\d
+    match: (?i:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/comic\/recommend)|(?i:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ironman\/discovery_v\d\/tab_list_v\d)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 精简社区标签
-    match: (?i)^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/homepage\/comicVideo\/v\d\/configs
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 精简社区信息流
-    match: (?i)^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/unified_feed$
+    match: (?i:^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/homepage\/comicVideo\/v\d\/configs)|(?i:^https:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/unified_feed$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e9f4e623df954abbaa76b3e67059b370d7df97e71c16067fc5014d2c1a81a911.js
     body_required: true
     update_interval: 86400

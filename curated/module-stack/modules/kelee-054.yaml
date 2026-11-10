@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taopiaopiao.png
 map_locals:
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopindependentadvertiseapi\.queryadvertise\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopitemadvertiseapi\.queryadvertise\/
+- match: (?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopindependentadvertiseapi\.queryadvertise\/)|(?i:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopitemadvertiseapi\.queryadvertise\/)
   status_code: 200
   body: '{}'
   headers:
@@ -25,12 +15,20 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopintegrationapi\.homeconfig\/
-    filter: (delpaths([["data", "returnValue", "floatingBanner"], ["data", "returnValue",
-      "searchShadeList"]])) | (.data.returnValue.topTab |= map(select(.activeImage
-      | not)) | .data.returnValue.topTab |= map(del(.backgroundColor)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"returnValue\"\
+      , \"floatingBanner\"], [\"data\", \"returnValue\", \"searchShadeList\"]])) |\
+      \ (.data.returnValue.topTab |= map(select(.activeImage | not)) | .data.returnValue.topTab\
+      \ |= map(del(.backgroundColor)))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.aristotle\.get\/
-    filter: '(def filter_nodes: map(if .data.componentId? and (.data.componentId |
-      type == "string") and (.data.componentId | (contains("tpp_banner") or . == "tpp_guess_like"))
-      then empty else .nodes |= (if . then filter_nodes else . end) end); .data.nodes
-      |= (if . then filter_nodes else . end))'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(def filter_nodes: map(if .data.componentId?\
+      \ and (.data.componentId | type == \"string\") and (.data.componentId | (contains(\"\
+      tpp_banner\") or . == \"tpp_guess_like\")) then empty else .nodes |= (if . then\
+      \ filter_nodes else . end) end); .data.nodes |= (if . then filter_nodes else\
+      \ . end))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

@@ -8,12 +8,7 @@ rules:
     match: ^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=advis
     policy: REJECT
 map_locals:
-- match: ^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata
+- match: (?:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=vip_coupon)|(?:^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=getdata)
   status_code: 200
   body: '{}'
   headers:

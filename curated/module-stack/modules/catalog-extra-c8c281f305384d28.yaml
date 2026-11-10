@@ -6,22 +6,43 @@ homepage: https://github.com/luestr/ProxyResource/blob/main/README.md
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$
-    filter: del(.ad, .advertises, .trends) | if .statuses then .statuses |= map(select(((.promotion.type
-      == "ad") or (.mblogtypename | IN("广告", "廣告", "热推", "熱推"))) | not)) end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.ad, .advertises, .trends) | if\
+      \ .statuses then .statuses |= map(select(((.promotion.type == \"ad\") or (.mblogtypename\
+      \ | IN(\"广告\", \"廣告\", \"热推\", \"熱推\"))) | not)) end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads&
-    filter: .data |= . + {"ad_list":[],"pic_ad":[],"gdt_video_ad_ios":[],"display_ad":0,"ad_ios_id":null,"app_ad_ios_id":null,"reserve_ad_ios_id":"","reserve_app_ad_ios_id":"","ad_duration":604800,"ad_cd_interval":604800}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= . + {\"ad_list\":[],\"pic_ad\"\
+      :[],\"gdt_video_ad_ios\":[],\"display_ad\":0,\"ad_ios_id\":null,\"app_ad_ios_id\"\
+      :null,\"reserve_ad_ios_id\":\"\",\"reserve_app_ad_ios_id\":\"\",\"ad_duration\"\
+      :604800,\"ad_cd_interval\":604800}\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends&
-    filter: if .data.order then .data.order=["search_topic"] end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .data.order then .data.order=[\"\
+      search_topic\"] end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic&
-    filter: if .data.search_topic.cards[0].type == "searchtop" then del(.data.search_topic.cards[0])
-      end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .data.search_topic.cards[0].type\
+      \ == \"searchtop\" then del(.data.search_topic.cards[0]) end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center&
-    filter: if .data.cards then .data.cards[].items |= map(select(.type != "personal_vip"))
-      | .data.cards |= map(select((.items | length) > 0)) end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .data.cards then .data.cards[].items\
+      \ |= map(select(.type != \"personal_vip\")) | .data.cards |= map(select((.items\
+      \ | length) > 0)) end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\?
   status_code: 200

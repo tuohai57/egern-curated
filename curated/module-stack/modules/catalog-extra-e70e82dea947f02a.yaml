@@ -6,40 +6,14 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/pan\.baidu\.com\/feed\/kingkongdistrict\?
-    filter: .data.data |= map(select(.type != "novel" and .type != "shortplay" and
-      .type != "print" and .type != "job_hunt"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.data |= map(select(.type !=\
+      \ \"novel\" and .type != \"shortplay\" and .type != \"print\" and .type != \"\
+      job_hunt\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/pan\.baidu\.com\/api\/getconfig\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/api\/plugin\/get\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan\.baidu\.com\/recommend\/query\/list\?
+- match: (?:^https:\/\/pan\.baidu\.com\/api\/getconfig\?)|(?:^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?)|(?:^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\?)|(?:^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\?)|(?:^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv\?)|(?:^https:\/\/pan\.baidu\.com\/api\/plugin\/get\?)|(?:^https:\/\/pan\.baidu\.com\/recommend\/query\/list\?)
   status_code: 200
   body: '{}'
   headers:

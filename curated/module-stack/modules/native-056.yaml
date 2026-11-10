@@ -12,7 +12,10 @@ rules:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$
-    filter: del(.materialsList, .advertParam)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.materialsList, .advertParam)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 scriptings:
 - http_request:
     name: 12306去广告-请求

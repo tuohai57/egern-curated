@@ -19,55 +19,7 @@ scriptings:
     body_required: false
 - http_response:
     name: 移除图片和实况照片水印
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除整体配置 ui
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除开屏广告 config
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除开屏广告 splash_config
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除详情页小部件、关注页感兴趣的人
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除信息流广告
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除详情页感兴趣的人
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除评论区实况照片水印
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v1\/interaction\/comment\/video\/download|v5\/note\/comment\/list)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除图片和视频水印
-    match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed)
+    match: (?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save))|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?)|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?)|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config)|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed))|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?)|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?)|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v1\/interaction\/comment\/video\/download|v5\/note\/comment\/list))|(?i:^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f7b637c9c738b18f72dd61824e25b06dad7d55553de204daad0dddd675a74f0c.js
     body_required: true
     update_interval: 86400
@@ -120,13 +72,28 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$
-    filter: (setpath(["data"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\"]; \"{}\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$
-    filter: (setpath(["data", "items"]; "[]"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"items\"]; \"\
+      []\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint
-    filter: (setpath(["data", "hint_words"]; "[]"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"hint_words\"\
+      ]; \"[]\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\?
-    filter: (setpath(["data", "queries"]; "[]") | setpath(["data", "hint_word"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"queries\"];\
+      \ \"[]\") | setpath([\"data\", \"hint_word\"]; \"{}\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

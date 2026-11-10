@@ -42,57 +42,12 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/adp\/ad\/
+- match: (?:^https:\/\/gateway(retry)?\.kugou\.com\/adp\/ad\/)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/ads\.gateway\/)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/v\d\/feeds\/follow_feed_fallback)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/mstc\/musicsymbol\/v\d\/system\/profile)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/searchnofocus\/v\d\/search_no_focus_word)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/adp\/bubble\/v\d\/song_play)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/singerdiscuss\/v\d\/entrance\/comment)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/r\/v\d\/general\/putin\/midad)|(?:^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/sound\/banner)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/ads\.gateway\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/v\d\/feeds\/follow_feed_fallback
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/mstc\/musicsymbol\/v\d\/system\/profile
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/searchnofocus\/v\d\/search_no_focus_word
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/adp\/bubble\/v\d\/song_play
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/singerdiscuss\/v\d\/entrance\/comment
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/r\/v\d\/general\/putin\/midad
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/sound\/banner
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gzacshow\.kugou\.com\/mfanxing-home\/cdn\/room\/index\/list_v2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/gzacshow\.kugou\.com\/mfx-rt-show\/cdn\/mo\/show\/headline
+- match: (?:^https:\/\/gzacshow\.kugou\.com\/mfanxing-home\/cdn\/room\/index\/list_v2)|(?:^https:\/\/gzacshow\.kugou\.com\/mfx-rt-show\/cdn\/mo\/show\/headline)
   status_code: 200
   body: '{}'
   headers:

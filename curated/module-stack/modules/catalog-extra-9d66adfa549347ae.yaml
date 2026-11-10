@@ -10,24 +10,13 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/www\.kuaiduizuoye\.com\/codesearch\/aid\/home$
-    filter: delpaths([["data","homeBannerList"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"homeBannerList\"\
+      ]])\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
-- match: ^https:\/\/www\.kuaiduizuoye\.com\/init\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/www\.kuaiduizuoye\.com\/activity\/init\/checkappconfig$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/appbannersv3$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/initbanner$
+- match: (?:^https:\/\/www\.kuaiduizuoye\.com\/init\/ad\/)|(?:^https:\/\/www\.kuaiduizuoye\.com\/activity\/init\/checkappconfig$)|(?:^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/appbannersv3$)|(?:^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/initbanner$)
   status_code: 200
   body: '{}'
   headers:

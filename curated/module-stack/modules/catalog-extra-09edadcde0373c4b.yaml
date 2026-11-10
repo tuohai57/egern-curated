@@ -6,142 +6,35 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/meta\.duitang\.com\/napi\/infra\/settings\/
-    filter: delpaths([["data","AD_LINKS"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"AD_LINKS\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/(www|api-2)\.duitang\.com\/napi\/home\/bottom_tab\/detail\/\?
-    filter: .data.tabs |= map(select(.group == "home" or .group == "category" or .group
-      == "me"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.tabs |= map(select(.group ==\
+      \ \"home\" or .group == \"category\" or .group == \"me\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api-2\.duitang\.com\/napi\/settings\/
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["data","SPLASH_SWING_OPEN"]])
-
-      ) | (
-
-      delpaths([["data","STICKER_SEARCH_HOT_KEYWORDS"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","REWARD_AD_PAG_EDITOR"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","REWARD_AD_PHOTO_EDITOR"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","REWARD_AD_CUTOUT_NUM"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","MAIN_EVENTS"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","QA_TOOLTIP_BOTTOM"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","OC_FOLLOW_OFFICIAL"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","AD_MENU_SELECTIONS"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","FEATURE_TEMPLATES"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","FEEDBACK_URL"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","AVATAR_MALL_UPDATE"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","WATERMARK_MALL_UPDATE"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","OC_MALL_UPDATE"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","3D_AVATAR_UPDATE"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","BENEFIT_LIST"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","SHARE_BANNER"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\ndelpaths([[\"data\",\"SPLASH_SWING_OPEN\"]])\n) | (\ndelpaths([[\"\
+      data\",\"STICKER_SEARCH_HOT_KEYWORDS\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      REWARD_AD_PAG_EDITOR\"]])\n)\n) | (\ndelpaths([[\"data\",\"REWARD_AD_PHOTO_EDITOR\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"REWARD_AD_CUTOUT_NUM\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"MAIN_EVENTS\"]])\n)\n) | (\ndelpaths([[\"data\",\"QA_TOOLTIP_BOTTOM\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"OC_FOLLOW_OFFICIAL\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"AD_MENU_SELECTIONS\"]])\n)\n) | (\ndelpaths([[\"data\",\"FEATURE_TEMPLATES\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"FEEDBACK_URL\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"AVATAR_MALL_UPDATE\"]])\n)\n) | (\ndelpaths([[\"data\",\"WATERMARK_MALL_UPDATE\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"OC_MALL_UPDATE\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"3D_AVATAR_UPDATE\"]])\n)\n) | (\ndelpaths([[\"data\",\"BENEFIT_LIST\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"SHARE_BANNER\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/xapi\.duitang\.com\/napi\/ads\/\?
   status_code: 200

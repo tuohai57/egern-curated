@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TuGuaiShou.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/api\.818ps\.com\/v4\/advertisement\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.818ps\.com\/v4\/popup\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.818ps\.com\/v4\/festival\/newYear\/pop\?
+- match: (?:^https:\/\/api\.818ps\.com\/v4\/advertisement\/)|(?:^https:\/\/api\.818ps\.com\/v4\/popup\/)|(?:^https:\/\/api\.818ps\.com\/v4\/festival\/newYear\/pop\?)
   status_code: 200
   body: '{}'
   headers:

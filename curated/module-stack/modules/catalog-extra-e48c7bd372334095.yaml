@@ -6,15 +6,19 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/gql(-fed)?\.reddit\.com
-    filter: ' walk(   if type == "object" then      (if .isNsfw == true then .isNsfw
-      = false else . end)     | (if .isNsfwMediaBlocked == true then .isNsfwMediaBlocked
-      = false else . end)     | (if .isNsfwContentShown == false then .isNsfwContentShown
-      = true else . end)      | (if (.commentsPageAds | type == "array") then (.commentsPageAds
-      = []) else . end)      | (if ( (.node | type == "object") and (.node.cells |
-      type == "array") and (.node.cells | any(.__typename? == "AdMetadataCell" or
-      .isAdPost? == true)) ) then empty else . end)     | (if (.node | type == "object")
-      and (.node.adPayload | type == "object") then empty else . end)     | (if .__typename
-      == "AdPost" then empty else . end)   else .  end)'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n walk(   if type == \"object\" then\
+      \      (if .isNsfw == true then .isNsfw = false else . end)     | (if .isNsfwMediaBlocked\
+      \ == true then .isNsfwMediaBlocked = false else . end)     | (if .isNsfwContentShown\
+      \ == false then .isNsfwContentShown = true else . end)      | (if (.commentsPageAds\
+      \ | type == \"array\") then (.commentsPageAds = []) else . end)      | (if (\
+      \ (.node | type == \"object\") and (.node.cells | type == \"array\") and (.node.cells\
+      \ | any(.__typename? == \"AdMetadataCell\" or .isAdPost? == true)) ) then empty\
+      \ else . end)     | (if (.node | type == \"object\") and (.node.adPayload |\
+      \ type == \"object\") then empty else . end)     | (if .__typename == \"AdPost\"\
+      \ then empty else . end)   else .  end)\n) ]) as $__egern_results\n       |\
+      \ if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - gql.reddit.com

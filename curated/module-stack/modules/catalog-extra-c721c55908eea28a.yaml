@@ -15,28 +15,34 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$
-    filter: if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([]) | has(\"data\")) then\
+      \ (setpath([\"data\"]; {})) else . end\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$
-    filter: if (getpath(["data"]) | has("items")) then (setpath(["data","items"];
-      [])) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([\"data\"]) | has(\"items\"\
+      )) then (setpath([\"data\",\"items\"]; [])) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint
-    filter: if (getpath(["data"]) | has("hint_words")) then (setpath(["data","hint_words"];
-      [])) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([\"data\"]) | has(\"hint_words\"\
+      )) then (setpath([\"data\",\"hint_words\"]; [])) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\?
-    filter: '(
-
-      if (getpath(["data"]) | has("queries")) then (setpath(["data","queries"]; []))
-      else . end
-
-      ) | (
-
-      if (getpath(["data"]) | has("hint_word")) then (setpath(["data","hint_word"];
-      {})) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\nif (getpath([\"data\"]) | has(\"\
+      queries\")) then (setpath([\"data\",\"queries\"]; [])) else . end\n) | (\nif\
+      \ (getpath([\"data\"]) | has(\"hint_word\")) then (setpath([\"data\",\"hint_word\"\
+      ]; {})) else . end\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 scriptings:
 - http_request:
     name: 小红书 / binary local

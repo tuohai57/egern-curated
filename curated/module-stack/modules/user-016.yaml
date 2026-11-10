@@ -55,13 +55,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 什么值得买 / 8
-    match: ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cbcabf770447117a66358314950a4233448eeb86274ccfb96d148294d327eece.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 什么值得买 / 9
-    match: ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags
+    match: (?:^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10)|(?:^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cbcabf770447117a66358314950a4233448eeb86274ccfb96d148294d327eece.js
     body_required: true
     update_interval: 86400
@@ -72,13 +66,7 @@ scriptings:
     body_required: true
     update_interval: 86400
 map_locals:
-- match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul
+- match: (?:^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul)|(?:^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul)|(?:^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul)
   status_code: 200
   body: ''
 icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png

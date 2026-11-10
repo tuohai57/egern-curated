@@ -81,97 +81,59 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?
-    filter: '(
-
-      del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module.irregular_banner_dy)
-
-      ) | (
-
-      .result.bottom_tabs? |= map(select(.link | IN("index.html","chat_list.html","personal.html")))
-      | .result.buffer_bottom_tabs? |= map(select(.link | IN("index.html","chat_list.html","personal.html")))
-      | .result.all_top_opts = [] | .result.module_order? |= map(select(.module_name
-      | IN("irregular_banner","ad_module","timeline") | not))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndel(.result.icon_set, .result.search_bar_hot_query,\
+      \ .result.dy_module.irregular_banner_dy)\n) | (\n.result.bottom_tabs? |= map(select(.link\
+      \ | IN(\"index.html\",\"chat_list.html\",\"personal.html\"))) | .result.buffer_bottom_tabs?\
+      \ |= map(select(.link | IN(\"index.html\",\"chat_list.html\",\"personal.html\"\
+      ))) | .result.all_top_opts = [] | .result.module_order? |= map(select(.module_name\
+      \ | IN(\"irregular_banner\",\"ad_module\",\"timeline\") | not))\n)\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/search\?
-    filter: del(.expansion)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.expansion)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\?
-    filter: del(.monthly_card_entrance, .personal_center_style_v2_vo, .icon_set.icons,
-      .icon_set.top_personal_icons, .title_bar_items, .personal_banner)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.monthly_card_entrance, .personal_center_style_v2_vo,\
+      \ .icon_set.icons, .icon_set.top_personal_icons, .title_bar_items, .personal_banner)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render\?
-    filter: del(.bottom_section_list, .ui.bottom_section, .ui.live_section.float_info)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.bottom_section_list, .ui.bottom_section,\
+      \ .ui.live_section.float_info)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/order\/
-    filter: del(.marketing_banner_vo, .shipping.banner_above_recommend)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.marketing_banner_vo, .shipping.banner_above_recommend)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/order_list_v4\?
-    filter: .orders |= map(.order_buttons |= map(del(.order_growth_tip)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.orders |= map(.order_buttons |= map(del(.order_growth_tip)))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - api.pinduoduo.com
   - api.yangkeduo.com
   - m.pinduoduo.net
 map_locals:
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/search_hotquery\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/phantom\/gbdbpdv\/extra\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/manufacturer\/cross\/shortcut\/list\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/dunkirk\/liveactivity\/push\/create\/url\/report\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/engels\/wait\/receive\/review\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/buffon\/nasus\/recommend\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/xrec\/goods_rec\/pay_after_use_v2\?
+- match: (?i:^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\?)|(?i:^https:\/\/api\.pinduoduo\.com\/search_hotquery\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/phantom\/gbdbpdv\/extra\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/manufacturer\/cross\/shortcut\/list\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/dunkirk\/liveactivity\/push\/create\/url\/report\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/engels\/wait\/receive\/review\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/buffon\/nasus\/recommend\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/xrec\/goods_rec\/pay_after_use_v2\?)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\?
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/social\/mall\/follow\/hot\/recommend\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/leporis\/notification\/clear_tab_red_dot\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v2\/query\/goods_detail_with_tags\?
+- match: (?i:^https:\/\/api\.pinduoduo\.com\/api\/social\/mall\/follow\/hot\/recommend\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/leporis\/notification\/clear_tab_red_dot\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v2\/query\/goods_detail_with_tags\?)
   status_code: 200
   body: '{}'

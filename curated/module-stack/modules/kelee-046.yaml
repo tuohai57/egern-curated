@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Walmart.png
 map_locals:
-- match: (?i)^https:\/\/api-hyper\.walmartmobile\.cn\/search\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-hyper\.walmartmobile\.cn\/cms-web\/frontapi\/shadedWords\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api-hyper\.walmartmobile\.cn\/search\/frontapi\/discovery-words\/list$
+- match: (?i:^https:\/\/api-hyper\.walmartmobile\.cn\/search\/ad\/)|(?i:^https:\/\/api-hyper\.walmartmobile\.cn\/cms-web\/frontapi\/shadedWords\/list\?)|(?i:^https:\/\/api-hyper\.walmartmobile\.cn\/search\/frontapi\/discovery-words\/list$)
   status_code: 200
   body: '{}'
   headers:
@@ -25,6 +15,10 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api-hyper\.walmartmobile\.cn\/cms-web\/frontapi\/common\/page\/get\?.*&type=26$
-    filter: (.data |= (.moduleList | map(select(.templateCode == "nav-bar-title" or
-      .templateCode == "member-info" or .templateCode == "distribution-center" or
-      .templateCode == "wallet" or .templateCode == "swiper" or .templateCode == "my-order"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= (.moduleList | map(select(.templateCode\
+      \ == \"nav-bar-title\" or .templateCode == \"member-info\" or .templateCode\
+      \ == \"distribution-center\" or .templateCode == \"wallet\" or .templateCode\
+      \ == \"swiper\" or .templateCode == \"my-order\"))))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

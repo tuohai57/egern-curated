@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PiPiXia.png
 map_locals:
-- match: (?i)^https:\/\/api(5-lq)?\.pipix\.com\/api\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api(5-lq)?\.pipix\.com\/bds\/banner\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/follow_feed\/
+- match: (?i:^https:\/\/api(5-lq)?\.pipix\.com\/api\/ad\/)|(?i:^https:\/\/api(5-lq)?\.pipix\.com\/bds\/banner\/)|(?i:^https:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/follow_feed\/)
   status_code: 200
   body: '{}'
   headers:
@@ -26,8 +16,15 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/stream\/v2\/
-    filter: (.data.data |= map(select(has("ad_info") | not)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.data |= map(select(has(\"ad_info\"\
+      ) | not)))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api(5-lq)?\.pipix\.com\/bds\/user\/check_in\/
-    filter: (.data.profile_entrances |= map(select(.title != "放心借" and .title != "洋钱罐借款"))
-      | del(.data.pet_interface_message))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.profile_entrances |= map(select(.title\
+      \ != \"放心借\" and .title != \"洋钱罐借款\")) | del(.data.pet_interface_message))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

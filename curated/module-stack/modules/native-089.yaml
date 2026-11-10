@@ -9,12 +9,20 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$
-    filter: del(.data.functionOperatorInfoList, .data.memberOperator, .data.activityTabInfoList)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.functionOperatorInfoList,\
+      \ .data.memberOperator, .data.activityTabInfoList)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$
-    filter: .data.config[] |= if .result.tools then .result.tools |= map(select(.name
-      == "邮件追踪" or .name == "替身邮箱")) else . end | del(.data.config[] | select(.functionName
-      == "Function-AD"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.config[] |= if .result.tools\
+      \ then .result.tools |= map(select(.name == \"邮件追踪\" or .name == \"替身邮箱\"))\
+      \ else . end | del(.data.config[] | select(.functionName == \"Function-AD\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 mitm:
   hostnames:
   - appconf.mail.163.com

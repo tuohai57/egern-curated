@@ -46,38 +46,20 @@ scriptings:
     body_required: true
 - http_response:
     name: 📺 BiliBili.Global.season.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/season\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b7dd80446c7cf704cf26ec8f3fccb62a527f469d1ea9f48c08e8cae7de0a57f3.js
-    body_required: true
-    max_size: 262144
-- http_response:
-    name: 📺 BiliBili.Global.ep.list.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/ep\/list\?
+    match: (?:^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/season\?)|(?:^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/ep\/list\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b7dd80446c7cf704cf26ec8f3fccb62a527f469d1ea9f48c08e8cae7de0a57f3.js
     body_required: true
     max_size: 262144
 - http_request:
     name: 📺 BiliBili.Global.playerunite.v1.Player.grpc
-    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
-    body_required: true
-    binary_body: true
-    max_size: 8388608
-- http_request:
-    name: 📺 BiliBili.Global.player.v2.PlayURL.grpc
-    match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$
+    match: (?:^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$)|(?:^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
     body_required: true
     binary_body: true
     max_size: 8388608
 - http_request:
     name: 📺 BiliBili.Global.player.playurl.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/player\/(api|web)\/playurl(\/html5)?\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
-    body_required: true
-- http_request:
-    name: 📺 BiliBili.Global.player.v2.playurl.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/player\/web\/v2\/playurl\?
+    match: (?:^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/player\/(api|web)\/playurl(\/html5)?\?)|(?:^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/player\/web\/v2\/playurl\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
     body_required: true
 - http_request:
@@ -99,12 +81,7 @@ scriptings:
     body_required: true
 - http_request:
     name: 📺 BiliBili.Global.search.wbi.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/web-interface\/wbi\/search\/(all\/v2|type)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
-    body_required: true
-- http_request:
-    name: 📺 BiliBili.Global.search.pc.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/web-interface\/search\/(all\/v2|type)\?
+    match: (?:^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/web-interface\/wbi\/search\/(all\/v2|type)\?)|(?:^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/web-interface\/search\/(all\/v2|type)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
     body_required: true
 - http_request:
@@ -114,12 +91,7 @@ scriptings:
     body_required: true
 - http_request:
     name: 📺 BiliBili.Global.space.wbi.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/space\/wbi\/acc\/info\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
-    body_required: true
-- http_request:
-    name: 📺 BiliBili.Global.space.pc.json
-    match: ^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/space\/acc\/info\?
+    match: (?:^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/space\/wbi\/acc\/info\?)|(?:^https?:\/\/api\.bili(bili\.com|api\.net)\/x\/space\/acc\/info\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/511cdc2d5f0f738889e94a0518c16fd2c6d4906fef925bb65a7d8f68bede9625.js
     body_required: true
 mitm:

@@ -6,8 +6,11 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/newapi\.meishi\.cc\/indexnew\/home_feeds
-    filter: if .data.items then .data.items |= map(select(.type | . != "101" and .
-      != "12")) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .data.items then .data.items |=\
+      \ map(select(.type | . != \"101\" and . != \"12\")) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - newapi.meishi.cc

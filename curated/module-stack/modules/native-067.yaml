@@ -97,25 +97,45 @@ url_rewrites: []
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$
-    filter: del(.data)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$
-    filter: del(.data[0], .data[1], .data[2])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data[0], .data[1], .data[2])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\?
-    filter: del(.data.popUpWindows)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.popUpWindows)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\?
-    filter: del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name
-      != "充流量" and .name != "领话费券"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.respInfo.reserveProductList)\
+      \ | .respInfo.shortcut |= map(select(.name != \"充流量\" and .name != \"领话费券\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/wxmobile4app\/GetSecondProduct\?
-    filter: del(.respInfo.productList) | .respInfo.shortcut |= map(select(.name !=
-      "充流量" and .name != "领话费券"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.respInfo.productList) | .respInfo.shortcut\
+      \ |= map(select(.name != \"充流量\" and .name != \"领话费券\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\?
-    filter: del(.data.request.number.markSeat.servicehallOperList, .data.request.number.servicehallOperList,
-      .data.request.number.markSeat.servicehallFuncList, .data.request.number.servicehallFuncList)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.request.number.markSeat.servicehallOperList,\
+      \ .data.request.number.servicehallOperList, .data.request.number.markSeat.servicehallFuncList,\
+      \ .data.request.number.servicehallFuncList)\n) ]) as $__egern_results\n    \
+      \   | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 scriptings:
 - http_response:
     name: 微信小程序去广告-响应
@@ -279,22 +299,13 @@ map_locals:
 - match: (?i)^https:\/\/images\.qmai\.cn\/s214925\/2023
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$
+- match: (?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\?)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/dsp\.fcbox\.com\/adSearch\/
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$
+- match: (?i:^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$)|(?i:^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/res\.pizzahut\.com\.cn\/CRM
@@ -303,22 +314,13 @@ map_locals:
 - match: (?i)^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global
+- match: (?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup)|(?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner)|(?i:^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising
+- match: (?i:^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing)|(?i:^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/miniprogram\.ishansong\.com\/cms\/faq\/query
@@ -351,22 +353,13 @@ map_locals:
 - match: (?i)^https:\/\/ne\.gdsz\.sinopec\.com\/gateway\/api\/omp\/mt\/appAdvertising
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/ads
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/home_new_user
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/qapi\.huolala\.cn\/get_service_list
+- match: (?i:^https:\/\/qapi\.huolala\.cn\/ads)|(?i:^https:\/\/qapi\.huolala\.cn\/home_new_user)|(?i:^https:\/\/qapi\.huolala\.cn\/get_service_list)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/appuser-static\.huolala\.cn\/imgs
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut
+- match: (?i:^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get)|(?i:^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/dock\.tenchii\.com\/DockCard\/api\/mini\/card\/list
@@ -399,10 +392,7 @@ map_locals:
 - match: (?i)^https:\/\/api\.songguo7\.com\/(\w{3})?mp\/v2\/misc\/(toast|user_operate_info|unlock_without_order|unlock_operate_info)
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes
+- match: (?i:^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2)|(?i:^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/api-fouth-mem\.huazhu\.com\/api\/rights\/bannerList
@@ -414,25 +404,13 @@ map_locals:
 - match: (?i)^https:\/\/wx\.bthhotels\.com\/miniapp\/weixin\/v1\/home\/index_banner
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v6\/indexs
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v5\/local
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/app\.homeinns\.com\/api\/v5\/index
+- match: (?i:^https:\/\/app\.homeinns\.com\/api\/v6\/indexs)|(?i:^https:\/\/app\.homeinns\.com\/api\/v5\/local)|(?i:^https:\/\/app\.homeinns\.com\/api\/v5\/index)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend
+- match: (?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery)|(?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo)|(?i:^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/mina\/systemSetting
@@ -465,10 +443,7 @@ map_locals:
 - match: (?i)^https:\/\/passenger\.t3go\.cn\/passenger-activity-api\/notoken\/api\/v1\/resource\/getSource
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent
+- match: (?i:^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds)|(?i:^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/ad\.maoyan\.com\/api\/position\/detail
@@ -480,19 +455,7 @@ map_locals:
 - match: (?i)^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances
+- match: (?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query)|(?i:^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json
@@ -504,19 +467,13 @@ map_locals:
 - match: (?i)^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=
+- match: (?i:^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=)|(?i:^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/tbgapplet\.carlsberg\.asia\/tuborg\/banner\/(loading|index)
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList
+- match: (?i:^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query)|(?i:^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name=
@@ -525,13 +482,7 @@ map_locals:
 - match: (?i)^https:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe
   status_code: 200
   body: '{}'
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/qrCode\/getAdvInfo$
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/tourism\/tourismBase\/api\/scenic\/getThemeProduct?
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/carService\/getCivilzedSlogan
+- match: (?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/qrCode\/getAdvInfo$)|(?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/tourism\/tourismBase\/api\/scenic\/getThemeProduct?)|(?i:^https:\/\/mobile\.12306\.cn\/wxxcx\/openplatform-inner\/miniprogram\/wifiapps\/appFrontEnd\/v2\/lounge\/open-smooth-common\/carService\/getCivilzedSlogan)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/wx\.online-cmcc\.cn\/contactpoint\/customer\/api\/list\?

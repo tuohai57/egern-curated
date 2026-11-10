@@ -9,22 +9,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video\/index_flow\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video_user\/hotGuyRcm\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/vdo\.api\.moji\.com\/shortvideo\/zone\/follow_src_zone\?
+- match: (?i:^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$)|(?i:^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video\/index_flow\?)|(?i:^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video_user\/hotGuyRcm\?)|(?i:^https:\/\/vdo\.api\.moji\.com\/shortvideo\/zone\/follow_src_zone\?)
   status_code: 200
   body: '{}'
   headers:
@@ -44,6 +29,10 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/mme\.api\.moji\.com\/json\/entrance\/list$
-    filter: (del(.entrance_region_res_list[] | select(.region_name == "皇冠区域" or .region_name
-      == "banner区")) | .entrance_region_res_list[].entrance_res_list |= if . then
-      map(select(.entrance_name | . != "墨迹钱包" and . != "墨圈")) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.entrance_region_res_list[] |\
+      \ select(.region_name == \"皇冠区域\" or .region_name == \"banner区\")) | .entrance_region_res_list[].entrance_res_list\
+      \ |= if . then map(select(.entrance_name | . != \"墨迹钱包\" and . != \"墨圈\")) else\
+      \ . end)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

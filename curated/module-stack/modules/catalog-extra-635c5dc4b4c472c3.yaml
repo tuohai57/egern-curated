@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BitqiuPan.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/pan-api\.bitqiu\.com\/activity\/getPromoteGuide$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^http:\/\/pan-api\.bitqiu\.com\/activity\/getUrlList$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/pan-api\.bitqiu\.com\/activity\/guides$
+- match: (?:^https:\/\/pan-api\.bitqiu\.com\/activity\/getPromoteGuide$)|(?:^http:\/\/pan-api\.bitqiu\.com\/activity\/getUrlList$)|(?:^https:\/\/pan-api\.bitqiu\.com\/activity\/guides$)
   status_code: 200
   body: '{}'
   headers:

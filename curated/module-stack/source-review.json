@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-11T06:27:18.479917+08:00",
+  "reviewed_at": "2026-11-11T06:58:01.095504+08:00",
   "site_entries": [
     {
       "url": "https://hub.kelee.one/",
@@ -3367,23 +3367,29 @@
   },
   "collection_checks": {
     "passed": true,
-    "aggregate_sha256": "e7e924782e52e56255e57b1ae1147bfe45ba62aa638f07568c435bd5fab4c4ed",
+    "aggregate_sha256": "e656ab996d215c79759373f37005d3f5c6a2c4cd2a25f284df10678cfbd42955",
     "included_sources": 257,
     "counts": {
       "rules": 770,
       "url_rewrites": 2,
       "header_rewrites": 0,
       "body_rewrites": 373,
-      "map_locals": 1151,
-      "scriptings": 232
+      "map_locals": 595,
+      "scriptings": 175
     },
     "mitm_hosts": 744,
-    "unique_regexes": 1754,
+    "unique_regexes": 1144,
     "jq_compiled": 350,
+    "jq_bindings_with_input_failure_guards": 370,
     "javascript_syntax_checked": 97,
     "upstream_javascript_executed": false,
     "runtime_verified": false,
     "meaning": "Source integrity and syntax; arbitrary regex overlaps and actual iOS behavior are not proven."
+  },
+  "shared_quality_policy": {
+    "json_failure_guard": "Preserve original JSON on a jq error, zero outputs or multiple outputs; retain successful single outputs.",
+    "binding_composition": "Only consecutive local replies or script bindings with identical hostname scope and behavior/options are combined; intervening priority and original script bytes remain unchanged.",
+    "all_apps_runtime_verified": false
   },
   "source_integrity": "Original source archives and upstream script byte suffixes are preserved; compatibility wrappers are separate. Mirror blob checks do not independently prove equality with the official origin.",
   "delivery_mode": "Per-App native alternatives remain selected; full aggregate is disabled there to prevent duplicate processing. Aggregate is an independently checked optional alternative, not a guarantee of iOS effect.",

@@ -37,10 +37,7 @@ map_locals:
 - match: ^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend
   status_code: 200
   body: ''
-- match: ^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios
+- match: (?:^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update)|(?:^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios)
   status_code: 200
   body: ''
 - match: ^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo

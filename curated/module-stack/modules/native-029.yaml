@@ -117,10 +117,7 @@ rules:
     policy: REJECT
 url_rewrites: []
 map_locals:
-- match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads
+- match: (?:^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg)|(?:^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads)
   status_code: 200
   body: ''
 mitm:

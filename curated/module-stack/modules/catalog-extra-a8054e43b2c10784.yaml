@@ -6,104 +6,50 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      delpaths([["data","banner"]])
-
-      ) | (
-
-      delpaths([["data","user_footprint"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","profile_accessrecord"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","native_content"]])
-
-      )
-
-      ) | (
-
-      .data.discover |= map(select(.schema != "尊享会员"))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\ndelpaths([[\"data\",\"\
+      banner\"]])\n) | (\ndelpaths([[\"data\",\"user_footprint\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"profile_accessrecord\"]])\n)\n) | (\ndelpaths([[\"data\",\"native_content\"\
+      ]])\n)\n) | (\n.data.discover |= map(select(.schema != \"尊享会员\"))\n)\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["advertises"]])
-
-      ) | (
-
-      delpaths([["ad"]])
-
-      )
-
-      ) | (
-
-      delpaths([["ad_version_2_weibo"]])
-
-      )
-
-      ) | (
-
-      .statuses|=map(select(.ad_marked!=true))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"advertises\"\
+      ]])\n) | (\ndelpaths([[\"ad\"]])\n)\n) | (\ndelpaths([[\"ad_version_2_weibo\"\
+      ]])\n)\n) | (\n.statuses|=map(select(.ad_marked!=true))\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$
-    filter: '(
-
-      (
-
-      delpaths([["ad"]])
-
-      ) | (
-
-      delpaths([["ad_version_2_weibo"]])
-
-      )
-
-      ) | (
-
-      .statuses|=map(select(.ad_marked!=true))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"ad\"]])\n) | (\n\
+      delpaths([[\"ad_version_2_weibo\"]])\n)\n) | (\n.statuses|=map(select(.ad_marked!=true))\n\
+      )\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?
-    filter: .datas[].data.ad_from_comment? = true
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.datas[].data.ad_from_comment? = true\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.weibo\.cn\/2\/cardlist\?aid=
-    filter: .cards |= map(select((.mblog?|(.ad_marked?|type=="boolean")and.ad_marked==true)or(.card_group?|type=="array"and
-      any(.[]?;.mblog?|(.ad_marked?|type=="boolean")and.ad_marked==true))|not))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.cards |= map(select((.mblog?|(.ad_marked?|type==\"\
+      boolean\")and.ad_marked==true)or(.card_group?|type==\"array\"and any(.[]?;.mblog?|(.ad_marked?|type==\"\
+      boolean\")and.ad_marked==true))|not))\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/cardlist\?v_f=2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/ad\/
+- match: (?:^https:\/\/api\.weibo\.cn\/2\/cardlist\?v_f=2)|(?:^https:\/\/api\.weibo\.cn\/2\/ad\/)
   status_code: 200
   body: '{}'
   headers:

@@ -9,12 +9,7 @@ map_locals:
   body: '{"v":"v2","configs":{"disableSDK":true,"disableDebugMode":true,"supportTransportEncrypt":false}}'
   headers:
     Content-Type: application/json
-- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$
+- match: (?i:^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/)|(?i:^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$)
   status_code: 200
   body: '{}'
   headers:

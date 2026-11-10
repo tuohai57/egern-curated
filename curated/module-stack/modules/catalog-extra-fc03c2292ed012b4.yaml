@@ -13,10 +13,7 @@ scriptings:
     body_required: true
     update_interval: 86400
 map_locals:
-- match: ^https?:\/\/assets\.msn\.com\/service\/weather\/locations\/search
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/assets\.msn\.com\/service\/news\/feed\/pages\/startmhp
+- match: (?:^https?:\/\/assets\.msn\.com\/service\/weather\/locations\/search)|(?:^https:\/\/assets\.msn\.com\/service\/news\/feed\/pages\/startmhp)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.msn\.com\/weather

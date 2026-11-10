@@ -4,62 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weidian.png
 map_locals:
-- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/home\.splash\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/poseidon\/exhibit\.spaceJson\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/app\.dialog\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.similarRecFeeds\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/faith\/search\.hotRecShadowWord\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/faith\/search\.getProcessTopics\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.listGoodUsers\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/feedserver\/feed\.myFollow\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/recommend\.getSpecialFocusList\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/thor\.weidian\.com\/ares\/collect\.recommendShop\/
+- match: (?i:^https:\/\/thor\.weidian\.com\/ares\/home\.splash\/)|(?i:^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/)|(?i:^https:\/\/thor\.weidian\.com\/poseidon\/exhibit\.spaceJson\/)|(?i:^https:\/\/thor\.weidian\.com\/ares\/app\.dialog\/)|(?i:^https:\/\/thor\.weidian\.com\/warlock\/recommend\.guessULike\/)|(?i:^https:\/\/thor\.weidian\.com\/feedserver\/feed\.similarRecFeeds\/)|(?i:^https:\/\/thor\.weidian\.com\/faith\/search\.hotRecShadowWord\/)|(?i:^https:\/\/thor\.weidian\.com\/faith\/search\.getProcessTopics\/)|(?i:^https:\/\/thor\.weidian\.com\/feedserver\/feed\.listGoodUsers\/)|(?i:^https:\/\/thor\.weidian\.com\/feedserver\/feed\.myFollow\/)|(?i:^https:\/\/thor\.weidian\.com\/ares\/recommend\.getSpecialFocusList\/)|(?i:^https:\/\/thor\.weidian\.com\/ares\/collect\.recommendShop\/)
   status_code: 200
   body: '{}'
   headers:

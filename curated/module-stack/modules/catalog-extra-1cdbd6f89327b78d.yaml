@@ -6,31 +6,33 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/iphone\.myzaker\.com\/zaker\/article_mongo_sec\.php\?
-    filter: delpaths([["data","ad_url"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"ad_url\"]])\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\?
-    filter: '(
-
-      delpaths([["data","article_bottom"]])
-
-      ) | (
-
-      delpaths([["data","recommend_ad"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"data\",\"article_bottom\"\
+      ]])\n) | (\ndelpaths([[\"data\",\"recommend_ad\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/iphone\.myzaker\.com\/zaker\/follow_promote\.php\?
-    filter: .data.list |= map(select(.type != "web"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.list |= map(select(.type !=\
+      \ \"web\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/iphone\.myzaker\.com\/zaker\/car_tab\/index\.php\?
-    filter: .data.gallery |= map(select(.type != "web"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.gallery |= map(select(.type\
+      \ != \"web\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/iphone\.myzaker\.com\/zaker\/cover\.php\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/iphone\.myzaker\.com\/zaker\/block_top_ad\.php\?
+- match: (?:^https:\/\/iphone\.myzaker\.com\/zaker\/cover\.php\?)|(?:^https:\/\/iphone\.myzaker\.com\/zaker\/block_top_ad\.php\?)
   status_code: 200
   body: '{}'
   headers:

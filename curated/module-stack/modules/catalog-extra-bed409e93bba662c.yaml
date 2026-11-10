@@ -18,10 +18,7 @@ map_locals:
 - match: ^https?:\/\/.*chelaile\.net\.cn\/(api\/)?adpub
   status_code: 200
   body: ''
-- match: ^https?:\/\/124\.70\.194\.16\/(ip|adpub)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/124\.70\.194\.16\/goocity\/flowPos\/listByPos
+- match: (?:^https?:\/\/124\.70\.194\.16\/(ip|adpub))|(?:^https?:\/\/124\.70\.194\.16\/goocity\/flowPos\/listByPos)
   status_code: 200
   body: ''
 - match: ^https?:\/\/web\.chelaile\.net\.cn\/api\/operative_position\/infoflow

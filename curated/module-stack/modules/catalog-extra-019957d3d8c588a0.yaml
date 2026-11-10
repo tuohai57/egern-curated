@@ -10,388 +10,78 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["data","adTimeoutReport"]])
-
-      ) | (
-
-      delpaths([["data","spotShowReport"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","adSupplementIntervalMinutes"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","adSupplementSwitch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityBrandFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","searchFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","feedDetailSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","homePageFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","followFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedRecommendSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityFeedSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedFindSpotAdRequestMoment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedSpotFixedPositionSecond"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","searchFeedSpotFixedPositionSecond"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","followFeedSpotFixedPositionSecond"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityFeedSpotFixedPositionSecond"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","searchFeedSpotFixedPositionThird"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedFindSpotFixedPositionSecond"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedFindSpotFixedPositionThird"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityFeedSpotFixedPositionInitial"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityFeedSpotFixedPositionThird"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","feedDetailDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedRecommendDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotFeedFindDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","homePageFeedDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","followFeedDynamicSpotPosition"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","searchFeedSpotPositionDynamic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityFeedSpotPositionDynamic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activityBrandFeedSpotPositionDynamic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","splashAdLoadTimeLimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","courseAdLoadTimeLimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","feedAdLoadTimeLimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","aliHCSpotConfig"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","gdtSpotConfig"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pugcThresholdPercent"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pugcStepMinSeconds"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pugcStepMaxSeconds"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pugcPreLoadEarlySeconds"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pugcLoadPostPreRolls"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","closeConfirmButtonText"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\ndelpaths([[\"data\",\"adTimeoutReport\"]])\n) | (\ndelpaths([[\"\
+      data\",\"spotShowReport\"]])\n)\n) | (\ndelpaths([[\"data\",\"adSupplementIntervalMinutes\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"adSupplementSwitch\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"hotFeedSpotAdRequestMoment\"]])\n)\n) | (\ndelpaths([[\"data\",\"activityBrandFeedSpotAdRequestMoment\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"searchFeedSpotAdRequestMoment\"]])\n)\n\
+      ) | (\ndelpaths([[\"data\",\"feedDetailSpotAdRequestMoment\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"homePageFeedSpotAdRequestMoment\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"followFeedSpotAdRequestMoment\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      hotFeedRecommendSpotAdRequestMoment\"]])\n)\n) | (\ndelpaths([[\"data\",\"activityFeedSpotAdRequestMoment\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"hotFeedFindSpotAdRequestMoment\"]])\n)\n\
+      ) | (\ndelpaths([[\"data\",\"hotFeedSpotFixedPositionSecond\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"searchFeedSpotFixedPositionSecond\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"followFeedSpotFixedPositionSecond\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"activityFeedSpotFixedPositionSecond\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      searchFeedSpotFixedPositionThird\"]])\n)\n) | (\ndelpaths([[\"data\",\"hotFeedFindSpotFixedPositionSecond\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"hotFeedFindSpotFixedPositionThird\"]])\n\
+      )\n) | (\ndelpaths([[\"data\",\"activityFeedSpotFixedPositionInitial\"]])\n\
+      )\n) | (\ndelpaths([[\"data\",\"activityFeedSpotFixedPositionThird\"]])\n)\n\
+      ) | (\ndelpaths([[\"data\",\"hotFeedDynamicSpotPosition\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"feedDetailDynamicSpotPosition\"]])\n)\n) | (\ndelpaths([[\"data\",\"\
+      hotFeedRecommendDynamicSpotPosition\"]])\n)\n) | (\ndelpaths([[\"data\",\"hotFeedFindDynamicSpotPosition\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"homePageFeedDynamicSpotPosition\"]])\n\
+      )\n) | (\ndelpaths([[\"data\",\"followFeedDynamicSpotPosition\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"searchFeedSpotPositionDynamic\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"activityFeedSpotPositionDynamic\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"activityBrandFeedSpotPositionDynamic\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"splashAdLoadTimeLimit\"]])\n)\n) | (\ndelpaths([[\"data\",\"courseAdLoadTimeLimit\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"feedAdLoadTimeLimit\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"aliHCSpotConfig\"]])\n)\n) | (\ndelpaths([[\"data\",\"gdtSpotConfig\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"pugcThresholdPercent\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"pugcStepMinSeconds\"]])\n)\n) | (\ndelpaths([[\"data\",\"pugcStepMaxSeconds\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"pugcPreLoadEarlySeconds\"]])\n)\n) | (\n\
+      delpaths([[\"data\",\"pugcLoadPostPreRolls\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"closeConfirmButtonText\"]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$
-    filter: .data.modules |= map(select(.code == "unionFeedEntry"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.modules |= map(select(.code\
+      \ == \"unionFeedEntry\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\?
-    filter: if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([]) | has(\"data\")) then\
+      \ (setpath([\"data\"]; {})) else . end\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic\?
-    filter: .data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or .
-      == "schedule" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs
-      |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend"
-      or . == "suitTab" or . == "union_feed_route"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.bottomBarControl.tabs |= map(select(.tabType\
+      \ | . == \"home\" or . == \"schedule\" or . == \"dynamic_sports\" or . == \"\
+      personal\")) | .data.homeTabs |= map(select(.type | . == \"socialTab\" or .\
+      \ == \"union_feed_all\" or . == \"homeRecommend\" or . == \"suitTab\" or . ==\
+      \ \"union_feed_route\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.gotokeep\.com\/pencil-webapp\/play\/v1\/games\?
-    filter: .data.games[].microGames[] |= if .leftIcon? and .leftIcon.type == "aiMode"
-      then del(.leftIcon) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.games[].microGames[] |= if .leftIcon?\
+      \ and .leftIcon.type == \"aiMode\" then del(.leftIcon) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/search\/v4\/hotHashtag\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\?
+- match: (?:^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/)|(?:^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\?)|(?:^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\?)|(?:^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\?)|(?:^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\?)|(?:^https:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$)|(?:^https:\/\/api\.gotokeep\.com\/search\/v4\/hotHashtag\/list$)|(?:^https:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\?)
   status_code: 200
   body: '{}'
   headers:

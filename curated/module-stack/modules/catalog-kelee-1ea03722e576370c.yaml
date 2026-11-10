@@ -8,12 +8,7 @@ rules:
     match: adui.tg.meitu.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?
+- match: (?i:^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?)|(?i:^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?)
   status_code: 200
   body: '{}'
   headers:
@@ -31,7 +26,11 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\?
-    filter: (delpaths([["response", "time_limit"], ["response", "bubble"], ["response",
-      "person_center"]])) | (setpath(["response", "function_pop", "meiyan_style",
-      "is_pop"]; false) | setpath(["response", "onoff", "vip_half_window_exit_remain_popup",
-      "open"]; 0) | setpath(["response", "onoff", "vip_home_exit_remain_popup"]; 0))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"response\", \"time_limit\"\
+      ], [\"response\", \"bubble\"], [\"response\", \"person_center\"]])) | (setpath([\"\
+      response\", \"function_pop\", \"meiyan_style\", \"is_pop\"]; false) | setpath([\"\
+      response\", \"onoff\", \"vip_half_window_exit_remain_popup\", \"open\"]; 0)\
+      \ | setpath([\"response\", \"onoff\", \"vip_home_exit_remain_popup\"]; 0))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

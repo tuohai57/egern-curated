@@ -9,6 +9,11 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api-release\.wuta-cam\.com\/ad_tree$
-    filter: (delpaths([["regular", "splash"], ["big_day"], ["big_day_overrides"],
-      ["regular", "home_bottom_right_entry_v2"], ["regular", "pic_upload_alert"],
-      ["regular", "retouching_before_icon"]])) | (.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me")))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"regular\", \"splash\"\
+      ], [\"big_day\"], [\"big_day_overrides\"], [\"regular\", \"home_bottom_right_entry_v2\"\
+      ], [\"regular\", \"pic_upload_alert\"], [\"regular\", \"retouching_before_icon\"\
+      ]])) | (.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN(\"\
+      home\",\"me\")))))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

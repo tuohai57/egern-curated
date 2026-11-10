@@ -35,17 +35,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/guide\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/detailfeed\/preload\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/guide\/user_banner
+- match: (?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/guide\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/detailfeed\/preload\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/guide\/user_banner)
   status_code: 200
   body: '{}'
   headers:
@@ -63,14 +53,7 @@ scriptings:
     body_required: false
 - http_response:
     name: 小红书 / 1
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(banner|hot)_list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 2
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(hint|trending)\?
+    match: (?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(banner|hot)_list)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(hint|trending)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
     update_interval: 86400
@@ -84,63 +67,21 @@ scriptings:
     timeout: 60
 - http_response:
     name: 小红书 / 4
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 5
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 6
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/widgets
+    match: (?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/config\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/widgets)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
     update_interval: 86400
     timeout: 60
 - http_response:
     name: 小红书 / 7
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/(imagefeed|live_photo\/save)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 8
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 9
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 10
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?
+    match: (?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/(imagefeed|live_photo\/save))|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?)|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
     update_interval: 86400
     timeout: 60
 - http_response:
     name: 小红书 / 11
-    match: ^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 小红书 / 12
-    match: ^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?
+    match: (?:^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?)|(?:^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
     update_interval: 86400

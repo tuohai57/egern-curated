@@ -6,45 +6,81 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/
-    filter: .data.homeTopList |= map(select(.sectionType == "kingkongDo")) | .data.sections
-      |= map(select(.data.clickParam.args.cardType as $ct | $ct != "homeMultiBanner"
-      and $ct != "mamaAD")) | .data.sections |= map(select((.template.name|type=="string")and(.template.name=="idlefish_home_new_commodity_card"or(.template.name|contains("fish_home_tags_item_card")))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.homeTopList |= map(select(.sectionType\
+      \ == \"kingkongDo\")) | .data.sections |= map(select(.data.clickParam.args.cardType\
+      \ as $ct | $ct != \"homeMultiBanner\" and $ct != \"mamaAD\")) | .data.sections\
+      \ |= map(select((.template.name|type==\"string\")and(.template.name==\"idlefish_home_new_commodity_card\"\
+      or(.template.name|contains(\"fish_home_tags_item_card\")))))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.widget\.refresh\.get\/
-    filter: .data.homeTopList |= map(select(.sectionType == "kingkongDo"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.homeTopList |= map(select(.sectionType\
+      \ == \"kingkongDo\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/
-    filter: .data.container.sections |= map(select(.template.name == "fish_home_miniapp"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.container.sections |= map(select(.template.name\
+      \ == \"fish_home_miniapp\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.fun\.follow\.feed\.list\/
-    filter: .data.sections|=map(select(.cardType==2001))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.sections|=map(select(.cardType==2001))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.community\/
-    filter: .data.feedsList |= map(select(.template.name == "idlefish_home_new_commodity_card"
-      or .template.name == "idlefish_home_new_content_card"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.feedsList |= map(select(.template.name\
+      \ == \"idlefish_home_new_commodity_card\" or .template.name == \"idlefish_home_new_content_card\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.newitem\.page\/
-    filter: .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct
-      != "banner" and $ct != "mamaAD"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.sections |= map(select(.data.clickParam.args.cardType\
+      \ as $ct | $ct != \"banner\" and $ct != \"mamaAD\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/
-    filter: .data.data.components |= map(select(.data and (.data|type=="object") and
-      .data.template and (.data.template|type=="object") and .data.template.name and
-      (.data.template.name|type=="string") and (.data.template.name|contains("fish_city_kingkong"))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.data.components |= map(select(.data\
+      \ and (.data|type==\"object\") and .data.template and (.data.template|type==\"\
+      object\") and .data.template.name and (.data.template.name|type==\"string\"\
+      ) and (.data.template.name|contains(\"fish_city_kingkong\"))))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\.top\/
-    filter: .data.data.components |= map(select(.key == "fish_home_second_stage_top_cardV3"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.data.components |= map(select(.key\
+      \ == \"fish_home_second_stage_top_cardV3\"))\n) ]) as $__egern_results\n   \
+      \    | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/
-    filter: .data.sections |= map(select((.template.cardEnum != "ads") and (.cardType
-      == "common")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.sections |= map(select((.template.cardEnum\
+      \ != \"ads\") and (.cardType == \"common\")))\n) ]) as $__egern_results\n  \
+      \     | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/
-    filter: "(\n.data.container.sections |= map(select(.template.name | test(\"^my_fy[0-9]+_(header|user_info|trade|appraise|tools)$\"\
-      ))) | .data.container.sections |= map(.item |= (if .level and .level.exContent\
-      \ and (.level.exContent | has(\"tips\")) then del(.level) else . end))\n) |\
-      \ (\n  .data.container.sections[] |= (   if .item.tool then     .item.tool.exContent.tools\
-      \ = [       [         {           \"targetUrl\": \"https://h5.m.goofish.com/wow/moyu/moyu-project/fish-ad/pages/home?kun=true&fromScene=myPage\"\
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n.data.container.sections |= map(select(.template.name\
+      \ | test(\"^my_fy[0-9]+_(header|user_info|trade|appraise|tools)$\"))) | .data.container.sections\
+      \ |= map(.item |= (if .level and .level.exContent and (.level.exContent | has(\"\
+      tips\")) then del(.level) else . end))\n) | (\n  .data.container.sections[]\
+      \ |= (   if .item.tool then     .item.tool.exContent.tools = [       [     \
+      \    {           \"targetUrl\": \"https://h5.m.goofish.com/wow/moyu/moyu-project/fish-ad/pages/home?kun=true&fromScene=myPage\"\
       ,           \"exContent\": {             \"title\": \"超级擦亮\",             \"\
       icon\": \"https://gw.alicdn.com/imgextra/i2/O1CN01bVNpPu1eGbSDs0GSR_!!6000000003844-2-tps-84-84.png\"\
       ,             \"toolId\": 23           },           \"clickParam\": {      \
@@ -80,66 +116,49 @@ body_rewrites:
       ,             \"toolId\": 1           },           \"clickParam\": {       \
       \      \"args\": {               \"toolId\": \"1\"             },          \
       \   \"arg1\": \"Function\"           }         }       ]     ]   else     .\
-      \   end )\n)"
+      \   end )\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/
-    filter: .data.circleList[].showInfo.titleImage |= (.lightUrl="" | .url="" | del(.width,
-      .height))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.circleList[].showInfo.titleImage\
+      \ |= (.lightUrl=\"\" | .url=\"\" | del(.width, .height))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/
-    filter: '(
-
-      .data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType
-      == "ad" then empty else . end)
-
-      ) | (
-
-      delpaths([["data","resultPrefixBar"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType\
+      \ == \"ad\" then empty else . end)\n) | (\ndelpaths([[\"data\",\"resultPrefixBar\"\
+      ]])\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length) ==\
+      \ 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/
-    filter: .data.resultList |= map(select(.type != "MarketHotSpot"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.resultList |= map(select(.type\
+      \ != \"MarketHotSpot\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/
-    filter: .data.cardList |= map(if has("cardData") and (.cardData | has("hotwords"))
-      then .cardData |= del(.hotwords) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.cardList |= map(if has(\"cardData\"\
+      ) and (.cardData | has(\"hotwords\")) then .cardData |= del(.hotwords) else\
+      \ . end)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.trade\.full\.info\/
-    filter: .data.components |= map(select(.render | . == "orderStatusVO" or . ==
-      "addressInfoVO" or . == "orderInfoVO"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.components |= map(select(.render\
+      \ | . == \"orderStatusVO\" or . == \"addressInfoVO\" or . == \"orderInfoVO\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/
+- match: (?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/)
   status_code: 200
   body: '{}'
   headers:

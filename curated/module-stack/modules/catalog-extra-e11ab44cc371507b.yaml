@@ -6,55 +6,15 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["regular","splash"]])
-
-      ) | (
-
-      delpaths([["big_day"]])
-
-      )
-
-      ) | (
-
-      delpaths([["big_day_overrides"]])
-
-      )
-
-      ) | (
-
-      delpaths([["regular","home_bottom_right_entry_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["regular","pic_upload_alert"]])
-
-      )
-
-      ) | (
-
-      delpaths([["regular","retouching_before_icon"]])
-
-      )
-
-      ) | (
-
-      .regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me"))))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\ndelpaths([[\"regular\"\
+      ,\"splash\"]])\n) | (\ndelpaths([[\"big_day\"]])\n)\n) | (\ndelpaths([[\"big_day_overrides\"\
+      ]])\n)\n) | (\ndelpaths([[\"regular\",\"home_bottom_right_entry_v2\"]])\n)\n\
+      ) | (\ndelpaths([[\"regular\",\"pic_upload_alert\"]])\n)\n) | (\ndelpaths([[\"\
+      regular\",\"retouching_before_icon\"]])\n)\n) | (\n.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN(\"\
+      home\",\"me\"))))\n)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - api-release.wuta-cam.com

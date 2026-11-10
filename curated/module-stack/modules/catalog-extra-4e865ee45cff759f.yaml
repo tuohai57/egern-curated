@@ -10,184 +10,27 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["data","isShowDLPopup"]])
-
-      ) | (
-
-      delpaths([["data","isShowGame"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","touTiaoShowDlPopup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","offLineDownload","WatchVideoBtnDesc"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","readVipFirstCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","readVipNormalCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","notifyAd"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotStartSplashTime"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotStartReqSwitch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","isShowBFTab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","popReqDelayTime"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","benefitCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","chestTask"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","hotStartAd"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","activeTagList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","secondOrderCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","secondOrderList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","blockedWordsCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","aaReportListCfg"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","pddAdSwitch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","isShowShelfAuthPopup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["data","firstPopUpAmount"]])
-
-      )
-
-      ) | (
-
-      if (getpath(["data"]) | has("isAdClosed")) then (setpath(["data","isAdClosed"];
-      true)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"data\",\"isShowDLPopup\"]])\n\
+      ) | (\ndelpaths([[\"data\",\"isShowGame\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"touTiaoShowDlPopup\"]])\n)\n) | (\ndelpaths([[\"data\",\"offLineDownload\"\
+      ,\"WatchVideoBtnDesc\"]])\n)\n) | (\ndelpaths([[\"data\",\"readVipFirstCfg\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"readVipNormalCfg\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"notifyAd\"]])\n)\n) | (\ndelpaths([[\"data\",\"hotStartSplashTime\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"hotStartReqSwitch\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"isShowBFTab\"]])\n)\n) | (\ndelpaths([[\"data\",\"popReqDelayTime\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"benefitCfg\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"chestTask\"]])\n)\n) | (\ndelpaths([[\"data\",\"hotStartAd\"]])\n)\n\
+      ) | (\ndelpaths([[\"data\",\"activeTagList\"]])\n)\n) | (\ndelpaths([[\"data\"\
+      ,\"secondOrderCfg\"]])\n)\n) | (\ndelpaths([[\"data\",\"secondOrderList\"]])\n\
+      )\n) | (\ndelpaths([[\"data\",\"blockedWordsCfg\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"aaReportListCfg\"]])\n)\n) | (\ndelpaths([[\"data\",\"pddAdSwitch\"\
+      ]])\n)\n) | (\ndelpaths([[\"data\",\"isShowShelfAuthPopup\"]])\n)\n) | (\ndelpaths([[\"\
+      data\",\"firstPopUpAmount\"]])\n)\n) | (\nif (getpath([\"data\"]) | has(\"isAdClosed\"\
+      )) then (setpath([\"data\",\"isAdClosed\"]; true)) else . end\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - goway.reader.yueyouxs.com

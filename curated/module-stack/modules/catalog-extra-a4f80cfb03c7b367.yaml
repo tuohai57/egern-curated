@@ -4,32 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iMaiCai.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/jigsaw\/code\/category-banner-\d+\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/order\/recommend\/v\d
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/banner\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/personal\/recommend
+- match: (?:^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash)|(?:^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info)|(?:^https:\/\/mall\.meituan\.com\/api\/c\/jigsaw\/code\/category-banner-\d+\/)|(?:^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/order\/recommend\/v\d)|(?:^https:\/\/mall\.meituan\.com\/api\/c\/banner\/)|(?:^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/personal\/recommend)
   status_code: 200
   body: '{}'
   headers:

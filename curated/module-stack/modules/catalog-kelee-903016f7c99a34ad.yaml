@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WaCaiJiZhang.png
 map_locals:
-- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/ribbon\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$
+- match: (?i:^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/ribbon\?)|(?i:^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/list\?)|(?i:^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$)
   status_code: 200
   body: '{}'
   headers:

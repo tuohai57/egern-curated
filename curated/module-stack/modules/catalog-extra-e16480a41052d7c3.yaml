@@ -6,24 +6,13 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$
-    filter: '(
-
-      (
-
-      delpaths([["ad_banner"]])
-
-      ) | (
-
-      delpaths([["advertise_on_off"]])
-
-      )
-
-      ) | (
-
-      if (getpath([]) | has("ios_mall_switch")) then (setpath(["ios_mall_switch"];
-      false)) else . end
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"ad_banner\"]])\n\
+      ) | (\ndelpaths([[\"advertise_on_off\"]])\n)\n) | (\nif (getpath([]) | has(\"\
+      ios_mall_switch\")) then (setpath([\"ios_mall_switch\"]; false)) else . end\n\
+      )\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 map_locals:
 - match: ^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$
   status_code: 200

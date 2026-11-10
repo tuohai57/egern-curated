@@ -18,12 +18,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/v2\/ads\/.+esultNum
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/show
+- match: (?:^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/v2\/ads\/.+esultNum)|(?:^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/show)
   status_code: 200
   body: '{}'
   headers:

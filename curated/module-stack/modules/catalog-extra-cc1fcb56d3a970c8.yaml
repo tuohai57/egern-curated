@@ -14,72 +14,7 @@ rules:
     match: biz.weibo.com
     policy: REJECT
 map_locals:
-- match: ^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily|push\/info)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/photo\/info\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_discover|finder_nav_polling)\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/!\/(?:search\/finder_nav_polling|sug\/list\/finderchange|was\/finder\/searchbarchange)\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\?
+- match: (?:^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily|push\/info))|(?:^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\?)|(?:^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\?)|(?:^https:\/\/api\.weibo\.cn\/2\/photo\/info\?)|(?:^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info))|(?:^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\?)|(?:^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\?)|(?:^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange))|(?:^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category))|(?:^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_discover|finder_nav_polling)\?)|(?:^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\?)|(?:^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\?)|(?:^https:\/\/api\.weibo\.cn\/2\/!\/(?:search\/finder_nav_polling|sug\/list\/finderchange|was\/finder\/searchbarchange)\?)|(?:^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\?)
   status_code: 200
   body: '{}'
   headers:

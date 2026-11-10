@@ -288,12 +288,7 @@ scriptings:
     body_required: true
 - http_response:
     name: picc_ads
-    match: ^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/mpageconfig\/myPageConfigList\/v
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/07e5fa66a0efe225b0dae2beaab83a9f1f9ad4dd6d3748d571156db8e324300c.js
-    body_required: true
-- http_response:
-    name: picc_ads2
-    match: ^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/homeInit\/v
+    match: (?:^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/mpageconfig\/myPageConfigList\/v)|(?:^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/homeInit\/v)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/07e5fa66a0efe225b0dae2beaab83a9f1f9ad4dd6d3748d571156db8e324300c.js
     body_required: true
 - http_response:
@@ -363,12 +358,7 @@ scriptings:
     body_required: true
 - http_response:
     name: kuwo
-    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d5119438070518dcd250dba9d678d85b063db97db3a52bdce2ae34760469ae8a.js
-    body_required: true
-- http_response:
-    name: kuwo2
-    match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?
+    match: (?:^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?)|(?:^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d5119438070518dcd250dba9d678d85b063db97db3a52bdce2ae34760469ae8a.js
     body_required: true
 - http_response:
@@ -383,12 +373,7 @@ scriptings:
     body_required: true
 - http_response:
     name: Smzdm
-    match: ^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/611b9fa8cb1022622d1df9a2952b0f0fa1a001069b5666cce7e09b87dbec8dff.js
-    body_required: true
-- http_response:
-    name: Smzdm2
-    match: ^https?:\/\/user-api\.smzdm\.com\/vip$
+    match: (?:^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list)|(?:^https?:\/\/user-api\.smzdm\.com\/vip$)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/611b9fa8cb1022622d1df9a2952b0f0fa1a001069b5666cce7e09b87dbec8dff.js
     body_required: true
 - http_response:
@@ -408,37 +393,7 @@ scriptings:
     body_required: true
 - http_response:
     name: caiyun_json2
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json3
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json4
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json5
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json6
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json7
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json8
-    match: ^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns
+    match: (?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage)|(?:^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
     body_required: true
 - http_response:
@@ -483,12 +438,7 @@ scriptings:
     body_required: true
 - http_response:
     name: didiAds
-    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
-    body_required: true
-- http_response:
-    name: didiAds2
-    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget
+    match: (?:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget)|(?:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
     body_required: true
 - http_response:
@@ -503,17 +453,7 @@ scriptings:
     body_required: true
 - http_response:
     name: soul_ads
-    match: ^https?:\/\/post\.soulapp\.cn\/v\d\/post\/recSquare\/subTabs
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
-    body_required: true
-- http_response:
-    name: soul_ads2
-    match: ^https?:\/\/post\.soulapp\.cn\/v\d\/post\/homepage\/guide\/card
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
-    body_required: true
-- http_response:
-    name: soul_ads3
-    match: ^https?:\/\/post\.soulapp\.cn\/hot\/soul\/rank
+    match: (?:^https?:\/\/post\.soulapp\.cn\/v\d\/post\/recSquare\/subTabs)|(?:^https?:\/\/post\.soulapp\.cn\/v\d\/post\/homepage\/guide\/card)|(?:^https?:\/\/post\.soulapp\.cn\/hot\/soul\/rank)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
     body_required: true
 - http_response:
@@ -565,12 +505,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cnftp5
-    match: ^https?:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp6
-    match: ^https?:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?
+    match: (?:^https?:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?)|(?:^https?:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
@@ -600,62 +535,12 @@ scriptings:
     body_required: true
 - http_response:
     name: ddxq2
-    match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8ae52e7bccc43facf64dc9edaf8e6e1c1da564c6bbab242fb9e51a304e3a0b16.js
-    body_required: true
-- http_response:
-    name: ddxq3
-    match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail)
+    match: (?:^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig)|(?:^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8ae52e7bccc43facf64dc9edaf8e6e1c1da564c6bbab242fb9e51a304e3a0b16.js
     body_required: true
 - http_response:
     name: weibo_json6
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json7
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json8
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json9
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json10
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json11
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json12
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json13
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json14
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json15
-    match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|container/get_item)
+    match: (?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage))|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|container/get_item))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
 - http_response:
@@ -670,117 +555,7 @@ scriptings:
     body_required: true
 - http_response:
     name: netease.adblock
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock2
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock3
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock4
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock5
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock6
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock7
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock8
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock9
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock10
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock11
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock12
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock13
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock14
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock15
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock16
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock17
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock18
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock19
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock20
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock21
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock22
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
-    body_required: true
-- http_response:
-    name: netease.adblock23
-    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get
+    match: (?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js
     body_required: true
 - http_response:
@@ -790,22 +565,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cnftp10
-    match: ^https?:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp11
-    match: ^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp12
-    match: ^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp13
-    match: ^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?
+    match: (?:^https?:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
@@ -880,27 +640,7 @@ scriptings:
     body_required: true
 - http_response:
     name: xiaohongshu
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu2
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu3
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(hint|trending)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu4
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(banner_list|hot_list)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu5
-    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/widgets
+    match: (?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/config\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(hint|trending)\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(banner_list|hot_list))|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/widgets)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
 - http_response:
@@ -940,12 +680,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 51job
-    match: ^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85e2b927da9a653691d954775adbab6160e24ca8e6117b779d27c1924bec1af0.js
-    body_required: true
-- http_response:
-    name: 51job2
-    match: ^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/
+    match: (?:^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic)|(?:^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85e2b927da9a653691d954775adbab6160e24ca8e6117b779d27c1924bec1af0.js
     body_required: true
 - http_response:
@@ -960,22 +695,12 @@ scriptings:
     body_required: true
 - http_response:
     name: didiAds7
-    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
-    body_required: true
-- http_response:
-    name: didiAds8
-    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf
+    match: (?:^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast)|(?:^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
     body_required: true
 - http_response:
     name: didiAds9
-    match: ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
-    body_required: true
-- http_response:
-    name: didiAds10
-    match: ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5
+    match: (?:^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me)|(?:^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
     body_required: true
 - http_response:
@@ -985,17 +710,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cainiao
-    match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76fe899db1e045aaff2d71d6ff3c58cb665bac52a5996ff20e56079a02a6451c.js
-    body_required: true
-- http_response:
-    name: cainiao2
-    match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76fe899db1e045aaff2d71d6ff3c58cb665bac52a5996ff20e56079a02a6451c.js
-    body_required: true
-- http_response:
-    name: cainiao3
-    match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn
+    match: (?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76fe899db1e045aaff2d71d6ff3c58cb665bac52a5996ff20e56079a02a6451c.js
     body_required: true
 - http_response:
@@ -1005,22 +720,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cnftp16
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp17
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp18
-    match: ^https?:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp19
-    match: ^https?:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?
+    match: (?:^https?:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?)|(?:^https?:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?)|(?:^https?:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?)|(?:^https?:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
@@ -1035,12 +735,7 @@ scriptings:
     body_required: true
 - http_response:
     name: caiyun_json9
-    match: ^https?:\/\/biz\.cyapi\.cn\/v\d\/user
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
-    body_required: true
-- http_response:
-    name: caiyun_json10
-    match: ^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail
+    match: (?:^https?:\/\/biz\.cyapi\.cn\/v\d\/user)|(?:^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844.js
     body_required: true
 - http_response:
@@ -1075,12 +770,7 @@ scriptings:
     body_required: true
 - http_response:
     name: Smzdm7
-    match: ^https?:\/\/app-api\.smzdm\.com\/util\/update
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/611b9fa8cb1022622d1df9a2952b0f0fa1a001069b5666cce7e09b87dbec8dff.js
-    body_required: true
-- http_response:
-    name: Smzdm8
-    match: ^https?:\/\/app-api\.smzdm\.com\/util\/loading
+    match: (?:^https?:\/\/app-api\.smzdm\.com\/util\/update)|(?:^https?:\/\/app-api\.smzdm\.com\/util\/loading)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/611b9fa8cb1022622d1df9a2952b0f0fa1a001069b5666cce7e09b87dbec8dff.js
     body_required: true
 - http_response:
@@ -1095,42 +785,7 @@ scriptings:
     body_required: true
 - http_response:
     name: zheye.min2
-    match: ^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists(\?|\/)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min3
-    match: ^https?:\/\/api\.zhihu\.com\/search\/recommend_query
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min4
-    match: ^https?:\/\/api\.zhihu\.com\/search\/preset_words\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min5
-    match: ^https?:\/\/api\.zhihu\.com\/root\/tab\/v2
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min6
-    match: ^https?:\/\/api\.zhihu\.com\/people\/
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min7
-    match: ^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min8
-    match: ^https?:\/\/api\.zhihu\.com\/next-render
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min9
-    match: ^https?:\/\/api\.zhihu\.com\/moments_v3\?
+    match: (?:^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists(\?|\/))|(?:^https?:\/\/api\.zhihu\.com\/search\/recommend_query)|(?:^https?:\/\/api\.zhihu\.com\/search\/preset_words\?)|(?:^https?:\/\/api\.zhihu\.com\/root\/tab\/v2)|(?:^https?:\/\/api\.zhihu\.com\/people\/)|(?:^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message))|(?:^https?:\/\/api\.zhihu\.com\/next-render)|(?:^https?:\/\/api\.zhihu\.com\/moments_v3\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
     body_required: true
 - http_response:
@@ -1145,22 +800,7 @@ scriptings:
     body_required: true
 - http_response:
     name: weibo_json17
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json18
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json19
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
-    body_required: true
-- http_response:
-    name: weibo_json20
-    match: ^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline)
+    match: (?:^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail)|(?:^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_detail)|(?:^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d)|(?:^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151.js
     body_required: true
 - http_response:
@@ -1170,12 +810,7 @@ scriptings:
     body_required: true
 - http_response:
     name: 51card
-    match: ^https?:\/\/api\.u51\.com\/liabilitygateway\/api\/v\d\/homepage\/liabilityline
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5f3708e56c28a2e7fec50f90f8b6768ed0e6b3d7b354bef0e32fd21f7a57a6c2.js
-    body_required: true
-- http_response:
-    name: 51card2
-    match: ^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config
+    match: (?:^https?:\/\/api\.u51\.com\/liabilitygateway\/api\/v\d\/homepage\/liabilityline)|(?:^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5f3708e56c28a2e7fec50f90f8b6768ed0e6b3d7b354bef0e32fd21f7a57a6c2.js
     body_required: true
 - http_response:
@@ -1190,32 +825,7 @@ scriptings:
     body_required: true
 - http_response:
     name: rrtv_json5
-    match: ^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
-    body_required: true
-- http_response:
-    name: rrtv_json6
-    match: ^https?:\/\/api\.rr\.tv\/user\/privilege\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
-    body_required: true
-- http_response:
-    name: rrtv_json7
-    match: ^https?:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
-    body_required: true
-- http_response:
-    name: rrtv_json8
-    match: ^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
-    body_required: true
-- http_response:
-    name: rrtv_json9
-    match: ^https?:\/\/api\.rr\.tv\/ad\/getAll
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
-    body_required: true
-- http_response:
-    name: rrtv_json10
-    match: ^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info
+    match: (?:^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?)|(?:^https?:\/\/api\.rr\.tv\/user\/privilege\/list)|(?:^https?:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail)|(?:^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar)|(?:^https?:\/\/api\.rr\.tv\/ad\/getAll)|(?:^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7.js
     body_required: true
 - http_response:
@@ -1250,17 +860,7 @@ scriptings:
     body_required: true
 - http_response:
     name: keep
-    match: ^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4efaba25017ff63e2e39e7fa55fac425e38262576bb31fe487b98ce5fce37f92.js
-    body_required: true
-- http_response:
-    name: keep2
-    match: ^https?:\/\/api\.gotokeep\.com\/nuocha\/course\/v\d/\w+\/preview
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4efaba25017ff63e2e39e7fa55fac425e38262576bb31fe487b98ce5fce37f92.js
-    body_required: true
-- http_response:
-    name: keep3
-    match: ^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab
+    match: (?:^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport)|(?:^https?:\/\/api\.gotokeep\.com\/nuocha\/course\/v\d/\w+\/preview)|(?:^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4efaba25017ff63e2e39e7fa55fac425e38262576bb31fe487b98ce5fce37f92.js
     body_required: true
 - http_response:
@@ -1285,17 +885,7 @@ scriptings:
     body_required: true
 - http_response:
     name: coolapk2
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
-    body_required: true
-- http_response:
-    name: coolapk3
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
-    body_required: true
-- http_response:
-    name: coolapk4
-    match: ^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?
+    match: (?:^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?)|(?:^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init))|(?:^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
     body_required: true
 - http_response:
@@ -1310,47 +900,17 @@ scriptings:
     body_required: true
 - http_response:
     name: rrtv_json11
-    match: ^https?:\/\/api.juxingclub.com\/v3plus\/index\/channel\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1f5732fce78864d5b0cb6bd039837f3e5d25632b1e3a061d1c2801685c7420ce.js
-    body_required: true
-- http_response:
-    name: rrtv_json12
-    match: ^https?:\/\/api.juxingclub.com\/app\/config\/h5NativeBar
+    match: (?:^https?:\/\/api.juxingclub.com\/v3plus\/index\/channel\?)|(?:^https?:\/\/api.juxingclub.com\/app\/config\/h5NativeBar)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1f5732fce78864d5b0cb6bd039837f3e5d25632b1e3a061d1c2801685c7420ce.js
     body_required: true
 - http_response:
     name: coolapk6
-    match: ^https?:\/\/api.coolapk.com\/v6\/main\/init
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
-    body_required: true
-- http_response:
-    name: coolapk8
-    match: ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
-    body_required: true
-- http_response:
-    name: coolapk9
-    match: ^https?:\/\/api.coolapk.com\/v6\/feed\/replyList
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
-    body_required: true
-- http_response:
-    name: coolapk10
-    match: ^https?:\/\/api.coolapk.com\/v6\/feed\/detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
-    body_required: true
-- http_response:
-    name: coolapk11
-    match: ^https?:\/\/api.coolapk.com\/v6\/dataList
+    match: (?:^https?:\/\/api.coolapk.com\/v6\/main\/init)|(?:^https?:\/\/api.coolapk.com\/v6\/main\/indexV8)|(?:^https?:\/\/api.coolapk.com\/v6\/feed\/replyList)|(?:^https?:\/\/api.coolapk.com\/v6\/feed\/detail)|(?:^https?:\/\/api.coolapk.com\/v6\/dataList)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
     body_required: true
 - http_response:
     name: soul_ads6
-    match: ^https?:\/\/api-user\.soulapp\.cn\/v\d\/planet\/config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
-    body_required: true
-- http_response:
-    name: soul_ads7
-    match: ^https?:\/\/api-user\.soulapp\.cn\/furion\/position\/content
+    match: (?:^https?:\/\/api-user\.soulapp\.cn\/v\d\/planet\/config)|(?:^https?:\/\/api-user\.soulapp\.cn\/furion\/position\/content)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
     body_required: true
 - http_response:
@@ -1365,12 +925,7 @@ scriptings:
     body_required: true
 - http_response:
     name: soul_ads10
-    match: ^https?:\/\/api-a\.soulapp\.cn\/v2\/post\/gift\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
-    body_required: true
-- http_response:
-    name: soul_ads11
-    match: ^https?:\/\/api-a\.soulapp\.cn\/official\/scene\/module
+    match: (?:^https?:\/\/api-a\.soulapp\.cn\/v2\/post\/gift\/list)|(?:^https?:\/\/api-a\.soulapp\.cn\/official\/scene\/module)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1.js
     body_required: true
 - http_response:
@@ -1385,22 +940,7 @@ scriptings:
     body_required: true
 - http_response:
     name: cnftp20
-    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp21
-    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp22
-    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
-    body_required: true
-- http_response:
-    name: cnftp23
-    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query)
+    match: (?:^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch)|(?:^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2)|(?:^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get)|(?:^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
@@ -1415,102 +955,12 @@ scriptings:
     body_required: true
 - http_response:
     name: redbook.ads
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads2
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads3
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/trending
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads4
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads5
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hot_list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads6
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hint
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads7
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/widgets
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads8
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/videofeed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads9
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/video\/save
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads10
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/tabfeed
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads11
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/redtube\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads12
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/live_photo\/save
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads13
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/imagefeed
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads14
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/feed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads15
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
-    body_required: true
-- http_response:
-    name: redbook.ads16
-    match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\/categories
+    match: (?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash_config)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/config\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/trending)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hot_list)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/hint)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/widgets)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/videofeed\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/video\/save)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/tabfeed)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/redtube\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/live_photo\/save)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/imagefeed)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/feed\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/homefeed\/categories)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f75ed15254d4bd23454fd0019cf340b581ad60cf8bb2c355e09e0e32a98fc74d.js
     body_required: true
 - http_response:
     name: cainiao_json
-    match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c.js
-    body_required: true
-- http_response:
-    name: cainiao_json2
-    match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.homepage\.merge\.get\.cn
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c.js
-    body_required: true
-- http_response:
-    name: cainiao_json3
-    match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c.js
-    body_required: true
-- http_response:
-    name: cainiao_json4
-    match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword
+    match: (?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.homepage\.merge\.get\.cn)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c.js
     body_required: true
 - http_response:
@@ -1565,72 +1015,12 @@ scriptings:
     body_required: true
 - http_response:
     name: ximalaya_json
-    match: ^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-- http_response:
-    name: ximalaya_json2
-    match: ^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-- http_response:
-    name: ximalaya_json3
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-- http_response:
-    name: ximalaya_json4
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
-    body_required: true
-- http_response:
-    name: ximalaya_json5
-    match: ^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories
+    match: (?:^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage)|(?:^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic)|(?:^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix)|(?:^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category)|(?:^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533.js
     body_required: true
 - http_response:
     name: amap
-    match: ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap2
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap3
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap4
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap5
-    match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap6
-    match: ^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap7
-    match: ^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap8
-    match: ^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-- http_response:
-    name: amap9
-    match: ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page
+    match: (?:^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas)|(?:^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource)|(?:^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull)|(?:^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list)|(?:^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
     body_required: true
 - http_response:
@@ -1672,37 +1062,12 @@ scriptings:
     body_required: true
 - http_response:
     name: xiaohongshu7
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/(imagefeed|live_photo\/save)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu8
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu9
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
-    body_required: true
-- http_response:
-    name: xiaohongshu10
-    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?
+    match: (?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/(imagefeed|live_photo\/save))|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?)|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?)|(?:^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
     body_required: true
 - http_response:
     name: tuhu
-    match: ^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-shop-api\/shopTab\/getModuleForC
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d4a8f475d9c24107644eadce1736e2d0db68974129809ca7f05c77e48abe4561.js
-    body_required: true
-- http_response:
-    name: tuhu2
-    match: ^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-common-api\/api\/personalCenter\/getCmsModuleList
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d4a8f475d9c24107644eadce1736e2d0db68974129809ca7f05c77e48abe4561.js
-    body_required: true
-- http_response:
-    name: tuhu3
-    match: ^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/[a-z-]+\/homePage\/getHomePageInfo
+    match: (?:^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-shop-api\/shopTab\/getModuleForC)|(?:^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-common-api\/api\/personalCenter\/getCmsModuleList)|(?:^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/[a-z-]+\/homePage\/getHomePageInfo)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d4a8f475d9c24107644eadce1736e2d0db68974129809ca7f05c77e48abe4561.js
     body_required: true
 - http_response:
@@ -1769,42 +1134,12 @@ scriptings:
     body_required: true
 - http_response:
     name: lawson
-    match: ^https:\/\/lawsonapi\.yorentown\.com\/portal\/app\/globalLaunch\/listAdvert
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ebf5ba4051ffeca870f3f0a15e6c9042649931c8d2b267e3bb51ef0545e3fb93.js
-    body_required: true
-- http_response:
-    name: lawson2
-    match: ^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/
+    match: (?:^https:\/\/lawsonapi\.yorentown\.com\/portal\/app\/globalLaunch\/listAdvert)|(?:^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ebf5ba4051ffeca870f3f0a15e6c9042649931c8d2b267e3bb51ef0545e3fb93.js
     body_required: true
 - http_response:
     name: PupuSplashAds
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/search\/hub\/search_box\/products\/v6
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
-    body_required: true
-- http_response:
-    name: PupuSplashAds2
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/search\/hot_keywords\/v3
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
-    body_required: true
-- http_response:
-    name: PupuSplashAds3
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/order_settlement\/detail
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
-    body_required: true
-- http_response:
-    name: PupuSplashAds4
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/order\/orders\/list\/v4
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
-    body_required: true
-- http_response:
-    name: PupuSplashAds5
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
-    body_required: true
-- http_response:
-    name: PupuSplashAds6
-    match: ^https:\/\/j1\.pupuapi\.com\/client\/app_resource\/resource_preload\/list_h5_resource
+    match: (?:^https:\/\/j1\.pupuapi\.com\/client\/search\/hub\/search_box\/products\/v6)|(?:^https:\/\/j1\.pupuapi\.com\/client\/search\/hot_keywords\/v3)|(?:^https:\/\/j1\.pupuapi\.com\/client\/order_settlement\/detail)|(?:^https:\/\/j1\.pupuapi\.com\/client\/order\/orders\/list\/v4)|(?:^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1)|(?:^https:\/\/j1\.pupuapi\.com\/client\/app_resource\/resource_preload\/list_h5_resource)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215.js
     body_required: true
 - http_response:
@@ -1824,12 +1159,7 @@ scriptings:
     body_required: true
 - http_response:
     name: meiyou_ads
-    match: ^https:\/\/config-service\.seeyouyima\.com\/api\/configs\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5bfa31920f176ec0a992d6dfd3ee68d3ea3e416597f87af622665fe6b8cb626a.js
-    body_required: true
-- http_response:
-    name: meiyou_ads2
-    match: ^https:\/\/config-service\.seeyouyima\.com\/api\/configs\/batch\?
+    match: (?:^https:\/\/config-service\.seeyouyima\.com\/api\/configs\?)|(?:^https:\/\/config-service\.seeyouyima\.com\/api\/configs\/batch\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5bfa31920f176ec0a992d6dfd3ee68d3ea3e416597f87af622665fe6b8cb626a.js
     body_required: true
 - http_response:
@@ -1849,32 +1179,12 @@ scriptings:
     body_required: true
 - http_response:
     name: zheye.min11
-    match: ^https:\/\/api\.zhihu\.com\/settings\/blocked_users
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
-    body_required: true
-- http_response:
-    name: zheye.min12
-    match: ^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds?
+    match: (?:^https:\/\/api\.zhihu\.com\/settings\/blocked_users)|(?:^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/41863c4c0ce5eefbdda9a5a96d7605bde70a89a9cc24ee0875f3d751aed2f757.js
     body_required: true
 - http_response:
     name: zhihu6
-    match: ^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-- http_response:
-    name: zhihu7
-    match: ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-- http_response:
-    name: zhihu8
-    match: ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-- http_response:
-    name: zhihu9
-    match: ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?
+    match: (?:^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\?)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
     body_required: true
 - http_response:
@@ -1884,12 +1194,7 @@ scriptings:
     body_required: true
 - http_response:
     name: zhihu10
-    match: ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-- http_response:
-    name: zhihu11
-    match: ^https:\/\/api\.zhihu\.com\/(answers|articles)\/v2\/\d+
+    match: (?:^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/(answers|articles)\/v2\/\d+)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
     body_required: true
 - http_response:
@@ -1899,17 +1204,7 @@ scriptings:
     body_required: true
 - http_response:
     name: bohe_ads
-    match: ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/493534355c02be962e06a75ad7eb51b1918c5c347122f40663ae9bc39a64cc1e.js
-    body_required: true
-- http_response:
-    name: bohe_ads2
-    match: ^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/493534355c02be962e06a75ad7eb51b1918c5c347122f40663ae9bc39a64cc1e.js
-    body_required: true
-- http_response:
-    name: bohe_ads3
-    match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\?
+    match: (?:^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?)|(?:^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?)|(?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/493534355c02be962e06a75ad7eb51b1918c5c347122f40663ae9bc39a64cc1e.js
     body_required: true
 - http_response:
@@ -1929,22 +1224,7 @@ scriptings:
     body_required: true
 - http_response:
     name: goofish2
-    match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/1\.0
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
-    body_required: true
-- http_response:
-    name: goofish3
-    match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.nearby\.itemdetail\.enter\/1\.0
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
-    body_required: true
-- http_response:
-    name: goofish4
-    match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
-    body_required: true
-- http_response:
-    name: goofish5
-    match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/
+    match: (?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/1\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.nearby\.itemdetail\.enter\/1\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
     body_required: true
 - http_response:
@@ -1954,22 +1234,12 @@ scriptings:
     body_required: true
 - http_response:
     name: maimai_ads
-    match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cdd9424de68aa4aad03ba5fda672ccf5e3d3344ee3886e72848bfb7b30977c28.js
-    body_required: true
-- http_response:
-    name: maimai_ads2
-    match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\?
+    match: (?:^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?)|(?:^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cdd9424de68aa4aad03ba5fda672ccf5e3d3344ee3886e72848bfb7b30977c28.js
     body_required: true
 - http_response:
     name: goofish6
-    match: ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
-    body_required: true
-- http_response:
-    name: goofish7
-    match: ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/
+    match: (?:^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/)|(?:^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
     body_required: true
 - http_response:
@@ -2031,17 +1301,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png
+    match: (?:^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads)|(?:^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg)|(?:^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2056,17 +1316,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/www\.nfmovies\.com\/uploads\/images\/play\.jpg
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/www\.nfmovies\.com\/templets\/default\/images\/logos
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/www\.nfmovies\.com\/pic\/tu\/
+    match: (?:^https?:\/\/www\.nfmovies\.com\/uploads\/images\/play\.jpg)|(?:^https?:\/\/www\.nfmovies\.com\/templets\/default\/images\/logos)|(?:^https?:\/\/www\.nfmovies\.com\/pic\/tu\/)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2151,12 +1401,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
+    match: (?:^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif)|(?:^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2186,22 +1431,12 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4}
+    match: (?:^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4})|(?:^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/mmg\.aty\.sohu\.com\/pvlog?
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/mmg\.aty\.sohu\.com\/mqs?
+    match: (?:^https?:\/\/mmg\.aty\.sohu\.com\/pvlog?)|(?:^https?:\/\/mmg\.aty\.sohu\.com\/mqs?)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2211,12 +1446,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd)
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv)
+    match: (?:^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd))|(?:^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv))
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2266,22 +1496,12 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
+    match: (?:^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp)|(?:^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/img\.ddrk\.me\/cover\.png
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/img\.ddrk\.me\/ad190824
+    match: (?:^https?:\/\/img\.ddrk\.me\/cover\.png)|(?:^https?:\/\/img\.ddrk\.me\/ad190824)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2316,17 +1536,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/games\.mobileapi\.hupu\.com\/interfaceAdMonitor
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\.
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\.
+    match: (?:^https?:\/\/games\.mobileapi\.hupu\.com\/interfaceAdMonitor)|(?:^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\.)|(?:^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\.)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2336,12 +1546,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/fm\.fenqile\.com\/routev2\/other\/startImg\.json
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/fm\.fenqile\.com\/routev2\/other\/getfloatAd\.json
+    match: (?:^https?:\/\/fm\.fenqile\.com\/routev2\/other\/startImg\.json)|(?:^https?:\/\/fm\.fenqile\.com\/routev2\/other\/getfloatAd\.json)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2371,12 +1576,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/ddrk\.me\/wp-content\/plugins\/advanced-floating-content-lite\/public\/images\/close\.png
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/ddrk\.me\/image\/logo_footer\.png
+    match: (?:^https?:\/\/ddrk\.me\/wp-content\/plugins\/advanced-floating-content-lite\/public\/images\/close\.png)|(?:^https?:\/\/ddrk\.me\/image\/logo_footer\.png)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2411,12 +1611,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update
+    match: (?:^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios)|(?:^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2431,12 +1626,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/
+    match: (?:^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image)|(?:^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2456,12 +1646,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/api\.ycapp\.yiche\.com\/yicheapp\/getadlist
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/api\.ycapp\.yiche\.com\/appnews\/getadlist
+    match: (?:^https?:\/\/api\.ycapp\.yiche\.com\/yicheapp\/getadlist)|(?:^https?:\/\/api\.ycapp\.yiche\.com\/appnews\/getadlist)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2531,32 +1716,12 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.googleapis.com/adsmeasurement
+    match: (?:^https?:\/\/.+\.googleapis.com/adsmeasurement)|(?:^https?:\/\/.+\.googleapis.com/.+log_event)|(?:^https?:\/\/.+\.googleapis.com/.+ad_break)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.googleapis.com/.+log_event
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.googleapis.com/.+ad_break
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.amemv\.com\/.+stats
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.amemv\.com\/.+report
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https?:\/\/.+\.amemv\.com\/.+app_log
+    match: (?:^https?:\/\/.+\.amemv\.com\/.+stats)|(?:^https?:\/\/.+\.amemv\.com\/.+report)|(?:^https?:\/\/.+\.amemv\.com\/.+app_log)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
@@ -2596,12 +1761,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 - http_request:
     name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https:\/\/a\.line\.me\/er\/lads\/v\d\/ei\?
-    body_required: false
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
-- http_request:
-    name: APP启动页去广告ultra+ / tiny GIF
-    match: ^https:\/\/a\.line\.me\/er\/l.*\/v\d\/event\/image
+    match: (?:^https:\/\/a\.line\.me\/er\/lads\/v\d\/ei\?)|(?:^https:\/\/a\.line\.me\/er\/l.*\/v\d\/event\/image)
     body_required: false
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
 mitm:
@@ -3881,10 +3041,16 @@ mitm:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/apiproxy\.zuche\.com\/resource\/cardes\/toufang\/marketing
-    filter: . = {}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd
-    filter: . = {}
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 rules:
 - url_regex:
     match: https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex)
@@ -6392,10 +5558,7 @@ map_locals:
 - match: ^https?:\/\/zjh5api\.ott4china\.com:8091\/cp-api\/view\/config\/pos
   status_code: 200
   body: ''
-- match: ^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/update\/startupPage\/v
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/guessYouLike\/v
+- match: (?:^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/update\/startupPage\/v)|(?:^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/guessYouLike\/v)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/z\.onewo\.com\/passer\/api\/ads\/v1\/8\/list
@@ -6479,10 +5642,7 @@ map_locals:
 - match: ^https?:\/\/www\.cntv\.cn\/nettv\/adp\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/www\.cmbc\.com\.cn\/m\/image\/loadingpage\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/www\.cmbc\.com\.cn\/m\/image\/banner\/.*.png
+- match: (?:^https?:\/\/www\.cmbc\.com\.cn\/m\/image\/loadingpage\/)|(?:^https?:\/\/www\.cmbc\.com\.cn\/m\/image\/banner\/.*.png)
   status_code: 200
   body: ''
 - match: ^https?:\/\/www\.banyuetanapp\.com\/byt-api\/ad\/getAdvertList\?adSpaceId=100000002
@@ -6494,10 +5654,7 @@ map_locals:
 - match: ^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(guideScenic\/getRecentlyUpdatedScenic|city\/getWeatherByCityName)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/sns\/(v\d+\/ads\/resource|v\d+\/hey\/\w+\/hey_gallery)
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/marketing\/box\/trigger\?
+- match: (?:^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/sns\/(v\d+\/ads\/resource|v\d+\/hey\/\w+\/hey_gallery))|(?:^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/marketing\/box\/trigger\?)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/www\.(binance|yingwangtech)\.(com|info|net)\/bapi\/composite\/v1\/public\/market\/holiday-atmosphere
@@ -6536,10 +5693,7 @@ map_locals:
 - match: ^https?:\/\/wap.bank\.ecitic\.com:6443\/NMBFOServer\/cbframework\.do\?act=CUBEPAGEDATA
   status_code: 200
   body: ''
-- match: ^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/dateSignature\/random
+- match: (?:^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog)|(?:^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/dateSignature\/random)
   status_code: 200
   body: ''
 - match: ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond
@@ -6575,16 +5729,7 @@ map_locals:
 - match: ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query$
   status_code: 200
   body: ''
-- match: ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo
+- match: (?:^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query)|(?:^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity)|(?:^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList)|(?:^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo
@@ -6632,25 +5777,16 @@ map_locals:
 - match: ^https?:\/\/superapp\.xgimi\.com\/api/v1\/app\/ad\/configs\?_sort=createdAt:Adesc
   status_code: 200
   body: ''
-- match: ^https?:\/\/static\.shihuocdn\.cn\/admin\/imgs/202[0-9]{5}\/[a-z0-9]{32}_750x1624\.png
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/static\.shihuocdn\.cn\/admin\/imgs/202[0-9]{5}\/[a-z0-9]{32}_513x777\.png
+- match: (?:^https?:\/\/static\.shihuocdn\.cn\/admin\/imgs/202[0-9]{5}\/[a-z0-9]{32}_750x1624\.png)|(?:^https?:\/\/static\.shihuocdn\.cn\/admin\/imgs/202[0-9]{5}\/[a-z0-9]{32}_513x777\.png)
   status_code: 200
   body: ''
 - match: ^https?:\/\/static\.creditcard\.hxb\.com\.cn\/mcube\/apps\/group\d\/M00\/00\/2[A-Z0-9]{1}\/amRG7WO.+\.jpg
   status_code: 200
   body: ''
-- match: ^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_)
+- match: (?:^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_))|(?:^https?:\/\/static\.95508\.com\/mmg\/ciop\/sysabbr\/cmep\/images\/(apppopupads|popupads))
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/static\.95508\.com\/mmg\/ciop\/sysabbr\/cmep\/images\/(apppopupads|popupads)
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/advertising\/202\d{5}\/.*.(png|jpg)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/accurate\/202\d{5}\/.*.(png|jpg)
+- match: (?:^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/advertising\/202\d{5}\/.*.(png|jpg))|(?:^https?:\/\/static\.95508\.com\/icppweb\/images\/modelMaterial\/accurate\/202\d{5}\/.*.(png|jpg))
   status_code: 200
   body: ''
 - match: ^https?:\/\/static1\.keepcdn\.com\/ark_optimus\/202\d\/*\/*\/.*.(png|jpg)
@@ -6668,10 +5804,7 @@ map_locals:
 - match: ^https?:\/\/stat\.10jqka\.com\.cn\/q\?ld=mobile&id=ad
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/ssp\.soulapp\.cn\/api\/q
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/ssp\.soulapp\.cn\/api\/ad\/config
+- match: (?:^https?:\/\/ssp\.soulapp\.cn\/api\/q)|(?:^https?:\/\/ssp\.soulapp\.cn\/api\/ad\/config)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/sso.ifanr.com\/jiong\/IOS\/appso\/splash\/
@@ -6683,10 +5816,7 @@ map_locals:
 - match: ^https?:\/\/sp\.kaola\.com\/api\/openad
   status_code: 200
   body: ''
-- match: ^https?:\/\/social\.blued\.cn\/users\/recommend
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/social\.blued\.cn\/users\/no_auth\/benefit
+- match: (?:^https?:\/\/social\.blued\.cn\/users\/recommend)|(?:^https?:\/\/social\.blued\.cn\/users\/no_auth\/benefit)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/smsrebuild1\.mail\.10086\.cn\/together\/s
@@ -6728,19 +5858,7 @@ map_locals:
 - match: ^https?:\/\/sdk\.tianmu\.mobi\/ad
   status_code: 200
   body: ''
-- match: ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/version
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/top_notice\?
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/advert\?position=[^2]+
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/.*?\/v\d\/(version|top_notice\?|advert\?position=[^2]+)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/(dsx|xgapp)\.php\/v\d\/(top_notice\?|version|advert\?position=[^2]+)
+- match: (?:^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/version)|(?:^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/top_notice\?)|(?:^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/advert\?position=[^2]+)|(?:^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/.*?\/v\d\/(version|top_notice\?|advert\?position=[^2]+))|(?:^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/(dsx|xgapp)\.php\/v\d\/(top_notice\?|version|advert\?position=[^2]+))
   status_code: 200
   body: ''
 - match: ^https?:\/\/sdk\.1rtb\.net\/sdk\/req_ad
@@ -6752,10 +5870,7 @@ map_locals:
 - match: ^https?:\/\/s\.jiediankeji\.com\/adv
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
+- match: (?:^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$)|(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/s1\.api\.tv\.itc\.cn\/v4\/mobile\/control\/switch\.json
@@ -6776,10 +5891,7 @@ map_locals:
 - match: ^https?:\/\/richmanapi\.jxedt\.com\/api\/(ad|adplus|banadplus)\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/restapi\.iyunmai\.com\/ad-api\/
+- match: (?:^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\/)|(?:^https?:\/\/restapi\.iyunmai\.com\/ad-api\/)
   status_code: 200
   body: ''
 - match: ^https?:\/\/res\.pizzahut\.com\.cn\/CRM\/phad\/member\/app\/member
@@ -6803,13 +5915,7 @@ map_locals:
 - match: ^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/app-act\/act-list.+
+- match: (?:^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+)|(?:^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+)|(?:^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/app-act\/act-list.+)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/quanguo\.mygolbs\.com:8081\/MyBusServer\/servlet\/MyGoServer\.HttpPool\.HttpHandlerServlet
@@ -6854,10 +5960,7 @@ map_locals:
 - match: ^https?:\/\/preprod\.cdzghome\.com:8100\/banner\/bootUp
   status_code: 200
   body: ''
-- match: ^https?:\/\/portal-xunyou\.qingcdn\.com\/api\/v\d\/ios\/configs\/(?>splash_ad|ad_urls)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/portal-xunyou\.qingcdn\.com\/api\/v\d\/ios\/ads\/
+- match: (?:^https?:\/\/portal-xunyou\.qingcdn\.com\/api\/v\d\/ios\/configs\/(?>splash_ad|ad_urls))|(?:^https?:\/\/portal-xunyou\.qingcdn\.com\/api\/v\d\/ios\/ads\/)
   status_code: 200
   body: ''
 - match: ^https?:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest
@@ -6890,19 +5993,13 @@ map_locals:
 - match: ^https?:\/\/pacdn\.m\.stock\.pingan\.com\/images\/
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg
+- match: (?:^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp)|(?:^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg)
   status_code: 200
   body: ''
 - match: ^https?:\/\/p\.du\.163\.com\/ad\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/oxadmin\.cp\.com\.cn\/api\/hot\/index
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/oxadmin\.cp\.com\.cn\/api\/advertise\/banner
+- match: (?:^https?:\/\/oxadmin\.cp\.com\.cn\/api\/hot\/index)|(?:^https?:\/\/oxadmin\.cp\.com\.cn\/api\/advertise\/banner)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/overseas\.weico\.cc\/portal\.php\?a=get_coopen_ads
@@ -6974,10 +6071,7 @@ map_locals:
 - match: ^https?:\/\/mrp\.mcloud\.139\.com\/mc\/mc-client-service\/openapi\/letter\/query
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/mrobot\.pconline\.com\.cn\/s\/onlineinfo\/ad\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/mrobot\.pconline\.com\.cn\/s-900\/onlineinfo\/cms\/launch
+- match: (?:^https?:\/\/mrobot\.pconline\.com\.cn\/s\/onlineinfo\/ad\/)|(?:^https?:\/\/mrobot\.pconline\.com\.cn\/s-900\/onlineinfo\/cms\/launch)
   status_code: 200
   body: ''
 - match: ^https?:\/\/mres\.aibank\.com\/app\/resource\/cim\/cim0000001\/.+\.jpg
@@ -7043,22 +6137,10 @@ map_locals:
 - match: ^https?:\/\/mix-api\.camera360\.com\/v\d\/operational-positions
   status_code: 200
   body: ''
-- match: ^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData
+- match: (?:^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData)|(?:^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist)
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mime\.baidu\.com\/sapi\/v1\/circle\/joinedlist
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list
+- match: (?:^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list)|(?:^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist))|(?:^https?:\/\/mime\.baidu\.com\/sapi\/v1\/circle\/joinedlist)|(?:^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/middle\.yun\.139\.com\/openapi\/cardConfig\/queryCardInfoV3
@@ -7070,10 +6152,7 @@ map_locals:
 - match: ^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/v\d\/getAdverts
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/IAdvert
+- match: (?:^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/v\d\/getAdverts)|(?:^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/IAdvert)
   status_code: 200
   body: ''
 - match: ^https?:\/\/mcc.psbc.com:9090\/mcc\/resources\/[0-9]+\.(jpg|png)
@@ -7106,28 +6185,16 @@ map_locals:
 - match: ^https?:\/\/mapi\.txcmapp\.com\/api\/open\/atx2\/ad\.php
   status_code: 200
   body: ''
-- match: ^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config
+- match: (?:^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update)|(?:^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/layout\/productList\/eventData\/v
+- match: (?:^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/layout\/productList\/eventData\/v)|(?:^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/coupon\/float_entrance\/get\?api_key)|(?:^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get)
   status_code: 200
   body: ''
-- match: ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/coupon\/float_entrance\/get\?api_key
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appclient\/noEnc\/getAppPopup
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appClient\/noEnc\/getHomePageAds
+- match: (?:^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appclient\/noEnc\/getAppPopup)|(?:^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appClient\/noEnc\/getHomePageAds)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/manager\.aiqiangua\.com:8080\/AqgNews\/api\/start_ad\.do
@@ -7136,22 +6203,10 @@ map_locals:
 - match: ^https?:\/\/mama\.dxy\.com\/api\/cms\/client\/popup-window\/list
   status_code: 200
   body: ''
-- match: ^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash
+- match: (?:^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash)|(?:^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/cart\/vipGuide
+- match: (?:^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd)|(?:^https?:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend)|(?:^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike)|(?:^https?:\/\/maicai\.api\.ddxq\.mobi\/cart\/vipGuide)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/startUpScreen
@@ -7160,16 +6215,7 @@ map_locals:
 - match: ^https?:\/\/magev\d\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen
   status_code: 200
   body: ''
-- match: ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv
+- match: (?:^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch)|(?:^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe)|(?:^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation)|(?:^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/
@@ -7187,10 +6233,7 @@ map_locals:
 - match: ^https?:\/\/m\.msyc\.cc\/app\/getBootPage\/v\d
   status_code: 200
   body: ''
-- match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/scjson\/tripAds
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/[0-9]{5}\/json\/getTimeZoneServerIpList\?__gw_os=IOS
+- match: (?:^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/scjson\/tripAds)|(?:^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/[0-9]{5}\/json\/getTimeZoneServerIpList\?__gw_os=IOS)
   status_code: 200
   body: ''
 - match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds
@@ -7217,13 +6260,7 @@ map_locals:
 - match: ^https?:\/\/m\.360buyimg\.com\/babel\/jfs\/t1\/[0-9]{6}\/[0-9]{2}\/[0-9]{5}\/[0-9]{6}\/.*.jpg
   status_code: 200
   body: ''
-- match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily
+- match: (?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\?)|(?:^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\?
@@ -7253,19 +6290,10 @@ map_locals:
 - match: ^https?:\/\/list-app-m\.i4\.cn.*adinfo\.xhtml
   status_code: 200
   body: ''
-- match: ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew
+- match: (?:^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew)|(?:^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew)|(?:^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/lens\.leoao\.com\/lens\/.+(getUserScheme|queryAppBanners|Advert|popup)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/lens\.leoao\.com\/lens\/.*Advertising
+- match: (?:^https?:\/\/lens\.leoao\.com\/lens\/.+(getUserScheme|queryAppBanners|Advert|popup))|(?:^https?:\/\/lens\.leoao\.com\/lens\/.*Advertising)
   status_code: 200
   body: ''
 - match: ^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig
@@ -7274,13 +6302,7 @@ map_locals:
 - match: ^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/(getAdvList|prefetchAdvList)\.ah
   status_code: 200
   body: ''
-- match: ^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/1[0-2]{1}\/.*.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/0[4-9]{1}\/.*.jpg
+- match: (?:^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg)|(?:^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/1[0-2]{1}\/.*.jpg)|(?:^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/0[4-9]{1}\/.*.jpg)
   status_code: 200
   body: ''
 - match: ^https?:\/\/kaola-haitao\.oss\.kaolacdn.com\/.+?_\d{3,4}_\d{4}\.jpg\?x-oss-process=image\/resize,m_mfit,w_\d{3,4},h_\d{4}\/format,webp\/quality,Q_85
@@ -7292,52 +6314,25 @@ map_locals:
 - match: ^https?:\/\/jz\.wacaijizhang\.com\/api\/banners\/newSplash
   status_code: 200
   body: ''
-- match: ^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/popup
+- match: (?:^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/popup)|(?:^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/channel\/module\/opens)
   status_code: 200
   body: ''
-- match: ^https?:\/\/jdread-api\.jd\.com\/jdread\/api\/channel\/module\/opens
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/j5\.dfcfw\.com\/WG\/conf\/202[0-9]{5}/.*.(jpg|png)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/j5\.dfcfw\.com\/WG\/appconf\/202[0-9]{5}/.*.(jpg|png)
+- match: (?:^https?:\/\/j5\.dfcfw\.com\/WG\/conf\/202[0-9]{5}/.*.(jpg|png))|(?:^https?:\/\/j5\.dfcfw\.com\/WG\/appconf\/202[0-9]{5}/.*.(jpg|png))
   status_code: 200
   body: ''
 - match: ^https?:\/\/iyes\.youku\.com\/uts/v\d\/start
   status_code: 200
   body: ''
-- match: ^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/ts_ad\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/
+- match: (?:^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/ts_ad\/)|(?:^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/)
   status_code: 200
   body: ''
 - match: ^https?:\/\/ios-api\.lucklyworld\.com\/v6\/api\/config\/startup
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad)
+- match: (?:^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad))|(?:^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb)
   status_code: 200
   body: ''
-- match: ^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipmall\/couponcfg\/get
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/sp\/flow\/popup\/query
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\/inserted\/resources
+- match: (?:^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipmall\/couponcfg\/get)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/sp\/flow\/popup\/query)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list)|(?:^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\/inserted\/resources)
   status_code: 200
   body: ''
 - match: ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId
@@ -7349,10 +6344,7 @@ map_locals:
 - match: ^https?:\/\/img\.wukongtv\.com\/wkremote\/AD\/iOS\/.*.(jpg|png|jpeg)
   status_code: 200
   body: ''
-- match: ^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$
+- match: (?:^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg))|(?:^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$)
   status_code: 200
   body: ''
 - match: ^https?:\/\/img\.gdoil\.cn\/upload\/ad\/.*.(jpg|png)
@@ -7379,10 +6371,7 @@ map_locals:
 - match: ^https?:\/\/images\.client\.vip\.xunlei\.com\/.+?\/advert\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/images\.cib\.com\.cn\/commons\/uploads\/commons\/[a-zA-Z0-9]{32}\.jpg\?ver=20230[1-9]{1}
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/images\.cib\.com\.cn\/commons\/uploads\/commons\/[a-zA-Z0-9]{32}\.jpg\?ver=20221[1-2]{1}
+- match: (?:^https?:\/\/images\.cib\.com\.cn\/commons\/uploads\/commons\/[a-zA-Z0-9]{32}\.jpg\?ver=20230[1-9]{1})|(?:^https?:\/\/images\.cib\.com\.cn\/commons\/uploads\/commons\/[a-zA-Z0-9]{32}\.jpg\?ver=20221[1-2]{1})
   status_code: 200
   body: ''
 - match: ^https?:\/\/image\.suning\.cn\/uimg\/ma\/ad\/
@@ -7391,37 +6380,16 @@ map_locals:
 - match: ^https?:\/\/image\.spdbccc\.com\.cn\/group\d\/M00\/[A-Z0-9]{2}\/[A-Z0-9]{2}\/.+(4038|0571|M511|V-008|g549|b0628|fg817|5w501|Jo341|Z4583|oo845|i4905|MY245|YU472|Y401|w428|s000)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad
+- match: (?:^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/)|(?:^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad)|(?:^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad)|(?:^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad\/)|(?:^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad)
   status_code: 200
   body: ''
 - match: ^https?:\/\/igetcool-gateway\.igetcool\.com\/app-api-other-server\/white\/open\/ads.json
   status_code: 200
   body: ''
-- match: ^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?
+- match: (?:^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?)|(?:^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(?>jpg|png)@1200w_1500h_1e_1c
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(?>jpg|png)$
+- match: (?:^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(?>jpg|png)@1200w_1500h_1e_1c)|(?:^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(?>jpg|png)$)
   status_code: 200
   body: ''
 - match: ^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes
@@ -7439,13 +6407,7 @@ map_locals:
 - match: ^https?:\/\/hxqapi\.hiyun\.tv\/api\/notification\/plans
   status_code: 200
   body: ''
-- match: ^https?:\/\/hweb-manager\.huazhu\.com\/notice\/getAppPopupNotifyAlert
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hweb-manager\.huazhu\.com\/hotels\/ad\/
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hweb-manager\.huazhu\.com\/bundle\/upgrade\/check
+- match: (?:^https?:\/\/hweb-manager\.huazhu\.com\/notice\/getAppPopupNotifyAlert)|(?:^https?:\/\/hweb-manager\.huazhu\.com\/hotels\/ad\/)|(?:^https?:\/\/hweb-manager\.huazhu\.com\/bundle\/upgrade\/check)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/hweb-hotel\.huazhu\.com\/{1,2}home\/(?>queryNewNotice|querySelectHotel|queryHotelBrand|queryMall|huazhuWorld)
@@ -7460,19 +6422,13 @@ map_locals:
 - match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation
   status_code: 200
   body: ''
-- match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner)
+- match: (?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner)|(?:^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner))
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/hoapp\.juneyaoair\.com\/data\/index\/getLoadPic
   status_code: 200
   body: ''
-- match: ^https?:\/\/hmbaby\.simshine\.cn\/admin\/filter\/crowdFunding\/getNewProductData
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hmbaby\.simshine\.cn\/admin\/filter\/advert\/getAdvertLists
+- match: (?:^https?:\/\/hmbaby\.simshine\.cn\/admin\/filter\/crowdFunding\/getNewProductData)|(?:^https?:\/\/hmbaby\.simshine\.cn\/admin\/filter\/advert\/getAdvertLists)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/hfapp-service\.qweather\.net\/v\d\.\d\/app\/ad\/list\?
@@ -7481,16 +6437,7 @@ map_locals:
 - match: ^https?:\/\/hfapp-service\.qweather\.net\/.*\/ad\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/hdgateway\.zto\.com\/track
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hdgateway\.zto\.com\/listJumperShow
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hdgateway\.zto\.com\/getApolloConfig
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/hdgateway\.zto\.com\/getAdInfo
+- match: (?:^https?:\/\/hdgateway\.zto\.com\/track)|(?:^https?:\/\/hdgateway\.zto\.com\/listJumperShow)|(?:^https?:\/\/hdgateway\.zto\.com\/getApolloConfig)|(?:^https?:\/\/hdgateway\.zto\.com\/getAdInfo)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/hd\.xiaojukeji\.com\/d
@@ -7502,10 +6449,7 @@ map_locals:
 - match: ^https?:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul
+- match: (?:^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul)|(?:^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul)
   status_code: 200
   body: ''
 - match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\?
@@ -7514,10 +6458,7 @@ map_locals:
 - match: ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul
   status_code: 200
   body: ''
-- match: ^https?:\/\/h5app\.kuwo\.cn\/m\/kwtemplatePage\/index\.html\?id=1157&app=bodianhdzx
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/h5app\.kuwo\.cn\/m\/bdvipact2205\/index\.html\?fromsrc=huodong
+- match: (?:^https?:\/\/h5app\.kuwo\.cn\/m\/kwtemplatePage\/index\.html\?id=1157&app=bodianhdzx)|(?:^https?:\/\/h5app\.kuwo\.cn\/m\/bdvipact2205\/index\.html\?fromsrc=huodong)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/h5api\.sginput\.qq\.com\/v1\/gcenter\/ios\/homepage
@@ -7547,10 +6488,7 @@ map_locals:
 - match: ^https?:\/\/gugongmini\.dpm\.org\.cn\/gugong_applet\/open-screen
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/gsp\.gacmotor\.com\/gateway\/webapi\/baseinfo\/advertise\/getAdvertiseByPositionCode\?positionCode=1
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/gsp\.gacmotor\.com\/gateway\/app-api\/app\/version\/latestupdate\?flatform=2&innerVersion=
+- match: (?:^https?:\/\/gsp\.gacmotor\.com\/gateway\/webapi\/baseinfo\/advertise\/getAdvertiseByPositionCode\?positionCode=1)|(?:^https?:\/\/gsp\.gacmotor\.com\/gateway\/app-api\/app\/version\/latestupdate\?flatform=2&innerVersion=)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/gorgon\.youdao\.com\/gorgon
@@ -7598,13 +6536,7 @@ map_locals:
 - match: ^https?:\/\/ga-album-cdnqn\.52tt\.com\/prod-yunying\/.+.jpg
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4}
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/fuss10.elemecdn.com\/.+.mp4
+- match: (?:^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4})|(?:^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4})|(?:^https?:\/\/fuss10.elemecdn.com\/.+.mp4)
   status_code: 200
   body: ''
 - match: ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer
@@ -7625,16 +6557,7 @@ map_locals:
 - match: ^https?:\/\/fastbuyer\.zbj\.com\/configure\/screenAdConfig\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?cityId=102923&channelId=0&width=1170&height=2532
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?.*
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?cityId=102923&positions=mine_popup
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?.*
+- match: (?:^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?cityId=102923&channelId=0&width=1170&height=2532)|(?:^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?.*)|(?:^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?cityId=102923&positions=mine_popup)|(?:^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?.*)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/entry\.ubixioe\.com\/mob\/sdk\/v\d\/endpoint
@@ -7655,16 +6578,7 @@ map_locals:
 - match: ^https?:\/\/elemecdn.com\/.+\/sitemap
   status_code: 200
   body: ''
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/surprisebox\/(get_style|open|submit_action)
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/guide\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/detailfeed\/preload\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/guide\/user_banner
+- match: (?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/surprisebox\/(get_style|open|submit_action))|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/guide\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/detailfeed\/preload\?)|(?:^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/guide\/user_banner)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/edit\.sinaapp\.com\/ua\?t=adv
@@ -7697,10 +6611,7 @@ map_locals:
 - match: ^https?:\/\/dl\.app\.gtja\.com\/dzswem\/kvController
   status_code: 200
   body: ''
-- match: ^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list&_ret_key=result&site_set
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list
+- match: (?:^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list&_ret_key=result&site_set)|(?:^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list)
   status_code: 200
   body: ''
 - match: ^https?:\/\/dj\.palmestore\.com\/zybk\/api\/ad
@@ -7721,28 +6632,13 @@ map_locals:
 - match: ^https?:\/\/dictvip-business\.youdao\.com\/home\/ad
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/dict\.youdao\.com\/dictusertask\/system
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/dict\.youdao\.com\/commonsearch
+- match: (?:^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo)|(?:^https?:\/\/dict\.youdao\.com\/dictusertask\/system)|(?:^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab)|(?:^https?:\/\/dict\.youdao\.com\/commonsearch)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/device-box\.onethingpcs\.com\/.+\/adConf
   status_code: 200
   body: ''
-- match: ^https?:\/\/delivery-api\.imdada\.cn\/v2_0\/dada\/promote\/imax\?privacyParam
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/screen\/ads_list
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/ad
+- match: (?:^https?:\/\/delivery-api\.imdada\.cn\/v2_0\/dada\/promote\/imax\?privacyParam)|(?:^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/screen\/ads_list)|(?:^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/ad)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/data\.hgold\.cn\/ky\/.*\/ad\.php
@@ -7757,28 +6653,19 @@ map_locals:
 - match: ^https?:\/\/d\.psbc\.com:9091\/mcc\/resources\/[0-9]+\.(jpg|png|jpeg)
   status_code: 200
   body: ''
-- match: ^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/index\/last-version
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/notice-infos
+- match: (?:^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/index\/last-version)|(?:^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/notice-infos)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/cstore-en-public-tx\.seewo\.com\/easinote5_public
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/creditcardapp\.bankcomm\.com\/mappweb.*(Advert|Ads).do
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/(queryGuidePageAds|getPopAds)\.do$
+- match: (?:^https?:\/\/creditcardapp\.bankcomm\.com\/mappweb.*(Advert|Ads).do)|(?:^https?:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/(queryGuidePageAds|getPopAds)\.do$)
   status_code: 200
   body: ''
 - match: ^https?:\/\/creditcardapp\.bankcomm\.cn\/mappweb_interface\/common\/(qryPopAds|qryLaunchAds)\.do
   status_code: 200
   body: ''
-- match: ^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interface\/common\/(qryPopAds|qryLaunchAds)\.do
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interaction\/appInfo\/appNewestVersion
+- match: (?:^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interface\/common\/(qryPopAds|qryLaunchAds)\.do)|(?:^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interaction\/appInfo\/appNewestVersion)
   status_code: 200
   body: ''
 - match: ^https?:\/\/cq11344-app-https-api-1\.ictun\.com:443\/api\/app\/v\d\/appad
@@ -7799,34 +6686,13 @@ map_locals:
 - match: ^https?:\/\/comicapi\.manhuashe\.com\/v\d\/(ads\/adstrategys|public\/startupactivity)
   status_code: 200
   body: ''
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn
+- match: (?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn
+- match: (?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn)|(?:^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/cmt\.comp\.360os\.com\/adv
@@ -7847,13 +6713,7 @@ map_locals:
 - match: ^https?:\/\/client-api\.oray\.com\/materials\/SLCC_IOS_STARTUP\?lang=zh-Hans-CN
   status_code: 200
   body: ''
-- match: ^https?:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE
+- match: (?:^https?:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION)|(?:^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP)|(?:^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/client-api-v2\.oray\.com\/materials\/(SUNLOGIN_CLIENT_IOS_PROMOTION|SLCC_IOS_DEVICE|SLCC_IOS_STARTUP)
@@ -7901,22 +6761,10 @@ map_locals:
 - match: ^https?:\/\/cdn-xyk-app\.bankofbeijing\.com\.cn\/cdn\/resource\/image\/advertise
   status_code: 200
   body: ''
-- match: ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSSC8A54C9913CA475DABECA1054A219CA2\.jpg
+- match: (?:^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSSC8A54C9913CA475DABECA1054A219CA2\.jpg)|(?:^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS50140C35669841B7A4218215C8C5338A\.jpg)|(?:^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS32D553B6981546909417BEF3B7A3BC4D\.jpg)|(?:^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS2FC543D52E7447678660A4D9EC4F6C60\.jpg)
   status_code: 200
   body: ''
-- match: ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS50140C35669841B7A4218215C8C5338A\.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS32D553B6981546909417BEF3B7A3BC4D\.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS2FC543D52E7447678660A4D9EC4F6C60\.jpg
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/63c4e3b558bb610008969f89
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn
+- match: (?:^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/63c4e3b558bb610008969f89)|(?:^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn)
   status_code: 200
   body: ''
 - match: ^https?:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup
@@ -7928,10 +6776,7 @@ map_locals:
 - match: ^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend
+- match: (?:^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList)|(?:^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade
@@ -7967,10 +6812,7 @@ map_locals:
 - match: ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime
   status_code: 200
   body: ''
-- match: ^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/198c0b313fe9e53b03240c7b30b4acc9
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/0e83c1821cd2681de08e20bec73d1e75
+- match: (?:^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/198c0b313fe9e53b03240c7b30b4acc9)|(?:^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/0e83c1821cd2681de08e20bec73d1e75)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/blog\.nilbt\.com\/static\/api\/update
@@ -7985,13 +6827,7 @@ map_locals:
 - match: ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/finds\/module\?moduleId
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/myPage\?uid
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/bd-api\.kuwo\.cn\/api\/play\/listening\/entrance\/music\?musicId
+- match: (?:^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/finds\/module\?moduleId)|(?:^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/myPage\?uid)|(?:^https?:\/\/bd-api\.kuwo\.cn\/api\/play\/listening\/entrance\/music\?musicId)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/bbs-api\.miyoushe\.com\/apihub\/api\/getAppSplash
@@ -8021,13 +6857,7 @@ map_locals:
 - match: ^https?:\/\/apphw\.ddpai\.com:\d+\/onroad\/api\/v\d\/\w+\/list
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage
+- match: (?:^https?:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list)|(?:^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip)|(?:^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/appconf\.mail\.163\.com\/mmad\/get\.do
@@ -8048,13 +6878,7 @@ map_locals:
 - match: ^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo
   status_code: 200
   body: ''
-- match: ^https?:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage
+- match: (?:^https?:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\?)|(?:^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen)|(?:^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/app\.zhoudamozi\.com\/ad\/.+
@@ -8108,10 +6932,7 @@ map_locals:
 - match: ^https?:\/\/app\.95598pay\.com\/debapi\/adsite\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv)
+- match: (?:^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv)|(?:^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv))
   status_code: 200
   body: ''
 - match: ^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage
@@ -8144,49 +6965,7 @@ map_locals:
 - match: ^https?:\/\/apicloud\.zol\.com\.cn\/Article\/WapLaunchLogo
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.zhihu\.com\/settings\/new\/notification
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/root\/window
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/moments\/recent
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/metrics\/report
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/message-push\/event
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/me\/guides
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/guide_center\/strategy
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/content-distribution-core\/sections\/
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/commercial_api\/answer/\d+/bottom-v2
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/commercial_api
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/bazaar\/float_window
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count)
+- match: (?:^https?:\/\/api\.zhihu\.com\/settings\/new\/notification)|(?:^https?:\/\/api\.zhihu\.com\/root\/window)|(?:^https?:\/\/api\.zhihu\.com\/moments\/recent)|(?:^https?:\/\/api\.zhihu\.com\/metrics\/report)|(?:^https?:\/\/api\.zhihu\.com\/message-push\/event)|(?:^https?:\/\/api\.zhihu\.com\/me\/guides)|(?:^https?:\/\/api\.zhihu\.com\/guide_center\/strategy)|(?:^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config)|(?:^https?:\/\/api\.zhihu\.com\/content-distribution-core\/sections\/)|(?:^https?:\/\/api\.zhihu\.com\/commercial_api\/answer/\d+/bottom-v2)|(?:^https?:\/\/api\.zhihu\.com\/commercial_api)|(?:^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header)|(?:^https?:\/\/api\.zhihu\.com\/bazaar\/float_window)|(?:^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config)|(?:^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count))
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen
@@ -8204,16 +6983,7 @@ map_locals:
 - match: ^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai
+- match: (?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.xiaoheihe\.cn\/.*get_ads_info
@@ -8225,46 +6995,22 @@ map_locals:
 - match: ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList)
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive
+- match: (?:^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive)|(?:^https?:\/\/api\.weibo\.cn\/\d\/push\/info)
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/push\/info
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload
+- match: (?:^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser)|(?:^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl)|(?:^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.weibo\.cn\/.*finder\/searchbarchange
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags
+- match: (?:^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo)|(?:^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.weibo\.cn\/.*\/media_homelist
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.ulife\.group\/signintask\/adServing
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.ulife\.group\/auth\/account\/entrance
+- match: (?:^https?:\/\/api\.ulife\.group\/signintask\/adServing)|(?:^https?:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1)|(?:^https?:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15)|(?:^https?:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy)|(?:^https?:\/\/api\.ulife\.group\/auth\/account\/entrance)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.u51\.com\/(generic-config-gateway|rs-resys)\/api\/v\d\/(creditpage-config|recommend)
@@ -8285,19 +7031,7 @@ map_locals:
 - match: ^https?:\/\/api\.sogaha\.cn\/ssp\/ad\/get\?ip
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.sodalife\.xyz\/v1\/goods
+- match: (?:^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER)|(?:^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM)|(?:^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER)|(?:^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM)|(?:^https?:\/\/api\.sodalife\.xyz\/v1\/goods)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.smart\.jd\.com\/c\/service\/getLoadingLinks
@@ -8315,19 +7049,10 @@ map_locals:
 - match: ^https?:\/\/api\.petkit\.cn\/6\/\/device\/relatedProductsInfo
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.nj\.nbtv\.cn\/v\d\/common\/system-boot-inform\/detail
+- match: (?:^https?:\/\/api\.nj\.nbtv\.cn\/v\d\/common\/system-boot-inform\/detail)|(?:^https?:\/\/api\.nj\.nbtv\.cn\/v2\/advertise\/advertise-r1\/get-list\?data=u8obKDIrIWt2NR9wBuMwQ5O61eEsP)
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.nj\.nbtv\.cn\/v2\/advertise\/advertise-r1\/get-list\?data=u8obKDIrIWt2NR9wBuMwQ5O61eEsP
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/popupDialogFacade\/popupDialogList
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/bannerFacade\/app\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/appHomeFacade\/getNewUserPlateActivity
+- match: (?:^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/popupDialogFacade\/popupDialogList)|(?:^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/bannerFacade\/app\/list)|(?:^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/appHomeFacade\/getNewUserPlateActivity)
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.msn\.com\/weather
@@ -8342,19 +7067,13 @@ map_locals:
 - match: ^https?:\/\/api\.medlive\.cn\/promotion-api/adlist
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash)
+- match: (?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash)|(?:^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash))
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.m\.mi\.com\/v1\/app\/start
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=home_launchConfig
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts)
+- match: (?:^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=home_launchConfig)|(?:^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts))
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.livelab\.com\.cn\/pgc\/advert
@@ -8366,19 +7085,13 @@ map_locals:
 - match: ^https?:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/(resource|banner)
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.kkmh\.com\/v\d\/advertisement\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.kkmh\.com\/v\d\/ad\/show
+- match: (?:^https?:\/\/api\.kkmh\.com\/v\d\/advertisement\/)|(?:^https?:\/\/api\.kkmh\.com\/v\d\/ad\/show)
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.k\.sohu\.com\/api\/news\/adsense
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen
+- match: (?:^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/)|(?:^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen)
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.ireaderm\.net\/activity\/(ad|popup\/info)
@@ -8390,16 +7103,10 @@ map_locals:
 - match: ^https?:\/\/api\.indeedpower\.com\/v1\/m\/edu\/module\/homepage_banner\/\?randomStr
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=
+- match: (?:^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid=)|(?:^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid=
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog
+- match: (?:^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list)|(?:^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog)
   status_code: 200
   body: ''
 - match: ^https?:\/\/api\.gongkaoleida\.com\/api\/v2\/ad\/info
@@ -8411,10 +7118,7 @@ map_locals:
 - match: ^https?:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.futunn\.com\/v2\/optimus\/my-homepage-config
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.futunn\.com\/v2\/config\/promote-config
+- match: (?:^https?:\/\/api\.futunn\.com\/v2\/optimus\/my-homepage-config)|(?:^https?:\/\/api\.futunn\.com\/v2\/config\/promote-config)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.futunn\.com\/(v\d\/)?ad\/
@@ -8450,13 +7154,7 @@ map_locals:
 - match: ^https?:\/\/api\.caiyunapp\.com\/v1\/activity
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/api\.bwton\.com\/bff\/app\/index\/recommend
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.bwton\.com\/bff\/app\/index\/goods
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.bwton\.com\/bff\/app\/h5\/v1\/station\/goods
+- match: (?:^https?:\/\/api\.bwton\.com\/bff\/app\/index\/recommend)|(?:^https?:\/\/api\.bwton\.com\/bff\/app\/index\/goods)|(?:^https?:\/\/api\.bwton\.com\/bff\/app\/h5\/v1\/station\/goods)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.bwton\.com\/bas\/ad
@@ -8474,13 +7172,7 @@ map_locals:
 - match: ^https?:\/\/api\.ahmobile\.cn:443\/eip\?eip_serv_id=app\.getAllNew
   status_code: 200
   body: ''
-- match: ^https?:\/\/api\.51credit\.com\/ks\/a\/list\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.51credit\.com\/bbs\/app\/api\/v\d\/topic\/chat
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api\.51credit\.com\/app\/popup\/appPopup
+- match: (?:^https?:\/\/api\.51credit\.com\/ks\/a\/list\?)|(?:^https?:\/\/api\.51credit\.com\/bbs\/app\/api\/v\d\/topic\/chat)|(?:^https?:\/\/api\.51credit\.com\/app\/popup\/appPopup)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api\.00bang\.cn\/llb\/baseinfo\/advertise\/getAdvertiseByPageCode
@@ -8513,19 +7205,7 @@ map_locals:
 - match: ^https?:\/\/api-shoulei-ssl\.xunlei\.com\/flowhub\/v\d\/slots:batchGet
   status_code: 200
   body: ''
-- match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData
+- match: (?:^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods)|(?:^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool)|(?:^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query)|(?:^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo)|(?:^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get)
@@ -8663,16 +7343,7 @@ map_locals:
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.render\.querysinglepage
   status_code: 200
   body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict)
+- match: (?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict))
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/
@@ -8681,31 +7352,13 @@ map_locals:
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query.*etao_splash
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get
+- match: (?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query.*etao_splash)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get)
   status_code: 200
   body: ''
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.mos\.app\.homepage\.launch
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/
+- match: (?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.mos\.app\.homepage\.launch)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash)|(?:^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/)
   status_code: 200
   body: ''
 - match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
@@ -8723,13 +7376,7 @@ map_locals:
 - match: ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage
   status_code: 200
   body: ''
-- match: ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend
+- match: (?:^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity)|(?:^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice)|(?:^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend)
   status_code: 200
   body: '{}'
 - match: ^https?:\/\/a\.sinopecsales\.com\/app\/cms
@@ -8741,58 +7388,16 @@ map_locals:
 - match: ^https?:\/\/\w+?\.kingsoft-office-service\.com\/ad
   status_code: 200
   body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/v\d+\/stateReport
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/data\/native\/matrix_switches
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/user\/teenager\/status
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\/recommend_info\?
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/guide\/home_guide
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/(tag\/)?ads
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/httpdns
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/gslb
+- match: (?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/v\d+\/stateReport)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/data\/native\/matrix_switches)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/user\/teenager\/status)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\/recommend_info\?)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/guide\/home_guide)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/(tag\/)?ads)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/httpdns)|(?:^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/gslb)
   status_code: 200
   body: ''
 - match: ^https?:\/\/[a-z]+\.eastmoney\.com\/infoService\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge
+- match: (?:^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.alimama\.abyss\.unionpage\.get)
   status_code: 200
   body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.alimama\.abyss\.unionpage\.get
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow\.cn
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?!.*_home)
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.v\d+\.bottom\.area
+- match: (?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow\.cn)|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?!.*_home))|(?:^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.v\d+\.bottom\.area)
   status_code: 200
   body: ''
 - match: ^https?:\/\/[a-zA-Z0-9_-]+\.weathercn\.com\/(.*bypage|appindexicon)
@@ -8816,10 +7421,7 @@ map_locals:
 - match: ^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/splash\/
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/app\/activity\/
+- match: (?:^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/splash\/)|(?:^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/app\/activity\/)
   status_code: 200
   body: ''
 - match: ^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement
@@ -8870,10 +7472,7 @@ map_locals:
 - match: ^https?:\/\/.*zhangyuyidong\.cn\/api\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/.*yuanfudao\.com\/leo-mis\/iphone\/splashes
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/.*yuanfudao\.com\/iphone\/splashes
+- match: (?:^https?:\/\/.*yuanfudao\.com\/leo-mis\/iphone\/splashes)|(?:^https?:\/\/.*yuanfudao\.com\/iphone\/splashes)
   status_code: 200
   body: ''
 - match: ^https?:\/\/.*ubixioe\.com\/mob\/sdk\/v\d\/endpoint
@@ -8885,10 +7484,7 @@ map_locals:
 - match: ^https?:\/\/.*mting\.info\/advert\/ClientAdvertList\.action
   status_code: 200
   body: ''
-- match: ^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=advis
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/.*flyert.*\/api\/mobile\/index\.php\?module=advis
+- match: (?:^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=advis)|(?:^https?:\/\/.*flyert.*\/api\/mobile\/index\.php\?module=advis)
   status_code: 200
   body: ''
 - match: ^https?:\/\/.*fenbi\.com\/(activity\/app\/launcher|app\/iphone\/nxs\/popup)
@@ -8909,19 +7505,10 @@ map_locals:
 - match: ^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture)
   status_code: 200
   body: ''
-- match: ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather
+- match: (?:^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather)|(?:^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend)|(?:^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\?)
   status_code: 200
   body: '{}'
-- match: ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\?
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen
+- match: (?:^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information)|(?:^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen)
   status_code: 200
   body: ''
 - match: ^https?:\/\/.*\.amap\.com\/v\d\/ai_rec\/
@@ -8957,10 +7544,7 @@ map_locals:
 - match: ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/
   status_code: 200
   body: ''
-- match: ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/
-  status_code: 200
-  body: '{}'
-- match: ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition
+- match: (?:^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/)|(?:^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition)
   status_code: 200
   body: '{}'
 - match: ^https?://www\.xiaohongshu\.com/api/sns/v\d/(tag/)?ads
@@ -8984,16 +7568,7 @@ map_locals:
 - match: ^https?://m\d\.amap\.com/ws/valueadded/alimama/splash_screen?
   status_code: 200
   body: ''
-- match: ^https?://m\d\.amap\.com/ws/shield/(scene/recommend|search/new_hotword)\?
-  status_code: 200
-  body: '{}'
-- match: ^https?://m\d\.amap\.com/ws/message/notice/list\?
-  status_code: 200
-  body: '{}'
-- match: ^https?://m\d\.amap\.com/ws/mapapi/hint_text/offline_data\?
-  status_code: 200
-  body: '{}'
-- match: ^https?://m\d\.amap\.com/ws/faas/amap-navigation/main-page-(assets|location)\?
+- match: (?:^https?://m\d\.amap\.com/ws/shield/(scene/recommend|search/new_hotword)\?)|(?:^https?://m\d\.amap\.com/ws/message/notice/list\?)|(?:^https?://m\d\.amap\.com/ws/mapapi/hint_text/offline_data\?)|(?:^https?://m\d\.amap\.com/ws/faas/amap-navigation/main-page-(assets|location)\?)
   status_code: 200
   body: '{}'
 - match: ^https?://live-ads\.huya\.com/live/getAllEntrance.*$
@@ -9017,10 +7592,7 @@ map_locals:
 - match: ^https?://esdk\.tymcdn\.com/dbGold/m/v2/mobileLiveReveal\.do\?
   status_code: 200
   body: '{}'
-- match: ^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/splash_config
-  status_code: 200
-  body: ''
-- match: ^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/config\?
+- match: (?:^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/splash_config)|(?:^https?://edith\.xiaohongshu\.com/api/sns/v\d/system_service/config\?)
   status_code: 200
   body: ''
 - match: ^https?://cn-acs\.m\.cainiao\.com/gw/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn/
@@ -9041,19 +7613,7 @@ map_locals:
 - match: ^https?://advertise\.bczeducation\.cn\/rpc\/advertise
   status_code: 200
   body: ''
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)/
-  status_code: 200
-  body: ''
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash
-  status_code: 200
-  body: ''
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.damai\.wireless\.home\.welcome/
-  status_code: 200
-  body: ''
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise
-  status_code: 200
-  body: ''
-- match: ^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv/
+- match: (?:^https?://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)/)|(?:^https?://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash)|(?:^https?://acs\.m\.taobao\.com/gw/mtop\.damai\.wireless\.home\.welcome/)|(?:^https?://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise)|(?:^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv/)
   status_code: 200
   body: ''
 - match: ^https?://.+?\.ott\.cibntv\.net/[\w/-]+.mp4\?sid=
@@ -9083,10 +7643,7 @@ map_locals:
 - match: ^https:\/\/web2\.realtech-inc\.com\/oss\/xc-app-assets\/configs\/common\/theme\.json
   status_code: 200
   body: '{}'
-- match: ^https:\/\/vapp\.tmuyun\.com\/api\/buoy\/list
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new
+- match: (?:^https:\/\/vapp\.tmuyun\.com\/api\/buoy\/list)|(?:^https:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/userpms-api\.suh\.cn\/apt\/api\/bannar\/PageList\?sysSearchKey=sysPat&showSearchKey=advertising&pageIndex=1&pagesize=100&lanSearchValue=1&locationSearchKey=&status=1&
@@ -9095,13 +7652,7 @@ map_locals:
 - match: ^https:\/\/us\.l\.qq\.com\/exapp\?spsa=\d
   status_code: 200
   body: ''
-- match: ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend
+- match: (?:^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen)|(?:^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist)|(?:^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/stock\.xueqiu\.com\/v5\/stock\/group\/recommend\/default\/list\.json
@@ -9110,10 +7661,7 @@ map_locals:
 - match: ^https:\/\/status\.boohee\.com\/api\/v1\/merged_messages$
   status_code: 200
   body: '{}'
-- match: ^https:\/\/spamblocker-api\.zeekstudio\.com\/profile
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion
+- match: (?:^https:\/\/spamblocker-api\.zeekstudio\.com\/profile)|(?:^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/se-api\.djiits\.com\/api\/components\/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN
@@ -9134,19 +7682,13 @@ map_locals:
 - match: ^https:\/\/patient-api\.suh\.cn\/apt\/api\/userinfo\/GetNotice\?appname=pmsys&channel=6&device=ios&language=1&source=2&version=
   status_code: 200
   body: '{}'
-- match: ^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169)
+- match: (?:^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/)|(?:^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169))
   status_code: 200
   body: '{}'
 - match: ^https:\/\/order-app-api\.lbdj\.com\/lbdj\/apporder\/ad\/
   status_code: 200
   body: '{}'
-- match: ^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+home_visitor_relation_config
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+cube_detail_bottom_operation_trade_button
+- match: (?:^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+home_visitor_relation_config)|(?:^https:\/\/open\.xueqiu\.com\/mpaas\/config\/content\?.+cube_detail_bottom_operation_trade_button)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ
@@ -9173,13 +7715,7 @@ map_locals:
 - match: ^https:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg
   status_code: 200
   body: ''
-- match: ^https:\/\/mgesq\.api\.mgtv\.com\/v2\/goods\/guess_you_like
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/mgesq\.api\.mgtv\.com\/user\/center\/config
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/mgesq\.api\.mgtv\.com\/search\/goods\/rank
+- match: (?:^https:\/\/mgesq\.api\.mgtv\.com\/v2\/goods\/guess_you_like)|(?:^https:\/\/mgesq\.api\.mgtv\.com\/user\/center\/config)|(?:^https:\/\/mgesq\.api\.mgtv\.com\/search\/goods\/rank)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle
@@ -9194,37 +7730,16 @@ map_locals:
 - match: ^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/queryMyPagePopup
   status_code: 200
   body: '{}'
-- match: ^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/tabAct
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/mine
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/ads
+- match: (?:^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/tabAct)|(?:^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/mine)|(?:^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/ads)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif
   status_code: 200
   body: ''
-- match: ^https:\/\/j1\.pupuapi\.com\/client\/recommendation\/hub\/interests\/products\/v2
+- match: (?:^https:\/\/j1\.pupuapi\.com\/client\/recommendation\/hub\/interests\/products\/v2)|(?:^https:\/\/j1\.pupuapi\.com\/client\/member_card\/premium\/user_center)|(?:^https:\/\/j1\.pupuapi\.com\/client\/marketing\/channel\/global_redeem\/top_tip\/v2)|(?:^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/search_input_ranking)|(?:^https:\/\/j1\.pupuapi\.com\/client\/assets\/discount\/order)
   status_code: 200
   body: '{}'
-- match: ^https:\/\/j1\.pupuapi\.com\/client\/member_card\/premium\/user_center
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/j1\.pupuapi\.com\/client\/marketing\/channel\/global_redeem\/top_tip\/v2
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/search_input_ranking
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/j1\.pupuapi\.com\/client\/assets\/discount\/order
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/interface\.hstong\.com\/pdp\/ad\/images\/v2
-  status_code: 200
-  body: ''
-- match: ^https:\/\/interface\.hstong\.com\/ad\/images\/v2
+- match: (?:^https:\/\/interface\.hstong\.com\/pdp\/ad\/images\/v2)|(?:^https:\/\/interface\.hstong\.com\/ad\/images\/v2)
   status_code: 200
   body: ''
 - match: ^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0
@@ -9236,19 +7751,10 @@ map_locals:
 - match: ^https:\/\/gw\.chuangkit\.com\/team\/app\/common\/ad\/
   status_code: 200
   body: '{}'
-- match: ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig
+- match: (?:^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig)|(?:^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest)|(?:^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams)
   status_code: 200
   body: '{}'
-- match: ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad
+- match: (?:^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get))|(?:^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/gateway\.benewtech\.cn\/resources-app\/app\/startup\/prepage
@@ -9284,10 +7790,7 @@ map_locals:
 - match: ^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\?
   status_code: 200
   body: '{}'
-- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/
+- match: (?:^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\?)|(?:^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/assets\.msn\.com\/service\/news\/feed\/pages\/startmhp
@@ -9308,67 +7811,10 @@ map_locals:
 - match: ^https:\/\/app\.api\.versa-ai\.com\/launch\/ads\?
   status_code: 200
   body: ''
-- match: ^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation
+- match: (?:^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation)|(?:^https:\/\/api\.zhihu\.com\/search\/preset_words)|(?:^https:\/\/api\.zhihu\.com\/root\/window)|(?:^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?)|(?:^https:\/\/api\.zhihu\.com\/me\/guides)|(?:^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\?)|(?:^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings)|(?:^https:\/\/api\.zhihu\.com\/commercial_api\/(answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2))|(?:^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers)|(?:^https:\/\/api\.zhihu\.com\/ad-style-service\/request)|(?:^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list))|(?:^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2))
   status_code: 200
   body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/search\/preset_words
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/root\/window
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/me\/guides
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/commercial_api\/(answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2)
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/ad-style-service\/request
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list)
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2)
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/ucprofile\/api\/user\/batchGetUserBasicInfo\.json
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&location=0&model=6&page=4
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&location=0&model=1&page=(4|6)
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&height=932
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/zj_card\.json\?feed_id=207
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/portfolio_tab_symbol\.json
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/livestream\/structure\/live\/hotCard\.json
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/lightsnow\/optional\/banner\/query\.json
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.xueqiu\.com\/lightsnow\/launch\/plan\/bee\/query\.json\?channel=1&ip_label=&label_json=.+new_customer=1
+- match: (?:^https:\/\/api\.xueqiu\.com\/ucprofile\/api\/user\/batchGetUserBasicInfo\.json)|(?:^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&location=0&model=6&page=4)|(?:^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&location=0&model=1&page=(4|6))|(?:^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\?channel=1&height=932)|(?:^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/zj_card\.json\?feed_id=207)|(?:^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/portfolio_tab_symbol\.json)|(?:^https:\/\/api\.xueqiu\.com\/livestream\/structure\/live\/hotCard\.json)|(?:^https:\/\/api\.xueqiu\.com\/lightsnow\/optional\/banner\/query\.json)|(?:^https:\/\/api\.xueqiu\.com\/lightsnow\/launch\/plan\/bee\/query\.json\?channel=1&ip_label=&label_json=.+new_customer=1)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/api\.xiachufang\.com\/v\d\/ad/
@@ -9377,13 +7823,7 @@ map_locals:
 - match: ^https:\/\/api\.sfacg\.com\/ioscfg
   status_code: 200
   body: ''
-- match: ^https:\/\/api\.huachenjie\.com\/run-front\/home\/sports\/getPopup
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.huachenjie\.com\/run-front\/ai\/getAICategory
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.huachenjie\.com\/run-front\/ad
+- match: (?:^https:\/\/api\.huachenjie\.com\/run-front\/home\/sports\/getPopup)|(?:^https:\/\/api\.huachenjie\.com\/run-front\/ai\/getAICategory)|(?:^https:\/\/api\.huachenjie\.com\/run-front\/ad)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo
@@ -9392,16 +7832,7 @@ map_locals:
 - match: ^https:\/\/api\.flydigi\.com\/android\/v2\/ad
   status_code: 200
   body: '{}'
-- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?
+- match: (?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\?)|(?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\?)|(?:^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\?)|(?:^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\?)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders
@@ -9416,55 +7847,16 @@ map_locals:
 - match: ^https:\/\/ads\.ysepay\.com\/ads\/ctrl\/getAdvertisingInfo
   status_code: 200
   body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources
+- match: (?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get)
   status_code: 200
   body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.availablesplashstrategies
+- match: (?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.availablesplashstrategies)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource)
   status_code: 200
   body: ''
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource
-  status_code: 200
-  body: ''
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict)
+- match: (?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict))|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise)|(?:^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv)
   status_code: 200
   body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/1\.0
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/2\.0
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/1\.0
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/1\.0
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds
+- match: (?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/1\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/2\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/1\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/1\.0)|(?:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/abcapi\.lenovoimage\.com\/v1\/promote\/startup
@@ -9476,49 +7868,13 @@ map_locals:
 - match: ^https:\/\/(m|mwsa)\.ximalaya\.com\/x-web-activity\/signIn\/getHomePageSignInInfo\/
   status_code: 200
   body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/firework-portal\/v\d+\/sync\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/discovery-feed\/v\d\/scene\/listen\/refresh\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/business-sale-promotion-guide-mobile-web\/popup\/
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/
+- match: (?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\?)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/firework-portal\/v\d+\/sync\?)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/discovery-feed\/v\d\/scene\/listen\/refresh\?)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/business-sale-promotion-guide-mobile-web\/popup\/)|(?:^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/(live|livewsa)\.ximalaya\.com\/lamia\/v1\/subscribe\/status$
   status_code: 200
   body: '{}'
-- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\?
-  status_code: 200
-  body: '{}'
-- match: ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
+- match: (?:^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?)|(?:^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\?)|(?:^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?)
   status_code: 200
   body: '{}'
 - match: ^https:\/\/(?:gmp|wallet)\.lakala\.com\/(?:gmp\/openapi\/v2\/resource_space\/getResourceSpace|m\/(?:a\/lama\/mgt\/activity\/biz\/query\/byMerInfo|lama\/mgt\/activity\/(?:bank|biz)\/query\/list))
@@ -9533,10 +7889,7 @@ map_locals:
 - match: ^https://mapi.mafengwo.cn\/ad\/get_launch_ad_list\/v2
   status_code: 200
   body: ''
-- match: ^https://api.xiaoyi.com\/v5\/app\/mobile\/ads
-  status_code: 200
-  body: ''
-- match: ^https://api.xiaoyi.com\/v5\/app\/config\?userid=.*
+- match: (?:^https://api.xiaoyi.com\/v5\/app\/mobile\/ads)|(?:^https://api.xiaoyi.com\/v5\/app\/config\?userid=.*)
   status_code: 200
   body: ''
 - match: ^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh

@@ -16,7 +16,11 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https:\/\/common\.seeyouyima\.com\/v2\/conf_list$
-    filter: delpaths([["data","confList","Minor_mode_card"]])
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndelpaths([[\"data\",\"confList\",\"\
+      Minor_mode_card\"]])\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 mitm:
   hostnames:
   - circle.seeyouyima.com

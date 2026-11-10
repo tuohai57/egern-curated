@@ -5,19 +5,26 @@ import fnmatch,hashlib,json,re,shutil,subprocess,sys,tempfile
 ROOT=Path(__file__).resolve().parents[2]
 if (ROOT.parent/'.vendor').exists():sys.path.insert(0,str(ROOT.parent/'.vendor'))
 import yaml
+from adblock_collection import JQ_GUARD_MARKER
 
 def main():
     manifest=json.loads((ROOT/'curated/module-stack/merged-manifest.json').read_text(encoding='utf-8'))
     path=ROOT/manifest['repository_path'];raw=path.read_bytes()
     assert hashlib.sha256(raw).hexdigest()==manifest['sha256']
-    obj=yaml.safe_load(raw);expressions=set();scripts=set();patterns=set()
+    obj=yaml.safe_load(raw);expressions=set();scripts=set();patterns=set();guarded_bindings=0
     for section,count in manifest['counts'].items():
         assert len(obj.get(section,[]))==count,section
         for entry in obj.get(section,[]):
             fields=entry if section in {'map_locals','url_rewrites'} else next(iter(entry.values()))
             assert not fields.get('disabled'),'Disabled operation leaked into aggregate'
             if fields.get('match') and section!='rules':patterns.add(fields['match'])
-            if fields.get('filter'):expressions.add(fields['filter'])
+            if fields.get('filter'):
+                expressions.add(fields['filter'])
+                if section=='body_rewrites':
+                    phase=next(iter(entry))
+                    if phase in {'request_jq','response_jq'}:
+                        assert JQ_GUARD_MARKER in fields['filter'],'Missing JSON transform failure guard'
+                        guarded_bindings+=1
             if fields.get('script_url'):scripts.add(fields['script_url'])
     for pattern in patterns:re.compile(pattern)
     for source in manifest['included_sources']:
@@ -51,7 +58,8 @@ def main():
     with ThreadPoolExecutor(max_workers=5) as pool:list(pool.map(check_js,sorted(scripts)))
     result={'passed':True,'aggregate_sha256':manifest['sha256'],'included_sources':len(manifest['included_sources']),
             'counts':manifest['counts'],'mitm_hosts':manifest['mitm_hosts'],'unique_regexes':len(patterns),
-            'jq_compiled':len(expressions),'javascript_syntax_checked':len(scripts),'upstream_javascript_executed':False,
+            'jq_compiled':len(expressions),'jq_bindings_with_input_failure_guards':guarded_bindings,
+            'javascript_syntax_checked':len(scripts),'upstream_javascript_executed':False,
             'runtime_verified':False,'meaning':'Source integrity and syntax; arbitrary regex overlaps and actual iOS behavior are not proven.'}
     (ROOT/'curated/module-stack/collection-checks.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,ensure_ascii=False))

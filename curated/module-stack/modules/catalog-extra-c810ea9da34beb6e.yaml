@@ -24,27 +24,12 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get
+- match: (?:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get)|(?:^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config)
   status_code: 200
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/mine\/business_config
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId
+- match: (?:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId)|(?:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/fetchButtonInfo\?buttonConfigId)|(?:^https:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId)
   status_code: 200
   body: '{}'
   headers:
@@ -64,12 +49,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list
+- match: (?:^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/banner_tip_list)|(?:^https:\/\/(cdn-)?pay\.kkmh\.com\/v\d\/vip\/charge_tip_list)
   status_code: 200
   body: '{}'
   headers:

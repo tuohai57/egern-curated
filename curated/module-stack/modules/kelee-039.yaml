@@ -10,9 +10,17 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/conf-m-ssl\.xunlei\.com\/external\/
-    filter: (delpaths([["values", "me_config", "entrance_list_vertical_enable"], ["values",
-      "me_config", "common_service_list"], ["values", "me_config", "banner_service_list"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"values\", \"me_config\"\
+      , \"entrance_list_vertical_enable\"], [\"values\", \"me_config\", \"common_service_list\"\
+      ], [\"values\", \"me_config\", \"banner_service_list\"]]))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api-shoulei-ssl\.xunlei\.com\/flowhub\/v1\/slots:batchGet$
-    filter: (.slots |= map(select(.id == "xl_ios_mytab_vipicon" or (.native.assets.title.text.value?
-      and (.native.assets.title.text.value | . == "清理助手" or . == "云盘容量" or . == "远程设备")))))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.slots |= map(select(.id == \"xl_ios_mytab_vipicon\"\
+      \ or (.native.assets.title.text.value? and (.native.assets.title.text.value\
+      \ | . == \"清理助手\" or . == \"云盘容量\" or . == \"远程设备\")))))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"

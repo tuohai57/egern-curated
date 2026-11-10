@@ -6,37 +6,20 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/userapi\.qiekj\.com\/local-life\/tab-order$
-    filter: if (getpath([]) | has("data")) then (setpath(["data"]; [])) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([]) | has(\"data\")) then\
+      \ (setpath([\"data\"]; [])) else . end\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/userapi\.qiekj\.com\/integralGoods\/queryIntegralGoodsCategoryList$
-    filter: if (getpath([]) | has("data")) then (setpath(["data"]; [])) else . end
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif (getpath([]) | has(\"data\")) then\
+      \ (setpath([\"data\"]; [])) else . end\n) ]) as $__egern_results\n       | if\
+      \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/userapi\.qiekj\.com\/slot\/get$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/userapi\.qiekj\.com\/appTitle\/get$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/userapi\.qiekj\.com\/integralRecord\/integralDailStatistics$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/userapi\.qiekj\.com\/local-life\/category$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/userapi\.qiekj\.com\/integralGoods\/queryIntegralGoodsPage$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/userapi\.qiekj\.com\/task\/list$
+- match: (?:^https:\/\/userapi\.qiekj\.com\/slot\/get$)|(?:^https:\/\/userapi\.qiekj\.com\/appTitle\/get$)|(?:^https:\/\/userapi\.qiekj\.com\/integralRecord\/integralDailStatistics$)|(?:^https:\/\/userapi\.qiekj\.com\/local-life\/category$)|(?:^https:\/\/userapi\.qiekj\.com\/integralGoods\/queryIntegralGoodsPage$)|(?:^https:\/\/userapi\.qiekj\.com\/task\/list$)
   status_code: 200
   body: '{}'
   headers:

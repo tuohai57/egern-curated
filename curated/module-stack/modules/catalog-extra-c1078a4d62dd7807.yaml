@@ -8,12 +8,7 @@ rules:
     match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/app\/theme\/device\/icon\?
     policy: REJECT
 map_locals:
-- match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$
+- match: (?:^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$)|(?:^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$)
   status_code: 200
   body: '{}'
   headers:

@@ -16,18 +16,31 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/app\.5eplay\.com\/api\/app\/dync_config\?
-    filter: (delpaths([["data", "function_configs", "startup_ad_switch"], ["data",
-      "function_configs", "startup_ad_timeout"], ["data", "function_configs", "startup_ad_day_max"],
-      ["data", "function_configs", "app_bar_guide_width"], ["data", "function_configs",
-      "app_bar_guide_height"], ["data", "function_configs", "app_bar_guide_url"],
-      ["data", "function_configs", "app_bar_guide_time"], ["data", "function_configs",
-      "home_tab_event_tag"], ["data", "function_configs", "home_tab_event_tag_ext"],
-      ["data", "function_configs", "home_tab_player_tag"], ["data", "function_configs",
-      "home_tab_player_tag_ext"], ["data", "function_configs", "task_center_entrance"],
-      ["data", "function_configs", "store_go"], ["data", "function_configs", "wall_closed"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"function_configs\"\
+      , \"startup_ad_switch\"], [\"data\", \"function_configs\", \"startup_ad_timeout\"\
+      ], [\"data\", \"function_configs\", \"startup_ad_day_max\"], [\"data\", \"function_configs\"\
+      , \"app_bar_guide_width\"], [\"data\", \"function_configs\", \"app_bar_guide_height\"\
+      ], [\"data\", \"function_configs\", \"app_bar_guide_url\"], [\"data\", \"function_configs\"\
+      , \"app_bar_guide_time\"], [\"data\", \"function_configs\", \"home_tab_event_tag\"\
+      ], [\"data\", \"function_configs\", \"home_tab_event_tag_ext\"], [\"data\",\
+      \ \"function_configs\", \"home_tab_player_tag\"], [\"data\", \"function_configs\"\
+      , \"home_tab_player_tag_ext\"], [\"data\", \"function_configs\", \"task_center_entrance\"\
+      ], [\"data\", \"function_configs\", \"store_go\"], [\"data\", \"function_configs\"\
+      , \"wall_closed\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.5eplay\.com\/api\/index\/tab_v\d\?category_id=tab_1&page=\d$
-    filter: (delpaths([["data", "float_advertise"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"float_advertise\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/ya-api-app\.5eplay\.com\/v\d\/search\/config$
-    filter: (delpaths([["data", "placeholder"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"placeholder\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

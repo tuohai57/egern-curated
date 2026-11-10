@@ -6,5630 +6,641 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/open-cms-api\.quark\.cn\/open-cms\?
-    filter: '(
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      (
-
-      delpaths([["result","cms_homepage_push_banner_config"]])
-
-      ) | (
-
-      delpaths([["result","cms_as_home_capsule_entry"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_category"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_shortcut"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_appstore_comment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_festival_style_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sK_home_top_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_king_home_tools_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_skills"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_home_options"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_direct_link"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_maizeng_feature_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_buygive_home_modal_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_buygive_documentation_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_lottery_maizeng_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_activity_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_vip_pop_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_vip_pay_modal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camear_vip_retain_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_year_modal_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_lottery_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_lottery_on_off"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_login_dialog_privacy_alert_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_transport_download_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_share_dialog_universal_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pay_give30d_newstyle"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_popup_activity_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_url_panel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_member_page_basic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_product_skin"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_member_center_ai_card"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_app_grade_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_cloud_play_app_grade_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_quality_panel_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_worker_clouddrive_video_cloud_setting"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_transport_video_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_transport_offline_backup_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_normal_space_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_realtime_ai_subtitle_tip_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","vip_half_recharge_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_vipfull_recharge_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_rights_and_interests_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_keep_wangpan_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_action_bar_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_coupon_experiment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_member_coupon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_backup_free_benefit_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_novel_noah_sdk_slot_chapter_middle"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_novel_noah_sdk_slot_bottom_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_novel_noah_sdk_slot_chapter_middle_reward"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_member_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_bookshelf_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_download_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_speaker_page_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_bookstore_top_tab_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_continue_read_tips_limit_per_day"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","novel_paid_book_ad_density_newuser"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_svipup_loop_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_svipup_loopani_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_rocket_ui_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_player_customize_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","video_player_applayer_url_tb_aac"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_reward_advideo_auto_trigger"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_show_pay_before_login"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_nu_card_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_tool_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_file_page_share_backup_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_wenku_doc_activity_tpl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_full_pan_new_year"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_planet_tab_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","h5_ai_studio_past_activity_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_welfare_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_welfare_farm_entry_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_babafarm_gray_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_utoken_direct_jump_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_ios_panel_alipay_coupon_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_share_benefit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bind_phone_fail_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bind_conflict_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_group_helper_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_long_pic_share_operation_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","noah_search_mid_ad_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_input_history_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_push_lead_manage"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_limited_time_free_operating"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_tool_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_utoken_blocking_dialog_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_skip_button_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_offline_common_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_video_player_preview_tips_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_product_price_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","questionscpagebanner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_coupon_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_listen_act_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_product_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_zone_operation_banner_create"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_vip_page_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_pay_detention"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cps_pfc"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucv_cloud_buoy_show_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_novice_gift_strategy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_ios_alipay_coupon_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_transport_offline_topbar_title"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_paisou_video_vip_type"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_ab_vip_year_default"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_homepage_abtest"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_export_pay_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_tools_download_scanking_tips_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","book_bean_info_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_lottery_on_off_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","learning_home_popup_op_test"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_pullactive_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_user_year_sku"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ab_clouddrive_backup_free_share"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_doodle"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_activity_banner_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_keep_modal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_88vip_verify_modal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_compress_pay_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_relate_live_book_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_svip_resolution_toast_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_enable_evo_search_recom_q_start_icon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_tool_history_type_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookstore_home_toolbar_point"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_save_success_toast_ui"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkvip_panel_go_pay_success"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ucv_cloud_video_entry"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_app_act_mgr_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_member_center"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","minipg_ads_whitelist"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_clouddrive_background_lead_visible"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_app_grade_operaion_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_coin_reward_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_quark_learning_logo_deeplink"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_alipay_marketing_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_vip_center_pay_ab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_payment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_bizentry_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_youku_ent"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_novel_notice_dialog"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","airship_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_yxxx_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_enable_cloud_drive_entrance_video"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_home_tool_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookstore_hottab_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_repurchase"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_trial_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","enable_miniframe_prefetch_ad"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_member_skin"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","walle_enable_regist_ecmodel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_smart_toolbox_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_paisou_vip_charges_ab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_zvip_tab_show_full"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_pre_order_on_agreement"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_big_float_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_svipup_enterani_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_history_login_banner_and_bubble_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","clouddrive_backup_benefit_config_album"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_secret_limit_label"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_union_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_booklist"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_panel_coupon_archive"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_spotlight_cms"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkvf_rec_request_inverse_pos"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_question_search_toolbar_op"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_video_player_cloud_toast_show_delay"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_feature_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookmarkAndHistory_banner_ad"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_write_operation_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","novel_ad_flbanner_close"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_ultraman_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","noah_content_embed_ad_hc_vertical_scale_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_home_bubble"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_page_translate_enable_recommend"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_poplayer_main"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_enable_edit_page_recommend_data_opt"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_big_float_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ucv_cloud_playback_operational"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_sign_in_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_coupon_discount_test"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","idfa_auth_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_videoplayer_op_tips"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_buffer_new_tips_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","h5_ai_studio_activity_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_tools_market"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_homepage_bubble_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_keyword_alter_link"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","novel_farm_reader_remain_dialog_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_counter_svipplus_monthly_price"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_scanking_pay_vip_retain_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_glasses_interceptor_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ai_quark_chat_ios_navbar_model_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_toolbar_live_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_invitation_code_panel_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_move_home_navigation_digger_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_deep_souti_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_share_link_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_share_link_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_renewal_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_home_ui_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_health_record_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_share_icon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_search_result_card_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","export_file_tips"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_chat_vertical_instructions"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_diamond_navi_area_multipage"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_picture_long_click_menu"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_aidesign_member_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_svip_member_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_member_center_pay_success_card"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_newux_show_svip_entry_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","clouddrive_backup_benefit_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_reward_trace_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_push_lead_head_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_lottery_checked_goods"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","pay_detainment_stack_bond_styles"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_backup_card_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_url_full"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_ai_guide_setting"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_device_unbackup_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_audio_reward_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_luckin_coupon_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","as_publisher_activity_entry"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_nu_space_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_vipupgrade"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_player_dml_enhance_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_backup_album_guide_control"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_content_type_price_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_reflow_activity_jump_deeplink"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_homepage_searchbar_left_btn_lottie"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_welfare_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","paisou_benefit_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_price_not_use"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_share_detail_space_overrun_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","scan_svip_first_buy_pop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_asr_equity_h5_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_djtest_choujiang"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_file_page_close_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_bucha"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_subscribre_renew_modal_experimental"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_collect_fast_save_title"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_vip_full_page_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_border_poster"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_svipplus_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qurak_clouddrive_full_page_exit_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","copy_ab_clouddrive_nu_unzip_try"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_scan_card_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_video_privilege_panel_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mobile_binding_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_auto_buy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_reward_video_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_clouddrive_vip_extra_pay_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","gaokao_zhiyuan_export_svip"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_enable_new_pay_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_resolution_toast_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_djtest_tianmao"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_product_activity_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_activity_id"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_user_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_paisou_ab_video_free_times"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pay_full_page_first_modal_month"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","video_cloud_play_normal_loading_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_venue_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_wenku_vip_pop_experiment"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_zone_operation_banner_creat"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_pdf_image_pay_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","appworker_offline_config_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_intelligent_protect_tip_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_appstore_comment_native_item"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_recommend_hot_search_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_pay_scene_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_dialog_header"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_user_agreement_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","minipg_ads_switch_quark"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_member_center_header"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","gaokao_nu_vip_grant"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_vip_product_price_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_free_ad_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_matrix_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_navi_shortcuts_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","novel_farm_welfare_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","as_home_idea_card_img_static"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_res_trial_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","copy_ab_bookcity_feed"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_space_growth"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_year_more_coupon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_pdflimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mini_login_panel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ucv_cloud_drive_video_entry_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_right_fixed_resolution_list_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_coin_read_task_idle_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucv_cloud_buoy_start_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_custom_module_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_menu_header_top"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_home_vip_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_assets_membership_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_reader_insert_page_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_paisou_vip_charges"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pay_modal_down_taobao"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_top_bo_taobao_not_aac_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_file_tree_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_msfugou"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_miaosha_c_test"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_2sku"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","not_in_use_jiasuquan"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_common_page_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_nvp_cloud_welcome_ui"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_cloud_paytypes_expect_zvip"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_toolbar_baby"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_share_notification_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ipad_lead"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","aidesign_svip_member_center"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_superposition_ticket"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_clouddrive_aigc_pic_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_ios_alipay"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_bookstore_rankpage_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_file_page_clean_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_post_share_code"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_feed_bubble_in_home_page_bottom"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_operate_widget"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sm_ad_request_handle_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_asr_main_activity_window"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_download_entry_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_member_rights"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_content_type_price_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qkscan_member_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_correction_recommend_modal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_none_space_control_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_backup_free_space_benefit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_annual_repurchase_coupon"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_study_enable_new_vip_pay_component"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_pay_strategy_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_player_av_quailty_88vip_uselimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_member_pay_qa"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","novel_ad_space_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_idphoto_show_cloud_print"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark-countdown-2025"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_sug_card"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_home_tool_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_zvip_tab_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_Login_guide_encomcor"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_price"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_ab_vip_pay_combo"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_savetonum"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_tool_set_pic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_page_export_recom_tips_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_cuxiao"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_duguang_freetrial"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_study_bubble_booklist"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_add_operation_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_hot_search_type"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_year_goods_ctrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_ai_tool_recommend_word_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_bookstore_tab_blue_dot_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_toast_save_click_return"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_djtest_zc"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_navigation_olduser"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_zvip_pay_update_operation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_picmode_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_pdf_office_pay_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pay_panel_video_banner_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","vip_half_experience_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_share_subtitle"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_anniversary_2023_main"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_paint_free_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkvip_go_pay_success"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_miaosha_test"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_max_menu_widgets_center_guide_dis_times"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_dongfeng_common_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_djtest_shougou"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_feedback_lottery_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","duguang_word_2sku"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_vip_index_state"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_business_operation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_content_type_price_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_tools_navi_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_agent_list_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_navigation_alter"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mobilize_external_app_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_comic_video_home_page_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_homepage_ai_tool_dynamic_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_chat_default_welcome"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_cloud_tool"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_intelligence_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_transport_header_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_alltools_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_ai_image_genneration"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_download_scanking_app_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_welfare_farm_new_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_member_center_bannerList"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_my_list_part_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_audio_tree_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_ai_scholarship_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_teachers_day_goods_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_ai_chat_with_uvlckfargcmaqryx_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ai_camera_wjk_act"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_share_bookmark_black_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navisync_blacklist"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_page_print_pdf_render_allow_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_detect_t0_js"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","noah_search_mid_page_ad_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_novel_noah_sdk_chapter_middle_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_thread_speed_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_member_panel_header_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_none_space_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_chat_enable_alg_recommend_paa"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_study_home_cards_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_navigation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","test_zhifubao_miaosha"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_video_upload_vip_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_alltools_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_share_pc_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_export_frombiz_homeurl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bind_conflict_guide_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_bilingual_comparison_page_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_table_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sgi_search_web_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_home_novel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","picture_editor_entrance"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_pc_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_creator_tabs"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_tips_dialog"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_user_center_login_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ai_generate_bar_global_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_offline_save_trace_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_search_entry_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_toolbar_lottie"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_trytab_default"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_homepage_navigation_ai_tool_config_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_modify_operation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_video_resolution_download_select"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_download_play_video_replace"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","as_cut_option_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_assets_editor_ocr_page_url_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pan_stay"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sniffer_float_view_action_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_common_prefetch_proxy_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_document_pdf_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_unsupport_book_tips"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_message_landing_page_key"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_client_verify_time_stamp_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_editor_lottie_res"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_anniversary_modal_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_clouddrive_nologin_header"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sgi_web_window_pars_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_shortcut_game_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_translate_view_time_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_app_monitor_event_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","system_short_web_middlware_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_shelf_pre_load"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_drive_first_screen_monthly_popup_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sniff_compliance_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_bookstore_homepage_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_intercept_switch_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_reader_user_no_ad_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_publish_success_jump"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sgi_container_pars_config_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_ai_chat_with__config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_nvp_dolby_vision_black_fmt"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_novel_livebg_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_login_bind_phone"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_input_hint"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","enable_url_security_sign"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_word_use_app_state"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_clean_backup_dump_file_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_appllo_peload_wwan_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_reader_nav_search_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_backup_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","web_perf_whitescreen_detechtime"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_sniffer_ui_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_aivqa_history_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","study_camera_correct_sample_list_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","vc_transcode_video_playlet_ctrl"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_asr_feedback_group_num"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","voice_speech_abtest"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_ai_writer_config_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_chat_enable_welcome_recommend_paa"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_empty_tingji_realtime"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_aicam_upload_in_ahead"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_verify_itms_service_link_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucdc_probe_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_float_view"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","unet_tcp_socket_send_buffer_hosts"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_subtab_default_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","test_for_platform_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","quark_study_xuanfuchuangsouti_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","short_cut_new_covid_news"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_enable_quarkbaby_hint"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_enable_study_main_page_open_itcp"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_referer"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_planet_detail_native"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","uccv_episode_autoplay_preload"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_tts_speaker_default"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_debug_task_name"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_cutting_on_cloud"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_word_enbale_demand_ocr"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_delete_download_directly_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","apollo_cloud_play_race_speed_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","no_effect_quarkcd_paixu5"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_sandbox_scan_max_dir_maxDirHierarchy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_studio_tem_h5_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_dl_low_speed_detect_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sgi_search_perfetch_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_asr_manaual_stream_stop"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_auto_translate_tip_display_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookmark_prefetch_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","miracast_start_pos_impl_on_sdk"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_link_long_click_menu"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_load_stat_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_tool_history_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_common_prefetch_white_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_backup_invalid_record_clear"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_idphoto_filters"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_show_loading_toast_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_djtest_cms_player_top_bo_taobao_not_aac_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","general_search_user_research_survey"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","video_player_appworker_host_black_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","nvp_ai_vision_use_mode"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_universal_use_app_state_data"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_page_navi_editor_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","u_vsibkre"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_enable_flutter_scanking_photo_sniffer"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qk_player_disable_apollo"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_drive_downgrade_code_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_boost_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_version_202512"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_apollo_pip_auto_start"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_agreement_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_audiobook_cover_square"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_enable_sandbox_space_scan"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_idcard_show_cloud_print"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sk_camera_office_in_all"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","web_video_apollo_detect_play_info_params"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_new_doc_preview_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_wk_net_thread_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","upaas_stat_self_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_upgrade_download_content"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","pre_words"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_zone_operation_banner_feed"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_read_time_guide_nu_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_read_mode_ts_transcode"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ulive_msg_cache_purge_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_enable_online_table"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","u_vsibkrh"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_svip_pay_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_feiNU"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_chat_live_prerender_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_chat_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloudrive_presuccess_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","web_video_detect_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_js_common_white_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quick_translate_badge_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucv_webvideo_buoy_show_interval"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_save_manual_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkaccount_appeal"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_clouddrive_delete_check_option_dialog"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_titlepage_turn_animate_key"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_novel_chat_realname_auth"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_my_activity_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_web_preload_forward_limit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_choice_lottie"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","clouddrive_share_new_version_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_tab_funcs_list_auto_show"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","chat_ai_health_with__config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ucv_cloud_buoy_operational"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","navi_dynamic_operation"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_aieditor_toolbar"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_user_center_message_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_toolbar"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_word_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_download_zero_timelimit"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_gather_tab_v2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookstore_tab_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_ignore_ts_hash_when_save"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ai_studio_search_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cast_use_flutter_page_e"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_enable_smartwipe_screenshot_sheild"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_book_barcode_assistant_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bookmark_user_data_isolation_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_deeplink_mapper"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","clouddrive_album_category_card_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_smart_toolbox_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_doodle_res_font"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","not_in_use_fgtest2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_mobile_auth_global_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ulive_preload_liveroom_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_flutter_bookstore_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","asr_model_type"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_html_extract_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_panel_acitve_onoff"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_keep_default_ua_biz_host_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_search_enable_cache"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_membership_page_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","upgrade_notify_control"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_offline_to_cloud_exit_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_apollo_core_config_str"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_web_video_global_hybrider_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_setting_usercenter_mode_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_uiapplication_openurl_hook_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_chat_tab_container_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_enhance_entry_bef_prepard"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","personal_folder_env"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_proxy_report_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucdc_server_ip"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_init_weex_checkupdate_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ta_embedwebview_white_domain_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_apollo_str_hp_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_aieditor_panel"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_wk_net_agency_mode_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","webvideo_ignore_download_hash_when_apollo"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_unet_enable_fail_fast"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_enable_web_video_emabed_play"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_souti_ai_video_option"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_search_page_ai_writer_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ai_chat_image_query_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_myhistory_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_img_history_forward_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_browser_3d_nu"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_send_page_to_pc_blacklist"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_float_screenshoot_answer_guide_page"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_asset_host"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ucv_backup_series_to_dj_player"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_create_req_edit_content"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_href_load_guard_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_as_inputbar"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","file_detect_strategy"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_ocr_pdf_2_txt_way"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_group_active_days_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","sniff_float_ball_anim_repeat_count"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_http_scheme_intercept_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_request_cloud_save_permission_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_new_player_stop_last_video"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_album_content"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_user_agreement"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pan_scene"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_user_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_new_user_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_novice_gift_pack"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_clouddrive_member_anniversay"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pan_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkvip_act_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_qkvip_full_only_selected"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_svip_panel_ui_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_cloudsave_tip_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_player_cloud_hdtrial_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sniffer_bar_freezes_speed_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ucv_cloud_drive_video_freewatch_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_video_ai_guide_setting1"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_end_recommend_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_end_recommend_clouddrive_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_tts_ad_cover_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_tts_cover_ad_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_read_tips_show_seconds"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_reader_webnovel_recommend_switch"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_novel_book_score_tip_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_member_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_activity_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_asset_popup_activity"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_show_coupon_popup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_lottie_universal_popup"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_vip_year_goods_ctrl_new_logic"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_camera_scandoc_filters"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","camera_footer_study_tips_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_vip_product_floating_angle"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_aieditor_user_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_quarkman_entry_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_ai_tool_login_guide_time"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","aidesign_homepage_bigtool"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_delete_operation_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_navi_delete_operation_new2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_home_navigation_new"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_transport_svip_banner_show_top"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_offline_backup_sheet"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_single_backup_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_drive_live_photo_backup_guide"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_cloud_main_hot_search_tab"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_user_center_bussiness_banner_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_pay_update_banner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_pay_types_list"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_cloud_avg_price_display"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_subscribe_entry"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_show_toolbox_upgrade_banner_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_sc_ad_request_handle_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","noah_content_embed_ad_vertical_scale_style"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_modal_year_modal_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_keep_modal_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_entity_migration_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","glass_bluetooth_scan"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_bubble"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_drive_home_user_guide_text"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cloud_series_video_play_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_sniff_float_tool_enable"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","ab_clouddrive_backup_free_cloudsave"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_not_in_use_counter_lottery"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_quark_alipay_tag"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cd_tinyapp_share_url"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_web_accs_err_guide_config"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","cms_link_search_direct"]])
-
-      )
-
-      ) | (
-
-      delpaths([["result","qks_ab_paisou_sc_entry"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n\
+      (\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\n(\ndelpaths([[\"result\",\"cms_homepage_push_banner_config\"\
+      ]])\n) | (\ndelpaths([[\"result\",\"cms_as_home_capsule_entry\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_navi_category\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_shortcut\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_appstore_comment\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_festival_style_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_sK_home_top_banner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"scan_king_home_tools_new\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_camera_skills\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_home_options\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_direct_link\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_maizeng_feature_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_buygive_home_modal_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_buygive_documentation_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_lottery_maizeng_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_drive_activity_window\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_cloud_drive_vip_pop_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"qk_vip_pay_modal\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camear_vip_retain_pop\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_year_modal_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_lottery_banner\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_member_lottery_on_off\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_login_dialog_privacy_alert_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_transport_download_pop\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_share_dialog_universal_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_quark_pay_give30d_newstyle\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_camera_asset_popup_activity_new\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_ai_vip_url_panel\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_vip_member_page_basic\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ai_vip_product_skin\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_member_center_ai_card\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_video_app_grade_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_video_cloud_play_app_grade_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_video_quality_panel_config\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_worker_clouddrive_video_cloud_setting\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_transport_video_guide\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_cloud_transport_offline_backup_guide\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_normal_space_guide\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_realtime_ai_subtitle_tip_config\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"camera_vip_pay_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"vip_half_recharge_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"quark_vipfull_recharge_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_rights_and_interests_text\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_keep_wangpan_rights\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_quark_action_bar_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_coupon_experiment\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qkscan_member_coupon\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_backup_free_benefit_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qk_novel_noah_sdk_slot_chapter_middle\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qk_novel_noah_sdk_slot_bottom_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qk_novel_noah_sdk_slot_chapter_middle_reward\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_novel_member_activity\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_novel_bookshelf_banner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_novel_download_banner_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_speaker_page_banner_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_bookstore_top_tab_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_continue_read_tips_limit_per_day\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"novel_paid_book_ad_density_newuser\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_player_svipup_loop_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_player_svipup_loopani_show\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_player_rocket_ui_style\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_video_player_customize_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"video_player_applayer_url_tb_aac\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_reward_advideo_auto_trigger\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"webvideo_show_pay_before_login\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_home_nu_card_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_home_tool_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_file_page_share_backup_guide\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"quark_wenku_doc_activity_tpl\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_full_pan_new_year\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_planet_tab_banner\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"h5_ai_studio_past_activity_list\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_user_center_welfare_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_user_center_welfare_farm_entry_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_babafarm_gray_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_utoken_direct_jump_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_quark_ios_panel_alipay_coupon_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_share_benefit\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_bind_phone_fail_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_bind_conflict_guide\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_group_helper_guide_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_long_pic_share_operation_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"noah_search_mid_ad_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_search_page_input_history_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_push_lead_manage\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_limited_time_free_operating\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cloud_drive_tool_list\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_utoken_blocking_dialog_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_skip_button_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_offline_common_guide\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_video_player_preview_tips_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_vip_product_price_style\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"questionscpagebanner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qkscan_coupon_time\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_novel_listen_act_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_vip_product_banner_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_as_zone_operation_banner_create\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_user_center_vip_page_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_pay_detention\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cps_pfc\"]])\n)\n) | (\ndelpaths([[\"result\",\"ucv_cloud_buoy_show_interval\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_novice_gift_strategy\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_ios_alipay_coupon_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_transport_offline_topbar_title\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qks_paisou_video_vip_type\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"qks_ab_vip_year_default\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_homepage_abtest\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_export_pay_guide_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_tools_download_scanking_tips_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"book_bean_info_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_member_lottery_on_off_new\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"learning_home_popup_op_test\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_pullactive_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_user_year_sku\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"ab_clouddrive_backup_free_share\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_doodle\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_camera_asset_activity_banner_list\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"camera_keep_modal\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_88vip_verify_modal\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_compress_pay_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_novel_relate_live_book_switch\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_svip_resolution_toast_count\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cd_enable_evo_search_recom_q_start_icon\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_ai_tool_history_type_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_bookstore_home_toolbar_point\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_cloud_save_success_toast_ui\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_qkvip_panel_go_pay_success\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ucv_cloud_video_entry\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_app_act_mgr_data\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_member_center\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"minipg_ads_whitelist\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_clouddrive_background_lead_visible\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_video_app_grade_operaion_enable\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_novel_coin_reward_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"sk_quark_learning_logo_deeplink\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_alipay_marketing_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"qks_vip_center_pay_ab\"]])\n)\n) | (\ndelpaths([[\"result\",\"qkscan_payment\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_bizentry_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_youku_ent\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_quark_novel_notice_dialog\"]])\n)\n) | (\ndelpaths([[\"result\",\"airship_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_cloud_yxxx_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cd_enable_cloud_drive_entrance_video\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_cloud_drive_home_tool_new\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_bookstore_hottab_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cd_not_in_use_repurchase\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      camera_trial_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"enable_miniframe_prefetch_ad\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_member_skin\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"walle_enable_regist_ecmodel\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_smart_toolbox_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qks_paisou_vip_charges_ab\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_quark_zvip_tab_show_full\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_pre_order_on_agreement\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_big_float_window\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_player_svipup_enterani_show\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_history_login_banner_and_bubble_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"clouddrive_backup_benefit_config_album\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_secret_limit_label\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"camera_vip_union_activity\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_drive_booklist\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_panel_coupon_archive\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cd_spotlight_cms\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_qkvf_rec_request_inverse_pos\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_question_search_toolbar_op\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_video_player_cloud_toast_show_delay\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_user_center_feature_enable\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_bookmarkAndHistory_banner_ad\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_ai_write_operation_banner_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"novel_ad_flbanner_close\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_ultraman_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"noah_content_embed_ad_hc_vertical_scale_style\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_scanking_home_bubble\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_user_center\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_page_translate_enable_recommend\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_poplayer_main\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_enable_edit_page_recommend_data_opt\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_big_float_window\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ucv_cloud_playback_operational\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_scanking_sign_in_switch\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_vip_coupon_discount_test\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"idfa_auth_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_videoplayer_op_tips\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      webvideo_buffer_new_tips_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"h5_ai_studio_activity_list\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qks_tools_market\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_homepage_bubble_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_search_keyword_alter_link\"]])\n)\n) | (\ndelpaths([[\"result\",\"novel_farm_reader_remain_dialog_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_counter_svipplus_monthly_price\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_scanking_pay_vip_retain_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_glasses_interceptor_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"ai_quark_chat_ios_navbar_model_list\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"chat_toolbar_live_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_search_page_invitation_code_panel_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_move_home_navigation_digger_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qks_deep_souti_pop\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_share_link_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_share_link_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_user_center_renewal_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_ai_home_ui_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_user_center_health_record_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_drive_share_icon\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_drive_search_result_card_switch\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"export_file_tips\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_chat_vertical_instructions\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_diamond_navi_area_multipage\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_web_picture_long_click_menu\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"qk_aidesign_member_rights\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qkscan_svip_member_rights\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_quark_member_center_pay_success_card\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_newux_show_svip_entry_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      clouddrive_backup_benefit_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_player_reward_trace_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_push_lead_head_enable\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"camera_vip_lottery_checked_goods\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"pay_detainment_stack_bond_styles\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_home_backup_card_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_vip_url_full\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_video_ai_guide_setting\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_device_unbackup_text\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_novel_audio_reward_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_quark_luckin_coupon_text\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"as_publisher_activity_entry\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_nu_space_rights\"]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_vipupgrade\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_player_dml_enhance_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_backup_album_guide_control\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_web_content_type_price_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_reflow_activity_jump_deeplink\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_homepage_searchbar_left_btn_lottie\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_user_center_welfare_switch\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"paisou_benefit_banner\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_vip_price_not_use\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_cloud_share_detail_space_overrun_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"scan_svip_first_buy_pop\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_asr_equity_h5_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_djtest_choujiang\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_file_page_close_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_bucha\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_subscribre_renew_modal_experimental\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cloud_collect_fast_save_title\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_quark_vip_full_page_text\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_border_poster\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_svipplus_pay_url\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_qurak_clouddrive_full_page_exit_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"copy_ab_clouddrive_nu_unzip_try\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_quark_scan_card_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cloud_video_privilege_panel_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_mobile_binding_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_novel_auto_buy\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_player_reward_video_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_clouddrive_vip_extra_pay_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"gaokao_zhiyuan_export_svip\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_vip_enable_new_pay_style\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_ai_resolution_toast_count\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_not_in_use_djtest_tianmao\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_vip_product_activity_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_drive_activity_id\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_home_user_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"qks_paisou_ab_video_free_times\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_pay_full_page_first_modal_month\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"video_cloud_play_normal_loading_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_venue_switch\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_wenku_vip_pop_experiment\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_as_zone_operation_banner_creat\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_pdf_image_pay_enable\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"appworker_offline_config_list\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_intelligent_protect_tip_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_appstore_comment_native_item\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_recommend_hot_search_tab\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_pay_scene_window\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_player_dialog_header\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_user_agreement_activity\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"minipg_ads_switch_quark\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_member_center_header\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"gaokao_nu_vip_grant\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_novel_vip_product_price_style\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_novel_free_ad_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_matrix_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_navi_shortcuts_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"novel_farm_welfare_switch\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"as_home_idea_card_img_static\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_player_res_trial_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"copy_ab_bookcity_feed\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_space_growth\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qkscan_year_more_coupon\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cd_not_in_use_pdflimit\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_mini_login_panel\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ucv_cloud_drive_video_entry_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_player_right_fixed_resolution_list_show\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_novel_coin_read_task_idle_interval\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ucv_cloud_buoy_start_interval\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_custom_module_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_home_menu_header_top\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_home_vip_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_assets_membership_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_novel_reader_insert_page_banner_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qks_paisou_vip_charges\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_pay_modal_down_taobao\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_player_top_bo_taobao_not_aac_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_drive_file_tree_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cd_not_in_use_msfugou\"]])\n)\n) | (\ndelpaths([[\"result\",\"quark_miaosha_c_test\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_2sku\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"not_in_use_jiasuquan\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_common_page_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_nvp_cloud_welcome_ui\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cd_cloud_paytypes_expect_zvip\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_home_toolbar_baby\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cloud_drive_share_notification_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ipad_lead\"]])\n)\n) | (\ndelpaths([[\"result\",\"aidesign_svip_member_center\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_vip_superposition_ticket\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_clouddrive_aigc_pic_config\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"camera_vip_ios_alipay\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qk_bookstore_rankpage_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_cloud_drive_file_page_clean_guide\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_post_share_code\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_feed_bubble_in_home_page_bottom\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_home_operate_widget\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_sm_ad_request_handle_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_asr_main_activity_window\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_player_download_entry_show\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qkscan_member_rights\"]])\n)\n) | (\ndelpaths([[\"result\",\"webvideo_content_type_price_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qkscan_member_style\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qk_correction_recommend_modal\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_none_space_control_new\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_backup_free_space_benefit\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cd_not_in_use_annual_repurchase_coupon\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"quark_study_enable_new_vip_pay_component\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"qks_pay_strategy_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_player_av_quailty_88vip_uselimit\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_cloud_member_pay_qa\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"novel_ad_space_count\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_idphoto_show_cloud_print\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"quark-countdown-2025\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_sug_card\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cloud_drive_home_tool_banner\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_quark_zvip_tab_show\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_Login_guide_encomcor\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      camera_vip_price\"]])\n)\n) | (\ndelpaths([[\"result\",\"qks_ab_vip_pay_combo\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_savetonum\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_camera_tool_set_pic\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_web_page_export_recom_tips_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cd_not_in_use_cuxiao\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_duguang_freetrial\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_navi_study_bubble_booklist\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_navi_add_operation_new\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_drive_hot_search_type\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_vip_year_goods_ctrl\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_search_ai_tool_recommend_word_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_bookstore_tab_blue_dot_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"webvideo_toast_save_click_return\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cd_not_in_use_djtest_zc\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_navigation_olduser\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_zvip_pay_update_operation\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_picmode_guide_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_cloud_pdf_office_pay_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_quark_pay_panel_video_banner_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"vip_half_experience_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_drive_share_subtitle\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_quark_anniversary_2023_main\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      camera_paint_free_count\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_qkvip_go_pay_success\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_miaosha_test\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_max_menu_widgets_center_guide_dis_times\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_dongfeng_common_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cd_not_in_use_djtest_shougou\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"qks_feedback_lottery_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"duguang_word_2sku\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qks_vip_index_state\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_navi_business_operation\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"webvideo_content_type_price_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_tools_navi_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_agent_list_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_navigation_alter\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_mobilize_external_app_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_novel_comic_video_home_page_url\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_homepage_ai_tool_dynamic_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_ai_chat_default_welcome\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_drive_cloud_tool\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_navi_intelligence_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_drive_transport_header_banner\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_camera_alltools_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_page_ai_image_genneration\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_download_scanking_app_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_user_center_welfare_farm_new_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_member_center_bannerList\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_my_list_part_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_cloud_drive_audio_tree_banner\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_search_page_ai_scholarship_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"camera_teachers_day_goods_banner\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"chat_ai_chat_with_uvlckfargcmaqryx_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"ai_camera_wjk_act\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_share_bookmark_black_list\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_navisync_blacklist\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_page_print_pdf_render_allow_list\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_video_detect_t0_js\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"noah_search_mid_page_ad_list\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"qk_novel_noah_sdk_chapter_middle_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"webvideo_thread_speed_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ai_vip_member_panel_header_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_none_space_guide\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_chat_enable_alg_recommend_paa\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"quark_study_home_cards_style\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_home_navigation\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"test_zhifubao_miaosha\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_video_upload_vip_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_alltools_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_drive_share_pc_guide\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"sk_export_frombiz_homeurl\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_bind_conflict_guide_v2\"]])\n)\n) | (\ndelpaths([[\"result\",\"sk_bilingual_comparison_page_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_table_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_sgi_search_web_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_cloud_home_novel\"]])\n)\n) | (\ndelpaths([[\"result\",\"picture_editor_entrance\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_pc_switch\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_as_creator_tabs\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_tips_dialog\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_user_center_login_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ai_generate_bar_global_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_offline_save_trace_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_ai_search_entry_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_toolbar_lottie\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_camera_trytab_default\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_homepage_navigation_ai_tool_config_v2\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_navi_modify_operation\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_cloud_video_resolution_download_select\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_download_play_video_replace\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"as_cut_option_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"sk_assets_editor_ocr_page_url_new\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_pan_stay\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_sniffer_float_view_action_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_common_prefetch_proxy_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cloud_drive_document_pdf_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_novel_unsupport_book_tips\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_user_center_message_landing_page_key\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_client_verify_time_stamp_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_ai_editor_lottie_res\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_cloud_anniversary_modal_show\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_clouddrive_nologin_header\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_sgi_web_window_pars_enable\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_shortcut_game_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"sk_translate_view_time_count\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_app_monitor_event_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"system_short_web_middlware_url\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_novel_shelf_pre_load\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_cloud_drive_first_screen_monthly_popup_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_sniff_compliance_switch\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qk_bookstore_homepage_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_novel_intercept_switch_new\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_reader_user_no_ad_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_publish_success_jump\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_sgi_container_pars_config_v2\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"chat_ai_chat_with__config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_nvp_dolby_vision_black_fmt\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_novel_livebg_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_login_bind_phone\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_page_input_hint\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"enable_url_security_sign\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_camera_word_use_app_state\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_drive_clean_backup_dump_file_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_appllo_peload_wwan_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_reader_nav_search_switch\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_cloud_drive_backup_guide\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"web_perf_whitescreen_detechtime\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_web_sniffer_ui_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_aivqa_history_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"study_camera_correct_sample_list_data\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"vc_transcode_video_playlet_ctrl\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_asr_feedback_group_num\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"voice_speech_abtest\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_search_page_ai_writer_config_v2\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ai_chat_enable_welcome_recommend_paa\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_empty_tingji_realtime\"]])\n)\n) | (\ndelpaths([[\"result\",\"chat_aicam_upload_in_ahead\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_verify_itms_service_link_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ucdc_probe_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_float_view\"]])\n)\n) | (\ndelpaths([[\"result\",\"unet_tcp_socket_send_buffer_hosts\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_subtab_default_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"test_for_platform_v2\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"quark_study_xuanfuchuangsouti_guide\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"short_cut_new_covid_news\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      qk_enable_quarkbaby_hint\"]])\n)\n) | (\ndelpaths([[\"result\",\"cd_enable_study_main_page_open_itcp\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cloud_drive_referer\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qk_planet_detail_native\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"uccv_episode_autoplay_preload\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_tts_speaker_default\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_debug_task_name\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_cutting_on_cloud\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_word_enbale_demand_ocr\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloud_delete_download_directly_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"apollo_cloud_play_race_speed_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"no_effect_quarkcd_paixu5\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cd_sandbox_scan_max_dir_maxDirHierarchy\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_ai_studio_tem_h5_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cd_dl_low_speed_detect_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_sgi_search_perfetch_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_asr_manaual_stream_stop\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_auto_translate_tip_display_time\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_bookmark_prefetch_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"miracast_start_pos_impl_on_sdk\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_web_link_long_click_menu\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_web_load_stat_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_tool_history_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_common_prefetch_white_list\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cloud_drive_backup_invalid_record_clear\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_idphoto_filters\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_player_show_loading_toast_enable\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_not_in_use_djtest_cms_player_top_bo_taobao_not_aac_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"general_search_user_research_survey\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"video_player_appworker_host_black_list\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"nvp_ai_vision_use_mode\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_universal_use_app_state_data\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_home_page_navi_editor_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"u_vsibkre\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_enable_flutter_scanking_photo_sniffer\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"qk_player_disable_apollo\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_quark_cloud_drive_downgrade_code_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_novel_boost_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_search_version_202512\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cd_apollo_pip_auto_start\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_page_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_agreement_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_novel_audiobook_cover_square\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cd_enable_sandbox_space_scan\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_idcard_show_cloud_print\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"sk_camera_office_in_all\"]])\n)\n) | (\ndelpaths([[\"result\",\"web_video_apollo_detect_play_info_params\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_new_doc_preview_switch\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_wk_net_thread_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"upaas_stat_self_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_novel_upgrade_download_content\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"pre_words\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_as_zone_operation_banner_feed\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_read_time_guide_nu_enable\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_read_mode_ts_transcode\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      ulive_msg_cache_purge_count\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_enable_online_table\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"u_vsibkrh\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_svip_pay_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_feiNU\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_chat_live_prerender_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_home_chat_guide_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_cloudrive_presuccess_enable\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"web_video_detect_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_js_common_white_list\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quick_translate_badge_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ucv_webvideo_buoy_show_interval\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_save_manual_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_qkaccount_appeal\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_clouddrive_delete_check_option_dialog\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_user_center_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_titlepage_turn_animate_key\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_novel_chat_realname_auth\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_camera_my_activity_banner\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_novel_web_preload_forward_limit\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cms_navi_choice_lottie\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"clouddrive_share_new_version_switch\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_camera_tab_funcs_list_auto_show\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"chat_ai_health_with__config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ucv_cloud_buoy_operational\"]])\n)\n) | (\ndelpaths([[\"result\",\"navi_dynamic_operation\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_aieditor_toolbar\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_user_center_message_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_home_toolbar\"]])\n)\n) | (\ndelpaths([[\"result\",\"camera_word_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_download_zero_timelimit\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_camera_gather_tab_v2\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_bookstore_tab_new\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"webvideo_ignore_ts_hash_when_save\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"ai_studio_search_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"cast_use_flutter_page_e\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_enable_smartwipe_screenshot_sheild\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_book_barcode_assistant_url\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_bookmark_user_data_isolation_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_deeplink_mapper\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"clouddrive_album_category_card_style\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_web_smart_toolbox_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_home_doodle_res_font\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"not_in_use_fgtest2\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_mobile_auth_global_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ulive_preload_liveroom_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_flutter_bookstore_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"asr_model_type\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_html_extract_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_panel_acitve_onoff\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_keep_default_ua_biz_host_list\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_ai_search_enable_cache\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_membership_page_url\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"upgrade_notify_control\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_offline_to_cloud_exit_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_apollo_core_config_str\"]])\n)\n)\
+      \ | (\ndelpaths([[\"result\",\"cd_web_video_global_hybrider_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_setting_usercenter_mode_enable\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_uiapplication_openurl_hook_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_chat_tab_container_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_player_enhance_entry_bef_prepard\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"personal_folder_env\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_proxy_report_switch\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      ucdc_server_ip\"]])\n)\n) | (\ndelpaths([[\"result\",\"cd_init_weex_checkupdate_enable\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"ta_embedwebview_white_domain_list\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"webvideo_apollo_str_hp_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_aieditor_panel\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_wk_net_agency_mode_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"webvideo_ignore_download_hash_when_apollo\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_cloud_unet_enable_fail_fast\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cd_enable_web_video_emabed_play\"]])\n)\n) | (\ndelpaths([[\"result\",\"qks_souti_ai_video_option\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_search_page_ai_writer_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"ai_chat_image_query_list\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_novel_myhistory_switch\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_img_history_forward_url\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_browser_3d_nu\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_send_page_to_pc_blacklist\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cd_float_screenshoot_answer_guide_page\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"camera_asset_host\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"ucv_backup_series_to_dj_player\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_as_create_req_edit_content\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_href_load_guard_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_as_inputbar\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"file_detect_strategy\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_ocr_pdf_2_txt_way\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_group_active_days_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"sniff_float_ball_anim_repeat_count\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_http_scheme_intercept_enable\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_request_cloud_save_permission_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_new_player_stop_last_video\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_album_content\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_user_agreement\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_quark_pan_scene\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_user_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_new_user_guide\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_novice_gift_pack\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_quark_clouddrive_member_anniversay\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_quark_pan_activity\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_qkvip_act_banner\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_qkvip_full_only_selected\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_player_svip_panel_ui_config\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_player_cloudsave_tip_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_player_cloud_hdtrial_config\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_sniffer_bar_freezes_speed_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_ucv_cloud_drive_video_freewatch_switch\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_video_ai_guide_setting1\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_novel_end_recommend_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_novel_end_recommend_clouddrive_config\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_novel_tts_ad_cover_config\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_novel_tts_cover_ad_config\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_novel_read_tips_show_seconds\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_reader_webnovel_recommend_switch\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_novel_book_score_tip_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_camera_member_banner\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_asset_activity_banner\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_camera_asset_popup_activity\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_camera_show_coupon_popup\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_vip_lottie_universal_popup\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"camera_vip_year_goods_ctrl_new_logic\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_camera_scandoc_filters\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"camera_footer_study_tips_config\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_ai_vip_product_floating_angle\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_aieditor_user_guide\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_quarkman_entry_url\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_ai_tool_login_guide_time\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"aidesign_homepage_bigtool\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_navi_delete_operation_new\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_navi_delete_operation_new2\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_home_navigation_new\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_transport_svip_banner_show_top\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_offline_backup_sheet\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_single_backup_guide\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_cloud_drive_live_photo_backup_guide\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_cloud_main_hot_search_tab\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cms_user_center_bussiness_banner_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_quark_pay_update_banner\"]])\n)\n\
+      ) | (\ndelpaths([[\"result\",\"cms_quark_cloud_pay_types_list\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_quark_cloud_avg_price_display\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cms_quark_subscribe_entry\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_show_toolbox_upgrade_banner_enable\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_sc_ad_request_handle_enable\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      noah_content_embed_ad_vertical_scale_style\"]])\n)\n) | (\ndelpaths([[\"result\"\
+      ,\"cms_quark_modal_year_modal_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cms_quark_keep_modal_config\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_entity_migration_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"glass_bluetooth_scan\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"cms_bubble\"]])\n)\n) | (\ndelpaths([[\"result\",\"\
+      cloud_drive_home_user_guide_text\"]])\n)\n) | (\ndelpaths([[\"result\",\"cloud_series_video_play_guide_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_sniff_float_tool_enable\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"ab_clouddrive_backup_free_cloudsave\"]])\n\
+      )\n) | (\ndelpaths([[\"result\",\"cd_not_in_use_counter_lottery\"]])\n)\n) |\
+      \ (\ndelpaths([[\"result\",\"cms_quark_alipay_tag\"]])\n)\n) | (\ndelpaths([[\"\
+      result\",\"cd_tinyapp_share_url\"]])\n)\n) | (\ndelpaths([[\"result\",\"cms_web_accs_err_guide_config\"\
+      ]])\n)\n) | (\ndelpaths([[\"result\",\"cms_link_search_direct\"]])\n)\n) | (\n\
+      delpaths([[\"result\",\"qks_ab_paisou_sc_entry\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/stars\.shuqireader\.com\/kkios\/render\/load\/resource\/app$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/stars\.shuqireader\.com\/kkios\/render\/load\/resource\/appConfig$
+- match: (?:^https:\/\/stars\.shuqireader\.com\/kkios\/render\/load\/resource\/app$)|(?:^https:\/\/stars\.shuqireader\.com\/kkios\/render\/load\/resource\/appConfig$)
   status_code: 200
   body: '{}'
   headers:

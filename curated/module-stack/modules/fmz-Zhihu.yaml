@@ -98,37 +98,7 @@ body_rewrites:
     find: '"recommend_queries":\{.+\}'
     replace: '"recommend_queries":{}'
 map_locals:
-- match: ^https:\/\/api\.zhihu\.com\/commercial_api\/(?:answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/root\/window
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/me\/guides
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words)
+- match: (?:^https:\/\/api\.zhihu\.com\/commercial_api\/(?:answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2))|(?:^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings)|(?:^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list))|(?:^https:\/\/api\.zhihu\.com\/root\/window)|(?:^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2))|(?:^https:\/\/api\.zhihu\.com\/me\/guides)|(?:^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words))
   status_code: 200
   body: '{}'
   headers:
@@ -138,22 +108,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/api\.zhihu\.com\/ad-style-service\/request
+- match: (?:^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers)|(?:^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?)|(?:^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation)|(?:^https:\/\/api\.zhihu\.com\/ad-style-service\/request)
   status_code: 200
   body: '{}'
   headers:
@@ -177,49 +132,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 知乎 / 2
-    match: ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 3
-    match: ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 4
-    match: ^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 5
-    match: ^https:\/\/api\.zhihu\.com\/root\/tab
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 6
-    match: ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 7
-    match: ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 8
-    match: ^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 知乎 / 9
-    match: ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
+    match: (?:^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer)|(?:^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?)|(?:^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend))|(?:^https:\/\/api\.zhihu\.com\/root\/tab)|(?:^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?)|(?:^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?)|(?:^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render))|(?:^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=))
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
     body_required: true
     update_interval: 86400

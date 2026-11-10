@@ -9,5 +9,9 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.romielf\.com\/index\/indexv\d\?
-    filter: (setpath(["data", "advertisement"]; "[]") | setpath(["data", "listadvertising"];
-      "[]")) | (.data.list |= map(select(.type == 1)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\", \"advertisement\"\
+      ]; \"[]\") | setpath([\"data\", \"listadvertising\"]; \"[]\")) | (.data.list\
+      \ |= map(select(.type == 1)))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

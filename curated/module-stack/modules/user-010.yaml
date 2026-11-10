@@ -5,8 +5,15 @@ mitm:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/.*yangjibao\.com\/.*\/account|vip_info
-    filter: .data.vip_label=true|.data.vip_expiry_date="2099-12-31"|.data.is_pay=true
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.vip_label=true|.data.vip_expiry_date=\"\
+      2099-12-31\"|.data.is_pay=true\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/.*yangjibao.com\/unify_ad
-    filter: .data=null
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data=null\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 icon: https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d5/32/6f/d5326f98-43dc-3496-82fd-07df31920210/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg

@@ -11,20 +11,37 @@ rules:
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/search\/discover
-    filter: .data.discover_list = []
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data.discover_list = []\n) ]) as\
+      \ $__egern_results\n       | if ($__egern_results | length) == 1\n         then\
+      \ $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/sidebar\/home
-    filter: del(.game_center, .tools, .vip_banner, .task_list)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.game_center, .tools, .vip_banner,\
+      \ .task_list)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/u\/user\/profile
-    filter: del(.duxiaoman, .namoaixud, .namoaixud_entry, .recom_naws_list, .duxiaoman_entry,
-      .vip_banner) | .zone_info |= map(select(.type == "common_func" or .type == "auxiliary_func"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.duxiaoman, .namoaixud, .namoaixud_entry,\
+      \ .recom_naws_list, .duxiaoman_entry, .vip_banner) | .zone_info |= map(select(.type\
+      \ == \"common_func\" or .type == \"auxiliary_func\"))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/forum\/forumGuide
-    filter: .hot_search = []
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.hot_search = []\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https?:\/\/tieba(c)?\.baidu\.com\/mo\/q\/search\/startPage
-    filter: del(.data)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
 - match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/ad\/getFeedAd
   status_code: 200

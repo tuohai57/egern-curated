@@ -4,27 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DoubanRead.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/read\.douban\.com\/api\/v2\/ads\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/read\.douban\.com\/api\/v2\/popup$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_words$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_charts$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/read\.douban\.com\/api\/v2\/search\/rec_urls$
+- match: (?:^https:\/\/read\.douban\.com\/api\/v2\/ads\/)|(?:^https:\/\/read\.douban\.com\/api\/v2\/popup$)|(?:^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_words$)|(?:^https:\/\/read\.douban\.com\/api\/v2\/search\/hot_charts$)|(?:^https:\/\/read\.douban\.com\/api\/v2\/search\/rec_urls$)
   status_code: 200
   body: '{}'
   headers:

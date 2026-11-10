@@ -19,17 +19,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: ^https:\/\/frodo\.douban\.com\/api\/v\d\/movie\/ad
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/frodo\.douban\.com\/api\/v\d\/home_banner
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/frodo\.douban\.com\/api\/v\d\/search\/found_words
+- match: (?:^https:\/\/frodo\.douban\.com\/api\/v\d\/movie\/ad)|(?:^https:\/\/frodo\.douban\.com\/api\/v\d\/home_banner)|(?:^https:\/\/frodo\.douban\.com\/api\/v\d\/search\/found_words)
   status_code: 200
   body: '{}'
   headers:

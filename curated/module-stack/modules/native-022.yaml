@@ -70,10 +70,7 @@ mitm:
   - spclient.wg.spotify.com
   - '*spclient.spotify.com'
 map_locals:
-- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/pendragon
-  status_code: 200
-  body: '{}'
-- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/watch-feed-entrypoints\/v.\/discovery-from-seed
+- match: (?i:^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/pendragon)|(?i:^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/watch-feed-entrypoints\/v.\/discovery-from-seed)
   status_code: 200
   body: '{}'
 - match: (?i)^https:\/\/.*-spclient\.spotify\.com(:443)?\/pam-view-service\/

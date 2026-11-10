@@ -4,22 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaChuFang.png
 map_locals:
-- match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json
+- match: (?i:^https:\/\/api\.xiachufang\.com\/v2\/ad\/)|(?i:^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json)|(?i:^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json)|(?i:^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json)
   status_code: 200
   body: '{}'
   headers:
@@ -30,14 +15,25 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$
-    filter: (del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type?
-      == "ad")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type?\
+      \ == \"ad\")))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$
-    filter: (delpaths([["content", "recipe_ad"], ["content", "splash_ad_req_time"],
-      ["content", "splash_sdk_ad_req_time"], ["content", "splash_ad_lifecycle_interval"],
-      ["content", "waterfall_ad_feedback"], ["content", "homepage_waterfall_test_ad_pos"],
-      ["content", "ad_app_look_around"], ["content", "ad_sdk_text_removal_keywords"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"content\", \"recipe_ad\"\
+      ], [\"content\", \"splash_ad_req_time\"], [\"content\", \"splash_sdk_ad_req_time\"\
+      ], [\"content\", \"splash_ad_lifecycle_interval\"], [\"content\", \"waterfall_ad_feedback\"\
+      ], [\"content\", \"homepage_waterfall_test_ad_pos\"], [\"content\", \"ad_app_look_around\"\
+      ], [\"content\", \"ad_sdk_text_removal_keywords\"]]))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.xiachufang\.com\/v2\/homepage\/ranking_list\/paged_homepage_ranking_list_section_v2\.json$
-    filter: (.cells |= map(del(.side_slip_activity_cell, .dish_square_cell)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.cells |= map(del(.side_slip_activity_cell,\
+      \ .dish_square_cell)))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

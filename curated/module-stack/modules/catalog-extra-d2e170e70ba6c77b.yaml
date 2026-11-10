@@ -8,52 +8,7 @@ rules:
     match: ^https:\/\/aiqicha\.baidu\.com\/app\/commonstatusAjax
     policy: REJECT
 map_locals:
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/bannerPicAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/getPopConfigAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/getHotTopicAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/getNewsReportAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/getExpertVideoAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/apps\/getHotRecommendV2Ajax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/m\/getLoginWordsAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/app\/getAppPopSettingAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/apps\/getHomeMonitorDataAjax
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/aiqicha\.baidu\.com\/apps\/searchRecommendAjax
+- match: (?:^https:\/\/aiqicha\.baidu\.com\/app\/bannerPicAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/app\/getPopConfigAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/app\/getHotTopicAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/app\/getNewsReportAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/app\/getExpertVideoAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/apps\/getHotRecommendV2Ajax)|(?:^https:\/\/aiqicha\.baidu\.com\/m\/getLoginWordsAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/app\/getAppPopSettingAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/apps\/getHomeMonitorDataAjax)|(?:^https:\/\/aiqicha\.baidu\.com\/apps\/searchRecommendAjax)
   status_code: 200
   body: '{}'
   headers:

@@ -6,43 +6,34 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/color\.jddj\.com\/client\.action\?functionId=hours_home$
-    filter: del(.result.config.searchFloor.data[].searchWords) | .result.data |= map(if
-      .tnConfigVO?.businessCode == "nearby_HourlyGo_Operation_Tags" then empty else
-      . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.result.config.searchFloor.data[].searchWords)\
+      \ | .result.data |= map(if .tnConfigVO?.businessCode == \"nearby_HourlyGo_Operation_Tags\"\
+      \ then empty else . end)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/color\.jddj\.com\/client\.action\?functionId=wmHome$
-    filter: (.floors |= map(del(.data.tnData.newsInfo?))) | .floors |= (map(select(.mId
-      != "newWalletIdFloor" and .mId != "recommendfloor"))) | .floors |= (map(.data
-      |= (if .tnData? then del(.tnData.cardList, .tnData.cardListStatic, .tnData.walletList)
-      else . end)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.floors |= map(del(.data.tnData.newsInfo?)))\
+      \ | .floors |= (map(select(.mId != \"newWalletIdFloor\" and .mId != \"recommendfloor\"\
+      ))) | .floors |= (map(.data |= (if .tnData? then del(.tnData.cardList, .tnData.cardListStatic,\
+      \ .tnData.walletList) else . end)))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/api\.m\.jd\.com\/client\.action$
-    filter: '(
-
-      (
-
-      delpaths([["data","searchDTO","searchWords"]])
-
-      ) | (
-
-      delpaths([["data","wishlistDTO","bubbleTip"]])
-
-      )
-
-      ) | (
-
-      .data.tabList |= (map(select(.code == "recommendation" or .code == "find_food"))
-      | map(if .code == "recommendation" then .dpHomeFeedTabResultDTOList = .dpHomeFeedTabResultDTOList[0:2]
-      else . end | .dpHomeBannerResultDTOList = []))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\ndelpaths([[\"data\",\"searchDTO\"\
+      ,\"searchWords\"]])\n) | (\ndelpaths([[\"data\",\"wishlistDTO\",\"bubbleTip\"\
+      ]])\n)\n) | (\n.data.tabList |= (map(select(.code == \"recommendation\" or .code\
+      \ == \"find_food\")) | map(if .code == \"recommendation\" then .dpHomeFeedTabResultDTOList\
+      \ = .dpHomeFeedTabResultDTOList[0:2] else . end | .dpHomeBannerResultDTOList\
+      \ = []))\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/color\.jddj\.com\/client\.action\?functionId=uniformRecommend
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/color\.jddj\.com\/client\.action\?functionId=search_recommendRanking$
+- match: (?:^https:\/\/color\.jddj\.com\/client\.action\?functionId=uniformRecommend)|(?:^https:\/\/color\.jddj\.com\/client\.action\?functionId=search_recommendRanking$)
   status_code: 200
   body: '{}'
   headers:

@@ -22,10 +22,22 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/forumapi\.yoloho\.com\/index\/recommend\/listV\d\?
-    filter: (.recommendList |= map(select(.voType == 0)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.recommendList |= map(select(.voType\
+      \ == 0)))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/dataapi\.yoloho\.com\/tool\/bubble\/event\/new\/iconList\?
-    filter: (.data |= map(select(.id == 21 or .id == 23 or .id == 24 or .id == 40)))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.id == 21 or\
+      \ .id == 23 or .id == 24 or .id == 40)))\n) ]) as $__egern_results\n       |\
+      \ if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/dataapi\.yoloho\.com\/tool\/card\/mine\/app\?
-    filter: (.data |= map(select(.type == "1")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.type == \"1\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"

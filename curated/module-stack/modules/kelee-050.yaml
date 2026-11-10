@@ -28,17 +28,7 @@ map_locals:
   body: ''
   headers:
     Content-Type: text/plain
-- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist)
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/)
+- match: (?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/))|(?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist))|(?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/))
   status_code: 200
   body: '{}'
   headers:
@@ -88,25 +78,7 @@ scriptings:
     max_size: 16777216
 - http_response:
     name: 发现页
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/20c13c7c598b8e59058493e2143d5c62d27ce6ac2917d04c400fa16caa092528.js
-    body_required: true
-    update_interval: 86400
-    timeout: 20
-    binary_body: true
-    max_size: 16777216
-- http_response:
-    name: 我的页面
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/position\/show\/resource
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/20c13c7c598b8e59058493e2143d5c62d27ce6ac2917d04c400fa16caa092528.js
-    body_required: true
-    update_interval: 86400
-    timeout: 20
-    binary_body: true
-    max_size: 16777216
-- http_response:
-    name: 显示未关注你的人
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/eapi\/user\/follow\/users\/mixed\/get
+    match: (?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show)|(?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/position\/show\/resource)|(?i:^https?:\/\/interface\d?\.music\.163\.com\/eapi\/user\/follow\/users\/mixed\/get)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/20c13c7c598b8e59058493e2143d5c62d27ce6ac2917d04c400fa16caa092528.js
     body_required: true
     update_interval: 86400

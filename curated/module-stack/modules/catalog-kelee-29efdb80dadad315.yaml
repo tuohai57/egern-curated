@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/2bulu.png
 map_locals:
-- match: (?i)^https:\/\/helper\.2bulu\.com\/search\/searchHotKeyList\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/helper\.2bulu\.com\/promote\/getAppUserModule\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/helper\.2bulu\.com\/proSpecial\/allData\?
+- match: (?i:^https:\/\/helper\.2bulu\.com\/search\/searchHotKeyList\?)|(?i:^https:\/\/helper\.2bulu\.com\/promote\/getAppUserModule\?)|(?i:^https:\/\/helper\.2bulu\.com\/proSpecial\/allData\?)
   status_code: 200
   body: '{}'
   headers:
@@ -25,4 +15,7 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/helper\.2bulu\.com\/getAppEntranceConfig\?
-    filter: (.configData=(.configData|fromjson|del(.adPlatform,.adIntertitialShowType,.adsConfig,.adIntertitialDisplayedLimit,.adSplashShowTypeWhenHotStart,.adIntertitialDayDisplayedMaxCount,.od_adsType,.showMeBaiHeAdView)|tojson))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.configData=(.configData|fromjson|del(.adPlatform,.adIntertitialShowType,.adsConfig,.adIntertitialDisplayedLimit,.adSplashShowTypeWhenHotStart,.adIntertitialDayDisplayedMaxCount,.od_adsType,.showMeBaiHeAdView)|tojson))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"

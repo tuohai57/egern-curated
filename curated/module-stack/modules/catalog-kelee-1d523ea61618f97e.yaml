@@ -38,13 +38,7 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 移除文末广告
-    match: (?i)^https:\/\/gateway\.caixin\.com\/api\/app-api\/(caixinapp\/appinfo|search\/getkeyword)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
-    body_required: true
-    update_interval: 86400
-- http_response:
-    name: 移除财新FM广告
-    match: (?i)^https:\/\/gateway\.caixin\.com\/api\/app-content\/fm\/index\/list\?
+    match: (?i:^https:\/\/gateway\.caixin\.com\/api\/app-api\/(caixinapp\/appinfo|search\/getkeyword))|(?i:^https:\/\/gateway\.caixin\.com\/api\/app-content\/fm\/index\/list\?)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/591a0e4aa1e5b6efb60a1d88fb9ef04e2d372cc4b2f3a8cc7d40f8abd6622ca5.js
     body_required: true
     update_interval: 86400

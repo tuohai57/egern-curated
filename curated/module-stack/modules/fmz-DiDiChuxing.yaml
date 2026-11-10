@@ -27,28 +27,14 @@ scriptings:
     timeout: 60
 - http_response:
     name: 滴滴出行 / 3
-    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 滴滴出行 / 4
-    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget
+    match: (?:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget)|(?:^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
     body_required: true
     update_interval: 86400
     timeout: 60
 - http_response:
     name: 滴滴出行 / 5
-    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
-    body_required: true
-    update_interval: 86400
-    timeout: 60
-- http_response:
-    name: 滴滴出行 / 6
-    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf
+    match: (?:^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast)|(?:^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf)
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
     body_required: true
     update_interval: 86400

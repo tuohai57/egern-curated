@@ -6,94 +6,47 @@ homepage: https://hub.kelee.one
 body_rewrites:
 - response_jq:
     match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\?
-    filter: '(
-
-      (
-
-      (
-
-      delpaths([["respData","topOpera","leftOpera"]])
-
-      ) | (
-
-      delpaths([["respData","topOpera","rightOpera2"]])
-
-      )
-
-      ) | (
-
-      delpaths([["respData","topActBanner"]])
-
-      )
-
-      ) | (
-
-      delpaths([["respData","bmArea"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\n(\n(\ndelpaths([[\"respData\",\"\
+      topOpera\",\"leftOpera\"]])\n) | (\ndelpaths([[\"respData\",\"topOpera\",\"\
+      rightOpera2\"]])\n)\n) | (\ndelpaths([[\"respData\",\"topActBanner\"]])\n)\n\
+      ) | (\ndelpaths([[\"respData\",\"bmArea\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\?
-    filter: '(
-
-      delpaths([["respData","freeMarketTabLeadPop"]])
-
-      ) | (
-
-      delpaths([["respData","topOperations"]])
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"respData\",\"freeMarketTabLeadPop\"\
+      ]])\n) | (\ndelpaths([[\"respData\",\"topOperations\"]])\n)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\?
-    filter: if .respData.userRed.campName == "OCD挂件" then del(.respData.userRed) else
-      . end | .respData.infoData |= map(del(.rotateResource,.appRecommendResource,."cargoGroupCardV2"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif .respData.userRed.campName == \"\
+      OCD挂件\" then del(.respData.userRed) else . end | .respData.infoData |= map(del(.rotateResource,.appRecommendResource,.\"\
+      cargoGroupCardV2\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmymoretools$
-    filter: walk(if type == "object" and .name == "免流量特权" then empty else . end) |
-      del(.respData.groupList[] | select(.groupName == "活动参与" or .groupName == "金融工具"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nwalk(if type == \"object\" and .name\
+      \ == \"免流量特权\" then empty else . end) | del(.respData.groupList[] | select(.groupName\
+      \ == \"活动参与\" or .groupName == \"金融工具\"))\n) ]) as $__egern_results\n      \
+      \ | if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$
-    filter: '(
-
-      delpaths([["respData","bmNewInfo"]])
-
-      ) | (
-
-      del(.respData.itemGroupList[].itemList[] | select(.name == "天天赚钱" or .name ==
-      "借钱")) | del(.respData.itemGroupList[] | select(.groupType == 15))
-
-      )'
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(\ndelpaths([[\"respData\",\"bmNewInfo\"\
+      ]])\n) | (\ndel(.respData.itemGroupList[].itemList[] | select(.name == \"天天赚钱\"\
+      \ or .name == \"借钱\")) | del(.respData.itemGroupList[] | select(.groupType ==\
+      \ 15))\n)\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 map_locals:
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getwindvanecardv2$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/zzbmlogic\/queryFrontPageWindowInfo\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$
+- match: (?:^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen$)|(?:^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getwindvanecardv2$)|(?:^https:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\?)|(?:^https:\/\/app\.zhuanzhuan\.com\/zzopen\/zzbmlogic\/queryFrontPageWindowInfo\?)|(?:^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend$)|(?:^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$)|(?:^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$)
   status_code: 200
   body: '{}'
   headers:

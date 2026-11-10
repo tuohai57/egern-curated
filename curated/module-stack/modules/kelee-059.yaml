@@ -4,42 +4,7 @@ author: Sliverkiss[https://github.com/Sliverkiss]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/LuckinCoffee.png
 map_locals:
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/growUp\/calendarList
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/promotion\/giftCard\/topPage
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/base\/myLittleLuck
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/core\/v2\/menu\/ordinaryUserLayeredArea
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/common\/modules
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/core\/v2\/homepage\/homePageCoffeeList
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList
-  status_code: 404
-  body: ''
-  headers:
-    Content-Type: text/plain; charset=utf-8
-- match: (?i)^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew
+- match: (?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/growUp\/calendarList)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/promotion\/giftCard\/topPage)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/base\/myLittleLuck)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/core\/v2\/menu\/ordinaryUserLayeredArea)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/common\/modules)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/core\/v2\/homepage\/homePageCoffeeList)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList)|(?i:^https:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew)
   status_code: 404
   body: ''
   headers:

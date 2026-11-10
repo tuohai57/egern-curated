@@ -4,12 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Roborock.png
 map_locals:
-- match: (?i)^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$
+- match: (?i:^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/banner\/list$)|(?i:^https:\/\/cniot\.roborock\.com\/api\/v1\/activity\/latest$)
   status_code: 200
   body: '{}'
   headers:
@@ -26,4 +21,8 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.roborock\.com\/v2\/h5\.page\.item\.info\?id=4115$
-    filter: (.data |= map(select(.title == "常用功能")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data |= map(select(.title == \"\
+      常用功能\")))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"

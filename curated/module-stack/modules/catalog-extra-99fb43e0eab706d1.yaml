@@ -9,20 +9,15 @@ mitm:
   - 47.57.181.112
   - 47.57.182.96
 map_locals:
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-express
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-preset
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion
-  status_code: 200
-  body: ''
-- match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash-screen\/list
+- match: (?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-express)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-preset)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion)|(?:^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash-screen\/list)
   status_code: 200
   body: ''
 body_rewrites:
 - response_jq:
     match: ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list
-    filter: .data |= map(select(.type != "DISCOVERY_BANNER"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n.data |= map(select(.type != \"DISCOVERY_BANNER\"\
+      ))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

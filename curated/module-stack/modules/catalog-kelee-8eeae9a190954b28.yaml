@@ -40,23 +40,44 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/news\.cj\.sina\.cn\/app\/v1\/news724\/list\?
-    filter: (delpaths([["result", "data", "ad"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"result\", \"data\",\
+      \ \"ad\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.cj\.sina\.com\.cn\/apps\/api\/user\/center\?
-    filter: (.result.data |= with_entries(select(.key == "button" or .key == "account"
-      or .key == "balance")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.result.data |= with_entries(select(.key\
+      \ == \"button\" or .key == \"account\" or .key == \"balance\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/news\.cj\.sina\.cn\/toutiao\/content\?
-    filter: (del(.result.data[]?.ad, .result.data[]?.report))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(del(.result.data[]?.ad, .result.data[]?.report))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.cj\.sina\.com\.cn\/api\/deal\/index\?
-    filter: (delpaths([["data", "banner"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"banner\"]]))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/app\.cj\.sina\.com\.cn\/clientSetting\/api\/start\/init\?
-    filter: (delpaths([["result", "data", "search_ad"], ["result", "data", "center_ads"],
-      ["result", "data", "banner_new_tagid"], ["result", "data", "ad_hasAddScreenParam"],
-      ["result", "data", "us_trade"], ["result", "data", "open_account"], ["result",
-      "data", "us_hq_trade"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"result\", \"data\",\
+      \ \"search_ad\"], [\"result\", \"data\", \"center_ads\"], [\"result\", \"data\"\
+      , \"banner_new_tagid\"], [\"result\", \"data\", \"ad_hasAddScreenParam\"], [\"\
+      result\", \"data\", \"us_trade\"], [\"result\", \"data\", \"open_account\"],\
+      \ [\"result\", \"data\", \"us_hq_trade\"]]))\n) ]) as $__egern_results\n   \
+      \    | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/(newscj\.xincai\.com|news\.cj\.sina\.cn)\/app\/v1\/feed\?
-    filter: (.data.feed.data |= map(select((.author // "") != "")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.feed.data |= map(select((.author\
+      \ // \"\") != \"\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

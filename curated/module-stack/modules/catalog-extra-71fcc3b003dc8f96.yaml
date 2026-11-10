@@ -4,17 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ValorantBible.png
 homepage: https://hub.kelee.one
 map_locals:
-- match: ^https:\/\/app\.mval\.qq\.com\/go\/recommend\/platflashbox\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.mval\.qq\.com\/go\/mlol_news\/search\/varcache_hotV\d\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json
-- match: ^https:\/\/app\.mval\.qq\.com\/go\/customize_search\/article_rank_tab\?
+- match: (?:^https:\/\/app\.mval\.qq\.com\/go\/recommend\/platflashbox\?)|(?:^https:\/\/app\.mval\.qq\.com\/go\/mlol_news\/search\/varcache_hotV\d\?)|(?:^https:\/\/app\.mval\.qq\.com\/go\/customize_search\/article_rank_tab\?)
   status_code: 200
   body: '{}'
   headers:

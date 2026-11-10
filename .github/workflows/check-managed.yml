@@ -51,5 +51,6 @@ jobs:
       - run: python curated/tools/test_module_converter.py
       - run: python curated/tools/test_loon_lpx_converter.py
       - run: python curated/tools/test_adblock_collection.py
+      - run: python curated/tools/test_module_quality.py
       - run: node curated/tools/test_qx_echo.cjs
       - run: python curated/tools/check_adblock_collection.py

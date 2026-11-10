@@ -13,12 +13,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$
+- match: (?i:^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2)|(?i:^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$)
   status_code: 200
   body: '{}'
   headers:

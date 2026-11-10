@@ -1,8 +1,90 @@
 """Deterministic native collection composition; originals are never mutated."""
 import copy
 import json
+import re
 
 SECTIONS=('rules','url_rewrites','header_rewrites','body_rewrites','map_locals','scriptings')
+
+JQ_GUARD_MARKER = '# Egern: preserve input on failed, empty or multi-result transform'
+
+
+def guarded_jq(expression):
+    """Retain every successful single JSON result; fail open on transform failure."""
+    if expression.startswith(JQ_GUARD_MARKER):
+        return expression
+    return (JQ_GUARD_MARKER + '\n'
+            '. as $__egern_original_json\n'
+            '| try (([ (\n' + expression + '\n) ]) as $__egern_results\n'
+            '       | if ($__egern_results | length) == 1\n'
+            '         then $__egern_results[0] else $__egern_original_json end)\n'
+            '  catch $__egern_original_json')
+
+
+def _safe_union_branch(pattern):
+    # Numeric and named capture backreferences can change meaning after union.
+    if re.search(r'\\[1-9]|\\k[<{]|\(\?P[<=]|\(\?<[A-Za-z_]', pattern):
+        return None
+    if pattern.startswith('(?i)'):
+        return '(?i:' + pattern[4:] + ')'
+    return '(?:' + pattern + ')'
+
+
+def _url_host_scope(pattern):
+    normalized = pattern.replace(r'\/', '/')
+    found = re.match(r'^(?:\(\?i\))?\^https?\??://([^/]+)', normalized)
+    return found[1] if found else None
+
+
+def normalize_processing(obj):
+    """Add shared robustness without changing upstream archives or script bytes.
+
+    Only consecutive identical local replies/script bindings are consolidated:
+    moving a later matcher across a different reply could change priority.
+    """
+    output = copy.deepcopy(obj)
+    changes = []
+    for section in ('map_locals', 'scriptings'):
+        entries = output.get(section)
+        if not entries:
+            continue
+        grouped = []
+        previous_key = None
+        previous_fields = None
+        previous_patterns = []
+        for entry in entries:
+            phase, fields = (section, entry) if section == 'map_locals' else next(iter(entry.items()))
+            branch = _safe_union_branch(fields.get('match', ''))
+            payload = {key: value for key, value in fields.items() if key not in {'match', 'name'}}
+            # Keep distinct hostname scopes separate so later finance/host
+            # protections can remove one host without dropping unrelated URLs.
+            scope = _url_host_scope(fields.get('match', ''))
+            key = (phase, scope, json.dumps(payload, sort_keys=True, ensure_ascii=False))
+            eligible = not fields.get('disabled') and scope and branch and fields.get('match') and phase in {'map_locals', 'http_request', 'http_response'}
+            if eligible and key == previous_key:
+                previous_patterns.append(branch)
+                previous_fields['match'] = '|'.join(previous_patterns)
+                changes.append({'kind': 'consecutive_identical_handlers_unified',
+                                'section': section, 'phase': phase,
+                                'source_match': fields['match'],
+                                'source_name': fields.get('name'),
+                                'upstream_script_bytes_changed': False})
+            else:
+                grouped.append(entry)
+                previous_key = key if eligible else None
+                previous_fields = fields
+                previous_patterns = [branch] if eligible else []
+        output[section] = grouped
+    for entry in output.get('body_rewrites', []):
+        phase, fields = next(iter(entry.items()))
+        if phase not in {'request_jq', 'response_jq'} or fields.get('disabled'):
+            continue
+        original = fields['filter']
+        fields['filter'] = guarded_jq(original)
+        if fields['filter'] != original:
+            changes.append({'kind': 'jq_preserve_input_on_transform_failure',
+                            'phase': phase, 'match': fields['match'],
+                            'successful_single_result_preserved': True})
+    return output, changes
 
 
 def compose_jq_operations(entries):

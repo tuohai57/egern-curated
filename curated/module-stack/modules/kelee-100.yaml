@@ -8,42 +8,7 @@ rules:
     match: kad.gotokeep.com
     policy: REJECT
 map_locals:
-- match: (?i)^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\?
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/search\/v4\/hotHashtag\/list$
-  status_code: 200
-  body: '{}'
-  headers:
-    Content-Type: application/json; charset=utf-8
-- match: (?i)^https:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\?
+- match: (?i:^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/)|(?i:^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\?)|(?i:^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\?)|(?i:^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\?)|(?i:^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\?)|(?i:^https:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$)|(?i:^https:\/\/api\.gotokeep\.com\/search\/v4\/hotHashtag\/list$)|(?i:^https:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\?)
   status_code: 200
   body: '{}'
   headers:
@@ -54,39 +19,58 @@ mitm:
 body_rewrites:
 - response_jq:
     match: (?i)^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$
-    filter: (delpaths([["data", "adTimeoutReport"], ["data", "spotShowReport"], ["data",
-      "adSupplementIntervalMinutes"], ["data", "adSupplementSwitch"], ["data", "hotFeedSpotAdRequestMoment"],
-      ["data", "activityBrandFeedSpotAdRequestMoment"], ["data", "searchFeedSpotAdRequestMoment"],
-      ["data", "feedDetailSpotAdRequestMoment"], ["data", "homePageFeedSpotAdRequestMoment"],
-      ["data", "followFeedSpotAdRequestMoment"], ["data", "hotFeedRecommendSpotAdRequestMoment"],
-      ["data", "activityFeedSpotAdRequestMoment"], ["data", "hotFeedFindSpotAdRequestMoment"],
-      ["data", "hotFeedSpotFixedPositionSecond"], ["data", "searchFeedSpotFixedPositionSecond"],
-      ["data", "followFeedSpotFixedPositionSecond"], ["data", "activityFeedSpotFixedPositionSecond"],
-      ["data", "searchFeedSpotFixedPositionThird"], ["data", "hotFeedFindSpotFixedPositionSecond"],
-      ["data", "hotFeedFindSpotFixedPositionThird"], ["data", "activityFeedSpotFixedPositionInitial"],
-      ["data", "activityFeedSpotFixedPositionThird"], ["data", "hotFeedDynamicSpotPosition"],
-      ["data", "feedDetailDynamicSpotPosition"], ["data", "hotFeedRecommendDynamicSpotPosition"],
-      ["data", "hotFeedFindDynamicSpotPosition"], ["data", "homePageFeedDynamicSpotPosition"],
-      ["data", "followFeedDynamicSpotPosition"], ["data", "searchFeedSpotPositionDynamic"],
-      ["data", "activityFeedSpotPositionDynamic"], ["data", "activityBrandFeedSpotPositionDynamic"],
-      ["data", "splashAdLoadTimeLimit"], ["data", "courseAdLoadTimeLimit"], ["data",
-      "feedAdLoadTimeLimit"], ["data", "aliHCSpotConfig"], ["data", "gdtSpotConfig"],
-      ["data", "pugcThresholdPercent"], ["data", "pugcStepMinSeconds"], ["data", "pugcStepMaxSeconds"],
-      ["data", "pugcPreLoadEarlySeconds"], ["data", "pugcLoadPostPreRolls"], ["data",
-      "closeConfirmButtonText"]]))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"adTimeoutReport\"\
+      ], [\"data\", \"spotShowReport\"], [\"data\", \"adSupplementIntervalMinutes\"\
+      ], [\"data\", \"adSupplementSwitch\"], [\"data\", \"hotFeedSpotAdRequestMoment\"\
+      ], [\"data\", \"activityBrandFeedSpotAdRequestMoment\"], [\"data\", \"searchFeedSpotAdRequestMoment\"\
+      ], [\"data\", \"feedDetailSpotAdRequestMoment\"], [\"data\", \"homePageFeedSpotAdRequestMoment\"\
+      ], [\"data\", \"followFeedSpotAdRequestMoment\"], [\"data\", \"hotFeedRecommendSpotAdRequestMoment\"\
+      ], [\"data\", \"activityFeedSpotAdRequestMoment\"], [\"data\", \"hotFeedFindSpotAdRequestMoment\"\
+      ], [\"data\", \"hotFeedSpotFixedPositionSecond\"], [\"data\", \"searchFeedSpotFixedPositionSecond\"\
+      ], [\"data\", \"followFeedSpotFixedPositionSecond\"], [\"data\", \"activityFeedSpotFixedPositionSecond\"\
+      ], [\"data\", \"searchFeedSpotFixedPositionThird\"], [\"data\", \"hotFeedFindSpotFixedPositionSecond\"\
+      ], [\"data\", \"hotFeedFindSpotFixedPositionThird\"], [\"data\", \"activityFeedSpotFixedPositionInitial\"\
+      ], [\"data\", \"activityFeedSpotFixedPositionThird\"], [\"data\", \"hotFeedDynamicSpotPosition\"\
+      ], [\"data\", \"feedDetailDynamicSpotPosition\"], [\"data\", \"hotFeedRecommendDynamicSpotPosition\"\
+      ], [\"data\", \"hotFeedFindDynamicSpotPosition\"], [\"data\", \"homePageFeedDynamicSpotPosition\"\
+      ], [\"data\", \"followFeedDynamicSpotPosition\"], [\"data\", \"searchFeedSpotPositionDynamic\"\
+      ], [\"data\", \"activityFeedSpotPositionDynamic\"], [\"data\", \"activityBrandFeedSpotPositionDynamic\"\
+      ], [\"data\", \"splashAdLoadTimeLimit\"], [\"data\", \"courseAdLoadTimeLimit\"\
+      ], [\"data\", \"feedAdLoadTimeLimit\"], [\"data\", \"aliHCSpotConfig\"], [\"\
+      data\", \"gdtSpotConfig\"], [\"data\", \"pugcThresholdPercent\"], [\"data\"\
+      , \"pugcStepMinSeconds\"], [\"data\", \"pugcStepMaxSeconds\"], [\"data\", \"\
+      pugcPreLoadEarlySeconds\"], [\"data\", \"pugcLoadPostPreRolls\"], [\"data\"\
+      , \"closeConfirmButtonText\"]]))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$
-    filter: (.data.modules |= map(select(.code == "unionFeedEntry")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.modules |= map(select(.code\
+      \ == \"unionFeedEntry\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\?
-    filter: (setpath(["data"]; "{}"))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(setpath([\"data\"]; \"{}\"))\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.gotokeep\.com\/config\/v3\/basic\?
-    filter: (.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or .
-      == "schedule" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs
-      |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend"
-      or . == "suitTab" or . == "union_feed_route")))
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.bottomBarControl.tabs |= map(select(.tabType\
+      \ | . == \"home\" or . == \"schedule\" or . == \"dynamic_sports\" or . == \"\
+      personal\")) | .data.homeTabs |= map(select(.type | . == \"socialTab\" or .\
+      \ == \"union_feed_all\" or . == \"homeRecommend\" or . == \"suitTab\" or . ==\
+      \ \"union_feed_route\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.gotokeep\.com\/pencil-webapp\/play\/v1\/games\?
-    filter: (.data.games[].microGames[] |= if .leftIcon? and .leftIcon.type == "aiMode"
-      then del(.leftIcon) else . end)
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.games[].microGames[] |= if\
+      \ .leftIcon? and .leftIcon.type == \"aiMode\" then del(.leftIcon) else . end)\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
