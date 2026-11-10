@@ -1,0 +1,55 @@
+{
+  "reviewed_on": "2026-11-10",
+  "scope": "User-supplied third-party routing hints, not an official Apple AI requirement or device unlock certification.",
+  "sources": [
+    {
+      "repository": "RocM301/Apple-Rule",
+      "branch": "main",
+      "path": "Apple-AI.list",
+      "last_file_commit": "d51a50fd8bf74f42977d01fda9973f9efbb26b1b",
+      "last_file_commit_utc": "2026-10-17T03:25:51Z",
+      "sha256": "e397152a480dcc5314f8f3674b1c2b4ed452e5a6b41d6a68e307594922c8a90d",
+      "rule_count": 19
+    },
+    {
+      "repository": "ddgksf2013/Filter",
+      "branch": "master",
+      "path": "AppleIntelligence.list",
+      "last_file_commit": "d52c1103c53949fd6db9b43989d7975ff55c7019",
+      "last_file_commit_utc": "2026-09-17T05:52:34Z",
+      "sha256": "1ab52afb4d24aacedd9c8a6d53bc49dec3557d507f188808c209502c6ea4ddc5",
+      "rule_count": 11
+    }
+  ],
+  "changes": [
+    {
+      "type": "domain",
+      "value": "wps.apple.com",
+      "action": "Move from general Apple policy to independent Apple AI supplement"
+    },
+    {
+      "type": "domain_suffix",
+      "value": "apps.mzstatic.com",
+      "action": "Move from App Store policy to supplement; shared resource scope, not AI-exclusive"
+    },
+    {
+      "type": "domain_suffix",
+      "value": "guzzoni.apple.com",
+      "action": "Broaden existing exact matcher to suffix and remove duplicate exact matcher"
+    }
+  ],
+  "already_covered": [
+    {
+      "type": "domain_suffix",
+      "value": "api-siri-prod.apple.com",
+      "covered_by": "domain_keyword:siri"
+    },
+    {
+      "type": "domain_suffix",
+      "value": "gspe1-ssl.ls.apple.com",
+      "covered_by": "domain_suffix:ls.apple.com"
+    }
+  ],
+  "retained_user_screenshot_value": "apps.mastic.com is separate from apps.mzstatic.com; not silently corrected",
+  "effective_selectors": 20
+}

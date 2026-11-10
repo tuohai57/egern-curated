@@ -5416,6 +5416,26 @@
       "policy": "Apple AI补充"
     },
     {
+      "scene": "Reviewed list WPS endpoint",
+      "host": "wps.apple.com",
+      "policy": "Apple AI补充"
+    },
+    {
+      "scene": "Reviewed list resource hostname",
+      "host": "apps.mzstatic.com",
+      "policy": "Apple AI补充"
+    },
+    {
+      "scene": "Reviewed list Siri subdomain range",
+      "host": "child.guzzoni.apple.com",
+      "policy": "Apple AI补充"
+    },
+    {
+      "scene": "Keyword already covers explicit upstream Siri endpoint",
+      "host": "api-siri-prod.apple.com",
+      "policy": "Apple AI补充"
+    },
+    {
       "scene": "Screenshot keyword broad match retained",
       "host": "siriously.example.com",
       "policy": "Apple AI补充"
@@ -31740,6 +31760,7 @@
     "*.apple-relay.mask.apple-dns.net",
     "*.appleid.apple.com",
     "*.applepay.apple.com",
+    "*.apps.mzstatic.com",
     "*.baitiao.com",
     "*.bank.pingan.com",
     "*.bank.pingan.com.cn",
@@ -31932,6 +31953,7 @@
     "*.wise.com",
     "*.wise.jobs",
     "*.wns.windows.com",
+    "*.wps.apple.com",
     "*.wxpay.weixin.qq.com",
     "*.x.ai",
     "*.yangjibao.com",
@@ -31973,6 +31995,7 @@
     "apple-relay.mask.apple-dns.net",
     "appleid.apple.com",
     "applepay.apple.com",
+    "apps.mzstatic.com",
     "baitiao.com",
     "bank.pingan.com",
     "bank.pingan.com.cn",
@@ -32165,10 +32188,11 @@
     "wise.com",
     "wise.jobs",
     "wns.windows.com",
+    "wps.apple.com",
     "wxpay.weixin.qq.com",
     "x.ai",
     "yangjibao.com",
     "yunshanfu.cn"
   ],
-  "private_profile_sha256": "8261e694b909ccf9a5b18b27999c5eee440080d8d886b25d5a8d62afb625cf00"
+  "private_profile_sha256": "d48c04ef68df3723d0ff316ee1f45cb818cb9a4c83d97f15521f0e62f8a370c4"
 }

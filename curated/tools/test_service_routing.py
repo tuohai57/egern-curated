@@ -37,11 +37,11 @@ supplement_url='https://raw.githubusercontent.com/tuohai57/egern-curated/main/cu
 supplement_path=ROOT/'curated/rules/managed/apple-ai-supplement.yaml'
 supplement=yaml.safe_load(supplement_path.read_text(encoding='utf-8'))
 expected={
- 'domain_set':{'guzzoni.apple.com','mask-api.fe.apple-dns.net','mask-api.icloud.com','mask-t.apple-dns.net','mask.apple-dns.net'},
- 'domain_suffix_set':{'smoot.apple.com','apple-relay.apple.com','apple-relay.cloudflare.com','apple-relay.fastly-edge.com','apple-relay.mask.apple-dns.net','cp4.cloudflare.com','gateway.icloud.com','ls.apple.com','mask-h2.icloud.com','mask.icloud.com','apps.mastic.com','apple-relay.akamaized.net'},
+ 'domain_set':{'mask-api.fe.apple-dns.net','mask-api.icloud.com','mask-t.apple-dns.net','mask.apple-dns.net','wps.apple.com'},
+ 'domain_suffix_set':{'guzzoni.apple.com','smoot.apple.com','apple-relay.apple.com','apple-relay.cloudflare.com','apple-relay.fastly-edge.com','apple-relay.mask.apple-dns.net','cp4.cloudflare.com','gateway.icloud.com','ls.apple.com','mask-h2.icloud.com','mask.icloud.com','apps.mastic.com','apps.mzstatic.com','apple-relay.akamaized.net'},
  'domain_keyword_set':{'siri'}}
-check({k:set(v) for k,v in supplement.items()}==expected,'截图远程集合保持18个有效选择器')
-check(sum(len(v) for v in supplement.values())==18,'截图规则总数可由远程YAML复算')
+check({k:set(v) for k,v in supplement.items()}==expected,'原截图与审阅增量保持20个有效选择器')
+check(sum(len(v) for v in supplement.values())==20,'补充规则总数可由远程YAML复算')
 refs=[f for _,node in model.rules for kind,f in node.items() if kind=='rule_set' and f['match']==supplement_url]
 check(len(refs)==1 and refs[0]['policy']=='Apple AI补充' and refs[0]['update_interval']==86400,'截图远程集合仅引用一次并每天更新')
 for kind,values in expected.items():
@@ -59,6 +59,11 @@ for host,policy in [('siri.paypal.com','PayPal'),('siri.icbc.com.cn','中国工�
  actual=model.route('https://'+host+'/')['policy']
  check(actual==policy,'金融与国内地图具体例外前置 '+host,actual=actual,expected=policy)
 check(model.blocked('siri.googlesyndication.com'),'宽siri关键词不放行已有广告域')
+check('guzzoni.apple.com' not in supplement['domain_set'],'Siri后缀替换原精确规则而非重复叠加')
+check('api-siri-prod.apple.com' not in supplement['domain_suffix_set'],'siri关键词已覆盖的上游规则不重复添加')
+check('gspe1-ssl.ls.apple.com' not in supplement['domain_suffix_set'],'ls父域已覆盖的上游规则不重复添加')
+for host in ['wps.apple.com','apps.mzstatic.com']:
+ check(host in data['mitm_excludes'] and '*.'+host in data['mitm_excludes'],'新增共享服务不解密 '+host)
 for name,members in spec['pools'].items():
  members=[r for r in members if r in graph and graph[r]['kind']=='country']
  check(graph[name]['policies']==members,'地区顺序 '+name)
