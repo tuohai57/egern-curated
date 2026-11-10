@@ -1,0 +1,69 @@
+name: 凤凰新闻去广告
+description: 移除皮肤、开屏广告、信息流广告、文末广告、视频流广告、评论区广告，移除信息流订阅号文章、文末推荐阅读，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ifengNews.png
+open_url: https://apps.apple.com/app/id395133418
+tag: 去广告
+url_rewrites:
+- match: (?i)^https:\/\/nine\.ifeng\.com\/adPreload\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/startUpAdPrestrainList\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/startUpAddAd\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/h5prepublish\?
+  location: http://reject/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/searchhotwordsrollv\d\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/searchvideohotwordsroll\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/searchHotwordsReact\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/user\.iclient\.ifeng\.com\/active_task\/channel\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/newRelatedDocs\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/getdocbackinfo\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/user\.iclient\.ifeng\.com\/event_protal\/list_lite\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/nine\.ifeng\.com\/adVideoImmersionWindow\?
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/cow\?
+    filter: .bottomNav|=map(select(.NavId==\"bottomNavNews\" or .NavId==\"bottomNavMine\"))
+- response_jq:
+    match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/cow\?
+    filter: del(.zip_url)
+- response_jq:
+    match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/channel\?
+    filter: .defaultChannel |= map(select(.id == \"commenterch\" or .id == \"sy\" or .id == \"vipchannel\" or .id == \"rank_hot_merge\" or .id == \"rtnews\" or .id == \"sp\" or .id == \"mil\" or .id == \"finance\" or .id == \"history\" or .id == \"momentsnew\" or .id == \"taihai\" or .id == \"focusnews\" or .id == \"rcmd\" or .id == \"tw\" or .id == \"HK\" or .id == \"dawanqu1\"))
+- response_jq:
+    match: (?i)^https:\/\/config\.nine\.ifeng\.com\/news\/channel\?
+    filter: del(.more, .youngChannel)
+- response_jq:
+    match: (?i)^https:\/\/nine\.ifeng\.com\/headline\?
+    filter: walk(if type == \"object\" and has(\"item\") and (.item | type == \"array\") then .item |= map(select(.type == \"phvideo\" or .type == \"doc\" or .type == \"phreclist\")) else . end)
+- response_jq:
+    match: (?i)^https:\/\/nine\.ifeng\.com\/getNewsDocs\?
+    filter: del(.body.showAdvert, .body.adData)
+- response_jq:
+    match: (?i)^https:\/\/nine\.ifeng\.com\/phoenixTvChannel\?
+    filter: map(if has(\"item\") then .item|=map(select(.type==\"columnfastmessagescroll\" or .type==\"phvideo\" or .type==\"videoseriesrecommendmarquee\" or .type==\"short\")) else . end)
+- response_jq:
+    match: (?i)^https:\/\/nine\.ifeng\.com\/videoimmersionlistv\d\?
+    filter: map(if has(\"item\") then .item|=map(select(.type==\"miniVideo\" or .type==\"phvideo\")) else . end)
+- response_jq:
+    match: (?i)^https:\/\/nine\.ifeng\.com\/shortList\?
+    filter: map(.item|=map(select(.type==\"short\")))
+- response_jq:
+    match: (?i)^https:\/\/comment\.ifeng\.com\/v\d\/get\/commentlist\?
+    filter: del(.comments[] | select(.type == \"advert\"))
+mitm:
+  hostnames:
+  - nine.ifeng.com
+  - config.nine.ifeng.com
+  - user.iclient.ifeng.com
+  - comment.ifeng.com

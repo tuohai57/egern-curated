@@ -1,0 +1,68 @@
+name: 高德地图
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: adiu.amap.com
+    policy: REJECT
+- domain:
+    match: aboard.apilocate.amap.com
+    policy: REJECT
+- domain:
+    match: apiinit.amap.com
+    policy: REJECT
+- domain:
+    match: icloud-amap.com
+    policy: REJECT
+- domain:
+    match: logs.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: dualstack-logs.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: logs.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: optimus-ads.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: page.amap.com
+    policy: REJECT
+- domain:
+    match: optimus-ads.amap.com
+    policy: REJECT
+- domain:
+    match: optimus-ads.amap.com.w.alikunlun.com
+    policy: REJECT
+- domain_suffix:
+    match: shouji.sougou.com
+    policy: REJECT
+- domain:
+    match: u51.me
+    policy: REJECT
+- domain_suffix:
+    match: u51.me
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/m5\.amap\.com\/ws\/valueadded\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/[a-zA-Z0-9]+.gif
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - m*.amap.com
+  - optimus-ads.amap.com
+  - amap-aos-info-nogw.amap.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

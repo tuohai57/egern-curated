@@ -1,0 +1,138 @@
+name: CMS Adblocker
+description: 过滤CMS资源插入式广告
+author: Yswag[https://github.com/Yswag]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CMSPlayer.png
+open_url: https://apps.apple.com/app/id6450680262
+tag: 去广告
+url_rewrites:
+- match: (?i)(^https?:\/\/s\d+\.bfengbf\.com\/video)(.+)_z5q\.ts
+  location: $1$2.ts
+  status_code: 307
+scriptings:
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https?:\/\/m3u8\.(hmrvideo|heimuertv)\.com\/play\/(.+).m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https?:\/\/((?:v\.lzcdn|v\.cdnlz|vip.*\.lz[-]?cdn)\d+\.com)\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https?:\/\/(super|svipsvip|vip)\.ffzy[A-Za-z0-9-]+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https?:\/\/c\d+\.rrcdnbf\d+\.com\/video\/(.+)\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https?:\/\/vip\.kuaikan-(cdn|play)\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/bfikuncdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/play\.modujx\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/vod\.lyhuicheng\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/ukzy\.ukubf\d+\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/.+\.wgslsw\.com\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/leshiyuncdn\.36s\.top\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/.+\.feidaozy\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/askzycdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/.+\.97img\.com\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/.+\.bfbfhao\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/player\.cl9987\.com:188\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/v\.ykv3\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/.+\.3sybf\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/bfnxxcdn\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+- http_response:
+    name: CMS Adblocker-响应
+    match: (?i)^https:\/\/player\.huangguam3u\.com\/.+\/hls\/.+\.m3u8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/39cacf3053c76dbe2641385639564a5644fe6716611d4ce062b5b1b3d99b76f8.js
+    body_required: true
+mitm:
+  hostnames:
+  - m3u8.heimuertv.com
+  - m3u8.hmrvideo.com
+  - v.cdnlz*.com
+  - v.lzcdn*.com
+  - vip*.lz-cdn*.com
+  - vip.lzcdn*.com
+  - '*.ffzy*.com'
+  - '*.rrcdnbf*.com'
+  - vip.kuaikan*.com
+  - bfikuncdn.com
+  - play.modujx*.com
+  - vod.lyhuicheng.com
+  - ukzy.ukubf*.com
+  - '*.wgslsw.com'
+  - askzycdn.com
+  - t0.97img.com
+  - '*.bfbfhao.com'
+  - player.cl9987.com:188
+  - v.ykv3.com
+  - '*.3sybf.com'
+  - bfnxxcdn.com
+  - player.huangguam3u.com
+  - leshiyuncdn.36s.top
+  - cs1.feidaozy.com

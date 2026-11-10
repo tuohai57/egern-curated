@@ -1,0 +1,160 @@
+name: 小红书
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  xhs_enable: true
+rules:
+- domain:
+    match: ads-img-qc.xhscdn.com
+    policy: REJECT
+- domain:
+    match: ads-video-al.xhscdn.com
+    policy: REJECT
+- domain:
+    match: ads-video-qc.xhscdn.com
+    policy: REJECT
+- domain:
+    match: t-ads.xiaohongshu.com
+    policy: REJECT
+- and:
+    match:
+    - protocol:
+        match: quic
+    - domain_suffix:
+        match: xiaohongshu.com
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/marketing\/box\/trigger\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/guide\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/detailfeed\/preload\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/guide\/user_banner
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/www\.(xiaohongshu|rnote)\.com\/api\/sns\/(v\d+\/ads\/resource|v\d+\/hey\/\w+\/hey_gallery)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_request:
+    name: 小红书 / binary local
+    match: ^https?:\/\/ci\.(xiaohongshu|rnote)\.com\/system_config\/watermark
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_response:
+    name: 小红书 / 1
+    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(banner|hot)_list
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 2
+    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/(hint|trending)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 3
+    match: ^https?:\/\/(so|edith)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/search\/notes\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 4
+    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/config\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 5
+    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/system_service\/splash_config
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 6
+    match: ^https?:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/widgets
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 7
+    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/note\/(imagefeed|live_photo\/save)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 8
+    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/v\d+\/(followfeed|homefeed)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 9
+    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 10
+    match: ^https?:\/\/(edith|rec|www)\.(xiaohongshu|rnote)\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 11
+    match: ^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 小红书 / 12
+    match: ^https:\/\/edith\.(xiaohongshu|rnote)\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - edith.xiaohongshu.com
+  - www.xiaohongshu.com
+  - ci.xiaohongshu.com
+  - rec.xiaohongshu.com
+  - so.xiaohongshu.com
+  - edith.rnote.com
+  - www.rnote.com
+  - ci.rnote.com
+  - so.rnote.com
+  - rec.rnote.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiaohongshu.png

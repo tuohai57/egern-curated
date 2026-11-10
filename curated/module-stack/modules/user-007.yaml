@@ -1,0 +1,32 @@
+name: 航旅纵横
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - sns.umetrip.com
+  - appmsg.umetrip.com
+  - home.umetrip.com
+  - umehome.umetrip.com
+  - opactivity.umetrip.com
+  - activity.umetrip.com
+  - umerp.umetrip.com
+  - flightstatus.umetrip.com
+  - umeflightstatus.umetrip.com
+  - startup.umetrip.com
+  - umestartup.umetrip.com
+  - user.umetrip.com
+  - umeuser.umetrip.com
+  - event.umetrip.com
+  - oss.umetrip.com
+scriptings:
+- http_response:
+    name: 航旅纵横 / 1
+    match: ^https:\/\/(?:sns|appmsg|home|umehome|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|user|umeuser|event)\.umetrip\.com\/gateway\/api\/umetrip\/native(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e.js
+    body_required: true
+    update_interval: 86400
+- http_request:
+    name: 航旅纵横 / tiny GIF
+    match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/hanglvzonghengumetrip.png

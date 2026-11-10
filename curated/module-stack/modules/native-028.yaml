@@ -1,0 +1,162 @@
+name: 芒果TV
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: dflow.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: encounter.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: floor.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: img.da.mgtv.com
+    policy: REJECT
+- domain:
+    match: layer.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: mob.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: mobile.da.mgtv.com
+    policy: REJECT
+- domain:
+    match: rc-topic-api.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: v2.da.mgtv.com
+    policy: REJECT
+- domain:
+    match: video.da.mgtv.com
+    policy: REJECT
+- domain:
+    match: vip.bz.mgtv.com
+    policy: REJECT
+- domain:
+    match: ys.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: mobile2.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: cdn.cmop.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: cmop.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: imgaliyun.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: imgaliyun.res.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: m2.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: mobaliyun.res.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: pc.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: pc1.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: pcvideoaliyun.titan.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: pcvideoyd.titan.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: pcweb.v1.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: py.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: web.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: x.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: y.da.mgtv.com
+    policy: REJECT
+- domain_suffix:
+    match: da.mgtv.com
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/[\d\.]+:\d{5}\/\?cmd=indexes
+    policy: REJECT
+url_rewrites: []
+map_locals:
+- match: ^https?:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+scriptings:
+- http_response:
+    name: 芒果TV我的页面
+    match: ^https?:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV首页信息流,顶部tab
+    match: ^https?:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV
+    match: ^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV底部tab
+    match: ^https?:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV播放详情页
+    match: ^https?:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV播放详情页
+    match: ^https?:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 芒果TV搜索框填充词
+    match: ^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+mitm:
+  hostnames:
+  - '*.mgtv.com'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mangguotv.png

@@ -1,0 +1,47 @@
+name: 美团 & 美团外卖
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+map_locals:
+- match: ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch\?appkey=213807&
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_request:
+    name: 美团 & 美团外卖 / binary local
+    match: ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: 美团 & 美团外卖 / binary local
+    match: ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: 美团 & 美团外卖 / binary local
+    match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+mitm:
+  hostnames:
+  - img.meituan.net
+  - s3plus.meituan.net
+  - flowplus.meituan.net
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

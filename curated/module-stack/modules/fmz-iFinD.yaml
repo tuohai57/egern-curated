@@ -1,0 +1,32 @@
+name: 同花顺
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: adm.10jqka.com.cn
+    policy: REJECT
+- domain:
+    match: stat.10jqka.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: ad.thsi.cn
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/iphone\.ac\.qq\.com\/.*\/Support\/(getSystemConf|bootScreen)
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend
+  status_code: 200
+  body: ' '
+- match: ^https?:\/\/stat\.10jqka\.com\.cn\/q\?ld=mobile&id=ad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - adm.10jqka.com.cn
+  - iphone.ac.qq.com
+  - stat.10jqka.com.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/tianping.png

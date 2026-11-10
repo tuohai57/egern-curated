@@ -1,0 +1,113 @@
+name: 网易云音乐
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  DT: false
+  FX: true
+  MY: true
+  whyiyyybyt_enable: true
+rules:
+- domain:
+    match: iadmusicmat.music.126.net
+    policy: REJECT
+- domain:
+    match: iadmat.nosdn.127.net
+    policy: REJECT
+- domain:
+    match: iadmatapk.nosdn.127.net
+    policy: REJECT
+- domain:
+    match: httpdns.n.netease.com
+    policy: REJECT
+- domain:
+    match: httpdns.music.163.com
+    policy: REJECT
+map_locals:
+- match: https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: 网易云音乐 / 1
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+- http_response:
+    name: 网易云音乐 / 2
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7c988dbc0315eab8fbe72dcea6ac39322be939e58d146b94e73dabe1e8572589.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+- http_response:
+    name: 网易云音乐 / 3
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5ba0611ddc6d3116a337a9c0162a1a1be3c01d561a7d0665cd593aa45949160a.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+- http_response:
+    name: 网易云音乐 / 4
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+- http_response:
+    name: 网易云音乐 / 5
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+- http_response:
+    name: 网易云音乐 / 6
+    match: ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 20
+    max_size: 16777216
+mitm:
+  hostnames:
+  - ipv4.music.163.com
+  - interface.music.163.com
+  - interface3.music.163.com
+  - interface9.music.163.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wyy.png

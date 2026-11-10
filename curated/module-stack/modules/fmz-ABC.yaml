@@ -1,0 +1,20 @@
+name: 农业银行
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(ed64|74b5)
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/enjoy\.cdn-static\.abchina\.com\/yx-engine-web\/file\/download\/(?!7dc2|fe96|cea3|06a8|1b11|d57b|6918|61db|2d58|aa23|)
+  status_code: 200
+  body: ' '
+- match: ^https?:\/\/firefly\.abchina\.com\.cn\/firefly-collection\/Collect
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - midc.cdn-static.abchina.com.cn
+  - enjoy.cdn-static.abchina.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/tianping.png

@@ -1,0 +1,9 @@
+name: Google搜索
+mitm:
+  hostnames:
+  - www.google.cn
+url_rewrites:
+- match: ^https?:\/\/(www.)?(g|google)\.cn
+  location: https://www.google.com
+  status_code: 302
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

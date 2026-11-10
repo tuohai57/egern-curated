@@ -1,0 +1,39 @@
+name: script-hub.surge.sgmodule
+description: https://script.hub
+author: '@小白脸 @xream @keywos @ckyb'
+compat_arguments:
+  Notify: 开启通知
+scriptings:
+- http_request:
+    name: script-hub.surge.sgmodule / 1
+    match: ^https?:\/\/script\.hub\/($|edit\/|reload)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6a0c1d8e05136e7f134bfbf0dd94a8ab7356b22607a1ba7bace57820e2bc7af1.js
+    body_required: true
+    update_interval: 86400
+    timeout: 300
+- http_request:
+    name: script-hub.surge.sgmodule / 2
+    match: ^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2485b25f900e929eb1c71585238bb933215bc1e61f55f5de8d59cfa282e4521c.js
+    body_required: true
+    update_interval: 86400
+    timeout: 300
+- http_request:
+    name: script-hub.surge.sgmodule / 3
+    match: ^https?:\/\/script\.hub\/file\/_start_\/.+type=rule-set
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e81a7f55c9d73e90f692b90ff27c0c242bab0b2e69ded324b6cd48d19124c913.js
+    body_required: true
+    update_interval: 86400
+    timeout: 300
+- http_request:
+    name: script-hub.surge.sgmodule / 4
+    match: ^https?:\/\/script\.hub\/convert\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/27fc22ac5a40364fbe0728d7264e163431656e7b142cde6337ecad11e5d60b78.js
+    body_required: true
+    update_interval: 86400
+    timeout: 300
+mitm:
+  hostnames:
+  - script.hub
+  - '*.script.hub'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

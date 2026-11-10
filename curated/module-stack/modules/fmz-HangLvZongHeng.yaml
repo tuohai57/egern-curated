@@ -1,0 +1,28 @@
+name: 航旅纵横
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  hlzh_enable: true
+rules:
+- url_regex:
+    match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/polite
+    policy: REJECT
+- url_regex:
+    match: ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native
+    policy: REJECT
+scriptings:
+- http_response:
+    name: 航旅纵横 / 1
+    match: ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/7a0f7976a4b8f47649684cc382832e425610e924e0fdc11ea2e06b1ebd2cbacf.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - home.umetrip.com
+  - discardrp.umetrip.com
+  - startup.umetrip.com
+  - oss.umetrip.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/hanglvzonghengumetrip.png

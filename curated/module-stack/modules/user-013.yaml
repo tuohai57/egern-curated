@@ -1,0 +1,32 @@
+name: 网易邮箱大师
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - dashi.163.com
+  - appconf.mail.163.com
+  - mail.163.com
+map_locals:
+- match: ^https?:\/\/dashi\.163\.com\/task-center-api\/fapi\/task
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/appconf\.mail\.163\.com\/mmad\/master\/get\.do
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/getRegConfig\.do
+  status_code: 200
+  body: '{}'
+- match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do
+  status_code: 200
+  body: '{}'
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/.*conf\.do
+    filter: .data |= del(.masterLoginGuideList, .masterOperatorList, .functionOperatorInfoList,
+      .memberOperator, .activityTabInfoList, .extList)
+- response_jq:
+    match: ^https?:\/\/mail\.163\.com\/fgw\/mailsrv-webrobot\/.*user\/info
+    filter: .result |= del(.assistantInfo, .quotaData)
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/mail.png

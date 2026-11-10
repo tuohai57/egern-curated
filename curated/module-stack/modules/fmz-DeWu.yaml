@@ -1,0 +1,13 @@
+name: 得物
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg
+  status_code: 200
+  body: ' '
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/dewu.png

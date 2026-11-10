@@ -1,0 +1,100 @@
+name: 网易云svip会员（完全免费不要到处分享）
+description: 共享网易云svip会员 完全免费不要到处分享 失效群内反馈频道
+author: 暗夜[https://t.me/IPAs_share]
+homepage: https://apps.apple.com/app/id590338362
+icon: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2d/e8/1b/2de81bfd-29a0-d067-63c3-38315cc1661a/AppIcon-1x_U007emarketing-0-9-0-0-85-220-0.png/460x0w.webp
+rules:
+- url_regex:
+    match: ^(?!^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/)(?:^https?://interface.*\.music\.163\.com/eapi/ad/get)
+    policy: REJECT
+- url_regex:
+    match: ^https?://interface.*\.music\.163\.com/eapi/ad/config/get
+    policy: REJECT
+- url_regex:
+    match: ^https?://interface.*\.music\.163\.com/eapi/ad/iyunIds
+    policy: REJECT
+- url_regex:
+    match: ^https?://interface.*\.music\.163\.com/eapi/ad/prefetch/select
+    policy: REJECT
+- url_regex:
+    match: ^https?://interface.*\.music\.163\.com/eapi/ad/loading/current
+    policy: REJECT
+url_rewrites: []
+map_locals:
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/)
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist)
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/)
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/))
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
+  headers:
+    Content-Type: text/plain
+  body: ''
+- match: ^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
+  headers:
+    Content-Type: text/plain
+  body: ''
+scriptings:
+- http_request:
+    name: 皮肤
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/playermode\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 歌曲、听书
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/search\/(?:complex\/page|complex\/rec\/song\/get|song\/list\/page)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 歌曲、听书
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/v3\/song\/detail
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 歌曲、听书
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/song\/(?:chorus|enhance\/|play\/|type\/detail\/get)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 歌曲、听书
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:v1\/artist\/top\/song|v3\/discovery\/recommend\/songs)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 等级
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/vipnewcenter\/app\/resource\/newaccountpage
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 首页歌单
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(homepage\/|v6\/)?playlist\/(?!(?:delete|subscribe|unsubscribe))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+- http_request:
+    name: 音质
+    match: ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/vipauth\/app\/auth\/(soundquality\/)?query
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f79a17e87d332fef899fab0a23e71c4161c42ca74d671d9c0d3c7a2689d44624.js
+    body_required: true
+mitm:
+  hostnames:
+  - interface*.music.163.com

@@ -1,0 +1,19 @@
+name: 网盘倍速
+scriptings:
+- http_request:
+    name: 网盘倍速 / 1
+    match: ^https:\/\/pan\.baidu\.com\/api\/streaming\?app_id=\d+&type=M3U8_HQ_1080
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/00615ce6dfae37cdc5e55ae791c9353a3fb6f981d895a6fbd0b53caaaf129ecd.js
+    body_required: false
+    update_interval: 86400
+- http_response:
+    name: 网盘倍速 / 2
+    match: ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/00615ce6dfae37cdc5e55ae791c9353a3fb6f981d895a6fbd0b53caaaf129ecd.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - pan.baidu.com
+  - afd.baidu.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

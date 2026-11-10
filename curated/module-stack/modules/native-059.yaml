@@ -1,0 +1,36 @@
+name: 阿里云盘去广告
+description: 移除首页广告横幅、弹窗和顶部奖励。
+author: RuCu6[https://github.com/RuCu6]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AliYunDrive.png
+open_url: https://apps.apple.com/app/id1494661473
+tag: 去广告
+rules:
+- ip_cidr:
+    match: 203.107.1.1/24
+    policy: REJECT
+    no_resolve: true
+url_rewrites: []
+scriptings:
+- http_response:
+    name: 阿里云盘去广告-响应
+    match: (?i)^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4909ecde19541ad5e83be296e87eab83e62ede4e710fceee3d59dc4cf11f3e38.js
+    body_required: true
+- http_response:
+    name: 阿里云盘去广告-响应
+    match: (?i)^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4909ecde19541ad5e83be296e87eab83e62ede4e710fceee3d59dc4cf11f3e38.js
+    body_required: true
+mitm:
+  hostnames:
+  - api.alipan.com
+  - member.alipan.com
+  - bizapi.alipan.com
+map_locals:
+- match: (?i)^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders
+  status_code: 200
+  body: '{}'

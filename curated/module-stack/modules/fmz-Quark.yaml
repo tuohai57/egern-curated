@@ -1,0 +1,19 @@
+name: 夸克
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  kxke_enable: true
+scriptings:
+- http_response:
+    name: 夸克 / 1
+    match: ^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/a80632f4308d8971f2ee1b42cb1b2c3b72c90ec5619ed33849fcc0fcbf0f1bcc.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - open-cms-api.uc.cn
+  - open-cms-api.quark.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/quark.png

@@ -1,0 +1,89 @@
+name: 大众点评
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+url_rewrites: []
+map_locals:
+- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/img\.meituan\.net\/goodsawardpic\/\w+\.gif
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: 大众点评
+    match: ^https?:\/\/img\.meituan\.net\/(?>dpmobile|goodsawardpic)\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/78971da6855858d1a6737872209cfc0aaaf7755fbe8da19f4115a03591820252.js
+    body_required: true
+- http_response:
+    name: 大众点评
+    match: ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/78971da6855858d1a6737872209cfc0aaaf7755fbe8da19f4115a03591820252.js
+    body_required: true
+mitm:
+  hostnames:
+  - 103.37.155.60
+  - '*.dianping.com'
+  - img.meituan.net
+  - p.meituan.com
+  - rms.meituan.com
+  - www.dpfile.com
+  - awp-assets.meituan.net
+  - s3plus.meituan.net
+  - p*.meituan.net
+  - ddplus.meituan.net
+rules:
+- url_regex:
+    match: ^https?:\/\/103\.37\.155\.60\/fetch
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/catdot\.dianping\.com\/broker-service\/hijack
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig)
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/mapi\.dianping\.com\/adshopping
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/p\.meituan\.com\/api\/privacy\/config
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/www\.dpfile\.com\/app\/fecommonservice-lottie\/ugc-write-done\/media
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/www\.dpfile\.com\/picasso\/picasso-qa\/src\/AnswerList\/AnswerList-bundle
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/www\.dpfile\.com\/sc\/indexpromotion
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/catfront\.dianping\.com\/api\/metric\?v=\d&p=rn_gcbu_mrn-joy-poidetail
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json
+    policy: REJECT
+- url_regex:
+    match: ^(?!^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json)(?:^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf)
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/(?>ehc|titansx|ddblue|edfu)\/
+    policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

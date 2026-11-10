@@ -1,0 +1,164 @@
+name: 网易云音乐
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - interface*.music.163.com
+scriptings:
+- http_response:
+    name: 网易云音乐 / 1
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 2
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 3
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 4
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 5
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 6
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 7
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 8
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 9
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 10
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 11
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 12
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 13
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 14
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 15
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 16
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 17
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 18
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 19
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 20
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 21
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 22
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 网易云音乐 / 23
+    match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ae3971ee3339d0dd0bca88cd71995ee3c2a9ef032b7419dd185a470a203e5c4a.js
+    body_required: true
+    update_interval: 86400
+map_locals:
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/sp\/flow\/popup\/query
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipmall\/couponcfg\/get
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\/inserted\/resources
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config
+  status_code: 200
+  body: ''
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wyy.png

@@ -1,0 +1,20 @@
+name: 航旅纵横去广告
+description: 过滤航旅纵横广告
+author: 佚名
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png
+open_url: https://apps.apple.com/app/id480161784
+tag: 去广告
+rules:
+- url_regex:
+    match: '"^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native"'
+    policy: REJECT
+scriptings:
+- http_response:
+    name: 航旅纵横去广告-响应
+    match: (?i)^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$
+    script_url: https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/3c95af75dda122de.js
+mitm:
+  hostnames:
+  - 114.115.217.129
+  - home.umetrip.com

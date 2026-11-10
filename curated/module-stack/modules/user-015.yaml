@@ -1,0 +1,39 @@
+name: 百度贴吧
+author: '@app2smile, @ddgksf2013'
+mitm:
+  hostnames:
+  - tieba.baidu.com
+  - tiebac.baidu.com
+rules:
+- ip_cidr:
+    match: 180.76.76.200/32
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/search\/discover
+    filter: .data.discover_list = []
+- response_jq:
+    match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/sidebar\/home
+    filter: del(.game_center, .tools, .vip_banner, .task_list)
+- response_jq:
+    match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/u\/user\/profile
+    filter: del(.duxiaoman, .namoaixud, .namoaixud_entry, .recom_naws_list, .duxiaoman_entry,
+      .vip_banner) | .zone_info |= map(select(.type == "common_func" or .type == "auxiliary_func"))
+- response_jq:
+    match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/forum\/forumGuide
+    filter: .hot_search = []
+- response_jq:
+    match: ^https?:\/\/tieba(c)?\.baidu\.com\/mo\/q\/search\/startPage
+    filter: del(.data)
+map_locals:
+- match: ^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/ad\/getFeedAd
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: 百度贴吧 / 1
+    match: ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b9e8931ce47c97e76d1473b915d75f5b3ad877f7439905ea2c5d10e03f33d8f2.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/baidutieba.png

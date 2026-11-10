@@ -1,0 +1,155 @@
+name: 闲鱼
+description: 过滤闲鱼广告
+author: RuCu6[https://github.com/RuCu6], ZenmoFeiShi[https://github.com/ZenmoFeiShi],
+  ishowshu[https://github.com/ishowshu], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png
+open_url: https://apps.apple.com/app/id510909506
+tag: 去广告
+rules:
+- domain_suffix:
+    match: iyes.youku.com
+    policy: REJECT
+- and:
+    match:
+    - url_regex:
+        match: '"^http:\/\/.+\/amdc\/mobileDispatch"'
+    - user_agent:
+        match: '"%E9%97%B2%E9%B1%BC*"'
+    policy: REJECT
+- url_regex:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/1\.0
+    policy: REJECT
+url_rewrites: []
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.widget\.refresh\.get\/
+    filter: .data.homeTopList = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/
+    filter: .data.container.sections |= map(select(.template.name == "fish_home_miniapp"))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/
+    filter: del(.data)
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.fun\.follow\.feed\.list\/
+    filter: .data.sections|=map(select(.cardType==2001))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.community\/
+    filter: .data.feedsList |= map(select(.template.name == "idlefish_home_new_commodity_card"
+      or .template.name == "idlefish_home_new_content_card"))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.newitem\.page\/
+    filter: .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct
+      != "banner" and $ct != "mamaAD"))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/
+    filter: del(.data)
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.magic\.home\.page\.list\/
+    filter: del(.data.topList)
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.trade\.full\.info\/
+    filter: .data.components |= map(select(.render != "recommendTabVO"))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.group\.myself\.banner\/
+    filter: .data.bannerList = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/2\.0
+    filter: .data.recommends = [] | .data.items = [] | .data.next = false
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.fun\.follow\.often\.visit\/
+    filter: .data.sections = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.circle\.myself\.banner\/1\.0
+    filter: .data.bannerList = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.circle\.visited\/1\.0
+    filter: .data.visitedCircleList = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.activate\.tablist\/
+    filter: .data.tabList = []
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.trade\.order\.render\/
+    filter: del(.data.bottomBarVO.benefitPointAtmosphere) | .data.components |= map(select(.render
+      != "meanTimeBuyVO"))
+scriptings:
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.nearby\.itemdetail\.enter\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+- http_response:
+    name: 闲鱼-响应
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20.js
+    body_required: true
+mitm:
+  hostnames:
+  - acs.m.goofish.com
+  - g-acs.m.goofish.com
+map_locals:
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\.top\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/1\.0
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/1\.0
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/1\.0
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.trade\.item\.recommend\.render\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.detailpage\.search\.shade\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemessage\.user\.query\.top\.resource
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.tab
+  status_code: 200
+  body: '{}'

@@ -1,0 +1,120 @@
+name: 优酷
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: partner.uc.cn
+    policy: REJECT
+- domain_suffix:
+    match: uczzd.cn
+    policy: REJECT
+- domain_suffix:
+    match: zconfig.alibabausercontent.com
+    policy: REJECT
+- domain_suffix:
+    match: bgg.baidu.com
+    policy: REJECT
+- domain_suffix:
+    match: adx-core.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: adx-open-service.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: rhdc-acs.youku.com
+    policy: REJECT
+- domain:
+    match: amdc.m.youku.com
+    policy: REJECT
+- domain:
+    match: apiv4-iyes.youku.com
+    policy: REJECT
+- domain:
+    match: yk-ssp.ad.youku.com
+    policy: REJECT
+- domain:
+    match: ykad-data.youku.com
+    policy: REJECT
+- domain:
+    match: ad.mobile.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.api.3g.tudou.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.api.3g.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.api.mobile.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: gamex.mobile.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: p.l.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: r.l.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: v.l.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: l.ykimg.com
+    policy: REJECT
+- domain_suffix:
+    match: p-log.ykimg.com
+    policy: REJECT
+- domain_suffix:
+    match: s.p.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: tdrec.youku.com
+    policy: REJECT
+- domain_suffix:
+    match: test.ott.youku.com
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query)
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+scriptings:
+- http_response:
+    name: 优酷
+    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 优酷底部tab
+    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 优酷青少年模式弹窗
+    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 优酷搜索列表
+    match: ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 优酷热剧弹窗
+    match: ^https?:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+- http_response:
+    name: 优酷开屏广告
+    match: ^https?:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
+    body_required: true
+mitm:
+  hostnames:
+  - acs.youku.com
+  - push.m.youku.com
+  - un-acs.youku.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/youkushipin.png

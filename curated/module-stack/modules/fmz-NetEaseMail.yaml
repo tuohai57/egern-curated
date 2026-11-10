@@ -1,0 +1,57 @@
+name: 网易邮箱
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/p\.c\.music\.126.net\/.*?jpg$
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/img1.126.net\/.+dpi=\w{7,8}
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/img1.126.net\/channel14\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/iadmusicmat\.music.126.net\/.*?jpg$
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/p\d\.music\.126\.net\/\w+==\/\d+\.jpg$
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/nex.163.com\/q
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/g1.163.com\/madfeedback
+    policy: REJECT
+scriptings:
+- http_request:
+    name: 网易邮箱 / binary local
+    match: ^https?:\/\/p[^4](c)?\.music\.126\.net\/\w+==\/10995\d{13}\.jpg$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: 网易邮箱 / binary local
+    match: ^https?:\/\/www.icourse163.org\/.*?(Advertisement)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: 网易邮箱 / binary local
+    match: ^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+map_locals:
+- match: ^https?:\/\/www\.icourse163\.org\/mob\/j\/v1\/mobRecommendRPCBean\.getMaxWeightAdvertisement\.rpc
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - '*.music.126.net'
+  - img1.126.net
+  - www.icourse163.org
+  - nex.163.com
+  - g1.163.com
+  - client.mail.163.com
+  - c.m.163.com
+  - interface*.music.163.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

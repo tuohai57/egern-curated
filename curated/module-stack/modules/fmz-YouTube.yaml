@@ -1,0 +1,27 @@
+name: YouTube
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  youtube_enable: true
+map_locals:
+- match: ^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: YouTube / 1
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    timeout: 60
+    max_size: 16777216
+mitm:
+  hostnames:
+  - rr*.googlevideo.com
+  - youtubei.googleapis.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/04ProxySoft/Youtube.png

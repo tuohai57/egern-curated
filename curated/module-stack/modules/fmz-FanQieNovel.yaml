@@ -1,0 +1,130 @@
+name: 番茄小说
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: i-lq.snssdk.com
+    policy: REJECT
+- domain:
+    match: is-lq.snssdk.com
+    policy: REJECT
+- domain:
+    match: ug-sinfonlinea.bytedance.com
+    policy: REJECT
+- domain:
+    match: dig.bdurl.net
+    policy: REJECT
+- domain:
+    match: activity-ag.awemeughun.com
+    policy: REJECT
+- domain:
+    match: mcs.snssdk.com
+    policy: REJECT
+- domain:
+    match: tnc3-alisc1.snssdk.com
+    policy: REJECT
+- domain:
+    match: security-lq.snssdk.com
+    policy: REJECT
+- domain:
+    match: tnc3-aliec2.snssdk.com
+    policy: REJECT
+- domain:
+    match: v6-novelapp.ixigua.com
+    policy: REJECT
+- domain:
+    match: msync-im1-vip6-std.easemob.com
+    policy: REJECT
+- domain:
+    match: apd-pcdnwxlogin.teg.tencent-cloud.net
+    policy: REJECT
+- domain:
+    match: api.iegadp.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: novelapp.ixigua.com
+    policy: REJECT
+- domain_suffix:
+    match: default.ixigua.com
+    policy: REJECT
+- domain_suffix:
+    match: byteorge.com
+    policy: REJECT
+- ip_cidr:
+    match: 49.71.37.101/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 117.71.105.23/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 218.94.207.205/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 117.92.229.188/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 101.36.166.16/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 180.96.2.114/32
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.byteimg.com/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.byteimg\.com\/ad-app-package
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+\.byteimg\.com\/web\.business\.image
+    policy: REJECT
+mitm:
+  hostnames:
+  - '*.pangolin-sdk-toutiao.com'
+  - '*.pangolin-sdk-toutiao.*'
+  - '*.pstatp.com'
+  - '*.pstatp.com.*'
+  - '*.pglstatp-toutiao.com.*'
+  - '*.pglstatp-toutiao.com'
+  - gurd.snssdk.com
+  - gurd.snssdk.com.*
+  - i-lq.snssdk.com
+  - i-lq.snssdk.com.*
+  - '*default.ixigua.com'
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/fanqiexiaoshuo.png

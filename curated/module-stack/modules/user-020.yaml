@@ -1,0 +1,46 @@
+name: 酷安
+scriptings:
+- http_response:
+    name: 酷安 / 1
+    match: ^https?:\/\/api.coolapk.com\/v6\/main\/init
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 酷安 / 2
+    match: ^https?:\/\/api.coolapk.com\/v6\/dataList
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 酷安 / 3
+    match: ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 酷安 / 4
+    match: ^https?:\/\/api.coolapk.com\/v6\/feed\/replyList
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 酷安 / 5
+    match: ^https?:\/\/api.coolapk.com\/v6\/feed\/detail
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 酷安 / 6
+    match: https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4.js
+    body_required: true
+    update_interval: 86400
+map_locals:
+- match: ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch
+  status_code: 200
+  body: ''
+mitm:
+  hostnames:
+  - api.coolapk.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/kuancoolapk.png

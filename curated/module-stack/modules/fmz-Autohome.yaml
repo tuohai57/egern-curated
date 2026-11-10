@@ -1,0 +1,120 @@
+name: 汽车之家
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_keyword:
+    match: adm3.autoimg.cn
+    policy: REJECT
+- domain_keyword:
+    match: collectionpv.che168.com
+    policy: REJECT
+- domain_keyword:
+    match: adproxy.autohome.com
+    policy: REJECT
+- domain_keyword:
+    match: applogapi.autohome.com
+    policy: REJECT
+- domain:
+    match: adproxy.autohome.com.cn
+    policy: REJECT
+- domain:
+    match: rd.autohome.com.cn
+    policy: REJECT
+- domain:
+    match: al.autohome.com.cn
+    policy: REJECT
+- domain:
+    match: applogapi.autohome.com.cn
+    policy: REJECT
+- domain:
+    match: adm0.autoimg.cn
+    policy: REJECT
+- domain:
+    match: adm1.autoimg.cn
+    policy: REJECT
+- domain:
+    match: adm2.autoimg.cn
+    policy: REJECT
+- domain:
+    match: adm3.autoimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: adm0.autoimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: adm1.autoimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: adm2.autoimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: adm3.autoimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: 33.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: adproxy.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: al.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: applogapi.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: c.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: cmx.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: dspmnt.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: pcd.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: pcmx.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: pvx.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: rd.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: rdx.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: pv.alert.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: activity.app.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: public.app.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: push.app.autohome.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: h.pcd.autohome.com.cn
+    policy: REJECT
+scriptings:
+- http_request:
+    name: 汽车之家 / binary local
+    match: ^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: 汽车之家 / binary local
+    match: ^https?:\/\/app2\.autoimg\.cn\/apppdfs\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+mitm:
+  hostnames:
+  - adproxy.autohome.com.cn
+  - app2.autoimg.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

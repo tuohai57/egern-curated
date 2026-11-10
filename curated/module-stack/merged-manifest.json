@@ -1,0 +1,213 @@
+{
+  "name": "去广告合并合集（Egern）",
+  "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
+  "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
+  "sha256": "93549dc4af4ce775bc3762c004e227986da1c7ba7677d41dd7f14f7dde611301",
+  "enabled": true,
+  "update_interval": 86400,
+  "included_modules": [
+    "广告平台拦截器",
+    "知乎",
+    "微博",
+    "小红书",
+    "闲鱼",
+    "拼多多",
+    "腾讯视频",
+    "百度网盘",
+    "高德地图",
+    "网易云音乐",
+    "B站净化（Sparkle）",
+    "B站重定向（BiliUniverse）",
+    "B站去广告（BiliUniverse）",
+    "B站全局（BiliUniverse）",
+    "哔哩哔哩",
+    "酷安",
+    "什么值得买",
+    "滴滴出行",
+    "Spotify",
+    "YouTube",
+    "爱奇艺",
+    "淘宝",
+    "京东",
+    "快手",
+    "芒果TV",
+    "QQ音乐",
+    "酷我音乐",
+    "汽水音乐",
+    "喜马拉雅",
+    "优酷",
+    "斗鱼直播",
+    "虎牙直播",
+    "美团",
+    "懂车帝",
+    "WPS / 金山",
+    "X 网页版",
+    "Twitter (X)",
+    "Facebook",
+    "TikTok",
+    "得物",
+    "瑞幸咖啡",
+    "米游社",
+    "小黑盒",
+    "马蜂窝",
+    "淘票票",
+    "大麦",
+    "起点读书",
+    "百度文库",
+    "粉笔",
+    "小象超市",
+    "叮咚买菜",
+    "番茄小说",
+    "12306",
+    "夸克",
+    "豆瓣",
+    "阿里云盘",
+    "Reddit",
+    "Line",
+    "美颜相机",
+    "凤凰新闻",
+    "百度贴吧",
+    "Google 搜索重定向",
+    "微信公众号",
+    "微信小程序",
+    "微信本体",
+    "微信外部链接解锁",
+    "抖音",
+    "米家",
+    "菜鸟",
+    "123云盘",
+    "携程",
+    "大众点评",
+    "饿了么",
+    "阿里巴巴（1688）",
+    "汽车之家",
+    "航旅纵横",
+    "麦当劳",
+    "网易邮箱大师",
+    "字节跳动（红果/抖音/番茄兜底）",
+    "CMS 广告拦截",
+    "墨鱼去开屏",
+    "广告拦截（yfamilys）",
+    "启动页去广告 Ultra+（yfamilys）",
+    "广告拦截合集（loonlab）",
+    "广告拦截&净化合集"
+  ],
+  "counts": {
+    "rules": 3200,
+    "url_rewrites": 4082,
+    "header_rewrites": 0,
+    "body_rewrites": 218,
+    "map_locals": 813,
+    "scriptings": 641
+  },
+  "mitm_hosts": 1489,
+  "changes": [
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https:\\/\\/(spclient\\.wg\\.spotify\\.com|.*-spclient\\.spotify\\.com(:443)?)\\/(bootstrap\\/v1\\/bootstrap|user-customization-service\\/v1\\/customize)(\\?.*)?$",
+      "first": "Spotify",
+      "second": "Spotify"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/wx\\.mygolbs\\.com\\/WxBusServer\\/ApiData\\.do",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/weibointl\\.api\\.weibo\\.c(n|om)\\/portal\\.php.*",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/homepage-api\\.smzdm\\.com\\/v3\\/home",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/haojia-api\\.smzdm\\.com\\/home\\/list",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/gg\\.caixin\\.com\\/s\\?",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/app-api\\.smzdm\\.com\\/util\\/loading",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/api\\.m\\.jd\\.com\\/api\\?",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/api\\.gotokeep\\.com\\/athena\\/v\\d\\/people\\/my$",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^(?!^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$)(?:^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList)",
+      "first": "墨鱼去开屏",
+      "second": "启动页去广告 Ultra+（yfamilys）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=lite_advertising",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=lite_SmartPush",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/tft-app\\.cdtft\\.cn\\/gateway-customer\\/tftapp\\/tft-ams\\/api\\/appAd",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/lcen\\.xiaote\\.net\\/api\\/graphql",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/gg\\.caixin\\.com\\/s\\?z=caixin&op=1&c=3362",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "(?i)^https?:\\/\\/api\\.m\\.jd\\.com\\/api\\?functionId=delivery_show",
+      "first": "墨鱼去开屏",
+      "second": "广告拦截合集（loonlab）"
+    },
+    {
+      "kind": "same_match_processing_omitted",
+      "match": "^https?:\\/\\/api\\.gotokeep\\.com\\/config\\/v\\d\\/basic",
+      "first": "启动页去广告 Ultra+（yfamilys）",
+      "second": "广告拦截&净化合集"
+    },
+    {
+      "kind": "terminal_map_local_owns_bilibili_default_words",
+      "original_match": "(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Teenagers\\/ModeStatus$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords$)|(?:^https:\\/\\/grpc\\.biliapi\\.net\\/bilibili\\.app\\.(?:view\\.v1\\.View\\/TFInfo|viewunite\\.v1\\.View\\/(?:PlayPause|ViewEndPage))$)"
+    }
+  ],
+  "scope": "Primary native stack; reviewed requested alternatives remain in module-stack assets and are disabled when an owner exists."
+}

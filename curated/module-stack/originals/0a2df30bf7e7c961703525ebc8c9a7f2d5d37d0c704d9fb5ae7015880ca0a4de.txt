@@ -1,0 +1,89 @@
+name: 高德地图
+description: 过滤高德地图广告
+author: RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], ishowshu[https://github.com/ishowshu], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png
+open_url: https://apps.apple.com/app/id461703208
+tag: 去广告
+rules:
+- and:
+    match:
+    - url_regex:
+        match: '"^http:\/\/.+\/amdc\/mobileDispatch"'
+    - user_agent:
+        match: '"AMapiPhone*"'
+    policy: REJECT
+- domain:
+    match: amap-aos-info-nogw.amap.com
+    policy: REJECT
+- domain:
+    match: free-aos-cdn-image.amap.com
+    policy: REJECT
+- domain_suffix:
+    match: v.smtcdns.com
+    policy: REJECT
+url_rewrites:
+- match: (?i)^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-aiqs|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-comment\/contentNearbyCard\?
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving)
+  location: http://reject-dict/
+- match: (?i)^https:\/\/m5\.amap\.com\/ws\/info_bff\/rankingCard\?
+  location: http://reject-dict/
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?
+    filter: del(.data.tipsOperationLocation, .obj.data.resourcePlacement)
+- response_jq:
+    match: (?i)^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\?
+    filter: del(.history_tags)
+- response_jq:
+    match: (?i)^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?
+    filter: del(.data.carTips.data.popupInfo)
+- response_jq:
+    match: (?i)^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?
+    filter: del(.data.tipData, .data.wallet) | .data.cardList |= map(select(.dataKey == \"MineNewFootprintCard\" or .dataKey == \"MineNewBEntranceCardV4\")) | (.data.cardList[] | select(.dataKey == \"MineNewBEntranceCardV4\") | .content.entranceList_1) |= map(select(.id == 7 or .id == 8 or .id == 10 or .id == 17)) | (.data.cardList[] | select(.dataKey == \"MineNewBEntranceCardV4\") | .content.entranceList_2) |= map(select(.id == 1 or .id == 32 or .id == 9 or .id == 14))
+- response_jq:
+    match: (?i)^https:\/\/sns\.amap\.com\/ws\/opc\/tools\/list\?
+    filter: (if (type == \"object\") and ((.data | type) == \"object\") and ((.data.category | type) == \"array\") then (.data.category[] | select(type == \"object\") | .tools | select(type == \"array\") | .[] | select(type == \"object\")) |= del(.tips) else . end) | (if (type == \"object\") and ((.data | type) == \"object\") and ((.data.category | type) == \"array\") then (.data.category[] | select(type == \"object\") | .tools | select(type == \"array\")) |= map(select(if type == \"object\" then (((.id | type) == \"string\" and .id == \"547\") or ((.id | type) == \"number\" and .id == 547)) | not else true end)) else . end)
+- response_jq:
+    match: (?i)^https:\/\/info\.amap\.com\/ws\/c3frontend\/af-search\/search\?
+    filter: if (try (.data.modules.quickLink.data.list | type) catch null) == \"array\" then .data.modules.quickLink.data.list |= map(if type == \"object\" and (.badge | type) == \"object\" and (.badge | has(\"text\")) then .badge.text = \"\" else . end) else . end
+- response_jq:
+    match: (?i)^https:\/\/m5-zb\.amap\.com\/ws\/amap\/hitch\/passenger\/content_info\?
+    filter: del(.data.lubanData.banner)
+- response_jq:
+    match: (?i)^https:\/\/center\.amap\.com\/ws\/amc\/server\/conv\/raise_list\?
+    filter: 'def on_path($p; $t; f): if (try (getpath($p) | type == $t) catch false) then getpath($p) |= f else . end; on_path([\"data\",\"dataList\"]; \"array\"; map(select(if type == \"object\" then (has(\"categoryId\") or ((.data | type) == \"object\" and .data.id == \"M_100007\")) else false end)))'
+- response_jq:
+    match: (?i)^https:\/\/info\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer\/sug\?
+    filter: .tip_list |= map(select(.tip.task_tag == \"common_content_general\" or .tip.task_tag == \"sp\"))
+- response_jq:
+    match: (?i)^https:\/\/m5\.amap\.com\/ws\/smartui\/near_recommend\?
+    filter: del(.data.operation_activity)
+mitm:
+  hostnames:
+  - '*.amap.com'

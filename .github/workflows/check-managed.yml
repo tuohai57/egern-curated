@@ -10,6 +10,7 @@ on:
       - 'curated/tools/check_managed.py'
       - 'curated/tools/test_scripts.cjs'
       - 'curated/native-full/**'
+      - 'curated/module-stack/**'
       - 'curated/tools/check_native_full.py'
       - 'curated/tools/test_native_full.cjs'
       - 'curated/tools/adblock_model.py'
@@ -44,3 +45,4 @@ jobs:
       - run: python curated/tools/test_adblock_coverage.py
       - run: python curated/tools/test_app_ad_paths.py
       - run: python curated/tools/test_service_routing.py
+      - run: python curated/tools/check_module_stack.py

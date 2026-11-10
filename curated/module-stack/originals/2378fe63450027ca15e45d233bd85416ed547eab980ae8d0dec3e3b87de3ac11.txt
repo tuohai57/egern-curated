@@ -1,0 +1,38 @@
+name: 快手
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: e.kuaishou.com
+    policy: REJECT
+- domain_suffix:
+    match: cm.downloader.commercial.kuaishou.com
+    policy: REJECT
+- domain_suffix:
+    match: cm.ad.gifshow.com
+    policy: REJECT
+- domain_suffix:
+    match: cm.kwad.com
+    policy: REJECT
+map_locals:
+- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+mitm:
+  hostnames:
+  - az4-api.ksapisrv.com
+  - az4-api-idc.ksapisrv.com
+  - az2-api.ksapisrv.com
+  - az2-api-idc.ksapisrv.com
+  - apissl.gifshow.com
+  - apissl.ksapisrv.com
+  - az2-api-js.gifshow.com
+  - az2-live.ksapisrv.com

@@ -1,0 +1,84 @@
+name: Spotify
+description: 移除Spotify广告并解锁部分高级功能。音质无法设置为“极高（Very High）”。设置中Protobuf脚本只能启用其中一个，不能同时启用。启用插件后，请重新登录以应用完整配置。
+author: devchristian1337[https://github.com/devchristian1337]
+homepage: https://loonlab.103516.xyz/Plugin/
+icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png
+open_url: https://apps.apple.com/app/id324684580
+tag: 去广告, 会员解锁
+compat_arguments:
+  spot-ev3-enable: 'true'
+  spot-ev1-enable: 'false'
+compat_arguments_desc: 'spot-ev3-enable: Protobuf本地配置修改
+
+  spot-ev1-enable: Protobuf远程配置修改'
+rules:
+- and:
+    match:
+    - domain_suffix:
+        match: spotify.com
+    - protocol:
+        match: quic
+    policy: REJECT
+- domain:
+    match: aet.spotify.com
+    policy: REJECT
+url_rewrites: []
+scriptings:
+- http_request:
+    name: Spotify-请求
+    match: (?i)^https:\/\/(.*-spclient\.spotify\.com(:443)?|spclient\.wg\.spotify\.com)\/gabo-receiver-service
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/cb33a793aaa1d004f4af2116d40e0a7b3f0f2a402fb526e9894ce34f586c5cf9.js
+    body_required: true
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/browsita\/v.\/browse
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8e04c01e1ab86b6602a6a54b1d0ad27cf5b21a4c80f8c70f48ae6bb4489fdee2.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/casita\/v.\/home\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/800adfc18990dff80e8ef7d61369dbdc0ea6d361daa1a1407dd6898e045c7150.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/scrollsita\/v.\/scroll\/spotify
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2f1182c83e3b2cf3cb6e4f62b1cddb9d643ab0b0a47f307c22e2161109339299.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)(\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f33f3937b01765c5a139de4bc56f15d11cc4fe55988368bfa6381a6173ba76d5.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+- http_response:
+    name: Spotify-响应
+    match: (?i)^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)(\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3cec2a2c15a83f8c9718ce7b9dba283e44770400f00ee78e21e1eff661fcf6d4.js
+    body_required: true
+    binary_body: true
+    max_size: 8388608
+    disabled: true
+mitm:
+  hostnames:
+  - spclient.wg.spotify.com
+  - '*spclient.spotify.com'
+map_locals:
+- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/pendragon
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/watch-feed-entrypoints\/v.\/discovery-from-seed
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/.*-spclient\.spotify\.com(:443)?\/pam-view-service\/
+  status_code: 200
+  body: '{}'
+- match: (?i)37i9dQZF1EYkqdzj48dyYq
+  status_code: 200
+  body: '{}'

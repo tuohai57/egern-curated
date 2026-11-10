@@ -1,0 +1,33 @@
+name: 淘票票去广告
+description: 移除开屏广告、悬浮广告、轮播图广告和弹窗广告，移除搜索填充词和为你推荐。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taopiaopiao.png
+open_url: https://apps.apple.com/app/id566813949
+tag: 去广告
+url_rewrites: []
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopintegrationapi\.homeconfig\/
+    filter: (del(.data.returnValue.floatingBanner, .data.returnValue.searchShadeList))
+      | (.data.returnValue.topTab |= map(select(.activeImage | not)) | .data.returnValue.topTab
+      |= map(del(.backgroundColor)))
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.aristotle\.get\/
+    filter: 'def filter_nodes: map(if .data.componentId? and (.data.componentId |
+      type == "string") and (.data.componentId | (contains("tpp_banner") or . == "tpp_guess_like"))
+      then empty else .nodes |= (if . then filter_nodes else . end) end); .data.nodes
+      |= (if . then filter_nodes else . end)'
+mitm:
+  hostnames:
+  - acs.m.taobao.com
+map_locals:
+- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopindependentadvertiseapi\.queryadvertise\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopitemadvertiseapi\.queryadvertise\/
+  status_code: 200
+  body: '{}'

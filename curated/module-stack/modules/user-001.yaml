@@ -1,0 +1,80 @@
+name: Apple地图
+description: 自定义 Maps app\n添加国际版功能\n自定义服务版本
+author: VirgilClyne[https://github.com/VirgilClyne]
+homepage: https://NSRingo.github.io/guide/GeoServices/maps
+icon: https://developer.apple.com/assets/elements/icons/maps/maps-128x128.png
+compat_arguments:
+  UrlInfoSet.Dispatcher: AutoNavi
+  UrlInfoSet.Directions: AutoNavi
+  UrlInfoSet.RAP: Apple
+  UrlInfoSet.LocationShift: AUTO
+  TileSet.Earth: CN
+  TileSet.Road: CN
+  TileSet.Satellite2D: CN
+  TileSet.Transit: CN
+  Storage: Argument
+  LogLevel: WARN
+rules:
+- domain_suffix:
+    match: is.autonavi.com
+    policy: DIRECT
+- domain:
+    match: gspe11-2-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe12-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe19-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe19-2-cn-ssl.ls.apple.com
+    policy: DIRECT
+- domain:
+    match: gspe79-cn-ssl.ls.apple.com
+    policy: DIRECT
+scriptings:
+- http_request:
+    name: Apple地图 / 1
+    match: ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5af7814b74f0bf631e2b8d92ff2a78d9a9f95eb9d079b3a71d63a3df8b9c47f1.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: Apple地图 / 2
+    match: ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9643f12ba929df23ddb4b28109d5659e8240a8b9875c3d4c018e2e49c0552691.js
+    body_required: true
+    update_interval: 86400
+- http_request:
+    name: Apple地图 / 3
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5af7814b74f0bf631e2b8d92ff2a78d9a9f95eb9d079b3a71d63a3df8b9c47f1.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: Apple地图 / 4
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9643f12ba929df23ddb4b28109d5659e8240a8b9875c3d4c018e2e49c0552691.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_request:
+    name: Apple地图 / 5
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5af7814b74f0bf631e2b8d92ff2a78d9a9f95eb9d079b3a71d63a3df8b9c47f1.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: Apple地图 / 6
+    match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9643f12ba929df23ddb4b28109d5659e8240a8b9875c3d4c018e2e49c0552691.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - configuration.ls.apple.com
+  - gspe35-ssl.ls.apple.com

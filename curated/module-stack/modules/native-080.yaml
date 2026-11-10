@@ -1,0 +1,45 @@
+name: 菜鸟去广告
+description: 过滤菜鸟广告
+author: 小白脸
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png
+open_url: https://apps.apple.com/app/id951610982
+tag: 去广告
+url_rewrites: []
+body_rewrites:
+- response_jq:
+    match: ^https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$)
+    filter: (del(.data.data.data.mainSearch.bizData.searchContents, .data.data.data.operationList))
+      | (del(.data.data.banner, .data.data.activity, .data.data.vip))
+- response_jq:
+    match: (?i)^(?!https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$))(?:^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)
+    filter: del(.data.data.data.mainSearch.bizData.searchContents, .data.data.data.operationList)
+- response_jq:
+    match: (?i)^(?!https?://e2e\-mtop\.cainiao\.com/gw/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn/1\.0/(?:[?#]|$))(?:^https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn)
+    filter: del(.data.data.banner, .data.data.activity, .data.data.vip)
+- response_jq:
+    match: (?i)^https:\/\/longquan-mtop\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn
+    filter: del(.data.result.placeContentMap["780001"].contentList)
+- response_jq:
+    match: (?i)^https:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads
+    filter: if .data.result[0].materialId == "39017" then . else .data = {} end
+mitm:
+  hostnames:
+  - netflow-mtop.cainiao.com
+  - nbcps-mtop.cainiao.com
+  - cn-acs.m.cainiao.com
+  - e2e-mtop.cainiao.com
+  - longquan-mtop.cainiao.com
+rules:
+- url_regex:
+    match: (?i)^https:\/\/nbcps-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn
+    policy: REJECT
+- url_regex:
+    match: (?i)^https:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index
+    policy: REJECT
+- url_regex:
+    match: (?i)^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn
+    policy: REJECT
+- url_regex:
+    match: (?i)^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show
+    policy: REJECT

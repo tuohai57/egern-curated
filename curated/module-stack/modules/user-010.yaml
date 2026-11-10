@@ -1,0 +1,12 @@
+name: 养基宝
+mitm:
+  hostnames:
+  - '*.yangjibao.com'
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/.*yangjibao\.com\/.*\/account|vip_info
+    filter: .data.vip_label=true|.data.vip_expiry_date="2099-12-31"|.data.is_pay=true
+- response_jq:
+    match: ^https?:\/\/.*yangjibao.com\/unify_ad
+    filter: .data=null
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/tianping.png

@@ -1,0 +1,40 @@
+name: 酷安
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  kuan_enable: true
+scriptings:
+- http_response:
+    name: 酷安 / 1
+    match: ^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 酷安 / 2
+    match: ^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 酷安 / 3
+    match: ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_request:
+    name: 酷安 / 4
+    match: ^https:\/\/www\.coolapk\.com\/link.*
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b4932011870422c8bc7b2d895ee3f6be44a87cbfd37b0ed2c60d8ba551523cae.js
+    body_required: true
+    update_interval: 86400
+    timeout: 10
+mitm:
+  hostnames:
+  - api.coolapk.com
+  - www.coolapk.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/kuancoolapk.png

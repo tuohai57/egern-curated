@@ -1,0 +1,12 @@
+name: 麦当劳
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+map_locals:
+- match: ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - api.mcd.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mcdonalds.png

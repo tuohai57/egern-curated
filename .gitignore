@@ -1,2 +1,4 @@
 *.tmp
 .DS_Store
+curated/native-restore/
+curated/tools/__pycache__/

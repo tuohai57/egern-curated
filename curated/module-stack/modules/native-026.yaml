@@ -1,0 +1,59 @@
+name: 京东
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: jzt.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: img-x.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: du.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: c-nfa.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: cm.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: jddebug.com
+    policy: REJECT
+- domain_suffix:
+    match: policy.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: kepler.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: bdsp.x.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: keplerapi.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: mapi.m.jd.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.3.cn
+    policy: REJECT
+- domain_suffix:
+    match: jd.c-ptsp.com.cn
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052
+    policy: REJECT
+url_rewrites: []
+scriptings:
+- http_response:
+    name: 京东
+    match: ^https:\/\/api\.m\.jd\.com\/client\.action\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3e7cc975f8985a4d2dbdbdefc405d0e3e6c9c07bf3c5361da1ecae206b6c04a1.js
+    body_required: true
+mitm:
+  hostnames:
+  - api.m.jd.com
+  - dns.jd.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png

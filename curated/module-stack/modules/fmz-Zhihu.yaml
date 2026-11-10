@@ -1,0 +1,252 @@
+name: 知乎
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  vihu_enable: true
+rules:
+- user_agent:
+    match: AVOS*
+    policy: REJECT
+- domain:
+    match: appcloud.zhihu.com
+    policy: REJECT
+- domain:
+    match: appcloud2.in.zhihu.com
+    policy: REJECT
+- domain:
+    match: mqtt.zhihu.com
+    policy: REJECT
+- domain:
+    match: sugar.zhihu.com
+    policy: REJECT
+- domain:
+    match: crash2.zhihu.com
+    policy: REJECT
+- domain:
+    match: 118.89.204.198
+    policy: REJECT
+- ip_cidr:
+    match: 118.89.204.198/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
+    policy: REJECT
+    no_resolve: true
+- domain:
+    match: appcloud.zhihu.com
+    policy: REJECT
+- domain:
+    match: appcloud2.in.zhihu.com
+    policy: REJECT
+- domain:
+    match: crash2.zhihu.com
+    policy: REJECT
+- domain:
+    match: mqtt.zhihu.com
+    policy: REJECT
+- domain:
+    match: sugar.zhihu.com
+    policy: REJECT
+- domain:
+    match: zxid-m.mobileservice.cn
+    policy: REJECT
+- ip_cidr:
+    match: 103.41.167.237/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr:
+    match: 118.89.204.198/32
+    policy: REJECT
+    no_resolve: true
+- ip_cidr6:
+    match: 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\?
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/www\.zhihu\.com\/api\/v4/(?:answers|questions)\/\d+/related-readings
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/zhstatic\.zhihu\.com\/brand-ad
+    policy: REJECT
+url_rewrites:
+- match: ^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*)
+  location: http://$1
+  status_code: 302
+body_rewrites:
+- response_regex:
+    match: ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?
+    find: '"recommend_queries":\{.+\}'
+    replace: '"recommend_queries":{}'
+map_locals:
+- match: ^https:\/\/api\.zhihu\.com\/commercial_api\/(?:answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/root\/window
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/me\/guides
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(?:article|answer)\/\d+
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/ad-style-service\/request
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: 知乎 / 1
+    match: ^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 2
+    match: ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 3
+    match: ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 4
+    match: ^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 5
+    match: ^https:\/\/api\.zhihu\.com\/root\/tab
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 6
+    match: ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 7
+    match: ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 8
+    match: ^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 9
+    match: ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 10
+    match: ^https:\/\/www\.zhihu\.com\/api\/v4\/(?:articles|answers)\/\d+\/recommendations?\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 11
+    match: ^https:\/\/appcloud2\.zhihu\.com\/v3\/config
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 知乎 / 12
+    match: ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.zhihu.com
+  - www.zhihu.com
+  - appcloud2.zhihu.com
+  - m-cloud.zhihu.com
+  - zhuanlan.zhihu.com
+  - link.zhihu.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/zhihu.png

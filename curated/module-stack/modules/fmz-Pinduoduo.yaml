@@ -1,0 +1,25 @@
+name: 拼多多
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash
+    policy: REJECT
+body_rewrites:
+- response_regex:
+    match: ^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$
+    find: '"list":\[.+\]'
+    replace: '"list":[]'
+map_locals:
+- match: ^https?:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\?
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+mitm:
+  hostnames:
+  - api.pinduoduo.com
+  - api.yangkeduo.com
+  - mobile.yangkeduo.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/pinduoduo.png

@@ -1,0 +1,25 @@
+name: '📺 BiliBili: 👘 Modified'
+description: 哔哩哔哩：👘 皮肤
+author: MartinsKing
+icon: https://raw.githubusercontent.com/ClydeTime/BiliBili/main/database/icon_Avatar.png
+open_url: http://boxjs.com/#/app/BiliBili.clydetime.sub
+scriptings:
+- http_response:
+    name: 📺 BiliBili.Modified.x.resource.show.skin
+    match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85352007c5257cc7de99218d8f2e4c0c44de491bf5a334a5e928464ab99542d7.js
+    body_required: true
+- http_response:
+    name: 📺 BiliBili.Modified.x.v2
+    match: ^https:\/\/app\.bilibili\.com\/x\/v2\/(account\/(myinfo|mine)|space)([\/?]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85352007c5257cc7de99218d8f2e4c0c44de491bf5a334a5e928464ab99542d7.js
+    body_required: true
+- http_response:
+    name: 📺 BiliBili.Modified.x.vip
+    match: ^https:\/\/api\.bilibili\.com\/x\/vip\/(web\/vip_center\/combine|price\/panel\/lexi|top_panel_info)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/85352007c5257cc7de99218d8f2e4c0c44de491bf5a334a5e928464ab99542d7.js
+    body_required: true
+mitm:
+  hostnames:
+  - app.bilibili.com
+  - api.bilibili.com

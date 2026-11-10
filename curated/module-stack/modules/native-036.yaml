@@ -1,0 +1,36 @@
+name: 美团
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: meituan.xn
+    policy: REJECT
+- domain_suffix:
+    match: meituan.yoga
+    policy: REJECT
+- domain_suffix:
+    match: meituangov.cn
+    policy: REJECT
+- domain_suffix:
+    match: report.meituan.com
+    policy: REJECT
+- domain_suffix:
+    match: analytics.meituan.net
+    policy: REJECT
+- domain_suffix:
+    match: wmlog.meituan.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.e.waimai.sankuai.com
+    policy: REJECT
+- domain_suffix:
+    match: mads.meituan.com
+    policy: REJECT
+- domain_suffix:
+    match: dreport.meituan.net
+    policy: REJECT
+- domain_suffix:
+    match: d.meituan.net
+    policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/meituan.png

@@ -1,0 +1,38 @@
+name: YouTube.Enhance.sgmodule
+description: 适用于 Youtube & Youtube Music
+compat_arguments:
+  屏蔽上传按钮: true
+  屏蔽选段按钮: true
+  屏蔽Shorts按钮: false
+  字幕翻译语言: 'off'
+  启用调试模式: false
+scriptings:
+- http_response:
+    name: YouTube.Enhance.sgmodule / 1
+    match: ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/bc1ee9b6f84728d96d696f9ce2d14512ef79b67f5c3310d410a8e25d15d504ef.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_request:
+    name: YouTube.Enhance.sgmodule / 2
+    match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/151c660eda1d90a8d38a87d822ab0c328ac16e671afc0c4a3aeb31efa30bedcf.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+- http_request:
+    name: YouTube.Enhance.sgmodule / 3
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3ecca15e06e76a31720092c581180f648ef2c45e494644941ba985c878efbb26.js
+    body_required: true
+    update_interval: 86400
+    binary_body: true
+    max_size: 16777216
+mitm:
+  hostnames:
+  - '*.googlevideo.com'
+  - youtubei.googleapis.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

@@ -1,0 +1,93 @@
+name: 滴滴出行
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  didiiuxk_enable: true
+map_locals:
+- match: ^https?:\/\/hd\.xiaojukeji\.com\/d
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: 滴滴出行 / 1
+    match: ^https?:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 2
+    match: ^https?:\/\/freight\.xiaojukeji\.com\/gateway
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 3
+    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 4
+    match: ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 5
+    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 6
+    match: ^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 7
+    match: ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 8
+    match: ^https?:\/\/daijia\.kuaidadi\.com\/gateway
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 9
+    match: ^https?:\/\/daijia\.kuaidadi\.com:443\/gateway
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 滴滴出行 / 10
+    match: ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - res.xiaojukeji.com
+  - common.diditaxi.com.cn
+  - hd.xiaojukeji.com
+  - freight.xiaojukeji.com
+  - daijia.kuaidadi.com
+  - ct.xiaojukeji.com
+  - conf.diditaxi.com.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

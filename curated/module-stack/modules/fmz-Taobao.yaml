@@ -1,0 +1,170 @@
+name: 淘宝
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  tcbc_enable: true
+rules:
+- domain_suffix:
+    match: apoll.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: h-adashx.ut.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: w.m.taobao.com
+    policy: REJECT
+- domain:
+    match: tunion-api.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: re.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: agoodm.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: ai.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: api.waptest.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: dsp.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: fav.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: m.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: mclick.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: re.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: redirect.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: simba.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: srd.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: temai.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: textlink.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: unitacs.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: acs4baichuan.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: adashbc.ut.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: adash-c.ut.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: adashxgc.ut.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: adashx4yt.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: tunion-api.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: tns.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: click.mz.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: click.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: click.tz.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: stat.simba.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: m-adash.m.taobao.com
+    policy: REJECT
+- domain_suffix:
+    match: adashbc.m.taobao.com
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+- match: ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)
+  status_code: 200
+  body: '{}'
+  headers:
+    Content-Type: application/json
+scriptings:
+- http_response:
+    name: 淘宝 / 1
+    match: ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4cf62100424886068a5470daecec319e93ccd034c647d79a9daaa72bbbc341bb.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+- http_response:
+    name: 淘宝 / 2
+    match: ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4cf62100424886068a5470daecec319e93ccd034c647d79a9daaa72bbbc341bb.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - acs.m.taobao.com
+  - guide-acs.m.taobao.com
+  - poplayer.template.alibaba.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png

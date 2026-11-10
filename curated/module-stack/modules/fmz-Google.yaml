@@ -1,0 +1,186 @@
+name: Google
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: google-analytics.com
+    policy: REJECT
+- domain:
+    match: safebrowsing.googleapis.com
+    policy: REJECT
+- domain_suffix:
+    match: doubleclick.net
+    policy: REJECT
+- domain_suffix:
+    match: doubleclick.com
+    policy: REJECT
+- domain_suffix:
+    match: googleadservices.com
+    policy: REJECT
+- domain_suffix:
+    match: googleadsserving.cn
+    policy: REJECT
+- domain_suffix:
+    match: googlesyndication.com
+    policy: REJECT
+- domain_suffix:
+    match: googletagservices.com
+    policy: REJECT
+- domain_suffix:
+    match: googletagmanager.com
+    policy: REJECT
+- domain_suffix:
+    match: video-ad-stats.googlesyndication.com
+    policy: REJECT
+- domain_suffix:
+    match: tpc.googlesyndication.com
+    policy: REJECT
+- domain_suffix:
+    match: pagead.google.com
+    policy: REJECT
+- domain_suffix:
+    match: pagead.l.google.com
+    policy: REJECT
+- domain_suffix:
+    match: pagead2.googlesyndication.com
+    policy: REJECT
+- domain_suffix:
+    match: pagead-tpc.l.google.com
+    policy: REJECT
+- domain_suffix:
+    match: mobileads.google.com
+    policy: REJECT
+- domain_suffix:
+    match: googlecommerce.com
+    policy: REJECT
+- domain_suffix:
+    match: blaaaa12.googlecode.com
+    policy: REJECT
+- domain_suffix:
+    match: badad.googleplex.com
+    policy: REJECT
+- domain_suffix:
+    match: afs.googlesyndication.com
+    policy: REJECT
+- domain_suffix:
+    match: afd.l.google.com
+    policy: REJECT
+- domain_suffix:
+    match: www.googleadservices.com
+    policy: REJECT
+- domain_suffix:
+    match: www.google-analytics.com
+    policy: REJECT
+- domain:
+    match: ads.youtube.com
+    policy: REJECT
+- domain_suffix:
+    match: cmshow.gtimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: discuz.gtimg.cn
+    policy: REJECT
+- domain_suffix:
+    match: gu.qlogo.cn
+    policy: REJECT
+- domain_suffix:
+    match: py.qlogo.cn
+    policy: REJECT
+- domain_suffix:
+    match: py2.qlogo.cn
+    policy: REJECT
+- domain_suffix:
+    match: app-measurement.com
+    policy: REJECT
+- domain_suffix:
+    match: admob.com
+    policy: REJECT
+- domain_suffix:
+    match: crashlytics.com
+    policy: REJECT
+- domain_suffix:
+    match: pagespeed-mod
+    policy: REJECT
+- domain_suffix:
+    match: csi.gstatic.com
+    policy: REJECT
+- domain_suffix:
+    match: beacon.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: bla.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: lb.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: pgdt.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: ra.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: splashqqlive.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: swa.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: tui.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: wa.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: wb.gtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: e.crashlytics.com
+    policy: REJECT
+- domain_suffix:
+    match: setting.crashlytics.com
+    policy: REJECT
+- domain_suffix:
+    match: settings.crashlytics.com
+    policy: REJECT
+- domain_suffix:
+    match: gcdn.2mdn.net
+    policy: REJECT
+- domain_suffix:
+    match: s0.2mdn.net
+    policy: REJECT
+- domain_suffix:
+    match: s1.2mdn.net
+    policy: REJECT
+- domain_suffix:
+    match: pgdt.ugdtimg.com
+    policy: REJECT
+- domain_suffix:
+    match: adclick.g.doublecklick.net
+    policy: REJECT
+scriptings:
+- http_request:
+    name: Google / binary local
+    match: ^https?:\/\/.+\.googleapis.com/.+ad_break
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: Google / binary local
+    match: ^https?:\/\/.+\.googleapis.com/.+log_event
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: Google / binary local
+    match: ^https?:\/\/.+\.googleapis.com/adsmeasurement
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+- http_request:
+    name: Google / binary local
+    match: ^https?:\/\/pagead2\.googlesyndication\.com\/pagead\/
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    body_required: false
+mitm:
+  hostnames:
+  - pagead2.googlesyndication.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/04ProxySoft/google.png

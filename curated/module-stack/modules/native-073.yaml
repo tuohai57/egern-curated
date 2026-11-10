@@ -1,0 +1,14 @@
+name: bilibil解锁大会员画质
+description: bilibili解锁大会员画质
+icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+scriptings:
+- http_response:
+    name: 哔哩哔哩番剧开启1080P+
+    match: ^https:\/\/(?:api|app)\.bilibili\.com\/(?:pgc\/player\/api\/playurl|x\/v2\/account\/(?:myinfo|mine))(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/bilibili-quality-safe.js
+    body_required: true
+    max_size: 4194304
+mitm:
+  hostnames:
+  - api.bilibili.com
+  - app.bilibili.com

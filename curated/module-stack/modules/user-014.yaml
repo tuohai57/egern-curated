@@ -1,0 +1,62 @@
+name: 闲鱼
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - acs.m.goofish.com
+  - g-acs.m.goofish.com
+rules:
+- domain_suffix:
+    match: iyes.youku.com
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.ads
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.ad.expose
+  status_code: 200
+  body: ''
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.user.strategy.list
+    filter: .data.strategies = [{}]
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.circle.list
+    filter: .data.circleList |= map(select(.bizCode != "saveMoney"))
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.nextfresh
+    filter: .data.homeTopList |= [ .[0] ] | .data.sections |= map(select(.data.bizType
+      == "item"))
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.shade
+    filter: .data.singleShadeWords =[{}]
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.item.search.activate
+    filter: .data.cardList = [{}]
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.discover
+    filter: del(.data.resultList)
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.user.page.my.adapter
+    filter: .data.ability=[] | .data.container.sections |= map(select(.sectionBizCode
+      | test("head|user|trade")))
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.buy.feeds
+    filter: del(.data.sections)
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.local.home
+    filter: .data.sections |= map(select(.data.bizType == "item"))
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search
+    filter: .data.resultList |= map(select(.data.item.main.clickParam.args.biz_type
+      == "item"))
+- response_jq:
+    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.recommend
+    filter: .data.cardList |= map(select(.cardData.bizType != "mamaAD"))
+scriptings:
+- http_response:
+    name: 闲鱼 / 1
+    match: ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xianyu.png

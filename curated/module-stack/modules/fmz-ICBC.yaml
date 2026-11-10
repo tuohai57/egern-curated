@@ -1,0 +1,12 @@
+name: 工商银行
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+map_locals:
+- match: ^https?:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - v.icbc.com.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/tianping.png

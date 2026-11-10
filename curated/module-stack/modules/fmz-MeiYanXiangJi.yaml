@@ -1,0 +1,12 @@
+name: 美颜相机
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: adui.tg.meitu.com
+    policy: REJECT
+- domain:
+    match: aaid.uyunad.com
+    policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

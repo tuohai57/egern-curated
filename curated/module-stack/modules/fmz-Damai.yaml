@@ -1,0 +1,17 @@
+name: 大麦
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - acs.m.taobao.com
+  - amdc.m.taobao.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

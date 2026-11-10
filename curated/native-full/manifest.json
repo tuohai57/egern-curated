@@ -4957,12 +4957,19 @@
       "name": "B 站画质解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/modules/073-module-bilibili-quality.yaml",
       "repository_path": "curated/native-full/modules/073-module-bilibili-quality.yaml",
-      "sha256": "9ac7d3289261368ff5830ca26cd53483ea19f950a0f0d4bdc9f29a81a4a72ac4",
+      "sha256": "bd08a6029e40b76f7ff37d605c907f926ed6e4fda69c87566e815acf74f32996",
       "enabled": true,
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/module-bilibili-quality.yaml",
       "source_sha256": "a77e739438e66ed5c8b89251c17c08d4c7fbea236c0577082628350c6f915ece",
       "original_repository_path": "curated/native-full/originals/073-module-bilibili-quality.yaml",
-      "changes": [],
+      "changes": [
+        {
+          "kind": "quality_script_compatibility_repaired",
+          "match": "api/app bilibili playurl and account paths",
+          "script": "curated/module-stack/scripts/bilibili-quality-safe.js",
+          "limitation": "does not create server-side media entitlement"
+        }
+      ],
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -4971,6 +4978,7 @@
         "scriptings": 1
       },
       "hosts": [
+        "api.bilibili.com",
         "app.bilibili.com"
       ]
     },
@@ -27813,13 +27821,6 @@
       "repository_path": "curated/native-full/scripts/6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f.js"
     },
     {
-      "url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/b171a93b3cdf8606.js",
-      "status": 200,
-      "sha256": "72664708957246b3538bd8e6d307ceca96800ae4c775cf998deeccc842b506be",
-      "bytes": 1270,
-      "repository_path": "curated/native-full/scripts/72664708957246b3538bd8e6d307ceca96800ae4c775cf998deeccc842b506be.js"
-    },
-    {
       "url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@8fc1da21596f39e6e6c452c11c23741ce150ec99/native/scripts/b1bdb819c24783a0.js",
       "status": 200,
       "sha256": "800adfc18990dff80e8ef7d61369dbdc0ea6d361daa1a1407dd6898e045c7150",
@@ -28140,6 +28141,16 @@
       "sha256": "12ecdd295de9c427dbd0fbed9d356d70e6b5c0afe0105fb7f678484b4fc98ce5",
       "bytes": 783,
       "repository_path": "curated/native-full/scripts/12ecdd295de9c427dbd0fbed9d356d70e6b5c0afe0105fb7f678484b4fc98ce5.js"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/bilibili-quality-safe.js",
+      "status": 200,
+      "sha256": "19ddcb6b46c5dc08cec0964273bd784c754a0c033944aecacfb4a21a7bb463fe",
+      "bytes": 1928,
+      "repository_path": "curated/module-stack/scripts/bilibili-quality-safe.js",
+      "source_kind": "independent-reimplementation",
+      "source_url": "https://github.com/Sunert/Scripts/blob/master/Script/Bilibili/BiliHD.js",
+      "source_sha256": "72664708957246b3538bd8e6d307ceca96800ae4c775cf998deeccc842b506be"
     }
   ],
   "helpers": [

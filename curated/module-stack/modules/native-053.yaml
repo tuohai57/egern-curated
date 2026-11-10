@@ -1,0 +1,41 @@
+name: 小象超市去广告
+description: 移除开屏广告、应用内弹窗、猜你想买、横幅推广和悬浮窗。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iMaiCai.png
+open_url: https://apps.apple.com/app/id1444411068
+tag: 去广告
+url_rewrites: []
+scriptings:
+- http_response:
+    name: 小象超市去广告-响应
+    match: (?i)^https:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f186eb3760ab578964cf713104a2a563c2b9365cb2e23311f165537de3fc8b06.js
+    body_required: true
+mitm:
+  hostnames:
+  - portal-portm.meituan.com
+  - mall.meituan.com
+  - businessapi.ksedt.com
+map_locals:
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/jigsaw\/code\/category-banner-\d+\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/order\/recommend\/v\d
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/banner\/
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/personal\/recommend
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/businessapi\.ksedt\.com\/signupindex\/jxlist
+  status_code: 200
+  body: '{}'

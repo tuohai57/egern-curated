@@ -1,0 +1,24 @@
+name: 携程
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare
+    policy: REJECT
+map_locals:
+- match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/[0-9]{5}\/json\/getTimeZoneServerIpList\?__gw_os=IOS
+  status_code: 200
+  body: ' '
+- match: ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/json\/tripAds
+  status_code: 200
+  body: ' '
+mitm:
+  hostnames:
+  - m.ctrip.com
+  - ma-adx.ctrip.com
+  - mbd.baidu.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png

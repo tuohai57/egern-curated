@@ -1,0 +1,81 @@
+name: '360'
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: pjogndc8ixoidna.360doc.cn
+    policy: REJECT
+- domain_suffix:
+    match: w5sac788c1.360doc.cn
+    policy: REJECT
+- domain_suffix:
+    match: 360shopping.com.cn
+    policy: REJECT
+- domain_suffix:
+    match: cps.360buy.com
+    policy: REJECT
+- domain_suffix:
+    match: eclick.360doc.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.360in.com
+    policy: REJECT
+- domain_suffix:
+    match: dl.360safe.com
+    policy: REJECT
+- domain_suffix:
+    match: kuaikan.netmon.360safe.com
+    policy: REJECT
+- domain_suffix:
+    match: ini.update.360safe.com
+    policy: REJECT
+- domain_suffix:
+    match: display.360totalsecurity.com
+    policy: REJECT
+- domain_suffix:
+    match: hot.m.shouji.360tpcdn.com
+    policy: REJECT
+- domain_suffix:
+    match: ad.360yield.com
+    policy: REJECT
+- domain_suffix:
+    match: guess.h.qhimg.com
+    policy: REJECT
+- domain_suffix:
+    match: top.h.qhimg.com
+    policy: REJECT
+- domain_suffix:
+    match: jspassport.ssl.qhimg.com
+    policy: REJECT
+- domain_suffix:
+    match: top.h.qhmsg.com
+    policy: REJECT
+- domain_suffix:
+    match: hs.qhupdate.com
+    policy: REJECT
+- domain_suffix:
+    match: res.qhupdate.com
+    policy: REJECT
+- domain_suffix:
+    match: s.qhupdate.com
+    policy: REJECT
+- domain_suffix:
+    match: haostat.qihoo.com
+    policy: REJECT
+- domain_suffix:
+    match: sh.qihoo.com
+    policy: REJECT
+- domain_suffix:
+    match: s.sh.qihoo.com
+    policy: REJECT
+- domain_suffix:
+    match: spro.so.com
+    policy: REJECT
+- domain_suffix:
+    match: mbrowser.news.so.com
+    policy: REJECT
+- domain_suffix:
+    match: tran.news.so.com
+    policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

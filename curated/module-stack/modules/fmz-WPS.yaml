@@ -1,0 +1,13 @@
+name: WPS
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- url_regex:
+    match: ^https?:\/\/ios\.wps\.cn\/ad-statistics-service
+    policy: REJECT
+mitm:
+  hostnames:
+  - ios.wps.cn
+  - mobile-pic.cache.iciba.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wps.png

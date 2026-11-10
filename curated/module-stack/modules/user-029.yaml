@@ -1,0 +1,12 @@
+name: Google人机验证
+scriptings:
+- http_response:
+    name: Google人机验证 / 1
+    match: ^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcfb02c0d81eadd104086dddf58428d9896de90e23ca1579bcde2634700709c5.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - www.google.com*
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

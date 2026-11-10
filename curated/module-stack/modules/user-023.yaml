@@ -1,0 +1,39 @@
+name: 淘票票
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - acs.m.taobao.com
+scriptings:
+- http_response:
+    name: 淘票票 / 1
+    match: ^http:\/\/amdc\.m\.taobao\.com
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f.js
+    body_required: true
+    update_interval: 86400
+body_rewrites:
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.mtopadvertiseapi.queryloadingbanner
+    filter: .data.returnValue={}
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.independentadvertiseapi.querypreloadadvertise
+    filter: .data.returnValue=[]
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.mtopsearchapi.getranklistbytypeforsearch
+    filter: .data.returnValue={}
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.mtopintegrationapi.homeconfig
+    filter: .data.returnValue={}
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.mtopindependentadvertiseapi.queryadvertise
+    filter: .data.returnValue=[]
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.life.aristotle.get
+    filter: .data.nodes[]?.nodes |= map(select(.data.componentId | IN("tpp_banner_loop",
+      "tpp_guess_like") | not))
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.life.popup.get
+    filter: .data={}
+- response_jq:
+    match: https://acs.m.taobao.com/gw/mtop.film.mtopitemadvertiseapi.queryadvertise
+    filter: del(.data.returnValue)
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

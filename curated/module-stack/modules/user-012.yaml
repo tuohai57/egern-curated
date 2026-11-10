@@ -1,0 +1,12 @@
+name: 123云盘
+scriptings:
+- http_response:
+    name: 123云盘 / 1
+    match: ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ff7aa5e3b380593f2ed54638b444bfdfc86cef048654d4a645433c94290a2621.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - www.123pan.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/123.png

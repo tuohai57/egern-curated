@@ -1,0 +1,400 @@
+name: 汽水音乐
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- and:
+    match:
+    - domain_keyword:
+        match: api100-core-quic-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api100-normal-quic-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api100-normal-quic-aweme-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api100-quic-core-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api100-quic-normal-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: frontier-aweme-
+    - and:
+        match:
+        - or:
+            match:
+            - domain_keyword:
+                match: -ipa.
+            - domain_keyword:
+                match: -ipainner.
+            - domain_keyword:
+                match: -origin.
+            - domain_keyword:
+                match: -ipainner-
+        - or:
+            match:
+            - domain_suffix:
+                match: snssdk.com
+            - domain_suffix:
+                match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: frontier100-aweme
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: ma5-normal-
+    - domain_suffix:
+        match: zijieapi.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: polaris5-normal-
+    - domain_suffix:
+        match: zijieapi.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: webcast100-ws-c-
+    - domain_suffix:
+        match: amemv.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: tnc
+    - and:
+        match:
+        - or:
+            match:
+            - domain_keyword:
+                match: -bjlgy
+            - domain_keyword:
+                match: -alisc
+            - domain_keyword:
+                match: -aliec
+            - domain_keyword:
+                match: -alisg
+        - or:
+            match:
+            - domain_suffix:
+                match: snssdk.com
+            - domain_suffix:
+                match: isnssdk.com
+            - domain_suffix:
+                match: toutiaoapi.com
+            - domain_suffix:
+                match: bytedance.com
+            - domain_suffix:
+                match: zijieapi.com
+    policy: REJECT
+- domain:
+    match: frontier-aweme-hl.snssdk.com
+    policy: REJECT
+- domain:
+    match: frontier-aweme.snssdk.com
+    policy: REJECT
+- domain:
+    match: frontier-quic-test.bytedance.com
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 110.249.199.75/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.225.147.191/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 111.63.61.101/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - ip_cidr:
+        match: 220.243.141.0/32
+    - dest_port:
+        match: '6443'
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: -ad-
+    - domain_suffix:
+        match: byteimg.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: -ttam-
+    - domain_suffix:
+        match: ibyteimg.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: ssdk-
+    - domain_suffix:
+        match: pangle.io
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: pangolin
+    - domain_suffix:
+        match: sgsnssdk.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: lf
+    - domain_keyword:
+        match: -short.bytetos.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: v
+    - domain_keyword:
+        match: -be-pack.pglstatp-toutiao.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: sf
+    - domain_keyword:
+        match: -be-pack.pglstatp-toutiao.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: s
+    - domain_keyword:
+        match: -fe-scm.pglstatp-toutiao.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: sf
+    - domain_keyword:
+        match: -ttcdn-tos.pstatp.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: sf
+    - domain_keyword:
+        match: -static.i18n-pglstatp.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: if
+    - domain_keyword:
+        match: -analytics.bytescm.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: lf
+    - domain_keyword:
+        match: -analytics.bytescm.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: lf
+    - domain_keyword:
+        match: -analytics.bytescm.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: ads
+    - domain_keyword:
+        match: normal
+    - domain_suffix:
+        match: zijieapi.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api
+    - domain_keyword:
+        match: -access-
+    - domain_suffix:
+        match: pangle.io
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api
+    - domain_keyword:
+        match: -log-
+    - domain_suffix:
+        match: pangle.io
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api
+    - domain_keyword:
+        match: -dual-event-
+    - domain_suffix:
+        match: pangle.io
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: api
+    - domain_keyword:
+        match: pangolin
+    - domain_suffix:
+        match: sgsnssdk.com
+    policy: REJECT
+- and:
+    match:
+    - domain_keyword:
+        match: ads
+    - domain_keyword:
+        match: -normal-lq
+    - domain_suffix:
+        match: zijieapi.com
+    policy: REJECT
+- url_regex:
+    match: '"^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/"'
+    policy: REJECT
+- domain:
+    match: mon.zijieapi.com
+    policy: REJECT
+- domain:
+    match: bds.snssdk.com
+    policy: REJECT
+- domain:
+    match: dm.bytedance.com
+    policy: REJECT
+- domain:
+    match: dm.pstatp.com
+    policy: REJECT
+- domain:
+    match: dm.toutiao.com
+    policy: REJECT
+- domain:
+    match: log.snssdk.com
+    policy: REJECT
+- domain:
+    match: s3a.pstatp.com
+    policy: REJECT
+- domain:
+    match: sdfp.snssdk.com
+    policy: REJECT
+- domain:
+    match: tosv.boe.byted.org
+    policy: REJECT
+- domain:
+    match: tosv.byted.org
+    policy: REJECT
+- domain:
+    match: extlog.snssdk.com
+    policy: REJECT
+- domain:
+    match: mssdk-bu.bytedance.com
+    policy: REJECT
+- domain:
+    match: toblog.ctobsnssdk.com
+    policy: REJECT
+- domain:
+    match: mssdk.volces.com
+    policy: REJECT
+- domain:
+    match: pangolin.snssdk.com
+    policy: REJECT
+- domain:
+    match: gromore.pangolin-sdk-toutiao.com
+    policy: REJECT
+- domain_keyword:
+    match: -ad-sign.byteimg.com
+    policy: REJECT
+- domain_keyword:
+    match: log-api.pangolin-sdk-toutiao
+    policy: REJECT
+- domain_keyword:
+    match: -ad.byteoversea.com
+    policy: REJECT
+- domain_keyword:
+    match: video-cn.snssdk.com
+    policy: REJECT
+- domain_keyword:
+    match: asiad.byteactivity
+    policy: REJECT
+url_rewrites:
+- match: ^https:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/
+  location: '-'
+  status_code: 307
+- match: ^https:\/\/api-access\.pangolin-sdk-toutiao\d?\.com\/api\/ad\/
+  location: '-'
+  status_code: 307
+- match: ^https:\/\/sf\d+-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/
+  location: '-'
+  status_code: 307
+- match: ^https:\/\/lf-cdn-tos\.bytescm\.com\/obj\/static\/ad\/
+  location: '-'
+  status_code: 307
+map_locals:
+- match: ^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+- match: ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/v2\/commerce_info\?
+  status_code: 200
+  headers:
+    Content-Type: application/json
+  body: '{}'
+mitm:
+  hostnames:
+  - webcast-open.douyin.com
+  - beta-luna.douyin.com
+  - ether-pack.pangolin-sdk-toutiao.com
+  - api-access.pangolin-sdk-toutiao?.com
+  - sf*-fe-tos.pglstatp-toutiao.com
+  - lf-cdn-tos.bytescm.com

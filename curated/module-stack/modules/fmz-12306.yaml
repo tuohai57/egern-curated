@@ -1,0 +1,18 @@
+name: '12306'
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+compat_arguments:
+  12306_enable: true
+scriptings:
+- http_request:
+    name: 12306 / 1
+    match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/676fe92784297b1ec93e0dc128597af3e38f42e9a37772cbdb9bda4ab9eed3dd.js
+    body_required: true
+    update_interval: 86400
+    timeout: 60
+mitm:
+  hostnames:
+  - ad.12306.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/12306.png

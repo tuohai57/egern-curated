@@ -1,0 +1,12 @@
+name: '12306'
+scriptings:
+- http_response:
+    name: 12306 / 1
+    match: ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5843c8f35e7489e8559d181974d2ec2e09cc9d96b38cfbd349b1c578e9582727.js
+    body_required: false
+    update_interval: 86400
+mitm:
+  hostnames:
+  - ad.12306.cn
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/12306.png

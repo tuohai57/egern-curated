@@ -1,0 +1,33 @@
+name: ScriptHub.Egern.sgmodule
+description: Tab栏显示Egern，代表网页变身成功，即可一键添加模块
+author: '@ddgksf2013 @小白脸 @xream @keywos @ckyb'
+rules:
+- and:
+    match:
+    - domain_suffix:
+        match: ddgksf2013.top
+    - protocol:
+        match: quic
+    policy: REJECT
+scriptings:
+- http_response:
+    name: ScriptHub.Egern.sgmodule / 1
+    match: ^https?:\/\/ddgksf2013.top\/$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5318c722ba19f8e523576a6d38d8b6bdfc40bfd2fe25225c55f472f7ff827721.js
+    body_required: true
+    update_interval: 86400
+    timeout: 600
+    max_size: 16777216
+- http_request:
+    name: ScriptHub.Egern.sgmodule / 2
+    match: ^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|all-module)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c5e46afa219424e22bcba151dbd6f5e4c6caf518cfdf3317381f4c7e2068e51b.js
+    body_required: true
+    update_interval: 86400
+    timeout: 300
+mitm:
+  hostnames:
+  - script.hub
+  - '*.script.hub'
+  - ddgksf2013.top
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

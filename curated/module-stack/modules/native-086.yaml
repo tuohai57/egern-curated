@@ -1,0 +1,111 @@
+name: 汽车之家去广告
+description: 移除开屏广告、各类广告横幅、各类信息流广告、各类弹窗推广、各类浮窗、我的页面广告。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png
+open_url: https://apps.apple.com/app/id385919493
+tag: 去广告
+url_rewrites: []
+scriptings:
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/news\.app\.autohome\.com\.cn\/news_v\d+(?:\.\d+){2}\/news\/homenavigation
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/((usercenter\/getservicecards)|(carcard\/allcard)|(carcard\/mycardv\d+)|(carcard\/cards))
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/(a\.athm\.cn\/)?club\.app\.autohome\.com\.cn\/club_v\d+(?:\.\d+){2}\/club\/index\/businessv\d+
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/(a\.athm\.cn\/)?cars\.app\.autohome\.com\.cn\/carstreaming\/selectcarportal\/reclist
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/(a\.athm\.cn\/)?cars\.app\.autohome\.com\.cn\/carstreaming\/selectcarportal\/seriestopwithtagscard
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+- http_response:
+    name: 汽车之家去广告-响应
+    match: (?i)^https:\/\/(a\.athm\.cn\/)?apiautoappusc\.che168\.com\/apic\/v\d+\/gethomepagefeed
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9ef33d57454935592032fe7d204a9fee555883b49f86d938942719d95a2035dd.js
+    body_required: true
+mitm:
+  hostnames:
+  - a.athm.cn
+  - adproxy.autohome.com.cn
+  - apiautoappusc.che168.com
+  - autoapi.autohome.com.cn
+  - cars.app.autohome.com.cn
+  - clientlive.api.autohome.com.cn
+  - club.app.autohome.com.cn
+  - dealer.m.autohome.com.cn
+  - maam.pingan.com.cn
+  - mobile.app.autohome.com.cn
+  - news.app.autohome.com.cn
+  - pcmx.autohome.com.cn
+map_locals:
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/findEquitysV5
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/mycardv6
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/chat\/gse\/recquery
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/autoapi\.autohome\.com\.cn\/ypttd\/yjc\/web\/mkgt\/act\/seckillInfo
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/gethotactcards
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/carcard\/extendedcards
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getwashcarlist
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getdealertab
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getoillist
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/pcmx\.autohome\.com\.cn\/queryCreativeList
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/maam\.pingan\.com\.cn\/maam\/buoy\/getBuoyList\.do
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/news\.app\.autohome\.com\.cn\/cont_v\d+(?:\.\d+){2}\/api\/article\/extenddata
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/AppHandler\.ashx
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/club\.app\.autohome\.com\.cn\/club_v\d+(?:\.\d+){2}\/club\/channelqa\/header
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=super\.list
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/autoapi\.autohome\.com\.cn\/arvr-dealercloud-api\/online\/aggregation\/exhibitionList
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=vrcore\.list
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/dealer\.m\.autohome\.com\.cn\/handler\/other\/getdata\?__action=platform\.search
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/a\.athm\.cn\/clientlive\.api\.autohome\.com\.cn\/api\/live\/getserieswindowsinfo
+  status_code: 200
+  body: '{}'

@@ -1,0 +1,105 @@
+name: 金山系 (Kingsoft)
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain_suffix:
+    match: an.m.liebao.cn
+    policy: REJECT
+- domain_suffix:
+    match: cr.m.liebao.cn
+    policy: REJECT
+- domain_suffix:
+    match: cms.an.m.liebao.cn
+    policy: REJECT
+- domain_suffix:
+    match: j.wan.liebao.cn
+    policy: REJECT
+- domain_suffix:
+    match: 1.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: android-lrcresource.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: ic.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: ios-informationplatform.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: minfo.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: mostat.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: moupdate10332052.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: pcfg.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: img1.pcfg.cache.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: crashes.mo.wps.cn
+    policy: REJECT
+- domain_suffix:
+    match: img.auction-ads.wpscdn.cn
+    policy: REJECT
+- domain_suffix:
+    match: mo.res.wpscdn.cn
+    policy: REJECT
+- domain_suffix:
+    match: mobad.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: mlb.did.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: apns.ios.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: cdnimg.liehu.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: bp.mobad.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: rcv.mobad.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: sdk.mobad.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: unconf.mobad.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: rcmd.pop.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: pop.sjk.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: d.union.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: dl.union.ijinshan.com
+    policy: REJECT
+- domain_suffix:
+    match: counter.kingsoft.com
+    policy: REJECT
+- domain_suffix:
+    match: bu1.duba.com
+    policy: REJECT
+- domain_suffix:
+    match: bu2.duba.com
+    policy: REJECT
+- domain_suffix:
+    match: docer.com
+    policy: REJECT
+- domain_suffix:
+    match: iciba.com
+    policy: REJECT
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

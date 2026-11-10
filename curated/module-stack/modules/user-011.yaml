@@ -1,0 +1,30 @@
+name: 智联招聘
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - cgate.zhaopin.com
+rules:
+- url_regex:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/behavior\/nps\/getNpsPopupList
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/operation\/ad\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/marketbusiness\/ad\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/223\.5\.5\.5\/resolve
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/campusbusiness\/.*getAdvertisement
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/bdp\/tips-calc\/getSchoolHomePageTips
+    policy: REJECT
+body_rewrites:
+- response_jq:
+    match: ^https?:\/\/cgate\.zhaopin\.com\/bdp\/my\/homepageMainModule
+    filter: del(.data.commercialModule, .data.commercialModuleV5, .data.vipModule,
+      .data.vipModuleCardNew)
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

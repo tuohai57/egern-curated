@@ -1,0 +1,48 @@
+name: 腾讯视频
+author: TG@ZenMoFiShi
+description: 去除开屏广告、视频播放前广告、底部的多余 tap 栏、我的页面美化、我的界面顶部广告
+rules:
+- domain:
+    match: iacc.stgw.qq.com
+    policy: REJECT
+- domain:
+    match: tacc.video.qq.com
+    policy: REJECT
+scriptings:
+- http_request:
+    name: 腾讯视频 / 1
+    match: ^https?:\/\/i\.video\.qq\.com\/(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c8d1129acbdc4f61098463eef6911ccd076249f343775c299f7f9342f1ec9c9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 腾讯视频 / 2
+    match: ^https?:\/\/i\.video\.qq\.com\/(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c8d1129acbdc4f61098463eef6911ccd076249f343775c299f7f9342f1ec9c9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 腾讯视频 / 3
+    match: ^https?:\/\/iacc\.qq\.com\/(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c8d1129acbdc4f61098463eef6911ccd076249f343775c299f7f9342f1ec9c9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 腾讯视频 / 4
+    match: ^https?:\/\/config\.ab\.qq\.com\/tab\/GetTabRemoteConfig(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c8d1129acbdc4f61098463eef6911ccd076249f343775c299f7f9342f1ec9c9.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 腾讯视频 / 5
+    match: ^https:\/\/rdelivery\.qq\.com\/v1\/sdkconfig\/get(?:\?.*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c8d1129acbdc4f61098463eef6911ccd076249f343775c299f7f9342f1ec9c9.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - i.video.qq.com
+  - iacc.qq.com
+  - config.ab.qq.com
+  - rdelivery.qq.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/tengxunshipin.png

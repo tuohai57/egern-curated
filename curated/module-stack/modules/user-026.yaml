@@ -1,0 +1,46 @@
+name: 微博助手
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - api.weibo.cn
+  - bootpreload.uve.weibo.com
+  - bootrealtime.uve.weibo.com
+  - wbapp.uve.weibo.com
+scriptings:
+- http_request:
+    name: 微博助手 / 1
+    match: ^https://api\.weibo\.cn/__qx_weibo_settings__/(?:api/config)?(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: false
+    update_interval: 86400
+- http_response:
+    name: 微博助手 / 2
+    match: ^https://api\.weibo\.cn/__qx_weibo_settings__/api/(?:save|reset)(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: false
+    update_interval: 86400
+- http_response:
+    name: 微博助手 / 3
+    match: ^https?://api\.weibo\.cn(?:/2/statuses/container_timeline_hot|/2/statuses/container_positive|/2/guest/container_timeline_hot|/2/statuses/container_timeline_unread|/2/statuses/container_timeline|/2/live/media_homelist|/2/remind/hometab_dot|/2/remind/unread_count|/2/statuses/container_detail|/2/statuses/container_detail_comment|/2/comments/build_comments|/2/search/finder|/2/search/container_timeline|/2/search/container_discover|/2/!/was/finder/searchbarchange|/2/cardlist|/2/flowpage|/2/searchall|/2/profile/me|/2/profile/container_timeline|/2/video/flow_stream|/2/video/flow_stream_cache|/2/push/daily|/2/push/active|/2/guest/push_active|/2/groups/allgroups/v2|/2/client/abserver_list|/2/checkin/show|/2/video/remind_info|/2/video/home_channels)(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 微博助手 / 4
+    match: ^https?://bootpreload\.uve\.weibo\.com(?:/v2/ad/preload)(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 微博助手 / 5
+    match: ^https?://bootrealtime\.uve\.weibo\.com(?:/v3/ad/realtime)(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: true
+    update_interval: 86400
+- http_response:
+    name: 微博助手 / 6
+    match: ^https?://wbapp\.uve\.weibo\.com(?:/wbapplua/wbpullad\.lua)(?=[?#]|$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js
+    body_required: true
+    update_interval: 86400
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/weibo.png

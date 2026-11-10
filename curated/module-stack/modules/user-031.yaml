@@ -1,0 +1,12 @@
+name: BuyiTunes
+scriptings:
+- http_response:
+    name: BuyiTunes / 1
+    match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/034b4d9fbf487bae909d24320f60eb819a5a5a546522b0e5477c52975e22cb41.js
+    body_required: true
+    update_interval: 86400
+mitm:
+  hostnames:
+  - buy.itunes.apple.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

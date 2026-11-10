@@ -1,0 +1,95 @@
+name: QQ音乐
+description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+author: 奶思
+homepage: https://github.com/fmz200/wool_scripts
+rules:
+- domain:
+    match: adstats.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: ad.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adcdn.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adcdn6.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adexpo.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: adclick.tencentmusic.com
+    policy: REJECT
+- domain:
+    match: monitor.music.qq.com
+    policy: REJECT
+- domain:
+    match: tmead.y.qq.com-NO-DROP
+    policy: REJECT
+- domain:
+    match: p.l.qq.com
+    policy: REJECT
+- domain:
+    match: us.l.qq.com
+    policy: REJECT
+- domain:
+    match: tmeadbak.y.qq.com-NO-DROP
+    policy: REJECT
+- domain_suffix:
+    match: rqd.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: wup.imtt.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: android.rqd.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: e.qq.com
+    policy: REJECT
+- domain_suffix:
+    match: v.gdt.qq.com
+    policy: REJECT
+- domain:
+    match: amsweb-cdn-gz-1258344696.file.myqcloud.com
+    policy: REJECT
+- domain:
+    match: wallpaper-1258344696.file.myqcloud.com
+    policy: REJECT
+- domain:
+    match: xs.gdt.qq.com
+    policy: REJECT
+- ip_cidr:
+    match: 120.222.240.171/32
+    policy: REJECT
+    no_resolve: true
+- url_regex:
+    match: ^https?:\/\/us\.l\.qq\.com\/exapp
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/.+?\/music\/common\/upload\/t_splash_info\/
+    policy: REJECT
+- url_regex:
+    match: ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/music\/common\/upload\/t_splash_info\/
+    policy: REJECT
+- url_regex:
+    match: ^https:\/\/music\.y\.qq\.com\/maproxy\/getPbCompressAd
+    policy: REJECT
+url_rewrites: []
+map_locals:
+- match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads
+  status_code: 200
+  body: ''
+mitm:
+  hostnames:
+  - us.l.qq.com
+  - y.gtimg.cn
+  - music.y.qq.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png

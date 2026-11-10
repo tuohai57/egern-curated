@@ -1,0 +1,53 @@
+name: 粉笔去广告
+description: 移除开屏广告、弹窗广告、悬浮广告、热门搜索，移除底栏皮肤，精简我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FenBi.png
+open_url: https://apps.apple.com/app/id584660358
+tag: 去广告
+url_rewrites: []
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/recommend\/info\?
+    filter: del(.data.rollingBanner)
+- response_jq:
+    match: (?i)^https:\/\/ke\.fenbi\.com\/(iphone|ipad)\/v3\/apps\/config\?
+    filter: del(.data.bottomIconInfos.position.iconDefaultUrl, .data.bottomIconInfos.position.iconSelectedUrl,
+      .data.bottomIconInfos.position.nightModeIconDefaultUrl, .data.bottomIconInfos.position.nightModeIconSelectedUrl)
+mitm:
+  hostnames:
+  - keapi.fenbi.com
+  - market-api.fenbi.com
+  - ke.fenbi.com
+  - hera-webapp.fenbi.com
+map_locals:
+- match: (?i)^https:\/\/keapi\.fenbi\.com\/app\/(iphone|ipad)\/position_resource\/get_banners\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/market-api\.fenbi\.com\/(iphone|ipad)\/v1\/assistant\/info\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/keapi\.fenbi\.com\/app\/(iphone|ipad)\/position_resource\/get_home_banners\?.*position_resource_type=2
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/keapi\.fenbi\.com\/app\/iphone\/\w+\/reddot\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/ke\.fenbi\.com\/(iphone|ipad)\/v3\/timetable\/today_with_public_episodes\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/topic\/hotquery\/list\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/explore\/consts\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/hera-webapp\.fenbi\.com\/(iphone|ipad)\/announcement\/hotquery\/list\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/ke\.fenbi\.com\/(iphone|ipad)\/v3\/user_member\/entry\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/market-api\.fenbi\.com\/(iphone|ipad)\/v1\/assistant\/my\?
+  status_code: 200
+  body: '{}'

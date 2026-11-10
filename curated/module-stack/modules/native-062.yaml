@@ -1,0 +1,34 @@
+name: 美颜相机去广告
+description: 移除开屏广告、应用内弹窗，精简首页和我的页面。
+author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+homepage: https://hub.kelee.one
+icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png
+open_url: https://apps.apple.com/app/id592331499
+tag: 去广告
+rules:
+- domain:
+    match: adui.tg.meitu.com
+    policy: REJECT
+url_rewrites: []
+body_rewrites:
+- response_jq:
+    match: (?i)^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\?
+    filter: (del(.response.time_limit, .response.bubble, .response.person_center))
+      | (.response.function_pop.meiyan_style.is_pop = false | .response.onoff.vip_half_window_exit_remain_popup.open
+      = 0 | .response.onoff.vip_home_exit_remain_popup = 0)
+scriptings:
+- http_response:
+    name: 美颜相机去广告-响应
+    match: (?i)^https:\/\/api\.meiyan\.com\/operation\/home\.json\?
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9a50669b814eedd82eb9b73518089547bc7b9c5388dc4e441dfc9f155c55fc61.js
+    body_required: true
+mitm:
+  hostnames:
+  - api.meiyan.com
+map_locals:
+- match: (?i)^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\?
+  status_code: 200
+  body: '{}'
+- match: (?i)^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\?
+  status_code: 200
+  body: '{}'

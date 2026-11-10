@@ -1,0 +1,17 @@
+name: BoxJs
+description: http://boxjs.com
+author: ChavyLeung
+homepage: https://docs.boxjs.app/
+icon: https://raw.githubusercontent.com/chavyleung/scripts/master/box/icons/BoxJs.png
+scriptings:
+- http_request:
+    name: 'Rewrite: BoxJs'
+    match: ^https?:\/\/(.+\.)?boxjs\.(com|net)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/24ab4513d9b210d3921f87660175ddf408f2c4728a01ecb391082e82d8f8ffa6.js
+    body_required: true
+mitm:
+  hostnames:
+  - boxjs.com
+  - boxjs.net
+  - '*.boxjs.com'
+  - '*.boxjs.net'

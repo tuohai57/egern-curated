@@ -1,0 +1,19 @@
+name: RevenueCat
+scriptings:
+- http_response:
+    name: RevenueCat / 1
+    match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/64a16c01e5042050404cb7d688299b2bc7f776e0da0378e11655676763031166.js
+    body_required: true
+    update_interval: 86400
+- http_request:
+    name: RevenueCat / 2
+    match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers)
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/fa25d87f324a42c6c3159c40b762c89c7977a7402ffb39260acc9362c7537e3f.js
+    body_required: false
+    update_interval: 86400
+mitm:
+  hostnames:
+  - api.revenuecat.com
+  - api.rc-backup.com
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png

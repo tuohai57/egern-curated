@@ -1,0 +1,64 @@
+name: 大麦
+author: '@ddgksf2013'
+mitm:
+  hostnames:
+  - acs.m.taobao.com
+map_locals:
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome
+  status_code: 200
+  body: ''
+- match: ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get
+  status_code: 200
+  body: ''
+scriptings:
+- http_response:
+    name: 大麦 / 1
+    match: ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f.js
+    body_required: true
+    update_interval: 86400
+body_rewrites:
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get\/[\d.]+\/
+    filter: .data.data.top.keywords=[] | .data.data.top.aiUrl="" | .data.data.top.aiLottieUrl=""
+      | .data.data.top.aiLottieAmbientUrl="" | .data.data.top.arScan={} | .data.nodes=((.data.nodes
+      // []) | map(select(((.nodes[0].data.componentId // "") != "dm_home_supper_banner")))
+      | map(if ((.nodes[0].data.componentId // "") == "dm_pioneer_function_area_with_city_rank")
+      then .nodes[0].nodes=((.nodes[0].nodes // []) | map(select(.data.title != "天天抽奖")))
+      else . end) | map(if ((.nodes[0].data.componentId // "") == "dm_pioneer_home_feed")
+      then .nodes[0].nodes=((.nodes[0].nodes // []) | map(if (.nodes? != null) then
+      .nodes=((.nodes // []) | map(select(.data.cardType != "15" and .data.cardType
+      != "21"))) else . end)) else . end))
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.appglobalconfig\/[\d.]+\/
+    filter: .data.pop={} | .data.searchTip={} | .data.searchTips=[] | .data.headLottie={}
+      | .data.headStyle={}
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.float\/[\d.]+\/
+    filter: .data={}
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.independentadvertiseapi\.querypreloadadvlist\/[\d.]+\/
+    filter: .data.adList=[]
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopmindapi\.loadwantshowlotteryanimationurl\/[\d.]+\/
+    filter: .data.returnValue={}
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.user\.my\.content\.get\/[\d.]+\/
+    filter: .data.banner=[] | .data.dynamicMenu.itemList=((.data.dynamicMenu.itemList
+      // []) | map(select(.title != "周边商城" and .title != "观演团" and .title != "电影包场"
+      and .title != "公益三小时" and .title != "大麦VIP卡" and .title != "特惠专区"))) | .data.performFilmVip={}
+      | .data.showVip=false | .data.vipCardInfo={}
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.discovery\.publish\.check\/[\d.]+\/
+    filter: .data.appPublishHint=""
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.search\.tips\.get\/[\d.]+\/
+    filter: .data.result=[]
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.search\.pioneer\.page\.get\/[\d.]+\/
+    filter: .data.rankInfo.localSearchRankingList=[] | .data.rankInfo.searchFilmRankingList=[]
+      | .data.rankInfo.searchRankingList=[] | .data.rankInfo.description="" | .data.rankInfo.name=""
+- response_jq:
+    match: ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.ai\.pageconfig\/[\d.]+\/
+    filter: .data.enable="false" | .data.aiLottieUrl=""
+icon: https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/wangluo.png
