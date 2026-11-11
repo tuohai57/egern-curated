@@ -1,4 +1,4 @@
-name: 养基宝
+name: 养基宝（墨鱼·适配）
 mitm:
   hostnames:
   - '*.yangjibao.com'

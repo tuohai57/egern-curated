@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/app2smile/rules/module/zhihu.yaml
-name: 知乎（微笑作者·原生接口备选）
+name: 知乎（微笑作者·原生接口备选）（适配）
 description: 开屏页广告,首页右下角悬浮框,推荐列表广告,问题回答列表广告,具体回答下广告
 rules:
 - domain:

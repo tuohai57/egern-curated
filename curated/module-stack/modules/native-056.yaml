@@ -14,11 +14,11 @@ body_rewrites:
     match: (?i)^https://ad\.12306\.cn/ad/ser/getAdList(?:\?[^#]*)?$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\nif type == \"object\"\n   and ((.code\
-      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\n   and ((.status_code\
-      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\nthen del(.materialsList,\
-      \ .advertParam) else . end\n) ]) as $__egern_results\n       | if ($__egern_results\
-      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
-      \ end)\n  catch $__egern_original_json"
+      \ // 0) | . == 0 or . == \"0\" or . == \"00\" or . == 200 or . == \"200\")\n\
+      \   and ((.status_code // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\"\
+      )\nthen del(.materialsList, .advertParam) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 scriptings:
 - http_request:
     name: 12306 · 推广操作

@@ -8,7 +8,7 @@
       "name": "综合去广告合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
       "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-      "sha256": "c1320d25ddaa2d620e9c37e247165f67caf8de04829981dc0ff19d2d6a1aab9e",
+      "sha256": "e5cfb8fa51d987881e29b149e07652d28143fd5b6a94a8c103c8a336de61729e",
       "enabled": true,
       "update_interval": 86400,
       "included_modules": [
@@ -36424,7 +36424,7 @@
       "name": "12306",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-12306.yaml",
       "repository_path": "curated/module-stack/modules/fmz-12306.yaml",
-      "sha256": "32daf880bb90e49a67703addfc9b679a5dc3b49d6a9a71e5cd249bd38482a97f",
+      "sha256": "dbcf512e7a71f49949fe6ddaa6e2df89ff5c313a2e8fe14afc50dd7e617bb498",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -36472,7 +36472,7 @@
       "name": "农业银行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-ABC.yaml",
       "repository_path": "curated/module-stack/modules/fmz-ABC.yaml",
-      "sha256": "55d55559142373a87b60803e0e01ef7609b11dd5d84666440c8c4a7a3d07e0c7",
+      "sha256": "ee955153592303b3cfd48f49ac275cb2be53298853e93a5493bde7b5f62e7d07",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -36524,7 +36524,7 @@
       "name": "阿里巴巴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Alibaba.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Alibaba.yaml",
-      "sha256": "f588d2c3d902f40a608ac6f16093fdc0b7cd8696c0060832a735636684b678b5",
+      "sha256": "1cad238b6e8b7da3e84d945721953b37d62b70fb3835bf78aa17b9932b93bfdc",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -36621,7 +36621,7 @@
       "name": "汽车之家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Autohome.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Autohome.yaml",
-      "sha256": "999bd0bce5cfae8efefd082d95e40df605917f05cf0db550825520052cd826db",
+      "sha256": "33df67a1a382b08802d76b2409d75ae1c8d2c51cc32a44d350b6dfc357cdcb0f",
       "counts": {
         "rules": 33,
         "url_rewrites": 0,
@@ -36645,7 +36645,7 @@
       "name": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-AutoNavi.yaml",
       "repository_path": "curated/module-stack/modules/fmz-AutoNavi.yaml",
-      "sha256": "22df86f6e10a94542bb10de069f03130a2ae139770c1928f024fd5bda10114b6",
+      "sha256": "eca507140c58c6685662da217d14bc6cbb514812e17baffc56dababfb4775336",
       "counts": {
         "rules": 16,
         "url_rewrites": 0,
@@ -36669,7 +36669,7 @@
       "name": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-bilibili.yaml",
       "repository_path": "curated/module-stack/modules/fmz-bilibili.yaml",
-      "sha256": "8597894cab1d983b5ffbb86bfd2cf6b5046c908f9c3788b9dd1500246887a90d",
+      "sha256": "61630db8edf05edbed3972b0ee7a1bd06155a0277ab8c35211618e84aa2f508b",
       "counts": {
         "rules": 5,
         "url_rewrites": 0,
@@ -36754,7 +36754,7 @@
       "name": "菜鸟裹裹",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-CaiNiaoGuoGuo.yaml",
       "repository_path": "curated/module-stack/modules/fmz-CaiNiaoGuoGuo.yaml",
-      "sha256": "ca6ee769818d298a8177289c683ddcce19bbbccff487ce128d01a49099c72307",
+      "sha256": "f5676066e611dcca84273f826090a60ed80aca85220c8ebba89dbab2fe6a96ba",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -36883,7 +36883,7 @@
       "name": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Coolapk.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Coolapk.yaml",
-      "sha256": "d1f311bed4c4a18535bfb64374dfdba8cc899821154b81048eaa2dbb971726b9",
+      "sha256": "d44f604e2f684afdda01c6129a60cbfd6f6e2a05ae965da5d7e935626ab24bc1",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -36924,7 +36924,7 @@
       "name": "携程",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Ctrip.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Ctrip.yaml",
-      "sha256": "3b578e0040f160969a00e507f6279bebae01807d4e74f7071bf56d881717ecc2",
+      "sha256": "19a4187298cd83141628f26a15a2694a5c98c9a7824d71d6b8058b48a80c4e30",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -36957,7 +36957,7 @@
       "name": "大麦",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Damai.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Damai.yaml",
-      "sha256": "6320692104dd0c9200e1e8605ecd19596029f3ff69182385afd4c88c82faaf43",
+      "sha256": "0a461771959d47bc0ca6220ac01ac082e39eb35fcb043d51559c788d8399f1f3",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -36981,7 +36981,7 @@
       "name": "懂车帝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Dcar.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Dcar.yaml",
-      "sha256": "98160a5a1daa19343eb487b90d0b54d2fd2c3db93485e27856f5d1d2ccdbab42",
+      "sha256": "e267ff185235dd7785c8d2f142938c5e2297a2248a785d9affbee9ebe3e758f3",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -37005,7 +37005,7 @@
       "name": "得物",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-DeWu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-DeWu.yaml",
-      "sha256": "b6049a484fcc215e178bf3249cddf00d7caed2e7092642d6b1181adfe03003d0",
+      "sha256": "fe19a440e449a073b1c11330a4b61ef10bcef22d5875d9cc5b6ecbf785141552",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -37029,7 +37029,7 @@
       "name": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-DianPing.yaml",
       "repository_path": "curated/module-stack/modules/fmz-DianPing.yaml",
-      "sha256": "89e417a6e16a982357a0c1214b9c3223d5a9743cce15928c62d1b7803bf66bb8",
+      "sha256": "996914e3a3df0c8c32b6d71d4674b0e8e84f77efc3ed3d2c902c328bdd9e2530",
       "counts": {
         "rules": 13,
         "url_rewrites": 0,
@@ -37062,7 +37062,7 @@
       "name": "滴滴出行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-DiDiChuxing.yaml",
       "repository_path": "curated/module-stack/modules/fmz-DiDiChuxing.yaml",
-      "sha256": "b67b48e073dae56fd9961e5249ba3a942d24eb570a671f71ca38dfa5415a7185",
+      "sha256": "ad3f1534c6bf227d768dc3ea90b27694bcb0ecc54a2fbb4bba17370fe9033dff",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37103,7 +37103,7 @@
       "name": "饿了么",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Eleme.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Eleme.yaml",
-      "sha256": "7399b59c215ce51b9d53245bc9e729b228fb8dcffea5f67db7ce352f83fe8507",
+      "sha256": "475b1952f8e0b59d4ab40b5b44ffe1416774a0e8cc21089d00c98b36aa3ea3b8",
       "counts": {
         "rules": 14,
         "url_rewrites": 0,
@@ -37127,7 +37127,7 @@
       "name": "Facebook",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Facebook.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Facebook.yaml",
-      "sha256": "e13ef7d2cd00d7b2ee305d3e29cbc0f27df5457dcc99e8a636522790bb542a87",
+      "sha256": "010b64c7682958d3efa894e169fd3e9212a3d397f3ee10ccb9c05c6bd37bed19",
       "counts": {
         "rules": 3,
         "url_rewrites": 0,
@@ -37151,7 +37151,7 @@
       "name": "番茄小说",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-FanQieNovel.yaml",
       "repository_path": "curated/module-stack/modules/fmz-FanQieNovel.yaml",
-      "sha256": "9e6802926ad7226ba8e89a51a4528d6b88bf96f9bfcf3f304bbfca46def58007",
+      "sha256": "03aed378aaff174da2ce47c05be73e278a0b980448b63f6203d0016a6b2ab938",
       "counts": {
         "rules": 35,
         "url_rewrites": 0,
@@ -37216,7 +37216,7 @@
       "name": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-HangLvZongHeng.yaml",
       "repository_path": "curated/module-stack/modules/fmz-HangLvZongHeng.yaml",
-      "sha256": "06f40709b2c7e1f76f457d3b6af989fe407518cbeb6d2a7b25c54b022668af8d",
+      "sha256": "c0e02f49ef72b69e974bbf31102feed6adfeda60232285ad21b81088d948ea40",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -37240,7 +37240,7 @@
       "name": "工商银行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-ICBC.yaml",
       "repository_path": "curated/module-stack/modules/fmz-ICBC.yaml",
-      "sha256": "68bbdc1d7a426da286c0d459d754688eca859268b8be7c657ef7eb2726ddb9d0",
+      "sha256": "78cff3c2194a69ac5471181529b2bbde8a904e4de395ffe571ab45616ead03b2",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37268,7 +37268,7 @@
       "name": "同花顺",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-iFinD.yaml",
       "repository_path": "curated/module-stack/modules/fmz-iFinD.yaml",
-      "sha256": "9969d24c2fd5334b03d72f7c78bcc98792301cd244c303de2feea4394e9ba69c",
+      "sha256": "d944b5f01f2e7ad91a270f034cabe2b93d8383e8b492c66568cd2f709f618b09",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -37296,7 +37296,7 @@
       "name": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-JD.com.yaml",
       "repository_path": "curated/module-stack/modules/fmz-JD.com.yaml",
-      "sha256": "d7dee4e0dc85ee9a7d24019b2b4e2be355930c84d390ac5b87718024818166ad",
+      "sha256": "265b2db0c372335d4fd252d8d6f4c37fd09f89b99d54ffbfa9ea7926f729a9c8",
       "counts": {
         "rules": 17,
         "url_rewrites": 0,
@@ -37320,7 +37320,7 @@
       "name": "麦当劳",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-McDonalds.yaml",
       "repository_path": "curated/module-stack/modules/fmz-McDonalds.yaml",
-      "sha256": "4806f161d3bef0b421e33faf0148a6621dbeca059653451edf73a70ad4ae61ac",
+      "sha256": "5121a5c9c0064dfa70853c08c034cf700367865e2472232856e27cd037ba22ff",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37385,7 +37385,7 @@
       "name": "美团",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Meituan.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Meituan.yaml",
-      "sha256": "7ab6b165c814381f56ef284e2064381a05dba21eb7bd1f0c15f7f2a1095765a8",
+      "sha256": "a1bfe702eee0f99c05c614b3482eece110662daada64e61c4fe926528f4eede6",
       "counts": {
         "rules": 10,
         "url_rewrites": 0,
@@ -37409,7 +37409,7 @@
       "name": "美颜相机",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-MeiYanXiangJi.yaml",
       "repository_path": "curated/module-stack/modules/fmz-MeiYanXiangJi.yaml",
-      "sha256": "6de8f70392da7a56dd4bf60a0fc5046346c8e6567b94f4c445bef4e980233658",
+      "sha256": "ade5c75248a6c2b61e4bbce59fc56e36dc1918576486ce0be9a2e603bbb3bf49",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -37433,7 +37433,7 @@
       "name": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Mijia.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Mijia.yaml",
-      "sha256": "59f18df639c24a290e6103a7745968f28ab0ce4058dde84d517c5df08d7f95e4",
+      "sha256": "953d698fcb19c506e4a6ccc5640235a112dfb7de5fda64bc6227662ad0e4f159",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -37466,7 +37466,7 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-NetEaseCloudMusic.yaml",
       "repository_path": "curated/module-stack/modules/fmz-NetEaseCloudMusic.yaml",
-      "sha256": "532538ab352fce7231619eed954b304386fce3c1b6d273da741a81f068b2fd28",
+      "sha256": "2ec8ef81ebb9a5ecf1c63ad0440673d5181625f2c16ab188aabdade98ec0f902",
       "counts": {
         "rules": 5,
         "url_rewrites": 0,
@@ -37523,7 +37523,7 @@
       "name": "网易邮箱",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-NetEaseMail.yaml",
       "repository_path": "curated/module-stack/modules/fmz-NetEaseMail.yaml",
-      "sha256": "90168d491f1e829ee06ec8278d44a17a8e519b1e54912cb950731b26fe4893be",
+      "sha256": "273430bb141d5e776be58187739eef9fe5ada92d23e69fd491a4cdf46a9f28f6",
       "counts": {
         "rules": 7,
         "url_rewrites": 0,
@@ -37547,7 +37547,7 @@
       "name": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Pinduoduo.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Pinduoduo.yaml",
-      "sha256": "735c17286d1f9705d94341eed7564fc2b78ea22ba6c26aa7455f2a2872b264e3",
+      "sha256": "c9d7ac8b94c63107ba72f1b38f9b270c6bad3e6ae0fcb1e1f734d477c33da897",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -37571,7 +37571,7 @@
       "name": "夸克",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Quark.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Quark.yaml",
-      "sha256": "25f8b80ac3ccfdd01247fb27a82965fcd3dd0bb1ef9f82614ab031b9b1a73a25",
+      "sha256": "7ec9c8853f72a6f419de4ea962e2a2e58c43ea8fb35033e5fc70755cd74e5a7d",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37599,7 +37599,7 @@
       "name": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Taobao.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Taobao.yaml",
-      "sha256": "fe50870cd3a24b6e3f769855dbe8c699a87e034d178fe637105d89cd8660b9a4",
+      "sha256": "530300d98fb0cddabb790e589e8f83f7ae5fb04d99570edac3b42fb65cc00d55",
       "counts": {
         "rules": 32,
         "url_rewrites": 0,
@@ -37680,7 +37680,7 @@
       "name": "腾讯手机管家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-TencentMobileManager.yaml",
       "repository_path": "curated/module-stack/modules/fmz-TencentMobileManager.yaml",
-      "sha256": "7040f37832545ce095c833ee4ce1b815f159a6d7175440bae101116e8481f7cd",
+      "sha256": "b9f0d937ebffc13445b72ccd9e72fd0c82b67715ea587b3516483c11584c2d32",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37704,7 +37704,7 @@
       "name": "抖音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-TikTok.yaml",
       "repository_path": "curated/module-stack/modules/fmz-TikTok.yaml",
-      "sha256": "f2f8f743e0ef09c8895428253dce77a19781d9003bca55ba315a46da26758253",
+      "sha256": "6f24d58178e4bcbd8dbc65c5bd843dae58aa495f2b4da3d47c6acb0aa75bf6ef",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -37728,7 +37728,7 @@
       "name": "Weico(微博客户端)",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Weico.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Weico.yaml",
-      "sha256": "2f74536013354355c424d95ec6ee570a68f9c91b0879ffa9bd52c1ce661df620",
+      "sha256": "f16b21ec92fc41904014cae601e73babd628336ff232cc0a0da1d97bab1cc8b8",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -37752,7 +37752,7 @@
       "name": "WPS",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-WPS.yaml",
       "repository_path": "curated/module-stack/modules/fmz-WPS.yaml",
-      "sha256": "b6d7b904ccd7a21fbe45196d4c14d1e9f02d2b97f313f053ab0fa414dda35afd",
+      "sha256": "b49a5981c7248d75d1d47a5029a017a56e6b9e1863886833b85ad3214a351542",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -37776,7 +37776,7 @@
       "name": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-XianYu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-XianYu.yaml",
-      "sha256": "de0045f5db7d1b1069ce703c58beca655b362f3a82f4c6166d5e9898ad4480d1",
+      "sha256": "04d1de7720e8ec7afb6600cb3f919d43c10914169197cd0698b403eb3c00faf4",
       "counts": {
         "rules": 3,
         "url_rewrites": 0,
@@ -38016,7 +38016,7 @@
       "name": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-YouTube.yaml",
       "repository_path": "curated/module-stack/modules/fmz-YouTube.yaml",
-      "sha256": "977274957e984b7a21c3c18f162c908f28a8be56a9c3b6a6dfaddedab5fe3d12",
+      "sha256": "32f6cfc11a1a53da824272d9c17ced8f32c3da997cd4dcfa964b46c8084db075",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -38040,7 +38040,7 @@
       "name": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Zhihu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Zhihu.yaml",
-      "sha256": "f547fdcd623cb909730a6d2b210ded4276121437cc037205d01b997046048f74",
+      "sha256": "14f9d280854e9797793b43dc02e53d90b1d37d2b344603d589b7d3fd8928b41a",
       "counts": {
         "rules": 26,
         "url_rewrites": 1,
@@ -38252,7 +38252,7 @@
       "name": "转转",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-034.yaml",
       "repository_path": "curated/module-stack/modules/kelee-034.yaml",
-      "sha256": "19a9847440057187046943aea03923bb3eeb3c38496439509e9b706a06342e74",
+      "sha256": "2f89a4e34f2ea22f7a0a2a957b477f047e9bdfcb03dd1bd95f2bdb56c7d89b63",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -38363,7 +38363,7 @@
       "name": "智联招聘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-035.yaml",
       "repository_path": "curated/module-stack/modules/kelee-035.yaml",
-      "sha256": "e547a5f517dd99167d6275e5a2d07d169d0ffb996cd1f959c557d187285627a5",
+      "sha256": "8db6bc6b3c351a283f43cde9dbce9cabf8d8d5971cf6a4ec5fb8903dbd0e55ae",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -38451,7 +38451,7 @@
       "name": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-037.yaml",
       "repository_path": "curated/module-stack/modules/kelee-037.yaml",
-      "sha256": "6842b05edbba67086265283274524fff032571599ba48eab412c3865b1bd276a",
+      "sha256": "1470df51830573405facaa45c1baec8a945f3592c039152758f853b37d9fa626",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -38813,7 +38813,7 @@
       "name": "喜马拉雅",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-041.yaml",
       "repository_path": "curated/module-stack/modules/kelee-041.yaml",
-      "sha256": "bdff55d03ec2bee639b31c729ccbc87291d2ba2211b0ad5ebbce9dc4b6f36929",
+      "sha256": "b12c2ed39df0e06745381f6f2e2d4ad860c3d22a1b7392877b4b0d16ffb9611f",
       "counts": {
         "rules": 5,
         "url_rewrites": 0,
@@ -38946,7 +38946,7 @@
       "name": "小红书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-042.yaml",
       "repository_path": "curated/module-stack/modules/kelee-042.yaml",
-      "sha256": "ef1d3cbd27bb21812921b034420bb8060498c478752f90fbc315a45d9780a1a7",
+      "sha256": "4291793c8bb0a84520217de477c9e92693fb7e9c65a920923a36316b00f180fe",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -39081,7 +39081,7 @@
       "name": "小黑盒",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-043.yaml",
       "repository_path": "curated/module-stack/modules/kelee-043.yaml",
-      "sha256": "e62c5656397218ecc915fe85ca72e7cc1c818c1f52f27123a4f3afacff7849eb",
+      "sha256": "6b7ea84f2039476c09a197ecf017a4f68dd673563665803bc0beff5597da8853",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -39128,7 +39128,7 @@
       "name": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-044.yaml",
       "repository_path": "curated/module-stack/modules/kelee-044.yaml",
-      "sha256": "3021765ac40454107bcbc27b81812c2d7da62491b1c931b1f268a7e1f58fde99",
+      "sha256": "94769e632deb5b49772d92c5a38e641d07169a49d82f2dbc04bf92d8940f20cc",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -39318,7 +39318,7 @@
       "name": "抖音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-045.yaml",
       "repository_path": "curated/module-stack/modules/kelee-045.yaml",
-      "sha256": "5810d5c21cbdbcdb2df7abd4e6c922ef5752b731995817fe3a5db81c260a3579",
+      "sha256": "9a89131bcba1e4c8f472030b8fa8f9b01623d0beeaa959f3b596a977f5647d5d",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -39440,7 +39440,7 @@
       "name": "微信小程序",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-047.yaml",
       "repository_path": "curated/module-stack/modules/kelee-047.yaml",
-      "sha256": "8361df71dc4dfc305da1ff7e4ecab52cae2d701f25f3dc6bcca8556e41645579",
+      "sha256": "bbe04c6e3157da58e92341a60c260f6d577b99290aa458ed8322017e79bb97a4",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -39741,7 +39741,7 @@
       "name": "微信外部链接解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-048.yaml",
       "repository_path": "curated/module-stack/modules/kelee-048.yaml",
-      "sha256": "bf3bf5a5c1385baeda88dadd28bcf76c506b9a30c6a491b18b3d96769991a3f6",
+      "sha256": "267274cfe5d827506482abd6dc4818919866a139449c62c04663d595477a73ac",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -39782,7 +39782,7 @@
       "name": "微信公众号",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-049.yaml",
       "repository_path": "curated/module-stack/modules/kelee-049.yaml",
-      "sha256": "db17b9c1986ec9c00eef73e040f5fc59d3528006b98bb7a1447d903719d8fbb9",
+      "sha256": "56c7c6f94fd0d2253f07f3a5fd52ed135c819fea49be33c43dcdf5b511a4d5c5",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -39831,7 +39831,7 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-050.yaml",
       "repository_path": "curated/module-stack/modules/kelee-050.yaml",
-      "sha256": "4d5de125be6fecceb182d9949f907c1ea748f1c5ae1c3bc60397035273c30147",
+      "sha256": "756e4b32268c8736ea878aa03323e6f3c299e69eed12bf9a95d02d81cee1dacf",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -39917,7 +39917,7 @@
       "name": "网易邮箱大师",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-051.yaml",
       "repository_path": "curated/module-stack/modules/kelee-051.yaml",
-      "sha256": "bc671c879f36482f51e00cb6436c7fd980d887735aefe3c8ea4cb9892ef6b3ca",
+      "sha256": "38e2f5837e5948d236988b2b3e5c250a2da91f5691da367de5273c315d24432c",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -40011,7 +40011,7 @@
       "name": "腾讯视频",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-053.yaml",
       "repository_path": "curated/module-stack/modules/kelee-053.yaml",
-      "sha256": "d5b69b0f32602f49b85cad161b6030533864d545c19dfbc6431b28d34c959511",
+      "sha256": "cbf7e484a3b31c03c69b06b3912c2921630d27598df6815bc42046b4554c6d96",
       "counts": {
         "rules": 16,
         "url_rewrites": 0,
@@ -40052,7 +40052,7 @@
       "name": "淘票票",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-054.yaml",
       "repository_path": "curated/module-stack/modules/kelee-054.yaml",
-      "sha256": "63a1587a46e841fbccfbec062be52dad8aa9f1179daab1e5ea91b271153aa0b0",
+      "sha256": "f21fb8345d5e8f14068c1fa5b4383a22c0350bef4f1f417d5313966386a7888c",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -40121,7 +40121,7 @@
       "name": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-055.yaml",
       "repository_path": "curated/module-stack/modules/kelee-055.yaml",
-      "sha256": "17ce87d300c94e3f7bf1513c746c0960c1bbbef7b6a03894765400e46b1adbd7",
+      "sha256": "cb525abef13a1a9ec9929eebf75d6e137344075cd8b7e1b977a6a3a58c4cb983",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -40273,7 +40273,7 @@
       "name": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-057.yaml",
       "repository_path": "curated/module-stack/modules/kelee-057.yaml",
-      "sha256": "8e6ebbcf1a16ab84e6bb225b9f9fb3f9bc1c31e806e544b1636dfc9fc865a167",
+      "sha256": "d67f0397b6fe7152f20dd8f3d80621ece2716e31042db4336614c15ec24a2f5a",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -40467,7 +40467,7 @@
       "name": "瑞幸咖啡",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-059.yaml",
       "repository_path": "curated/module-stack/modules/kelee-059.yaml",
-      "sha256": "51814d42edc811ee59cd19cc18c82e212a8a32159beb6f3049bdf0348093a6a3",
+      "sha256": "138c1417d01da0bfbb342ca33d6ec893c615b2b33c551658eae5d808ae15a1ee",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -40564,7 +40564,7 @@
       "name": "汽车之家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-060.yaml",
       "repository_path": "curated/module-stack/modules/kelee-060.yaml",
-      "sha256": "ac8d2838800393dd34386bbb224bc9c74c45ee3d2a18930a3db0e97ce3819d75",
+      "sha256": "79aa62fc541d7ff977ebb14bd67aed9995e69bab3b6a0327534b36394602d980",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -40693,7 +40693,7 @@
       "name": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-061.yaml",
       "repository_path": "curated/module-stack/modules/kelee-061.yaml",
-      "sha256": "594c5ee8fa7da8ef915bf3738f116af59143d28acd97624ab126590836b1fb09",
+      "sha256": "a861f1fbc6c7a504aec139ff5cbc0f9e0d8c0d3b12ec0d3e1a980f2e51e537fa",
       "counts": {
         "rules": 17,
         "url_rewrites": 0,
@@ -41007,7 +41007,7 @@
       "name": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-063.yaml",
       "repository_path": "curated/module-stack/modules/kelee-063.yaml",
-      "sha256": "b7b7032c62c3eaa05e223ae37cedfb9ebec9a20548d09716c118445cad80a072",
+      "sha256": "fc1cdea5d37bceceecb08f9aaf603d22a76bf23ae4d7a14712ab99eebd97d261",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -41084,7 +41084,7 @@
       "name": "夸克",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-064.yaml",
       "repository_path": "curated/module-stack/modules/kelee-064.yaml",
-      "sha256": "4ed6819f47b8505de4d56101935cbc01fc6c387b3700838d9ba25aa63010bbf4",
+      "sha256": "202fd695da7089d267aa684f8a1f4cdb56da7ad8936e16dd854b0b021723aac7",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -41180,7 +41180,7 @@
       "name": "广告拦截合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-066.yaml",
       "repository_path": "curated/module-stack/modules/kelee-066.yaml",
-      "sha256": "641c8b9fb5653f8ef5aaf5076e4fef94a6543a24e3bb0f610ba6ac25a2f2d4bf",
+      "sha256": "902d3dca094f01070bbc99c0ec6f1adb6961d7339af5f454375e11dd9b895787",
       "counts": {
         "rules": 24,
         "url_rewrites": 0,
@@ -41510,7 +41510,7 @@
       "name": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-068.yaml",
       "repository_path": "curated/module-stack/modules/kelee-068.yaml",
-      "sha256": "b50bc5c1aacf20ce1c18ccbb247e24a5f5ea76ed22e4c9dfb82d987b9342a852",
+      "sha256": "22b0dfa7ca9c34205eebc439dfd23ba2afd65d6cb9c2c74085204d7f173d47fa",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -41810,7 +41810,7 @@
       "name": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-072.yaml",
       "repository_path": "curated/module-stack/modules/kelee-072.yaml",
-      "sha256": "16349e63f144794e2e54bc7f38327b0dcbe0d194fe8ef0816fe07155ae0bee0d",
+      "sha256": "fce5c79b2ad70288ff45a76bd86c34585db163f82b4c0cc45caab719dd528a0a",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -41898,7 +41898,7 @@
       "name": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-074.yaml",
       "repository_path": "curated/module-stack/modules/kelee-074.yaml",
-      "sha256": "8a4ce940899b76fe45bd48c626436bbba49bc4e57a5b0ce4397058272b754f47",
+      "sha256": "c53e1925e3c5eb2340e405d06b285340ed07bb89f48e594dad58252f7b6c749c",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -42159,7 +42159,7 @@
       "name": "番茄小说",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-077.yaml",
       "repository_path": "curated/module-stack/modules/kelee-077.yaml",
-      "sha256": "d9144791f45d31578e9418cacf98e8be437a0c869ca1c58dac5af52a0220b1e3",
+      "sha256": "3ce52a3748b5cd607d9930e00785d9d1a1ec3ceb2d5e278eb0c3a093b09f30e2",
       "counts": {
         "rules": 34,
         "url_rewrites": 0,
@@ -42279,7 +42279,7 @@
       "name": "豆瓣",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-079.yaml",
       "repository_path": "curated/module-stack/modules/kelee-079.yaml",
-      "sha256": "c4db3a575d23a80c98cce585a1cf1b104d5d1feecf3b4b85ddd01db3be424b4c",
+      "sha256": "0b9877731c388d1c09e395b00d3ea57316b04f7a238a72e3fd1b1f78b922cadc",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -42336,7 +42336,7 @@
       "name": "滴滴出行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-080.yaml",
       "repository_path": "curated/module-stack/modules/kelee-080.yaml",
-      "sha256": "534d0f8fbba9ec5542657d04ed28ed254ae38e3d5ffb30cae641b463e9f9fbb7",
+      "sha256": "e1fb5b3bb83abd8d4c863801c4d0bbf58028c902071051a3c54dbe779ed1ef63",
       "counts": {
         "rules": 3,
         "url_rewrites": 0,
@@ -42546,7 +42546,7 @@
       "name": "得物",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-082.yaml",
       "repository_path": "curated/module-stack/modules/kelee-082.yaml",
-      "sha256": "9be2417d095ddc1b9b2e25fb3e942d6aedb76237bf91249df93d79e18a289e35",
+      "sha256": "d53da4edefae9d21d6583402fd05dee124f171f54550b50d1e99e89072c618e7",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -42661,7 +42661,7 @@
       "name": "大麦",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-083.yaml",
       "repository_path": "curated/module-stack/modules/kelee-083.yaml",
-      "sha256": "2196b8a33441faaffd118fb84e54dfe468a2e6a8aabb6cbeb76b8f2dde68303b",
+      "sha256": "e2c64c22eb44012090689c0482d1d561d2b2cd9a82662e9080362e6784677f6a",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -42728,7 +42728,7 @@
       "name": "菜鸟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-084.yaml",
       "repository_path": "curated/module-stack/modules/kelee-084.yaml",
-      "sha256": "e209a6f2a66eb1d8889769c0460026f48466a17bd071b6eff8046b7411deba9a",
+      "sha256": "5d6ff16c5676ce2eef9ebfe9acb0d62c18b7ec159dd5321a9a5fbb5573ccdb85",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -42801,7 +42801,7 @@
       "name": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-085.yaml",
       "repository_path": "curated/module-stack/modules/kelee-085.yaml",
-      "sha256": "df8f3ec0408f50140911eab51592222935ea66c9376954790514bc242e11f896",
+      "sha256": "ce703df411942b2a362780f0b3f7c63872611165730cfaf4a43058527445be22",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -42914,7 +42914,7 @@
       "name": "百度网盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-086.yaml",
       "repository_path": "curated/module-stack/modules/kelee-086.yaml",
-      "sha256": "697f8e29ec72b79dc8c3a9f3bd10e030e3b1b4ef68ea3c74f023e4c75ef05e2d",
+      "sha256": "b74f2000831a41452e1593e463a2da5d23d6bf0713047e0728061d97d694073f",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -43009,7 +43009,7 @@
       "name": "百度贴吧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-087.yaml",
       "repository_path": "curated/module-stack/modules/kelee-087.yaml",
-      "sha256": "c14815d826d7b27e1435798a1e508069dad3792d0278e379c0c5e3a4b871bc0f",
+      "sha256": "e31d1f1ca53126dff925190e5f9d32e5bd6a56ccd3f4fd37de747edd945a9891",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -43104,7 +43104,7 @@
       "name": "阿里云盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-088.yaml",
       "repository_path": "curated/module-stack/modules/kelee-088.yaml",
-      "sha256": "533f3d36ac131234a6989a958e770815c8b7b592d306f0eb8f81acaaa8bde719",
+      "sha256": "9d45ad4a1d7d8a0af79505508beaad8af81154ac04454cb1fd84f71948669e5d",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -43145,7 +43145,7 @@
       "name": "爱奇艺",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-089.yaml",
       "repository_path": "curated/module-stack/modules/kelee-089.yaml",
-      "sha256": "b35be78388f20aaa4c11f9d5b09b04bfb356095328f9837fe78d556c9493b21e",
+      "sha256": "21d96084760f92b6b37cabdbbc039ad56dc500c69cef205e9e5228a3d86fb339",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -43383,7 +43383,7 @@
       "name": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-091.yaml",
       "repository_path": "curated/module-stack/modules/kelee-091.yaml",
-      "sha256": "f85326b97a5540bbd341acf94c0de7d0292f453f1b883df454f0308d043fc374",
+      "sha256": "1f17260b5ec7767701e56de94d78e5a61b05fb21c2a384fb843944bf3c0614c8",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -43555,7 +43555,7 @@
       "name": "Spotify",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-095.yaml",
       "repository_path": "curated/module-stack/modules/kelee-095.yaml",
-      "sha256": "c1b2145217dbfdf040fda943186fd688b1bdf78aebd28c7556eb0820978569c5",
+      "sha256": "d4708c5756ce4a3f9d349d06f5f3d3093e37644d0e4c2425c1e1122ca5f94f70",
       "counts": {
         "rules": 1,
         "url_rewrites": 1,
@@ -43609,7 +43609,7 @@
       "name": "QQ音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-096.yaml",
       "repository_path": "curated/module-stack/modules/kelee-096.yaml",
-      "sha256": "c26cd4aa07febb8d43116ed1996181b52989de6d48d63ca0291cd1080b4284e8",
+      "sha256": "1c41bc2228c01dd2374ca3534c65ff3e6181f30341a2f74cd459f4bcc7be12f4",
       "counts": {
         "rules": 11,
         "url_rewrites": 0,
@@ -43691,7 +43691,7 @@
       "name": "Line",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-098.yaml",
       "repository_path": "curated/module-stack/modules/kelee-098.yaml",
-      "sha256": "0a845f0fa822556629bc401c924a1c4163d60c9138153ef39968d068ba621b92",
+      "sha256": "7b0f096f9eff5c78e19c62c0bd2a80a2d0d9dc31f94d608684ec02d0953200b6",
       "counts": {
         "rules": 20,
         "url_rewrites": 0,
@@ -43817,7 +43817,7 @@
       "name": "Keep",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-100.yaml",
       "repository_path": "curated/module-stack/modules/kelee-100.yaml",
-      "sha256": "b53f2267a3e4a159560deeb0cc5cd3567a4657af6fc79ea4ae3e0f9815bd67ef",
+      "sha256": "a52eb65199e1a72f3c747eac34bd5335b5af236758d74ad8325bbb7223ccf0f0",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -44202,7 +44202,7 @@
       "name": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
       "repository_path": "curated/module-stack/modules/native-005.yaml",
-      "sha256": "98c32d7f0b6f10b7425dd37535729d15132313f62e8836559cc2e6318c2ab8c6",
+      "sha256": "5461818e1e5c24eb8257b58f7cd4cf6f1f21baa158c4f8877033925c708026b9",
       "counts": {
         "rules": 13,
         "url_rewrites": 1,
@@ -45016,7 +45016,7 @@
       "name": "小红书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-007.yaml",
       "repository_path": "curated/module-stack/modules/native-007.yaml",
-      "sha256": "c38858e6addec8988b89c191269f6e4a95113233651c43bac0c2c5ad76868062",
+      "sha256": "f53ce0b8251534981d38caf550998b8dfa54813c39e498f849e989a67c8a3238",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -45118,7 +45118,7 @@
       "name": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-008.yaml",
       "repository_path": "curated/module-stack/modules/native-008.yaml",
-      "sha256": "0f448bd3168ac039e13ceb5d7d6ee4814a3e7382eb5c268e369355eea3eabfc9",
+      "sha256": "72cceae216d534b4569a3bbfa76ecb046a196d170105b78b9be87a0ae65c9181",
       "counts": {
         "rules": 3,
         "url_rewrites": 0,
@@ -45479,7 +45479,7 @@
       "name": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-009.yaml",
       "repository_path": "curated/module-stack/modules/native-009.yaml",
-      "sha256": "ba04c77051e1617066103b23211f26525b9c258b360da1d8ef17e947422de2ee",
+      "sha256": "56ae187656a3bfca75751b7533313a0431d6fb59aaa3f2a7acabe52c0a4838e9",
       "counts": {
         "rules": 17,
         "url_rewrites": 0,
@@ -45861,7 +45861,7 @@
       "name": "百度网盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-011.yaml",
       "repository_path": "curated/module-stack/modules/native-011.yaml",
-      "sha256": "19d3088fce3cc52504577dfb6f212ad584b8c699843a000517ad558ebc2fb79d",
+      "sha256": "35858715b59ab5641ffa3535a7016a3bd192fc6cb3f297c6a8efdc0631f62290",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -46060,7 +46060,7 @@
       "name": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-012.yaml",
       "repository_path": "curated/module-stack/modules/native-012.yaml",
-      "sha256": "9ec459e34e601c42ddd24b1564df6e5620ab78308ab5f1c42633ccaa5633d5fa",
+      "sha256": "c4fdf36f6cc6f7ad7c00d42b1bbb45182fce0acb5a70bb443cce9a3a5bcfe499",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -46310,7 +46310,7 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "ca402687a22269f1c7b0156d55011beb23b3a41086c3528b1214422e1eb63463",
+      "sha256": "62302a3c5f6b6e7ed087685cd63c835d0ebfc821849c7a2227ea927c385e2aec",
       "counts": {
         "rules": 9,
         "url_rewrites": 0,
@@ -46543,7 +46543,7 @@
       "name": "📺 BiliBili: 🛡️ ADBlock",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-016.yaml",
       "repository_path": "curated/module-stack/modules/native-016.yaml",
-      "sha256": "e666556bf929893c31237fa99449d6d8133b8b14d882c62e09000cd09e1013dc",
+      "sha256": "00f222d337ee9eb7b32f368f52d29207db93306d5d57b761834129b83080109b",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -46765,7 +46765,7 @@
       "name": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-018.yaml",
       "repository_path": "curated/module-stack/modules/native-018.yaml",
-      "sha256": "d9f1e1f655ab5217a3603ee53e8f5f6dcffb455a919e12140c6321df1aa5923c",
+      "sha256": "280d74b691b6899b3bb928667a12412f689e134ef73d90a85a9247b16bd633e1",
       "counts": {
         "rules": 11,
         "url_rewrites": 0,
@@ -46889,7 +46889,7 @@
       "name": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-019.yaml",
       "repository_path": "curated/module-stack/modules/native-019.yaml",
-      "sha256": "3f854f42a70bc6ac4b990a30d00ed5c9103946294ba945c5219084cbe2da8cbe",
+      "sha256": "27d347fd1002364312b26a498d15bbb634429089122e8fb303b608013f6a8f41",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -47011,7 +47011,7 @@
       "name": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
       "repository_path": "curated/module-stack/modules/native-020.yaml",
-      "sha256": "026acc84928753f319dcd8489a3000d74acfc92a119c3a294e2f2feb89e214f4",
+      "sha256": "5b1d6b686fddcabf493927c4abb8b3800c5b4d0cbd77e36aff068f149f2830ed",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -47237,7 +47237,7 @@
       "name": "滴滴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
       "repository_path": "curated/module-stack/modules/native-021.yaml",
-      "sha256": "eabc5421da82d174391ae5086acca48f31a27909a0a9b38d1760bf07c6378f6b",
+      "sha256": "1c5c60c4683bc8a0f06bb5f71d700e059f498dc6e62a8912ebe89fec3a23ab51",
       "counts": {
         "rules": 43,
         "url_rewrites": 0,
@@ -47943,7 +47943,7 @@
       "name": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-025.yaml",
       "repository_path": "curated/module-stack/modules/native-025.yaml",
-      "sha256": "2c36216bca9e7873698ccffe5c11d918b7ab44e72d998b8984e24c521a1fea7f",
+      "sha256": "deb6e5392f2aa07b9d2623daaa1115dc089c6fcb9e845ce12253457804479cfc",
       "counts": {
         "rules": 32,
         "url_rewrites": 0,
@@ -48046,7 +48046,7 @@
       "name": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-026.yaml",
       "repository_path": "curated/module-stack/modules/native-026.yaml",
-      "sha256": "c8d47fd530df870fdffb7b887592ac5b97f9e9a2b184334dc69bc2f543471d3d",
+      "sha256": "b97a34ec94b84e7d2f272c6a6f3bb571682d3da0c181046bd5f1ee655f8bbb78",
       "counts": {
         "rules": 17,
         "url_rewrites": 0,
@@ -48781,7 +48781,7 @@
       "name": "懂车帝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-037.yaml",
       "repository_path": "curated/module-stack/modules/native-037.yaml",
-      "sha256": "98160a5a1daa19343eb487b90d0b54d2fd2c3db93485e27856f5d1d2ccdbab42",
+      "sha256": "fa2f341a01812f61e76470e8307c7fcd5dfa7311d1db7db138ce9f09a4fb392a",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -48922,7 +48922,7 @@
       "name": "Twitter",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-040.yaml",
       "repository_path": "curated/module-stack/modules/native-040.yaml",
-      "sha256": "6035c5c008d574f91fcc0f71414ebc2655d89f236ad933033ee4d9c335abf7f4",
+      "sha256": "e774389cbb60776c410f559f65b47a4596e88d7c0e6dee713e08cec1f3ea5ef5",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -49016,7 +49016,7 @@
       "name": "抖音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-042.yaml",
       "repository_path": "curated/module-stack/modules/native-042.yaml",
-      "sha256": "f2f8f743e0ef09c8895428253dce77a19781d9003bca55ba315a46da26758253",
+      "sha256": "e7c4f567be165d4fb237b2c1160b15ba1c9a974974ca51ed31f455d8f5aeaf85",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -49063,7 +49063,7 @@
       "name": "得物去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-043.yaml",
       "repository_path": "curated/module-stack/modules/native-043.yaml",
-      "sha256": "204965b2dd8875dd30c6b1c2272946d2dcb273175426fdc5e522dcb5c7a50e94",
+      "sha256": "09d4318c6c74a4fe8647deb9d8fd0313c5478a73c2432d183b881d9fc1631e75",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -49402,7 +49402,7 @@
       "name": "小黑盒去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-046.yaml",
       "repository_path": "curated/module-stack/modules/native-046.yaml",
-      "sha256": "e2a59b060f9a25a9a67bce6af2f4d54ec29e2bbb5c7dd544d41df822b13864ea",
+      "sha256": "a3d01e080f641bf3433828d62fb36ab44c83a1b70d0cd18d09a22a4bbc744285",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -49528,7 +49528,7 @@
       "name": "淘票票去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-048.yaml",
       "repository_path": "curated/module-stack/modules/native-048.yaml",
-      "sha256": "9f2263e9f9eb80fb72b774158b22c1ab351a5cfc4746dcd5a84ee3353c652cce",
+      "sha256": "dd3c26fcd534ee56e3ad1869552f725f4288f3507d3a3d9ada8c44d02c208ca0",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -49628,7 +49628,7 @@
       "name": "大麦去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-049.yaml",
       "repository_path": "curated/module-stack/modules/native-049.yaml",
-      "sha256": "ab28b092d955ab5ea231f501b1725c46a7968ba2b8e73fa717db68649975aebb",
+      "sha256": "e0cb82edf952bdff502652f87c8bd38ed57ab98fef303cae8992433b67cd128b",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -50605,7 +50605,7 @@
       "name": "12306去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
       "repository_path": "curated/module-stack/modules/native-056.yaml",
-      "sha256": "1b42a19bd64e726c3928ee0211822bac939991610cbcb6cb38aa4798644ac56b",
+      "sha256": "68c874120eff1e974f12e06138e1e16993a424e15ca04df891629cecd7802576",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -50663,7 +50663,7 @@
       "name": "夸克去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-057.yaml",
       "repository_path": "curated/module-stack/modules/native-057.yaml",
-      "sha256": "c2cba636c9697f8de5aabfe9f5312aeebe952466ffc510e65ccefe8a1da56c2b",
+      "sha256": "399b25e1f7bbe2719eaa9d04e1aeb2c5012d10a7897cbcd9df5e1fd24206b731",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -50738,7 +50738,7 @@
       "name": "豆瓣去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-058.yaml",
       "repository_path": "curated/module-stack/modules/native-058.yaml",
-      "sha256": "9a90f7d089fd1c524091d425703c05199ce8bd14e010796d956c0107bc817748",
+      "sha256": "a9fb5fddc094f5c217c1592c5e51a7b58f23891eb0ab5c567f581a3cf5728fa6",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -50888,7 +50888,7 @@
       "name": "Reddit去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-060.yaml",
       "repository_path": "curated/module-stack/modules/native-060.yaml",
-      "sha256": "40bad155d7789ffcb39155f38cb0d31ff51fdc304a07735a21b692e7b1460a78",
+      "sha256": "aef1bd5fa254ba4ddd124ec3f8a6690bb400a11d3c5a7bc649410de1eac31e52",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -51372,7 +51372,7 @@
       "name": "百度贴吧（脚本已镜像）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-064.yaml",
       "repository_path": "curated/module-stack/modules/native-064.yaml",
-      "sha256": "2d6551242d55cbfbc64a73dcd0611ebd4d930d34b1c945fb97e3a5eb7f02db54",
+      "sha256": "ae8f615c30eaf8f0c0c920639dfa7e3acec6a1a3bf2a0771be30ecd08d87b55b",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -51575,7 +51575,7 @@
       "name": "微信公众号去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-066.yaml",
       "repository_path": "curated/module-stack/modules/native-066.yaml",
-      "sha256": "43e6124a840b3d60c8e430fe6919ce7d92b590c46d2c53e08d3826da97fc8333",
+      "sha256": "da48e85926e929d7474e4379c2790b55a91948e14282de414dd92f630c8205c1",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -51640,7 +51640,7 @@
       "name": "微信小程序去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-067.yaml",
       "repository_path": "curated/module-stack/modules/native-067.yaml",
-      "sha256": "b762fdfd8ef18090ad24e67eed0047d54424dc1306ce8b125c2dc30232da36f1",
+      "sha256": "f1f32bbbc487a4e44cf12116da9bf881cd6e6b0b18e45c0a1a27e11022045165",
       "counts": {
         "rules": 29,
         "url_rewrites": 0,
@@ -53825,7 +53825,7 @@
       "name": "微信外部链接解锁",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-069.yaml",
       "repository_path": "curated/module-stack/modules/native-069.yaml",
-      "sha256": "0a5fee1767d6a4f754cbf5f5ef9929fd905b0298923129cc635739ecbb82891d",
+      "sha256": "c2055c74db029534552455b4f24d1b8f1d9678ea74ac96c144cd38935a8a36f5",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -53872,7 +53872,7 @@
       "name": " iRingo: 🌤 WeatherKit",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-070.yaml",
       "repository_path": "curated/module-stack/modules/native-070.yaml",
-      "sha256": "cb83cc9a9b8034d6fdf0836b5667e3b8b4f938e034f3c536d7065bf87bd803f0",
+      "sha256": "e884e9d9f17ee4365bf1d70f6737677a7630ecb691797fc18077f02f2047b7ec",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -53925,7 +53925,7 @@
       "name": " iRingo: 🗺️ Maps",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-071.yaml",
       "repository_path": "curated/module-stack/modules/native-071.yaml",
-      "sha256": "c57f40b17e363ee39b610846340c138657e847451cce2161d0a3411cdf19e204",
+      "sha256": "6de8b40a05c28d465d83bd052272ba5e0963b38394c122f15762187f4fc6741e",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -53972,7 +53972,7 @@
       "name": "网易云svip会员（完全免费不要到处分享）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-072.yaml",
       "repository_path": "curated/module-stack/modules/native-072.yaml",
-      "sha256": "3c5e8c4b27a33593a166d66e6566c96ac21d2c163aa5e49715b3a195288ac935",
+      "sha256": "03d23e24c3ee2dbaf607eb75de60378be0eab2b8ecfeb9d6f4c93629581d37be",
       "counts": {
         "rules": 11,
         "url_rewrites": 0,
@@ -54371,7 +54371,7 @@
       "name": "香港抖音去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-078.yaml",
       "repository_path": "curated/module-stack/modules/native-078.yaml",
-      "sha256": "73bcadaa90d0acd5ccc31d80c3a798773a12d3a5dccb4f0a6cbb9d86d2859c7d",
+      "sha256": "3945d5d20c19f848415604c65e5134f3ebeb3443fcef520b262c626458879584",
       "counts": {
         "rules": 9,
         "url_rewrites": 0,
@@ -54465,7 +54465,7 @@
       "name": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-079.yaml",
       "repository_path": "curated/module-stack/modules/native-079.yaml",
-      "sha256": "6c5c44a7ec34f90937f18d530455c8eac0a5364c2189dfaf49c02c050c8c51c6",
+      "sha256": "57bd38666f00580288c6d49daf0f72ee4dfdb114868a5b9f83c0b58d581bcb27",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -54675,7 +54675,7 @@
       "name": "携程",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-082.yaml",
       "repository_path": "curated/module-stack/modules/native-082.yaml",
-      "sha256": "a40504986d21d1652ac26d803725bd31b2665e8b4ba5a4cd9d595eb56112fa2c",
+      "sha256": "0e1bad2b6ed1226c70ff8a4fba281c63ff80b111c0f3bb28f7292b47042ef06f",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -54740,7 +54740,7 @@
       "name": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
       "repository_path": "curated/module-stack/modules/native-083.yaml",
-      "sha256": "0aab88f639f73f24386d60459b339cb8fe50c552a172d8213a9ab3469e0774c7",
+      "sha256": "34b75f16f817661f08f151d3d4c08ea69bb42ca3a2dfc9773fb430b6ec845a93",
       "counts": {
         "rules": 12,
         "url_rewrites": 1,
@@ -54864,7 +54864,7 @@
       "name": "饿了么",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-084.yaml",
       "repository_path": "curated/module-stack/modules/native-084.yaml",
-      "sha256": "c7d8757b4784a8be27891da8435c48c574dbad2a0acac34c3df755a9c63e0feb",
+      "sha256": "8a9df7f86e0539cc4b4f05c798a5bc819c882f67baa50f49b539049cafc2adef",
       "counts": {
         "rules": 14,
         "url_rewrites": 0,
@@ -54956,7 +54956,7 @@
       "name": "阿里巴巴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-085.yaml",
       "repository_path": "curated/module-stack/modules/native-085.yaml",
-      "sha256": "96899bb22a0026966d2d4324cc7b1ab56355229424cfa7e757db9fb19efeb792",
+      "sha256": "fa836e5326668ffcde55b788589f4918a0528a84fab7635e95a7b34036a068eb",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -55075,7 +55075,7 @@
       "name": "汽车之家去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-086.yaml",
       "repository_path": "curated/module-stack/modules/native-086.yaml",
-      "sha256": "ddfd0dde234cd73d6391ad56181bfc4ed33ba40f8185b96f5a24596fd736b3e0",
+      "sha256": "29821392f93c434157d297e3130d770b3a51f1f72fc84ffb06479e0f7e15bf78",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -55305,7 +55305,7 @@
       "name": "航旅纵横去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-087.yaml",
       "repository_path": "curated/module-stack/modules/native-087.yaml",
-      "sha256": "f5af3918ea69ec251a634d37d46e02135afa87f9c2019a5fa230fd640711367d",
+      "sha256": "07c78a8f906a59a86577ff57ce2bbe5b7c54a327b06df04d5c3a5564dcf78700",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -55399,7 +55399,7 @@
       "name": "网易邮箱大师去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-089.yaml",
       "repository_path": "curated/module-stack/modules/native-089.yaml",
-      "sha256": "6119063fd90055b025e9ddce9cd2a30dfa218d9294d78ae9abd762844efc6290",
+      "sha256": "a5159396c3e1ba146238ff6e1f3ee7f0be76a971dc0ec79a9c2f21f04b5b9dd7",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -55477,7 +55477,7 @@
       "name": "字节跳动",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-090.yaml",
       "repository_path": "curated/module-stack/modules/native-090.yaml",
-      "sha256": "e6583d06b31ae9e6f54c64d094ae9a3dbbdadf898befb6afeba822ea6029df57",
+      "sha256": "b6d797ecdaf53ece96aec6d691f843aa003383b6db5e8ee057c534c321092454",
       "counts": {
         "rules": 22,
         "url_rewrites": 0,
@@ -55597,7 +55597,7 @@
       "name": "墨鱼去开屏2.0",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-092.yaml",
       "repository_path": "curated/module-stack/modules/native-092.yaml",
-      "sha256": "8294aecbfdb39bcde5acc357a84514080f6c9c233c3336a12fe4ff9aa643e6c2",
+      "sha256": "5772eb3011999b52dae6ec3ae512ca53f43de53428c6a3bd4f105be148dae7cb",
       "counts": {
         "rules": 19,
         "url_rewrites": 0,
@@ -58130,7 +58130,7 @@
       "name": "NoAd",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-093.yaml",
       "repository_path": "curated/module-stack/modules/native-093.yaml",
-      "sha256": "a96c61d77a41f5b6fd6a5cddbcec403d4cdc62fb74298e9ef5e845bd8a4a254d",
+      "sha256": "5cacf988f6f3182d42d53a8358d0aaef46573f45b1c8f2958e831e26b2a28d34",
       "counts": {
         "rules": 264,
         "url_rewrites": 0,
@@ -59497,7 +59497,7 @@
       "name": "APP启动页去广告ultra+",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-094.yaml",
       "repository_path": "curated/module-stack/modules/native-094.yaml",
-      "sha256": "cbcb64e637b0f4405387e4e40d7e8db809f627d138e069a4a27f5a9a26d5b8bf",
+      "sha256": "50d1921233cdc3996c706aafee411990b8cdfe3b2aa765d0b963d680940cd948",
       "counts": {
         "rules": 797,
         "url_rewrites": 67,
@@ -73148,7 +73148,7 @@
       "name": "广告拦截合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-095.yaml",
       "repository_path": "curated/module-stack/modules/native-095.yaml",
-      "sha256": "7d020303a650b4f0a7b412352c8da850396f20c2762be81aa284c95193cab766",
+      "sha256": "8065865af9bc66bf67aabea9bff098cd49ae745cc55e0cd3afdd20d5b7bde1ee",
       "counts": {
         "rules": 398,
         "url_rewrites": 1,
@@ -79175,7 +79175,7 @@
       "name": "广告拦截&净化合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-096.yaml",
       "repository_path": "curated/module-stack/modules/native-096.yaml",
-      "sha256": "94004de324ebc2f2b69f4340e6921c1ce5a1f997457fd0760bca6a5535137e67",
+      "sha256": "f45e3ad66a3673767e9a921ee6fdbbecb088f71775ab555678626ca2b153dc67",
       "counts": {
         "rules": 3506,
         "url_rewrites": 4,
@@ -84954,7 +84954,7 @@
       "name": "YouTube.Enhance.sgmodule",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-000.yaml",
       "repository_path": "curated/module-stack/modules/user-000.yaml",
-      "sha256": "95d473cacf1d6266a1a1fa3315ab0482bd879c0ee7d20fb671b3ae778bcc8bb5",
+      "sha256": "c5c84b5bfb5f373e6c5d759ea41ba97ee5b1768bf7651ea982ede0a9feaeaa4e",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -84991,7 +84991,7 @@
       "name": "Apple地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-001.yaml",
       "repository_path": "curated/module-stack/modules/user-001.yaml",
-      "sha256": "2b9bef2e31cc340d91f347c953ac1127155d3eecb3bc9a5ffb1123742ac8a83d",
+      "sha256": "ef9b7a348a894fc917b83d4067c33cb00714c702b43d4aab17e9377b76c4b3d6",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -85015,7 +85015,7 @@
       "name": "Apple天气",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-002.yaml",
       "repository_path": "curated/module-stack/modules/user-002.yaml",
-      "sha256": "15e08db9bed1129b77a57508ea03322eaaf0138a93c0f7bcc20cb5bf81cfe9bc",
+      "sha256": "d8f3134ffc0a18bae1479c7e75c226da5a8134bd6cd21c4cd93484274c01b9e3",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -85167,7 +85167,7 @@
       "name": "腾讯视频",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-004.yaml",
       "repository_path": "curated/module-stack/modules/user-004.yaml",
-      "sha256": "0631e1e4f87c7282422cdda8bc0d5dcd0e1a9abddb7e3804dd6fb001230bccdc",
+      "sha256": "e8e0f8b6e47e1f89e974d27ffaaaf1d9612bd8e5736febfc26a17c81154039e5",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -85191,7 +85191,7 @@
       "name": "美团",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-005.yaml",
       "repository_path": "curated/module-stack/modules/user-005.yaml",
-      "sha256": "9f30fe38f3850eb8b2ab6020a35bab4bbb70fd33c21f42ed83eb5230bd19e71c",
+      "sha256": "31fcfb92c7146aa578e39fe0d08221c00eb0df311aa099b3d861f1d6be71040c",
       "counts": {
         "rules": 48,
         "url_rewrites": 0,
@@ -85286,7 +85286,7 @@
       "name": "瑞幸咖啡",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-008.yaml",
       "repository_path": "curated/module-stack/modules/user-008.yaml",
-      "sha256": "67d3c372696b3dbf8aba9179a2f11fed75ff0b23486c93bb99acb42bb67dd552",
+      "sha256": "e6fa44d88a9552728bc27a7caf885b5e0ba191ba332d7bc0c84d3af2b517a499",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85310,7 +85310,7 @@
       "name": "大麦",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-009.yaml",
       "repository_path": "curated/module-stack/modules/user-009.yaml",
-      "sha256": "7a8ef9395c6c3f302dd109d3297f964683850e1beaa375b5a8817b82a9f0ec4c",
+      "sha256": "70378744b3b3dfbc163e0fa3dbc2dec9c9c3c55d5c7fa1ef1a3a6f2744be8140",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85403,7 +85403,7 @@
       "name": "养基宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-010.yaml",
       "repository_path": "curated/module-stack/modules/user-010.yaml",
-      "sha256": "668e460dd8975f3cf83b8295b86868b289929aec63b4e7470e6b4cb4016b7174",
+      "sha256": "574edef537b7add1a7e64f1e25cb4f8dcec546e419a791a69919ed3ed93d97a1",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85474,7 +85474,7 @@
       "name": "123云盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-012.yaml",
       "repository_path": "curated/module-stack/modules/user-012.yaml",
-      "sha256": "ae9dab9eff84004312c719931528dc90d84d1132003e2e920ca44534c5096d06",
+      "sha256": "8d5d498dab67d91ae1e13c0d9c535c66806084e836cf8c8e94ec041eece594a1",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85498,7 +85498,7 @@
       "name": "网易邮箱大师",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-013.yaml",
       "repository_path": "curated/module-stack/modules/user-013.yaml",
-      "sha256": "c058c10c9ac05c9dd3565b55ecf16265cedf1535c475ec268d80e4a0ad3811b7",
+      "sha256": "c323a5d8f1683b256799efeaa44e61a4082ad590c699d864a3518577a46e6d6a",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85551,7 +85551,7 @@
       "name": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-014.yaml",
       "repository_path": "curated/module-stack/modules/user-014.yaml",
-      "sha256": "771e074268a18d1a95b732dad9f46d04e4dff4e526b9b705770937f4315a4674",
+      "sha256": "a85312937546c9afd6cbcdbfde5db6ea3e68d82ef10b6e1d699af0ff83920361",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -85650,7 +85650,7 @@
       "name": "百度贴吧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-015.yaml",
       "repository_path": "curated/module-stack/modules/user-015.yaml",
-      "sha256": "503b96ad41f8a29b71b0b25313a2e59380194881964c1c08284f34d15619ffaa",
+      "sha256": "bf3a954582fd06c281952ffb2dec06f8265ed31a3ed23017c480a8a40b245119",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -85705,7 +85705,7 @@
       "name": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-016.yaml",
       "repository_path": "curated/module-stack/modules/user-016.yaml",
-      "sha256": "0e9119662d80a311853060c266b17747502fa3c746763c3597de7f4ddc1d8a4c",
+      "sha256": "88e781783c202d985be02613e57f14f5fd1f5a80ea3ef1482a3dcefd64706ac9",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85754,7 +85754,7 @@
       "name": "菜鸟裹裹",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-017.yaml",
       "repository_path": "curated/module-stack/modules/user-017.yaml",
-      "sha256": "dae98ac038d9111f25cdff919224fe02b801f7ad9c08ad53e06d7d9b7b662e88",
+      "sha256": "7d7ad2add8ba61877e0a5f206ff2bd9a1fb0b66ded6abfb9b0269dab5cd50c85",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85851,7 +85851,7 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-018.yaml",
       "repository_path": "curated/module-stack/modules/user-018.yaml",
-      "sha256": "98a1b4e4b7ed39e2e4ec9fd90b3c47e0826140f4c480cd95f241959364963225",
+      "sha256": "2c720207bca7910f7e53306a2783d605d6e189603515594a9d4804262dc64747",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86092,7 +86092,7 @@
       "name": "12306",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-019.yaml",
       "repository_path": "curated/module-stack/modules/user-019.yaml",
-      "sha256": "449bdb7123458a9bceec600420dd8f059ddb1d8f4ec2f63e63e1675f5b10089c",
+      "sha256": "e0f8af06204bcfc0b363f29a257972b53e1abd2bf7b4275607dde65dfe3fcca7",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86116,7 +86116,7 @@
       "name": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-020.yaml",
       "repository_path": "curated/module-stack/modules/user-020.yaml",
-      "sha256": "c0d5315179ae5c4ef236ee7734bd9aa24e411ddf41b03d60c9064b2ec2488f7d",
+      "sha256": "9aa6db4d6669493d7946df8700812333d2dd0eef308d50d9a1884e12fb84e986",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86291,7 +86291,7 @@
       "name": "小红书",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-022.yaml",
       "repository_path": "curated/module-stack/modules/user-022.yaml",
-      "sha256": "ff20822a5cb3c04794f77a39e8c2a033a25f870df38a6919075fc1da62367ef9",
+      "sha256": "bafe6628d752d28b31a9cfe807db0ab3433f59f00b7b82156aac71b2e4998727",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86500,7 +86500,7 @@
       "name": "淘票票",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-023.yaml",
       "repository_path": "curated/module-stack/modules/user-023.yaml",
-      "sha256": "48e4b18fcfbc7af1d15c42c7c0cf4e1598d4836c52f03a1c41eb2b809bb15551",
+      "sha256": "810ec19db69f7bb10a59c1853fb52a3797bff52fb26cb6832278a08e766fe204",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86573,7 +86573,7 @@
       "name": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-024.yaml",
       "repository_path": "curated/module-stack/modules/user-024.yaml",
-      "sha256": "2fffbac245ed34da8316b0161f5d6882801dbfc4f057db5b271454dd86343c96",
+      "sha256": "46505ce4c94ced15dd692c0b13f7c0e831585f1af806eac655260a72e447afe3",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -86678,7 +86678,7 @@
       "name": "墨鱼去开屏2.0",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-025.yaml",
       "repository_path": "curated/module-stack/modules/user-025.yaml",
-      "sha256": "8abd9f40112f56caed7321a4975f7a19f4a1f78b87e883b2c41d77c1e976a175",
+      "sha256": "38614409fd64d8988599145f4d17bb4284a7153604db28f8ef0a68b1e037736e",
       "counts": {
         "rules": 22,
         "url_rewrites": 0,
@@ -86931,7 +86931,7 @@
       "name": "微博助手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-026.yaml",
       "repository_path": "curated/module-stack/modules/user-026.yaml",
-      "sha256": "44047d9bf6d28df8c4bdcd0550eaa35df92677f961c1997ea029073eaa90e0fd",
+      "sha256": "76b27aefe6844f30ff051e31f607dce5bd51e5dd24236063a10d39a1b95b2d94",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86955,7 +86955,7 @@
       "name": "Google搜索",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-027.yaml",
       "repository_path": "curated/module-stack/modules/user-027.yaml",
-      "sha256": "31fd1866685243ec89b08852193ff485da95ae3f099cab6db59108a027d20410",
+      "sha256": "681831228a96eb3db92797ff7b00b900c547edeedda54990c3e84dd069756c62",
       "counts": {
         "rules": 0,
         "url_rewrites": 1,
@@ -87027,7 +87027,7 @@
       "name": "网盘倍速",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-030.yaml",
       "repository_path": "curated/module-stack/modules/user-030.yaml",
-      "sha256": "6acdce836e66a3367968ea2c7ae4ec5b55161794df283321bf1f4cd337f36ac7",
+      "sha256": "0694a08abf5ae4538f0981f38e9502a2f710996acae892d911c60de8ba5f5cf0",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -87138,7 +87138,7 @@
       "name": "script-hub.surge.sgmodule",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-120.yaml",
       "repository_path": "curated/module-stack/modules/user-120.yaml",
-      "sha256": "7a5ecee2858f55be604d035b77adb8a8c1773bf79585afb6b628406c7d679e5e",
+      "sha256": "f869e4f750c66bb13345460acf17bc43db888dc0a44f6def24ee2e1570536585",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -87167,7 +87167,7 @@
       "name": "阿里巴巴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-1688.yaml",
       "repository_path": "curated/module-stack/modules/paired-1688.yaml",
-      "sha256": "b7044ea015cf15f1cbd234cbb2193b83c4bb6d4390ea59010816f71e3f6814e9",
+      "sha256": "092afa4e0af99654597b5cf29540e406bd545c77832e4ff72cc9a0e5c070b674",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -87292,7 +87292,7 @@
       "name": "网易云svip会员（完全免费不要到处分享）",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-music-member.yaml",
       "repository_path": "curated/module-stack/modules/paired-music-member.yaml",
-      "sha256": "3eb72a00fdaff051eea3bae5637cab576b06c32e9c8b9444c401c3da5c4f16ff",
+      "sha256": "9308e9e164a1443d9cb5d1476dc4e5b134536e703af378ee2af254ca38242810",
       "counts": {
         "rules": 5,
         "url_rewrites": 0,

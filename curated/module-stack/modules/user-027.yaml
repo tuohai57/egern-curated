@@ -1,4 +1,4 @@
-name: Google搜索
+name: Google搜索（墨鱼·适配）
 mitm:
   hostnames:
   - www.google.cn

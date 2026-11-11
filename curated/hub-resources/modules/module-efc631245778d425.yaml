@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/app2smile/rules/module/bilibili.yaml
-name: 哔哩哔哩（微笑作者·原生接口备选）
+name: 哔哩哔哩（微笑作者·原生接口备选）（适配）
 description: 开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告)
 mitm:
   hostnames:

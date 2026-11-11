@@ -1,4 +1,4 @@
-name: '12306'
+name: 铁路12306（墨鱼·适配）
 scriptings:
 - http_request:
     name: 12306 / 1

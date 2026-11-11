@@ -1,4 +1,4 @@
-name: 综合去广告合集
+name: 综合去广告合集（自用多作者整合·整合）
 description: 按应用整合开屏、横幅、信息流、广告域名和响应改写；扩展来源按同应用及共享主机归属筛选。原模块保留，重叠和未验证项见审计；需保留主配置金融排除与优先保护。
 author: tuohai57 / 可莉 / 墨鱼 / 奶思 / 各模块原作者
 homepage: https://github.com/tuohai57/egern-curated
@@ -3941,11 +3941,11 @@ body_rewrites:
     match: (?i)^https://ad\.12306\.cn/ad/ser/getAdList(?:\?[^#]*)?$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\nif type == \"object\"\n   and ((.code\
-      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\n   and ((.status_code\
-      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\nthen del(.materialsList,\
-      \ .advertParam) else . end\n) ]) as $__egern_results\n       | if ($__egern_results\
-      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
-      \ end)\n  catch $__egern_original_json"
+      \ // 0) | . == 0 or . == \"0\" or . == \"00\" or . == 200 or . == \"200\")\n\
+      \   and ((.status_code // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\"\
+      )\nthen del(.materialsList, .advertParam) else . end\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/open-cms-api\.quark\.cn\/open-cms\?
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\

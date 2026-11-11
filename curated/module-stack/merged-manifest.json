@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "c1320d25ddaa2d620e9c37e247165f67caf8de04829981dc0ff19d2d6a1aab9e",
+  "sha256": "e5cfb8fa51d987881e29b149e07652d28143fd5b6a94a8c103c8a336de61729e",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -269,7 +269,7 @@
       "app": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
       "repository_path": "curated/module-stack/modules/native-005.yaml",
-      "sha256": "98c32d7f0b6f10b7425dd37535729d15132313f62e8836559cc2e6318c2ab8c6",
+      "sha256": "5461818e1e5c24eb8257b58f7cd4cf6f1f21baa158c4f8877033925c708026b9",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
     },
     {
@@ -290,14 +290,14 @@
       "app": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-044.yaml",
       "repository_path": "curated/module-stack/modules/kelee-044.yaml",
-      "sha256": "3021765ac40454107bcbc27b81812c2d7da62491b1c931b1f268a7e1f58fde99",
+      "sha256": "94769e632deb5b49772d92c5a38e641d07169a49d82f2dbc04bf92d8940f20cc",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png"
     },
     {
       "app": "拼多多",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-009.yaml",
       "repository_path": "curated/module-stack/modules/native-009.yaml",
-      "sha256": "ba04c77051e1617066103b23211f26525b9c258b360da1d8ef17e947422de2ee",
+      "sha256": "56ae187656a3bfca75751b7533313a0431d6fb59aaa3f2a7acabe52c0a4838e9",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/PinDuoDuo.png"
     },
     {
@@ -311,7 +311,7 @@
       "app": "百度网盘",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-011.yaml",
       "repository_path": "curated/module-stack/modules/native-011.yaml",
-      "sha256": "19d3088fce3cc52504577dfb6f212ad584b8c699843a000517ad558ebc2fb79d",
+      "sha256": "35858715b59ab5641ffa3535a7016a3bd192fc6cb3f297c6a8efdc0631f62290",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduNetDisk.png"
     },
     {
@@ -325,7 +325,7 @@
       "app": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "ca402687a22269f1c7b0156d55011beb23b3a41086c3528b1214422e1eb63463",
+      "sha256": "62302a3c5f6b6e7ed087685cd63c835d0ebfc821849c7a2227ea927c385e2aec",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
@@ -339,21 +339,21 @@
       "app": "酷安",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-019.yaml",
       "repository_path": "curated/module-stack/modules/native-019.yaml",
-      "sha256": "3f854f42a70bc6ac4b990a30d00ed5c9103946294ba945c5219084cbe2da8cbe",
+      "sha256": "27d347fd1002364312b26a498d15bbb634429089122e8fb303b608013f6a8f41",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CoolApk.png"
     },
     {
       "app": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
       "repository_path": "curated/module-stack/modules/native-020.yaml",
-      "sha256": "026acc84928753f319dcd8489a3000d74acfc92a119c3a294e2f2feb89e214f4",
+      "sha256": "5b1d6b686fddcabf493927c4abb8b3800c5b4d0cbd77e36aff068f149f2830ed",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png"
     },
     {
       "app": "滴滴出行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
       "repository_path": "curated/module-stack/modules/native-021.yaml",
-      "sha256": "eabc5421da82d174391ae5086acca48f31a27909a0a9b38d1760bf07c6378f6b",
+      "sha256": "1c5c60c4683bc8a0f06bb5f71d700e059f498dc6e62a8912ebe89fec3a23ab51",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
     },
     {
@@ -381,14 +381,14 @@
       "app": "淘宝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-025.yaml",
       "repository_path": "curated/module-stack/modules/native-025.yaml",
-      "sha256": "2c36216bca9e7873698ccffe5c11d918b7ab44e72d998b8984e24c521a1fea7f",
+      "sha256": "deb6e5392f2aa07b9d2623daaa1115dc089c6fcb9e845ce12253457804479cfc",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png"
     },
     {
       "app": "京东",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-026.yaml",
       "repository_path": "curated/module-stack/modules/native-026.yaml",
-      "sha256": "c8d47fd530df870fdffb7b887592ac5b97f9e9a2b184334dc69bc2f543471d3d",
+      "sha256": "b97a34ec94b84e7d2f272c6a6f3bb571682d3da0c181046bd5f1ee655f8bbb78",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png"
     },
     {
@@ -493,14 +493,14 @@
       "app": "抖音",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-078.yaml",
       "repository_path": "curated/module-stack/modules/native-078.yaml",
-      "sha256": "73bcadaa90d0acd5ccc31d80c3a798773a12d3a5dccb4f0a6cbb9d86d2859c7d",
+      "sha256": "3945d5d20c19f848415604c65e5134f3ebeb3443fcef520b262c626458879584",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png"
     },
     {
       "app": "得物",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-043.yaml",
       "repository_path": "curated/module-stack/modules/native-043.yaml",
-      "sha256": "204965b2dd8875dd30c6b1c2272946d2dcb273175426fdc5e522dcb5c7a50e94",
+      "sha256": "09d4318c6c74a4fe8647deb9d8fd0313c5478a73c2432d183b881d9fc1631e75",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png"
     },
     {
@@ -521,7 +521,7 @@
       "app": "小黑盒",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-046.yaml",
       "repository_path": "curated/module-stack/modules/native-046.yaml",
-      "sha256": "e2a59b060f9a25a9a67bce6af2f4d54ec29e2bbb5c7dd544d41df822b13864ea",
+      "sha256": "a3d01e080f641bf3433828d62fb36ab44c83a1b70d0cd18d09a22a4bbc744285",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaoHeiHe.png"
     },
     {
@@ -535,14 +535,14 @@
       "app": "淘票票",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-048.yaml",
       "repository_path": "curated/module-stack/modules/native-048.yaml",
-      "sha256": "9f2263e9f9eb80fb72b774158b22c1ab351a5cfc4746dcd5a84ee3353c652cce",
+      "sha256": "dd3c26fcd534ee56e3ad1869552f725f4288f3507d3a3d9ada8c44d02c208ca0",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taopiaopiao.png"
     },
     {
       "app": "大麦",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-049.yaml",
       "repository_path": "curated/module-stack/modules/native-049.yaml",
-      "sha256": "ab28b092d955ab5ea231f501b1725c46a7968ba2b8e73fa717db68649975aebb",
+      "sha256": "e0cb82edf952bdff502652f87c8bd38ed57ab98fef303cae8992433b67cd128b",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png"
     },
     {
@@ -591,21 +591,21 @@
       "app": "铁路12306",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
       "repository_path": "curated/module-stack/modules/native-056.yaml",
-      "sha256": "1b42a19bd64e726c3928ee0211822bac939991610cbcb6cb38aa4798644ac56b",
+      "sha256": "68c874120eff1e974f12e06138e1e16993a424e15ca04df891629cecd7802576",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"
     },
     {
       "app": "夸克",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-057.yaml",
       "repository_path": "curated/module-stack/modules/native-057.yaml",
-      "sha256": "c2cba636c9697f8de5aabfe9f5312aeebe952466ffc510e65ccefe8a1da56c2b",
+      "sha256": "399b25e1f7bbe2719eaa9d04e1aeb2c5012d10a7897cbcd9df5e1fd24206b731",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QuarkBrowser.png"
     },
     {
       "app": "豆瓣",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-058.yaml",
       "repository_path": "curated/module-stack/modules/native-058.yaml",
-      "sha256": "9a90f7d089fd1c524091d425703c05199ce8bd14e010796d956c0107bc817748",
+      "sha256": "a9fb5fddc094f5c217c1592c5e51a7b58f23891eb0ab5c567f581a3cf5728fa6",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DouBan.png"
     },
     {
@@ -640,7 +640,7 @@
       "app": "百度贴吧",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-064.yaml",
       "repository_path": "curated/module-stack/modules/native-064.yaml",
-      "sha256": "2d6551242d55cbfbc64a73dcd0611ebd4d930d34b1c945fb97e3a5eb7f02db54",
+      "sha256": "ae8f615c30eaf8f0c0c920639dfa7e3acec6a1a3bf2a0771be30ecd08d87b55b",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BaiduTieba.png"
     },
     {
@@ -661,14 +661,14 @@
       "app": "汽车之家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-086.yaml",
       "repository_path": "curated/module-stack/modules/native-086.yaml",
-      "sha256": "ddfd0dde234cd73d6391ad56181bfc4ed33ba40f8185b96f5a24596fd736b3e0",
+      "sha256": "29821392f93c434157d297e3130d770b3a51f1f72fc84ffb06479e0f7e15bf78",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png"
     },
     {
       "app": "网易邮箱大师",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-089.yaml",
       "repository_path": "curated/module-stack/modules/native-089.yaml",
-      "sha256": "6119063fd90055b025e9ddce9cd2a30dfa218d9294d78ae9abd762844efc6290",
+      "sha256": "a5159396c3e1ba146238ff6e1f3ee7f0be76a971dc0ec79a9c2f21f04b5b9dd7",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png"
     },
     {
@@ -857,7 +857,7 @@
       "app": "1688",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-085.yaml",
       "repository_path": "curated/module-stack/modules/native-085.yaml",
-      "sha256": "96899bb22a0026966d2d4324cc7b1ab56355229424cfa7e757db9fb19efeb792",
+      "sha256": "fa836e5326668ffcde55b788589f4918a0528a84fab7635e95a7b34036a068eb",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
@@ -871,21 +871,21 @@
       "app": "携程旅行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-082.yaml",
       "repository_path": "curated/module-stack/modules/native-082.yaml",
-      "sha256": "a40504986d21d1652ac26d803725bd31b2665e8b4ba5a4cd9d595eb56112fa2c",
+      "sha256": "0e1bad2b6ed1226c70ff8a4fba281c63ff80b111c0f3bb28f7292b47042ef06f",
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png"
     },
     {
       "app": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
       "repository_path": "curated/module-stack/modules/native-083.yaml",
-      "sha256": "0aab88f639f73f24386d60459b339cb8fe50c552a172d8213a9ab3469e0774c7",
+      "sha256": "34b75f16f817661f08f151d3d4c08ea69bb42ca3a2dfc9773fb430b6ec845a93",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
       "app": "淘宝闪购",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-084.yaml",
       "repository_path": "curated/module-stack/modules/native-084.yaml",
-      "sha256": "c7d8757b4784a8be27891da8435c48c574dbad2a0acac34c3df755a9c63e0feb",
+      "sha256": "8a9df7f86e0539cc4b4f05c798a5bc819c882f67baa50f49b539049cafc2adef",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png"
     },
     {
@@ -913,7 +913,7 @@
       "app": "米家",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-079.yaml",
       "repository_path": "curated/module-stack/modules/native-079.yaml",
-      "sha256": "6c5c44a7ec34f90937f18d530455c8eac0a5364c2189dfaf49c02c050c8c51c6",
+      "sha256": "57bd38666f00580288c6d49daf0f72ee4dfdb114868a5b9f83c0b58d581bcb27",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png"
     },
     {
@@ -6512,6 +6512,7 @@
     "12306 bounded ad endpoint and preserve errors",
     "Amap exact m5 splash path with optional query",
     "Amap exact old splash paths",
-    "Goofish aggregate owner switched; obsolete AMDC body script removed"
+    "Goofish aggregate owner switched; obsolete AMDC body script removed",
+    "12306 bounded ad endpoint; accept documented code 00 and preserve errors"
   ]
 }

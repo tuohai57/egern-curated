@@ -1,4 +1,4 @@
-name: 网盘倍速
+name: 百度网盘（墨鱼·适配）
 scriptings:
 - http_request:
     name: 网盘倍速 / 1

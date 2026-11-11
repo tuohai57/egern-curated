@@ -62,10 +62,10 @@ async function main() {
     respond: payload => payload, abort: () => assert.fail('must not abort')};
     return rail(ctx);
   }
-  for (const operation of ['integration.activityBanner', 'newHomePageBussData', 'paySuccBuss.bussEntryShow']) {
+  for (const operation of ['integration.activityBanner', 'newHomePage.initData', 'newHomePageBussData', 'paySuccBuss.bussEntryShow']) {
     assert.equal((await request(gateway + '?v=1', 'com.cars.otsmobile.'+operation)).status, 404);
   }
-  for (const operation of ['checkLoginStatus', 'memberInfo.getMemberQa', 'newHomePage.initData', 'queryTicket',
+  for (const operation of ['checkLoginStatus', 'memberInfo.getMemberQa', 'newHomePageRefresh', 'newHomePage.initDataExtra', 'queryTicket',
     'travelPage.initData', 'paySuccBuss.bussEntryShowExtra', 'passenger.getList', 'pay', 'refund']) {
     assert.equal(await request(gateway, 'com.cars.otsmobile.'+operation), undefined);
   }

@@ -3,6 +3,9 @@
 const gateway = /^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm(?:\?[^#]*)?$/i;
 const promotional = new Set([
   'com.cars.otsmobile.integration.activityBanner',
+  // Upstream labels this operation 热门资讯; remove that promotional section.
+  // This does not match newHomePageRefresh, ticket queries or travelPage.initData.
+  'com.cars.otsmobile.newHomePage.initData',
   'com.cars.otsmobile.newHomePageBussData',
   'com.cars.otsmobile.paySuccBuss.bussEntryShow',
 ]);

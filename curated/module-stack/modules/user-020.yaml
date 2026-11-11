@@ -1,4 +1,4 @@
-name: 酷安
+name: 酷安（墨鱼·适配）
 scriptings:
 - http_response:
     name: 酷安 / 1
