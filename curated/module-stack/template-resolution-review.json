@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-11",
+  "cause": "Numbered placeholder 1 was replaced within placeholders 10 through 19; analogous collision for later numbers",
+  "modules": [
+    {
+      "repository_path": "curated/module-stack/modules/native-015.yaml",
+      "corrected_fields": [
+        "url_rewrites/10/location",
+        "url_rewrites/11/location"
+      ],
+      "sha256": "2a51d431034f6ed94c0034ec55b5495f00419f9d26b6c14abe6ca51522c73ae9"
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-070.yaml",
+      "corrected_fields": [
+        "scriptings/0/http_response/env/_compat.$argument",
+        "scriptings/1/http_request/env/_compat.$argument",
+        "scriptings/2/http_request/env/_compat.$argument",
+        "scriptings/3/http_request/env/_compat.$argument",
+        "scriptings/4/http_response/env/_compat.$argument"
+      ],
+      "sha256": "506ed8a226d19bdca3c408c5ffe3f9b94c71a2668cd2b7ca01716206dc1f37d9"
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-071.yaml",
+      "corrected_fields": [
+        "scriptings/1/http_response/env/_compat.$argument",
+        "scriptings/2/http_request/env/_compat.$argument",
+        "scriptings/3/http_response/env/_compat.$argument",
+        "scriptings/4/http_request/env/_compat.$argument",
+        "scriptings/5/http_response/env/_compat.$argument"
+      ],
+      "sha256": "cefee9e13a1cfc0e6ca1f4f9da64394744188d2ec32988dd9cd4be92d9ec53e7"
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-075.yaml",
+      "corrected_fields": [
+        "scriptings/3/schedule/arguments/_compat.$argument"
+      ],
+      "sha256": "de2597ea0c775671bc08fa7b6d706fea4eb4d6afe738eb590bd99aa6076eccd9"
+    }
+  ],
+  "script_bytes_unchanged": true,
+  "device_verified": false
+}

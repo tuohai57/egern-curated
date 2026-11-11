@@ -3328,18 +3328,6 @@ body_rewrites:
       \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
       \ $__egern_original_json"
 - response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/ocpc\/ad\/
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
     match: (?i)^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\n.data.hotReplyRows |= if . then map(select(.id?))\
@@ -3507,12 +3495,6 @@ body_rewrites:
       \ .data.disorder_cards.car_icon.data.icon_info_new_agreement)\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
       \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\?
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.data.mult_home_banner)\n) ])\
-      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
-      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -7202,9 +7184,6 @@ map_locals:
 - match: (?:^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif)|(?:^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif)
   status_code: 200
   body: ''
-- match: ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
-  status_code: 200
-  body: ''
 - match: ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash
   status_code: 200
   body: ' '
@@ -8697,6 +8676,14 @@ map_locals:
   body: '{"success":true,"code":100,"data":{"themeTop":[],"wap_topic_content_ad":[],"themeBottom":[],"appThemeTopStyle":"1","userBehindAdStyle":"1","appThemeBottom":[],"cloud_ad_type":"","commentTop":[],"userBehindAd":[],"themeTopStyle":"1","appThemeTop":[],"appThemeBottomStyle":"1"},"msg":null}'
   headers:
     Content-Type: application/json
+- match: ^https?://waimai-guide\.ele\.me/\w+/mtop\.alsc\.eleme\.\w+\.trigger\.respond(?:/[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$
+  status_code: 200
+  headers:
+    Content-Type: application/json; charset=utf-8
+  body: '{}'
+- match: ^https?://waimai-guide\.ele\.me/\w+/mtop\.alsc\.wamai\.store\.detail\.miniapp\.popup(?:/[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$
+  status_code: 404
+  body: ''
 scriptings:
 - http_response:
     name: 微博-响应
@@ -9205,15 +9192,15 @@ scriptings:
     update_interval: 86400
 - http_response:
     name: 航旅纵横 / 1
-    match: ^https:\/\/(?:sns|appmsg|home|umehome|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|user|umeuser|event)\.umetrip\.com\/gateway\/api\/umetrip\/native(?:\?.*)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2a050507866720b5d04f112d8040fa0dc59bba74ebb09432ea3e304e81b056f6.js
+    match: ^https://(?:sns|appmsg|home|umehome|ume1|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|discardrp|user|umeuser|event)\.umetrip\.com/gateway/api/umetrip/native(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/b69ecbab0d9b5384528cead14c35c66e0662ab26009b6e07e991424fcec97605.js
     body_required: true
     update_interval: 86400
     binary_body: true
 - http_request:
     name: 航旅纵横 / tiny GIF
     match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/424a885351ce40e57339692918c71935232178c4cc8b178b67b37d03b08e2059.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/static-tiny-gif-native.js
     body_required: false
 - http_response:
     name: 阿里巴巴广告
@@ -9693,6 +9680,39 @@ scriptings:
     body_required: true
     update_interval: 86400
     max_size: 16777216
+- http_response:
+    name: 滴滴出行 · 首页推广横幅
+    match: (?i)^https://res\.xiaojukeji\.com/resapi/activity/mget\?[^#]*$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/didi-banner-native.js
+    body_required: true
+    binary_body: true
+    update_interval: 86400
+- http_request:
+    name: 淘宝闪购 · 开屏视频透明素材
+    match: ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/static-tiny-gif-native.js
+    body_required: false
+- http_response:
+    name: 网易云音乐 · 广告与界面精简
+    match: (?i)^https?://interface\d?\.music\.163\.com/(?:e?api|weapi)/(?:batch|link/home/framework/tab|homepage/block/page|link/page/discovery/resource/show|link/page/rcmd/(?:resource/show|block/resource/multi/refresh)|link/position/show/resource|search/default|ocpc/ad(?:/[^?#]*)?)/?(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/netease-ui-native.js
+    body_required: true
+    binary_body: true
+    update_interval: 86400
+    env:
+      FX: 'false'
+      MY: 'true'
+      DT: 'true'
+      GZ: 'true'
+      PRGG: 'true'
+      PRRK: 'false'
+      PRDRD: 'false'
+      PRSCVPT: 'false'
+      PRST: 'false'
+      PRRR: 'false'
+      HMPR: 'true'
+      PRMST: 'false'
+      PRCN: 'false'
 mitm:
   hostnames:
   - '*.3sybf.com'
@@ -10439,3 +10459,6 @@ mitm:
   - zone.guiderank-app.com
   - zt-app.go189.cn
   - zyfile.izuiyou.com
+  - discardrp.umetrip.com
+  - waimai-guide.ele.me
+  - ume1.umetrip.com

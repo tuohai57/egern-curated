@@ -58,6 +58,10 @@ jobs:
       - run: python curated/tools/check_hub_resources.py
       - run: node curated/tools/test_service_diagnostics.cjs
       - run: node curated/tools/test_umetrip_runtime.cjs
+      - run: python curated/tools/test_umetrip_eleme_paths.py
+      - run: node curated/tools/test_didi_banner_runtime.cjs
+      - run: node curated/tools/test_netease_ui_runtime.cjs
+      - run: python curated/tools/test_template_arguments.py
       - run: node curated/tools/test_text_response_runtime.cjs
       - run: node curated/tools/test_app_native_rewrites.cjs
       - run: python curated/tools/test_railway_ad_responses.py

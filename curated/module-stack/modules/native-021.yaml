@@ -213,12 +213,6 @@ body_rewrites:
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
       \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
-    match: (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\?
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.data.mult_home_banner)\n) ])\
-      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
-      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
     match: (?i)^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\n.data.instances |= with_entries(select(.key==\"\
@@ -475,3 +469,11 @@ map_locals:
 - match: (?i)^https:\/\/htwkop-st\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery\.batch
   status_code: 200
   body: '{}'
+scriptings:
+- http_response:
+    name: 滴滴出行 · 首页推广横幅
+    match: (?i)^https://res\.xiaojukeji\.com/resapi/activity/mget\?[^#]*$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/didi-banner-native.js
+    body_required: true
+    binary_body: true
+    update_interval: 86400

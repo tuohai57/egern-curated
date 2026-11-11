@@ -18,12 +18,21 @@ def main(profile=None):
     config=yaml.safe_load(Path(profile).read_text(encoding='utf-8')) if profile else None
     model=DomainRouter(ROOT,config)
     fixture=json.loads((ROOT/'curated/native-full/app-path-fixtures.json').read_text(encoding='utf-8'))
+    reviewed_contracts=json.loads((ROOT/'curated/module-stack/selected-path-contracts.json').read_text(encoding='utf-8'))
+    contracts=reviewed_contracts if config else []
     manifest=model.manifest
     errors=[]; results=[]
     def check(ok, label, **details):
         row={'name':label,'passed':bool(ok),**details};results.append(row)
         if not ok:errors.append(row)
     def hit(pattern,url):return model.rx(pattern,url)
+    for contract in reviewed_contracts:
+        obj=yaml.safe_load((ROOT/contract['repository_path']).read_bytes())
+        matching=[]
+        for entry in obj.get(contract['section'],[]):
+            phase,f=(contract['section'],entry) if contract['section'] in {'map_locals','url_rewrites'} else next(iter(entry.items()))
+            if phase==contract['phase'] and f.get('match')==contract['match'] and not f.get('disabled'):matching.append(f)
+        check(len(matching)==1 and all(matching[0].get(k)==v for k,v in contract.get('required',{}).items()),contract['app']+' 当前独立模块原生契约')
     def candidates(url):
         groups={k:[] for k in ('terminal','request','response_script','response_body')}
         for name,obj in model.active+([('主配置',config)] if config else []):
@@ -59,10 +68,34 @@ def main(profile=None):
             check(source_match,row['app']+' '+row['scene']+' 来源接口声明')
         h=candidates(url);route=model.route(url,protocol='tcp')
         count={k:len(v) for k,v in h.items()}
+        expected=row['expected']
+        # Selected standalone modules can intentionally use a different native
+        # stage from the public baseline. Require the exact reviewed owner and
+        # output contract; never accept an arbitrary handler as a substitute.
+        contract=next((c for c in contracts if c['app']==row['app'] and c['scene']==row['scene']),None)
+        if contract:
+            path=ROOT/contract['repository_path']
+            stack=json.loads((ROOT/'curated/module-stack/manifest.json').read_text(encoding='utf-8'))
+            info=next(v for v in stack['modules'] if v['repository_path']==contract['repository_path'])
+            check(hashlib.sha256(path.read_bytes()).hexdigest()==info['sha256'],row['app']+' 选中模块哈希')
+            expected=contract['expected']
+            selected=[o for name,o in model.active if o.get('name')==yaml.safe_load(path.read_bytes()).get('name')]
+            check(len(selected)==1,row['app']+' 已审核版本处于启用状态')
+            matches=[]
+            for obj in selected:
+                for e in obj.get(contract['section'],[]):
+                    phase,f=(contract['section'],e) if contract['section'] in {'map_locals','url_rewrites'} else next(iter(e.items()))
+                    if not f.get('disabled') and f.get('match')==contract['match'] and hit(f['match'],url):matches.append((phase,f))
+            check(len(matches)==1,row['app']+' 精确选中处理项')
+            if matches:
+                phase,f=matches[0]
+                check(phase==contract['phase'] and all(f.get(k)==v for k,v in contract.get('required',{}).items()),row['app']+' 原生执行契约')
         if row['expected']=='gap':
             check(not any(h.values()),row['app']+' 已记录缺口保持诚实',counts=count)
             continue
-        check(count[row['expected']]>0,row['app']+' '+row['scene']+' 有目标处理者',counts=count)
+        if expected=='routing_reject':
+            check(route['policy']=='REJECT',row['app']+' '+row['scene']+' 广告域路由拒绝',route=route)
+        else:check(count[expected]>0,row['app']+' '+row['scene']+' 有目标处理者',counts=count)
         check(all(n<=1 for n in count.values()),row['app']+' '+row['scene']+' 每阶段单处理者',counts=count)
         check(not (count['terminal'] and (count['response_script'] or count['response_body'])),row['app']+' '+row['scene']+' 响应未被提前终结',counts=count)
         # The resolver selects one response owner, including across jq/JS.

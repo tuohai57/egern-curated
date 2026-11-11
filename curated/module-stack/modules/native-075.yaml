@@ -141,7 +141,7 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0b6781c3b4d2ae7e621ed40db932ae86914e938e95e561dec9b7481df921ffac.js
     timeout: 600
     arguments:
-      _compat.$argument: sub=sub1,sub2&col=https://sub-store.vercel.app,http://substore.stash,https://substore.stash0
+      _compat.$argument: sub=sub1,sub2&col=col1,col2
 mitm:
   hostnames:
   - sub.store

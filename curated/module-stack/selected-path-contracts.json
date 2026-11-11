@@ -1,0 +1,71 @@
+[
+  {
+    "app": "闲鱼",
+    "scene": "首页",
+    "repository_path": "curated/module-stack/modules/kelee-044.yaml",
+    "section": "body_rewrites",
+    "phase": "response_jq",
+    "match": "(?i)^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.home\\.nextfresh\\/",
+    "expected": "response_body",
+    "required": {
+      "filter": "# Egern: preserve input on failed, empty or multi-result transform\n. as $__egern_original_json\n| try (([ (\n(.data.homeTopList |= map(select(.sectionType == \"kingkongDo\")) | .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != \"homeMultiBanner\" and $ct != \"mamaAD\")) | .data.sections |= map(select((.template.name|type==\"string\")and(.template.name==\"idlefish_home_new_commodity_card\"or(.template.name|contains(\"fish_home_tags_item_card\"))))))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
+    },
+    "device_verified": false
+  },
+  {
+    "app": "微信",
+    "scene": "公众号广告",
+    "repository_path": "curated/module-stack/modules/native-068.yaml",
+    "section": "map_locals",
+    "phase": "map_locals",
+    "match": "(?i:^https:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\\?)|(?i:^https:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/relatedsearchword)",
+    "expected": "terminal",
+    "required": {
+      "status_code": 200,
+      "body": "{}"
+    },
+    "device_verified": false
+  },
+  {
+    "app": "网易云音乐",
+    "scene": "搜索默认推广",
+    "repository_path": "curated/module-stack/modules/native-013.yaml",
+    "section": "scriptings",
+    "phase": "http_response",
+    "match": "(?i)^https?://interface\\d?\\.music\\.163\\.com/(?:e?api|weapi)/(?:batch|link/home/framework/tab|homepage/block/page|link/page/discovery/resource/show|link/page/rcmd/(?:resource/show|block/resource/multi/refresh)|link/position/show/resource|search/default|ocpc/ad(?:/[^?#]*)?)/?(?:\\?[^#]*)?$",
+    "expected": "response_script",
+    "required": {
+      "script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/netease-ui-native.js",
+      "body_required": true,
+      "binary_body": true
+    },
+    "device_verified": false
+  },
+  {
+    "app": "携程旅行",
+    "scene": "广告追踪",
+    "repository_path": "curated/module-stack/modules/native-082.yaml",
+    "section": "rules",
+    "phase": "url_regex",
+    "match": "^https?:\\/\\/ma-adx\\.ctrip\\.com\\/_ma\\.gif",
+    "expected": "routing_reject",
+    "required": {
+      "policy": "REJECT"
+    },
+    "device_verified": false
+  },
+  {
+    "app": "淘宝闪购",
+    "scene": "视频开屏素材",
+    "repository_path": "curated/module-stack/modules/native-084.yaml",
+    "section": "scriptings",
+    "phase": "http_request",
+    "match": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4",
+    "expected": "request",
+    "required": {
+      "script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/static-tiny-gif-native.js",
+      "body_required": false
+    },
+    "device_verified": false
+  }
+]

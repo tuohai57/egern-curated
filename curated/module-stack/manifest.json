@@ -8,7 +8,7 @@
       "name": "综合去广告合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
       "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-      "sha256": "e5cfb8fa51d987881e29b149e07652d28143fd5b6a94a8c103c8a336de61729e",
+      "sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
       "enabled": true,
       "update_interval": 86400,
       "included_modules": [
@@ -96,11 +96,11 @@
         "rules": 769,
         "url_rewrites": 3,
         "header_rewrites": 0,
-        "body_rewrites": 380,
-        "map_locals": 595,
-        "scriptings": 173
+        "body_rewrites": 377,
+        "map_locals": 596,
+        "scriptings": 176
       },
-      "mitm_hosts": 744,
+      "mitm_hosts": 747,
       "changes": [
         {
           "kind": "same_match_processing_omitted",
@@ -111,6 +111,65 @@
         {
           "kind": "reviewed_egern_app_rewrite",
           "change": "sync matching selected rewrites",
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Didi mget: original single-field deletion via native binary/JSON response, invalid input passthrough",
+            "Umetrip bounded gateway including documented discardrp host",
+            "Umetrip tiny-GIF original bytes via native ctx.respond",
+            "Eleme original tiny-GIF semantics restored",
+            "Eleme dedicated in-App promotion trigger: original reject-dict semantics",
+            "Eleme dedicated miniapp promotional popup URL only",
+            "Dcar native response and labeled feed ads",
+            "12306 header-only native request",
+            "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Dcar native response and labeled feed ads",
+            "12306 header-only native request",
+            "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Umetrip bounded gateway including documented discardrp host",
+            "Dcar native response and labeled feed ads",
+            "12306 header-only native request",
+            "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "NetEase declared UI options now execute via native AES/JSON response; real membership remains untouched",
+            "Dcar native response and labeled feed ads",
+            "12306 header-only native request",
+            "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "NetEase source empty-document rewrites now decode/re-encode AES before editing",
+            "Dcar native response and labeled feed ads",
+            "12306 header-only native request",
+            "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
           "runtime_verified": false
         }
       ],
@@ -46310,14 +46369,14 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "62302a3c5f6b6e7ed087685cd63c835d0ebfc821849c7a2227ea927c385e2aec",
+      "sha256": "5106bf5f00c82a412b3efb2f7940177bc5ab58ab49c2799a8c4485266b9ec5a4",
       "counts": {
         "rules": 9,
         "url_rewrites": 0,
         "header_rewrites": 0,
-        "body_rewrites": 2,
+        "body_rewrites": 0,
         "map_locals": 5,
-        "scriptings": 0
+        "scriptings": 1
       },
       "mitm_hosts": 2,
       "enabled": false,
@@ -46429,6 +46488,20 @@
         {
           "kind": "reviewed_url_ownership",
           "change": "网易云音乐：本地广告响应与 OCPC 正文改写各自独立"
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "NetEase declared UI options now execute via native AES/JSON response; real membership remains untouched"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "NetEase source empty-document rewrites now decode/re-encode AES before editing"
+          ],
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
@@ -46496,7 +46569,7 @@
       "name": "📺 BiliBili: 🔀 Redirect",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-015.yaml",
       "repository_path": "curated/module-stack/modules/native-015.yaml",
-      "sha256": "945cf8a67c6e5c5e11bdd06d883d7c87518af4a8e0b31c0fc6a47e7b89bdef0a",
+      "sha256": "2a51d431034f6ed94c0034ec55b5495f00419f9d26b6c14abe6ca51522c73ae9",
       "counts": {
         "rules": 0,
         "url_rewrites": 12,
@@ -46535,6 +46608,14 @@
             "map_locals": 1,
             "scriptings": 7
           }
+        },
+        {
+          "kind": "whole_numbered_template_resolution",
+          "fields": [
+            "url_rewrites/10/location",
+            "url_rewrites/11/location"
+          ],
+          "original_script_bytes_changed": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
@@ -47237,14 +47318,14 @@
       "name": "滴滴",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
       "repository_path": "curated/module-stack/modules/native-021.yaml",
-      "sha256": "1c5c60c4683bc8a0f06bb5f71d700e059f498dc6e62a8912ebe89fec3a23ab51",
+      "sha256": "eb40c14d651735d9387da6dc208820a508c58ed0aab47f05ab4d28fcfa06a1f9",
       "counts": {
         "rules": 43,
         "url_rewrites": 0,
         "header_rewrites": 0,
-        "body_rewrites": 29,
+        "body_rewrites": 28,
         "map_locals": 14,
-        "scriptings": 0
+        "scriptings": 1
       },
       "mitm_hosts": 21,
       "enabled": false,
@@ -47660,6 +47741,18 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/common\\.diditaxi\\.com\\.cn\\/user_common\\/itineraryList\\?",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Didi mget: original single-field deletion via native binary/JSON response, invalid input passthrough"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [],
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
@@ -53872,7 +53965,7 @@
       "name": " iRingo: 🌤 WeatherKit",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-070.yaml",
       "repository_path": "curated/module-stack/modules/native-070.yaml",
-      "sha256": "e884e9d9f17ee4365bf1d70f6737677a7630ecb691797fc18077f02f2047b7ec",
+      "sha256": "506ed8a226d19bdca3c408c5ffe3f9b94c71a2668cd2b7ca01716206dc1f37d9",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -53917,6 +54010,17 @@
           "previous": "QUIC",
           "match": "quic",
           "reference": "https://egernapp.com/zh-CN/docs/configuration/rules"
+        },
+        {
+          "kind": "whole_numbered_template_resolution",
+          "fields": [
+            "scriptings/0/http_response/env/_compat.$argument",
+            "scriptings/1/http_request/env/_compat.$argument",
+            "scriptings/2/http_request/env/_compat.$argument",
+            "scriptings/3/http_request/env/_compat.$argument",
+            "scriptings/4/http_response/env/_compat.$argument"
+          ],
+          "original_script_bytes_changed": false
         }
       ],
       "icon": "https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-128x128.png"
@@ -53925,7 +54029,7 @@
       "name": " iRingo: 🗺️ Maps",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-071.yaml",
       "repository_path": "curated/module-stack/modules/native-071.yaml",
-      "sha256": "6de8b40a05c28d465d83bd052272ba5e0963b38394c122f15762187f4fc6741e",
+      "sha256": "cefee9e13a1cfc0e6ca1f4f9da64394744188d2ec32988dd9cd4be92d9ec53e7",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
@@ -53964,6 +54068,17 @@
             "map_locals": 0,
             "scriptings": 6
           }
+        },
+        {
+          "kind": "whole_numbered_template_resolution",
+          "fields": [
+            "scriptings/1/http_response/env/_compat.$argument",
+            "scriptings/2/http_request/env/_compat.$argument",
+            "scriptings/3/http_response/env/_compat.$argument",
+            "scriptings/4/http_request/env/_compat.$argument",
+            "scriptings/5/http_response/env/_compat.$argument"
+          ],
+          "original_script_bytes_changed": false
         }
       ],
       "icon": "https://developer.apple.com/assets/elements/icons/maps/maps-128x128.png"
@@ -54230,7 +54345,7 @@
       "name": "Sub-Store",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-075.yaml",
       "repository_path": "curated/module-stack/modules/native-075.yaml",
-      "sha256": "a9c5feaf36d1b5f532c5a032df3928bdbfaa9432ca309811f370497174bddd44",
+      "sha256": "de2597ea0c775671bc08fa7b6d706fea4eb4d6afe738eb590bd99aa6076eccd9",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -54269,6 +54384,13 @@
             "map_locals": 0,
             "scriptings": 4
           }
+        },
+        {
+          "kind": "whole_numbered_template_resolution",
+          "fields": [
+            "scriptings/3/schedule/arguments/_compat.$argument"
+          ],
+          "original_script_bytes_changed": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/cc63/ICON/main/Sub-Store.png"
@@ -54864,16 +54986,16 @@
       "name": "饿了么",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-084.yaml",
       "repository_path": "curated/module-stack/modules/native-084.yaml",
-      "sha256": "8a9df7f86e0539cc4b4f05c798a5bc819c882f67baa50f49b539049cafc2adef",
+      "sha256": "3b0d0d9d11c26082d828ef1c2cead05930f679cf9d3d43de0c6ef10ae928897e",
       "counts": {
         "rules": 14,
         "url_rewrites": 0,
         "header_rewrites": 0,
         "body_rewrites": 0,
-        "map_locals": 1,
-        "scriptings": 0
+        "map_locals": 2,
+        "scriptings": 1
       },
-      "mitm_hosts": 5,
+      "mitm_hosts": 6,
       "enabled": false,
       "app": "淘宝闪购",
       "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-eleme.yaml",
@@ -54948,6 +55070,20 @@
           "kind": "pseudo_redirect_to_native_response",
           "match": "^https?:\\/\\/(nr-op|cube)\\.elemecdn\\.com\\/.+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_\\d{4,},h_\\d{4,}\\/($|format,webp\\/$)",
           "old": "http://reject/"
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Eleme original tiny-GIF semantics restored",
+            "Eleme dedicated in-App promotion trigger: original reject-dict semantics",
+            "Eleme dedicated miniapp promotional popup URL only"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [],
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png"
@@ -85256,7 +85392,7 @@
       "name": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-007.yaml",
       "repository_path": "curated/module-stack/modules/user-007.yaml",
-      "sha256": "d85c1c318ac3d211866e79ce1316e1bda9846fc76d2b0009cbb97e236be9d862",
+      "sha256": "c19d73508035687a0effa1888606addcb60503b476a431cc18ec561635b53426",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85265,7 +85401,7 @@
         "map_locals": 0,
         "scriptings": 2
       },
-      "mitm_hosts": 15,
+      "mitm_hosts": 17,
       "enabled": false,
       "app": "航旅纵横",
       "source_url": "https://ddgksf2013.top/rewrite/UmetripAds.conf",
@@ -85278,6 +85414,30 @@
           "kind": "umetrip_egern_binary_passthrough",
           "upstream_sha256": "f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e",
           "original_script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e.js"
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Umetrip bounded gateway including documented discardrp host",
+            "Umetrip tiny-GIF original bytes via native ctx.respond",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
+        },
+        {
+          "kind": "umetrip_eleme_review_2026_11_11",
+          "changes": [
+            "Umetrip bounded gateway including documented discardrp host",
+            "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+          ],
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"

@@ -26,9 +26,9 @@ url_rewrites:
 - match: ^https:\/\/upos-sz-mirrorakam\.akamaized\.net(?::(?:443|4483))?\/upgcxcode\/
   location: https://upos-sz-mirrorali.bilivideo.com/upgcxcode/
 - match: ^https:\/\/upos-sz-mirror[a-z0-9-]*bstar1\.bilivideo\.com(?::(?:443|4483))?\/upgcxcode\/
-  location: https://upos-sz-mirrorali.bilivideo.com0/upgcxcode/
+  location: https://upos-sz-mirrorali.bilivideo.com/upgcxcode/
 - match: ^https:\/\/upos-bstar1-mirrorakam\.akamaized\.net(?::(?:443|4483))?\/upgcxcode\/
-  location: https://upos-sz-mirrorali.bilivideo.com1/upgcxcode/
+  location: https://upos-sz-mirrorali.bilivideo.com/upgcxcode/
 map_locals:
 - match: ^https:\/\/(?:biliverse\.github\.io|app\.bilibili\.com)\/api\/Redirect(?:\?.*)?$
   status_code: 200

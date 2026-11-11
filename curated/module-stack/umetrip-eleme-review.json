@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-11",
+  "device_verified": false,
+  "apps": [
+    {
+      "repository_path": "curated/module-stack/modules/user-007.yaml",
+      "sha256": "c19d73508035687a0effa1888606addcb60503b476a431cc18ec561635b53426",
+      "counts": {
+        "rules": 0,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 0,
+        "map_locals": 0,
+        "scriptings": 2
+      },
+      "mitm_hosts": 17,
+      "changes": [
+        "Umetrip bounded gateway including documented discardrp host",
+        "Umetrip tiny-GIF original bytes via native ctx.respond",
+        "Egern compressed/engine-decoded protobuf response support; original source bytes preserved"
+      ]
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-084.yaml",
+      "sha256": "3b0d0d9d11c26082d828ef1c2cead05930f679cf9d3d43de0c6ef10ae928897e",
+      "counts": {
+        "rules": 14,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 0,
+        "map_locals": 2,
+        "scriptings": 1
+      },
+      "mitm_hosts": 6,
+      "changes": [
+        "Eleme original tiny-GIF semantics restored",
+        "Eleme dedicated in-App promotion trigger: original reject-dict semantics",
+        "Eleme dedicated miniapp promotional popup URL only"
+      ]
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-021.yaml",
+      "sha256": "eb40c14d651735d9387da6dc208820a508c58ed0aab47f05ab4d28fcfa06a1f9",
+      "counts": {
+        "rules": 43,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 28,
+        "map_locals": 14,
+        "scriptings": 1
+      },
+      "mitm_hosts": 21,
+      "changes": [
+        "Didi mget: original single-field deletion via native binary/JSON response, invalid input passthrough"
+      ]
+    },
+    {
+      "repository_path": "curated/module-stack/modules/native-013.yaml",
+      "sha256": "5106bf5f00c82a412b3efb2f7940177bc5ab58ab49c2799a8c4485266b9ec5a4",
+      "counts": {
+        "rules": 9,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 0,
+        "map_locals": 5,
+        "scriptings": 1
+      },
+      "mitm_hosts": 2,
+      "changes": [
+        "NetEase declared UI options now execute via native AES/JSON response; real membership remains untouched",
+        "NetEase source empty-document rewrites now decode/re-encode AES before editing"
+      ]
+    },
+    {
+      "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
+      "sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
+      "counts": {
+        "rules": 769,
+        "url_rewrites": 3,
+        "header_rewrites": 0,
+        "body_rewrites": 377,
+        "map_locals": 596,
+        "scriptings": 176
+      },
+      "mitm_hosts": 747,
+      "changes": [
+        "Didi mget: original single-field deletion via native binary/JSON response, invalid input passthrough",
+        "Umetrip bounded gateway including documented discardrp host",
+        "Umetrip tiny-GIF original bytes via native ctx.respond",
+        "Eleme original tiny-GIF semantics restored",
+        "Eleme dedicated in-App promotion trigger: original reject-dict semantics",
+        "Eleme dedicated miniapp promotional popup URL only",
+        "Dcar native response and labeled feed ads",
+        "12306 header-only native request",
+        "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+        "Egern compressed/engine-decoded protobuf response support; original source bytes preserved",
+        "NetEase declared UI options now execute via native AES/JSON response; real membership remains untouched",
+        "NetEase source empty-document rewrites now decode/re-encode AES before editing"
+      ]
+    }
+  ],
+  "umetrip_original_script_sha256": "f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e",
+  "official_api": "https://egernapp.com/zh-CN/docs/javascript-api/",
+  "source_archive": "curated/module-stack/originals/e0cbbc47b68427c2b3966bd258122462f0b465b534828efa1c343e9ae92fc112.txt",
+  "eleme_in_app_source": {
+    "url": "https://yfamilys.com/plugin/adultraplus.plugin",
+    "sha256": "e0cbbc47b68427c2b3966bd258122462f0b465b534828efa1c343e9ae92fc112",
+    "lines": [
+      149,
+      150
+    ]
+  },
+  "limitations": [
+    "No device capture or current real-response fixture supplied",
+    "Dedicated Eleme popup/trigger rules do not establish complete feed coverage",
+    "Current ddgksf2013.top script download returned HTTP 403; exact previously archived script retained",
+    "Ume1 host appears in screenshot but exact request path was not captured; only the existing known gateway path and parsed RPID are accepted",
+    "NetEase cleanup uses archived AES and schema contracts with synthetic regression inputs; no current real App payload supplied"
+  ]
+}

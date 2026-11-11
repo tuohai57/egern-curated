@@ -254,8 +254,8 @@
     "enabled": true,
     "update_interval": 86400,
     "repository_path": "curated/native-full/priority-guard-ai-regions-muse.yaml",
-    "sha256": "793124ff78e3ab96f5283e6b53b1e73639e8166291eb07eaf067c71d7d40195b",
-    "rules": 512,
+    "sha256": "fa2f941827070de76fe3d519a0d177c9b578f2b5edfc4004d63e7923bce8e725",
+    "rules": 518,
     "icon": null
   },
   "modules": [

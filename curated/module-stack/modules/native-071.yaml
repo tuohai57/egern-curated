@@ -86,21 +86,21 @@ scriptings:
     match: ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4d6c18dca53c4ae85ac836a2d3d19f7be1a7fc32e2c74af5783ec6a62cb75fd0.js
     env:
-      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="AutoNavi0"&UrlInfoSet.Dispatcher="AutoNavi1"&UrlInfoSet.Directions="AutoNavi2"&UrlInfoSet.RAP="AutoNavi3"&UrlInfoSet.LocationShift="AutoNavi4"&TileSet.Earth="AutoNavi5"&TileSet.Roads="AutoNavi6"&TileSet.Satellite="AutoNavi7"&Storage="AutoNavi8"&LogLevel="AutoNavi9"
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="CN"&UrlInfoSet.Dispatcher="AutoNavi"&UrlInfoSet.Directions="AutoNavi"&UrlInfoSet.RAP="Apple"&UrlInfoSet.LocationShift="AUTO"&TileSet.Earth="AUTO"&TileSet.Roads="AUTO"&TileSet.Satellite="AUTO"&Storage="Argument"&LogLevel="WARN"
     body_required: true
 - http_request:
     name: 🗺️ Maps.config.announcements.request
     match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4483623a4b6b9cbef897b25e7881a03143461055696fc5a750af518165b96dc2.js
     env:
-      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="AutoNavi0"&UrlInfoSet.Dispatcher="AutoNavi1"&UrlInfoSet.Directions="AutoNavi2"&UrlInfoSet.RAP="AutoNavi3"&UrlInfoSet.LocationShift="AutoNavi4"&TileSet.Earth="AutoNavi5"&TileSet.Roads="AutoNavi6"&TileSet.Satellite="AutoNavi7"&Storage="AutoNavi8"&LogLevel="AutoNavi9"
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="CN"&UrlInfoSet.Dispatcher="AutoNavi"&UrlInfoSet.Directions="AutoNavi"&UrlInfoSet.RAP="Apple"&UrlInfoSet.LocationShift="AUTO"&TileSet.Earth="AUTO"&TileSet.Roads="AUTO"&TileSet.Satellite="AUTO"&Storage="Argument"&LogLevel="WARN"
     body_required: true
 - http_response:
     name: 🗺️ Maps.config.announcements.response
     match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4d6c18dca53c4ae85ac836a2d3d19f7be1a7fc32e2c74af5783ec6a62cb75fd0.js
     env:
-      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="Apple0"&UrlInfoSet.Dispatcher="Apple1"&UrlInfoSet.Directions="Apple2"&UrlInfoSet.RAP="Apple3"&UrlInfoSet.LocationShift="Apple4"&TileSet.Earth="Apple5"&TileSet.Roads="Apple6"&TileSet.Satellite="Apple7"&Storage="Apple8"&LogLevel="Apple9"
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="CN"&UrlInfoSet.Dispatcher="AutoNavi"&UrlInfoSet.Directions="AutoNavi"&UrlInfoSet.RAP="Apple"&UrlInfoSet.LocationShift="AUTO"&TileSet.Earth="AUTO"&TileSet.Roads="AUTO"&TileSet.Satellite="AUTO"&Storage="Argument"&LogLevel="WARN"
     body_required: true
     binary_body: true
     max_size: 8388608
@@ -109,14 +109,14 @@ scriptings:
     match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4483623a4b6b9cbef897b25e7881a03143461055696fc5a750af518165b96dc2.js
     env:
-      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="AUTO0"&UrlInfoSet.Dispatcher="AUTO1"&UrlInfoSet.Directions="AUTO2"&UrlInfoSet.RAP="AUTO3"&UrlInfoSet.LocationShift="AUTO4"&TileSet.Earth="AUTO5"&TileSet.Roads="AUTO6"&TileSet.Satellite="AUTO7"&Storage="AUTO8"&LogLevel="AUTO9"
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="CN"&UrlInfoSet.Dispatcher="AutoNavi"&UrlInfoSet.Directions="AutoNavi"&UrlInfoSet.RAP="Apple"&UrlInfoSet.LocationShift="AUTO"&TileSet.Earth="AUTO"&TileSet.Roads="AUTO"&TileSet.Satellite="AUTO"&Storage="Argument"&LogLevel="WARN"
     body_required: true
 - http_response:
     name: 🗺️ Maps.geo_manifest.dynamic.config.response
     match: ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4d6c18dca53c4ae85ac836a2d3d19f7be1a7fc32e2c74af5783ec6a62cb75fd0.js
     env:
-      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="AUTO0"&UrlInfoSet.Dispatcher="AUTO1"&UrlInfoSet.Directions="AUTO2"&UrlInfoSet.RAP="AUTO3"&UrlInfoSet.LocationShift="AUTO4"&TileSet.Earth="AUTO5"&TileSet.Roads="AUTO6"&TileSet.Satellite="AUTO7"&Storage="AUTO8"&LogLevel="AUTO9"
+      _compat.$argument: GeoManifest.Dynamic.Config.CountryCode="CN"&UrlInfoSet.Dispatcher="AutoNavi"&UrlInfoSet.Directions="AutoNavi"&UrlInfoSet.RAP="Apple"&UrlInfoSet.LocationShift="AUTO"&TileSet.Earth="AUTO"&TileSet.Roads="AUTO"&TileSet.Satellite="AUTO"&Storage="Argument"&LogLevel="WARN"
     body_required: true
     binary_body: true
     max_size: 8388608

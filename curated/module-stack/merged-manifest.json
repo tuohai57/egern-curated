@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "e5cfb8fa51d987881e29b149e07652d28143fd5b6a94a8c103c8a336de61729e",
+  "sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -325,7 +325,7 @@
       "app": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "62302a3c5f6b6e7ed087685cd63c835d0ebfc821849c7a2227ea927c385e2aec",
+      "sha256": "5106bf5f00c82a412b3efb2f7940177bc5ab58ab49c2799a8c4485266b9ec5a4",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
@@ -353,7 +353,7 @@
       "app": "滴滴出行",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
       "repository_path": "curated/module-stack/modules/native-021.yaml",
-      "sha256": "1c5c60c4683bc8a0f06bb5f71d700e059f498dc6e62a8912ebe89fec3a23ab51",
+      "sha256": "eb40c14d651735d9387da6dc208820a508c58ed0aab47f05ab4d28fcfa06a1f9",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
     },
     {
@@ -829,7 +829,7 @@
       "app": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-007.yaml",
       "repository_path": "curated/module-stack/modules/user-007.yaml",
-      "sha256": "d85c1c318ac3d211866e79ce1316e1bda9846fc76d2b0009cbb97e236be9d862",
+      "sha256": "c19d73508035687a0effa1888606addcb60503b476a431cc18ec561635b53426",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"
     },
     {
@@ -885,7 +885,7 @@
       "app": "淘宝闪购",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-084.yaml",
       "repository_path": "curated/module-stack/modules/native-084.yaml",
-      "sha256": "8a9df7f86e0539cc4b4f05c798a5bc819c882f67baa50f49b539049cafc2adef",
+      "sha256": "3b0d0d9d11c26082d828ef1c2cead05930f679cf9d3d43de0c6ef10ae928897e",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png"
     },
     {
@@ -2232,11 +2232,11 @@
     "rules": 769,
     "url_rewrites": 3,
     "header_rewrites": 0,
-    "body_rewrites": 380,
-    "map_locals": 595,
-    "scriptings": 173
+    "body_rewrites": 377,
+    "map_locals": 596,
+    "scriptings": 176
   },
-  "mitm_hosts": 744,
+  "mitm_hosts": 747,
   "changes": [
     {
       "kind": "exact_duplicate_omitted",
@@ -6513,6 +6513,15 @@
     "Amap exact m5 splash path with optional query",
     "Amap exact old splash paths",
     "Goofish aggregate owner switched; obsolete AMDC body script removed",
-    "12306 bounded ad endpoint; accept documented code 00 and preserve errors"
+    "12306 bounded ad endpoint; accept documented code 00 and preserve errors",
+    "Didi mget: original single-field deletion via native binary/JSON response, invalid input passthrough",
+    "Umetrip bounded gateway including documented discardrp host",
+    "Umetrip tiny-GIF original bytes via native ctx.respond",
+    "Eleme original tiny-GIF semantics restored",
+    "Eleme dedicated in-App promotion trigger: original reject-dict semantics",
+    "Eleme dedicated miniapp promotional popup URL only",
+    "Egern compressed/engine-decoded protobuf response support; original source bytes preserved",
+    "NetEase declared UI options now execute via native AES/JSON response; real membership remains untouched",
+    "NetEase source empty-document rewrites now decode/re-encode AES before editing"
   ]
 }

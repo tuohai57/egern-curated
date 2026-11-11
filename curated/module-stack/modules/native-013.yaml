@@ -1,5 +1,5 @@
 name: 网易云音乐（可莉·适配）〔版本1〕
-description: 网易云音乐全面净化，可自定义界面样式。
+description: 保留可莉规则与精简；补齐 Egern 原生 AES/压缩响应处理。隐藏漫游、笔记、关注、问候语和音乐合伙人，保留发现、歌单、推荐、排行榜及真实会员状态。
 author: RuCu6[https://github.com/RuCu6], Keywos[https://github.com/Keywos], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://loonlab.103516.xyz/Plugin/
 icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png
@@ -7,16 +7,16 @@ open_url: https://apps.apple.com/app/id590338362
 tag: 去广告, 解锁会员
 compat_arguments:
   FX: 'false'
-  MY: 'false'
-  DT: 'false'
-  GZ: 'false'
-  PRGG: 'false'
+  MY: 'true'
+  DT: 'true'
+  GZ: 'true'
+  PRGG: 'true'
   PRRK: 'false'
   PRDRD: 'false'
   PRSCVPT: 'false'
   PRST: 'false'
   PRRR: 'false'
-  HMPR: 'false'
+  HMPR: 'true'
   PRMST: 'false'
   PRCN: 'false'
   Music163_VIP_Shared: 'false'
@@ -85,19 +85,7 @@ rules:
     match: bdlog.tanx.com
     policy: REJECT
 url_rewrites: []
-body_rewrites:
-- response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/ocpc\/ad\/
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+body_rewrites: []
 mitm:
   hostnames:
   - interface*.music.163.com
@@ -118,3 +106,25 @@ map_locals:
 - match: (?i)^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend
   status_code: 200
   body: '{}'
+scriptings:
+- http_response:
+    name: 网易云音乐 · 广告与界面精简
+    match: (?i)^https?://interface\d?\.music\.163\.com/(?:e?api|weapi)/(?:batch|link/home/framework/tab|homepage/block/page|link/page/discovery/resource/show|link/page/rcmd/(?:resource/show|block/resource/multi/refresh)|link/position/show/resource|search/default|ocpc/ad(?:/[^?#]*)?)/?(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/netease-ui-native.js
+    body_required: true
+    binary_body: true
+    update_interval: 86400
+    env:
+      FX: 'false'
+      MY: 'true'
+      DT: 'true'
+      GZ: 'true'
+      PRGG: 'true'
+      PRRK: 'false'
+      PRDRD: 'false'
+      PRSCVPT: 'false'
+      PRST: 'false'
+      PRRR: 'false'
+      HMPR: 'true'
+      PRMST: 'false'
+      PRCN: 'false'

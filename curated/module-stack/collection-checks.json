@@ -1,20 +1,20 @@
 {
   "passed": true,
-  "aggregate_sha256": "e5cfb8fa51d987881e29b149e07652d28143fd5b6a94a8c103c8a336de61729e",
+  "aggregate_sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
   "included_sources": 257,
   "counts": {
     "rules": 769,
     "url_rewrites": 3,
     "header_rewrites": 0,
-    "body_rewrites": 380,
-    "map_locals": 595,
-    "scriptings": 173
+    "body_rewrites": 377,
+    "map_locals": 596,
+    "scriptings": 176
   },
-  "mitm_hosts": 744,
-  "unique_regexes": 1150,
-  "jq_compiled": 357,
-  "jq_bindings_with_input_failure_guards": 377,
-  "javascript_syntax_checked": 95,
+  "mitm_hosts": 747,
+  "unique_regexes": 1151,
+  "jq_compiled": 355,
+  "jq_bindings_with_input_failure_guards": 374,
+  "javascript_syntax_checked": 98,
   "upstream_javascript_executed": false,
   "runtime_verified": false,
   "meaning": "Source integrity and syntax; arbitrary regex overlaps and actual iOS behavior are not proven."

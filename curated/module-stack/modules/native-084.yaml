@@ -1,5 +1,5 @@
 name: 淘宝闪购（奶思·适配）〔版本2〕
-description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
+description: 保留奶思开屏规则并恢复原透明 GIF；补充 yfamilys 专用页面推广触发和弹窗规则。实际广告覆盖仍需设备确认。
 author: 奶思
 homepage: https://github.com/fmz200/wool_scripts
 rules:
@@ -47,8 +47,13 @@ rules:
     policy: REJECT
 url_rewrites: []
 map_locals:
-- match: ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
+- match: ^https?://waimai-guide\.ele\.me/\w+/mtop\.alsc\.eleme\.\w+\.trigger\.respond(?:/[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$
   status_code: 200
+  headers:
+    Content-Type: application/json; charset=utf-8
+  body: '{}'
+- match: ^https?://waimai-guide\.ele\.me/\w+/mtop\.alsc\.wamai\.store\.detail\.miniapp\.popup(?:/[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$
+  status_code: 404
   body: ''
 mitm:
   hostnames:
@@ -57,4 +62,11 @@ mitm:
   - cube.elemecdn.com
   - www1.elecfans.com
   - nr-op.elemecdn.com
+  - waimai-guide.ele.me
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png
+scriptings:
+- http_request:
+    name: 淘宝闪购 · 开屏视频透明素材
+    match: ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/static-tiny-gif-native.js
+    body_required: false

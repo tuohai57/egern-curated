@@ -1586,3 +1586,21 @@ rules:
 - domain:
     match: info.amap.com
     policy: 高德地图
+- domain:
+    match: discardrp.umetrip.com
+    policy: 航旅纵横
+- domain:
+    match: waimai-guide.ele.me
+    policy: 淘宝闪购
+- domain:
+    match: elemecdn.com
+    policy: 淘宝闪购
+- domain:
+    match: cube.elemecdn.com
+    policy: 淘宝闪购
+- domain:
+    match: nr-op.elemecdn.com
+    policy: 淘宝闪购
+- domain:
+    match: ume1.umetrip.com
+    policy: 航旅纵横
