@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/jadkg/egern/NetworkInfo.yaml
-name: 网络信息·渐变版
+name: 小组件·网络信息·渐变版（适配）
 scriptings:
 - generic:
     name: 网络信息·渐变版·脚本1

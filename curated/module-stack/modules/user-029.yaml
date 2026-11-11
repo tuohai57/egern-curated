@@ -1,4 +1,4 @@
-name: Google人机验证
+name: Google人机验证（人机验证原作者·适配）
 scriptings:
 - http_response:
     name: Google人机验证 / 1

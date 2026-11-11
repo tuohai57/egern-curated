@@ -1,4 +1,4 @@
-name: 服务分流自检
+name: 小组件·服务分流自检（适配）
 description: 按各服务独立策略探测连接和响应，不把网页可达性冒充地区、账户或会员权限可用。
 author: tuohai57
 icon: network

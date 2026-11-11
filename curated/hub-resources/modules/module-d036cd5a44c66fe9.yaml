@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/Harley0214/Egern-widgest-SUBTraffic-monitor/ModernSubTraffic-Egern-Generic.yaml
-name: 订阅流量·现代版
+name: 小组件·订阅流量·现代版（适配）
 scriptings:
 - generic:
     name: 订阅流量·现代版·脚本1

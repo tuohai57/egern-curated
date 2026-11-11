@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/moyuzaime/egern/ChinaBroadnet/ChinaBroadnet.yaml
-name: 中国广电·套餐用量
+name: 小组件·中国广电·套餐用量（适配）
 description: 打开中国广电 App、微信或支付宝小程序查询一次即可自动读取｜更新时间：2026-11-04 21:10（北京时间）
 author: wuhuhuuuu
 icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/ChinaBroadcastNetwork.png

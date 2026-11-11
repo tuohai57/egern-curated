@@ -1,4 +1,4 @@
-name: 仓库补充广告规则
+name: 仓库补充广告规则（多源广告规则整合·整合）
 description: HaGeZi Multi PRO、QuixoticHeart及审阅后的秋风完整防护增量；排除金融、必要业务、原模块净化接口及已有拒绝范围。
 rules:
 - rule_set:

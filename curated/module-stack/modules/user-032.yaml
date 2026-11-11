@@ -1,4 +1,4 @@
-name: RevenueCat
+name: RevenueCat（墨鱼·适配）
 scriptings:
 - http_response:
     name: RevenueCat / 1

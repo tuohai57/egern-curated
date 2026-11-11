@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/zhaohantao1360-hash/Hark/sgcc-hark.yaml
-name: 网上国网·用电量
+name: 小组件·网上国网·用电量（适配）
 description: 国家电网电费余额、昨日/本月/上月用电、近 30 日与月度柱状图；支持小/中/大号与锁屏。直连网上国网 App 接口，限流时自动改走 95598
   网页接口，不经第三方网关；填写账号密码即可，每 6 小时自动更新
 author: Hark（版式参考 jadkg 南方电网小组件；App 协议移植自 stevenjoezhang/hass-state-grid，MIT）

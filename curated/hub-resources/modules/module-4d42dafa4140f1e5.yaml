@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/moyuzaime/egern/ChinaUnicom/ChinaUnicom.yaml
-name: 中国联通·多端版
+name: 小组件·中国联通·多端版（适配）
 description: 打开中国联通 App 余量页或微信「余量查询」页查询一次即可自动读取｜更新时间：2026-11-04 21:15（北京时间）
 author: iBL3ND
 homepage: https://github.com/moyuzaime/egern/tree/main/ChinaUnicom

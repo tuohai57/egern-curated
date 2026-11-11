@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/zhaohantao1360-hash/Hark/sub-traffic-hark-v2.yaml
-name: 订阅流量·仪表盘
+name: 小组件·订阅流量·仪表盘（适配）
 description: 最多同时显示 4 个机场/代理订阅的剩余流量、7 天用量柱状图、用完预测、今日已用与到期时间（iOS 液态玻璃风格，基于 milull/milu
   jclldy 改版）
 env_schema:

@@ -1,4 +1,4 @@
-name: YouTube
+name: YouTube（独立原作者·适配）
 description: 移除YouTube应用广告、启用后台播放，并翻译现有字幕轨道（目标语言为zh-CN或en-US；没有字幕的视频无法翻译）。默认仅记录媒体响应头；完整采样可能增加延迟。\n该插件基于devchristian1337的YouTube插件汉化。
 author: devchristian1337[https://github.com/devchristian1337]
 homepage: https://loonlab.103516.xyz/Plugin/

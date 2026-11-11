@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/ZLam/VPN/egern/widget/douban_ranking/douban-ranking.yaml
-name: 豆瓣口碑榜
+name: 小组件·豆瓣口碑榜（适配）
 description: 展示豆瓣国外口碑综艺榜、全球口碑剧集榜与一周口碑电影榜，支持桌面、锁屏、24 小时缓存和失败降级。
 author: ZLam
 homepage: https://github.com/ZLam/VPN

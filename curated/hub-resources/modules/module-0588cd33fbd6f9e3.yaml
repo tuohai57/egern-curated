@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/IBL3ND/module/Holiday_Countdown.yaml
-name: 节日倒计时
+name: 小组件·节日倒计时（适配）
 description: 公历节日、24节气、农历传统节日倒计时，按天数排序，支持小中大尺寸与锁屏
 author: iBL3ND
 icon: https://iili.io/nUsZbHl.webp

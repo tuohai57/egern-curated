@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/jadkg/egern/jinrihuangjin.yaml
-name: 今日黄金
+name: 小组件·今日黄金（适配）
 scriptings:
 - generic:
     name: 今日黄金·脚本1

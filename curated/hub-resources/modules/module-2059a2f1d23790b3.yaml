@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/jadkg/egern/jichangdingyue.yaml
-name: 订阅流量·简约版
+name: 小组件·订阅流量·简约版（适配）
 scriptings:
 - generic:
     name: 订阅流量·简约版·脚本1

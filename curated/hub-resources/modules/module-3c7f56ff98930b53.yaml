@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/jadkg/egern/wannianli.yaml
-name: 日历·小日子
+name: 小组件·日历·小日子（适配）
 scriptings:
 - generic:
     name: 日历·小日子·脚本1

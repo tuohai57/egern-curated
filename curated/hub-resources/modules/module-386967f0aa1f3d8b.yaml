@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/xcgtb/Egern-Widgets/HL.yaml
-name: 黄历·完整版
+name: 小组件·黄历·完整版（适配）
 scriptings:
 - generic:
     name: 黄历·完整版·脚本1

@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/CallMeKingsley97/useful-module/rocket-launch-countdown.yaml
-name: 火箭发射倒计时
+name: 小组件·火箭发射倒计时（适配）
 description: 极简宇航发射倒计时，实时追踪下一次火箭升空时间
 author: kingsley
 scriptings:

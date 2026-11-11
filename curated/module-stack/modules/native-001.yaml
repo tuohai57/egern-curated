@@ -1,4 +1,4 @@
-name: Egern 优先级补丁
+name: Egern 优先级补丁（自用维护·原生）
 description: 修正被其他模块误拦的域名。必须放在模块列表最上面才生效。
 author: egern-mirror / curated
 homepage: https://github.com/tuohai57/egern-mirror/tree/main/curated

@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/SIJULY/egern-radar/WeatherWdg.yaml
-name: 天气·晴雨版
+name: 小组件·天气·晴雨版（适配）
 description: 蓝灰 UI 风格 · 含农历节气/逐时预报/五日预报/湿度进度条 · 数据源中国天气网（免 Key）
 author: 小龙女她爸
 icon: https://raw.githubusercontent.com/SIJULY/egern-radar/main/weather-icon.png

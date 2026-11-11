@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/Aswoth/Keek/IP.yaml
-name: 出口风险·纯净度检测
+name: 小组件·出口风险·纯净度检测（适配）
 scriptings:
 - generic:
     name: 出口风险·纯净度检测·脚本1

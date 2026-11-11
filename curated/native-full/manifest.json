@@ -254,7 +254,7 @@
     "enabled": true,
     "update_interval": 86400,
     "repository_path": "curated/native-full/priority-guard-ai-regions-muse.yaml",
-    "sha256": "d5703f27fb0567fc3fa969b46a9f71c998009e64ee3ca5c0a3ce5d361afff845",
+    "sha256": "793124ff78e3ab96f5283e6b53b1e73639e8166291eb07eaf067c71d7d40195b",
     "rules": 512,
     "icon": null
   },
@@ -26936,7 +26936,7 @@
       "name": "仓库补充广告规则",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-supplement.yaml",
       "repository_path": "curated/native-full/repository-ad-supplement.yaml",
-      "sha256": "af40076f576a046f28464d246bf333fe8d97a900f4abdcaacb1ee1e52633b1b6",
+      "sha256": "c5055031ce3a66ad8fadd35146c7f187ad201f188512aff84edf137e98bc3aac",
       "enabled": true,
       "source_kind": "reviewed-repository-delta",
       "source_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/pro-onlydomains.txt",

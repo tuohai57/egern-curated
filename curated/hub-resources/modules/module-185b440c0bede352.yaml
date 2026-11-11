@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/Bf0rest/Egern/Widget/IPPure-emoji.yaml
-name: 出口风险·表情版
+name: 小组件·出口风险·表情版（适配）
 description: 代理出口风险评分 + 机房/住宅与原生/广播判定，深/浅配色。
 env_schema:
   GROUP:

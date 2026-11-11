@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/Aswoth/Keek/wannianli.yaml
-name: 黄历·三卡片
+name: 小组件·黄历·三卡片（适配）
 scriptings:
 - generic:
     name: 黄历·三卡片·脚本1

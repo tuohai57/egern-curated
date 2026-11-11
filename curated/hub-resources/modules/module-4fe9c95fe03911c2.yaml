@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/IBL3ND/module/Crypto_Widget.yaml
-name: 虚拟货币行情
+name: 小组件·虚拟货币行情（适配）
 description: Binance 行情，无需 Key，BTC、ETH 等最多 8 个币种，支持小/中/大尺寸与锁屏，失败币种单独提示
 author: iBL3ND
 icon: https://iili.io/KDiAbJS.png

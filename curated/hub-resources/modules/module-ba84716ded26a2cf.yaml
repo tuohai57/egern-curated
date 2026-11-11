@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/jadkg/egern/duoguohuilv.yaml
-name: 今日汇率
+name: 小组件·今日汇率（适配）
 scriptings:
 - generic:
     name: 今日汇率·脚本1

@@ -1,4 +1,4 @@
-name: 恢复版优先保护
+name: 恢复版优先保护（自用维护·适配）
 description: 金融、必要服务、DNS 传输优先；保留响应净化接口到对应 App 策略。
 rules:
 - ip_cidr:

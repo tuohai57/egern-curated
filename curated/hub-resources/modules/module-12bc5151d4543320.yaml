@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/Kaemiel/Egern/vpsjiankong.yaml
-name: 服务器监控·液态玻璃
+name: 小组件·服务器监控·液态玻璃（适配）
 description: 通过 SSH 连接 VPS，实时显示 CPU、内存、磁盘、流量用量、运行时长与 IP 地址。连接失败自动显示上次缓存数据
 env_schema:
   SERVER_HOST:

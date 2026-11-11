@@ -60,3 +60,4 @@ jobs:
       - run: node curated/tools/test_umetrip_runtime.cjs
       - run: node curated/tools/test_text_response_runtime.cjs
       - run: node curated/tools/test_app_native_rewrites.cjs
+      - run: python curated/tools/check_delivery_names.py

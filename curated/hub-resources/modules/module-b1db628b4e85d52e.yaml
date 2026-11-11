@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/zhaohantao1360-hash/Hark/china-mobile-hark-ios.yaml
-name: 中国移动·简洁版
+name: 小组件·中国移动·简洁版（适配）
 description: 桌面/锁屏小组件：剩余话费、通用流量、其他流量、语音三环 + 今日已用/日均可用。先在「中国移动」App 用短信验证码登录一次自动捕获参数
 author: Hark（基于 zhaohantao1360-hash v20 改版，iOS 液态玻璃风格 + 用量洞察）
 env_schema:

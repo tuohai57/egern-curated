@@ -1,4 +1,4 @@
-name: BuyiTunes
+name: BuyiTunes（墨鱼·适配）
 scriptings:
 - http_response:
     name: BuyiTunes / 1

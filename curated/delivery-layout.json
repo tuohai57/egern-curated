@@ -1,0 +1,876 @@
+{
+  "release": "2026-11-11-模块清理版",
+  "modules": [
+    {
+      "name": "恢复版优先保护（自用维护·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/priority-guard-ai-regions-muse.yaml",
+      "enabled": true
+    },
+    {
+      "name": "仓库补充广告规则（多源广告规则整合·整合）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/repository-ad-supplement.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Egern 优先级补丁（自用维护·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-001.yaml",
+      "enabled": true
+    },
+    {
+      "name": "HTTPDNS拦截器（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-002.yaml",
+      "enabled": true
+    },
+    {
+      "name": "广告平台拦截器（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-003.yaml",
+      "enabled": true
+    },
+    {
+      "name": "CMS广告拦截（影视净化原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-091.yaml",
+      "enabled": true
+    },
+    {
+      "name": "跳过代理检测（代理检测原作者·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-004.yaml",
+      "enabled": true
+    },
+    {
+      "name": "知乎（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
+      "enabled": true
+    },
+    {
+      "name": "微博（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-006.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小红书（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Xiaohongshu.yaml",
+      "enabled": true
+    },
+    {
+      "name": "闲鱼（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-044.yaml",
+      "enabled": true
+    },
+    {
+      "name": "拼多多（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-009.yaml",
+      "enabled": true
+    },
+    {
+      "name": "腾讯视频（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-010.yaml",
+      "enabled": true
+    },
+    {
+      "name": "百度网盘（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-011.yaml",
+      "enabled": true
+    },
+    {
+      "name": "高德地图（自用维护·重写）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Amap.yaml",
+      "enabled": true
+    },
+    {
+      "name": "网易云音乐（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
+      "enabled": true
+    },
+    {
+      "name": "哔哩哔哩（作者待确认·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-014.yaml",
+      "enabled": true
+    },
+    {
+      "name": "酷安（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-019.yaml",
+      "enabled": true
+    },
+    {
+      "name": "什么值得买（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
+      "enabled": true
+    },
+    {
+      "name": "滴滴出行（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-021.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Spotify（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-022.yaml",
+      "enabled": true
+    },
+    {
+      "name": "YouTube（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-023.yaml",
+      "enabled": true
+    },
+    {
+      "name": "爱奇艺（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-024.yaml",
+      "enabled": true
+    },
+    {
+      "name": "淘宝（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-025.yaml",
+      "enabled": true
+    },
+    {
+      "name": "京东（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-026.yaml",
+      "enabled": true
+    },
+    {
+      "name": "快手（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-027.yaml",
+      "enabled": true
+    },
+    {
+      "name": "芒果TV（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-028.yaml",
+      "enabled": true
+    },
+    {
+      "name": "QQ音乐（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-029.yaml",
+      "enabled": true
+    },
+    {
+      "name": "酷我音乐（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-030.yaml",
+      "enabled": true
+    },
+    {
+      "name": "汽水音乐（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-031.yaml",
+      "enabled": true
+    },
+    {
+      "name": "喜马拉雅（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-032.yaml",
+      "enabled": true
+    },
+    {
+      "name": "优酷（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-033.yaml",
+      "enabled": true
+    },
+    {
+      "name": "斗鱼直播（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-034.yaml",
+      "enabled": true
+    },
+    {
+      "name": "虎牙直播（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-035.yaml",
+      "enabled": true
+    },
+    {
+      "name": "美团（奶思·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-036.yaml",
+      "enabled": true
+    },
+    {
+      "name": "懂车帝（自用维护·重写）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Dcar.yaml",
+      "enabled": true
+    },
+    {
+      "name": "WPS Office（奶思·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-038.yaml",
+      "enabled": true
+    },
+    {
+      "name": "X（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-039.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Facebook（奶思·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-041.yaml",
+      "enabled": true
+    },
+    {
+      "name": "抖音（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-078.yaml",
+      "enabled": true
+    },
+    {
+      "name": "得物（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-043.yaml",
+      "enabled": true
+    },
+    {
+      "name": "瑞幸咖啡（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-044.yaml",
+      "enabled": true
+    },
+    {
+      "name": "米游社（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-045.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小黑盒（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-046.yaml",
+      "enabled": true
+    },
+    {
+      "name": "马蜂窝（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-047.yaml",
+      "enabled": true
+    },
+    {
+      "name": "淘票票（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-048.yaml",
+      "enabled": true
+    },
+    {
+      "name": "大麦（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-049.yaml",
+      "enabled": true
+    },
+    {
+      "name": "起点读书（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-050.yaml",
+      "enabled": true
+    },
+    {
+      "name": "百度文库（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-051.yaml",
+      "enabled": true
+    },
+    {
+      "name": "粉笔（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-052.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小象超市（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-053.yaml",
+      "enabled": true
+    },
+    {
+      "name": "叮咚买菜（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-054.yaml",
+      "enabled": true
+    },
+    {
+      "name": "番茄小说（可莉·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-055.yaml",
+      "enabled": true
+    },
+    {
+      "name": "铁路12306（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
+      "enabled": true
+    },
+    {
+      "name": "夸克（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-057.yaml",
+      "enabled": true
+    },
+    {
+      "name": "豆瓣（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-058.yaml",
+      "enabled": true
+    },
+    {
+      "name": "阿里云盘（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-059.yaml",
+      "enabled": true
+    },
+    {
+      "name": "LINE（独立原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-061.yaml",
+      "enabled": true
+    },
+    {
+      "name": "美颜相机（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-062.yaml",
+      "enabled": true
+    },
+    {
+      "name": "凤凰新闻（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-063.yaml",
+      "enabled": true
+    },
+    {
+      "name": "百度贴吧（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-064.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Google搜索（可莉·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-065.yaml",
+      "enabled": true
+    },
+    {
+      "name": "微信（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-068.yaml",
+      "enabled": true
+    },
+    {
+      "name": "123云盘（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-081.yaml",
+      "enabled": true
+    },
+    {
+      "name": "汽车之家（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-086.yaml",
+      "enabled": true
+    },
+    {
+      "name": "网易邮箱大师（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-089.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Keep（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-021.yaml",
+      "enabled": true
+    },
+    {
+      "name": "转转（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-003.yaml",
+      "enabled": true
+    },
+    {
+      "name": "智联招聘（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-011.yaml",
+      "enabled": true
+    },
+    {
+      "name": "苏州市民卡（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-036.yaml",
+      "enabled": true
+    },
+    {
+      "name": "无畏契约宝典（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-038.yaml",
+      "enabled": true
+    },
+    {
+      "name": "迅雷（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-039.yaml",
+      "enabled": true
+    },
+    {
+      "name": "在路上（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-040.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Walmart（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-046.yaml",
+      "enabled": true
+    },
+    {
+      "name": "网易大神（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-052.yaml",
+      "enabled": true
+    },
+    {
+      "name": "顺丰速运（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-056.yaml",
+      "enabled": true
+    },
+    {
+      "name": "悦单吧（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-058.yaml",
+      "enabled": true
+    },
+    {
+      "name": "电视助手（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-062.yaml",
+      "enabled": true
+    },
+    {
+      "name": "快捷搜索（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-065.yaml",
+      "enabled": true
+    },
+    {
+      "name": "京东外卖（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-067.yaml",
+      "enabled": true
+    },
+    {
+      "name": "虎扑（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-069.yaml",
+      "enabled": true
+    },
+    {
+      "name": "汉庭酒店（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-070.yaml",
+      "enabled": true
+    },
+    {
+      "name": "盒马（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-071.yaml",
+      "enabled": true
+    },
+    {
+      "name": "飞客茶馆（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-075.yaml",
+      "enabled": true
+    },
+    {
+      "name": "飞猪旅行（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-076.yaml",
+      "enabled": true
+    },
+    {
+      "name": "电视多屏互动（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-078.yaml",
+      "enabled": true
+    },
+    {
+      "name": "嘀嗒出行（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-081.yaml",
+      "enabled": true
+    },
+    {
+      "name": "AI 查询（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-090.yaml",
+      "enabled": true
+    },
+    {
+      "name": "TestFlight 地区解锁（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-092.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Telegram 链接跳转（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-093.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Spotify 歌词翻译（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-094.yaml",
+      "enabled": true
+    },
+    {
+      "name": "QQ 链接跳转（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-097.yaml",
+      "enabled": true
+    },
+    {
+      "name": "KOOK（可莉·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-099.yaml",
+      "enabled": true
+    },
+    {
+      "name": "航旅纵横（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-007.yaml",
+      "enabled": true
+    },
+    {
+      "name": "菜鸟（小白脸·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-080.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Safari超级搜索（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-028.yaml",
+      "enabled": true
+    },
+    {
+      "name": "BuyiTunes（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-031.yaml",
+      "enabled": true
+    },
+    {
+      "name": "RevenueCat（墨鱼·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-032.yaml",
+      "enabled": true
+    },
+    {
+      "name": "360手机卫士（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-360.yaml",
+      "enabled": true
+    },
+    {
+      "name": "爱思全能版（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-AiSiAssistant.yaml",
+      "enabled": true
+    },
+    {
+      "name": "1688（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-1688.yaml",
+      "enabled": true
+    },
+    {
+      "name": "中国电信（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-ChinaTelecom.yaml",
+      "enabled": true
+    },
+    {
+      "name": "携程旅行（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-082.yaml",
+      "enabled": true
+    },
+    {
+      "name": "大众点评（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
+      "enabled": true
+    },
+    {
+      "name": "淘宝闪购（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-084.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Google（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Google.yaml",
+      "enabled": true
+    },
+    {
+      "name": "麦当劳（奶思·原生）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-088.yaml",
+      "enabled": true
+    },
+    {
+      "name": "美团外卖（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Meituan-MeituanWaimai.yaml",
+      "enabled": true
+    },
+    {
+      "name": "米家（奶思·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-079.yaml",
+      "enabled": true
+    },
+    {
+      "name": "哈啰（整合原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-006.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Google人机验证（人机验证原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-029.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·订阅流量·环形版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-d777ef2e4240b13f.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·订阅流量·简洁版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-f14aa86de6626cfb.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·中号版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-04a3a62fb96cc7ca.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·现代版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-d036cd5a44c66fe9.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·多订阅版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-5fd71d26b940bbba.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·卡片版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-4a48491f5938af37.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·简约版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-2059a2f1d23790b3.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·双环版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-bbe5c7b304d8b62f.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·订阅流量·仪表盘（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-ba86382b35ff4778.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·出口风险·脱敏版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-d4862dc59e84a194.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·出口风险·纯净度检测（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-57d787c049804671.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·出口风险·表情版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-185b440c0bede352.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·日历·双周版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-3b810b8fce7bef8b.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·黄历·三卡片（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-21b73a51982f70fc.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·日历·小日子（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-3c7f56ff98930b53.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·黄历·完整版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-386967f0aa1f3d8b.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·服务分流自检（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/service-diagnostics.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·网络安全检测（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-910dbc41356e040c.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络诊断·服务检测（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-57f6f04ca1abeb02.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络诊断·雷达版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-f9ca0392ee064061.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络诊断·媒体与风险（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-981e745a8faa3728.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络诊断·服务监测（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-d83ec2dc8276de44.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络诊断·实时版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-0b66bc7fcb2d1a50.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网络测速·标准版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-53e4ca11a82de23a.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·网络测速·十秒版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-56926f09ae4b5418.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·火箭发射倒计时（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-7a030210268f92bd.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·虚拟货币行情（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-4fe9c95fe03911c2.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·节日倒计时（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-0588cd33fbd6f9e3.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·节日倒计时·分类版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-abc4e2b1773f518b.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·彩票开奖信息（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-20ecef6c852b4be1.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·全国油价·地区版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-28bf222ed4a971be.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·全国油价·石化版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-27760f77abebfc04.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·全国油价·画布版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-21600ee470edf5aa.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·全国油价·卡片版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-73f060fe5695a4e8.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·天气·中国天气版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-393e8535fae815d3.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·天气·和风版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-7859e5d7cb5fcbf4.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·天气·晴雨版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-8ed44a2951610465.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·豆瓣口碑榜（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-2de0432a677506e9.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·动漫插画（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-529d602d373771e4.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·网络信息·渐变版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-0244882f87d7def3.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·今日黄金（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-dc594b5b84cb2550.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·今日汇率（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-ba84716ded26a2cf.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·还款日期提醒（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-d487d00e38695fb6.yaml",
+      "enabled": true
+    },
+    {
+      "name": "小组件·中国电信·套餐用量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-e2a4dd222bf0ef19.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·南方电网·用电量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-a25d8eb0ac72d571.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·中国联通·套餐用量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-847c5a38d17b8993.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·中国联通·多端版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-4d42dafa4140f1e5.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·服务器监控·液态玻璃（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-12bc5151d4543320.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·中国广电·套餐用量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-2a4f554eda9176a6.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·服务器探针·延迟流量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-6e1f441b2b7cc312.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·中国移动·仪表盘（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-79b28a9648131641.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·中国移动·简洁版（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-b1db628b4e85d52e.yaml",
+      "enabled": false
+    },
+    {
+      "name": "小组件·网上国网·用电量（适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/modules/module-1a9b3b6099445af3.yaml",
+      "enabled": false
+    },
+    {
+      "name": "哔哩哔哩链接重定向（哔哩宇宙·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-015.yaml",
+      "enabled": true
+    },
+    {
+      "name": "哔哩哔哩地区服务（哔哩宇宙·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-017.yaml",
+      "enabled": true
+    },
+    {
+      "name": "哔哩哔哩画质（作者待确认·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-073.yaml",
+      "enabled": true
+    },
+    {
+      "name": "哔哩哔哩皮肤（皮肤原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-074.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Apple 天气（环游计划·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-070.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Apple 地图（环游计划·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-071.yaml",
+      "enabled": true
+    },
+    {
+      "name": "插件中心（QuantumultXMark）（多源原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-077.yaml",
+      "enabled": true
+    },
+    {
+      "name": "Sub-Store（作者待确认·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-075.yaml",
+      "enabled": true
+    },
+    {
+      "name": "BoxJs（脚本配置中心原作者·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-076.yaml",
+      "enabled": true
+    },
+    {
+      "name": "网易云音乐 SVIP 功能（暗夜·适配）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-music-member.yaml",
+      "enabled": true
+    }
+  ],
+  "note": "Names and module selection only; no personal environment, nodes, subscriptions or certificate."
+}

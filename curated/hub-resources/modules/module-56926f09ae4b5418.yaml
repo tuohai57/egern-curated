@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/BiaoerD/Enern-/NetSpeed_Widget_10s.yaml
-name: 网络测速·十秒版
+name: 小组件·网络测速·十秒版（适配）
 scriptings:
 - generic:
     name: 网络测速·十秒版·脚本1

@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/milull/milu/GPT-AI.yaml
-name: 网络诊断·服务监测
+name: 小组件·网络诊断·服务监测（适配）
 scriptings:
 - generic:
     name: 网络诊断·服务监测·脚本1

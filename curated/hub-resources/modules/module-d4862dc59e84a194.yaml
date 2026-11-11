@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/vfelix7/rule_module_script/egern/module/IP_Purity_Widget.yaml
-name: 出口风险·脱敏版
+name: 小组件·出口风险·脱敏版（适配）
 description: 用 IPPure 检测出口 IP 的风险分、原生/广播、住宅/机房、地区和 ASN
 author: vfelix7
 icon: shield.lefthalf.filled

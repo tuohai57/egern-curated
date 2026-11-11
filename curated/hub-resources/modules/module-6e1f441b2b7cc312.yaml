@@ -1,6 +1,6 @@
 # Egern Hub reviewed resource. Original author and script bytes retained.
 # Source: https://egern.pages.dev/modules/vfelix7/rule_module_script/egern/module/CF_Server_Monitor_Net_Widget.yaml
-name: 服务器探针·延迟流量
+name: 小组件·服务器探针·延迟流量（适配）
 description: CF-Server-Monitor 延迟流量版：三网延迟和丢包、近 2 小时延迟曲线、本月流量已用/限额
 author: vfelix7
 icon: waveform.path.ecg
