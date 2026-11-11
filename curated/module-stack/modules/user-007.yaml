@@ -21,9 +21,10 @@ scriptings:
 - http_response:
     name: 航旅纵横 / 1
     match: ^https:\/\/(?:sns|appmsg|home|umehome|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|user|umeuser|event)\.umetrip\.com\/gateway\/api\/umetrip\/native(?:\?.*)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2a050507866720b5d04f112d8040fa0dc59bba74ebb09432ea3e304e81b056f6.js
     body_required: true
     update_interval: 86400
+    binary_body: true
 - http_request:
     name: 航旅纵横 / tiny GIF
     match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/

@@ -87,10 +87,16 @@ body_rewrites:
       \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+    filter: "(\n# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\ndel(.ad_info)\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+      \ else $__egern_original_json end)\n  catch $__egern_original_json\n) | (\n\
+      # Egern: preserve input on failed, empty or multi-result transform\n. as $__egern_original_json\n\
+      | try (([ (\ndel(.ad_info, .data.ad_info?, .query_info) | if (.data | type)\
+      \ == \"array\" then .data |= map(select(.target?.answer_type? // \"\" | tostring\
+      \ | contains(\"paid\") | not)) else . end\n) ]) as $__egern_results\n      \
+      \ | if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json\n)"
 - response_jq:
     match: (?i)^https:\/\/(api|page-info)(?:\.zhihu)?\.com\/answers\/v\d\/\d+(?:\?.*)?$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -145,7 +151,7 @@ body_rewrites:
       \ ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
       \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
-    match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
+    match: (?i)^(?!https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?)(?:https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=))
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\ndel(.ad_info, .data.ad_info?, .query_info)\
       \ | if (.data | type) == \"array\" then .data |= map(select(.target?.answer_type?\
@@ -160,7 +166,7 @@ mitm:
   hostnames:
   - '*.zhihu.com'
 map_locals:
-- match: (?i:^https:\/\/api\.zhihu\.com\/ad-style-service\/request$)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)|(?i:^https:\/\/api\.zhihu\.com\/next-render\?id=\d+&type=answer)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/answer\/\d+\/bottom-v\d$)|(?i:^https:\/\/api\.zhihu\.com\/search\/related_queries\/question\/\d+$)
+- match: (?i:^https:\/\/api\.zhihu\.com\/ad-style-service\/request$)|(?i:^https:\/\/api\.zhihu\.com\/next-render\?id=\d+&type=answer)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/answer\/\d+\/bottom-v\d$)|(?i:^https:\/\/api\.zhihu\.com\/search\/related_queries\/question\/\d+$)
   status_code: 200
   body: '{}'
 - match: (?i:^https:\/\/zhida\.zhihu\.com\/ai_ingress\/knowledge\/square\/categories\/feeds\?categoryId=1%7D$)|(?i:^https:\/\/zhida\.zhihu\.com\/ai_ingress\/ai_chat\/guidance$)

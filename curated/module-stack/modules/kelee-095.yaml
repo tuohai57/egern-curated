@@ -31,3 +31,6 @@ mitm:
   hostnames:
   - '*-spclient.spotify.com'
   - spclient.wg.spotify.com
+url_rewrites:
+- match: (?i)^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone
+  location: https://spclient.wg.spotify.com/artistview/v1/artist/$1&platform=ipad

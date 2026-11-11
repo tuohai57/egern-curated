@@ -89,7 +89,7 @@ scriptings:
     body_required: true
 - http_request:
     name: YouTube-请求
-    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/517e00dbe667374c4dbb45b9af265be272216331b90c20e805b203903ed0ad21.js
     body_required: true
 - http_response:

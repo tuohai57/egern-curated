@@ -2113,9 +2113,6 @@ rules:
     match: ^https?:\/\/catdot\.dianping\.com\/broker-service\/hijack
     policy: REJECT
 - url_regex:
-    match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig)
-    policy: REJECT
-- url_regex:
     match: ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction
     policy: REJECT
 - url_regex:
@@ -2657,6 +2654,8 @@ url_rewrites:
 - match: (^https?:\/\/s\d+\.bfengbf\.com\/video)(.+)_z5q\.ts
   location: $1$2.ts
   status_code: 302
+- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?:indexopsmodules|loadsplashconfig)(?:\?[^#]*)?$
+  location: http://reject/
 header_rewrites: []
 body_rewrites:
 - response_jq:
@@ -2691,10 +2690,16 @@ body_rewrites:
       \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+    filter: "(\n# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\ndel(.ad_info)\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+      \ else $__egern_original_json end)\n  catch $__egern_original_json\n) | (\n\
+      # Egern: preserve input on failed, empty or multi-result transform\n. as $__egern_original_json\n\
+      | try (([ (\ndel(.ad_info, .data.ad_info?, .query_info) | if (.data | type)\
+      \ == \"array\" then .data |= map(select(.target?.answer_type? // \"\" | tostring\
+      \ | contains(\"paid\") | not)) else . end\n) ]) as $__egern_results\n      \
+      \ | if ($__egern_results | length) == 1\n         then $__egern_results[0] else\
+      \ $__egern_original_json end)\n  catch $__egern_original_json\n)"
 - response_jq:
     match: (?i)^https:\/\/(api|page-info)(?:\.zhihu)?\.com\/answers\/v\d\/\d+(?:\?.*)?$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -2749,7 +2754,7 @@ body_rewrites:
       \ ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
       \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
-    match: (?i)^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=)
+    match: (?i)^(?!https:\/\/api\.zhihu\.com\/questions\/\d+\/feeds\?)(?:https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=))
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\ndel(.ad_info, .data.ad_info?, .query_info)\
       \ | if (.data | type) == \"array\" then .data |= map(select(.target?.answer_type?\
@@ -3267,7 +3272,7 @@ body_rewrites:
       \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
       \ $__egern_original_json"
 - response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
+    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/ocpc\/ad\/
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
@@ -4658,7 +4663,7 @@ body_rewrites:
       \ ($__egern_results | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
       \ end)\n  catch $__egern_original_json"
 - response_jq:
-    match: (?i)^https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch
+    match: (?i)^(?!https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn)(?:https:\/\/(cn-acs\.m|e2e-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch)
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\ndel(.data.data.data.mainSearch.bizData.searchContents,\
       \ .data.data.data.operationList)\n) ]) as $__egern_results\n       | if ($__egern_results\
@@ -4666,11 +4671,15 @@ body_rewrites:
       \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/e2e-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.data.data.banner, .data.data.activity,\
-      \ .data.data.vip)\n) ]) as $__egern_results\n       | if ($__egern_results |\
-      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
-      \ end)\n  catch $__egern_original_json"
+    filter: "(\n# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\ndel(.data.data.data.mainSearch.bizData.searchContents,\
+      \ .data.data.data.operationList)\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json\n) | (\n# Egern: preserve input on failed,\
+      \ empty or multi-result transform\n. as $__egern_original_json\n| try (([ (\n\
+      del(.data.data.banner, .data.data.activity, .data.data.vip)\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json\n)"
 - response_jq:
     match: (?i)^https:\/\/longquan-mtop\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -6071,8 +6080,35 @@ body_rewrites:
       . as $__egern_original_json\n| try (([ (\ndel(.ads)\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
       \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/homepage-api\.smzdm\.com\/v3\/home\?
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n# 如果\"data.component[*].zz_content[*].ad_campaign_id\"\
+      的字符串值是有效的，则删除\"data.component[*].zz_content[*].ad_campaign_id\"所在的对象\n# 如果\"\
+      data.component[*].zz_content[*].tag\"的字符串值是有效的，则删除\"data.component[*].zz_content[*].tag\"\
+      所在的对象\n# 如果\"data.component[*].zz_content[*].model_type\"的值是字符串类型的\"ads\"则删除\"\
+      data.component[*].zz_content[*].model_type\"所在的对象\n.data.component |= map(\n\
+      \  # 仅当 zz_content 是数组时执行过滤\n  if (.zz_content | type) == \"array\" then\n \
+      \   .zz_content |= map(\n      select(\n        ( (.ad_campaign_id? | type ==\
+      \ \"string\" and length > 0) // false ) or\n        ( (.tag? | type == \"string\"\
+      \ and length > 0) // false ) or\n        ( (.model_type? == \"ads\" and (type\
+      \ == \"string\")) // false )\n        | not\n      )\n    )\n  else . end\n\
+      )\n\n# 如果\"data.component[*].zz_type\"存在，且字符串的值不是\"circular_banner\"或\"filter\"\
+      或\"list\"，则删除\"data.component[*].zz_type\"所在的对象\n| .data.component |= map(\n\
+      \  select(.zz_type == \"circular_banner\" or .zz_type == \"filter\" or .zz_type\
+      \ == \"list\")\n)\n\n# 如果\"data.component[*].zz_content\"数组中，\"article_channel_type\"\
+      的值是字符串类型的\"questionnaire\"时，则删除\"data.component[*].zz_content[*].article_channel_type\"\
+      所在的对象。\n| .data.component |= map(\n  .zz_content |= (\n    if type == \"array\"\
+      \ then\n      map(\n        if type == \"object\" and (.article_channel_type\
+      \ // \"\") == \"questionnaire\" then\n          empty\n        else\n      \
+      \    .\n        end\n      )\n    else\n      .\n    end\n  )\n)\n\n# 移除首页主题皮肤背景\n\
+      # 删除\"data.theme\"\n| del(.data.theme)\n\n# 遍历\"data.component\"数组并安全删除\"circular_banner_option\"\
+      \n| .data.component |= map(\n  if .zz_content | type == \"object\" then\n  \
+      \  .zz_content |= del(.circular_banner_option)\n  else\n    .\n  end\n)\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 map_locals:
-- match: (?i:^https:\/\/api\.zhihu\.com\/ad-style-service\/request$)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/banners_v\d\/app_float_corner\?)|(?i:^https:\/\/api\.zhihu\.com\/next-render\?id=\d+&type=answer)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/answer\/\d+\/bottom-v\d$)|(?i:^https:\/\/api\.zhihu\.com\/search\/related_queries\/question\/\d+$)
+- match: (?i:^https:\/\/api\.zhihu\.com\/ad-style-service\/request$)|(?i:^https:\/\/api\.zhihu\.com\/next-render\?id=\d+&type=answer)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/answer\/\d+\/bottom-v\d$)|(?i:^https:\/\/api\.zhihu\.com\/search\/related_queries\/question\/\d+$)
   status_code: 200
   body: '{}'
 - match: (?i:^https:\/\/zhida\.zhihu\.com\/ai_ingress\/knowledge\/square\/categories\/feeds\?categoryId=1%7D$)|(?i:^https:\/\/zhida\.zhihu\.com\/ai_ingress\/ai_chat\/guidance$)
@@ -8761,7 +8797,7 @@ scriptings:
     body_required: true
 - http_request:
     name: YouTube-请求
-    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/videoplayback\?[^#]*$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
+    match: (?i)^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:browse|next|search|reel\/reel_watch_sequence)(?:\?[^#]*)?$|^http:\/\/youtube-logs\.invalid(?::80)?(?:\/[^#]*)?$|^https:\/\/[A-Za-z0-9_-]+\.googlevideo\.com\/initplayback(?:\?[^#]*)?$
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/517e00dbe667374c4dbb45b9af265be272216331b90c20e805b203903ed0ad21.js
     body_required: true
 - http_response:
@@ -9037,7 +9073,7 @@ scriptings:
 - http_response:
     name: 微信-响应
     match: (?i)^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/575593d5523fc66931ec7247a5550223565207fdfcff45684fe59e5cdb0471ac.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/95f65ee3cc4c4b84114aa83853449dfefbb2bde50d40bcc43fa520551fe29454.js
     body_required: true
 - http_response:
     name: 微信-响应
@@ -9057,7 +9093,7 @@ scriptings:
 - http_response:
     name: Keep / 1
     match: (?:^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$)|(?:^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic)|(?:^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/course)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e09eacf7a4f5213377d4134b4d600b29e1957c852d24afdf13bd413d461494bb.js
     body_required: true
     update_interval: 86400
 - http_response:
@@ -9105,9 +9141,10 @@ scriptings:
 - http_response:
     name: 航旅纵横 / 1
     match: ^https:\/\/(?:sns|appmsg|home|umehome|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|user|umeuser|event)\.umetrip\.com\/gateway\/api\/umetrip\/native(?:\?.*)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2a050507866720b5d04f112d8040fa0dc59bba74ebb09432ea3e304e81b056f6.js
     body_required: true
     update_interval: 86400
+    binary_body: true
 - http_request:
     name: 航旅纵横 / tiny GIF
     match: ^https:\/\/oss\.umetrip\.com\/fs\/advert\/

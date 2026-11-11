@@ -57,3 +57,5 @@ jobs:
       - run: python curated/tools/check_adblock_collection.py
       - run: python curated/tools/check_hub_resources.py
       - run: node curated/tools/test_service_diagnostics.cjs
+      - run: node curated/tools/test_umetrip_runtime.cjs
+      - run: node curated/tools/test_text_response_runtime.cjs

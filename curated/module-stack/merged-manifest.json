@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "e656ab996d215c79759373f37005d3f5c6a2c4cd2a25f284df10678cfbd42955",
+  "sha256": "da457ad26da4e51ac9552aa9e09fa98307ecf098609cedd88a75a74b2eddbdd9",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -269,7 +269,7 @@
       "app": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
       "repository_path": "curated/module-stack/modules/native-005.yaml",
-      "sha256": "b4d7e34e5eadfaacd2fe5a87224139e7d3e4b0c9bb2d53574f177fe1a8c9de92",
+      "sha256": "1f71b0392cba3ed5a72c173d79daab5a0d3c33ba431525f6dbb668a73318163e",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
     },
     {
@@ -325,7 +325,7 @@
       "app": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "5f030c8f5ab83f5873dcbc97656601588f94735e65e4e2903ec444330ecd16e7",
+      "sha256": "2f8e0f68a6e082aa1edfeb96c218266b6fb3e72b0f305bf0b99eb68bb90ff90a",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
     },
     {
@@ -346,7 +346,7 @@
       "app": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
       "repository_path": "curated/module-stack/modules/native-020.yaml",
-      "sha256": "c9deaeee8d3ed9e47fe000e297bb80bb5497e17ffe2861ffb934c57bdd5fe2d0",
+      "sha256": "4916afb0851faf037854b2b1c5d88498d1ff3c7bd30dd0e53dd992ff4c2a2989",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png"
     },
     {
@@ -367,7 +367,7 @@
       "app": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-023.yaml",
       "repository_path": "curated/module-stack/modules/native-023.yaml",
-      "sha256": "4e1bed05776878db8f4cc4c3360441000557566ce97bd63a9612448a429c27c1",
+      "sha256": "24de1ece8f1caa884a210a74f6cd0087432a19485c1cdb3f311bac6f27ba1111",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png"
     },
     {
@@ -647,7 +647,7 @@
       "app": "微信本体",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-068.yaml",
       "repository_path": "curated/module-stack/modules/native-068.yaml",
-      "sha256": "9852f3efaa2a84ae2ddaef16f5fdaf3a4bc8a7153a4f687ea02fb55ecb948129",
+      "sha256": "2d956ad6888e1e9b462a43962008ff2bfc2ba2db42a0dba296d5779cd8b375e0",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
     },
     {
@@ -675,7 +675,7 @@
       "app": "Keep",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-021.yaml",
       "repository_path": "curated/module-stack/modules/user-021.yaml",
-      "sha256": "31056d58624b20c9f74570c7a741650dd76fdd92018d4d873f098570557889f0",
+      "sha256": "06a1e0568f64a3b862163b83dffd94216c012b8873f6937675b13a06aafa3a56",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png"
     },
     {
@@ -829,14 +829,14 @@
       "app": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-007.yaml",
       "repository_path": "curated/module-stack/modules/user-007.yaml",
-      "sha256": "ab5d9ad2a99c845340fe00a30ddfcf65e1d5c95d8cb4d668f3dc5dd07a665d85",
+      "sha256": "d63b97aec171a8e48a8d0abdf760f8438407e4f84c1e160dc66adbb9beda36be",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"
     },
     {
       "app": "菜鸟",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-080.yaml",
       "repository_path": "curated/module-stack/modules/native-080.yaml",
-      "sha256": "044f4b345fb1be0d91b0a34f723fa1473237d842b2f2e7decc7376824833fd32",
+      "sha256": "3d2351b71b4c745a0eeeacf87893c67882cfd945820cc529a2aa6a1813557be8",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png"
     },
     {
@@ -878,7 +878,7 @@
       "app": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
       "repository_path": "curated/module-stack/modules/native-083.yaml",
-      "sha256": "ca5f62674d0100871f09fc0a4eb18ae4d07a8a41216ebd7fff86117055f2fc27",
+      "sha256": "2216028808a3a0e309ea9c3ff11ed74ac7609e162f628cd184244469deb2285a",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
     },
     {
@@ -2229,10 +2229,10 @@
     }
   ],
   "counts": {
-    "rules": 770,
-    "url_rewrites": 2,
+    "rules": 769,
+    "url_rewrites": 3,
     "header_rewrites": 0,
-    "body_rewrites": 373,
+    "body_rewrites": 374,
     "map_locals": 595,
     "scriptings": 175
   },
@@ -6498,5 +6498,13 @@
   ],
   "runtime_verified": false,
   "scope": "Full selected standalone sources plus reviewed disjoint App extensions. Exact duplicate checks and conservative host gating do not prove arbitrary regex non-overlap. Aggregate stays disabled in the per-App delivery profile to prevent double processing. Main profile MITM excludes and priority protections are required.",
-  "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
+  "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png",
+  "targeted_runtime_repairs": [
+    "user-007: binary protobuf adapter",
+    "native-020: inline original homepage jq",
+    "native-068: Cotti response status adapter",
+    "user-021: Keep JSON passthrough adapter",
+    "大众点评：开屏与运营模块用原生 URL 拒绝，避开前置域名分流",
+    "网易云音乐：本地广告响应与 OCPC 正文改写各自独立"
+  ]
 }

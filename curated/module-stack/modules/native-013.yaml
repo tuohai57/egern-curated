@@ -87,7 +87,7 @@ rules:
 url_rewrites: []
 body_rewrites:
 - response_jq:
-    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/
+    match: (?i)^https?:\/\/interface\d?\.music\.163\.com\/e?api\/ocpc\/ad\/
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
       . as $__egern_original_json\n| try (([ (\n. = {}\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\

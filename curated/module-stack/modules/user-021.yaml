@@ -26,7 +26,7 @@ scriptings:
 - http_response:
     name: Keep / 1
     match: (?:^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$)|(?:^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic)|(?:^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/course)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e09eacf7a4f5213377d4134b4d600b29e1957c852d24afdf13bd413d461494bb.js
     body_required: true
     update_interval: 86400
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png

@@ -28,8 +28,31 @@ body_rewrites:
       \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/homepage-api\.smzdm\.com\/v3\/home\?
-    filter: .
-    disabled: true
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n# 如果\"data.component[*].zz_content[*].ad_campaign_id\"\
+      的字符串值是有效的，则删除\"data.component[*].zz_content[*].ad_campaign_id\"所在的对象\n# 如果\"\
+      data.component[*].zz_content[*].tag\"的字符串值是有效的，则删除\"data.component[*].zz_content[*].tag\"\
+      所在的对象\n# 如果\"data.component[*].zz_content[*].model_type\"的值是字符串类型的\"ads\"则删除\"\
+      data.component[*].zz_content[*].model_type\"所在的对象\n.data.component |= map(\n\
+      \  # 仅当 zz_content 是数组时执行过滤\n  if (.zz_content | type) == \"array\" then\n \
+      \   .zz_content |= map(\n      select(\n        ( (.ad_campaign_id? | type ==\
+      \ \"string\" and length > 0) // false ) or\n        ( (.tag? | type == \"string\"\
+      \ and length > 0) // false ) or\n        ( (.model_type? == \"ads\" and (type\
+      \ == \"string\")) // false )\n        | not\n      )\n    )\n  else . end\n\
+      )\n\n# 如果\"data.component[*].zz_type\"存在，且字符串的值不是\"circular_banner\"或\"filter\"\
+      或\"list\"，则删除\"data.component[*].zz_type\"所在的对象\n| .data.component |= map(\n\
+      \  select(.zz_type == \"circular_banner\" or .zz_type == \"filter\" or .zz_type\
+      \ == \"list\")\n)\n\n# 如果\"data.component[*].zz_content\"数组中，\"article_channel_type\"\
+      的值是字符串类型的\"questionnaire\"时，则删除\"data.component[*].zz_content[*].article_channel_type\"\
+      所在的对象。\n| .data.component |= map(\n  .zz_content |= (\n    if type == \"array\"\
+      \ then\n      map(\n        if type == \"object\" and (.article_channel_type\
+      \ // \"\") == \"questionnaire\" then\n          empty\n        else\n      \
+      \    .\n        end\n      )\n    else\n      .\n    end\n  )\n)\n\n# 移除首页主题皮肤背景\n\
+      # 删除\"data.theme\"\n| del(.data.theme)\n\n# 遍历\"data.component\"数组并安全删除\"circular_banner_option\"\
+      \n| .data.component |= map(\n  if .zz_content | type == \"object\" then\n  \
+      \  .zz_content |= del(.circular_banner_option)\n  else\n    .\n  end\n)\n) ])\
+      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
+      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/haojia-api\.smzdm\.com\/home\/list\?
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\

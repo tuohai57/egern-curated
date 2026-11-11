@@ -2,7 +2,9 @@ name: 大众点评
 description: 某些APP要清除缓存或者重新安装拦截广告才会生效！
 author: 奶思
 homepage: https://github.com/fmz200/wool_scripts
-url_rewrites: []
+url_rewrites:
+- match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?:indexopsmodules|loadsplashconfig)(?:\?[^#]*)?$
+  location: http://reject/
 map_locals:
 - match: ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex
   status_code: 200
@@ -49,9 +51,6 @@ rules:
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/catdot\.dianping\.com\/broker-service\/hijack
-    policy: REJECT
-- url_regex:
-    match: ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig)
     policy: REJECT
 - url_regex:
     match: ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction

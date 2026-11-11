@@ -268,7 +268,7 @@ scriptings:
 - http_response:
     name: 微信-响应
     match: (?i)^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/575593d5523fc66931ec7247a5550223565207fdfcff45684fe59e5cdb0471ac.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/95f65ee3cc4c4b84114aa83853449dfefbb2bde50d40bcc43fa520551fe29454.js
     body_required: true
 - http_response:
     name: 微信-响应

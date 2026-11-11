@@ -96,6 +96,31 @@ request if ${url} ~= /^https:\/\/t\.me\/(\w+)$/ as item then redirect(307, "${ap
         self.assertTrue(pattern.startswith('(?im)'))
         self.assertEqual(tail,'then reject_dict(200)')
 
+    def test_empty_jq_does_not_replace_the_comment_filter(self):
+        obj,notes=self.convert(r'''[Rewrite]
+response if ${url} ~= /comments/ then response.json.jq("")
+response if ${url} ~= /comments/ then response.json.jq(".cards |= map(select(has(\"alias_name\")))")
+''')
+        self.assertEqual(notes[-1]['unsupported_lines'], 0)
+        self.assertEqual(len(obj['body_rewrites']), 1)
+        expr=obj['body_rewrites'][0]['response_jq']['filter']
+        self.assertEqual(self.run_jq(expr, {'cards':[{'alias_name':'content'},{'ad':1}]}),
+                         {'cards':[{'alias_name':'content'}]})
+
+    def test_transparent_url_rewrite_keeps_capture_without_redirect(self):
+        import re
+        obj,notes=self.convert(r'''[Rewrite]
+request if ${url} ~= /^https:\/\/\w+-spclient\.spotify\.com\/artist\/(.*)&platform=iphone/i as urlMatch then url.replace("https://spclient.wg.spotify.com/artist/${urlMatch.1}&platform=ipad")
+''')
+        fields=obj['url_rewrites'][0]
+        self.assertNotIn('status_code',fields)
+        match=re.compile(fields['match'])
+        self.assertEqual(match.sub(fields['location'].replace('$1',r'\g<1>'),
+                                   'https://a-spclient.spotify.com/artist/17?q=1&platform=iphone'),
+                         'https://spclient.wg.spotify.com/artist/17?q=1&platform=ipad')
+        self.assertFalse(match.search('https://a-spclient.spotify.com/album/17?q=1&platform=iphone'))
+        self.assertEqual(notes[-1]['unsupported_lines'],0)
+
     def test_unknown_operation_is_not_misreported_as_success(self):
         obj,notes=self.convert('[Rewrite]\nrequest if ${url} ~= /example/ then imaginary.action("x")')
         self.assertEqual(notes[-1]['converted_lines'],0)

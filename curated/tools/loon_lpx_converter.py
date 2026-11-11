@@ -187,7 +187,11 @@ def convert_lpx(text, name, dependency, binary_local, resource, argument_adapter
                         fields['disabled'] = True
                     add('scriptings', {'http_'+phase: fields})
                 elif action in {'response.json.jq', 'request.json.jq'}:
-                    jq(phase, match, literal(arguments))
+                    expression = literal(arguments)
+                    if expression.strip():
+                        jq(phase, match, expression)
+                    else:
+                        notes.append({'kind':'empty_lpx_jq_no_transform','line':number})
                 elif action in {'response.json.jq_file', 'request.json.jq_file'}:
                     jq(phase, match, resource(literal(arguments)).decode('utf-8-sig'))
                 elif action.endswith('.json.delete'):
@@ -231,13 +235,17 @@ def convert_lpx(text, name, dependency, binary_local, resource, argument_adapter
                 elif action == 'response.header.add':
                     key, value = map(literal, parts)
                     add('header_rewrites', {'add':{'match':match,'name':key,'value':value,'type':'response'}})
-                elif action == 'redirect':
-                    status, location = map(literal, parts)
+                elif action in {'redirect', 'url.replace'}:
+                    assert phase == 'request', 'URL rewrite must act on the request'
+                    status, location = tuple(map(literal, parts)) if action == 'redirect' else (None, literal(arguments))
                     if alias:
                         location = re.sub(r'\$\{'+re.escape(alias)+r'\.(\d+)\}', r'$\1', location)
                     location = re.sub(r'\$\{([^}]+)\}', lambda m: str(values[m[1]]) if m[1] in values else m[0], location)
                     assert '${' not in location, 'Unresolved redirect template'
-                    add('url_rewrites', {'match':match,'location':location,'status_code':status})
+                    fields = {'match':match,'location':location}
+                    if status is not None:
+                        fields['status_code'] = status
+                    add('url_rewrites', fields)
                 elif action in {'response.body.replace','request.body.replace'}:
                     find, rest = regexp(arguments)
                     assert rest.startswith(',')

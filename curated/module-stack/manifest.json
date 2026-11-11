@@ -8,7 +8,7 @@
       "name": "综合去广告合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
       "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-      "sha256": "e656ab996d215c79759373f37005d3f5c6a2c4cd2a25f284df10678cfbd42955",
+      "sha256": "da457ad26da4e51ac9552aa9e09fa98307ecf098609cedd88a75a74b2eddbdd9",
       "enabled": true,
       "update_interval": 86400,
       "included_modules": [
@@ -93,10 +93,10 @@
         "广告拦截&净化合集"
       ],
       "counts": {
-        "rules": 770,
-        "url_rewrites": 2,
+        "rules": 769,
+        "url_rewrites": 3,
         "header_rewrites": 0,
-        "body_rewrites": 373,
+        "body_rewrites": 374,
         "map_locals": 595,
         "scriptings": 175
       },
@@ -110,7 +110,15 @@
         }
       ],
       "scope": "Primary native stack; reviewed requested alternatives remain in module-stack assets and are disabled when an owner exists.",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png",
+      "targeted_runtime_repairs": [
+        "user-007: binary protobuf adapter",
+        "native-020: inline original homepage jq",
+        "native-068: Cotti response status adapter",
+        "user-021: Keep JSON passthrough adapter",
+        "大众点评：开屏与运营模块用原生 URL 拒绝，避开前置域名分流",
+        "网易云音乐：本地广告响应与 OCPC 正文改写各自独立"
+      ]
     },
     {
       "name": "高德地图",
@@ -43117,12 +43125,12 @@
       "name": "爱奇艺",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-089.yaml",
       "repository_path": "curated/module-stack/modules/kelee-089.yaml",
-      "sha256": "79e24d0bb599248effb09067a85ba6049515adf8162a2ba4b1333a19335cce4a",
+      "sha256": "b35be78388f20aaa4c11f9d5b09b04bfb356095328f9837fe78d556c9493b21e",
       "counts": {
         "rules": 6,
         "url_rewrites": 0,
         "header_rewrites": 0,
-        "body_rewrites": 13,
+        "body_rewrites": 12,
         "map_locals": 3,
         "scriptings": 0
       },
@@ -43147,11 +43155,6 @@
           "unsupported_lines": 0,
           "argument_defaults": {},
           "runtime_verified": false
-        },
-        {
-          "kind": "invalid_jq_disabled",
-          "original_filter": "()",
-          "match": "(?i)^https:\\/\\/comment-card\\.iqiyi\\.com\\/views_comment\\/3\\.0\\/long_video_comments\\?"
         },
         {
           "kind": "consecutive_identical_handlers_unified",
@@ -43240,9 +43243,13 @@
           "phase": "response_jq",
           "match": "(?i)^https?:\\/\\/iface2\\.iqiyi\\.com\\/aggregate\\/3\\.0\\/getMyMenus\\?",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "empty_lpx_jq_no_transform",
+          "line": 36
         }
       ],
-      "compatibility_complete": false,
+      "compatibility_complete": true,
       "mirror_url": "https://raw.githubusercontent.com/ifflagged/Romeo/main/Modules/Loon/Kelee/iQiYi_Video_remove_ads.lpx",
       "runtime_verified": false,
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/aqiyi.png"
@@ -43528,10 +43535,10 @@
       "name": "Spotify",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-095.yaml",
       "repository_path": "curated/module-stack/modules/kelee-095.yaml",
-      "sha256": "fb2d659d9c1a0f304c50dd6bf0c7ed3119f9eedf9685db80858df18fd500aea6",
+      "sha256": "c1b2145217dbfdf040fda943186fd688b1bdf78aebd28c7556eb0820978569c5",
       "counts": {
         "rules": 1,
-        "url_rewrites": 0,
+        "url_rewrites": 1,
         "header_rewrites": 0,
         "body_rewrites": 0,
         "map_locals": 1,
@@ -43552,12 +43559,6 @@
           "source_blob_sha": "b7b2a32175bfcf3a63686799f4da2362f55e260e"
         },
         {
-          "kind": "unsupported_lpx_operation",
-          "line": 23,
-          "source": "request if ${url} ~= /^https:\\/\\/(?:\\w+-spclient|spclient\\.wg)\\.spotify\\.com(?::443)?\\/artistview\\/v1\\/artist\\/(.*)&platform=iphone/i as urlMatch then url.replace(\"https://spclient.wg.spotify.com/artistview/v1/artist/${urlMatch.1}&platform=ipad\")",
-          "reason": "Unsupported action url.replace"
-        },
-        {
           "kind": "lpx_parse_totals",
           "recognized_lines": 5,
           "converted_lines": 4,
@@ -43573,9 +43574,13 @@
           "previous": "QUIC",
           "match": "quic",
           "reference": "https://egernapp.com/zh-CN/docs/configuration/rules"
+        },
+        {
+          "kind": "transparent_lpx_url_replacement_restored",
+          "source": "request if ${url} ~= /^https:\\/\\/(?:\\w+-spclient|spclient\\.wg)\\.spotify\\.com(?::443)?\\/artistview\\/v1\\/artist\\/(.*)&platform=iphone/i as urlMatch then url.replace(\"https://spclient.wg.spotify.com/artistview/v1/artist/${urlMatch.1}&platform=ipad\")"
         }
       ],
-      "compatibility_complete": false,
+      "compatibility_complete": true,
       "mirror_url": "https://raw.githubusercontent.com/ifflagged/Romeo/main/Modules/Loon/Kelee/Spotify_remove_ads.lpx",
       "runtime_verified": false,
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Spotify.png"
@@ -44177,7 +44182,7 @@
       "name": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-005.yaml",
       "repository_path": "curated/module-stack/modules/native-005.yaml",
-      "sha256": "b4d7e34e5eadfaacd2fe5a87224139e7d3e4b0c9bb2d53574f177fe1a8c9de92",
+      "sha256": "1f71b0392cba3ed5a72c173d79daab5a0d3c33ba431525f6dbb668a73318163e",
       "counts": {
         "rules": 13,
         "url_rewrites": 1,
@@ -44711,6 +44716,14 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(?:\\/answers|\\/feeds|\\?include=)",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "知乎：回答流只运行一个组合改写"
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "知乎：悬浮横幅由相同的商业接口本地响应统一处理"
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
@@ -46277,7 +46290,7 @@
       "name": "网易云音乐",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-013.yaml",
       "repository_path": "curated/module-stack/modules/native-013.yaml",
-      "sha256": "5f030c8f5ab83f5873dcbc97656601588f94735e65e4e2903ec444330ecd16e7",
+      "sha256": "2f8e0f68a6e082aa1edfeb96c218266b6fb3e72b0f305bf0b99eb68bb90ff90a",
       "counts": {
         "rules": 9,
         "url_rewrites": 0,
@@ -46392,6 +46405,10 @@
           "phase": "response_jq",
           "match": "(?i)^https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/search\\/default",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "网易云音乐：本地广告响应与 OCPC 正文改写各自独立"
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
@@ -46974,7 +46991,7 @@
       "name": "什么值得买",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-020.yaml",
       "repository_path": "curated/module-stack/modules/native-020.yaml",
-      "sha256": "c9deaeee8d3ed9e47fe000e297bb80bb5497e17ffe2861ffb934c57bdd5fe2d0",
+      "sha256": "4916afb0851faf037854b2b1c5d88498d1ff3c7bd30dd0e53dd992ff4c2a2989",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -47078,11 +47095,6 @@
           "kind": "pseudo_redirect_to_native_response",
           "match": "(?i)^https:\\/\\/s-api\\.smzdm\\.com\\/sou\\/popup_coupon\\?",
           "old": "http://reject-dict/"
-        },
-        {
-          "kind": "invalid_jq_disabled",
-          "original_filter": "jq-path=https://kelee.one/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq",
-          "match": "(?i)^https:\\/\\/homepage-api\\.smzdm\\.com\\/v3\\/home\\?"
         },
         {
           "kind": "same_app_same_selector_jq_composed",
@@ -47189,9 +47201,17 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/qianbao\\.smzdm\\.com\\/v\\d\\/app\\/home",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "external_original_jq_inlined",
+          "source_url": "https://raw.githubusercontent.com/ifflagged/Romeo/main/Modules/JavaScript/Kelee/smzdm_remove_ads/kelee_home_smzdm_remove_ads.jq",
+          "source_sha256": "3de9198beea48ef56bd0cb948fbfc6ca592348e0d3633a75d422ef7a63f08b0a",
+          "archive": "curated/module-stack/originals/3de9198beea48ef56bd0cb948fbfc6ca592348e0d3633a75d422ef7a63f08b0a.jq",
+          "match": "(?i)^https:\\/\\/homepage-api\\.smzdm\\.com\\/v3\\/home\\?"
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiDeMai.png",
+      "compatibility_complete": true
     },
     {
       "name": "滴滴",
@@ -47709,7 +47729,7 @@
       "name": "YouTube",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-023.yaml",
       "repository_path": "curated/module-stack/modules/native-023.yaml",
-      "sha256": "4e1bed05776878db8f4cc4c3360441000557566ce97bd63a9612448a429c27c1",
+      "sha256": "24de1ece8f1caa884a210a74f6cd0087432a19485c1cdb3f311bac6f27ba1111",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -47780,6 +47800,10 @@
           "source_match": "(?i)^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/(player|get_watch)(\\?[^#]*)?$|^https:\\/\\/(?:youtubei(?:-att)?\\.googleapis\\.com|(?:www\\.|m\\.|music\\.)?youtube\\.com)\\/youtubei\\/v1\\/reel\\/reel_watch_sequence(?:\\?[^#]*)?$",
           "source_name": "YouTube-响应",
           "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "YouTube：播放请求保留一条同脚本同参数绑定"
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png"
@@ -52426,7 +52450,7 @@
       "name": "微信",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-068.yaml",
       "repository_path": "curated/module-stack/modules/native-068.yaml",
-      "sha256": "9852f3efaa2a84ae2ddaef16f5fdaf3a4bc8a7153a4f687ea02fb55ecb948129",
+      "sha256": "2d956ad6888e1e9b462a43962008ff2bfc2ba2db42a0dba296d5779cd8b375e0",
       "counts": {
         "rules": 39,
         "url_rewrites": 0,
@@ -53763,6 +53787,11 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/chong\\.qq\\.com\\/tws\\/usernumberinfo\\/GetUserInfo\\?",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "text_response_noop_passthrough",
+          "upstream_sha256": "575593d5523fc66931ec7247a5550223565207fdfcff45684fe59e5cdb0471ac",
+          "original_script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/575593d5523fc66931ec7247a5550223565207fdfcff45684fe59e5cdb0471ac.js"
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeChat.png"
@@ -54466,7 +54495,7 @@
       "name": "菜鸟去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-080.yaml",
       "repository_path": "curated/module-stack/modules/native-080.yaml",
-      "sha256": "044f4b345fb1be0d91b0a34f723fa1473237d842b2f2e7decc7376824833fd32",
+      "sha256": "3d2351b71b4c745a0eeeacf87893c67882cfd945820cc529a2aa6a1813557be8",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -54557,6 +54586,10 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/netflow-mtop\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.guoguo\\.nbnetflow\\.ads",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "菜鸟：共享首页范围与 .cn 首页的处理按顺序合成"
         }
       ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png"
@@ -54682,10 +54715,10 @@
       "name": "大众点评",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-083.yaml",
       "repository_path": "curated/module-stack/modules/native-083.yaml",
-      "sha256": "ca5f62674d0100871f09fc0a4eb18ae4d07a8a41216ebd7fff86117055f2fc27",
+      "sha256": "2216028808a3a0e309ea9c3ff11ed74ac7609e162f628cd184244469deb2285a",
       "counts": {
-        "rules": 13,
-        "url_rewrites": 0,
+        "rules": 12,
+        "url_rewrites": 1,
         "header_rewrites": 0,
         "body_rewrites": 0,
         "map_locals": 4,
@@ -54794,6 +54827,10 @@
           "source_match": "^https?:\\/\\/p\\d\\.meituan\\.net\\/travelcube\\/(?!c129a661)\\w+\\.gif",
           "source_name": null,
           "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "reviewed_url_ownership",
+          "change": "大众点评：开屏与运营模块用原生 URL 拒绝，避开前置域名分流"
         }
       ],
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
@@ -85194,7 +85231,7 @@
       "name": "航旅纵横",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-007.yaml",
       "repository_path": "curated/module-stack/modules/user-007.yaml",
-      "sha256": "ab5d9ad2a99c845340fe00a30ddfcf65e1d5c95d8cb4d668f3dc5dd07a665d85",
+      "sha256": "d63b97aec171a8e48a8d0abdf760f8438407e4f84c1e160dc66adbb9beda36be",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -85211,7 +85248,13 @@
       "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3cccaa989561a1a3b9c60b8abc33e331c30ac7b41dab095d61cda45e7f698324.txt",
       "author_family": "ddgk",
       "role": "advertising",
-      "changes": [],
+      "changes": [
+        {
+          "kind": "umetrip_egern_binary_passthrough",
+          "upstream_sha256": "f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e",
+          "original_script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f1a37c300126b1bd64451261207a9166ee2aad77a3e79705a0f5c24229aef46e.js"
+        }
+      ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"
     },
     {
@@ -86105,7 +86148,7 @@
       "name": "Keep",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-021.yaml",
       "repository_path": "curated/module-stack/modules/user-021.yaml",
-      "sha256": "31056d58624b20c9f74570c7a741650dd76fdd92018d4d873f098570557889f0",
+      "sha256": "06a1e0568f64a3b862163b83dffd94216c012b8873f6937675b13a06aafa3a56",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -86210,6 +86253,11 @@
           "source_match": "^https?:\\/\\/api\\.gotokeep\\.com\\/twins\\/v4\\/feed\\/course",
           "source_name": "Keep / 3",
           "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "text_response_noop_passthrough",
+          "upstream_sha256": "199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332",
+          "original_script_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332.js"
         }
       ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png"
@@ -87089,8 +87137,291 @@
         }
       ],
       "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
+    },
+    {
+      "name": "阿里巴巴",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-1688.yaml",
+      "repository_path": "curated/module-stack/modules/paired-1688.yaml",
+      "sha256": "bae6ca0e580633321dafd75bc5eca328d9a5aa567c32fc9522e4810ae2067507",
+      "counts": {
+        "rules": 0,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 0,
+        "map_locals": 3,
+        "scriptings": 1
+      },
+      "mitm_hosts": 4,
+      "enabled": false,
+      "app": "1688",
+      "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/app-1688.yaml",
+      "source_sha256": "df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634.txt",
+      "author_family": "fmz",
+      "role": "advertising",
+      "changes": [
+        {
+          "kind": "standalone_original_scope_restored",
+          "source_sha256": "df4d656d258187bebb2c6cd5e8c8cf0a0075b99a18065e9546b7197f9459c634",
+          "cross_module_deduplication": false,
+          "cross_module_regex_exclusions": false,
+          "original_counts": {
+            "rules": 0,
+            "url_rewrites": 0,
+            "header_rewrites": 0,
+            "body_rewrites": 0,
+            "map_locals": 12,
+            "scriptings": 3
+          },
+          "previous_counts": {
+            "rules": 0,
+            "url_rewrites": 0,
+            "header_rewrites": 0,
+            "body_rewrites": 0,
+            "map_locals": 12,
+            "scriptings": 3
+          }
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alibaba\\.advertisementservice\\.getadv",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimama\\.etao\\.config\\.query\\/.+?etao_advertise",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimusic\\.common\\.mobileservice\\.startinit",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.etao\\.noah\\.query\\/.+tao_splash",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.film\\.mtopadvertiseapi\\.queryadvertise",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.o2o\\.ad\\.gateway\\.get",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.idle\\.home\\.welcome",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.trip\\.activity\\.querytmsresources",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(volvo\\.secondfloor\\.getconfig|wireless\\.home\\.newface\\.awesome\\.get)",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "shared_handler_ownership",
+          "companion": "native-025.yaml",
+          "source_retained": true
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg",
+      "companion": "native-025.yaml"
+    },
+    {
+      "name": "网易云svip会员（完全免费不要到处分享）",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/paired-music-member.yaml",
+      "repository_path": "curated/module-stack/modules/paired-music-member.yaml",
+      "sha256": "70a89a861e972251134072f718216b9de84fa380ff1d4149979f153698a79678",
+      "counts": {
+        "rules": 5,
+        "url_rewrites": 0,
+        "header_rewrites": 0,
+        "body_rewrites": 0,
+        "map_locals": 2,
+        "scriptings": 1
+      },
+      "mitm_hosts": 1,
+      "enabled": false,
+      "app": "网易云svip会员（完全免费不要到处分享）",
+      "source_url": "https://cdn.jsdelivr.net/gh/tuohai57/egern-modules@7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/modules2/module-netease-svip.yaml",
+      "source_sha256": "820148355c21820ef0da58c51a404916cee87cc26884e589f3be6249fc9cfbae",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/820148355c21820ef0da58c51a404916cee87cc26884e589f3be6249fc9cfbae.txt",
+      "author_family": "other",
+      "role": "function",
+      "changes": [
+        {
+          "kind": "standalone_original_scope_restored",
+          "source_sha256": "820148355c21820ef0da58c51a404916cee87cc26884e589f3be6249fc9cfbae",
+          "cross_module_deduplication": false,
+          "cross_module_regex_exclusions": false,
+          "original_counts": {
+            "rules": 6,
+            "url_rewrites": 5,
+            "header_rewrites": 0,
+            "body_rewrites": 0,
+            "map_locals": 7,
+            "scriptings": 8
+          },
+          "previous_counts": {
+            "rules": 0,
+            "url_rewrites": 5,
+            "header_rewrites": 0,
+            "body_rewrites": 0,
+            "map_locals": 7,
+            "scriptings": 8
+          }
+        },
+        {
+          "kind": "pseudo_redirect_to_native_response",
+          "match": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/get",
+          "old": "http://reject/"
+        },
+        {
+          "kind": "pseudo_redirect_to_native_response",
+          "match": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/config/get",
+          "old": "http://reject/"
+        },
+        {
+          "kind": "pseudo_redirect_to_native_response",
+          "match": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/iyunIds",
+          "old": "http://reject/"
+        },
+        {
+          "kind": "pseudo_redirect_to_native_response",
+          "match": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/prefetch/select",
+          "old": "http://reject/"
+        },
+        {
+          "kind": "pseudo_redirect_to_native_response",
+          "match": "^https?://interface.*\\.music\\.163\\.com/eapi/ad/loading/current",
+          "old": "http://reject/"
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/(?:community\\/friends\\/fans-group\\/artist\\/group\\/|mine\\/applet\\/redpoint|music\\/songshare\\/text\\/recommend\\/|resniche\\/position\\/play\\/new\\/|resniche\\/tspopup\\/show|resource\\/comments?\\/musiciansaid\\/|user\\/sub\\/artist)",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/(?:ios\\/version|mlivestream\\/entrance\\/playpage\\/|link\\/position\\/show\\/strategy|link\\/scene\\/show\\/resource|v1\\/content\\/exposure\\/comment\\/banner\\/)",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "map_locals",
+          "phase": "map_locals",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/w?eapi\\/(?:activity\\/bonus\\/playpage\\/time\\/query|resource-exposure\\/|search\\/(?:chart\\/|rcmd\\/keyword\\/|specialkeyword\\/))",
+          "source_name": null,
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/search\\/(?:complex\\/page|complex\\/rec\\/song\\/get|song\\/list\\/page)",
+          "source_name": "歌曲、听书",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/v3\\/song\\/detail",
+          "source_name": "歌曲、听书",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/song\\/(?:chorus|enhance\\/|play\\/|type\\/detail\\/get)",
+          "source_name": "歌曲、听书",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/(?:v1\\/artist\\/top\\/song|v3\\/discovery\\/recommend\\/songs)",
+          "source_name": "歌曲、听书",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/vipnewcenter\\/app\\/resource\\/newaccountpage",
+          "source_name": "等级",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/w?e?api\\/(homepage\\/|v6\\/)?playlist\\/(?!(?:delete|subscribe|unsubscribe))",
+          "source_name": "首页歌单",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "consecutive_identical_handlers_unified",
+          "section": "scriptings",
+          "phase": "http_request",
+          "source_match": "^https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/vipauth\\/app\\/auth\\/(soundquality\\/)?query",
+          "source_name": "音质",
+          "upstream_script_bytes_changed": false
+        },
+        {
+          "kind": "shared_handler_ownership",
+          "companion": "native-013.yaml",
+          "source_retained": true
+        }
+      ],
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png",
+      "companion": "native-013.yaml"
     }
   ],
-  "module_count": 697,
+  "module_count": 699,
   "enabled_default": 1
 }
