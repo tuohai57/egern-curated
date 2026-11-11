@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "da457ad26da4e51ac9552aa9e09fa98307ecf098609cedd88a75a74b2eddbdd9",
+  "sha256": "c1320d25ddaa2d620e9c37e247165f67caf8de04829981dc0ff19d2d6a1aab9e",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -288,9 +288,9 @@
     },
     {
       "app": "闲鱼",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-014.yaml",
-      "repository_path": "curated/module-stack/modules/user-014.yaml",
-      "sha256": "771e074268a18d1a95b732dad9f46d04e4dff4e526b9b705770937f4315a4674",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-044.yaml",
+      "repository_path": "curated/module-stack/modules/kelee-044.yaml",
+      "sha256": "8959a4ee0fc12103e15d8542895ee2cae05f5fd3ffe317968f3ae9bb6bd906dd",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png"
     },
     {
@@ -318,7 +318,7 @@
       "app": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Amap.yaml",
       "repository_path": "curated/module-stack/modules/app-Amap.yaml",
-      "sha256": "486695a2e2adf2f444a5d9aea2ef094ae664238c6b2dab280212437767d6598f",
+      "sha256": "364be3ae8f9e71c6012013219fec30fd0fdbe6f7a6cb7d4f465f5858e2f1cdd3",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png"
     },
     {
@@ -465,7 +465,7 @@
       "app": "懂车帝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Dcar.yaml",
       "repository_path": "curated/module-stack/modules/app-Dcar.yaml",
-      "sha256": "3856ae8b04af368961e6338c697d26e8dacb3dc340302892d5f004e38d9af90b",
+      "sha256": "31c476dd925d5001efbf17ebad1aa654b5372c00bbdaca4102ae8757e62c4aec",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6e/2a/81/6e2a81b3-80bd-1d66-91bf-f1e02af10a29/DCDAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
     },
     {
@@ -591,7 +591,7 @@
       "app": "铁路12306",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
       "repository_path": "curated/module-stack/modules/native-056.yaml",
-      "sha256": "b65469e26834baece621dab1684dd462b1e062462c8b23bd3202ff30eb6d0463",
+      "sha256": "adefcafc6e3dc9240991d6d0f157acd808e898d1e1d2b83e61c2090186baa28a",
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"
     },
     {
@@ -2232,9 +2232,9 @@
     "rules": 769,
     "url_rewrites": 3,
     "header_rewrites": 0,
-    "body_rewrites": 374,
+    "body_rewrites": 380,
     "map_locals": 595,
-    "scriptings": 175
+    "scriptings": 173
   },
   "mitm_hosts": 744,
   "changes": [
@@ -6505,6 +6505,13 @@
     "native-068: Cotti response status adapter",
     "user-021: Keep JSON passthrough adapter",
     "大众点评：开屏与运营模块用原生 URL 拒绝，避开前置域名分流",
-    "网易云音乐：本地广告响应与 OCPC 正文改写各自独立"
+    "网易云音乐：本地广告响应与 OCPC 正文改写各自独立",
+    "Amap native jq splash timers",
+    "Dcar native response and labeled feed ads",
+    "12306 header-only native request",
+    "12306 bounded ad endpoint and preserve errors",
+    "Amap exact m5 splash path with optional query",
+    "Amap exact old splash paths",
+    "Goofish aggregate owner switched; obsolete AMDC body script removed"
   ]
 }

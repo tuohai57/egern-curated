@@ -1,10 +1,10 @@
 name: 高德地图
-description: 基于可莉明文接口净化，保留其 JSON 处理与精简，补充墨鱼旧版开屏接口；需 iPhone 验证。
+description: 保留可莉应用内净化和精简，按墨鱼开屏逻辑改写广告展示时间；精确匹配已知开屏路径。
 author: tuohai57 / 可莉 / 墨鱼
 homepage: https://github.com/tuohai57/egern-curated
 icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png
 map_locals:
-- match: (?i:^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\?)
+- match: (?i:^https://m5\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?[^#]*)?$)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\?)
   status_code: 200
   body: '{}'
   headers:
@@ -24,7 +24,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: ^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen
+- match: ^https?://(?:amap-aos-info(?:-nogw)?|m5)\.amap\.com/ws/aos/alimama/splash_screen(?:_rt)?(?:\?[^#]*)?$
   status_code: 200
   body: ''
 mitm:
@@ -414,10 +414,19 @@ body_rewrites:
       ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
       \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
       \ $__egern_original_json"
-scriptings:
-- http_response:
-    name: 高德地图 / 2
-    match: (?i)^https?://amap-aos-info(?:-nogw)?\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
+- response_jq:
+    match: (?i)^https?://amap-aos-info(?:-nogw)?\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?[^#]*)?$
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif type == \"object\" and ((.data\
+      \ | type) == \"object\")\n   and ((.data.ad | type) == \"array\")\n   and ((.code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\n   and ((.status_code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\nthen\n  .data.ad\
+      \ |= map(\n    if type == \"object\" then\n      (if ((.set.setting | type)\
+      \ == \"object\") and (.set.setting | has(\"display_time\"))\n       then .set.setting.display_time\
+      \ = 0 else . end)\n      | (if ((.creative | type) == \"array\") and ((.creative[0]\
+      \ | type) == \"object\")\n         then .creative[0] |= (\n           (if has(\"\
+      start_time\") then .start_time = 2240150400 else . end)\n           | (if has(\"\
+      end_time\") then .end_time = 2240150400 else . end)\n         ) else . end)\n\
+      \    else . end)\nelse . end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"

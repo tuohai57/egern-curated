@@ -8,7 +8,7 @@
       "name": "综合去广告合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
       "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-      "sha256": "da457ad26da4e51ac9552aa9e09fa98307ecf098609cedd88a75a74b2eddbdd9",
+      "sha256": "c1320d25ddaa2d620e9c37e247165f67caf8de04829981dc0ff19d2d6a1aab9e",
       "enabled": true,
       "update_interval": 86400,
       "included_modules": [
@@ -96,9 +96,9 @@
         "rules": 769,
         "url_rewrites": 3,
         "header_rewrites": 0,
-        "body_rewrites": 374,
+        "body_rewrites": 380,
         "map_locals": 595,
-        "scriptings": 175
+        "scriptings": 173
       },
       "mitm_hosts": 744,
       "changes": [
@@ -107,6 +107,11 @@
           "match": "(?i)^https:\\/\\/(spclient\\.wg\\.spotify\\.com|.*-spclient\\.spotify\\.com(:443)?)\\/(bootstrap\\/v1\\/bootstrap|user-customization-service\\/v1\\/customize)(\\?.*)?$",
           "first": "Spotify",
           "second": "Spotify"
+        },
+        {
+          "kind": "reviewed_egern_app_rewrite",
+          "change": "sync matching selected rewrites",
+          "runtime_verified": false
         }
       ],
       "scope": "Primary native stack; reviewed requested alternatives remain in module-stack assets and are disabled when an owner exists.",
@@ -124,14 +129,14 @@
       "name": "高德地图",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Amap.yaml",
       "repository_path": "curated/module-stack/modules/app-Amap.yaml",
-      "sha256": "486695a2e2adf2f444a5d9aea2ef094ae664238c6b2dab280212437767d6598f",
+      "sha256": "364be3ae8f9e71c6012013219fec30fd0fdbe6f7a6cb7d4f465f5858e2f1cdd3",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
         "header_rewrites": 0,
-        "body_rewrites": 11,
+        "body_rewrites": 12,
         "map_locals": 5,
-        "scriptings": 1
+        "scriptings": 0
       },
       "mitm_hosts": 8,
       "enabled": false,
@@ -147,6 +152,11 @@
           "base": "kelee-074",
           "old_splash": "user-024",
           "runtime_verified": false
+        },
+        {
+          "kind": "reviewed_egern_app_rewrite",
+          "change": "native splash jq and exact local routes",
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png"
@@ -155,7 +165,7 @@
       "name": "懂车帝",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/app-Dcar.yaml",
       "repository_path": "curated/module-stack/modules/app-Dcar.yaml",
-      "sha256": "3856ae8b04af368961e6338c697d26e8dacb3dc340302892d5f004e38d9af90b",
+      "sha256": "31c476dd925d5001efbf17ebad1aa654b5372c00bbdaca4102ae8757e62c4aec",
       "counts": {
         "rules": 2,
         "url_rewrites": 0,
@@ -175,6 +185,11 @@
       "changes": [
         {
           "kind": "independent_ad_endpoint_adapter",
+          "runtime_verified": false
+        },
+        {
+          "kind": "reviewed_egern_app_rewrite",
+          "change": "native response with splash, timer and labeled feed filtering",
           "runtime_verified": false
         }
       ],
@@ -39113,7 +39128,7 @@
       "name": "闲鱼",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/kelee-044.yaml",
       "repository_path": "curated/module-stack/modules/kelee-044.yaml",
-      "sha256": "38c7cf4ee3bd65f949969c9327e5aff8c5ab4887aa21a0e3ca854e8014d243f4",
+      "sha256": "8959a4ee0fc12103e15d8542895ee2cae05f5fd3ffe317968f3ae9bb6bd906dd",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -39287,6 +39302,11 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.trade\\.full\\.info\\/",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "reviewed_egern_app_rewrite",
+          "change": "both idlecommerce splash hosts",
+          "runtime_verified": false
         }
       ],
       "compatibility_complete": true,
@@ -50585,7 +50605,7 @@
       "name": "12306去广告",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-056.yaml",
       "repository_path": "curated/module-stack/modules/native-056.yaml",
-      "sha256": "b65469e26834baece621dab1684dd462b1e062462c8b23bd3202ff30eb6d0463",
+      "sha256": "adefcafc6e3dc9240991d6d0f157acd808e898d1e1d2b83e61c2090186baa28a",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -50630,6 +50650,11 @@
           "phase": "response_jq",
           "match": "(?i)^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$",
           "successful_single_result_preserved": true
+        },
+        {
+          "kind": "reviewed_egern_app_rewrite",
+          "change": "header-only native request and guarded ad response",
+          "runtime_verified": false
         }
       ],
       "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"

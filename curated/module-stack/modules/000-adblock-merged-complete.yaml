@@ -2773,77 +2773,133 @@ body_rewrites:
       \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
       \  catch $__egern_original_json"
 - response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.user.strategy.list
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.strategies = [{}]\n) ]) as $__egern_results\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.homeTopList |= map(select(.sectionType\
+      \ == \"kingkongDo\")) | .data.sections |= map(select(.data.clickParam.args.cardType\
+      \ as $ct | $ct != \"homeMultiBanner\" and $ct != \"mamaAD\")) | .data.sections\
+      \ |= map(select((.template.name|type==\"string\")and(.template.name==\"idlefish_home_new_commodity_card\"\
+      or(.template.name|contains(\"fish_home_tags_item_card\"))))))\n) ]) as $__egern_results\n\
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
       \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.circle.list
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.widget\.refresh\.get\/
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.circleList |= map(select(.bizCode\
-      \ != \"saveMoney\"))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      . as $__egern_original_json\n| try (([ (\n(.data.homeTopList |= map(select(.sectionType\
+      \ == \"kingkongDo\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
       \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
       \ end)\n  catch $__egern_original_json"
 - response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.nextfresh
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.homeTopList |= [ .[0] ] | .data.sections\
-      \ |= map(select(.data.bizType == \"item\"))\n) ]) as $__egern_results\n    \
-      \   | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.shade
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.singleShadeWords =[{}]\n) ])\
-      \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
-      \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.item.search.activate
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.cardList = [{}]\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.discover
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.data.resultList)\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.user.page.my.adapter
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.ability=[] | .data.container.sections\
-      \ |= map(select(.sectionBizCode | test(\"head|user|trade\")))\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.buy.feeds
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.data.sections)\n) ]) as $__egern_results\n\
-      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
-      \ else $__egern_original_json end)\n  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.local.home
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.sections |= map(select(.data.bizType\
-      \ == \"item\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
-      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
-      \  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.resultList |= map(select(.data.item.main.clickParam.args.biz_type\
-      \ == \"item\"))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
-      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
-      \  catch $__egern_original_json"
-- response_jq:
-    match: ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.recommend
-    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\n.data.cardList |= map(select(.cardData.bizType\
-      \ != \"mamaAD\"))\n) ]) as $__egern_results\n       | if ($__egern_results |\
-      \ length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      . as $__egern_original_json\n| try (([ (\n(.data.container.sections |= map(select(.template.name\
+      \ == \"fish_home_miniapp\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
       \ end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.fun\.follow\.feed\.list\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.sections|=map(select(.cardType==2001)))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.community\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.feedsList |= map(select(.template.name\
+      \ == \"idlefish_home_new_commodity_card\" or .template.name == \"idlefish_home_new_content_card\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.newitem\.page\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.sections |= map(select(.data.clickParam.args.cardType\
+      \ as $ct | $ct != \"banner\" and $ct != \"mamaAD\")))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.data.components |= map(select(.data\
+      \ and (.data|type==\"object\") and .data.template and (.data.template|type==\"\
+      object\") and .data.template.name and (.data.template.name|type==\"string\"\
+      ) and (.data.template.name|contains(\"fish_city_kingkong\")))))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\.top\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.data.components |= map(select(.key\
+      \ == \"fish_home_second_stage_top_cardV3\")))\n) ]) as $__egern_results\n  \
+      \     | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.sections |= map(select((.template.cardEnum\
+      \ != \"ads\") and (.cardType == \"common\"))))\n) ]) as $__egern_results\n \
+      \      | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.container.sections |= map(select((.template.name?\
+      \ // \"\") | test(\"^my_fy[0-9]+_(header|user_info|trade|appraise|tools)$\"\
+      ))) | .data.container.sections |= map(.item |= (if .level and .level.exContent\
+      \ and (.level.exContent | has(\"tips\")) then del(.level) else . end)) | .data.container.sections\
+      \ |= map(if .sectionBizCode==\"entry2025\" then .item.tool.exContent.tools |=\
+      \ [[.[][] | select(.exContent.id as $id | $id==5 or $id==39 or $id==6 or $id==30\
+      \ or $id==29 or $id==2 or $id==32 or $id==3 or $id==1)] | sort_by(. as $item\
+      \ | ([5,39,6,30,29,2,32,3,1] | index($item.exContent.id))) | [range(0;length;5)\
+      \ as $i | .[$i:$i+5]]][] else . end) | del(.data.ability))\n) ]) as $__egern_results\n\
+      \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
+      \ else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.circleList[]?.showInfo |= del(.titleImage,\
+      \ .atmosphereImageUrl) | .data.next.headList |= map(select(.bizCode == \"main\"\
+      \ or .bizCode == \"market\" or .bizCode == \"IDLE_CIRCLE\")) | del(.data.next.headList[]?.showInfo.rightTagImage))\n\
+      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
+      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.magic\.home\.page\.list\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(delpaths([[\"data\", \"topList\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType\
+      \ == \"ad\" then empty else . end)) | (delpaths([[\"data\", \"resultPrefixBar\"\
+      ]]))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.resultList |= map(select(.type\
+      \ != \"MarketHotSpot\")))\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.cardList |= map(if has(\"cardData\"\
+      ) and (.cardData | has(\"hotwords\")) then .cardData |= del(.hotwords) else\
+      \ . end))\n) ]) as $__egern_results\n       | if ($__egern_results | length)\
+      \ == 1\n         then $__egern_results[0] else $__egern_original_json end)\n\
+      \  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.trade\.full\.info\/
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\n(.data.components |= map(select(.render\
+      \ | . == \"orderStatusVO\" or . == \"addressInfoVO\" or . == \"orderInfoVO\"\
+      )))\n) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n\
+      \         then $__egern_results[0] else $__egern_original_json end)\n  catch\
+      \ $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -3882,11 +3938,14 @@ body_rewrites:
       \       | if ($__egern_results | length) == 1\n         then $__egern_results[0]\
       \ else $__egern_original_json end)\n  catch $__egern_original_json"
 - response_jq:
-    match: (?i)^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$
+    match: (?i)^https://ad\.12306\.cn/ad/ser/getAdList(?:\?[^#]*)?$
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
-      . as $__egern_original_json\n| try (([ (\ndel(.materialsList, .advertParam)\n\
-      ) ]) as $__egern_results\n       | if ($__egern_results | length) == 1\n   \
-      \      then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
+      . as $__egern_original_json\n| try (([ (\nif type == \"object\"\n   and ((.code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\n   and ((.status_code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\nthen del(.materialsList,\
+      \ .advertParam) else . end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 - response_jq:
     match: (?i)^https:\/\/open-cms-api\.quark\.cn\/open-cms\?
     filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
@@ -6107,6 +6166,22 @@ body_rewrites:
       \  .zz_content |= del(.circular_banner_option)\n  else\n    .\n  end\n)\n) ])\
       \ as $__egern_results\n       | if ($__egern_results | length) == 1\n      \
       \   then $__egern_results[0] else $__egern_original_json end)\n  catch $__egern_original_json"
+- response_jq:
+    match: (?i)^https?://amap-aos-info(?:-nogw)?\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?[^#]*)?$
+    filter: "# Egern: preserve input on failed, empty or multi-result transform\n\
+      . as $__egern_original_json\n| try (([ (\nif type == \"object\" and ((.data\
+      \ | type) == \"object\")\n   and ((.data.ad | type) == \"array\")\n   and ((.code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\n   and ((.status_code\
+      \ // 0) | . == 0 or . == \"0\" or . == 200 or . == \"200\")\nthen\n  .data.ad\
+      \ |= map(\n    if type == \"object\" then\n      (if ((.set.setting | type)\
+      \ == \"object\") and (.set.setting | has(\"display_time\"))\n       then .set.setting.display_time\
+      \ = 0 else . end)\n      | (if ((.creative | type) == \"array\") and ((.creative[0]\
+      \ | type) == \"object\")\n         then .creative[0] |= (\n           (if has(\"\
+      start_time\") then .start_time = 2240150400 else . end)\n           | (if has(\"\
+      end_time\") then .end_time = 2240150400 else . end)\n         ) else . end)\n\
+      \    else . end)\nelse . end\n) ]) as $__egern_results\n       | if ($__egern_results\
+      \ | length) == 1\n         then $__egern_results[0] else $__egern_original_json\
+      \ end)\n  catch $__egern_original_json"
 map_locals:
 - match: (?i:^https:\/\/api\.zhihu\.com\/ad-style-service\/request$)|(?i:^https:\/\/api\.zhihu\.com\/next-render\?id=\d+&type=answer)|(?i:^https:\/\/api\.zhihu\.com\/commercial_api\/answer\/\d+\/bottom-v\d$)|(?i:^https:\/\/api\.zhihu\.com\/search\/related_queries\/question\/\d+$)
   status_code: 200
@@ -6176,9 +6251,11 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json
-- match: (?:^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.ads)|(?:^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.ad.expose)
+- match: (?i:^https://(?:g-)?acs\.m\.goofish\.com/gw/mtop\.taobao\.idlecommerce\.splash\.ads/(?:[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/)
   status_code: 200
-  body: ''
+  body: '{}'
+  headers:
+    Content-Type: application/json; charset=utf-8
 - match: (?i:^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\?)|(?i:^https:\/\/api\.pinduoduo\.com\/search_hotquery\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/phantom\/gbdbpdv\/extra\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/manufacturer\/cross\/shortcut\/list\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/dunkirk\/liveactivity\/push\/create\/url\/report\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/engels\/wait\/receive\/review\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/buffon\/nasus\/recommend\?)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/)|(?i:^https:\/\/api\.pinduoduo\.com\/api\/xrec\/goods_rec\/pay_after_use_v2\?)
   status_code: 200
   body: '{}'
@@ -6206,7 +6283,7 @@ map_locals:
 - match: (?i)^https:\/\/pan\.baidu\.com\/recommend\/shortseries\/list
   status_code: 200
   body: '{}'
-- match: (?i:^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\?)
+- match: (?i:^https://m5\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?[^#]*)?$)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\?)|(?i:^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\?)
   status_code: 200
   body: '{}'
   headers:
@@ -6226,7 +6303,7 @@ map_locals:
   body: '{}'
   headers:
     Content-Type: application/json; charset=utf-8
-- match: ^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen
+- match: ^https?://(?:amap-aos-info(?:-nogw)?|m5)\.amap\.com/ws/aos/alimama/splash_screen(?:_rt)?(?:\?[^#]*)?$
   status_code: 200
   body: ''
 - match: (?i)https?:\/\/interface\d?\.music\.163\.com\/x?e?api\/ad
@@ -8672,12 +8749,6 @@ scriptings:
     update_interval: 86400
     timeout: 60
 - http_response:
-    name: 闲鱼 / 1
-    match: ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f.js
-    body_required: true
-    update_interval: 86400
-- http_response:
     name: 百度网盘-响应
     match: (?i)^https?:\/\/afd\.baidu\.com\/afd\/entry
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2fdc54b1c7acd53df4ac5379485df8c50834859eed20a8b590de2da0df217ac6.js
@@ -8702,12 +8773,6 @@ scriptings:
     match: (?i)^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/00615ce6dfae37cdc5e55ae791c9353a3fb6f981d895a6fbd0b53caaaf129ecd.js
     body_required: true
-- http_response:
-    name: 高德地图 / 2
-    match: (?i)^https?://amap-aos-info(?:-nogw)?\.amap\.com/ws/valueadded/alimama/splash_screen(?:\?|$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48.js
-    body_required: true
-    update_interval: 86400
 - http_request:
     name: Sparkle原始二进制本地响应
     match: ^(?!https://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords$)(?:(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$)|(?:^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(?:view\.v1\.View\/TFInfo|viewunite\.v1\.View\/(?:PlayPause|ViewEndPage))$))
@@ -8936,9 +9001,9 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954.js
     body_required: true
 - http_response:
-    name: 懂车帝开屏广告配置
-    match: ^https://api\d+-(?:normal|core)(?:-[a-z0-9]+)*\.(?:dcarapi|snssdk)\.com/motor/(?:ad(?:/[^?#]*)?|operation/activity/display/config/V2/?)(?:\?[^#]*)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcar-ad-cleaner.js
+    name: 懂车帝 · 开屏与信息流广告
+    match: ^https://api5-normal-lq\.dcarapi\.com/motor/(?:ad(?:/[^?#]*)?|operation/activity/display/config/V2/?|stream_entrance/get_feed/?)(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcar-native.js
     body_required: true
     max_size: 4194304
     timeout: 10
@@ -8954,10 +9019,10 @@ scriptings:
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f186eb3760ab578964cf713104a2a563c2b9365cb2e23311f165537de3fc8b06.js
     body_required: true
 - http_request:
-    name: 12306去广告-请求
-    match: (?i)^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/22a825d8149d952dd9c6c1c5c96fa3f830a0ebba975f8fc402f55ad1f40d4a8a.js
-    body_required: true
+    name: 12306 · 推广操作
+    match: (?i)^https://mobile\.12306\.cn/otsmobile/app/mgs/mgw\.htm(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/railway-12306-native.js
+    body_required: false
 - http_response:
     name: 阿里云盘去广告-响应
     match: (?i)^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets)

@@ -4,7 +4,7 @@ author: 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 homepage: https://hub.kelee.one
 icon: https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png
 map_locals:
-- match: (?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/)
+- match: (?i:^https://(?:g-)?acs\.m\.goofish\.com/gw/mtop\.taobao\.idlecommerce\.splash\.ads/(?:[0-9]+(?:\.[0-9]+)*/?)?(?:\?[^#]*)?$)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/)|(?i:^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/)
   status_code: 200
   body: '{}'
   headers:

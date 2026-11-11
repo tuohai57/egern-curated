@@ -1,5 +1,5 @@
 name: 懂车帝
-description: 广告专用接口内容净化；保留正常视频、车款及账号功能。客户端证书绑定、真实接口响应和已缓存开屏仍需手机验证。
+description: 原生 Egern 响应净化：开屏素材与倒计时、信息流中明确标记的广告；保留普通视频与车款。
 author: tuohai57
 homepage: https://github.com/tuohai57/egern-curated
 rules:
@@ -11,9 +11,9 @@ rules:
     policy: REJECT
 scriptings:
 - http_response:
-    name: 懂车帝开屏广告配置
-    match: ^https://api\d+-(?:normal|core)(?:-[a-z0-9]+)*\.(?:dcarapi|snssdk)\.com/motor/(?:ad(?:/[^?#]*)?|operation/activity/display/config/V2/?)(?:\?[^#]*)?$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcar-ad-cleaner.js
+    name: 懂车帝 · 开屏与信息流广告
+    match: ^https://api5-normal-lq\.dcarapi\.com/motor/(?:ad(?:/[^?#]*)?|operation/activity/display/config/V2/?|stream_entrance/get_feed/?)(?:\?[^#]*)?$
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/dcar-native.js
     body_required: true
     max_size: 4194304
     timeout: 10
