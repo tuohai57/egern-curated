@@ -1,5 +1,4 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/Kaemiel/Egern/vpsjiankong.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 小组件·服务器监控·液态玻璃（适配）
 description: 通过 SSH 连接 VPS，实时显示 CPU、内存、磁盘、流量用量、运行时长与 IP 地址。连接失败自动显示上次缓存数据
 env_schema:
@@ -46,7 +45,7 @@ env_schema:
 scriptings:
 - generic:
     name: 服务器监控·液态玻璃·脚本1
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b212d0c24466c8452d3acdcc966c9764915af037b11cbb0b6a0bc4a639e279a8.js
     timeout: 30
     update_interval: 86400
 widgets:

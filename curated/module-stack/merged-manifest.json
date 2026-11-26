@@ -2,7 +2,7 @@
   "name": "综合去广告合集",
   "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
   "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-  "sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
+  "sha256": "ba0b2f2e7afc20b760ad2f2939d0482c0d9d7556ce3a3a238a1f1c4aedf09ce0",
   "enabled": true,
   "update_interval": 86400,
   "included_modules": [
@@ -332,7 +332,7 @@
       "app": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-014.yaml",
       "repository_path": "curated/module-stack/modules/native-014.yaml",
-      "sha256": "1606d688127c5b79984fb2b9d303e6d8e53497e454fffdd03b86fa7cc6c0e8b2",
+      "sha256": "c0ebb07da2f38100d0d891a51724be23a1ae12e38ec73ef60a613cd8c66a6234",
       "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
     },
     {

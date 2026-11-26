@@ -1,27 +1,29 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/Nullwhy/Egern/Scripts/SubscriptionCard.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 小组件·订阅流量·卡片版（适配）
 scriptings:
 - generic:
+    update_interval: 86400
     name: 订阅流量·卡片版·脚本1
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b2525ebcac287d703b1640b56b25e75b1348bc9b894f88d3147c15f782030184.js
-    update_interval: 86400
 widgets:
 - name: 订阅流量·卡片版
   script_name: 订阅流量·卡片版·脚本1
 env_schema:
   NAME:
     name: NAME
+    description: 机场名称
   NAME1:
     name: NAME1
   RESET:
     name: RESET
+    description: 重置日期
   RESET1:
     name: RESET1
   URL:
     name: URL
+    description: 订阅链接
   URL1:
     name: URL1
 author: 'Nullwhy · Egern adaptation: ErrBin'
 description: 机场流量用量查询；部分代码参考@iBL3ND    @Nullwhy
-icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/SubscriptionCard.jpg
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/SubscriptionCard.webp

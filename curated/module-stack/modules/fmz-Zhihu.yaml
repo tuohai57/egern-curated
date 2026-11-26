@@ -23,9 +23,6 @@ rules:
 - domain:
     match: crash2.zhihu.com
     policy: REJECT
-- domain:
-    match: 118.89.204.198
-    policy: REJECT
 - ip_cidr:
     match: 118.89.204.198/32
     policy: REJECT

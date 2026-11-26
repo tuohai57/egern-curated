@@ -13439,19 +13439,19 @@ scriptings:
 - http_request:
     name: bilibili.airborne
     match: (?:^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$)|(?:^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/61fc5eaded4cb28d2c21796d3fb92ae8b8c3896346bf16ad3f4f29f6e1db53d2.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js
     body_required: true
     binary_body: true
     max_size: 8388608
 - http_response:
     name: bilibili.live
     match: ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(Room|User))\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js
     body_required: true
 - http_response:
     name: bilibili.protobuf
     match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/bfcc0970105056b51a02eb643931c8d4a8d9656f25a5c3f0d6fe9cf6b4d15f8e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js
     body_required: true
     binary_body: true
     max_size: 8388608

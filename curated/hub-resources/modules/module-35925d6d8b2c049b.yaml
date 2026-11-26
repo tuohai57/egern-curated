@@ -1,5 +1,4 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/app2smile/rules/module/zhihu.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 知乎（微笑作者·原生接口备选）（适配）
 description: 开屏页广告,首页右下角悬浮框,推荐列表广告,问题回答列表广告,具体回答下广告
 rules:
@@ -23,11 +22,11 @@ mitm:
     excludes: []
 scriptings:
 - http_response:
-    name: 知乎（微笑作者·原生接口备选）·脚本1
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f27c8e81ab6f653f44a010c2d249e01cb14eb52390a6523b0dc88343d5961039.js
     match: ^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/(answers\/\d+\/recommendations|articles\/\d+\/recommendation)|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?))
     body_required: true
     max_size: 16777216
     update_interval: 86400
+    name: 知乎（微笑作者·原生接口备选）·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/4776be01f2c7d2cd1efff381960f545c962daa2dcc05f20766ac9634955393b3.js
 author: 'app2smile · Egern adaptation: ErrBin'
-icon: https://egern.pages.dev/assets/icons/app2smile/rules/module/zhihu.jpg
+icon: https://egern.pages.dev/assets/icons/app2smile/rules/module/zhihu.webp

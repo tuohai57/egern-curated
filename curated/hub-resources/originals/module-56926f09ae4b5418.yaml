@@ -15,5 +15,7 @@ widgets:
 env_schema:
   GROUP:
     name: GROUP
+    description: 可通过环境变量 GROUP 指定策略；默认先按规则路由，失败后强制走 Proxy 策略重试
+    default_value: Proxy
 author: 'BiaoerD · Egern adaptation: ErrBin'
 description: 持续测速 10 秒：每秒记录一次速度，结束后显示平均值与逐秒数据；节点显示：整合 IPPure（国家城市 / 运营商 / 住宅原生 / IP 风险评分）

@@ -1,0 +1,1057 @@
+{
+  "date": "2026-11-26",
+  "checked_urls": 1064,
+  "download_status": {
+    "200": 1030,
+    "403": 32,
+    "404": 1,
+    "None": 1
+  },
+  "applied_script_sources": 17,
+  "source_metadata_only": 40,
+  "updated_module_payloads": [
+    {
+      "name": "综合去广告合集",
+      "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
+      "sha256": "ba0b2f2e7afc20b760ad2f2939d0482c0d9d7556ce3a3a238a1f1c4aedf09ce0"
+    },
+    {
+      "name": "Bilibili增强",
+      "repository_path": "curated/module-stack/modules/catalog-extra-4571351efc713b40.yaml",
+      "sha256": "f78d544f46ef620b20cc28ea4ed9a99a913ccc6a1b47349200182b7ee956e779"
+    },
+    {
+      "name": "哔哩哔哩",
+      "repository_path": "curated/module-stack/modules/fmz-bilibili.yaml",
+      "sha256": "16c301ed39bfa19fe45947a42ffb2d344a62f73560e4adabc50502dc133ccab7"
+    },
+    {
+      "name": "得物",
+      "repository_path": "curated/module-stack/modules/fmz-DeWu.yaml",
+      "sha256": "9d152be6a2471ccf9d10af2e4d6dbcd13a9bd10d7a16b76990016ae0f213a62f"
+    },
+    {
+      "name": "知乎",
+      "repository_path": "curated/module-stack/modules/fmz-Zhihu.yaml",
+      "sha256": "2fcf8cd97cb567aee43d463d9f3a4c25ba2e27f41a45e6d4f03ed55e5bc5fa65"
+    },
+    {
+      "name": "哔哩哔哩增强",
+      "repository_path": "curated/module-stack/modules/native-014.yaml",
+      "sha256": "c0ebb07da2f38100d0d891a51724be23a1ae12e38ec73ef60a613cd8c66a6234"
+    },
+    {
+      "name": "哔哩哔哩",
+      "repository_path": "curated/module-stack/modules/native-018.yaml",
+      "sha256": "e87f2c7ebd5d537268ad0302c82ad1c5a08fc99b0dc6639ea435afb0a07e87a4"
+    },
+    {
+      "name": "广告拦截&净化合集",
+      "repository_path": "curated/module-stack/modules/native-096.yaml",
+      "sha256": "6b1721c1a3d5cc3cac31c784c04e1c35ae0217f04cccee68d82b6f8daf07bfe6"
+    },
+    {
+      "name": "微博助手",
+      "repository_path": "curated/module-stack/modules/user-026.yaml",
+      "sha256": "0e9295130f6e2d55aaf866bc1a80fbc642dbae6ca9f58a1a4799d7778e013862"
+    },
+    {
+      "name": "ScriptHub.Egern.sgmodule",
+      "repository_path": "curated/module-stack/modules/user-116.yaml",
+      "sha256": "1fe9ca48e8ed665a915644b695fd4a98c9f9f84d78a81c97ea6a8feea526d4b9"
+    },
+    {
+      "name": "script-hub.surge.sgmodule",
+      "repository_path": "curated/module-stack/modules/user-120.yaml",
+      "sha256": "1ed52c353d6d8e1cf7806a125ce142e98a9975434d31aa1f8919e18aab6d5e8c"
+    },
+    {
+      "name": "订阅流量·简洁版",
+      "repository_path": "curated/hub-resources/modules/module-f14aa86de6626cfb.yaml",
+      "sha256": "dfdb41ebe353e6b02fc6e25fbf5f4e75eacea4bb602dc61e575ab2900f6dbd8f"
+    },
+    {
+      "name": "出口风险·纯净度检测",
+      "repository_path": "curated/hub-resources/modules/module-57d787c049804671.yaml",
+      "sha256": "095a828896850f4c838994aae6008934e832a17d80ef1b3478e93bd3a9beb9bc"
+    },
+    {
+      "name": "网络安全检测",
+      "repository_path": "curated/hub-resources/modules/module-910dbc41356e040c.yaml",
+      "sha256": "29355be8debe46ef10f16c7c509b8c4b77944f679d4492aef8bf9502e189fd2e"
+    },
+    {
+      "name": "网络测速·十秒版",
+      "repository_path": "curated/hub-resources/modules/module-56926f09ae4b5418.yaml",
+      "sha256": "ed0fc328b536137410e20b63495ad8444f70cba5a783fa0a2b79bd8277d89f36"
+    },
+    {
+      "name": "中国电信·套餐用量",
+      "repository_path": "curated/hub-resources/modules/module-e2a4dd222bf0ef19.yaml",
+      "sha256": "31537bd28c40526e943f9818938f275ad36646344cfcdf961c8a770b9f953309"
+    },
+    {
+      "name": "中国联通·套餐用量",
+      "repository_path": "curated/hub-resources/modules/module-847c5a38d17b8993.yaml",
+      "sha256": "822fe6b981537fda83d222b3ed7b7bc17e34ccb9bd457cd0eec79241059e9a66"
+    },
+    {
+      "name": "全国油价·地区版",
+      "repository_path": "curated/hub-resources/modules/module-28bf222ed4a971be.yaml",
+      "sha256": "f7bb74832f58cd45bdcc5502430a003a111893cb122052a275ad1767477d4bdc"
+    },
+    {
+      "name": "服务器监控·液态玻璃",
+      "repository_path": "curated/hub-resources/modules/module-12bc5151d4543320.yaml",
+      "sha256": "27ea218e08ace68acf450760bbb7dbb6e4e525d1c6147dde8e615efbe1567381"
+    },
+    {
+      "name": "网络诊断·服务检测",
+      "repository_path": "curated/hub-resources/modules/module-57f6f04ca1abeb02.yaml",
+      "sha256": "209a24c60b6c4ba0e954608f96b11eb14cd970dfa0d74d9bd58058633db19aa3"
+    },
+    {
+      "name": "全国油价·石化版",
+      "repository_path": "curated/hub-resources/modules/module-27760f77abebfc04.yaml",
+      "sha256": "b71e65aa50a2ebdc5ed9f524abc87d201034339e48a2e0bdbe032683fe87c60c"
+    },
+    {
+      "name": "订阅流量·卡片版",
+      "repository_path": "curated/hub-resources/modules/module-4a48491f5938af37.yaml",
+      "sha256": "285ba473304fa7903477c10ede2293c1fee5a3c33ec6d0d0df62b341a8da422a"
+    },
+    {
+      "name": "全国油价·画布版",
+      "repository_path": "curated/hub-resources/modules/module-21600ee470edf5aa.yaml",
+      "sha256": "290cc6384e51bf882d52b8c66e002de9f3e68242cf77e563c30871d4e712bd12"
+    },
+    {
+      "name": "日历·小日子",
+      "repository_path": "curated/hub-resources/modules/module-3c7f56ff98930b53.yaml",
+      "sha256": "e1bef9f9da5d185cc3b72f3debd6e35d61086ed5ca5bb7e496a2bd897ee78d43"
+    },
+    {
+      "name": "今日黄金",
+      "repository_path": "curated/hub-resources/modules/module-dc594b5b84cb2550.yaml",
+      "sha256": "b92b1588e5fd5517d32ce4e4053a56aa7d9e2682101daf59f1630575965e28d9"
+    },
+    {
+      "name": "今日汇率",
+      "repository_path": "curated/hub-resources/modules/module-ba84716ded26a2cf.yaml",
+      "sha256": "1fd0c1b7fa4d697dd801c915e55baed6f7a4a7c8c93e207245b17096472c8f1e"
+    },
+    {
+      "name": "网络诊断·雷达版",
+      "repository_path": "curated/hub-resources/modules/module-f9ca0392ee064061.yaml",
+      "sha256": "c436532ad860df1909cbc919850d13892acb473ad24c58c4ad18014824341ac7"
+    },
+    {
+      "name": "网络诊断·媒体与风险",
+      "repository_path": "curated/hub-resources/modules/module-981e745a8faa3728.yaml",
+      "sha256": "1665652d77b74abe6169aa5897a19acabd75d5ce67a08f640b661480144a1735"
+    },
+    {
+      "name": "网络诊断·服务监测",
+      "repository_path": "curated/hub-resources/modules/module-d83ec2dc8276de44.yaml",
+      "sha256": "61408d175ca7b7299deafcc36b449b9710d5984c1af073f7261de1702ec382c3"
+    },
+    {
+      "name": "中国联通·多端版",
+      "repository_path": "curated/hub-resources/modules/module-4d42dafa4140f1e5.yaml",
+      "sha256": "266ffa578f6327b164752c16d0550c6cd7f2e4f99533f4de245c37a3b7294922"
+    },
+    {
+      "name": "订阅流量·双环版",
+      "repository_path": "curated/hub-resources/modules/module-bbe5c7b304d8b62f.yaml",
+      "sha256": "8c3a461e2985a771f79725ef63549e8c54891533812acb0d9a2b74d1d6b6ede8"
+    },
+    {
+      "name": "黄历·完整版",
+      "repository_path": "curated/hub-resources/modules/module-386967f0aa1f3d8b.yaml",
+      "sha256": "82a451f8d6fdfc42b7752755df7365e2c42a1c47e750e9ae742b96fe970c99cd"
+    },
+    {
+      "name": "中国移动·仪表盘",
+      "repository_path": "curated/hub-resources/modules/module-79b28a9648131641.yaml",
+      "sha256": "22b0ac38663d9f8f23eda6f6d5bca54cc8e9c2872f5a39b3c650792f09e67264"
+    },
+    {
+      "name": "中国移动·简洁版",
+      "repository_path": "curated/hub-resources/modules/module-b1db628b4e85d52e.yaml",
+      "sha256": "904b52121f87a7490064901917ecf474aca9bc49aa1631f93e215b4f293ee119"
+    },
+    {
+      "name": "哔哩哔哩（微笑作者·原生接口备选）",
+      "repository_path": "curated/hub-resources/modules/module-efc631245778d425.yaml",
+      "sha256": "6f9c86e1eea10bbd4b0978e3c7be77033509599895ce0e1725d69a776e15acb2"
+    },
+    {
+      "name": "知乎（微笑作者·原生接口备选）",
+      "repository_path": "curated/hub-resources/modules/module-35925d6d8b2c049b.yaml",
+      "sha256": "b0ba0ef6d9fbd8765fe70cda48dd4d9024cf0dc1504f5fef1f8092dd07643cb1"
+    }
+  ],
+  "hub": {
+    "applied": [
+      {
+        "kind": "script",
+        "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-json.js",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/15f7786348c8edd5b4253948fc89b77fd0b4a4849aa5f90157ecf8ae1ec8a058.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/cbc3fcc19171e920b8d52e8d99e456736cff0b6878b4d0db610b081ea62eb14c.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-proto.js",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/6a1597c44b0bc2d221ce6cc6fef93a57d3a070e08443fde44b37448827a0fb4e.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ee6ddd37badc00d7224fe35f90c17d6a823ee1b89d2b43cd72fb4b72ec6d48b6.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/zhihu.js",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f27c8e81ab6f653f44a010c2d249e01cb14eb52390a6523b0dc88343d5961039.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/4776be01f2c7d2cd1efff381960f545c962daa2dcc05f20766ac9634955393b3.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CT_Widget.JS",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/d8667fdc1afc4f48aec49977f5419fa9c95d6b29ddb91a46275103b512d51d3f.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/28a1f954a60f9765195e11997c54537e5d247ead79115c52d41fec778ecf0630.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/8b240cd90be905a0090f67857cba5e7e43a07d039e01d1de65781ee0849f501a.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/1422839d3bb307ba4fd9dbdc9c7faa8cac7ea8c1d779a655717ff34d23bc1a24.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unicom_Widget.JS",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b3d67de1d7a3fb764c8e62e253f5de686a93411c7bccf972785740dbdd9e76d6.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/Kaemiel/Egern/refs/heads/main/VPS_SSH.js",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b212d0c24466c8452d3acdcc966c9764915af037b11cbb0b6a0bc4a639e279a8.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/moyuzaime/egern/main/ChinaUnicom/ChinaUnicom_Widget.js",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/zhaohantao1360-hash/Hark/main/china-mobile-hark-dash.js?v=20261104-0450",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/75dab0cd017fc891b1f24aa825c0e116841f12ff4b55cf3061ff4072422397db.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/937094ac7461160f5bc670fc6f07c605fdc740a8a9a39edd16eefcb3ec8c643c.js"
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/zhaohantao1360-hash/Hark/main/china-mobile-hark-ios.js?v=20261104-0450",
+        "old_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js",
+        "new_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/505149f88fb734a905dfbc726d3134531f84fc0219a04a5fc7bc354000139be7.js"
+      },
+      {
+        "kind": "module_source",
+        "name": "订阅流量·简洁版",
+        "repository_path": "curated/hub-resources/modules/module-f14aa86de6626cfb.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "出口风险·纯净度检测",
+        "repository_path": "curated/hub-resources/modules/module-57d787c049804671.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络安全检测",
+        "repository_path": "curated/hub-resources/modules/module-910dbc41356e040c.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络测速·十秒版",
+        "repository_path": "curated/hub-resources/modules/module-56926f09ae4b5418.yaml"
+      },
+      {
+        "kind": "module_dependency",
+        "name": "中国电信·套餐用量",
+        "repository_path": "curated/hub-resources/modules/module-e2a4dd222bf0ef19.yaml"
+      },
+      {
+        "kind": "module_dependency",
+        "name": "中国联通·套餐用量",
+        "repository_path": "curated/hub-resources/modules/module-847c5a38d17b8993.yaml"
+      },
+      {
+        "kind": "module_dependency",
+        "name": "全国油价·地区版",
+        "repository_path": "curated/hub-resources/modules/module-28bf222ed4a971be.yaml"
+      },
+      {
+        "kind": "module_dependency",
+        "name": "服务器监控·液态玻璃",
+        "repository_path": "curated/hub-resources/modules/module-12bc5151d4543320.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络诊断·服务检测",
+        "repository_path": "curated/hub-resources/modules/module-57f6f04ca1abeb02.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "全国油价·石化版",
+        "repository_path": "curated/hub-resources/modules/module-27760f77abebfc04.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "订阅流量·卡片版",
+        "repository_path": "curated/hub-resources/modules/module-4a48491f5938af37.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "全国油价·画布版",
+        "repository_path": "curated/hub-resources/modules/module-21600ee470edf5aa.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "日历·小日子",
+        "repository_path": "curated/hub-resources/modules/module-3c7f56ff98930b53.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "今日黄金",
+        "repository_path": "curated/hub-resources/modules/module-dc594b5b84cb2550.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "今日汇率",
+        "repository_path": "curated/hub-resources/modules/module-ba84716ded26a2cf.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络诊断·雷达版",
+        "repository_path": "curated/hub-resources/modules/module-f9ca0392ee064061.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络诊断·媒体与风险",
+        "repository_path": "curated/hub-resources/modules/module-981e745a8faa3728.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "网络诊断·服务监测",
+        "repository_path": "curated/hub-resources/modules/module-d83ec2dc8276de44.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "中国联通·多端版",
+        "repository_path": "curated/hub-resources/modules/module-4d42dafa4140f1e5.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "订阅流量·双环版",
+        "repository_path": "curated/hub-resources/modules/module-bbe5c7b304d8b62f.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "黄历·完整版",
+        "repository_path": "curated/hub-resources/modules/module-386967f0aa1f3d8b.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "中国移动·仪表盘",
+        "repository_path": "curated/hub-resources/modules/module-79b28a9648131641.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "中国移动·简洁版",
+        "repository_path": "curated/hub-resources/modules/module-b1db628b4e85d52e.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "哔哩哔哩（微笑作者·原生接口备选）",
+        "repository_path": "curated/hub-resources/modules/module-efc631245778d425.yaml"
+      },
+      {
+        "kind": "module_source",
+        "name": "知乎（微笑作者·原生接口备选）",
+        "repository_path": "curated/hub-resources/modules/module-35925d6d8b2c049b.yaml"
+      }
+    ],
+    "deferred": [
+      {
+        "source_url": "https://raw.githubusercontent.com/Bf0rest/Egern/main/Widget/IPPure-emoji.js",
+        "reason": "Upstream removes an existing feature; retain current implementation"
+      },
+      {
+        "source_url": "https://raw.githubusercontent.com/a13609y/yandere-widget/main/yandere.js",
+        "reason": "Upstream removes an existing feature; retain current implementation"
+      },
+      {
+        "source_url": "https://egern.pages.dev/modules/Bf0rest/Egern/Widget/IPPure-emoji.yaml",
+        "reason": "Would override global DNS or replace the existing latest-sort option"
+      },
+      {
+        "source_url": "https://egern.pages.dev/modules/a13609y/yandere-widget/yandere.yaml",
+        "reason": "Would override global DNS or replace the existing latest-sort option"
+      }
+    ]
+  },
+  "stack": {
+    "applied": [
+      {
+        "kind": "script",
+        "source_url": "https://ddgksf2013.top/scripts/weibo_json.js",
+        "source_sha256": "c58f679b813f11d0a65270e20064d3d226cd7d9fa0941f4130f54609647a2702",
+        "archive": "curated/upstream-review/2026-11-26/scripts/c58f679b813f11d0a65270e20064d3d226cd7d9fa0941f4130f54609647a2702.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/02808d741c174e33153ee230a7b8b0f426e47a5e4073148f17f9a5d32d40f89e.js",
+            "new": "curated/module-stack/scripts/0f66d3e93bf38b15bafaca4cf5e8afd9bba1de5a37ded1910724eb599a8fb927.js",
+            "prefix_bytes_preserved": 1352
+          },
+          {
+            "old": "curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js",
+            "new": "curated/module-stack/scripts/1fa2f86ccf3d71de20ce64f41917bf9388071f5abafe555628f608856970fc58.js",
+            "prefix_bytes_preserved": 724
+          },
+          {
+            "old": "curated/module-stack/scripts/92a32e690d3a6c1be262ac55ce0b9a64cf4bd779bb0b00391a7c70d7f74431aa.js",
+            "new": "curated/module-stack/scripts/ee3c711eaf4c3a82ab95764601a85ff51c99d1f27e64faba694d441ce9a7ef72.js",
+            "prefix_bytes_preserved": 788
+          },
+          {
+            "old": "curated/module-stack/scripts/e744f92734811a9954aaa473a55effa70664d23f5bdd4ba204bd5a9e5056f64a.js",
+            "new": "curated/module-stack/scripts/6fcb98690ab25cfda0b0421bc7c7e953d1a36725fef6b7b5975bf77f230f5f66.js",
+            "prefix_bytes_preserved": 1288
+          },
+          {
+            "old": "curated/module-stack/scripts/f40387dfd8bd70dc4477b8347823254a5eccf8cf9792c65fc35cef9140f00ca3.js",
+            "new": "curated/module-stack/scripts/c58f679b813f11d0a65270e20064d3d226cd7d9fa0941f4130f54609647a2702.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/rule-parser.js",
+        "source_sha256": "aca523a4e23ba7a3372e070e2d4f9cb4dfc6ecebef8b7e8d2cb6bd00f9b09d61",
+        "archive": "curated/upstream-review/2026-11-26/scripts/aca523a4e23ba7a3372e070e2d4f9cb4dfc6ecebef8b7e8d2cb6bd00f9b09d61.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/6d30380cc68e112b5bcb5d9b2013d553d3c48612b1c61e78f0e0bfae3e48ca2c.js",
+            "new": "curated/module-stack/scripts/aca523a4e23ba7a3372e070e2d4f9cb4dfc6ecebef8b7e8d2cb6bd00f9b09d61.js",
+            "prefix_bytes_preserved": 0
+          },
+          {
+            "old": "curated/module-stack/scripts/e81a7f55c9d73e90f692b90ff27c0c242bab0b2e69ded324b6cd48d19124c913.js",
+            "new": "curated/module-stack/scripts/ba7b3e86bde6d4a9a395780cea4cbadbdb3c19e1b9992d8008888aed216b79ee.js",
+            "prefix_bytes_preserved": 110
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.js",
+        "source_sha256": "439c97ad4a1aa1bc2b3c806dc74fe1127958310b7086e77b581adba45c9ba405",
+        "archive": "curated/upstream-review/2026-11-26/scripts/439c97ad4a1aa1bc2b3c806dc74fe1127958310b7086e77b581adba45c9ba405.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/2485b25f900e929eb1c71585238bb933215bc1e61f55f5de8d59cfa282e4521c.js",
+            "new": "curated/module-stack/scripts/4fa1ee27a082d08e25cbc1d2bf0ae9ba4e5d7c2f64192ecdf23977c163282d10.js",
+            "prefix_bytes_preserved": 110
+          },
+          {
+            "old": "curated/module-stack/scripts/c5e46afa219424e22bcba151dbd6f5e4c6caf518cfdf3317381f4c7e2068e51b.js",
+            "new": "curated/module-stack/scripts/439c97ad4a1aa1bc2b3c806dc74fe1127958310b7086e77b581adba45c9ba405.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.js",
+        "source_sha256": "f99b893402fe30b783a10faf22a8f18c0fb86d30618f6e057545e04982e9ce7c",
+        "archive": "curated/upstream-review/2026-11-26/scripts/f99b893402fe30b783a10faf22a8f18c0fb86d30618f6e057545e04982e9ce7c.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/6a0c1d8e05136e7f134bfbf0dd94a8ab7356b22607a1ba7bace57820e2bc7af1.js",
+            "new": "curated/module-stack/scripts/f99b893402fe30b783a10faf22a8f18c0fb86d30618f6e057545e04982e9ce7c.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.json.js",
+        "source_sha256": "5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb",
+        "archive": "curated/upstream-review/2026-11-26/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/01bf16fb4d4a30f05823bd00b5d7f52b59cb8145378b4d163e69605cd08e3357.js",
+            "new": "curated/module-stack/scripts/76db08ddfb85114d676a1defa7088515f4c01e697c12d0bb8792b6682f071208.js",
+            "prefix_bytes_preserved": 113
+          },
+          {
+            "old": "curated/module-stack/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js",
+            "new": "curated/module-stack/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js",
+            "prefix_bytes_preserved": 0
+          },
+          {
+            "old": "curated/native-full/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js",
+            "new": "curated/native-full/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.request.js",
+        "source_sha256": "3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0",
+        "archive": "curated/upstream-review/2026-11-26/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/61fc5eaded4cb28d2c21796d3fb92ae8b8c3896346bf16ad3f4f29f6e1db53d2.js",
+            "new": "curated/module-stack/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js",
+            "prefix_bytes_preserved": 0
+          },
+          {
+            "old": "curated/module-stack/scripts/9888fd687ee7045212a35a399ac9da87f9b982ebe8618037ff5b211007ad92a3.js",
+            "new": "curated/module-stack/scripts/1c613dd0463d7cf63ba52705eb2de042cb7ff0b7a4f89c057689a64d14f72b19.js",
+            "prefix_bytes_preserved": 98
+          },
+          {
+            "old": "curated/module-stack/scripts/aa73b80e180d3811f2b4f06de619e9d7e06e30cff6070326a26d84e29796177e.js",
+            "new": "curated/module-stack/scripts/9cfe023e74a891d3ef56e36b82fdb5f741e367894d8b20e10f8d91378df2617f.js",
+            "prefix_bytes_preserved": 104
+          },
+          {
+            "old": "curated/native-full/scripts/61fc5eaded4cb28d2c21796d3fb92ae8b8c3896346bf16ad3f4f29f6e1db53d2.js",
+            "new": "curated/native-full/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "script",
+        "source_url": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.response.js",
+        "source_sha256": "4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e",
+        "archive": "curated/upstream-review/2026-11-26/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js",
+        "assets": [
+          {
+            "old": "curated/module-stack/scripts/450ff86f6713d29959b5f2992b328d49f98ea979a7507f040bb47fb67186e859.js",
+            "new": "curated/module-stack/scripts/61bee6020b454ed03c5350c9c8083c2590e39aeccbad962d793ebf9f44a3ad0a.js",
+            "prefix_bytes_preserved": 120
+          },
+          {
+            "old": "curated/module-stack/scripts/bfcc0970105056b51a02eb643931c8d4a8d9656f25a5c3f0d6fe9cf6b4d15f8e.js",
+            "new": "curated/module-stack/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js",
+            "prefix_bytes_preserved": 0
+          },
+          {
+            "old": "curated/native-full/scripts/bfcc0970105056b51a02eb643931c8d4a8d9656f25a5c3f0d6fe9cf6b4d15f8e.js",
+            "new": "curated/native-full/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js",
+            "prefix_bytes_preserved": 0
+          }
+        ]
+      },
+      {
+        "kind": "source_metadata",
+        "name": "联掌门户",
+        "repository_path": "curated/module-stack/modules/catalog-extra-ec10b4f692e63ff6.yaml",
+        "source_sha256": "6d6e60d24d0e6b4b200c0dbe13738941e252c33ab029ff9cb92d117b4e61296a"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "12306",
+        "repository_path": "curated/module-stack/modules/fmz-12306.yaml",
+        "source_sha256": "bf469d3dfbbd0e9fa6a618c98ef271822b375620f61f08a3e31cb0f5ec8f4f83"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "360",
+        "repository_path": "curated/module-stack/modules/fmz-360.yaml",
+        "source_sha256": "586e826aabb515e05b08d488c9f9095cbd91fdeaebadc5e0038e9bf7d133c54d"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "农业银行",
+        "repository_path": "curated/module-stack/modules/fmz-ABC.yaml",
+        "source_sha256": "9ac18183698d1410b6ecf1cabbb97e46f7147094c51a25ae0991d8bf310957dc"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "爱思助手",
+        "repository_path": "curated/module-stack/modules/fmz-AiSiAssistant.yaml",
+        "source_sha256": "049d979d4690c1312e24643e73f63f2ee82200a7de89bc0ea591d4b763ca0f4e"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "阿里巴巴",
+        "repository_path": "curated/module-stack/modules/fmz-Alibaba.yaml",
+        "source_sha256": "f4c64109bfe9a2e1a8c0b83d3cd02f090494090754ef5fab5f5afff233674690"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "汽车之家",
+        "repository_path": "curated/module-stack/modules/fmz-Autohome.yaml",
+        "source_sha256": "26518a603537bcd76b7ea6ac2f1e1be440b092229d1874827f59a08929f2f653"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "高德地图",
+        "repository_path": "curated/module-stack/modules/fmz-AutoNavi.yaml",
+        "source_sha256": "a1047c2b8bb57b2743ded400f41035c816d30bb66493f098bd90e632019baef1"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "哔哩哔哩",
+        "repository_path": "curated/module-stack/modules/fmz-bilibili.yaml",
+        "source_sha256": "32d10d545a9f862a9a0a19a805b6ee8e0f627bbaa71e8ac4d33aa35e5df6b085"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "菜鸟裹裹",
+        "repository_path": "curated/module-stack/modules/fmz-CaiNiaoGuoGuo.yaml",
+        "source_sha256": "7c5830063d82a3d84761997fe8e8dae8f12f8b4901f67aac9315a8750f7200bc"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "中国电信",
+        "repository_path": "curated/module-stack/modules/fmz-ChinaTelecom.yaml",
+        "source_sha256": "fc49e2fcf28c78b0aaeac135f5c678859c646a24ceb448375a3743e9a712366f"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "酷安",
+        "repository_path": "curated/module-stack/modules/fmz-Coolapk.yaml",
+        "source_sha256": "6c479aab344387935f70e2f2bd0dc1d97a9f38ecf61a78d6b097c16e588e6ebd"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "携程",
+        "repository_path": "curated/module-stack/modules/fmz-Ctrip.yaml",
+        "source_sha256": "78a10de7d07f8dbe30518be941c6ebdc878895f4000033663d006c0aba518b43"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "大麦",
+        "repository_path": "curated/module-stack/modules/fmz-Damai.yaml",
+        "source_sha256": "62b2262257c854b894efb2e44995da5ff2639635255c988a0a941d30d292154a"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "懂车帝",
+        "repository_path": "curated/module-stack/modules/fmz-Dcar.yaml",
+        "source_sha256": "739777c02d44f9a6e9d34321ee83df9a312f1b9d0db738a38535509cf75945ea"
+      },
+      {
+        "kind": "mitm_completion",
+        "name": "得物",
+        "repository_path": "curated/module-stack/modules/fmz-DeWu.yaml",
+        "source_sha256": "c27f77eefa271b76ed63549cfaabc39b87da43ef5a2880664dd835b75d814ac1"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "大众点评",
+        "repository_path": "curated/module-stack/modules/fmz-DianPing.yaml",
+        "source_sha256": "800c8a53d93ed992b355eda8c6ecb16998cd8dce41591d41f451093b2b5686e0"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "滴滴出行",
+        "repository_path": "curated/module-stack/modules/fmz-DiDiChuxing.yaml",
+        "source_sha256": "6f8198e7a010f6734a0e0599918fde8b5e0d48674fcd5601874815484aa4c8b8"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "饿了么",
+        "repository_path": "curated/module-stack/modules/fmz-Eleme.yaml",
+        "source_sha256": "53ce752282149a46d9cab31368771df6d29a17c8379d9621bf25456900d5cbaa"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "Facebook",
+        "repository_path": "curated/module-stack/modules/fmz-Facebook.yaml",
+        "source_sha256": "3fd7cb48a8756fd05b06f4f975743fcdf68139846a88d0db0388b4569999e488"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "番茄小说",
+        "repository_path": "curated/module-stack/modules/fmz-FanQieNovel.yaml",
+        "source_sha256": "dde47749d081d4cf846dbe753e6f662b44257a802ab4075704e0f71e613b4ccb"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "Google",
+        "repository_path": "curated/module-stack/modules/fmz-Google.yaml",
+        "source_sha256": "aec6c3948ebe75c49dfee6da521f9e612de79265edbc66fdf9206de17fc8ed8c"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "航旅纵横",
+        "repository_path": "curated/module-stack/modules/fmz-HangLvZongHeng.yaml",
+        "source_sha256": "3e011d625359d21363694a296b8115b56342d2078c70049d339fd2a1c09b50f8"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "工商银行",
+        "repository_path": "curated/module-stack/modules/fmz-ICBC.yaml",
+        "source_sha256": "8dc872379d8eb94d81d4259ad3b7937ccd46d91f7a311db9722e580333c0153a"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "同花顺",
+        "repository_path": "curated/module-stack/modules/fmz-iFinD.yaml",
+        "source_sha256": "87d344fdac8928a11c7f0da093ad3fc769f165fd501b79ab878232ad080d8869"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "京东",
+        "repository_path": "curated/module-stack/modules/fmz-JD.com.yaml",
+        "source_sha256": "dd6a4157d2c9c85cc41e9c58ad9a8d533c026e1fbc4e21f9f16889a99f9e6bd8"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "麦当劳",
+        "repository_path": "curated/module-stack/modules/fmz-McDonalds.yaml",
+        "source_sha256": "12fb8fd4efa0abc852bc561326642dff16367bb190e432a6cedc02ba93007907"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "美团 & 美团外卖",
+        "repository_path": "curated/module-stack/modules/fmz-Meituan-MeituanWaimai.yaml",
+        "source_sha256": "00d6b55d6406f2ba540baa70ddc6032a2319521b0b6f4d690b3464855ee8fc94"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "美团",
+        "repository_path": "curated/module-stack/modules/fmz-Meituan.yaml",
+        "source_sha256": "434ad615bb87ee022671da86575f6e83c71f0b0745f380537b5b1d634b28689d"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "美颜相机",
+        "repository_path": "curated/module-stack/modules/fmz-MeiYanXiangJi.yaml",
+        "source_sha256": "36d1dd6a2ef39e4b96ae34b2d007f4b18b6dff8fa7c59ca44756d1cede4eed56"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "米家",
+        "repository_path": "curated/module-stack/modules/fmz-Mijia.yaml",
+        "source_sha256": "7cfdc603d1d74663bec4e856bcfa59b09e63ca26040479adceac17f064106eab"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "网易云音乐",
+        "repository_path": "curated/module-stack/modules/fmz-NetEaseCloudMusic.yaml",
+        "source_sha256": "c52dc57e44d77f1d5cc3b370a4643301041e5d4072295af9f7364359dde7d6ef"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "网易邮箱",
+        "repository_path": "curated/module-stack/modules/fmz-NetEaseMail.yaml",
+        "source_sha256": "ce05c118ef6aa4ab6167ceb0ef4acc07c301e15bce6af17e8808479b2402240c"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "拼多多",
+        "repository_path": "curated/module-stack/modules/fmz-Pinduoduo.yaml",
+        "source_sha256": "6f6fd5069ac23d0a14714a404bb8fd25ca9e72b91db29554778d071631eddb24"
+      },
+      {
+        "kind": "mitm_completion",
+        "name": "夸克",
+        "repository_path": "curated/module-stack/modules/fmz-Quark.yaml",
+        "source_sha256": "b9f2b23a3dc92870009f7160b2ebf9173a277ed43ec50c5e720bd8569bae3a30"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "淘宝",
+        "repository_path": "curated/module-stack/modules/fmz-Taobao.yaml",
+        "source_sha256": "71b11aea4b62ca54ae3fbf232d7292daaba6c4e1d8a9723ef50c747831516f0d"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "腾讯手机管家",
+        "repository_path": "curated/module-stack/modules/fmz-TencentMobileManager.yaml",
+        "source_sha256": "d0889fffa8fe87c201d10865f1e3ded6b5d30360f936749ed382ad7f79b147b6"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "抖音",
+        "repository_path": "curated/module-stack/modules/fmz-TikTok.yaml",
+        "source_sha256": "b53df4378b5a526e2ae429ea96f8dc0e587faea0be89cff6b83da8325bf600c7"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "Weico(微博客户端)",
+        "repository_path": "curated/module-stack/modules/fmz-Weico.yaml",
+        "source_sha256": "a2792303181214f3742e2206d5c48ce82d060d430c99cb995799d02c5c1870a6"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "WPS",
+        "repository_path": "curated/module-stack/modules/fmz-WPS.yaml",
+        "source_sha256": "ec9ab31173bfec3bb8c2acfd95301e247a18f2c7c7921d5f8dcb4d42ad3338a7"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "闲鱼",
+        "repository_path": "curated/module-stack/modules/fmz-XianYu.yaml",
+        "source_sha256": "f134a2191a60a4ce2aae528cd3d2d73c2d2bb23ee33e20e2ef7023f560c56891"
+      },
+      {
+        "kind": "source_metadata",
+        "name": "小红书",
+        "repository_path": "curated/module-stack/modules/fmz-Xiaohongshu.yaml",
+        "source_sha256": "9b088d5b625fa4ce909bdf25bb3d9672fc4ee3db69780eec36f5a17cace25675"
+      },
+      {
+        "kind": "remove_invalid_ip_domain_duplicate",
+        "name": "知乎",
+        "repository_path": "curated/module-stack/modules/fmz-Zhihu.yaml",
+        "source_sha256": "b4d16ac372cb4cb71c53a7dc7015ac45fdbe813eb009799626492e9c54c0ac1f"
+      },
+      {
+        "kind": "weibo_new_ad_paths",
+        "name": "微博助手",
+        "repository_path": "curated/module-stack/modules/user-026.yaml",
+        "source_sha256": "139573c163e192efbbce8a537f944025f3418141b5bfc259e34bc154f36feced"
+      },
+      {
+        "kind": "scripthub_source_format",
+        "name": "script-hub.surge.sgmodule",
+        "repository_path": "curated/module-stack/modules/user-120.yaml",
+        "source_sha256": "8c636a21b147d02473a4680508f756951e8512c588733ba80c90539175e7b279"
+      }
+    ],
+    "deferred": [
+      {
+        "module": "毒奶特供",
+        "repository_path": "curated/module-stack/modules/catalog-extra-e26d8daa8ed0b19c.yaml",
+        "source_url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.conf",
+        "reason": "Upstream changes execution pipeline or introduces operations requiring a separate adapter"
+      },
+      {
+        "module": "YouTube",
+        "repository_path": "curated/module-stack/modules/fmz-YouTube.yaml",
+        "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partY/YouTube.sgmodule",
+        "reason": "Upstream changes execution pipeline or introduces operations requiring a separate adapter"
+      }
+    ],
+    "modules_with_script_updates": [
+      "curated/module-stack/modules/000-adblock-merged-complete.yaml",
+      "curated/module-stack/modules/catalog-extra-4571351efc713b40.yaml",
+      "curated/module-stack/modules/fmz-bilibili.yaml",
+      "curated/module-stack/modules/native-014.yaml",
+      "curated/module-stack/modules/native-018.yaml",
+      "curated/module-stack/modules/native-096.yaml",
+      "curated/module-stack/modules/user-026.yaml",
+      "curated/module-stack/modules/user-116.yaml",
+      "curated/module-stack/modules/user-120.yaml"
+    ],
+    "url_replacements": {
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/02808d741c174e33153ee230a7b8b0f426e47a5e4073148f17f9a5d32d40f89e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/0f66d3e93bf38b15bafaca4cf5e8afd9bba1de5a37ded1910724eb599a8fb927.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/134289fd91148c07a660b25c0ac4bb3f45fd0ea4ac31a255753f246db431bd23.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1fa2f86ccf3d71de20ce64f41917bf9388071f5abafe555628f608856970fc58.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/92a32e690d3a6c1be262ac55ce0b9a64cf4bd779bb0b00391a7c70d7f74431aa.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ee3c711eaf4c3a82ab95764601a85ff51c99d1f27e64faba694d441ce9a7ef72.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e744f92734811a9954aaa473a55effa70664d23f5bdd4ba204bd5a9e5056f64a.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6fcb98690ab25cfda0b0421bc7c7e953d1a36725fef6b7b5975bf77f230f5f66.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f40387dfd8bd70dc4477b8347823254a5eccf8cf9792c65fc35cef9140f00ca3.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c58f679b813f11d0a65270e20064d3d226cd7d9fa0941f4130f54609647a2702.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6d30380cc68e112b5bcb5d9b2013d553d3c48612b1c61e78f0e0bfae3e48ca2c.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/aca523a4e23ba7a3372e070e2d4f9cb4dfc6ecebef8b7e8d2cb6bd00f9b09d61.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/e81a7f55c9d73e90f692b90ff27c0c242bab0b2e69ded324b6cd48d19124c913.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/ba7b3e86bde6d4a9a395780cea4cbadbdb3c19e1b9992d8008888aed216b79ee.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/2485b25f900e929eb1c71585238bb933215bc1e61f55f5de8d59cfa282e4521c.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4fa1ee27a082d08e25cbc1d2bf0ae9ba4e5d7c2f64192ecdf23977c163282d10.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c5e46afa219424e22bcba151dbd6f5e4c6caf518cfdf3317381f4c7e2068e51b.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/439c97ad4a1aa1bc2b3c806dc74fe1127958310b7086e77b581adba45c9ba405.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/6a0c1d8e05136e7f134bfbf0dd94a8ab7356b22607a1ba7bace57820e2bc7af1.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/f99b893402fe30b783a10faf22a8f18c0fb86d30618f6e057545e04982e9ce7c.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/01bf16fb4d4a30f05823bd00b5d7f52b59cb8145378b4d163e69605cd08e3357.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76db08ddfb85114d676a1defa7088515f4c01e697c12d0bb8792b6682f071208.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/61fc5eaded4cb28d2c21796d3fb92ae8b8c3896346bf16ad3f4f29f6e1db53d2.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9888fd687ee7045212a35a399ac9da87f9b982ebe8618037ff5b211007ad92a3.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c613dd0463d7cf63ba52705eb2de042cb7ff0b7a4f89c057689a64d14f72b19.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/aa73b80e180d3811f2b4f06de619e9d7e06e30cff6070326a26d84e29796177e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9cfe023e74a891d3ef56e36b82fdb5f741e367894d8b20e10f8d91378df2617f.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/61fc5eaded4cb28d2c21796d3fb92ae8b8c3896346bf16ad3f4f29f6e1db53d2.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/3d7cf60fb5730ac5ab14ab0aa11826df09f009db724562eb8483d907e4564bf0.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/450ff86f6713d29959b5f2992b328d49f98ea979a7507f040bb47fb67186e859.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/61bee6020b454ed03c5350c9c8083c2590e39aeccbad962d793ebf9f44a3ad0a.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/bfcc0970105056b51a02eb643931c8d4a8d9656f25a5c3f0d6fe9cf6b4d15f8e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js",
+      "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/bfcc0970105056b51a02eb643931c8d4a8d9656f25a5c3f0d6fe9cf6b4d15f8e.js": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/native-full/scripts/4a70452a6f6ca07f9d81069005075dbf2957c349cfe981d26af2d295ebbc016e.js"
+    }
+  },
+  "selection_changed": false,
+  "device_verified": false,
+  "checks": {
+    "repository_suites_passed": 26,
+    "new_widget_synthetic_checks": 27,
+    "new_compat_synthetic_checks": 11
+  },
+  "unverified_sources": [
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Auto_Join_TF.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Aiinquiry_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/EasyBike_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Sunert/Scripts/blob/master/Script/Bilibili/BiliHD.js",
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Keep_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/JDWaimai_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/HantingHotels_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/NetEaseGodlike_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/TCLnScreen_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/MrHema_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/TV_Assistant_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/SuZhouCitizenCard_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/KOOK_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/ValorantBible_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Walmart_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://kelee.one/Tool/Loon/Lpx/TelegramRedirect.lpx",
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-modules/7fdc88568a0f97af99a466de3ab2fa71ef3a530d/native/scripts/0a57657a80626e81.js",
+      "status": null,
+      "error": "Incomplete source download; syntax validation failed; existing payload retained"
+    }
+  ]
+}

@@ -12,14 +12,30 @@ widgets:
 env_schema:
   PLAN_TOTAL_GB:
     name: PLAN_TOTAL_GB
+    description: 可选。
+    default_value: '100'
+  REFRESH_HOURS:
+    name: REFRESH_HOURS
+    description: 可选。
+    default_value: '2'
   SUBSCRIPTION_NAME:
     name: SUBSCRIPTION_NAME
+    description: 可选。
+    default_value: My Subscription
   SUBSCRIPTION_URL:
     name: SUBSCRIPTION_URL
+    description: 必填。
   SUBSCRIPTION_USER_AGENT:
     name: SUBSCRIPTION_USER_AGENT
+    description: 可选。
+    default_value: clash.meta
   WIDGET_STYLE:
     name: WIDGET_STYLE
+    description: 可选。glass：根容器不设置背景色，桌面壁纸直接透出来；classic：保留原来的浅色/深色纯色背景
+    default_value: glass
+    options:
+    - glass
+    - classic
 author: 'pronounAI · Egern adaptation: ErrBin'
 description: 配置 1 个小组件，通过通用脚本生成界面。
-icon: https://egern.pages.dev/assets/icons/pronounAI/Egern/Subscription-Widget.jpg
+icon: https://egern.pages.dev/assets/icons/pronounAI/Egern/Subscription-Widget.webp

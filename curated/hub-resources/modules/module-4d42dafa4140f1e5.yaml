@@ -1,7 +1,6 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/moyuzaime/egern/ChinaUnicom/ChinaUnicom.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 小组件·中国联通·多端版（适配）
-description: 打开中国联通 App 余量页或微信「余量查询」页查询一次即可自动读取｜更新时间：2026-11-04 21:15（北京时间）
+description: 打开中国联通 App 余量页或微信「余量查询」页查询一次即可自动读取｜更新时间：2026-11-22 10:30（北京时间）
 author: iBL3ND
 homepage: https://github.com/moyuzaime/egern/tree/main/ChinaUnicom
 icon: https://iili.io/nEuB6Jt.png
@@ -24,7 +23,8 @@ compat_arguments_schema:
     - 'false'
   cuMiniCapture:
     name: 微信小程序数据抓取
-    description: 监听微信「中国联通」小程序的首页接口与「余量查询」页（mina / mxx），解析通用流量、其他流量、语音及账户余额/本月消费/结转/欠费。关闭后不解析小程序响应
+    description: 监听微信「中国联通」小程序的首页接口与「余量查询」页（mina / mxx），解析通用流量、其他流量、语音及账户余额/本月消费/结转/欠费，并保存小程序请求凭据。没有
+      App 凭据时，组件会原样重放这些请求自行取数。关闭后既不解析也不重放
     default_value: 'true'
     options:
     - 'true'
@@ -74,8 +74,6 @@ compat_arguments_schema:
     - 'false'
 scriptings:
 - generic:
-    name: 中国联通·多端版·脚本1
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js
     update_interval: 21600
     timeout: 20
     env:
@@ -87,10 +85,10 @@ scriptings:
       cuGeneralFlow: '{{{cuGeneralFlow}}}'
       cuUiStyle: '{{{cuUiStyle}}}'
       cuDirectionalFlow: '{{{cuDirectionalFlow}}}'
+    name: 中国联通·多端版·脚本1
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js
 - http_request:
-    name: 中国联通·多端版·脚本2
     match: ^https://m\.client\.10010\.com/
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js
     body_required: false
     max_size: 1048576
     timeout: 10
@@ -100,10 +98,20 @@ scriptings:
       cuDebug: '{{{cuDebug}}}'
       cuPlanNotice: '{{{cuPlanNotice}}}'
     update_interval: 86400
-- http_response:
-    name: 中国联通·多端版·脚本3
+    name: 中国联通·多端版·脚本2
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js
+- http_request:
+    name: 中国联通·多端版·上游新增脚本3
     match: ^https://(mina\.10010\.com/wxapplet/weixinNew/|mxx\.client\.10010\.com/(?:servicequerybusiness|servicebusiness)/)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js
+    body_required: true
+    max_size: 1048576
+    timeout: 10
+    env:
+      cuMiniCapture: '{{{cuMiniCapture}}}'
+    update_interval: 86400
+- http_response:
+    match: ^https://(mina\.10010\.com/wxapplet/weixinNew/|mxx\.client\.10010\.com/(?:servicequerybusiness|servicebusiness)/)
     body_required: true
     max_size: 1048576
     timeout: 10
@@ -111,6 +119,8 @@ scriptings:
       cuMiniCapture: '{{{cuMiniCapture}}}'
       cuCaptureNotice: '{{{cuCaptureNotice}}}'
     update_interval: 86400
+    name: 中国联通·多端版·脚本3
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js
 mitm:
   hostnames:
     includes:

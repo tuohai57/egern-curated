@@ -12,5 +12,6 @@ widgets:
 env_schema:
   POLICY:
     name: POLICY
+    description: 指定策略组，如 "自动选择"、"香港节点"；留空或不设则走默认策略
 author: 'mickeu · Egern adaptation: ErrBin'
 description: '修改时间: 2026.10.08 18:45'

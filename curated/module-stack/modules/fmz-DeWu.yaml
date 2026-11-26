@@ -11,3 +11,7 @@ map_locals:
   status_code: 200
   body: ' '
 icon: https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png
+mitm:
+  hostnames:
+  - app.dewu.com
+  - cdn.poizon.com

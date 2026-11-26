@@ -11,4 +11,4 @@ widgets:
   script_name: wannianli
 author: 'jadkg · Egern adaptation: ErrBin'
 description: 农历信息 + 四类节日倒计时（法定 / 节气 / 民俗 / 国际）；改编自 ByteValley today_almanac.js；── 工具 ─────────────────────────────────────────────
-icon: https://egern.pages.dev/assets/icons/jadkg/egern/wannianli.jpg
+icon: https://egern.pages.dev/assets/icons/jadkg/egern/wannianli.webp

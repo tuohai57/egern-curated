@@ -56,6 +56,8 @@ jobs:
       - run: node curated/tools/test_qx_echo.cjs
       - run: python curated/tools/check_adblock_collection.py
       - run: python curated/tools/check_hub_resources.py
+      - run: node curated/tools/test_hub_upstream_runtime.cjs
+      - run: node curated/tools/test_upstream_compat_runtime.cjs
       - run: node curated/tools/test_service_diagnostics.cjs
       - run: node curated/tools/test_umetrip_runtime.cjs
       - run: python curated/tools/test_umetrip_eleme_paths.py

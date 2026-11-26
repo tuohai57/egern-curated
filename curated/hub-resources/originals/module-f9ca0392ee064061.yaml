@@ -12,13 +12,18 @@ widgets:
 env_schema:
   AI:
     name: AI
+    description: AI 检测策略组。POLICY 为空时生效
   LMT:
     name: LMT
+    description: 流媒体检测策略组。POLICY 为空时生效
   POLICY:
     name: POLICY
+    description: 最高优先级。指定后，出口、延迟、UDP/QUIC、流媒体、AI 全部统一走 POLICY
   XY:
     name: XY
+    description: 手动指定协议，例如 VLESS / Trojan / HY2 / AnyTLS
   YS:
     name: YS
+    description: 显示 IP 的地方启用隐私打码，例如 123.123.123.123 -> 123.123.*.*
 author: 'lylywayr · Egern adaptation: ErrBin'
 description: 配置 1 个小组件，通过通用脚本生成界面。

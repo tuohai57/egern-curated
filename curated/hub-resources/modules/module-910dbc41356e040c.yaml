@@ -1,17 +1,29 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/Aswoth/Keek/wangluoanquan.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 小组件·网络安全检测（适配）
 scriptings:
 - generic:
+    update_interval: 86400
     name: 网络安全检测·脚本1
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/25f694f9a552f74df95146fdf8a4059efad6024eea0b59ff03eee2769788de68.js
-    update_interval: 86400
 widgets:
 - name: 网络安全检测
   script_name: 网络安全检测·脚本1
 env_schema:
   MONITOR_POLICY:
     name: MONITOR_POLICY
+    description: 可选。
+    default_value: Proxy
+  REFRESH_MINUTES:
+    name: REFRESH_MINUTES
+    description: 可选。
+    default_value: '10'
+  SHOW_IP:
+    name: SHOW_IP
+    description: 可选。
+    default_value: 'false'
+    options:
+    - 'true'
+    - 'false'
 author: 'Aswoth · Egern adaptation: ErrBin'
 description: 配置 1 个小组件，通过通用脚本生成界面。
-icon: https://egern.pages.dev/assets/icons/Aswoth/Keek/wangluoanquan.jpg
+icon: https://egern.pages.dev/assets/icons/Aswoth/Keek/wangluoanquan.webp

@@ -25,3 +25,6 @@ curated/hub-resources/scripts/** -text
 curated/hub-resources/modules/** text eol=lf
 curated/hub-resources/*.json text eol=lf
 curated/hub-resources/*.md text eol=lf
+curated/upstream-review/**/scripts/** -text
+curated/upstream-review/**/*.json text eol=lf
+curated/upstream-review/**/*.md text eol=lf

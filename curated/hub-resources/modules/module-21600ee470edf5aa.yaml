@@ -1,19 +1,28 @@
-# Egern Hub reviewed resource. Original author and script bytes retained.
-# Source: https://egern.pages.dev/modules/Revicess/Egern/widget/youjia-widget-canvas.yaml
+# Reviewed upstream refresh 2026-11-26; curated names and user selection retained.
 name: 小组件·全国油价·画布版（适配）
 scriptings:
 - generic:
+    update_interval: 86400
     name: 全国油价·画布版·脚本1
     script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/e8df04fc7596523321125cf5e6a4b2d66bc2111dd546ccbba4b3ceb474821dab.js
-    update_interval: 86400
 widgets:
 - name: 全国油价·画布版
   script_name: 全国油价·画布版·脚本1
 env_schema:
   CITY:
     name: CITY
+    description: 省份名称，如 "北京"、"福建"、"广东"（默认：北京）
+    default_value: 北京
   TYPE:
     name: TYPE
+    description: 油种代号，直接填数字；89 / 92 / 95 / 98 / 0（0=柴油）；（默认：95）
+    default_value: '95'
+    options:
+    - '89'
+    - '92'
+    - '95'
+    - '98'
+    - '0'
 author: 'Revicess · Egern adaptation: ErrBin'
 description: 配置 1 个小组件，通过通用脚本生成界面。
 icon: square.grid.2x2.fill

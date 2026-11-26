@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "aggregate_sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
+  "aggregate_sha256": "ba0b2f2e7afc20b760ad2f2939d0482c0d9d7556ce3a3a238a1f1c4aedf09ce0",
   "included_sources": 257,
   "counts": {
     "rules": 769,

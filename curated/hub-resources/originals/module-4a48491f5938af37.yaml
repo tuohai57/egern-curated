@@ -12,16 +12,19 @@ widgets:
 env_schema:
   NAME:
     name: NAME
+    description: 机场名称
   NAME1:
     name: NAME1
   RESET:
     name: RESET
+    description: 重置日期
   RESET1:
     name: RESET1
   URL:
     name: URL
+    description: 订阅链接
   URL1:
     name: URL1
 author: 'Nullwhy · Egern adaptation: ErrBin'
 description: 机场流量用量查询；部分代码参考@iBL3ND    @Nullwhy
-icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/SubscriptionCard.jpg
+icon: https://egern.pages.dev/assets/icons/Nullwhy/Egern/Scripts/SubscriptionCard.webp

@@ -18,9 +18,9 @@
       "original_author": "Aswoth · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-07-01T16:56:34+00:00",
-      "source_sha256": "ce6da5ae089f87ab3e33116dfcc8a3e3a04a9d4142128b7d758e35bbfc0ef288",
+      "source_sha256": "0bd9db58ac38cc2523c546af6d1a6d9f1e70ca9581aaa7e0b8a078ab7be4db39",
       "original_repository_path": "curated/hub-resources/originals/module-f14aa86de6626cfb.yaml",
-      "sha256": "94f378d49b7289640259ebb0e41ee503e347f0bf02f0c6c7be7559f6f127b149",
+      "sha256": "dfdb41ebe353e6b02fc6e25fbf5f4e75eacea4bb602dc61e575ab2900f6dbd8f",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -28,7 +28,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-57d787c049804671",
@@ -42,9 +43,9 @@
       "original_author": "Aswoth · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-07-02T06:13:11+00:00",
-      "source_sha256": "5bc7bd61ca3812a058ce9e54dff56be543e380184fc53e79f9746baa4ddc7b5f",
+      "source_sha256": "cb32a94596447718901df05729cc7c681d4f6ee482a2bc0175c22b8b51d17a6b",
       "original_repository_path": "curated/hub-resources/originals/module-57d787c049804671.yaml",
-      "sha256": "23cffe2b80dcfeb58416ad9b934fc05ef449370bf5bc41a9729690ad74407818",
+      "sha256": "095a828896850f4c838994aae6008934e832a17d80ef1b3478e93bd3a9beb9bc",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -52,7 +53,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-21b73a51982f70fc",
@@ -114,9 +116,9 @@
       "original_author": "Aswoth · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-07-02T06:25:02+00:00",
-      "source_sha256": "095333d6d0b1aa15ac149783ea7c5fda03b5d0cd692a3eb1a93e3311d46c724a",
+      "source_sha256": "12cd6a27608fe87ca8c287d36d30bb731520bc1652a0756ca174456fcceb3e42",
       "original_repository_path": "curated/hub-resources/originals/module-910dbc41356e040c.yaml",
-      "sha256": "3cbae134a7c832e7d501a23f4c6e67baaab2d4367f598e677827f408f77522a3",
+      "sha256": "29355be8debe46ef10f16c7c509b8c4b77944f679d4492aef8bf9502e189fd2e",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -124,7 +126,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-185b440c0bede352",
@@ -162,9 +165,9 @@
       "original_author": "BiaoerD · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-08-25T06:57:00+00:00",
-      "source_sha256": "3fd2e22d2ee0a78c9e888a9f6eaa02ca1147a22135f4aed29025cf4f522e38f2",
+      "source_sha256": "dd61243d06d5f847c23acc51a413c28603bfa0a7d6be25bdcb7f4812a1c2a9e5",
       "original_repository_path": "curated/hub-resources/originals/module-56926f09ae4b5418.yaml",
-      "sha256": "6ff1c1a9598ed6329b37c87c7b0a453e176d324bb2f1c8cc6d66a242f468426c",
+      "sha256": "ed0fc328b536137410e20b63495ad8444f70cba5a783fa0a2b79bd8277d89f36",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -172,7 +175,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-7a030210268f92bd",
@@ -236,7 +240,7 @@
       "updated_at": "2026-10-31T11:44:17+00:00",
       "source_sha256": "968bde2f754566fcc6afa9201136af1e14187206888881783a721418592c48f1",
       "original_repository_path": "curated/hub-resources/originals/module-e2a4dd222bf0ef19.yaml",
-      "sha256": "be0d87d5a05f23cded057fad4f47c7a1ebe0fce078fa1ce6ea3b9bcd59a55c05",
+      "sha256": "31537bd28c40526e943f9818938f275ad36646344cfcdf961c8a770b9f953309",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -244,7 +248,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要电信手机号、密码和设备参数",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-3b810b8fce7bef8b",
@@ -332,7 +337,7 @@
       "updated_at": "2026-10-10T06:49:47+00:00",
       "source_sha256": "dec4ccfef90d1fb2d5a4c568eb13b707b4e077b231913885d387a10fb1926b0b",
       "original_repository_path": "curated/hub-resources/originals/module-847c5a38d17b8993.yaml",
-      "sha256": "5815e9f1c46086fe500d7e140b357c835dcf54f69ae90d370717d284f1c573e8",
+      "sha256": "822fe6b981537fda83d222b3ed7b7bc17e34ccb9bd457cd0eec79241059e9a66",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -340,7 +345,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要登录联通客户端捕获账户",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-0588cd33fbd6f9e3",
@@ -428,7 +434,7 @@
       "updated_at": "2026-11-10T07:21:16+00:00",
       "source_sha256": "939083ee67e3ea6719f10d26b77bad153652b7345d29a8d0bba0bd68ec5c72ce",
       "original_repository_path": "curated/hub-resources/originals/module-28bf222ed4a971be.yaml",
-      "sha256": "4d7108188fd54fc761c7dad8b19d103d6366cf8bb4a54322cca486b04772f94a",
+      "sha256": "f7bb74832f58cd45bdcc5502430a003a111893cb122052a275ad1767477d4bdc",
       "default_enabled": true,
       "compatibility_complete": true,
       "widgets": 1,
@@ -436,7 +442,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-5fd71d26b940bbba",
@@ -524,7 +531,7 @@
       "updated_at": "2026-11-03T02:36:20+00:00",
       "source_sha256": "f924e6446ba30a89925d150e128253e5aae3ad8e81142014ce06459d37a74d5b",
       "original_repository_path": "curated/hub-resources/originals/module-12bc5151d4543320.yaml",
-      "sha256": "3fd124f12f3b8ff90591704d22677249ce95cab5d0fd500634c038774448474c",
+      "sha256": "27ea218e08ace68acf450760bbb7dbb6e4e525d1c6147dde8e615efbe1567381",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -532,7 +539,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要个人服务器面板地址和凭据",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-57f6f04ca1abeb02",
@@ -546,9 +554,9 @@
       "original_author": "Nullwhy · Egern adaptation: ErrBin",
       "license": "GNU GPL v3",
       "updated_at": "2026-06-26T15:03:56+00:00",
-      "source_sha256": "f3af7d9cd9a6e3ce6f5dfd016efc2589dc112e5b4aabf987d1f32b715252541d",
+      "source_sha256": "9d870a6958921f4b85bb6fec7b64af62979d75932448d0a4d40a81ffc565fa93",
       "original_repository_path": "curated/hub-resources/originals/module-57f6f04ca1abeb02.yaml",
-      "sha256": "45b5b8fea8aac87d833c66b94b714ad380e5c37e038fd8519dbe295684d7d93f",
+      "sha256": "209a24c60b6c4ba0e954608f96b11eb14cd970dfa0d74d9bd58058633db19aa3",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -556,7 +564,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-27760f77abebfc04",
@@ -570,9 +579,9 @@
       "original_author": "Nullwhy · Egern adaptation: ErrBin",
       "license": "GNU GPL v3",
       "updated_at": "2026-07-09T14:02:26+00:00",
-      "source_sha256": "efe9de9fd67328a26d21213c63644b0fc2bc0276e72976bad37f0804e976d0d5",
+      "source_sha256": "a01be14efbc1bf8fba7443006512a61f0556afd06c7fa6e444f39ff5b704c729",
       "original_repository_path": "curated/hub-resources/originals/module-27760f77abebfc04.yaml",
-      "sha256": "ebc022acb07187a5d1c47d1b8624d51445669d77a72e0ecfe5f3fe2a6302a7ef",
+      "sha256": "b71e65aa50a2ebdc5ed9f524abc87d201034339e48a2e0bdbe032683fe87c60c",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -580,7 +589,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-4a48491f5938af37",
@@ -594,9 +604,9 @@
       "original_author": "Nullwhy · Egern adaptation: ErrBin",
       "license": "GNU GPL v3",
       "updated_at": "2026-06-27T09:32:37+00:00",
-      "source_sha256": "5d1267728767766167f9009e74180de05ea4f3c05dc4a25707ef6b39c22b4f1f",
+      "source_sha256": "fe1523b33db73db082e96de2d48c13b86618de3ad8e3a19ea85cebd35534f29f",
       "original_repository_path": "curated/hub-resources/originals/module-4a48491f5938af37.yaml",
-      "sha256": "d05824b2859e8a9a293c8c792a9564a5e1d5be980389891d4a02a301d932ea5b",
+      "sha256": "285ba473304fa7903477c10ede2293c1fee5a3c33ec6d0d0df62b341a8da422a",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -604,7 +614,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-21600ee470edf5aa",
@@ -618,9 +629,9 @@
       "original_author": "Revicess · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-07-04T15:21:06+00:00",
-      "source_sha256": "c6496ec741a1435c858b27dd9203c5714b94c9fa58fd8d733917d2ce6f7e455c",
+      "source_sha256": "7fc0aa6c901e727e35a2dfc80292c8ebf5084b5ea277ddc7d3b93690cc27ac98",
       "original_repository_path": "curated/hub-resources/originals/module-21600ee470edf5aa.yaml",
-      "sha256": "035b202f2bf2337bdb4424d852d6c70a9da76208373bae29e6a59e7e8b525846",
+      "sha256": "290cc6384e51bf882d52b8c66e002de9f3e68242cf77e563c30871d4e712bd12",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -628,7 +639,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-8ed44a2951610465",
@@ -739,9 +751,9 @@
       "original_author": "jadkg · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-03-13T03:35:47+00:00",
-      "source_sha256": "b2dea6437c948e89b66103c2dca00a961297e8b52adf68561191fb856926c5fc",
+      "source_sha256": "cf93f6222bcd3708815751116cef4f48e905cda1b32925d1f68cb0cd4631b08a",
       "original_repository_path": "curated/hub-resources/originals/module-3c7f56ff98930b53.yaml",
-      "sha256": "cd3d4a9d697dcd005d3ef9151cdc6b1687ee125633b47ef7908b684fba8e086d",
+      "sha256": "e1bef9f9da5d185cc3b72f3debd6e35d61086ed5ca5bb7e496a2bd897ee78d43",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -749,7 +761,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-dc594b5b84cb2550",
@@ -763,9 +776,9 @@
       "original_author": "jadkg · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-03-12T15:29:37+00:00",
-      "source_sha256": "96824e36c33a3da0a68600305147b83e14270c32cb7c718f5a3aa012daaf2ada",
+      "source_sha256": "586cc8dc5ed843624adfc25869c8e516f33be3354bf9cf94d9dcb30c8bbdf991",
       "original_repository_path": "curated/hub-resources/originals/module-dc594b5b84cb2550.yaml",
-      "sha256": "cf0df8f94badebfd620eea98675b8df7daf9af68c1d919d3927c58547109c740",
+      "sha256": "b92b1588e5fd5517d32ce4e4053a56aa7d9e2682101daf59f1630575965e28d9",
       "default_enabled": true,
       "compatibility_complete": true,
       "widgets": 1,
@@ -773,7 +786,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-ba84716ded26a2cf",
@@ -787,9 +801,9 @@
       "original_author": "jadkg · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-03-15T00:42:42+00:00",
-      "source_sha256": "0f96042b640037e77ed10dd194759cd2d2520bcd171093919342239bace5a651",
+      "source_sha256": "8b4e4f27bd261e5dbf181005c9cb6cb52a736d1b7ec34314042965fc87fb4426",
       "original_repository_path": "curated/hub-resources/originals/module-ba84716ded26a2cf.yaml",
-      "sha256": "6293eaee428028b9edfd793b70e91ea2dd34232754a8c29054d3e4733ea186e1",
+      "sha256": "1fd0c1b7fa4d697dd801c915e55baed6f7a4a7c8c93e207245b17096472c8f1e",
       "default_enabled": true,
       "compatibility_complete": true,
       "widgets": 1,
@@ -797,7 +811,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-2059a2f1d23790b3",
@@ -859,9 +874,9 @@
       "original_author": "lylywayr · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-07-09T02:49:08+00:00",
-      "source_sha256": "a910484f2f74c2b48cf061eeade3c3b6b2020027db480fe5c6f411c278b4bfa3",
+      "source_sha256": "ba206338a56a59466cfedbcf2ef790dc41e0d4c1e40dc929892a26eb85a63d1a",
       "original_repository_path": "curated/hub-resources/originals/module-f9ca0392ee064061.yaml",
-      "sha256": "b9a6a89b39080c0ba6bb1cfabf6480aa9dd489c3c18acc79329a79557478cab2",
+      "sha256": "c436532ad860df1909cbc919850d13892acb473ad24c58c4ad18014824341ac7",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -869,7 +884,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-73f060fe5695a4e8",
@@ -907,9 +923,9 @@
       "original_author": "mickeu · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-10-08T10:45:41+00:00",
-      "source_sha256": "655735e5ecab27bfeb918f4a7fc860214d99d540ca6b0522a47d826d4d979954",
+      "source_sha256": "eeaaf7b3d952d87a4ee8569eef3d318c132338b03d6353e5b39a9fd11600b476",
       "original_repository_path": "curated/hub-resources/originals/module-981e745a8faa3728.yaml",
-      "sha256": "34dbf435d3684f24dc6b47d9508abedfd75476228bfa2343f21231da2a75a24a",
+      "sha256": "1665652d77b74abe6169aa5897a19acabd75d5ce67a08f640b661480144a1735",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -917,7 +933,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-d83ec2dc8276de44",
@@ -931,9 +948,9 @@
       "original_author": "milull · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-06-27T06:38:32+00:00",
-      "source_sha256": "c4138a753d517f615be80f05a5dc0de4cbe47a27ffb79c49e941c89d275bbda7",
+      "source_sha256": "67d1726a13a700b998ed3a7e2b24bf9d5e3a3f19419fa9af8540f0242963f377",
       "original_repository_path": "curated/hub-resources/originals/module-d83ec2dc8276de44.yaml",
-      "sha256": "bb046562b85b578c5050fd786e6e62faaa3889193ae3d8feef2b7c5aa944456b",
+      "sha256": "61408d175ca7b7299deafcc36b449b9710d5984c1af073f7261de1702ec382c3",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -941,7 +958,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-d487d00e38695fb6",
@@ -1003,9 +1021,9 @@
       "original_author": "iBL3ND",
       "license": "未声明许可证",
       "updated_at": "2026-11-04T13:15:13+00:00",
-      "source_sha256": "58f235d24ac35386533d1ab90cb58e1e5dff2c449a621bf4e065a2c5cbec095b",
+      "source_sha256": "2ff4d2044f08e6ddab32be043a0df730c35f48347045607ba1ca31827f63272b",
       "original_repository_path": "curated/hub-resources/originals/module-4d42dafa4140f1e5.yaml",
-      "sha256": "d833836becdee8b4fded7e87121bb7377d4b54dffb534ce682f4460c6ce8de72",
+      "sha256": "266ffa578f6327b164752c16d0550c6cd7f2e4f99533f4de245c37a3b7294922",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -1013,7 +1031,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要登录联通客户端捕获账户",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-bbe5c7b304d8b62f",
@@ -1027,9 +1046,9 @@
       "original_author": "pronounAI · Egern adaptation: ErrBin",
       "license": "Apache-2.0",
       "updated_at": "2026-09-22T13:08:53+00:00",
-      "source_sha256": "78be81c9caa3d375c3ecfb752d4a62eea7ac8185f2b330444072d04369f279d0",
+      "source_sha256": "be4f972f8fc076b97f7dea34970507290876240c7beb651b6e5b9d4d314bde8a",
       "original_repository_path": "curated/hub-resources/originals/module-bbe5c7b304d8b62f.yaml",
-      "sha256": "7865a4930f2e36e29e011731e0b28c70b855d882fc4136f2e9d00b20880d6be7",
+      "sha256": "8c3a461e2985a771f79725ef63549e8c54891533812acb0d9a2b74d1d6b6ede8",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -1037,7 +1056,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-6e1f441b2b7cc312",
@@ -1099,9 +1119,9 @@
       "original_author": "xcgtb · Egern adaptation: ErrBin",
       "license": "未声明许可证",
       "updated_at": "2026-05-02T03:36:48+00:00",
-      "source_sha256": "e29d9cbeb9736f2d60b6a5a9fe50c7ccace9a3007d7527f2e933f8dd89adab9b",
+      "source_sha256": "a6cde189261b5491dc899c333d084d7940a2eaa3d36e61cc6770eaebb7b181af",
       "original_repository_path": "curated/hub-resources/originals/module-386967f0aa1f3d8b.yaml",
-      "sha256": "f6f8a57a679641c103c6185956837b10a344d4ee04ba5a88e1831ac167650bae",
+      "sha256": "82a451f8d6fdfc42b7752755df7365e2c42a1c47e750e9ae742b96fe970c99cd",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -1109,7 +1129,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-0b66bc7fcb2d1a50",
@@ -1147,9 +1168,9 @@
       "original_author": "Hark（基于 zhaohantao1360-hash v20 改版，iOS 液态玻璃风格 + 用量洞察）",
       "license": "未声明许可证",
       "updated_at": "2026-11-03T20:43:58+00:00",
-      "source_sha256": "763f74eeae7feb18cf7fce221ae8d39c3702f9f1140eb50a084bb9f9786ceae2",
+      "source_sha256": "37a05007e2841b07826fe6604eecb5be0467567b817cd96d306090967c4a4209",
       "original_repository_path": "curated/hub-resources/originals/module-79b28a9648131641.yaml",
-      "sha256": "b1981917dc4bde24e3a48667c7d99dee3182faa241422a4701cc90f62ae68016",
+      "sha256": "22b0ac38663d9f8f23eda6f6d5bca54cc8e9c2872f5a39b3c650792f09e67264",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -1157,7 +1178,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要登录移动客户端捕获账户",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-b1db628b4e85d52e",
@@ -1171,9 +1193,9 @@
       "original_author": "Hark（基于 zhaohantao1360-hash v20 改版，iOS 液态玻璃风格 + 用量洞察）",
       "license": "未声明许可证",
       "updated_at": "2026-11-03T20:43:58+00:00",
-      "source_sha256": "b9a99ad73d967125841c05566bc66cdc4ec0b0aff9f5538196e6fba7aadb2fca",
+      "source_sha256": "e08186bb88d9f765dce5c8bd7428912f5604aa36c4dfdd838fadf8fc437e258d",
       "original_repository_path": "curated/hub-resources/originals/module-b1db628b4e85d52e.yaml",
-      "sha256": "c53306907a72544336acb58162c0585226c5ee45aa99e2c6de916f2a384bde72",
+      "sha256": "904b52121f87a7490064901917ecf474aca9bc49aa1631f93e215b4f293ee119",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 1,
@@ -1181,7 +1203,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "需要登录移动客户端捕获账户",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-1a9b3b6099445af3",
@@ -1267,9 +1290,9 @@
       "original_author": "app2smile · Egern adaptation: ErrBin",
       "license": "MIT",
       "updated_at": "2024-11-02T04:25:34+00:00",
-      "source_sha256": "94960a8208d8a96a6445b6c5296198969a31596c35dedf085acd1ed502c9ecc7",
+      "source_sha256": "b021ee2d919c2ceae660f2a365722fa5787d2b6db614d75f4e74b0b60a4c2872",
       "original_repository_path": "curated/hub-resources/originals/module-efc631245778d425.yaml",
-      "sha256": "a86b8cfb0419a38258426019fa532ff2aac6df56729e0e4d0c34b890d208d6d9",
+      "sha256": "6f9c86e1eea10bbd4b0978e3c7be77033509599895ce0e1725d69a776e15acb2",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 0,
@@ -1277,7 +1300,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "module-35925d6d8b2c049b",
@@ -1291,9 +1315,9 @@
       "original_author": "app2smile · Egern adaptation: ErrBin",
       "license": "MIT",
       "updated_at": "2022-12-06T03:09:22+00:00",
-      "source_sha256": "29ba3cc7099d79e75f30f6f879bf64774e0de08e49469c40e7b351317be2abb7",
+      "source_sha256": "13f9934a7492284dd3c7d0296d43553a78f9c86e4a3b3adf830f58ae216d5976",
       "original_repository_path": "curated/hub-resources/originals/module-35925d6d8b2c049b.yaml",
-      "sha256": "78072ee162d2e7e623d69f7b2d301b30bd643992391252867a7ebaee890939f9",
+      "sha256": "b0ba0ef6d9fbd8765fe70cda48dd4d9024cf0dc1504f5fef1f8092dd07643cb1",
       "default_enabled": false,
       "compatibility_complete": true,
       "widgets": 0,
@@ -1301,7 +1325,8 @@
         "命名空间及脚本引用；原脚本字节未改"
       ],
       "prerequisite": "",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "reviewed_at": "2026-11-26"
     },
     {
       "id": "service-diagnostics",
@@ -1327,27 +1352,30 @@
   "dependencies": [
     {
       "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-json.js",
-      "repository_path": "curated/hub-resources/scripts/15f7786348c8edd5b4253948fc89b77fd0b4a4849aa5f90157ecf8ae1ec8a058.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/15f7786348c8edd5b4253948fc89b77fd0b4a4849aa5f90157ecf8ae1ec8a058.js",
-      "sha256": "15f7786348c8edd5b4253948fc89b77fd0b4a4849aa5f90157ecf8ae1ec8a058",
-      "bytes": 5577,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/cbc3fcc19171e920b8d52e8d99e456736cff0b6878b4d0db610b081ea62eb14c.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/cbc3fcc19171e920b8d52e8d99e456736cff0b6878b4d0db610b081ea62eb14c.js",
+      "sha256": "cbc3fcc19171e920b8d52e8d99e456736cff0b6878b4d0db610b081ea62eb14c",
+      "bytes": 5915,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/bilibili-proto.js",
-      "repository_path": "curated/hub-resources/scripts/6a1597c44b0bc2d221ce6cc6fef93a57d3a070e08443fde44b37448827a0fb4e.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/6a1597c44b0bc2d221ce6cc6fef93a57d3a070e08443fde44b37448827a0fb4e.js",
-      "sha256": "6a1597c44b0bc2d221ce6cc6fef93a57d3a070e08443fde44b37448827a0fb4e",
-      "bytes": 111137,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/ee6ddd37badc00d7224fe35f90c17d6a823ee1b89d2b43cd72fb4b72ec6d48b6.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ee6ddd37badc00d7224fe35f90c17d6a823ee1b89d2b43cd72fb4b72ec6d48b6.js",
+      "sha256": "ee6ddd37badc00d7224fe35f90c17d6a823ee1b89d2b43cd72fb4b72ec6d48b6",
+      "bytes": 111462,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://egern.pages.dev/scripts/app2smile/rules/js/zhihu.js",
-      "repository_path": "curated/hub-resources/scripts/f27c8e81ab6f653f44a010c2d249e01cb14eb52390a6523b0dc88343d5961039.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f27c8e81ab6f653f44a010c2d249e01cb14eb52390a6523b0dc88343d5961039.js",
-      "sha256": "f27c8e81ab6f653f44a010c2d249e01cb14eb52390a6523b0dc88343d5961039",
-      "bytes": 6981,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/4776be01f2c7d2cd1efff381960f545c962daa2dcc05f20766ac9634955393b3.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/4776be01f2c7d2cd1efff381960f545c962daa2dcc05f20766ac9634955393b3.js",
+      "sha256": "4776be01f2c7d2cd1efff381960f545c962daa2dcc05f20766ac9634955393b3",
+      "bytes": 7423,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/Aswoth/Keek/main/%E4%B8%87%E5%B9%B4%E5%8E%86.js",
@@ -1447,11 +1475,12 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CT_Widget.JS",
-      "repository_path": "curated/hub-resources/scripts/d8667fdc1afc4f48aec49977f5419fa9c95d6b29ddb91a46275103b512d51d3f.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/d8667fdc1afc4f48aec49977f5419fa9c95d6b29ddb91a46275103b512d51d3f.js",
-      "sha256": "d8667fdc1afc4f48aec49977f5419fa9c95d6b29ddb91a46275103b512d51d3f",
-      "bytes": 28791,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/28a1f954a60f9765195e11997c54537e5d247ead79115c52d41fec778ecf0630.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/28a1f954a60f9765195e11997c54537e5d247ead79115c52d41fec778ecf0630.js",
+      "sha256": "28a1f954a60f9765195e11997c54537e5d247ead79115c52d41fec778ecf0630",
+      "bytes": 40459,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS",
@@ -1487,11 +1516,12 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS",
-      "repository_path": "curated/hub-resources/scripts/8b240cd90be905a0090f67857cba5e7e43a07d039e01d1de65781ee0849f501a.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/8b240cd90be905a0090f67857cba5e7e43a07d039e01d1de65781ee0849f501a.js",
-      "sha256": "8b240cd90be905a0090f67857cba5e7e43a07d039e01d1de65781ee0849f501a",
-      "bytes": 41044,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/1422839d3bb307ba4fd9dbdc9c7faa8cac7ea8c1d779a655717ff34d23bc1a24.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/1422839d3bb307ba4fd9dbdc9c7faa8cac7ea8c1d779a655717ff34d23bc1a24.js",
+      "sha256": "1422839d3bb307ba4fd9dbdc9c7faa8cac7ea8c1d779a655717ff34d23bc1a24",
+      "bytes": 38517,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS",
@@ -1503,11 +1533,12 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unicom_Widget.JS",
-      "repository_path": "curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754.js",
-      "sha256": "ed07f10f1ad1b4d951027e5967884bd9bd9a1260e6d2f587ed7dbba987fd9754",
-      "bytes": 30560,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/b3d67de1d7a3fb764c8e62e253f5de686a93411c7bccf972785740dbdd9e76d6.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b3d67de1d7a3fb764c8e62e253f5de686a93411c7bccf972785740dbdd9e76d6.js",
+      "sha256": "b3d67de1d7a3fb764c8e62e253f5de686a93411c7bccf972785740dbdd9e76d6",
+      "bytes": 43116,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Weather_Widget.JS",
@@ -1519,11 +1550,12 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/Kaemiel/Egern/refs/heads/main/VPS_SSH.js",
-      "repository_path": "curated/hub-resources/scripts/78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2.js",
-      "sha256": "78ef418f9bba52bd01a84f00f71d33af498afe94559f2d584b0cf0881b46b9b2",
-      "bytes": 24324,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/b212d0c24466c8452d3acdcc966c9764915af037b11cbb0b6a0bc4a639e279a8.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/b212d0c24466c8452d3acdcc966c9764915af037b11cbb0b6a0bc4a639e279a8.js",
+      "sha256": "b212d0c24466c8452d3acdcc966c9764915af037b11cbb0b6a0bc4a639e279a8",
+      "bytes": 28182,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/Nullwhy/Egern/main/Scripts/NetUnlock.js",
@@ -1679,11 +1711,12 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/moyuzaime/egern/main/ChinaUnicom/ChinaUnicom_Widget.js",
-      "repository_path": "curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d.js",
-      "sha256": "eaf7d37ae3e324a942889e94a3bbde9c7ea2c62d7ecd59fcc01814aa95399f1d",
-      "bytes": 87970,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332.js",
+      "sha256": "f71fe274d0fb253ec18734e662f58ceab021df4b8ce4667d69ac6fcdfdeb0332",
+      "bytes": 92725,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/pronounAI/Egern/main/Subscription-Widget.js",
@@ -1727,19 +1760,21 @@
     },
     {
       "source_url": "https://raw.githubusercontent.com/zhaohantao1360-hash/Hark/main/china-mobile-hark-dash.js?v=20261104-0450",
-      "repository_path": "curated/hub-resources/scripts/75dab0cd017fc891b1f24aa825c0e116841f12ff4b55cf3061ff4072422397db.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/75dab0cd017fc891b1f24aa825c0e116841f12ff4b55cf3061ff4072422397db.js",
-      "sha256": "75dab0cd017fc891b1f24aa825c0e116841f12ff4b55cf3061ff4072422397db",
-      "bytes": 65371,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/937094ac7461160f5bc670fc6f07c605fdc740a8a9a39edd16eefcb3ec8c643c.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/937094ac7461160f5bc670fc6f07c605fdc740a8a9a39edd16eefcb3ec8c643c.js",
+      "sha256": "937094ac7461160f5bc670fc6f07c605fdc740a8a9a39edd16eefcb3ec8c643c",
+      "bytes": 65746,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/zhaohantao1360-hash/Hark/main/china-mobile-hark-ios.js?v=20261104-0450",
-      "repository_path": "curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js",
-      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1.js",
-      "sha256": "ba03b956881e2e8c9a3b81719ca8a26fba56a240a9f7fa031a732901fa0fb1c1",
-      "bytes": 62832,
-      "original_bytes_preserved": true
+      "repository_path": "curated/hub-resources/scripts/505149f88fb734a905dfbc726d3134531f84fc0219a04a5fc7bc354000139be7.js",
+      "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/hub-resources/scripts/505149f88fb734a905dfbc726d3134531f84fc0219a04a5fc7bc354000139be7.js",
+      "sha256": "505149f88fb734a905dfbc726d3134531f84fc0219a04a5fc7bc354000139be7",
+      "bytes": 63345,
+      "original_bytes_preserved": true,
+      "reviewed_at": "2026-11-26"
     },
     {
       "source_url": "https://raw.githubusercontent.com/zhaohantao1360-hash/Hark/main/sgcc-hark.js?v=20261026-0910",
@@ -1773,5 +1808,6 @@
       "original_bytes_preserved": true
     }
   ],
-  "device_runtime_verified": false
+  "device_runtime_verified": false,
+  "upstream_reviewed_at": "2026-11-26"
 }

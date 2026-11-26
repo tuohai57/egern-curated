@@ -21,7 +21,7 @@ scriptings:
 - http_request:
     name: ScriptHub.Egern.sgmodule / 2
     match: ^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|all-module)
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/c5e46afa219424e22bcba151dbd6f5e4c6caf518cfdf3317381f4c7e2068e51b.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/439c97ad4a1aa1bc2b3c806dc74fe1127958310b7086e77b581adba45c9ba405.js
     body_required: true
     update_interval: 86400
     timeout: 300

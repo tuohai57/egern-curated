@@ -269,7 +269,7 @@ scriptings:
 - http_request:
     name: 哔哩哔哩 / 1
     match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9888fd687ee7045212a35a399ac9da87f9b982ebe8618037ff5b211007ad92a3.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/1c613dd0463d7cf63ba52705eb2de042cb7ff0b7a4f89c057689a64d14f72b19.js
     body_required: true
     update_interval: 86400
     binary_body: true
@@ -278,7 +278,7 @@ scriptings:
 - http_request:
     name: 哔哩哔哩 / 2
     match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/aa73b80e180d3811f2b4f06de619e9d7e06e30cff6070326a26d84e29796177e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/9cfe023e74a891d3ef56e36b82fdb5f741e367894d8b20e10f8d91378df2617f.js
     body_required: true
     update_interval: 86400
     binary_body: true
@@ -287,13 +287,13 @@ scriptings:
 - http_response:
     name: 哔哩哔哩 / 3
     match: ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(Room|User))\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/09749a95e96d4b5847d5d6a07476b3ff70b3dc11d8cda2b00e80bd8681594c6e.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/5b2e1a9c2b203648a75c1e7d1c8b20081005fce6d909fb378ab2c3b5c3b8e4cb.js
     body_required: true
     update_interval: 86400
 - http_response:
     name: 哔哩哔哩 / 4
     match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/450ff86f6713d29959b5f2992b328d49f98ea979a7507f040bb47fb67186e859.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/61bee6020b454ed03c5350c9c8083c2590e39aeccbad962d793ebf9f44a3ad0a.js
     body_required: true
     update_interval: 86400
     binary_body: true

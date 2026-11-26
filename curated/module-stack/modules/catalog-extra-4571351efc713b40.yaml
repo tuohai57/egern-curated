@@ -73,7 +73,7 @@ scriptings:
 - http_response:
     name: Bilibili增强 / 3
     match: ^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?
-    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/01bf16fb4d4a30f05823bd00b5d7f52b59cb8145378b4d163e69605cd08e3357.js
+    script_url: https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/scripts/76db08ddfb85114d676a1defa7088515f4c01e697c12d0bb8792b6682f071208.js
     body_required: true
     update_interval: 86400
     max_size: 16777216

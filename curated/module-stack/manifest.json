@@ -8,7 +8,7 @@
       "name": "综合去广告合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/000-adblock-merged-complete.yaml",
       "repository_path": "curated/module-stack/modules/000-adblock-merged-complete.yaml",
-      "sha256": "b82479df1c2deee5837c52393dc237f4bc2a0c58f3a1f920132ff9b9d1b2e010",
+      "sha256": "ba0b2f2e7afc20b760ad2f2939d0482c0d9d7556ce3a3a238a1f1c4aedf09ce0",
       "enabled": true,
       "update_interval": 86400,
       "included_modules": [
@@ -4736,7 +4736,7 @@
       "name": "Bilibili增强",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/catalog-extra-4571351efc713b40.yaml",
       "repository_path": "curated/module-stack/modules/catalog-extra-4571351efc713b40.yaml",
-      "sha256": "358a221e0454d2923b0e55e943d7a9b57a635e3a6108c43c41e1965bfed4ba7e",
+      "sha256": "f78d544f46ef620b20cc28ea4ed9a99a913ccc6a1b47349200182b7ee956e779",
       "counts": {
         "rules": 4,
         "url_rewrites": 0,
@@ -22216,9 +22216,9 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "联掌门户",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partL/LianTongMenHu.sgmodule",
-      "source_sha256": "ec10b4f692e63ff62bf90baf661f7e9fd98645c3482effc48c07a08bb592182d",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/ec10b4f692e63ff62bf90baf661f7e9fd98645c3482effc48c07a08bb592182d.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partL/LianTongMenHu.sgmodule",
+      "source_sha256": "6d6e60d24d0e6b4b200c0dbe13738941e252c33ab029ff9cb92d117b4e61296a",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/6d6e60d24d0e6b4b200c0dbe13738941e252c33ab029ff9cb92d117b4e61296a.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -22270,7 +22270,8 @@
       "runtime_verified": false,
       "catalog_url": null,
       "upstream_dates": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "网易有道词典",
@@ -36495,13 +36496,14 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "铁路12306",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/part1/12306.sgmodule",
-      "source_sha256": "756ab3b4697a69dc4ee9d83512bebe849e4ab9ed3d5cfff9443907dcc04613c5",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/756ab3b4697a69dc4ee9d83512bebe849e4ab9ed3d5cfff9443907dcc04613c5.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/part1/12306.sgmodule",
+      "source_sha256": "bf469d3dfbbd0e9fa6a618c98ef271822b375620f61f08a3e31cb0f5ec8f4f83",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/bf469d3dfbbd0e9fa6a618c98ef271822b375620f61f08a3e31cb0f5ec8f4f83.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/12306.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "360",
@@ -36519,13 +36521,14 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "360",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/part3/360.sgmodule",
-      "source_sha256": "833a3b64a56535cbbf6b009b357cd3b828bc23ecfffd427d7759b05df73b8c27",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/833a3b64a56535cbbf6b009b357cd3b828bc23ecfffd427d7759b05df73b8c27.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/part3/360.sgmodule",
+      "source_sha256": "586e826aabb515e05b08d488c9f9095cbd91fdeaebadc5e0038e9bf7d133c54d",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/586e826aabb515e05b08d488c9f9095cbd91fdeaebadc5e0038e9bf7d133c54d.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/a0/6a/a8a06a1e-0465-ef26-7976-0aced9145494/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/a0/6a/a8a06a1e-0465-ef26-7976-0aced9145494/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "农业银行",
@@ -36543,9 +36546,9 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "中国农业银行",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partN/ABC.sgmodule",
-      "source_sha256": "fd6688964e40f7683323d6ef151224ebb2d86b3a9d458bbbd1d6fd8338a26f76",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/fd6688964e40f7683323d6ef151224ebb2d86b3a9d458bbbd1d6fd8338a26f76.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partN/ABC.sgmodule",
+      "source_sha256": "9ac18183698d1410b6ecf1cabbb97e46f7147094c51a25ae0991d8bf310957dc",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/9ac18183698d1410b6ecf1cabbb97e46f7147094c51a25ae0991d8bf310957dc.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -36553,7 +36556,8 @@
           "kind": "financial_module_kept_off"
         }
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/14/1f/68/141f68e4-112d-40de-0e7a-d1c188d0ce41/AppIcon-Release-1x_U007emarketing-0-6-0-sRGB-85-220-0.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/14/1f/68/141f68e4-112d-40de-0e7a-d1c188d0ce41/AppIcon-Release-1x_U007emarketing-0-6-0-sRGB-85-220-0.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "爱思助手",
@@ -36571,13 +36575,14 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "爱思助手",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partA/AiSiAssistant.sgmodule",
-      "source_sha256": "3308ed8d82273357fdb3548dba0cfa5beafa8a42ff7658309637442a576676bd",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3308ed8d82273357fdb3548dba0cfa5beafa8a42ff7658309637442a576676bd.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partA/AiSiAssistant.sgmodule",
+      "source_sha256": "049d979d4690c1312e24643e73f63f2ee82200a7de89bc0ea591d4b763ca0f4e",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/049d979d4690c1312e24643e73f63f2ee82200a7de89bc0ea591d4b763ca0f4e.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/i4Assistant.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/i4Assistant.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "阿里巴巴",
@@ -36595,9 +36600,9 @@
       "mitm_hosts": 4,
       "enabled": false,
       "app": "1688",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partA/Alibaba.sgmodule",
-      "source_sha256": "889288f32ed2e2b7aeb53504749d3a4d851963acc05f8aefa627d75aa5484278",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/889288f32ed2e2b7aeb53504749d3a4d851963acc05f8aefa627d75aa5484278.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partA/Alibaba.sgmodule",
+      "source_sha256": "f4c64109bfe9a2e1a8c0b83d3cd02f090494090754ef5fab5f5afff233674690",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/f4c64109bfe9a2e1a8c0b83d3cd02f090494090754ef5fab5f5afff233674690.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -36674,7 +36679,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/75/50/77/7550777f-0f67-aede-cbc3-18edf41318b2/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "汽车之家",
@@ -36692,13 +36698,14 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "汽车之家",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partQ/Autohome.sgmodule",
-      "source_sha256": "8862e0bdb01650cbe1b8a4038b8d5d7d6953ece1827457781b0595b1af81dadd",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/8862e0bdb01650cbe1b8a4038b8d5d7d6953ece1827457781b0595b1af81dadd.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partQ/Autohome.sgmodule",
+      "source_sha256": "26518a603537bcd76b7ea6ac2f1e1be440b092229d1874827f59a08929f2f653",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/26518a603537bcd76b7ea6ac2f1e1be440b092229d1874827f59a08929f2f653.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/AutoHome.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "高德地图",
@@ -36716,19 +36723,20 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "高德地图",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partG/AutoNavi.sgmodule",
-      "source_sha256": "79c65ca0ff9a010e43635d3f15007e098c9f655d44e32989ae2be3c48a694383",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/79c65ca0ff9a010e43635d3f15007e098c9f655d44e32989ae2be3c48a694383.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partG/AutoNavi.sgmodule",
+      "source_sha256": "a1047c2b8bb57b2743ded400f41035c816d30bb66493f098bd90e632019baef1",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/a1047c2b8bb57b2743ded400f41035c816d30bb66493f098bd90e632019baef1.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Amap.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-bilibili.yaml",
       "repository_path": "curated/module-stack/modules/fmz-bilibili.yaml",
-      "sha256": "61630db8edf05edbed3972b0ee7a1bd06155a0277ab8c35211618e84aa2f508b",
+      "sha256": "16c301ed39bfa19fe45947a42ffb2d344a62f73560e4adabc50502dc133ccab7",
       "counts": {
         "rules": 5,
         "url_rewrites": 0,
@@ -36740,9 +36748,9 @@
       "mitm_hosts": 5,
       "enabled": false,
       "app": "哔哩哔哩",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partB/bilibili.sgmodule",
-      "source_sha256": "c65cfb2b5b0fdf9342488d6bdda918120903fcb7ac6399ce61cbc20af5caf860",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c65cfb2b5b0fdf9342488d6bdda918120903fcb7ac6399ce61cbc20af5caf860.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partB/bilibili.sgmodule",
+      "source_sha256": "32d10d545a9f862a9a0a19a805b6ee8e0f627bbaa71e8ac4d33aa35e5df6b085",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/32d10d545a9f862a9a0a19a805b6ee8e0f627bbaa71e8ac4d33aa35e5df6b085.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -36807,7 +36815,8 @@
           "successful_single_result_preserved": true
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/BilibiliPink.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "菜鸟裹裹",
@@ -36825,9 +36834,9 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "菜鸟",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partC/CaiNiaoGuoGuo.sgmodule",
-      "source_sha256": "0af44dbeb0e2b4f7019f5c5df98b886995b81033607cbb6235eff3c890923cf2",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/0af44dbeb0e2b4f7019f5c5df98b886995b81033607cbb6235eff3c890923cf2.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partC/CaiNiaoGuoGuo.sgmodule",
+      "source_sha256": "7c5830063d82a3d84761997fe8e8dae8f12f8b4901f67aac9315a8750f7200bc",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/7c5830063d82a3d84761997fe8e8dae8f12f8b4901f67aac9315a8750f7200bc.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -36912,7 +36921,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "中国电信",
@@ -36930,13 +36940,14 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "中国电信",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partZ/ChinaTelecom.sgmodule",
-      "source_sha256": "c4d85e82774aa0c21699051559e4adde2e0159190de220965a881da347921c31",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c4d85e82774aa0c21699051559e4adde2e0159190de220965a881da347921c31.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partZ/ChinaTelecom.sgmodule",
+      "source_sha256": "fc49e2fcf28c78b0aaeac135f5c678859c646a24ceb448375a3743e9a712366f",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/fc49e2fcf28c78b0aaeac135f5c678859c646a24ceb448375a3743e9a712366f.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/dianxin.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/dianxin.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "酷安",
@@ -36954,9 +36965,9 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "酷安",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partK/Coolapk.sgmodule",
-      "source_sha256": "ea180fdd3495a456612896aecc10b0051023daf4a34396b3f9159cb41a71c2d3",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/ea180fdd3495a456612896aecc10b0051023daf4a34396b3f9159cb41a71c2d3.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partK/Coolapk.sgmodule",
+      "source_sha256": "6c479aab344387935f70e2f2bd0dc1d97a9f38ecf61a78d6b097c16e588e6ebd",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/6c479aab344387935f70e2f2bd0dc1d97a9f38ecf61a78d6b097c16e588e6ebd.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -36977,7 +36988,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CoolApk.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/CoolApk.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "携程",
@@ -36995,9 +37007,9 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "携程旅行",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partX/Ctrip.sgmodule",
-      "source_sha256": "48413d721260c4532f37dd2032c11ffa5fbc9483318d25ca33ce2416a2849aa1",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/48413d721260c4532f37dd2032c11ffa5fbc9483318d25ca33ce2416a2849aa1.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partX/Ctrip.sgmodule",
+      "source_sha256": "78a10de7d07f8dbe30518be941c6ebdc878895f4000033663d006c0aba518b43",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/78a10de7d07f8dbe30518be941c6ebdc878895f4000033663d006c0aba518b43.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37010,7 +37022,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/xiechenglvxing.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "大麦",
@@ -37028,13 +37041,14 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "大麦",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/Damai.sgmodule",
-      "source_sha256": "e9954fde09e54773cfc2bc6b91cdb0c0bd188a76ff10467039d47e719d53cc9d",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/e9954fde09e54773cfc2bc6b91cdb0c0bd188a76ff10467039d47e719d53cc9d.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/Damai.sgmodule",
+      "source_sha256": "62b2262257c854b894efb2e44995da5ff2639635255c988a0a941d30d292154a",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/62b2262257c854b894efb2e44995da5ff2639635255c988a0a941d30d292154a.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Damai.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "懂车帝",
@@ -37052,19 +37066,20 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "懂车帝",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/Dcar.sgmodule",
-      "source_sha256": "70f39e24103e366759537af48fb80c180c385d32fe34c70ac538991cf613306a",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/70f39e24103e366759537af48fb80c180c385d32fe34c70ac538991cf613306a.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/Dcar.sgmodule",
+      "source_sha256": "739777c02d44f9a6e9d34321ee83df9a312f1b9d0db738a38535509cf75945ea",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/739777c02d44f9a6e9d34321ee83df9a312f1b9d0db738a38535509cf75945ea.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6e/2a/81/6e2a81b3-80bd-1d66-91bf-f1e02af10a29/DCDAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6e/2a/81/6e2a81b3-80bd-1d66-91bf-f1e02af10a29/DCDAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "得物",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-DeWu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-DeWu.yaml",
-      "sha256": "fe19a440e449a073b1c11330a4b61ef10bcef22d5875d9cc5b6ecbf785141552",
+      "sha256": "9d152be6a2471ccf9d10af2e4d6dbcd13a9bd10d7a16b76990016ae0f213a62f",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -37073,16 +37088,17 @@
         "map_locals": 1,
         "scriptings": 0
       },
-      "mitm_hosts": 0,
+      "mitm_hosts": 2,
       "enabled": false,
       "app": "得物",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/DeWu.sgmodule",
-      "source_sha256": "96d0e32a4e6e2ecef5193a532acd504d37300bc03b77cd67e77fdd50ae8fb0b0",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/96d0e32a4e6e2ecef5193a532acd504d37300bc03b77cd67e77fdd50ae8fb0b0.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/DeWu.sgmodule",
+      "source_sha256": "c27f77eefa271b76ed63549cfaabc39b87da43ef5a2880664dd835b75d814ac1",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c27f77eefa271b76ed63549cfaabc39b87da43ef5a2880664dd835b75d814ac1.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Dewu.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "大众点评",
@@ -37100,9 +37116,9 @@
       "mitm_hosts": 10,
       "enabled": false,
       "app": "大众点评",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/DianPing.sgmodule",
-      "source_sha256": "c2e74e7c7c973ffa551628b337c288dfe9f0412ea9dc9ae1504ac525ec3cc9cd",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c2e74e7c7c973ffa551628b337c288dfe9f0412ea9dc9ae1504ac525ec3cc9cd.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/DianPing.sgmodule",
+      "source_sha256": "800c8a53d93ed992b355eda8c6ecb16998cd8dce41591d41f451093b2b5686e0",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/800c8a53d93ed992b355eda8c6ecb16998cd8dce41591d41f451093b2b5686e0.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37115,7 +37131,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/64/af/23/64af23fe-9ad0-665e-a65f-7bf5622f4efd/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "滴滴出行",
@@ -37133,9 +37150,9 @@
       "mitm_hosts": 7,
       "enabled": false,
       "app": "滴滴出行",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/DiDiChuxing.sgmodule",
-      "source_sha256": "5d0a483fa1f1d480713da81eb476609cbdfd7c51480edbace7a61024d7d92e40",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/5d0a483fa1f1d480713da81eb476609cbdfd7c51480edbace7a61024d7d92e40.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/DiDiChuxing.sgmodule",
+      "source_sha256": "6f8198e7a010f6734a0e0599918fde8b5e0d48674fcd5601874815484aa4c8b8",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/6f8198e7a010f6734a0e0599918fde8b5e0d48674fcd5601874815484aa4c8b8.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37156,7 +37173,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/DiDi.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "饿了么",
@@ -37174,13 +37192,14 @@
       "mitm_hosts": 5,
       "enabled": false,
       "app": "淘宝闪购",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partE/Eleme.sgmodule",
-      "source_sha256": "ce153d0f5c1e72608a4ad500ab32ded5364b204fb49b5ea4fec9bf9f2dfb16fb",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/ce153d0f5c1e72608a4ad500ab32ded5364b204fb49b5ea4fec9bf9f2dfb16fb.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partE/Eleme.sgmodule",
+      "source_sha256": "53ce752282149a46d9cab31368771df6d29a17c8379d9621bf25456900d5cbaa",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/53ce752282149a46d9cab31368771df6d29a17c8379d9621bf25456900d5cbaa.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/eleme.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "Facebook",
@@ -37198,13 +37217,14 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "Facebook",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partF/Facebook.sgmodule",
-      "source_sha256": "cfa0b9fe659165ff1576518978ddd17b04b3ab132f364f064939ca89188564f8",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/cfa0b9fe659165ff1576518978ddd17b04b3ab132f364f064939ca89188564f8.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partF/Facebook.sgmodule",
+      "source_sha256": "3fd7cb48a8756fd05b06f4f975743fcdf68139846a88d0db0388b4569999e488",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3fd7cb48a8756fd05b06f4f975743fcdf68139846a88d0db0388b4569999e488.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/04ProxySoft/facebook.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/04ProxySoft/facebook.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "番茄小说",
@@ -37222,13 +37242,14 @@
       "mitm_hosts": 11,
       "enabled": false,
       "app": "番茄小说",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partF/FanQieNovel.sgmodule",
-      "source_sha256": "129d92fd687247e1b76c978a47d09b1bcdf5cb15b230a60ab4f66b02e5ae483a",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/129d92fd687247e1b76c978a47d09b1bcdf5cb15b230a60ab4f66b02e5ae483a.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partF/FanQieNovel.sgmodule",
+      "source_sha256": "dde47749d081d4cf846dbe753e6f662b44257a802ab4075704e0f71e613b4ccb",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/dde47749d081d4cf846dbe753e6f662b44257a802ab4075704e0f71e613b4ccb.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "Google",
@@ -37246,9 +37267,9 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "Google",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partG/Google.sgmodule",
-      "source_sha256": "eca91e966193f752718bdab1aa7cacdaa0d5ae095e025e45bd67ce48b9d3f4bb",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/eca91e966193f752718bdab1aa7cacdaa0d5ae095e025e45bd67ce48b9d3f4bb.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partG/Google.sgmodule",
+      "source_sha256": "aec6c3948ebe75c49dfee6da521f9e612de79265edbc66fdf9206de17fc8ed8c",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/aec6c3948ebe75c49dfee6da521f9e612de79265edbc66fdf9206de17fc8ed8c.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37269,7 +37290,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "航旅纵横",
@@ -37287,13 +37309,14 @@
       "mitm_hosts": 4,
       "enabled": false,
       "app": "航旅纵横",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partH/HangLvZongHeng.sgmodule",
-      "source_sha256": "0f745491133a109664187afbbf58170979305d5752dad0c0178f12c0191a1b97",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/0f745491133a109664187afbbf58170979305d5752dad0c0178f12c0191a1b97.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partH/HangLvZongHeng.sgmodule",
+      "source_sha256": "3e011d625359d21363694a296b8115b56342d2078c70049d339fd2a1c09b50f8",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3e011d625359d21363694a296b8115b56342d2078c70049d339fd2a1c09b50f8.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "工商银行",
@@ -37311,9 +37334,9 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "中国工商银行",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partG/ICBC.sgmodule",
-      "source_sha256": "779f19183d02a095642b95a57d897e0d92151d12ba2ecfbdf3ea463bd5c2a88f",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/779f19183d02a095642b95a57d897e0d92151d12ba2ecfbdf3ea463bd5c2a88f.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partG/ICBC.sgmodule",
+      "source_sha256": "8dc872379d8eb94d81d4259ad3b7937ccd46d91f7a311db9722e580333c0153a",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/8dc872379d8eb94d81d4259ad3b7937ccd46d91f7a311db9722e580333c0153a.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37321,7 +37344,8 @@
           "kind": "financial_module_kept_off"
         }
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/26/9d/fa/269dfa1b-d850-0565-4afd-da558bbb080f/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/26/9d/fa/269dfa1b-d850-0565-4afd-da558bbb080f/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "同花顺",
@@ -37339,9 +37363,9 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "同花顺",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partT/iFinD.sgmodule",
-      "source_sha256": "147e510de877783d392e6bafedcdca4a8e15feece4251eb7b001815c4ac5d9e6",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/147e510de877783d392e6bafedcdca4a8e15feece4251eb7b001815c4ac5d9e6.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partT/iFinD.sgmodule",
+      "source_sha256": "87d344fdac8928a11c7f0da093ad3fc769f165fd501b79ab878232ad080d8869",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/87d344fdac8928a11c7f0da093ad3fc769f165fd501b79ab878232ad080d8869.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37349,7 +37373,8 @@
           "kind": "financial_module_kept_off"
         }
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/98/28/1998281f-0a90-7e8e-78e8-19704e51d253/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/98/28/1998281f-0a90-7e8e-78e8-19704e51d253/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "京东",
@@ -37367,13 +37392,14 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "京东",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partJ/JD.com.sgmodule",
-      "source_sha256": "fa55604eb4a7202fb75b41b6ca6bbfab19f5f2d8cf5f4e830242897778c95222",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/fa55604eb4a7202fb75b41b6ca6bbfab19f5f2d8cf5f4e830242897778c95222.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partJ/JD.com.sgmodule",
+      "source_sha256": "dd6a4157d2c9c85cc41e9c58ad9a8d533c026e1fbc4e21f9f16889a99f9e6bd8",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/dd6a4157d2c9c85cc41e9c58ad9a8d533c026e1fbc4e21f9f16889a99f9e6bd8.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/jingdong.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "麦当劳",
@@ -37391,13 +37417,14 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "麦当劳",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partM/McDonalds.sgmodule",
-      "source_sha256": "2615e123bb16a83fa01c6eff2e786c5da5288813c3666717ab57645d5c63582a",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/2615e123bb16a83fa01c6eff2e786c5da5288813c3666717ab57645d5c63582a.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partM/McDonalds.sgmodule",
+      "source_sha256": "12fb8fd4efa0abc852bc561326642dff16367bb190e432a6cedc02ba93007907",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/12fb8fd4efa0abc852bc561326642dff16367bb190e432a6cedc02ba93007907.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mcdonalds.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/mcdonalds.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "美团 & 美团外卖",
@@ -37415,9 +37442,9 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "美团外卖",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partM/Meituan-MeituanWaimai.sgmodule",
-      "source_sha256": "dafef6d577651c2e9639cdf2f863bada9572b41a0bd30f0b892c26c84fa20857",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/dafef6d577651c2e9639cdf2f863bada9572b41a0bd30f0b892c26c84fa20857.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partM/Meituan-MeituanWaimai.sgmodule",
+      "source_sha256": "00d6b55d6406f2ba540baa70ddc6032a2319521b0b6f4d690b3464855ee8fc94",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/00d6b55d6406f2ba540baa70ddc6032a2319521b0b6f4d690b3464855ee8fc94.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37438,7 +37465,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTuanItakeaway.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTuanItakeaway.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "美团",
@@ -37456,13 +37484,14 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "美团",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partM/Meituan.sgmodule",
-      "source_sha256": "3cea369e9ff0f5593344ecffdc67f0516964ba3a0d98863c2425aa8fb5685549",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3cea369e9ff0f5593344ecffdc67f0516964ba3a0d98863c2425aa8fb5685549.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partM/Meituan.sgmodule",
+      "source_sha256": "434ad615bb87ee022671da86575f6e83c71f0b0745f380537b5b1d634b28689d",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/434ad615bb87ee022671da86575f6e83c71f0b0745f380537b5b1d634b28689d.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/meituan.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/meituan.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "美颜相机",
@@ -37480,13 +37509,14 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "美颜相机",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partM/MeiYanXiangJi.sgmodule",
-      "source_sha256": "e5f1c40f65fbd6ce93cf14be25196afb5a1536ecea73f2af1e421e8afe65bd4d",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/e5f1c40f65fbd6ce93cf14be25196afb5a1536ecea73f2af1e421e8afe65bd4d.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partM/MeiYanXiangJi.sgmodule",
+      "source_sha256": "36d1dd6a2ef39e4b96ae34b2d007f4b18b6dff8fa7c59ca44756d1cede4eed56",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/36d1dd6a2ef39e4b96ae34b2d007f4b18b6dff8fa7c59ca44756d1cede4eed56.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "米家",
@@ -37504,9 +37534,9 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "米家",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partM/Mijia.sgmodule",
-      "source_sha256": "a84c5036b1089007377ceed27b4a95a9d24e486bffa423f3312acc71c9b1ee5f",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/a84c5036b1089007377ceed27b4a95a9d24e486bffa423f3312acc71c9b1ee5f.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partM/Mijia.sgmodule",
+      "source_sha256": "7cfdc603d1d74663bec4e856bcfa59b09e63ca26040479adceac17f064106eab",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/7cfdc603d1d74663bec4e856bcfa59b09e63ca26040479adceac17f064106eab.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37519,7 +37549,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiHome.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "网易云音乐",
@@ -37537,9 +37568,9 @@
       "mitm_hosts": 4,
       "enabled": false,
       "app": "网易云音乐",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partW/NetEaseCloudMusic.sgmodule",
-      "source_sha256": "e6eb44b1db27d67877b6de247f6227cb02240c83117ac9108a4029203405906d",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/e6eb44b1db27d67877b6de247f6227cb02240c83117ac9108a4029203405906d.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partW/NetEaseCloudMusic.sgmodule",
+      "source_sha256": "c52dc57e44d77f1d5cc3b370a4643301041e5d4072295af9f7364359dde7d6ef",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c52dc57e44d77f1d5cc3b370a4643301041e5d4072295af9f7364359dde7d6ef.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37576,7 +37607,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/NeteaseMusic.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "网易邮箱",
@@ -37594,13 +37626,14 @@
       "mitm_hosts": 8,
       "enabled": false,
       "app": "网易邮箱",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partW/NetEaseMail.sgmodule",
-      "source_sha256": "cf777163258b7f2bafccc17b489df4fff5b6a1141d868f86ce91c9b7a3654739",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/cf777163258b7f2bafccc17b489df4fff5b6a1141d868f86ce91c9b7a3654739.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partW/NetEaseMail.sgmodule",
+      "source_sha256": "ce05c118ef6aa4ab6167ceb0ef4acc07c301e15bce6af17e8808479b2402240c",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/ce05c118ef6aa4ab6167ceb0ef4acc07c301e15bce6af17e8808479b2402240c.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "拼多多",
@@ -37618,13 +37651,14 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "拼多多",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partP/Pinduoduo.sgmodule",
-      "source_sha256": "3042090a0b36ab0d248a765e0e6f1737a8d993ecaa6eab16d24145c6447795dc",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/3042090a0b36ab0d248a765e0e6f1737a8d993ecaa6eab16d24145c6447795dc.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partP/Pinduoduo.sgmodule",
+      "source_sha256": "6f6fd5069ac23d0a14714a404bb8fd25ca9e72b91db29554778d071631eddb24",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/6f6fd5069ac23d0a14714a404bb8fd25ca9e72b91db29554778d071631eddb24.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/PinDuoDuo.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/PinDuoDuo.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "夸克",
@@ -37642,9 +37676,9 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "夸克",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partK/Quark.sgmodule",
-      "source_sha256": "981f84f68217c94605ba66b16b939ac4718dec0f776a84eb367cee223a30fad2",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/981f84f68217c94605ba66b16b939ac4718dec0f776a84eb367cee223a30fad2.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partK/Quark.sgmodule",
+      "source_sha256": "b9f2b23a3dc92870009f7160b2ebf9173a277ed43ec50c5e720bd8569bae3a30",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/b9f2b23a3dc92870009f7160b2ebf9173a277ed43ec50c5e720bd8569bae3a30.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37652,7 +37686,8 @@
           "kind": "missing_declared_https_hosts_restored"
         }
       ],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QuarkBrowser.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QuarkBrowser.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "淘宝",
@@ -37670,9 +37705,9 @@
       "mitm_hosts": 3,
       "enabled": false,
       "app": "淘宝",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partT/Taobao.sgmodule",
-      "source_sha256": "15f461ce0737004a181669637dfa50711960373c70669d9ba1dd74ad7367993c",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/15f461ce0737004a181669637dfa50711960373c70669d9ba1dd74ad7367993c.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partT/Taobao.sgmodule",
+      "source_sha256": "71b11aea4b62ca54ae3fbf232d7292daaba6c4e1d8a9723ef50c747831516f0d",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/71b11aea4b62ca54ae3fbf232d7292daaba6c4e1d8a9723ef50c747831516f0d.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37733,7 +37768,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/taobao.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "腾讯手机管家",
@@ -37751,13 +37787,14 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "腾讯手机管家",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partT/TencentMobileManager.sgmodule",
-      "source_sha256": "69283ab0fe709e74018681ee08189c32d87bc48b182e4da00462a9a8eb195ec3",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/69283ab0fe709e74018681ee08189c32d87bc48b182e4da00462a9a8eb195ec3.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partT/TencentMobileManager.sgmodule",
+      "source_sha256": "d0889fffa8fe87c201d10865f1e3ded6b5d30360f936749ed382ad7f79b147b6",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/d0889fffa8fe87c201d10865f1e3ded6b5d30360f936749ed382ad7f79b147b6.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/tengxunshoujiguanjia.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/tengxunshoujiguanjia.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "抖音",
@@ -37775,13 +37812,14 @@
       "mitm_hosts": 0,
       "enabled": false,
       "app": "抖音",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partD/TikTok.sgmodule",
-      "source_sha256": "373618a37a3a87ffa19031a24e5625a6f2e85d038e8f248f16b38c5370264dca",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/373618a37a3a87ffa19031a24e5625a6f2e85d038e8f248f16b38c5370264dca.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partD/TikTok.sgmodule",
+      "source_sha256": "b53df4378b5a526e2ae429ea96f8dc0e587faea0be89cff6b83da8325bf600c7",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/b53df4378b5a526e2ae429ea96f8dc0e587faea0be89cff6b83da8325bf600c7.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png"
+      "icon": "https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "Weico(微博客户端)",
@@ -37799,13 +37837,14 @@
       "mitm_hosts": 1,
       "enabled": false,
       "app": "微博",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partW/Weico.sgmodule",
-      "source_sha256": "e837846ca6e4881fd1b52ec26d03fd9dff2dce0f84996eeb9bb6c9049b3d84ec",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/e837846ca6e4881fd1b52ec26d03fd9dff2dce0f84996eeb9bb6c9049b3d84ec.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partW/Weico.sgmodule",
+      "source_sha256": "a2792303181214f3742e2206d5c48ce82d060d430c99cb995799d02c5c1870a6",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/a2792303181214f3742e2206d5c48ce82d060d430c99cb995799d02c5c1870a6.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "WPS",
@@ -37823,13 +37862,14 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "WPS Office",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partW/WPS.sgmodule",
-      "source_sha256": "881ef7488ed4ab5e2a08e90f78610092c1bdb9f5f7cb9f7215658553c473c738",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/881ef7488ed4ab5e2a08e90f78610092c1bdb9f5f7cb9f7215658553c473c738.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partW/WPS.sgmodule",
+      "source_sha256": "ec9ab31173bfec3bb8c2acfd95301e247a18f2c7c7921d5f8dcb4d42ad3338a7",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/ec9ab31173bfec3bb8c2acfd95301e247a18f2c7c7921d5f8dcb4d42ad3338a7.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wps.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/03CNSoft/wps.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "闲鱼",
@@ -37847,9 +37887,9 @@
       "mitm_hosts": 2,
       "enabled": false,
       "app": "闲鱼",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partX/XianYu.sgmodule",
-      "source_sha256": "40fb852def1a961a3c48b2ed0eb4f798a52f90a05a905c1b4f51435a8c20e0cf",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/40fb852def1a961a3c48b2ed0eb4f798a52f90a05a905c1b4f51435a8c20e0cf.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partX/XianYu.sgmodule",
+      "source_sha256": "f134a2191a60a4ce2aae528cd3d2d73c2d2bb23ee33e20e2ef7023f560c56891",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/f134a2191a60a4ce2aae528cd3d2d73c2d2bb23ee33e20e2ef7023f560c56891.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -37966,7 +38006,8 @@
           "successful_single_result_preserved": true
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Goofish.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "小红书",
@@ -37984,9 +38025,9 @@
       "mitm_hosts": 10,
       "enabled": false,
       "app": "小红书",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partX/Xiaohongshu.sgmodule",
-      "source_sha256": "dbf403bbd1261a6474d8a0b8df4ea89adbaa8611a6dd775a01df5de6848540f8",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/dbf403bbd1261a6474d8a0b8df4ea89adbaa8611a6dd775a01df5de6848540f8.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partX/Xiaohongshu.sgmodule",
+      "source_sha256": "9b088d5b625fa4ce909bdf25bb3d9672fc4ee3db69780eec36f5a17cace25675",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/9b088d5b625fa4ce909bdf25bb3d9672fc4ee3db69780eec36f5a17cace25675.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -38069,7 +38110,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/RedNote.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/RedNote.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "YouTube",
@@ -38099,9 +38141,9 @@
       "name": "知乎",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/fmz-Zhihu.yaml",
       "repository_path": "curated/module-stack/modules/fmz-Zhihu.yaml",
-      "sha256": "14f9d280854e9797793b43dc02e53d90b1d37d2b344603d589b7d3fd8928b41a",
+      "sha256": "2fcf8cd97cb567aee43d463d9f3a4c25ba2e27f41a45e6d4f03ed55e5bc5fa65",
       "counts": {
-        "rules": 26,
+        "rules": 25,
         "url_rewrites": 1,
         "header_rewrites": 0,
         "body_rewrites": 1,
@@ -38111,9 +38153,9 @@
       "mitm_hosts": 6,
       "enabled": false,
       "app": "知乎",
-      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3bf100e5c1e68730a76dbb6d401a5913921db823/Surge/module/split/partZ/Zhihu.sgmodule",
-      "source_sha256": "4f064915d1efc056df784f24a2f50baaa94f59be4d698597f561fef818b77964",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/4f064915d1efc056df784f24a2f50baaa94f59be4d698597f561fef818b77964.txt",
+      "source_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/f6bcc087e4da7ebef3c596be4a3c0fa406661564/Surge/module/split/partZ/Zhihu.sgmodule",
+      "source_sha256": "b4d16ac372cb4cb71c53a7dc7015ac45fdbe813eb009799626492e9c54c0ac1f",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/b4d16ac372cb4cb71c53a7dc7015ac45fdbe813eb009799626492e9c54c0ac1f.txt",
       "author_family": "fmz",
       "role": "advertising",
       "changes": [
@@ -38246,7 +38288,8 @@
           "upstream_script_bytes_changed": false
         }
       ],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/ZhiHu.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "Auto_Join_TF.lpx",
@@ -46510,7 +46553,7 @@
       "name": "哔哩哔哩增强",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-014.yaml",
       "repository_path": "curated/module-stack/modules/native-014.yaml",
-      "sha256": "1606d688127c5b79984fb2b9d303e6d8e53497e454fffdd03b86fa7cc6c0e8b2",
+      "sha256": "c0ebb07da2f38100d0d891a51724be23a1ae12e38ec73ef60a613cd8c66a6234",
       "counts": {
         "rules": 10,
         "url_rewrites": 0,
@@ -46846,7 +46889,7 @@
       "name": "哔哩哔哩",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-018.yaml",
       "repository_path": "curated/module-stack/modules/native-018.yaml",
-      "sha256": "280d74b691b6899b3bb928667a12412f689e134ef73d90a85a9247b16bd633e1",
+      "sha256": "e87f2c7ebd5d537268ad0302c82ad1c5a08fc99b0dc6639ea435afb0a07e87a4",
       "counts": {
         "rules": 11,
         "url_rewrites": 0,
@@ -79311,7 +79354,7 @@
       "name": "广告拦截&净化合集",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/native-096.yaml",
       "repository_path": "curated/module-stack/modules/native-096.yaml",
-      "sha256": "f45e3ad66a3673767e9a921ee6fdbbecb088f71775ab555678626ca2b153dc67",
+      "sha256": "6b1721c1a3d5cc3cac31c784c04e1c35ae0217f04cccee68d82b6f8daf07bfe6",
       "counts": {
         "rules": 3506,
         "url_rewrites": 4,
@@ -87091,7 +87134,7 @@
       "name": "微博助手",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-026.yaml",
       "repository_path": "curated/module-stack/modules/user-026.yaml",
-      "sha256": "76b27aefe6844f30ff051e31f607dce5bd51e5dd24236063a10d39a1b95b2d94",
+      "sha256": "0e9295130f6e2d55aaf866bc1a80fbc642dbae6ca9f58a1a4799d7778e013862",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -87104,12 +87147,13 @@
       "enabled": false,
       "app": "微博",
       "source_url": "https://ddgksf2013.top/rewrite/WeiboEnhanced.conf",
-      "source_sha256": "904a1e60e07225f875853bed2005bbd781c443916dca05ce834374ee9def7eab",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/904a1e60e07225f875853bed2005bbd781c443916dca05ce834374ee9def7eab.txt",
+      "source_sha256": "139573c163e192efbbce8a537f944025f3418141b5bfc259e34bc154f36feced",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/139573c163e192efbbce8a537f944025f3418141b5bfc259e34bc154f36feced.txt",
       "author_family": "ddgk",
       "role": "advertising",
       "changes": [],
-      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png"
+      "icon": "https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/WeiBo.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "Google搜索",
@@ -87259,7 +87303,7 @@
       "name": "ScriptHub.Egern.sgmodule",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-116.yaml",
       "repository_path": "curated/module-stack/modules/user-116.yaml",
-      "sha256": "11a47d41d4ed4390f6f70090ea112d8e2593cbf3c8ac5ee2434e7a962a14964a",
+      "sha256": "1fe9ca48e8ed665a915644b695fd4a98c9f9f84d78a81c97ea6a8feea526d4b9",
       "counts": {
         "rules": 1,
         "url_rewrites": 0,
@@ -87298,7 +87342,7 @@
       "name": "script-hub.surge.sgmodule",
       "url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/modules/user-120.yaml",
       "repository_path": "curated/module-stack/modules/user-120.yaml",
-      "sha256": "f869e4f750c66bb13345460acf17bc43db888dc0a44f6def24ee2e1570536585",
+      "sha256": "1ed52c353d6d8e1cf7806a125ce142e98a9975434d31aa1f8919e18aab6d5e8c",
       "counts": {
         "rules": 0,
         "url_rewrites": 0,
@@ -87311,8 +87355,8 @@
       "enabled": false,
       "app": "script-hub.surge.sgmodule",
       "source_url": "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule",
-      "source_sha256": "c10347a05cfe13f6b61c0ea08581e22477758d9da0909806dff7573012fb8a75",
-      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/c10347a05cfe13f6b61c0ea08581e22477758d9da0909806dff7573012fb8a75.txt",
+      "source_sha256": "8c636a21b147d02473a4680508f756951e8512c588733ba80c90539175e7b279",
+      "original_url": "https://raw.githubusercontent.com/tuohai57/egern-curated/main/curated/module-stack/originals/8c636a21b147d02473a4680508f756951e8512c588733ba80c90539175e7b279.txt",
       "author_family": "other",
       "role": "function",
       "changes": [
@@ -87321,7 +87365,8 @@
           "source": "force-http-engine-hosts = %APPEND% script.hub, *.script.hub"
         }
       ],
-      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png"
+      "icon": "https://raw.githubusercontent.com/lige47/lige_icon/main/icon/05icon/ad.png",
+      "upstream_reviewed_at": "2026-11-26"
     },
     {
       "name": "阿里巴巴",
